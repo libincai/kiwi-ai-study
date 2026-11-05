@@ -3,136 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kiwi 爱AI Study</title>
-  <meta name="description" content="AI learning made simple, fun and curious for children, students, families and everyone who wants to learn about artificial intelligence.">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f9fc;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, #243b55, #141e30);
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
-    }
-
-    header h1 {
-      font-size: 42px;
-      margin: 0 0 15px;
-    }
-
-    header p {
-      font-size: 20px;
-      margin: 0;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 25px;
-    }
-
-    section {
-      background: white;
-      padding: 30px;
-      margin-bottom: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
-
-    h2 {
-      color: #243b55;
-    }
-
-    a {
-      color: #1769aa;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: #eef1f5;
-      margin-top: 50px;
-    }
-
-    .tagline {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-  </style>
+  <title>Kiwi 爱AI Study | Sherry Cai</title>
+  <meta name="description" content="Making learning smarter, simpler and more meaningful — math education, AI education, books and resources from Kiwi 爱AI Study.">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-  <header>
-    <img src="Kiwi 爱AI Study Logo.png" alt="Kiwi 爱AI Study logo" style="width:240px; max-width:70%; height:auto; margin-bottom:20px;">
-    <h1>AI Learning Made Simple, Fun & Curious</h1>
-    <p>Learn • Create • Share • Grow</p>
+  <header class="site-header">
+    <a href="index.html" aria-label="Kiwi 爱AI Study home">
+      <img class="logo" src="assets/logo/kiwi-ai-study-logo.png" alt="Kiwi 爱AI Study logo">
+    </a>
+    <span class="divider" aria-hidden="true"></span>
+    <div class="author-wrap">
+      <a class="author" href="#">Sherry Cai</a>
+      <span class="author-underline" aria-hidden="true"></span>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="active" href="index.html">Home</a>
+      <a href="#">About</a>
+      <a href="#">Math Education</a>
+      <a href="#">AI Education</a>
+      <a href="#">My Books</a>
+      <a href="#">Resources</a>
+      <a href="#">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <span class="flag" title="Canada">🇨🇦</span>
+        <span class="flag" title="China">🇨🇳</span>
+      </span>
+    </nav>
   </header>
 
-  <main>
+  <section class="hero" aria-labelledby="hero-heading">
+    <img src="assets/hero/mountain-sunrise-hero.png" alt="Sunrise over mountains and forest">
+    <div class="hero-copy">
+      <h1 id="hero-heading">Making Learning <span class="highlight">Smarter</span>, Simpler &amp; More Meaningful</h1>
+    </div>
+  </section>
 
-    <section>
-      <h2>Welcome to Kiwi 爱AI Study</h2>
-      <p>
-        Kiwi 爱AI Study creates educational content about artificial intelligence,
-        technology and learning.
-      </p>
-      <p>
-        Our goal is to make AI easy, understandable and enjoyable for children,
-        students, families and anyone who wants to explore the world of AI.
-      </p>
-    </section>
+  <section class="features" aria-label="Education focus">
+    <a class="feature-card math" href="#">
+      <span class="feature-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="44" height="44" rx="10" stroke="#1260e8" stroke-width="3"/>
+          <path d="M22 32h20M32 22v20" stroke="#1260e8" stroke-width="3" stroke-linecap="round"/>
+          <path d="M24 24l16 16M40 24L24 40" stroke="#1260e8" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="feature-body">
+        <b>Math Education</b>
+        <p>Build strong foundations, develop thinking skills, and solve real problems.</p>
+      </span>
+      <span class="feature-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="feature-card ai" href="#">
+      <span class="feature-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="12" width="40" height="40" rx="8" stroke="#1260e8" stroke-width="3"/>
+          <rect x="22" y="22" width="20" height="20" rx="4" fill="#1260e8"/>
+          <text x="32" y="37" text-anchor="middle" fill="#fff" font-size="11" font-family="Arial,sans-serif" font-weight="700">AI</text>
+        </svg>
+      </span>
+      <span class="feature-body">
+        <b>AI Education</b>
+        <p>Learn and use AI tools effectively for study, creation, and daily life.</p>
+      </span>
+      <span class="feature-arrow" aria-hidden="true">→</span>
+    </a>
+  </section>
 
-    <section>
-      <h2>What We Share</h2>
-      <p>
-        We explain AI concepts in simple language and use examples, stories and
-        everyday analogies to make technology easier to understand.
-      </p>
-      <p>
-        Our content includes AI basics, generative AI, machine learning,
-        deep learning, prompts, AI tools and responsible use of artificial intelligence.
-      </p>
-    </section>
+  <section class="books" aria-labelledby="books-heading">
+    <div class="books-head">
+      <h2 id="books-heading">Latest Books</h2>
+      <a class="view-all" href="#">View All Books →</a>
+    </div>
+    <div class="book-grid">
+      <a class="book-card" href="#">
+        <img src="assets/books/speedy-playful-math-magic.png" alt="Speedy &amp; Playful Math Magic book cover">
+        <div>
+          <h3>Speedy &amp; Playful Math Magic</h3>
+          <p>A fun and effective guide to building math skills, problem solving, and number sense.</p>
+          <span class="learn-more">Learn More →</span>
+        </div>
+      </a>
+      <a class="book-card" href="#">
+        <img src="assets/books/math-quick-reference-library.png" alt="Math Quick Reference Library book cover">
+        <div>
+          <h3>Math Quick Reference Library</h3>
+          <p>A concise and visual guide to key math concepts, formulas, and problem-solving strategies.</p>
+          <span class="learn-more">Learn More →</span>
+        </div>
+      </a>
+      <a class="book-card" href="#">
+        <img src="assets/books/math-quick-reference-library-advanced.png" alt="Math Quick Reference Library Advanced book cover">
+        <div>
+          <h3>Math Quick Reference Library – Advanced</h3>
+          <p>Extended topics, advanced methods, and deeper problem solving for higher-level learning.</p>
+          <span class="learn-more">Learn More →</span>
+        </div>
+      </a>
+    </div>
+  </section>
 
-    <section>
-      <h2>Learn • Create • Share • Grow</h2>
-      <p>
-        We believe learning AI should be practical, creative and fun.
-        We learn as we create, create as we learn, and share what we discover
-        with others.
-      </p>
-    </section>
+  <section class="social" aria-labelledby="social-heading">
+    <h2 id="social-heading">Follow Our Channels</h2>
+    <div class="social-grid">
+      <a href="#" aria-label="TikTok"><img src="assets/social/TikTok-reference.png" alt="TikTok"></a>
+      <a href="#" aria-label="Douyin"><img src="assets/social/Douyin-reference.png" alt="Douyin"></a>
+      <a href="#" aria-label="WeChat Channels"><img src="assets/social/WeChat-Channels-reference.png" alt="WeChat Channels"></a>
+      <a href="#" aria-label="Xiaohongshu"><img src="assets/social/Xiaohongshu-reference.png" alt="Xiaohongshu"></a>
+      <a href="#" aria-label="YouTube"><img src="assets/social/YouTube-reference.png" alt="YouTube"></a>
+    </div>
+  </section>
 
-    <section>
-      <h2>Legal Information</h2>
-      <p>
-        <a href="privacy.html">Privacy Policy</a>
-      </p>
-      <p>
-        <a href="terms.html">Terms of Service</a>
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    © 2026 Kiwi 爱AI Study. All rights reserved.
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+    <p>© 2026 Kiwi 爱AI Study. All rights reserved.</p>
   </footer>
-
 </body>
 </html>

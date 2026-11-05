@@ -1,0 +1,61 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;color:#101d55;background:#fff}
+a{color:inherit}
+.site-header{display:flex;align-items:center;gap:18px;padding:12px clamp(16px,4%,48px);background:#fff;border-bottom:1px solid #e8edf7}
+.logo{width:210px;max-height:58px;object-fit:contain}
+.divider{height:42px;border-left:1px solid #c9d3ea;flex-shrink:0}
+.author-wrap{display:flex;flex-direction:column;align-items:flex-start;flex-shrink:0}
+.author{font:700 28px Georgia,"Times New Roman",serif;color:#101b4e;text-decoration:none;line-height:1.1}
+.author-underline{display:block;width:100%;height:4px;margin-top:4px;border-radius:999px;background:linear-gradient(90deg,#7bc043,#9fd356)}
+.site-nav{display:flex;align-items:center;gap:clamp(8px,1.2vw,18px);margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
+.site-nav a{font-size:14px;font-weight:700;text-decoration:none;color:#101b4e;white-space:nowrap;padding:10px 4px}
+.site-nav a.active{background:#1260e8;color:#fff;padding:11px 16px;border-radius:12px}
+.flags{display:flex;gap:10px;align-items:center;margin-left:8px}
+.flag{font-size:22px;line-height:1;text-decoration:none}
+.hero{position:relative;background:#dbe8f5}
+.hero img{width:100%;height:clamp(250px,42vw,365px);object-fit:cover;display:block}
+.hero-copy{position:absolute;left:clamp(20px,6%,80px);top:clamp(24px,12%,72px);max-width:min(640px,78%)}
+.hero-copy h1{margin:0;font:700 clamp(30px,4vw,56px)/1.05 Georgia,"Times New Roman",serif;color:#101b4e}
+.hero-copy .highlight{position:relative;display:inline-block}
+.hero-copy .highlight::after{content:"";position:absolute;left:0;right:8%;bottom:-6px;height:5px;border-radius:999px;background:#f2b900}
+.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:28px clamp(16px,4%,48px)}
+.feature-card{display:flex;align-items:center;gap:18px;padding:24px 26px;border-radius:20px;text-decoration:none;color:#101b4e;box-shadow:0 8px 24px #14285b12;transition:transform .15s ease,box-shadow .15s ease}
+.feature-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #14285b20}
+.feature-card.math{background:#eaf5ff}
+.feature-card.ai{background:#f1efff}
+.feature-icon{flex-shrink:0;width:72px;height:72px;border-radius:18px;background:#fff;display:grid;place-items:center;box-shadow:inset 0 0 0 1px #d7e4fb}
+.feature-icon svg{width:44px;height:44px}
+.feature-body{flex:1;min-width:0}
+.feature-body b{display:block;font:700 clamp(22px,2.4vw,28px) Georgia,"Times New Roman",serif;margin-bottom:8px}
+.feature-body p{margin:0;font-size:17px;line-height:1.45;color:#1b2f66}
+.feature-arrow{flex-shrink:0;font-size:28px;color:#1260e8;font-weight:700}
+.books{padding:12px clamp(16px,4%,48px) 28px}
+.books-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1px solid #d8e0f0;padding-bottom:12px;margin-bottom:24px}
+.books-head h2{margin:0;font:700 clamp(28px,3vw,34px) Georgia,"Times New Roman",serif;color:#101b4e}
+.view-all{font-size:15px;font-weight:700;color:#1260e8;text-decoration:none;white-space:nowrap}
+.book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.book-card{display:flex;gap:16px;align-items:flex-start;padding:16px;border-radius:16px;background:#fff;box-shadow:0 8px 24px #14285b18;text-decoration:none;color:#101b4e}
+.book-card img{width:108px;height:auto;flex-shrink:0;object-fit:contain;border-radius:8px}
+.book-card h3{margin:0 0 8px;font:700 18px/1.25 Georgia,"Times New Roman",serif}
+.book-card p{margin:0 0 10px;font-size:14px;line-height:1.45;color:#33467a}
+.learn-more{font-size:14px;font-weight:700;color:#1260e8;text-decoration:none}
+.social{margin:0 clamp(16px,4%,48px) 28px;padding:28px clamp(16px,4%,32px);background:#f7f9ff;border-radius:24px;text-align:center}
+.social h2{margin:0 0 20px;font:700 clamp(26px,3vw,34px) Georgia,"Times New Roman",serif;color:#101b4e}
+.social-grid{display:flex;justify-content:center;align-items:center;gap:clamp(10px,2vw,18px);flex-wrap:wrap}
+.social-grid a{display:block;width:min(170px,28vw);text-decoration:none}
+.social-grid img{width:100%;height:auto;display:block}
+.site-footer{text-align:center;padding:28px 20px 36px;background:#eef1f7;color:#33467a;font-size:14px}
+.site-footer nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:10px}
+.site-footer a{color:#1260e8;font-weight:700;text-decoration:none}
+a:focus-visible{outline:3px solid #f2b900;outline-offset:4px}
+@media(max-width:980px){
+  .site-header{flex-wrap:wrap}
+  .site-nav{order:5;width:100%;margin-left:0;justify-content:flex-start;overflow:auto;padding-bottom:4px}
+  .book-grid{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .features{grid-template-columns:1fr}
+  .logo{width:155px}
+  .author{font-size:22px}
+  .book-card img{width:92px}
+}
