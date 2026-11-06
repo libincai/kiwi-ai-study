@@ -2647,3 +2647,53 @@ body.ai-page .about-compact-banner .compact-banner-subtitle {
   paint-order: stroke fill;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
 }
+
+
+/* Homepage learning pathways: three equal entry cards in one row. */
+body.home-page .features {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+body.home-page .feature-card.learning {
+  background: #e8f5f0;
+}
+body.home-page .feature-card {
+  min-width: 0;
+}
+@media (max-width: 900px) and (min-width: 621px) {
+  body.home-page .features {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  body.home-page .feature-card {
+    min-height: 112px;
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  body.home-page .feature-icon {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+  body.home-page .feature-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+  body.home-page .feature-body b {
+    font-size: 18px;
+  }
+  body.home-page .feature-body p {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  body.home-page .feature-arrow {
+    font-size: 22px;
+  }
+}
+@media (max-width: 620px) {
+  body.home-page .features {
+    grid-template-columns: 1fr;
+  }
+}

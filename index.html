@@ -27,7 +27,7 @@
       <a href="index.html" class="active">Home</a>
       <a href="about/index.html">About</a>
       <a href="math/index.html">Math Education</a>
-      <a href="ai/index.html">AI Education</a>
+      <a href="ai/index.html">AI Education</a><a href="math/in-class-learning.html" data-nav="class">In-Class Learning</a>
       <a href="books/index.html">My Books</a>
       <a href="#">Resources</a>
       <a href="#">Contact</a>
@@ -47,7 +47,7 @@
     <img id="hero-mobile-banner-image" class="hero-mobile-banner" src="assets/hero/mobile-banner-en.png" alt="Making Learning Smarter, Simpler & More Meaningful">
   </section>
 
-  <section class="features" aria-label="Education focus">
+  <section class="features" aria-label="Learning pathways">
     <a class="feature-card math" href="math/index.html">
       <span class="feature-icon" aria-hidden="true">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -78,13 +78,22 @@
       </span>
       <span class="feature-arrow" aria-hidden="true">→</span>
     </a>
-  </section>
-
-
-  <section style="margin:8px clamp(24px,3.4vw,53px) 24px;padding:22px 28px;border-radius:20px;background:linear-gradient(110deg,#173e70,#286ba5);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
-    <div><p style="margin:0 0 5px;font-size:11px;letter-spacing:.14em;font-weight:800;color:#cfe4ff">GUIDED MATHEMATICS LEARNING</p><h2 style="margin:0 0 6px;font-size:clamp(22px,2.2vw,30px)" data-en="Go beyond free resources with In-Class Learning" data-zh="从免费资源走向更深入的课堂学习">Go beyond free resources with In-Class Learning</h2><p style="margin:0;color:#e2efff;font-size:14px" data-en="Understand the why. Develop independent mathematical thinking." data-zh="理解数学原理，培养独立数学思维。">Understand the why. Develop independent mathematical thinking.</p></div>
-    <a href="math/in-class-learning.html" style="display:inline-flex;padding:12px 18px;border-radius:999px;background:#fff;color:#173e70;text-decoration:none;font-weight:800" data-en="Explore In-Class Learning →" data-zh="了解课堂学习 →">Explore In-Class Learning →</a>
-  </section>
+    
+      <a class="feature-card learning" href="math/in-class-learning.html">
+      <span class="feature-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M7 23.5 32 10l25 13.5L32 37 7 23.5Z" stroke="#0756df" stroke-width="3.5" stroke-linejoin="round"/>
+          <path d="M17 30v14c8 7 22 7 30 0V30M57 24v18" stroke="#0756df" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="57" cy="46" r="3" fill="#0756df"/>
+        </svg>
+      </span>
+      <span class="feature-body">
+        <b>In-Class Learning</b>
+        <p>Go beyond free resources with guided lessons that build understanding and independent thinking.</p>
+      </span>
+      <span class="feature-arrow" aria-hidden="true">→</span>
+    </a>
+</section>
 
   <section class="books" id="books" aria-labelledby="books-heading">
     <div class="books-head">
@@ -146,12 +155,13 @@
   const translations = {
     en: {
       pageTitle: "Kiwi 爱AI Study | Sherry Cai",
-      nav: ["Home", "About", "Math Education", "AI Education", "My Books", "Resources", "Contact"],
+      nav: ["Home", "About", "Math Education", "AI Education", "In-Class Learning", "My Books", "Resources", "Contact"],
       hero: "Making Learning Smarter,<br>Simpler &amp; More Meaningful",
-      featureTitles: ["Math Education", "AI Education"],
+      featureTitles: ["Math Education", "AI Education", "In-Class Learning"],
       featureDescriptions: [
         "Build strong foundations, develop thinking skills, and solve real problems.",
-        "Learn and use AI tools effectively for study, creation, and daily life."
+        "Learn and use AI tools effectively for study, creation, and daily life.",
+        "Go beyond free resources with guided lessons that build understanding and independent thinking."
       ],
       booksTitle: "Latest Books",
       viewAll: "View All Books →",
@@ -172,12 +182,13 @@
     },
     zh: {
       pageTitle: "Kiwi 爱AI Study | Sherry Cai",
-      nav: ["首页", "关于我们", "数学教育", "人工智能教育", "我的书籍", "学习资源", "联系我们"],
+      nav: ["首页", "关于我们", "数学教育", "人工智能教育", "课堂学习", "我的书籍", "学习资源", "联系我们"],
       hero: "让学习变得更智能，<br>更简单、更有意义",
-      featureTitles: ["数学教育", "人工智能教育"],
+      featureTitles: ["数学教育", "人工智能教育", "课堂学习"],
       featureDescriptions: [
         "夯实数学基础，培养思维能力，并学会解决实际问题。",
-        "学习并有效运用人工智能工具，助力学习、创作与日常生活。"
+        "学习并有效运用人工智能工具，助力学习、创作与日常生活。",
+        "从免费资源走向更深入的课堂学习，通过系统指导理解原理，培养独立思考能力。"
       ],
       booksTitle: "最新书籍",
       viewAll: "查看全部书籍 →",
