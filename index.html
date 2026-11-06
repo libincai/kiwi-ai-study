@@ -7,7 +7,7 @@
   <meta name="description" content="Making learning smarter, simpler and more meaningful — math education, AI education, books and resources from Kiwi 爱AI Study.">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
     <div class="brand-lockup">
       <a class="logo-link" href="index.html" aria-label="Kiwi 爱AI Study home">
@@ -147,7 +147,7 @@
     en: {
       pageTitle: "Kiwi 爱AI Study | Sherry Cai",
       nav: ["Home", "About", "Math Education", "AI Education", "My Books", "Resources", "Contact"],
-      hero: "Making Learning<br>Smarter, Simpler &amp;<br>More Meaningful",
+      hero: "Making Learning Smarter,<br>Simpler &amp; More Meaningful",
       featureTitles: ["Math Education", "AI Education"],
       featureDescriptions: [
         "Build strong foundations, develop thinking skills, and solve real problems.",
@@ -156,7 +156,7 @@
       booksTitle: "Latest Books",
       viewAll: "View All Books →",
       bookTitles: [
-        "Speedy &amp; Playful Math Magic",
+        "Speedy & Playful Math Magic",
         "Math Quick Reference Library",
         "Math Quick Reference Library – Advanced"
       ],
@@ -173,7 +173,7 @@
     zh: {
       pageTitle: "Kiwi 爱AI Study | Sherry Cai",
       nav: ["首页", "关于我们", "数学教育", "人工智能教育", "我的书籍", "学习资源", "联系我们"],
-      hero: "让学习变得<br>更智能、更简单，<br>更有意义",
+      hero: "让学习变得更智能，<br>更简单、更有意义",
       featureTitles: ["数学教育", "人工智能教育"],
       featureDescriptions: [
         "夯实数学基础，培养思维能力，并学会解决实际问题。",
@@ -204,6 +204,32 @@
     if (el) el.textContent = value;
   };
 
+  function syncHeroSwoosh() {
+    const heading = document.querySelector("#hero-heading");
+    const swoosh = document.querySelector(".hero-swoosh");
+    if (!heading || !swoosh) return;
+
+    let widestLine = 0;
+    heading.childNodes.forEach((node) => {
+      if (node.nodeType !== Node.TEXT_NODE || !node.textContent.trim()) return;
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      Array.from(range.getClientRects()).forEach((rect) => {
+        widestLine = Math.max(widestLine, rect.width);
+      });
+    });
+
+    if (widestLine > 0) {
+      swoosh.style.setProperty("width", `${widestLine}px`, "important");
+      swoosh.style.setProperty("height", "auto", "important");
+    }
+  }
+
+  window.addEventListener("resize", syncHeroSwoosh);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncHeroSwoosh);
+  }
+
   function setLanguage(language) {
     const t = translations[language] || translations.en;
     document.documentElement.lang = language === "zh" ? "zh-CN" : "en-CA";
@@ -215,6 +241,9 @@
 
     const hero = document.querySelector("#hero-heading");
     if (hero) hero.innerHTML = t.hero;
+    requestAnimationFrame(syncHeroSwoosh);
+
+
 
     document.querySelectorAll(".feature-card").forEach((card, i) => {
       const title = card.querySelector(".feature-body b");
