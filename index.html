@@ -26,9 +26,9 @@
     <nav class="site-nav" aria-label="Primary">
       <a class="active" href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="#">Math Education</a>
+      <a href="math-education.html">Math Education</a>
       <a href="#">AI Education</a>
-      <a href="#">My Books</a>
+      <a href="books.html">My Books</a>
       <a href="#">Resources</a>
       <a href="#">Contact</a>
       <span class="flags" aria-label="Languages">
@@ -48,7 +48,7 @@
   </section>
 
   <section class="features" aria-label="Education focus">
-    <a class="feature-card math" href="#">
+    <a class="feature-card math" href="math-education.html">
       <span class="feature-icon" aria-hidden="true">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="7" y="7" width="50" height="50" rx="8" stroke="#0756df" stroke-width="3.5"/>
@@ -80,13 +80,19 @@
     </a>
   </section>
 
+
+  <section style="margin:8px clamp(24px,3.4vw,53px) 24px;padding:22px 28px;border-radius:20px;background:linear-gradient(110deg,#173e70,#286ba5);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+    <div><p style="margin:0 0 5px;font-size:11px;letter-spacing:.14em;font-weight:800;color:#cfe4ff">GUIDED MATHEMATICS LEARNING</p><h2 style="margin:0 0 6px;font-size:clamp(22px,2.2vw,30px)" data-en="Go beyond free resources with In-Class Learning" data-zh="从免费资源走向更深入的课堂学习">Go beyond free resources with In-Class Learning</h2><p style="margin:0;color:#e2efff;font-size:14px" data-en="Understand the why. Develop independent mathematical thinking." data-zh="理解数学原理，培养独立数学思维。">Understand the why. Develop independent mathematical thinking.</p></div>
+    <a href="in-class-learning.html" style="display:inline-flex;padding:12px 18px;border-radius:999px;background:#fff;color:#173e70;text-decoration:none;font-weight:800" data-en="Explore In-Class Learning →" data-zh="了解课堂学习 →">Explore In-Class Learning →</a>
+  </section>
+
   <section class="books" id="books" aria-labelledby="books-heading">
     <div class="books-head">
       <h2 id="books-heading">Latest Books</h2>
-      <a class="view-all" href="#">View All Books →</a>
+      <a class="view-all" href="books.html">View All Books →</a>
     </div>
     <div class="book-grid">
-      <a class="book-card" href="speedy-playful-math-magic.html">
+      <a class="book-card" href="books-speedy.html">
         <img src="assets/books/speedy-playful-math-magic.png" alt="Speedy &amp; Playful Math Magic book cover">
         <div>
           <h3>Speedy &amp; Playful Math Magic</h3>
@@ -94,7 +100,7 @@
           <span class="learn-more">Learn More →</span>
         </div>
       </a>
-      <a class="book-card" href="#">
+      <a class="book-card" href="books-foundations.html">
         <img src="assets/books/math-quick-reference-library.png" alt="Math Quick Reference Library book cover">
         <div>
           <h3>Math Quick Reference Library</h3>
@@ -102,7 +108,7 @@
           <span class="learn-more">Learn More →</span>
         </div>
       </a>
-      <a class="book-card" href="#">
+      <a class="book-card" href="books-advanced.html">
         <img src="assets/books/math-quick-reference-library-advanced.png" alt="Math Quick Reference Library Advanced book cover">
         <div>
           <h3>Math Quick Reference Library – Advanced</h3>
@@ -204,6 +210,7 @@
   function setLanguage(language) {
     const t = translations[language] || translations.en;
     document.documentElement.lang = language === "zh" ? "zh-CN" : "en-CA";
+    document.querySelectorAll("[data-en][data-zh]").forEach(el => { el.innerHTML = el.getAttribute(language === "zh" ? "data-zh" : "data-en"); });
     document.title = t.pageTitle;
 
     document.querySelectorAll(".site-nav > a").forEach((el, i) => {
@@ -271,6 +278,12 @@
   let saved = "en";
   try { saved = localStorage.getItem("kiwi-site-language") || "en"; } catch (e) {}
   setLanguage(saved);
+  // Re-apply the shared language when this page is restored from browser history.
+  window.addEventListener("pageshow", () => {
+    let current = "en";
+    try { current = localStorage.getItem("kiwi-site-language") || "en"; } catch (e) {}
+    setLanguage(current);
+  });
 })();
 </script>
 

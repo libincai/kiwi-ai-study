@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math in Real Life: A Car’s Journey | Kiwi 爱AI Study</title>
+  <meta name="description" content="Explore linear, quadratic, and constant functions through a car’s journey, then discover how inverse relationships work.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .car-page { color:#18345d; }
+    .car-page main { max-width:1120px; margin:0 auto; padding:0 24px 72px; }
+    .car-hero { margin:26px 0 34px; padding:48px 44px; border-radius:24px; background:linear-gradient(125deg,#e8f5ff,#f5f7ff 58%,#fff4df); border:1px solid #d5e7f7; }
+    .car-eyebrow { color:#1674b8; font-size:.78rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; margin:0 0 12px; }
+    .car-hero h1 { color:#123c73; font-size:clamp(2rem,4vw,3.25rem); line-height:1.12; margin:0 0 16px; }
+    .car-hero p { max-width:790px; font-size:1.1rem; line-height:1.75; margin:0; color:#355273; }
+    .car-section { margin:42px 0; }
+    .car-section h2 { color:#123c73; font-size:clamp(1.55rem,2.7vw,2.1rem); margin:0 0 14px; }
+    .car-section h3 { color:#174c83; font-size:1.2rem; margin:0 0 10px; }
+    .car-section p { line-height:1.75; color:#3b526d; }
+    .car-intro-grid,.car-stage-grid,.car-inverse-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; align-items:stretch; }
+    .car-panel { background:#fff; border:1px solid #dce7f1; border-radius:18px; padding:22px; box-shadow:0 8px 24px rgba(24,60,100,.055); }
+    .car-panel p:last-child { margin-bottom:0; }
+    .car-road { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px; }
+    .road-stage { padding:16px; border-radius:14px; background:#f4f8fc; border-top:4px solid #3c91d5; }
+    .road-stage:nth-child(2) { border-top-color:#20a27a; }
+    .road-stage:nth-child(3) { border-top-color:#e58b36; }
+    .road-stage strong { display:block; color:#183d6c; margin-bottom:6px; }
+    .road-stage span { color:#526982; font-size:.93rem; line-height:1.5; }
+    .equation { margin:14px 0; padding:15px 18px; border-radius:12px; background:#f2f7fc; border:1px solid #dbe9f5; color:#123c73; font-family:Georgia,serif; font-size:clamp(1.05rem,2.2vw,1.45rem); text-align:center; overflow-wrap:anywhere; }
+    .equation small { display:block; margin-top:7px; font: .8rem/1.5 system-ui,sans-serif; color:#60758d; }
+    .graph-card { background:#fff; border:1px solid #dce7f1; border-radius:18px; padding:16px; overflow:hidden; }
+    .graph-card svg { width:100%; height:auto; display:block; }
+    .graph-caption { color:#637991; font-size:.88rem; text-align:center; margin:10px 0 0; }
+    .stage-card { border:1px solid #dce7f1; border-radius:18px; padding:22px; background:#fff; }
+    .stage-number { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; color:#fff; background:#287ec1; font-weight:800; margin-bottom:12px; }
+    .stage-card.constant .stage-number { background:#20a27a; }
+    .stage-card.linear .stage-number { background:#e58b36; }
+    .stage-card ul { padding-left:20px; color:#405a75; line-height:1.7; }
+    .note-box { background:#fff8df; border:1px solid #f1d77c; border-radius:14px; padding:18px 20px; color:#5c4b20; line-height:1.65; margin-top:18px; }
+    .inverse-callout { background:#eef7ff; border-left:5px solid #398dd0; border-radius:12px; padding:18px 20px; color:#294e72; line-height:1.7; }
+    .comparison-image { width:100%; max-width:780px; height:auto; display:block; margin:12px auto 0; border-radius:14px; border:1px solid #e1e8ef; }
+    .car-table-wrap { overflow-x:auto; }
+    .car-table { width:100%; border-collapse:collapse; min-width:540px; margin-top:14px; }
+    .car-table th,.car-table td { padding:12px 14px; text-align:left; border-bottom:1px solid #dce7f1; }
+    .car-table th { background:#eaf4fb; color:#174c83; }
+    .car-final { text-align:center; padding:30px; border-radius:20px; background:linear-gradient(120deg,#edf7ff,#f5f8ff); }
+    .car-final h2 { margin-bottom:10px; }
+    .car-page a.car-back { color:#176bb0; font-weight:700; text-decoration:none; }
+    .car-page a.car-back:hover { text-decoration:underline; }
+    @media(max-width:760px) {
+      .car-page main { padding:0 16px 50px; }
+      .car-hero { padding:30px 23px; margin-top:18px; }
+      .car-intro-grid,.car-stage-grid,.car-inverse-grid { grid-template-columns:1fr; }
+      .car-road { grid-template-columns:1fr; }
+      .car-panel,.stage-card { padding:18px; }
+    }
+  </style>
+</head>
+<body class="car-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="assets/logo/kiwi-ai-study-logo.png" alt="Kiwi 爱AI Study logo"></a>
+      <p class="logo-tagline" aria-hidden="true"><span class="tag-learn">Learn</span><span class="tag-sep"> • </span><span class="tag-create">Create</span><span class="tag-sep"> • </span><span class="tag-share">Share</span><span class="tag-sep"> • </span><span class="tag-grow">Grow</span></p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap"><a class="author-image-link" href="index.html" aria-label="Sherry Cai"><img class="author-signature-image" src="assets/logo/sherry-cai-signature.png" alt="Sherry Cai"></a></div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="math-education.html" data-nav="math">Math Education</a>
+      <a href="#" data-nav="ai">AI Education</a>
+      <a href="books.html" data-nav="books">My Books</a>
+      <a href="#" data-nav="resources">Resources</a>
+      <a href="#" data-nav="contact">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
+      </span>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-back-wrap"><a class="page-back-link" href="about.html" data-en="← Back to About Us" data-zh="← 返回关于我们">← Back to About Us</a></div>
+
+    <section class="car-hero">
+      <p class="car-eyebrow" data-en="LED LAB · MATH IN REAL LIFE" data-zh="LED LAB · 生活中的数学">LED LAB · MATH IN REAL LIFE</p>
+      <h1 data-en="A Car’s Journey" data-zh="一辆汽车的旅程">A Car’s Journey</h1>
+      <p data-en="What can a car’s journey teach us about functions? Follow a car as it accelerates, travels at a steady speed, and slows to a stop. One familiar journey reveals three important function types — quadratic, constant, and linear — and shows when an inverse function is possible." data-zh="汽车的行驶过程能帮助我们理解哪些函数知识？让我们跟随一辆汽车，观察它如何加速、保持匀速，最后减速停下。一个熟悉的生活场景，可以帮助我们理解三种重要函数：二次函数、常数函数和一次函数，也能让我们看懂什么时候可以建立反函数。">What can a car’s journey teach us about functions? Follow a car as it accelerates, travels at a steady speed, and slows to a stop. One familiar journey reveals three important function types — quadratic, constant, and linear — and shows when an inverse function is possible.</p>
+    </section>
+
+    <section class="car-section">
+      <h2 data-en="One journey, three stages" data-zh="一段旅程，三个阶段">One journey, three stages</h2>
+      <div class="car-intro-grid">
+        <div class="car-panel">
+          <p data-en="Imagine a car travelling along a country road with a speed limit of 90 km/h. It begins at rest, accelerates until it reaches 90 km/h, maintains that speed, and then decelerates to a complete stop." data-zh="想象一辆汽车行驶在限速为 90 km/h 的乡间公路上。汽车从静止开始，加速到 90 km/h，随后保持这个速度行驶，最后减速直至完全停下。">Imagine a car travelling along a country road with a speed limit of 90 km/h. It begins at rest, accelerates until it reaches 90 km/h, maintains that speed, and then decelerates to a complete stop.</p>
+          <p data-en="We will use a simplified mathematical model to describe its speed over 13 seconds." data-zh="我们用一个简化的数学模型来描述这辆汽车在 13 秒内的速度变化。">We will use a simplified mathematical model to describe its speed over 13 seconds.</p>
+        </div>
+        <div class="car-panel">
+          <h3 data-en="The journey at a glance" data-zh="旅程一览">The journey at a glance</h3>
+          <div class="car-road">
+            <div class="road-stage"><strong data-en="01 · Accelerate" data-zh="01 · 加速">01 · Accelerate</strong><span data-en="0–3 s<br>0 → 90 km/h" data-zh="0–3 秒<br>0 → 90 km/h">0–3 s<br>0 → 90 km/h</span></div>
+            <div class="road-stage"><strong data-en="02 · Cruise" data-zh="02 · 匀速">02 · Cruise</strong><span data-en="3–8 s<br>Stays at 90 km/h" data-zh="3–8 秒<br>保持 90 km/h">3–8 s<br>Stays at 90 km/h</span></div>
+            <div class="road-stage"><strong data-en="03 · Decelerate" data-zh="03 · 减速">03 · Decelerate</strong><span data-en="8–13 s<br>90 → 0 km/h" data-zh="8–13 秒<br>90 → 0 km/h">8–13 s<br>90 → 0 km/h</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="car-section">
+      <h2 data-en="The speed–time function" data-zh="速度—时间函数">The speed–time function</h2>
+      <p data-en="Let t represent time in seconds and v(t) represent the car’s speed in kilometres per hour. The complete journey is described by a piecewise function: each rule applies only during its own time interval." data-zh="用 t 表示时间，单位为秒；用 v(t) 表示汽车速度，单位为千米/小时。整个旅程由一个分段函数表示，每一条函数规则只适用于自己的时间区间。">Let t represent time in seconds and v(t) represent the car’s speed in kilometres per hour. The complete journey is described by a piecewise function: each rule applies only during its own time interval.</p>
+      <div class="equation">v(t) = <span style="white-space:nowrap">{ 10t²&nbsp;&nbsp;&nbsp; 0 ≤ t ≤ 3</span><br><span style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 90&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 &lt; t ≤ 8</span><br><span style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 90 − 18(t − 8)&nbsp;&nbsp; 8 &lt; t ≤ 13 }</span><small data-en="Speed v is measured in km/h; time t is measured in seconds." data-zh="速度 v 的单位是 km/h；时间 t 的单位是秒。">Speed v is measured in km/h; time t is measured in seconds.</small></div>
+      <div class="graph-card">
+        <svg viewBox="0 0 820 410" role="img" aria-label="Speed-time graph: quadratic acceleration, constant speed, and linear deceleration">
+          <defs><pattern id="grid" width="48" height="32" patternUnits="userSpaceOnUse"><path d="M48 0H0V32" fill="none" stroke="#dce6ef" stroke-width="1"/></pattern></defs>
+          <rect x="70" y="25" width="700" height="320" fill="url(#grid)"/>
+          <path d="M70 25V345H770" fill="none" stroke="#25415e" stroke-width="2.5"/>
+          <g fill="#526982" font-size="12" text-anchor="middle"><text x="70" y="365">0</text><text x="231" y="365">3</text><text x="500" y="365">8</text><text x="770" y="365">13</text></g>
+          <g fill="#526982" font-size="12" text-anchor="end"><text x="58" y="349">0</text><text x="58" y="189">45</text><text x="58" y="31">90</text></g>
+          <g stroke="#9fb2c4" stroke-dasharray="4 5"><path d="M231 25V345M500 25V345M70 185H770M70 25H770"/></g>
+          <path d="M70 345 Q150 345 231 25" fill="none" stroke="#287fc2" stroke-width="5" stroke-linecap="round"/>
+          <path d="M231 25H500" fill="none" stroke="#20a27a" stroke-width="5" stroke-linecap="round"/>
+          <path d="M500 25L770 345" fill="none" stroke="#e58b36" stroke-width="5" stroke-linecap="round"/>
+          <g fill="#287fc2"><circle cx="70" cy="345" r="5"/><circle cx="231" cy="25" r="5"/></g><g fill="#20a27a"><circle cx="500" cy="25" r="5"/></g><g fill="#e58b36"><circle cx="770" cy="345" r="5"/></g>
+          <g font-size="13" font-weight="700"><text x="110" y="275" fill="#287fc2">Quadratic</text><text x="335" y="15" fill="#16815f">Constant</text><text x="620" y="205" fill="#c77725">Linear</text></g>
+          <g fill="#25415e" font-size="14" font-weight="700"><text x="420" y="397" text-anchor="middle">Time (seconds)</text><text transform="translate(18 185) rotate(-90)" text-anchor="middle">Speed (km/h)</text></g>
+        </svg>
+        <p class="graph-caption" data-en="A simplified speed–time graph for the complete 13-second journey." data-zh="这是一段 13 秒旅程的简化速度—时间图。">A simplified speed–time graph for the complete 13-second journey.</p>
+      </div>
+      <div class="note-box"><strong data-en="A modelling note" data-zh="模型说明">A modelling note</strong><br><span data-en="The quadratic rule in Stage 1 is a simplified model for exploring functions and patterns. It does not represent constant physical acceleration. The model is designed to make the three function types easy to compare." data-zh="第一阶段的二次函数是为了研究函数和规律而采用的简化模型，并不代表汽车具有恒定的物理加速度。这个模型的目的是方便我们比较三种函数类型。">The quadratic rule in Stage 1 is a simplified model for exploring functions and patterns. It does not represent constant physical acceleration. The model is designed to make the three function types easy to compare.</span></div>
+    </section>
+
+    <section class="car-section">
+      <h2 data-en="Three stages, three function types" data-zh="三个阶段，三种函数类型">Three stages, three function types</h2>
+      <div class="car-stage-grid">
+        <article class="stage-card">
+          <span class="stage-number">1</span><h3 data-en="Accelerating — Quadratic" data-zh="加速阶段——二次函数">Accelerating — Quadratic</h3>
+          <div class="equation">v(t) = 10t², &nbsp; 0 ≤ t ≤ 3</div>
+          <p data-en="The car’s speed rises from 0 to 90 km/h. Because time is squared, the graph is a curved parabola. The speed increases by larger amounts during each one-second interval." data-zh="汽车速度从 0 km/h 增加到 90 km/h。由于时间变量 t 被平方，图像呈抛物线形状。每经过一秒，速度增加的数值越来越大。">The car’s speed rises from 0 to 90 km/h. Because time is squared, the graph is a curved parabola. The speed increases by larger amounts during each one-second interval.</p>
+          <ul><li data-en="Function type: quadratic" data-zh="函数类型：二次函数">Function type: quadratic</li><li data-en="Graph: a curved parabola" data-zh="图像：抛物线">Graph: a curved parabola</li><li data-en="First differences: +10, +30, +50" data-zh="一阶差分：+10、+30、+50">First differences: +10, +30, +50</li><li data-en="Second differences: +20, +20" data-zh="二阶差分：+20、+20">Second differences: +20, +20</li></ul>
+        </article>
+        <article class="stage-card constant">
+          <span class="stage-number">2</span><h3 data-en="Cruising — Constant" data-zh="匀速阶段——常数函数">Cruising — Constant</h3>
+          <div class="equation">v(t) = 90, &nbsp; 3 &lt; t ≤ 8</div>
+          <p data-en="The car maintains 90 km/h. Its speed does not change as time passes, so the graph is a horizontal line and the rate of change is zero." data-zh="汽车保持 90 km/h 的速度。随着时间经过，速度没有变化，因此图像是一条水平直线，变化率为零。">The car maintains 90 km/h. Its speed does not change as time passes, so the graph is a horizontal line and the rate of change is zero.</p>
+          <ul><li data-en="Function type: constant" data-zh="函数类型：常数函数">Function type: constant</li><li data-en="Graph: a horizontal line" data-zh="图像：水平直线">Graph: a horizontal line</li><li data-en="Rate of change: 0" data-zh="变化率：0">Rate of change: 0</li></ul>
+        </article>
+        <article class="stage-card linear">
+          <span class="stage-number">3</span><h3 data-en="Decelerating — Linear" data-zh="减速阶段——一次函数">Decelerating — Linear</h3>
+          <div class="equation">v(t) = 90 − 18(t − 8)<br>8 &lt; t ≤ 13</div>
+          <p data-en="The car slows from 90 km/h to 0 km/h over five seconds. Its speed decreases by 18 km/h every second, so the graph is a straight line sloping downward." data-zh="汽车在五秒内从 90 km/h 减速到 0 km/h。每秒速度减少 18 km/h，因此图像是一条向下倾斜的直线。">The car slows from 90 km/h to 0 km/h over five seconds. Its speed decreases by 18 km/h every second, so the graph is a straight line sloping downward.</p>
+          <ul><li data-en="Function type: linear" data-zh="函数类型：一次函数">Function type: linear</li><li data-en="Graph: a decreasing straight line" data-zh="图像：向下倾斜的直线">Graph: a decreasing straight line</li><li data-en="Rate of change: −18 km/h per second" data-zh="变化率：每秒 −18 km/h">Rate of change: −18 km/h per second</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="car-section">
+      <h2 data-en="Look closer: the quadratic step pattern" data-zh="深入观察：二次函数的步进规律">Look closer: the quadratic step pattern</h2>
+      <div class="car-intro-grid">
+        <div class="car-panel">
+          <p data-en="During acceleration, v(t) = 10t². At t = 0, 1, 2, and 3 seconds, the speeds are 0, 10, 40, and 90 km/h." data-zh="在加速阶段，v(t) = 10t²。当 t 分别为 0、1、2、3 秒时，速度分别为 0、10、40、90 km/h。">During acceleration, v(t) = 10t². At t = 0, 1, 2, and 3 seconds, the speeds are 0, 10, 40, and 90 km/h.</p>
+          <div class="car-table-wrap"><table class="car-table"><thead><tr><th>t (s)</th><th>v(t) (km/h)</th><th data-en="First difference" data-zh="一阶差分">First difference</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>—</td></tr><tr><td>1</td><td>10</td><td>+10</td></tr><tr><td>2</td><td>40</td><td>+30</td></tr><tr><td>3</td><td>90</td><td>+50</td></tr></tbody></table></div>
+        </div>
+        <div class="car-panel">
+          <h3 data-en="Why do the differences change?" data-zh="为什么一阶差分会变化？">Why do the differences change?</h3>
+          <p data-en="For the basic quadratic function y = t², the first-difference pattern is 1, 3, 5, … . Multiplying the function by 10 multiplies every step by 10." data-zh="对于基本二次函数 y = t²，一阶差分规律是 1、3、5……。函数乘以 10 后，每一步的变化量也乘以 10。">For the basic quadratic function y = t², the first-difference pattern is 1, 3, 5, … . Multiplying the function by 10 multiplies every step by 10.</p>
+          <div class="equation">10 × 1, 10 × 3, 10 × 5<br>= 10, 30, 50</div>
+          <p data-en="The second differences are 30 − 10 = 20 and 50 − 30 = 20. Constant second differences are a key sign of a quadratic pattern when the input intervals are equal." data-zh="二阶差分为 30 − 10 = 20，以及 50 − 30 = 20。当输入间隔相等时，二阶差分保持恒定，是二次规律的重要特征。">The second differences are 30 − 10 = 20 and 50 − 30 = 20. Constant second differences are a key sign of a quadratic pattern when the input intervals are equal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="car-section">
+      <h2 data-en="What happens when we reverse the relationship?" data-zh="如果把这种关系反过来，会发生什么？">What happens when we reverse the relationship?</h2>
+      <p data-en="The original function takes time as its input and gives speed as its output. An inverse relationship reverses those roles: speed becomes the input, and time becomes the output. It answers a new question: “How long does it take the car to reach this speed?”" data-zh="原函数以时间为输入，以速度为输出。反函数关系则把两者的角色反过来：速度成为输入，时间成为输出。它回答了一个新的问题：“汽车需要多长时间才能达到这个速度？”">The original function takes time as its input and gives speed as its output. An inverse relationship reverses those roles: speed becomes the input, and time becomes the output. It answers a new question: “How long does it take the car to reach this speed?”</p>
+      <div class="car-inverse-grid">
+        <div class="car-panel">
+          <h3 data-en="Stage 1: the inverse is a function" data-zh="第一阶段：反函数仍然是函数">Stage 1: the inverse is a function</h3>
+          <p data-en="During acceleration, every speed from 0 to 90 km/h occurs at exactly one time. Starting with v = 10t² and solving for t gives:" data-zh="在加速阶段，从 0 到 90 km/h 的每一个速度都只对应一个时间。从 v = 10t² 出发，解出 t：">During acceleration, every speed from 0 to 90 km/h occurs at exactly one time. Starting with v = 10t² and solving for t gives:</p>
+          <div class="equation">t = √(v / 10), &nbsp; 0 ≤ v ≤ 90</div>
+          <p data-en="For example, a speed of 40 km/h is reached at t = 2 seconds." data-zh="例如，汽车在 2 秒时达到 40 km/h。">For example, a speed of 40 km/h is reached at t = 2 seconds.</p>
+        </div>
+        <div class="car-panel">
+          <h3 data-en="Stage 2: the inverse is not a function" data-zh="第二阶段：反关系不是函数">Stage 2: the inverse is not a function</h3>
+          <p data-en="The car travels at 90 km/h for the entire interval from just after 3 seconds through 8 seconds. The same speed corresponds to many different times. Reversing the relationship therefore gives more than one time for the input 90 km/h." data-zh="汽车在刚超过 3 秒到 8 秒的整个区间内都保持 90 km/h。同一个速度对应多个不同的时间。因此，反过来以后，输入 90 km/h 会得到多个时间。">The car travels at 90 km/h for the entire interval from just after 3 seconds through 8 seconds. The same speed corresponds to many different times. Reversing the relationship therefore gives more than one time for the input 90 km/h.</p>
+          <div class="inverse-callout" data-en="The inverse relation is a vertical segment at v = 90. It fails the vertical line test, so it is not an inverse function." data-zh="反关系在 v = 90 处是一条竖直线段。它不符合垂直线测试，因此不是反函数。">The inverse relation is a vertical segment at v = 90. It fails the vertical line test, so it is not an inverse function.</div>
+        </div>
+        <div class="car-panel">
+          <h3 data-en="Stage 3: the inverse is a function" data-zh="第三阶段：反函数仍然是函数">Stage 3: the inverse is a function</h3>
+          <p data-en="During deceleration, each speed between 0 and 90 km/h occurs once. Solve v = 90 − 18(t − 8) for t:" data-zh="在减速阶段，0 到 90 km/h 之间的每一个速度只出现一次。由 v = 90 − 18(t − 8) 解出 t：">During deceleration, each speed between 0 and 90 km/h occurs once. Solve v = 90 − 18(t − 8) for t:</p>
+          <div class="equation">t = 8 + (90 − v) / 18<br><small>0 ≤ v &lt; 90</small></div>
+          <p data-en="The inverse tells us when the car reaches a particular speed while slowing down." data-zh="这个反函数可以告诉我们，汽车在减速过程中什么时候达到某个指定速度。">The inverse tells us when the car reaches a particular speed while slowing down.</p>
+        </div>
+        <div class="car-panel">
+          <h3 data-en="The key condition: one-to-one" data-zh="关键条件：一一对应">The key condition: one-to-one</h3>
+          <p data-en="An inverse is a function only when the original function is one-to-one on the domain being considered. The acceleration and deceleration stages each meet this condition. The constant-speed stage does not." data-zh="只有当原函数在所讨论的定义域内是一一对应时，它的反关系才是函数。加速阶段和减速阶段都满足这个条件，而匀速阶段不满足。">An inverse is a function only when the original function is one-to-one on the domain being considered. The acceleration and deceleration stages each meet this condition. The constant-speed stage does not.</p>
+          <div class="inverse-callout" data-en="The inverse relationship is a reflection across y = x. But that reflection is not always a function." data-zh="反关系的图像是原函数图像关于 y = x 的对称图形。但这个对称图形并不一定是函数。">The inverse relationship is a reflection across y = x. But that reflection is not always a function.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="graph-card" style="margin-top:22px;">
+      <h3 style="text-align:center" data-en="The inverse relationship: speed becomes the input" data-zh="反关系图像：速度成为输入">The inverse relationship: speed becomes the input</h3>
+      <svg viewBox="0 0 820 390" role="img" aria-label="Inverse relation graph with two function branches and a vertical segment at speed 90">
+        <defs><pattern id="inverseGrid" width="48" height="28" patternUnits="userSpaceOnUse"><path d="M48 0H0V28" fill="none" stroke="#dce6ef" stroke-width="1"/></pattern></defs>
+        <rect x="75" y="25" width="690" height="280" fill="url(#inverseGrid)"/>
+        <path d="M75 25V305H765" fill="none" stroke="#25415e" stroke-width="2.5"/>
+        <g fill="#526982" font-size="12" text-anchor="middle"><text x="75" y="325">0</text><text x="420" y="325">45</text><text x="765" y="325">90</text></g>
+        <g fill="#526982" font-size="12" text-anchor="end"><text x="63" y="309">0</text><text x="63" y="225">4</text><text x="63" y="137">8</text><text x="63" y="29">13</text></g>
+        <g stroke="#9fb2c4" stroke-dasharray="4 5"><path d="M420 25V305M765 25V305M75 137H765M75 221H765"/></g>
+        <path d="M75 305 Q250 305 765 221" fill="none" stroke="#287fc2" stroke-width="5" stroke-linecap="round"/>
+        <path d="M765 221V137" fill="none" stroke="#20a27a" stroke-width="5" stroke-dasharray="7 6"/>
+        <path d="M765 137L75 25" fill="none" stroke="#e58b36" stroke-width="5" stroke-linecap="round"/>
+        <g fill="#287fc2" font-size="13" font-weight="700"><text x="165" y="278">Acceleration inverse</text></g>
+        <g fill="#16815f" font-size="13" font-weight="700"><text x="550" y="177">Not a function</text></g>
+        <g fill="#c77725" font-size="13" font-weight="700"><text x="475" y="64">Deceleration inverse</text></g>
+        <g fill="#25415e" font-size="14" font-weight="700"><text x="420" y="365" text-anchor="middle">Speed (km/h)</text><text transform="translate(18 165) rotate(-90)" text-anchor="middle">Time (seconds)</text></g>
+      </svg>
+      <p class="graph-caption" data-en="The constant-speed stage becomes a vertical segment: one speed value corresponds to many times, so the inverse relation is not a function." data-zh="匀速阶段在反关系图像中变成一条竖直线段：同一个速度对应多个时间，因此反关系不是函数。">The constant-speed stage becomes a vertical segment: one speed value corresponds to many times, so the inverse relation is not a function.</p>
+    </div>
+
+    <section class="car-section">
+      <h2 data-en="How does the coefficient change a quadratic graph?" data-zh="二次函数的系数如何改变图像？">How does the coefficient change a quadratic graph?</h2>
+      <p data-en="Now compare three simplified quadratic speed models over the same three-second interval. Each starts from zero, but the coefficient a changes how quickly the output grows." data-zh="现在，我们比较三个在相同三秒区间内的简化二次速度模型。它们都从零开始，但系数 a 不同，输出增长的速度也不同。">Now compare three simplified quadratic speed models over the same three-second interval. Each starts from zero, but the coefficient a changes how quickly the output grows.</p>
+      <div class="car-panel">
+        <div class="car-table-wrap"><table class="car-table"><thead><tr><th data-en="Model" data-zh="模型">Model</th><th>Function</th><th data-en="Speed at 3 s" data-zh="3 秒时的速度">Speed at 3 s</th></tr></thead><tbody><tr><td data-en="Slower increase" data-zh="较慢增长">Slower increase</td><td>v = 5t²</td><td>45 km/h</td></tr><tr><td data-en="Medium increase" data-zh="中等增长">Medium increase</td><td>v = 10t²</td><td>90 km/h</td></tr><tr><td data-en="Faster increase" data-zh="较快增长">Faster increase</td><td>v = 20t²</td><td>180 km/h</td></tr></tbody></table></div>
+        <img class="comparison-image" src="assets/real-life/car-speed-coefficient-comparison.png" alt="Comparison of the quadratic speed models v equals 5t squared, 10t squared, and 20t squared">
+        <p data-en="A larger positive coefficient makes the outputs grow more rapidly for the same time values, and the parabola becomes narrower. The 180 km/h result is a mathematical comparison, not a recommendation or a realistic speed for the original 90 km/h road." data-zh="在相同时间下，正系数越大，输出增长越快，抛物线也越窄。180 km/h 只是数学比较的结果，并不是驾驶建议，也不符合前面限速 90 km/h 的乡间公路情境。">A larger positive coefficient makes the outputs grow more rapidly for the same time values, and the parabola becomes narrower. The 180 km/h result is a mathematical comparison, not a recommendation or a realistic speed for the original 90 km/h road.</p>
+      </div>
+    </section>
+
+    <section class="car-section car-final">
+      <p class="car-eyebrow" data-en="THE BIG IDEA" data-zh="核心思想">THE BIG IDEA</p>
+      <h2 data-en="One real-life story. Many mathematical connections." data-zh="一个生活故事，串联多种数学知识。">One real-life story. Many mathematical connections.</h2>
+      <p data-en="A car’s journey is more than a speed graph. It gives us a way to connect functions, graphs, domains and ranges, rates of change, differences, coefficients, and inverse relationships. Mathematics becomes easier to understand when we can see how its ideas describe the world around us." data-zh="汽车的旅程不仅仅是一张速度图。它把函数、图像、定义域与值域、变化率、一阶与二阶差分、系数以及反函数联系起来。当我们看到数学概念如何描述身边的世界时，理解数学就会变得更加具体。">A car’s journey is more than a speed graph. It gives us a way to connect functions, graphs, domains and ranges, rates of change, differences, coefficients, and inverse relationships. Mathematics becomes easier to understand when we can see how its ideas describe the world around us.</p>
+      <p><a class="car-back" href="about.html" data-en="Explore more about our learning approach →" data-zh="进一步了解我们的学习理念 →">Explore more about our learning approach →</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal"><a href="privacy.html" data-legal="privacy">Privacy Policy</a><a href="terms.html" data-legal="terms">Terms of Service</a><a href="index.html" data-legal="home">Home</a></nav>
+    <p>© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+  <script>
+  (() => {
+    const navText = {
+      en: ["Home", "About", "Math Education", "AI Education", "My Books", "Resources", "Contact"],
+      zh: ["首页", "关于我们", "数学教育", "人工智能教育", "我的书籍", "学习资源", "联系我们"]
+    };
+    const legalText = { en: ["Privacy Policy", "Terms of Service", "Home"], zh: ["隐私政策", "服务条款", "首页"] };
+    const buttons = document.querySelectorAll(".flag[data-language]");
+    function setLanguage(lang) {
+      const language = lang === "zh" ? "zh" : "en";
+      document.documentElement.lang = language === "zh" ? "zh-CN" : "en-CA";
+      document.querySelectorAll("[data-en][data-zh]").forEach(el => {
+        el.innerHTML = el.getAttribute(language === "zh" ? "data-zh" : "data-en");
+      });
+      document.querySelectorAll(".site-nav [data-nav]").forEach((el, i) => el.textContent = navText[language][i]);
+      document.querySelectorAll(".site-footer [data-legal]").forEach((el, i) => el.textContent = legalText[language][i]);
+      buttons.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.language === language)));
+      document.title = language === "zh" ? "生活中的数学：一辆汽车的旅程 | Kiwi 爱AI Study" : "Math in Real Life: A Car’s Journey | Kiwi 爱AI Study";
+      try { localStorage.setItem("kiwi-site-language", language); } catch(e) {}
+    }
+    buttons.forEach(b => b.addEventListener("click", () => setLanguage(b.dataset.language)));
+    let saved = "en";
+    try { saved = localStorage.getItem("kiwi-site-language") || "en"; } catch(e) {}
+    setLanguage(saved);
+    window.addEventListener("pageshow", () => {
+      let current = "en";
+      try { current = localStorage.getItem("kiwi-site-language") || "en"; } catch(e) {}
+      setLanguage(current);
+    });
+  })();
+  </script>
+</body>
+</html>

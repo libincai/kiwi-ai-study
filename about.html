@@ -24,9 +24,9 @@
     <nav class="site-nav" aria-label="Primary">
       <a href="index.html" data-nav="home">Home</a>
       <a class="active" href="about.html" data-nav="about">About</a>
-      <a href="#" data-nav="math">Math Education</a>
+      <a href="math-education.html" data-nav="math">Math Education</a>
       <a href="#" data-nav="ai">AI Education</a>
-      <a href="#" data-nav="books">My Books</a>
+      <a href="books.html" data-nav="books">My Books</a>
       <a href="#" data-nav="resources">Resources</a>
       <a href="#" data-nav="contact">Contact</a>
       <span class="flags" aria-label="Languages">
@@ -152,6 +152,12 @@
   let saved = "en";
   try { saved = localStorage.getItem("kiwi-site-language") || "en"; } catch(e) {}
   setLanguage(saved);
+  // Re-apply the shared language when this page is restored from browser history.
+  window.addEventListener("pageshow", () => {
+    let current = "en";
+    try { current = localStorage.getItem("kiwi-site-language") || "en"; } catch(e) {}
+    setLanguage(current);
+  });
 })();
 </script>
 
