@@ -891,3 +891,38 @@ body.home-page .hero::before {
   z-index: 5;
   pointer-events: none;
 }
+
+
+/* Sherry Cai signature wordmark with the reference's elegant green arc. */
+body.home-page .author-wrap {
+  justify-content: center;
+  align-items: flex-start;
+}
+body.home-page .author-image-link {
+  display: block;
+  width: 170px;
+  height: 50px;
+  line-height: 0;
+}
+body.home-page .author-signature-image {
+  display: block;
+  width: 170px;
+  height: 50px;
+  object-fit: contain;
+}
+
+
+/* Use the exact Sherry Cai wordmark and green arc cropped from the approved reference. */
+body.home-page .author-image-link {
+  width: 170px !important;
+  height: 55px !important;
+}
+body.home-page .author-signature-image {
+  width: 170px !important;
+  height: 55px !important;
+  object-fit: contain !important;
+}
+
+
+/* Center the Sherry Cai wordmark slightly lower within the header row. */
+body.home-page .author-wrap { transform: translateY(5px); }
