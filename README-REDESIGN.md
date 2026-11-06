@@ -22,3 +22,9 @@ The ZIP paths start at the repository root. Do not extract it into an additional
 - Existing book cover and social-channel image assets are retained.
 - Existing page copy, navigation labels, privacy page, terms page, and verification TXT file are retained.
 - The navigation and content links that were `#` placeholders in the original project remain placeholders; destination pages/URLs have not been invented.
+
+
+## Book retailer page
+- `speedy-playful-math-magic.html` — Google-style retailer directory for *Speedy & Playful Math Magic*.
+- The first book card on `index.html` now opens this page.
+- Retailer listings are curated static links. Review links periodically because retailer stock, prices, and product pages can change.
