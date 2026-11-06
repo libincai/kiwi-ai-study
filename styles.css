@@ -1802,3 +1802,142 @@ html[lang="zh-CN"] body:not(.home-page) .page-banner .page-banner-inner > p:not(
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
 }
+
+
+/* Header signature refinement: reduce the Sherry Cai wordmark by 20%.
+   Keep the brand-lockup column and divider in place; center the smaller mark
+   within its existing column so the navigation layout does not shift. */
+body .author-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .author-image-link {
+  width: 136px !important;
+  height: 44px !important;
+  margin-inline: auto;
+  overflow: visible;
+}
+body .author-signature-image {
+  width: 136px !important;
+  height: 44px !important;
+  max-width: 100%;
+  object-fit: contain !important;
+}
+@media (max-width: 1250px) {
+  body .author-image-link,
+  body .author-signature-image {
+    width: 116px !important;
+    height: 38px !important;
+  }
+}
+@media (max-width: 620px) {
+  body .author-image-link,
+  body .author-signature-image {
+    width: 104px !important;
+    height: 34px !important;
+  }
+}
+
+
+/* Further reduce the header signature to 80% of the previous displayed size. */
+body .author-image-link,
+body .author-signature-image {
+  width: 109px !important;
+  height: 35px !important;
+}
+@media (max-width: 1250px) {
+  body .author-image-link,
+  body .author-signature-image {
+    width: 93px !important;
+    height: 30px !important;
+  }
+}
+@media (max-width: 620px) {
+  body .author-image-link,
+  body .author-signature-image {
+    width: 83px !important;
+    height: 27px !important;
+  }
+}
+
+
+/* Definitive signature sizing override.
+   The earlier homepage selector body.home-page .author-signature-image
+   had higher specificity than the previous generic body selector.
+   Match that specificity so this size actually applies on every page. */
+body.home-page .author-image-link,
+body.home-page .author-signature-image,
+body.about-page .author-image-link,
+body.about-page .author-signature-image,
+body .author-image-link,
+body .author-signature-image {
+  width: 136px !important;
+  height: 44px !important;
+  max-width: 100%;
+  object-fit: contain !important;
+}
+body.home-page .author-wrap,
+body.about-page .author-wrap {
+  justify-content: center !important;
+  align-items: center !important;
+}
+@media (max-width: 1250px) {
+  body.home-page .author-image-link,
+  body.home-page .author-signature-image,
+  body.about-page .author-image-link,
+  body.about-page .author-signature-image,
+  body .author-image-link,
+  body .author-signature-image {
+    width: 116px !important;
+    height: 38px !important;
+  }
+}
+@media (max-width: 620px) {
+  body.home-page .author-image-link,
+  body.home-page .author-signature-image,
+  body.about-page .author-image-link,
+  body.about-page .author-signature-image,
+  body .author-image-link,
+  body .author-signature-image {
+    width: 104px !important;
+    height: 34px !important;
+  }
+}
+
+
+/* Final header signature scale: 80% of the currently approved size.
+   Keep the existing header column, divider, and alignment unchanged. */
+body.home-page .author-image-link,
+body.home-page .author-signature-image,
+body.about-page .author-image-link,
+body.about-page .author-signature-image,
+body .author-image-link,
+body .author-signature-image {
+  width: 109px !important;
+  height: 35px !important;
+  max-width: 100%;
+  object-fit: contain !important;
+}
+@media (max-width: 1250px) {
+  body.home-page .author-image-link,
+  body.home-page .author-signature-image,
+  body.about-page .author-image-link,
+  body.about-page .author-signature-image,
+  body .author-image-link,
+  body .author-signature-image {
+    width: 93px !important;
+    height: 30px !important;
+  }
+}
+@media (max-width: 620px) {
+  body.home-page .author-image-link,
+  body.home-page .author-signature-image,
+  body.about-page .author-image-link,
+  body.about-page .author-signature-image,
+  body .author-image-link,
+  body .author-signature-image {
+    width: 83px !important;
+    height: 27px !important;
+  }
+}
