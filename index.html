@@ -9,13 +9,22 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="index.html" aria-label="Kiwi 爱AI Study home">
-      <img class="logo" src="assets/logo/kiwi-ai-study-logo.png" alt="Kiwi 爱AI Study logo">
-    </a>
-    <span class="divider" aria-hidden="true"></span>
-    <div class="author-wrap">
-      <a class="author" href="#">Sherry Cai</a>
-      <span class="author-underline" aria-hidden="true"></span>
+    <div class="brand-lockup">
+      <a class="logo-link" href="index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="assets/logo/kiwi-ai-study-logo.png" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn">Learn</span><span class="tag-sep"> • </span><span class="tag-create">Create</span><span class="tag-sep"> • </span><span class="tag-share">Share</span><span class="tag-sep"> • </span><span class="tag-grow">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author" href="#">Sherry Cai</a>
+        <span class="author-underline" aria-hidden="true">
+          <svg viewBox="0 0 140 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 8C36 2 104 2 138 8" stroke="#5fa832" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </div>
     </div>
     <nav class="site-nav" aria-label="Primary">
       <a class="active" href="index.html">Home</a>
@@ -26,8 +35,12 @@
       <a href="#">Resources</a>
       <a href="#">Contact</a>
       <span class="flags" aria-label="Languages">
-        <span class="flag" title="Canada">🇨🇦</span>
-        <span class="flag" title="China">🇨🇳</span>
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
       </span>
     </nav>
   </header>
@@ -35,17 +48,20 @@
   <section class="hero" aria-labelledby="hero-heading">
     <img src="assets/hero/mountain-sunrise-hero.png" alt="Sunrise over mountains and forest">
     <div class="hero-copy">
-      <h1 id="hero-heading">Making Learning <span class="highlight">Smarter</span>, Simpler &amp; More Meaningful</h1>
+      <h1 id="hero-heading">Making Learning<br>Smarter, Simpler &amp;<br>More Meaningful</h1>
+      <svg class="hero-swoosh" viewBox="0 0 300 20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 C75 -2 205 -2 296 10" fill="none" stroke="#f5b400" stroke-width="5" stroke-linecap="round"/></svg>
     </div>
   </section>
 
   <section class="features" aria-label="Education focus">
     <a class="feature-card math" href="#">
       <span class="feature-icon" aria-hidden="true">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="10" width="44" height="44" rx="10" stroke="#1260e8" stroke-width="3"/>
-          <path d="M22 32h20M32 22v20" stroke="#1260e8" stroke-width="3" stroke-linecap="round"/>
-          <path d="M24 24l16 16M40 24L24 40" stroke="#1260e8" stroke-width="3" stroke-linecap="round"/>
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="7" y="7" width="50" height="50" rx="8" stroke="#0756df" stroke-width="3.5"/>
+          <path d="M32 8v48M8 32h48" stroke="#0756df" stroke-width="2.5"/>
+          <g fill="#0756df" font-family="Segoe UI,Tahoma,sans-serif" font-size="18" font-weight="700" text-anchor="middle">
+            <text x="20" y="26">+</text><text x="44" y="26">−</text><text x="20" y="50">×</text><text x="44" y="50">÷</text>
+          </g>
         </svg>
       </span>
       <span class="feature-body">
@@ -56,10 +72,10 @@
     </a>
     <a class="feature-card ai" href="#">
       <span class="feature-icon" aria-hidden="true">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="12" y="12" width="40" height="40" rx="8" stroke="#1260e8" stroke-width="3"/>
-          <rect x="22" y="22" width="20" height="20" rx="4" fill="#1260e8"/>
-          <text x="32" y="37" text-anchor="middle" fill="#fff" font-size="11" font-family="Arial,sans-serif" font-weight="700">AI</text>
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="14" y="14" width="36" height="36" rx="7" stroke="#0756df" stroke-width="3.5"/>
+          <path d="M23 5v9M32 5v9M41 5v9M23 50v9M32 50v9M41 50v9M5 23h9M5 32h9M5 41h9M50 23h9M50 32h9M50 41h9" stroke="#0756df" stroke-width="3.5" stroke-linecap="round"/>
+          <text x="32" y="38" text-anchor="middle" fill="#0756df" font-size="17" font-family="Segoe UI,Tahoma,sans-serif" font-weight="800">AI</text>
         </svg>
       </span>
       <span class="feature-body">
@@ -104,13 +120,16 @@
   </section>
 
   <section class="social" aria-labelledby="social-heading">
-    <h2 id="social-heading">Follow Our Channels</h2>
-    <div class="social-grid">
-      <a href="#" aria-label="TikTok"><img src="assets/social/TikTok-reference.png" alt="TikTok"></a>
-      <a href="#" aria-label="Douyin"><img src="assets/social/Douyin-reference.png" alt="Douyin"></a>
-      <a href="#" aria-label="WeChat Channels"><img src="assets/social/WeChat-Channels-reference.png" alt="WeChat Channels"></a>
-      <a href="#" aria-label="Xiaohongshu"><img src="assets/social/Xiaohongshu-reference.png" alt="Xiaohongshu"></a>
-      <a href="#" aria-label="YouTube"><img src="assets/social/YouTube-reference.png" alt="YouTube"></a>
+    <div class="social-bar">
+      <h2 id="social-heading">Follow Our Channels</h2>
+      <span class="bar-divider" aria-hidden="true"></span>
+      <div class="social-grid">
+        <a href="#" aria-label="TikTok"><img src="assets/social/TikTok-reference.png" alt="TikTok"></a>
+        <a href="#" aria-label="Douyin"><img src="assets/social/Douyin-reference.png" alt="Douyin"></a>
+        <a href="#" aria-label="WeChat Channels"><img src="assets/social/WeChat-Channels-reference.png" alt="WeChat Channels"></a>
+        <a href="#" aria-label="Xiaohongshu"><img src="assets/social/Xiaohongshu-reference.png" alt="Xiaohongshu"></a>
+        <a href="#" aria-label="YouTube"><img src="assets/social/YouTube-reference.png" alt="YouTube"></a>
+      </div>
     </div>
   </section>
 
@@ -121,5 +140,123 @@
     </nav>
     <p>© 2026 Kiwi 爱AI Study. All rights reserved.</p>
   </footer>
+
+<script>
+(() => {
+  const translations = {
+    en: {
+      pageTitle: "Kiwi 爱AI Study | Sherry Cai",
+      nav: ["Home", "About", "Math Education", "AI Education", "My Books", "Resources", "Contact"],
+      hero: "Making Learning<br>Smarter, Simpler &amp;<br>More Meaningful",
+      featureTitles: ["Math Education", "AI Education"],
+      featureDescriptions: [
+        "Build strong foundations, develop thinking skills, and solve real problems.",
+        "Learn and use AI tools effectively for study, creation, and daily life."
+      ],
+      booksTitle: "Latest Books",
+      viewAll: "View All Books →",
+      bookTitles: [
+        "Speedy &amp; Playful Math Magic",
+        "Math Quick Reference Library",
+        "Math Quick Reference Library – Advanced"
+      ],
+      bookDescriptions: [
+        "A fun and effective guide to building math skills, problem solving, and number sense.",
+        "A concise and visual guide to key math concepts, formulas, and problem-solving strategies.",
+        "Extended topics, advanced methods, and deeper problem solving for higher-level learning."
+      ],
+      learnMore: "Learn More →",
+      socialTitle: "Follow Our Channels",
+      legal: ["Privacy Policy", "Terms of Service"],
+      copyright: "© 2026 Kiwi 爱AI Study. All rights reserved."
+    },
+    zh: {
+      pageTitle: "Kiwi 爱AI Study | Sherry Cai",
+      nav: ["首页", "关于我们", "数学教育", "人工智能教育", "我的书籍", "学习资源", "联系我们"],
+      hero: "让学习变得<br>更智能、更简单，<br>更有意义",
+      featureTitles: ["数学教育", "人工智能教育"],
+      featureDescriptions: [
+        "夯实数学基础，培养思维能力，并学会解决实际问题。",
+        "学习并有效运用人工智能工具，助力学习、创作与日常生活。"
+      ],
+      booksTitle: "最新书籍",
+      viewAll: "查看全部书籍 →",
+      bookTitles: [
+        "趣味数学魔法",
+        "数学速查宝典",
+        "数学速查宝典——进阶版"
+      ],
+      bookDescriptions: [
+        "一本有趣而实用的指南，帮助培养数学技能、解题能力和数感。",
+        "以简明直观的方式介绍重要数学概念、公式和解题策略。",
+        "涵盖更深入的主题、进阶方法和更高层次的数学思维训练。"
+      ],
+      learnMore: "了解更多 →",
+      socialTitle: "关注我们的社交平台",
+      legal: ["隐私政策", "服务条款"],
+      copyright: "© 2026 Kiwi 爱AI Study。保留所有权利。"
+    }
+  };
+
+  const buttons = document.querySelectorAll(".flag[data-language]");
+  const setText = (selector, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.textContent = value;
+  };
+
+  function setLanguage(language) {
+    const t = translations[language] || translations.en;
+    document.documentElement.lang = language === "zh" ? "zh-CN" : "en-CA";
+    document.title = t.pageTitle;
+
+    document.querySelectorAll(".site-nav > a").forEach((el, i) => {
+      if (t.nav[i]) el.textContent = t.nav[i];
+    });
+
+    const hero = document.querySelector("#hero-heading");
+    if (hero) hero.innerHTML = t.hero;
+
+    document.querySelectorAll(".feature-card").forEach((card, i) => {
+      const title = card.querySelector(".feature-body b");
+      const desc = card.querySelector(".feature-body p");
+      if (title) title.textContent = t.featureTitles[i];
+      if (desc) desc.textContent = t.featureDescriptions[i];
+    });
+
+    setText("#books-heading", t.booksTitle);
+    setText(".view-all", t.viewAll);
+
+    document.querySelectorAll(".book-card").forEach((card, i) => {
+      const title = card.querySelector("h3");
+      const desc = card.querySelector("p");
+      const more = card.querySelector(".learn-more");
+      if (title) title.textContent = t.bookTitles[i];
+      if (desc) desc.textContent = t.bookDescriptions[i];
+      if (more) more.textContent = t.learnMore;
+    });
+
+    setText("#social-heading", t.socialTitle);
+    const legalLinks = document.querySelectorAll(".site-footer nav a");
+    legalLinks.forEach((el, i) => { if (t.legal[i]) el.textContent = t.legal[i]; });
+    setText(".site-footer > p", t.copyright);
+
+    buttons.forEach(button => {
+      const active = button.dataset.language === language;
+      button.setAttribute("aria-pressed", String(active));
+    });
+
+    try { localStorage.setItem("kiwi-site-language", language); } catch (e) {}
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => setLanguage(button.dataset.language));
+  });
+
+  let saved = "en";
+  try { saved = localStorage.getItem("kiwi-site-language") || "en"; } catch (e) {}
+  setLanguage(saved);
+})();
+</script>
+
 </body>
 </html>

@@ -1,61 +1,156 @@
+/* KIWI 爱AI Study — homepage styling aligned to the approved 1536 × 1024 mockup */
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;color:#101d55;background:#fff}
+:root{--navy:#101747;--blue:#0756df;--text:#101747;--soft-blue:#e5f2ff;--soft-lilac:#f0efff}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Tahoma,sans-serif;color:var(--text);background:#fff}
 a{color:inherit}
-.site-header{display:flex;align-items:center;gap:18px;padding:12px clamp(16px,4%,48px);background:#fff;border-bottom:1px solid #e8edf7}
-.logo{width:210px;max-height:58px;object-fit:contain}
-.divider{height:42px;border-left:1px solid #c9d3ea;flex-shrink:0}
-.author-wrap{display:flex;flex-direction:column;align-items:flex-start;flex-shrink:0}
-.author{font:700 28px Georgia,"Times New Roman",serif;color:#101b4e;text-decoration:none;line-height:1.1}
-.author-underline{display:block;width:100%;height:4px;margin-top:4px;border-radius:999px;background:linear-gradient(90deg,#7bc043,#9fd356)}
-.site-nav{display:flex;align-items:center;gap:clamp(8px,1.2vw,18px);margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
-.site-nav a{font-size:14px;font-weight:700;text-decoration:none;color:#101b4e;white-space:nowrap;padding:10px 4px}
-.site-nav a.active{background:#1260e8;color:#fff;padding:11px 16px;border-radius:12px}
-.flags{display:flex;gap:10px;align-items:center;margin-left:8px}
-.flag{font-size:22px;line-height:1;text-decoration:none}
-.hero{position:relative;background:#dbe8f5}
-.hero img{width:100%;height:clamp(250px,42vw,365px);object-fit:cover;display:block}
-.hero-copy{position:absolute;left:clamp(20px,6%,80px);top:clamp(24px,12%,72px);max-width:min(640px,78%)}
-.hero-copy h1{margin:0;font:700 clamp(30px,4vw,56px)/1.05 Georgia,"Times New Roman",serif;color:#101b4e}
-.hero-copy .highlight{position:relative;display:inline-block}
-.hero-copy .highlight::after{content:"";position:absolute;left:0;right:8%;bottom:-6px;height:5px;border-radius:999px;background:#f2b900}
-.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:28px clamp(16px,4%,48px)}
-.feature-card{display:flex;align-items:center;gap:18px;padding:24px 26px;border-radius:20px;text-decoration:none;color:#101b4e;box-shadow:0 8px 24px #14285b12;transition:transform .15s ease,box-shadow .15s ease}
-.feature-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #14285b20}
-.feature-card.math{background:#eaf5ff}
-.feature-card.ai{background:#f1efff}
-.feature-icon{flex-shrink:0;width:72px;height:72px;border-radius:18px;background:#fff;display:grid;place-items:center;box-shadow:inset 0 0 0 1px #d7e4fb}
-.feature-icon svg{width:44px;height:44px}
+.site-header{min-height:73px;display:flex;align-items:center;gap:clamp(14px,1.55vw,26px);padding:7px clamp(24px,4.55vw,70px);background:#fff;border-bottom:1px solid #e6eaf2}
+.brand-lockup{display:grid;grid-template-columns:215px 1px 170px;grid-template-rows:38px 16px;column-gap:clamp(14px,1.8vw,28px);row-gap:0;align-items:center;flex:0 0 auto}
+.logo-link{grid-column:1;grid-row:1;justify-self:center;align-self:end;line-height:0}
+.logo{display:block;width:215px;height:38px;object-fit:contain}
+.logo-tagline{grid-column:1;grid-row:2;margin:0;justify-self:center;font-size:12px;font-weight:800;line-height:15px;letter-spacing:.01em;white-space:nowrap}
+.tag-learn{color:#1260e8}.tag-create{color:#e53935}.tag-share{color:#238b43}.tag-grow{color:#6c48a8}.tag-sep{color:#252525}
+.brand-lockup>.divider{grid-column:2;grid-row:1/-1;align-self:center;height:43px;width:0;border-left:1.5px solid #2945a1}
+.author-wrap{grid-column:3;grid-row:1/-1;align-self:center;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.author{font:700 34px/1 "Segoe UI",Tahoma,sans-serif;color:#101747;text-decoration:none;white-space:nowrap}
+.author-underline{display:block;width:88%;height:10px;margin:4px 0 0 2px}
+.author-underline svg{width:100%;height:100%;display:block}
+.site-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(7px,1.25vw,22px);margin-left:auto;min-width:0;white-space:nowrap}
+.site-nav a{font-size:16px;font-weight:700;text-decoration:none;color:#101747;padding:10px 2px}
+.site-nav a.active{background:#0756df;color:#fff;padding:10px 20px;border-radius:13px}
+.flags{display:flex;align-items:center;gap:8px;margin-left:4px;padding-left:20px;border-left:1.5px solid #2945a1}
+.flag{display:inline-flex;align-items:center;justify-content:center;width:auto;height:24px;padding:0;line-height:0;flex:0 0 auto}.flag img{display:block;width:auto;height:24px;max-width:40px;object-fit:contain;border-radius:0}
+.hero{position:relative;width:100%;overflow:hidden;background:#dceafa;aspect-ratio:2172/405}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+.hero-copy{position:absolute;left:6.45%;top:18%;width:min(510px,43%);transform:none}
+.hero-copy h1{margin:0;font:700 clamp(34px,3.15vw,49px)/1.02 "Segoe UI",Tahoma,sans-serif;color:#101747;letter-spacing:-.025em}
+.hero-swoosh{display:block;width:295px;max-width:78%;height:22px;margin-top:9px}
+.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;padding:19px clamp(24px,3.4vw,53px) 14px}
+.feature-card{min-height:126px;display:flex;align-items:center;gap:clamp(22px,3vw,48px);padding:12px 32px 12px 47px;border-radius:20px;text-decoration:none;color:#101747;box-shadow:none;transition:transform .15s ease,filter .15s ease}
+.feature-card.math{background:#e3f1ff}
+.feature-card.ai{background:#f0efff}
+.feature-card:hover{transform:translateY(-2px);filter:saturate(1.06)}
+.feature-icon{width:88px;height:88px;flex:0 0 88px;display:grid;place-items:center;background:transparent}
+.feature-icon svg{width:82px;height:82px}
 .feature-body{flex:1;min-width:0}
-.feature-body b{display:block;font:700 clamp(22px,2.4vw,28px) Georgia,"Times New Roman",serif;margin-bottom:8px}
-.feature-body p{margin:0;font-size:17px;line-height:1.45;color:#1b2f66}
-.feature-arrow{flex-shrink:0;font-size:28px;color:#1260e8;font-weight:700}
-.books{padding:12px clamp(16px,4%,48px) 28px}
-.books-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1px solid #d8e0f0;padding-bottom:12px;margin-bottom:24px}
-.books-head h2{margin:0;font:700 clamp(28px,3vw,34px) Georgia,"Times New Roman",serif;color:#101b4e}
-.view-all{font-size:15px;font-weight:700;color:#1260e8;text-decoration:none;white-space:nowrap}
-.book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.book-card{display:flex;gap:16px;align-items:flex-start;padding:16px;border-radius:16px;background:#fff;box-shadow:0 8px 24px #14285b18;text-decoration:none;color:#101b4e}
-.book-card img{width:108px;height:auto;flex-shrink:0;object-fit:contain;border-radius:8px}
-.book-card h3{margin:0 0 8px;font:700 18px/1.25 Georgia,"Times New Roman",serif}
-.book-card p{margin:0 0 10px;font-size:14px;line-height:1.45;color:#33467a}
-.learn-more{font-size:14px;font-weight:700;color:#1260e8;text-decoration:none}
-.social{margin:0 clamp(16px,4%,48px) 28px;padding:28px clamp(16px,4%,32px);background:#f7f9ff;border-radius:24px;text-align:center}
-.social h2{margin:0 0 20px;font:700 clamp(26px,3vw,34px) Georgia,"Times New Roman",serif;color:#101b4e}
-.social-grid{display:flex;justify-content:center;align-items:center;gap:clamp(10px,2vw,18px);flex-wrap:wrap}
-.social-grid a{display:block;width:min(170px,28vw);text-decoration:none}
-.social-grid img{width:100%;height:auto;display:block}
-.site-footer{text-align:center;padding:28px 20px 36px;background:#eef1f7;color:#33467a;font-size:14px}
+.feature-body b{display:block;margin:0 0 3px;font:700 clamp(25px,2.35vw,36px)/1.05 "Segoe UI",Tahoma,sans-serif;color:#101747}
+.feature-body p{margin:0;font-size:clamp(15px,1.45vw,22px);font-weight:500;line-height:1.22;color:#111735}
+.feature-arrow{flex:0 0 auto;font-size:38px;line-height:1;color:#0756df;font-weight:500;margin-left:4px}
+.books{padding:0 clamp(24px,3.4vw,53px) 30px}
+.books-head{display:flex;align-items:center;gap:32px;margin:0 0 14px;padding:0}
+.books-head h2{flex:0 0 auto;margin:0;font:700 clamp(29px,2.55vw,39px)/1.2 "Segoe UI",Tahoma,sans-serif;color:#101747}
+.books-head:after{content:"";height:1.5px;background:#3154bd;flex:1;min-width:20px}
+.view-all{order:1;flex:0 0 auto;font-size:20px;font-weight:700;color:#0756df;text-decoration:none;white-space:nowrap;margin-left:10px}
+.book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.book-card{height:289px;min-width:0;display:flex;align-items:center;gap:22px;padding:10px 15px;border-radius:23px;background:#fff;box-shadow:0 7px 19px rgba(31,62,119,.13);text-decoration:none;color:#101747;transition:transform .15s ease,box-shadow .15s ease}
+.book-card:hover{transform:translateY(-2px);box-shadow:0 11px 25px rgba(31,62,119,.18)}
+.book-card>img{width:42%;height:100%;max-width:198px;flex:0 0 42%;object-fit:contain;}
+.book-card>div{height:100%;min-width:0;display:flex;flex-direction:column;align-items:flex-start;padding:4px 0 5px}
+.book-card h3{margin:0 0 10px;font:700 clamp(18px,1.58vw,24px)/1.15 "Segoe UI",Tahoma,sans-serif;color:#101747;letter-spacing:-.025em}
+.book-card p{margin:0;font-size:clamp(14px,1.25vw,19px);font-weight:500;line-height:1.27;color:#101747}
+.learn-more{display:block;margin-top:auto;padding-bottom:3px;font-size:clamp(16px,1.45vw,22px);font-weight:700;color:#0756df;white-space:nowrap}
+.social{margin:2px clamp(24px,3.05vw,47px) 22px;padding:0}
+.social-bar{min-height:103px;display:flex;align-items:center;justify-content:space-between;gap:26px;padding:14px 30px;background:#eaf5ff;border-radius:29px}
+.social-bar h2{flex:0 0 auto;margin:0;font:700 clamp(24px,2.25vw,34px)/1.1 "Segoe UI",Tahoma,sans-serif;color:#101747;white-space:nowrap}
+.social-bar .bar-divider{height:42px;border-left:1.5px solid #2945a1;flex:0 0 auto}
+.social-grid{display:flex;align-items:center;justify-content:space-between;gap:clamp(8px,1.2vw,19px);flex:1;min-width:0}
+.social-grid a{display:block;line-height:0;text-decoration:none;flex:0 1 auto}
+.social-grid img{display:block;width:auto;height:59px;max-width:100%;object-fit:contain}
+.site-footer{text-align:center;padding:22px 20px 32px;background:#fff;color:#33467a;font-size:14px;border-top:1px solid #e8edf7}
 .site-footer nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:10px}
-.site-footer a{color:#1260e8;font-weight:700;text-decoration:none}
-a:focus-visible{outline:3px solid #f2b900;outline-offset:4px}
-@media(max-width:980px){
-  .site-header{flex-wrap:wrap}
-  .site-nav{order:5;width:100%;margin-left:0;justify-content:flex-start;overflow:auto;padding-bottom:4px}
-  .book-grid{grid-template-columns:1fr}
+.site-footer a{color:#0756df;font-weight:700;text-decoration:none}
+a:focus-visible{outline:3px solid #0756df;outline-offset:4px;border-radius:4px}
+@media(max-width:1250px){
+ .site-header{gap:12px;padding-left:24px;padding-right:24px}
+ .brand-lockup{grid-template-columns:180px 1px 145px;column-gap:14px}
+ .logo{width:180px}
+ .author{font-size:29px}
+ .site-nav{gap:8px}
+ .site-nav a{font-size:14px}
+ .site-nav a.active{padding:9px 13px}
+ .flags{padding-left:12px}
+ .feature-card{padding-left:25px;gap:20px}
+ .book-card{gap:13px;padding:10px}
+ .book-card>img{width:39%;flex-basis:39%}
+ .social-bar{gap:16px;padding:14px 20px}
+ .social-grid img{height:49px}
 }
-@media(max-width:720px){
-  .features{grid-template-columns:1fr}
-  .logo{width:155px}
-  .author{font-size:22px}
-  .book-card img{width:92px}
+@media(max-width:900px){
+ .site-header{flex-wrap:wrap;justify-content:center;padding:10px 20px}
+ .brand-lockup{margin:0 auto}
+ .site-nav{order:2;width:100%;justify-content:center;flex-wrap:wrap;white-space:normal}
+ .hero{aspect-ratio:3.8/1;min-height:220px}
+ .hero-copy{left:5%;top:16%;width:55%}
+ .hero-copy h1{font-size:clamp(27px,4.2vw,38px)}
+ .features{gap:14px;padding:16px 20px}
+ .feature-card{min-height:112px;padding:12px 16px;gap:14px}
+ .feature-icon{width:62px;height:62px;flex-basis:62px}
+ .feature-icon svg{width:60px;height:60px}
+ .feature-body b{font-size:23px}
+ .feature-body p{font-size:15px}
+ .feature-arrow{font-size:28px}
+ .books{padding-left:20px;padding-right:20px}
+ .book-grid{gap:14px}
+ .book-card{height:250px;gap:10px;padding:9px}
+ .book-card>img{width:38%;flex-basis:38%}
+ .book-card h3{font-size:17px}
+ .book-card p{font-size:13px}
+ .learn-more{font-size:16px}
+ .social{margin-left:20px;margin-right:20px}
+ .social-bar{flex-wrap:wrap;justify-content:center}
+ .social-bar h2{font-size:25px}
+ .social-grid{flex-basis:100%;justify-content:center}
+}
+@media(max-width:620px){
+ .site-header{padding:10px 12px}
+ .brand-lockup{grid-template-columns:155px 1px 120px;column-gap:10px;grid-template-rows:32px 14px}
+ .logo{width:155px;height:32px}
+ .logo-tagline{font-size:9px;line-height:13px}
+ .author{font-size:23px}
+ .author-underline{height:7px}
+ .site-nav{gap:4px}
+ .site-nav a{font-size:12px;padding:7px 5px}
+ .site-nav a.active{padding:7px 10px}
+ .flags{padding-left:7px;gap:4px}
+ .flag{height:20px}.flag img{height:20px;max-width:34px}
+ .hero{aspect-ratio:2.2/1;min-height:190px}
+ .hero-copy{left:5%;top:15%;width:62%}
+ .hero-copy h1{font-size:clamp(22px,5.5vw,32px)}
+ .hero-swoosh{margin-top:4px;width:180px;height:14px}
+ .features{grid-template-columns:1fr;padding:13px 14px;gap:10px}
+ .feature-card{min-height:104px;border-radius:16px}
+ .feature-body b{font-size:22px}
+ .feature-body p{font-size:14px}
+ .books{padding:5px 14px 22px}
+ .books-head{gap:10px;margin-bottom:12px;flex-wrap:wrap}
+ .books-head h2{font-size:28px}
+ .view-all{font-size:15px;margin-left:auto}
+ .books-head:after{display:none}
+ .book-grid{grid-template-columns:1fr;gap:12px}
+ .book-card{height:230px;padding:9px 13px;gap:17px}
+ .book-card>img{width:40%;flex-basis:40%;max-width:160px}
+ .book-card h3{font-size:19px}
+ .book-card p{font-size:14px}
+ .learn-more{font-size:17px}
+ .social{margin:0 14px 18px}
+ .social-bar{padding:17px 12px;border-radius:19px;gap:12px}
+ .social-bar h2{font-size:22px}
+ .social-bar .bar-divider{display:none}
+ .social-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;justify-items:center}
+ .social-grid img{height:46px}
+}
+/* Enlarge the first 3D book artwork without editing the image file */
+.book-card:first-child > img{transform:scale(1.4);transform-origin:center center;}
+
+/* Language flag controls */
+button.flag {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  border-radius: 2px;
+}
+button.flag:focus-visible {
+  outline: 2px solid #0756df;
+  outline-offset: 4px;
 }
