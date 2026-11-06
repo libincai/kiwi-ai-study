@@ -1546,7 +1546,7 @@ body.about-page .story-grid {
    The homepage hero is intentionally excluded and remains unchanged. */
 .compact-page-banner,
 .page-banner {
-  background-image: url("assets/hero/inner-banner-blue-gold.jpg") !important;
+  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
   background-size: 100% 100% !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -1556,7 +1556,7 @@ body.about-page .story-grid {
    Homepage hero remains completely unchanged. */
 body:not(.home-page) .compact-page-banner,
 body:not(.home-page) .page-banner {
-  background-image: url("assets/hero/inner-banner-blue-gold.jpg") !important;
+  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -1566,7 +1566,7 @@ body:not(.home-page) .page-banner {
 /* Final inner-banner rendering: clean rectangular artwork, rounded by CSS only. */
 body:not(.home-page) .compact-page-banner,
 body:not(.home-page) .page-banner {
-  background-image: url("assets/hero/inner-banner-blue-gold.jpg") !important;
+  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -2163,7 +2163,7 @@ body.home-page #hero-mobile-banner-image {
 @media (max-width: 700px) {
   body:not(.home-page) .compact-page-banner,
   body:not(.home-page) .page-banner {
-    background-image: url("assets/hero/inner-banner-mobile.png") !important;
+    background-image: url("../hero/inner-banner-mobile.png") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
@@ -2178,4 +2178,472 @@ body.home-page #hero-mobile-banner-image {
 .led-lab-feature-inner img { width:100%; height:auto; border-radius:12px; border:1px solid #dce7f1; }
 @media (max-width: 700px) {
   .led-lab-feature-inner { grid-template-columns:1fr; }
+}
+
+
+/* Unified inner banner for pages opened directly from the main navigation.
+   The home page hero is intentionally excluded. */
+body.about-page .compact-page-banner,
+body.edu-page > main .edu-hero,
+body.ai-page > main .ai-hero {
+  min-height: 190px !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+  margin-top: 0 !important;
+  margin-bottom: 30px !important;
+  padding: 28px clamp(28px, 5vw, 64px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 0 !important;
+  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border: 0 !important;
+  border-radius: 22px !important;
+  box-shadow: none !important;
+}
+body.about-page .compact-page-banner h1,
+body.edu-page > main .edu-hero h1,
+body.ai-page > main .ai-hero h1 {
+  margin: 0 0 9px !important;
+  color: #102d63 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: clamp(29px, 3.2vw, 38px) !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.025em !important;
+}
+body.about-page .compact-banner-subtitle,
+body.edu-page > main .edu-hero > p:not(.edu-kicker),
+body.ai-page > main .ai-hero > div > p:not(.ai-kicker) {
+  margin: 0 !important;
+  color: #35527e !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+  max-width: 900px !important;
+}
+body.edu-page > main .edu-hero .edu-kicker,
+body.ai-page > main .ai-hero .ai-kicker {
+  margin: 0 0 8px !important;
+  color: #244b83 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: .17em !important;
+}
+@media (max-width: 620px) {
+  body.about-page .compact-page-banner,
+  body.edu-page > main .edu-hero,
+  body.ai-page > main .ai-hero {
+    min-height: 150px !important;
+    padding: 20px !important;
+    border-radius: 17px !important;
+    margin-bottom: 22px !important;
+  }
+  body.about-page .compact-page-banner h1,
+  body.edu-page > main .edu-hero h1,
+  body.ai-page > main .ai-hero h1 {
+    font-size: 25px !important;
+  }
+  body.about-page .compact-banner-subtitle,
+  body.edu-page > main .edu-hero > p:not(.edu-kicker),
+  body.ai-page > main .ai-hero > div > p:not(.ai-kicker) {
+    font-size: 13px !important;
+  }
+}
+
+
+/* Navigation landing pages share the About page's exact inner-banner geometry.
+   About remains the source of truth; these rules only extend its styling to Math, AI and Books. */
+body.edu-page .about-compact-banner,
+body.ai-page .about-compact-banner {
+  width: min(1120px, 100%) !important;
+  max-width: 1120px !important;
+  height: clamp(140px, 9.24vw, 177px) !important;
+  min-height: 0 !important;
+  margin: 0 auto 34px !important;
+  padding: 0 clamp(26px, 5vw, 64px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border: 0 !important;
+  border-radius: 22px !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+body.edu-page .about-compact-banner h1,
+body.ai-page .about-compact-banner h1 {
+  margin: 0 0 8px !important;
+  color: #102d63 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: clamp(24px, 2vw, 28px) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -.025em !important;
+}
+body.edu-page .about-compact-banner .compact-banner-subtitle,
+body.ai-page .about-compact-banner .compact-banner-subtitle {
+  margin: 0 !important;
+  color: #0756df !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: .16em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+  max-width: 760px !important;
+}
+body.edu-page .edu-main,
+body.ai-page .ai-main {
+  padding-top: 0 !important;
+}
+@media (max-width: 700px) {
+  body.edu-page .about-compact-banner,
+  body.ai-page .about-compact-banner {
+    width: calc(100% - 36px) !important;
+    height: 150px !important;
+    min-height: 150px !important;
+    padding: 0 20px !important;
+    margin-bottom: 26px !important;
+  }
+  body.edu-page .about-compact-banner h1,
+  body.ai-page .about-compact-banner h1 {
+    font-size: 23px !important;
+  }
+  body.edu-page .about-compact-banner .compact-banner-subtitle,
+  body.ai-page .about-compact-banner .compact-banner-subtitle {
+    font-size: 9px !important;
+  }
+}
+
+
+/* Final approved standard: Math Education banner dimensions.
+   All four primary navigation landing pages use identical width, height, and inner spacing. */
+body.about-page .about-compact-banner,
+body.edu-page .about-compact-banner,
+body.ai-page .about-compact-banner {
+  width: min(1400px, calc(100% - 80px)) !important;
+  max-width: 1400px !important;
+  height: 175px !important;
+  min-height: 175px !important;
+  margin: 0 auto 30px !important;
+  padding: 0 64px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border: 0 !important;
+  border-radius: 22px !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+body.about-page .about-compact-banner h1,
+body.edu-page .about-compact-banner h1,
+body.ai-page .about-compact-banner h1 {
+  margin: 0 0 8px !important;
+  color: #102d63 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: clamp(24px, 2vw, 28px) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -.025em !important;
+}
+body.about-page .about-compact-banner .compact-banner-subtitle,
+body.edu-page .about-compact-banner .compact-banner-subtitle,
+body.ai-page .about-compact-banner .compact-banner-subtitle {
+  margin: 0 !important;
+  color: #0756df !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: .16em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+  max-width: 760px !important;
+}
+@media (max-width: 700px) {
+  body.about-page .about-compact-banner,
+  body.edu-page .about-compact-banner,
+  body.ai-page .about-compact-banner {
+    width: calc(100% - 36px) !important;
+    height: 150px !important;
+    min-height: 150px !important;
+    padding: 0 20px !important;
+    margin-bottom: 26px !important;
+    border-radius: 17px !important;
+  }
+  body.about-page .about-compact-banner h1,
+  body.edu-page .about-compact-banner h1,
+  body.ai-page .about-compact-banner h1 {
+    font-size: 23px !important;
+  }
+  body.about-page .about-compact-banner .compact-banner-subtitle,
+  body.edu-page .about-compact-banner .compact-banner-subtitle,
+  body.ai-page .about-compact-banner .compact-banner-subtitle {
+    font-size: 13.5px !important;
+    letter-spacing: .10em !important;
+  }
+}
+
+
+/* Final alignment correction: keep banner copy vertically centered.
+   Use a one-column grid so inherited flex direction cannot push the title to the top. */
+body.about-page .about-compact-banner,
+body.edu-page .about-compact-banner,
+body.ai-page .about-compact-banner {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: 1fr !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-items: start !important;
+}
+body.about-page .about-compact-banner .compact-banner-copy,
+body.edu-page .about-compact-banner .compact-banner-copy,
+body.ai-page .about-compact-banner .compact-banner-copy {
+  width: 100% !important;
+  min-width: 0 !important;
+  align-self: center !important;
+  justify-self: start !important;
+  margin: 0 !important;
+}
+
+
+/* About page alignment: banner, content column, and Back to Home share one left edge. */
+body.about-page main {
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+body.about-page .about-compact-banner,
+body.about-page .about-intro,
+body.about-page .about-section,
+body.about-page .about-closing {
+  width: min(1120px, 100%) !important;
+  max-width: 1120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+body.about-page .page-back-wrap {
+  width: min(1120px, 100%) !important;
+  max-width: 1120px !important;
+  margin: 24px auto 22px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 700px) {
+  body.about-page .about-compact-banner,
+  body.about-page .about-intro,
+  body.about-page .about-section,
+  body.about-page .about-closing,
+  body.about-page .page-back-wrap {
+    width: 100% !important;
+  }
+  body.about-page .page-back-wrap {
+    margin: 18px auto 18px !important;
+  }
+}
+
+
+/* Math Education: match the About page's banner frame and outer container exactly.
+   This overrides the narrower .edu-main content frame that was constraining the banner. */
+body.edu-page .edu-main {
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 34px 44px !important;
+  box-sizing: border-box !important;
+}
+body.edu-page .edu-main > .about-compact-banner {
+  width: min(1120px, 100%) !important;
+  max-width: 1120px !important;
+  height: 175px !important;
+  min-height: 175px !important;
+  margin: 0 auto 30px !important;
+  box-sizing: border-box !important;
+}
+body.edu-page .edu-main > .page-back-wrap {
+  width: min(1120px, 100%) !important;
+  max-width: 1120px !important;
+  margin: 24px auto 22px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 700px) {
+  body.edu-page .edu-main {
+    padding: 0 18px 32px !important;
+  }
+  body.edu-page .edu-main > .about-compact-banner {
+    width: 100% !important;
+    height: 150px !important;
+    min-height: 150px !important;
+  }
+  body.edu-page .edu-main > .page-back-wrap {
+    width: 100% !important;
+    margin: 18px auto 18px !important;
+  }
+}
+
+
+/* Math Education body content: match the banner's 1120px width exactly.
+   Keep the main content, back link, and banner on the same left/right guides. */
+body.edu-page .edu-main {
+  width: min(1120px, calc(100% - 48px)) !important;
+  max-width: 1120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 0 44px !important;
+  box-sizing: border-box !important;
+}
+body.edu-page .edu-main > .about-compact-banner,
+body.edu-page .edu-main > .page-back-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+body.edu-page .edu-main > .about-compact-banner {
+  height: 175px !important;
+  min-height: 175px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+body.edu-page .edu-main > .page-back-wrap {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+@media (max-width: 700px) {
+  body.edu-page .edu-main {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+    padding: 0 0 32px !important;
+  }
+  body.edu-page .edu-main > .about-compact-banner {
+    height: 150px !important;
+    min-height: 150px !important;
+  }
+}
+
+
+/* AI Education: use the same 1120px content frame as the approved About/Math pages.
+   Align the banner, Back to Home link, action buttons, and all body sections. */
+body.ai-page .ai-main {
+  width: min(1120px, calc(100% - 48px)) !important;
+  max-width: 1120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 0 44px !important;
+  box-sizing: border-box !important;
+}
+body.ai-page .ai-main > .about-compact-banner,
+body.ai-page .ai-main > .page-back-wrap,
+body.ai-page .ai-main > .ai-actions-after-banner {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+body.ai-page .ai-main > .about-compact-banner {
+  height: 175px !important;
+  min-height: 175px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+body.ai-page .ai-main > .page-back-wrap {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+body.ai-page .ai-main > .ai-actions-after-banner {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+@media (max-width: 700px) {
+  body.ai-page .ai-main {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+    padding: 0 0 32px !important;
+  }
+  body.ai-page .ai-main > .about-compact-banner {
+    height: 150px !important;
+    min-height: 150px !important;
+  }
+  body.ai-page .ai-main > .page-back-wrap {
+    width: 100% !important;
+    margin: 18px auto 18px !important;
+  }
+}
+
+
+
+
+
+
+
+/* Exact vertical-spacing rule shared with Math Education:
+   .edu-section uses margin-top: 42px; About intro now uses the same rule.
+   Remove intro top padding so spacing is not counted twice. */
+body.about-page .about-intro {
+  margin-top: 42px !important;
+  padding-top: 0 !important;
+}
+@media (max-width: 700px) {
+  body.about-page .about-intro {
+    margin-top: 30px !important;
+    padding-top: 0 !important;
+  }
+}
+
+
+/* About intro typography aligned with Math Education section typography. */
+body.about-page .about-intro h1 {
+  margin: 0 0 12px !important;
+  color: #153d70 !important;
+  font-size: clamp(24px, 2.7vw, 32px) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  font-weight: 700 !important;
+}
+body.about-page .about-intro .about-lead {
+  margin: 0 0 22px !important;
+  max-width: 900px !important;
+  color: #5e6f88 !important;
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+}
+@media (max-width: 700px) {
+  body.about-page .about-intro h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+  body.about-page .about-intro .about-lead {
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+  }
+}
+
+
+/* Improve inner-banner subtitle contrast on the blue background.
+   Darker blue lettering with a clearer white outline for readability. */
+body.about-page .about-compact-banner .compact-banner-subtitle,
+body.edu-page .about-compact-banner .compact-banner-subtitle,
+body.ai-page .about-compact-banner .compact-banner-subtitle {
+  color: #003b8f !important;
+  -webkit-text-stroke: 0.8px #ffffff;
+  paint-order: stroke fill;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
 }
