@@ -741,3 +741,153 @@ body.home-page .hero-copy .hero-swoosh {
   height: auto !important;
   aspect-ratio: auto !important;
 }
+
+
+/* Restore the original stacked homepage sections and reduce channel logos by 50% */
+@media (min-width: 901px) {
+  body.home-page .social-grid img {
+    height: 29.5px !important;
+  }
+}
+@media (max-width: 1250px) {
+  body.home-page .social-grid img {
+    height: 24.5px !important;
+  }
+}
+@media (max-width: 900px) {
+  body.home-page .social-grid img {
+    height: 24.5px !important;
+  }
+}
+@media (max-width: 620px) {
+  body.home-page .social-grid img {
+    height: 23px !important;
+  }
+}
+
+
+/* Compact, centered social-channel panel */
+body.home-page .social {
+  margin: 2px 0 18px;
+  padding: 0 16px;
+}
+body.home-page .social-bar {
+  width: max-content;
+  max-width: 100%;
+  min-height: 0;
+  height: auto;
+  margin: 0 auto;
+  padding: 11px 22px;
+  gap: 16px;
+  justify-content: center;
+  border-radius: 18px;
+}
+body.home-page .social-bar h2 {
+  font-size: clamp(16px, 1.45vw, 21px);
+}
+body.home-page .social-bar .bar-divider {
+  height: 28px;
+}
+body.home-page .social-grid {
+  flex: 0 1 auto;
+  justify-content: center;
+  gap: 13px;
+}
+body.home-page .social-grid a {
+  flex: 0 0 auto;
+}
+body.home-page .social-grid img {
+  height: 29.5px !important;
+}
+@media (max-width: 900px) {
+  body.home-page .social-bar {
+    padding: 10px 17px;
+    gap: 12px;
+  }
+  body.home-page .social-bar h2 {
+    font-size: 16px;
+  }
+  body.home-page .social-grid {
+    gap: 10px;
+  }
+}
+@media (max-width: 620px) {
+  body.home-page .social-bar {
+    width: fit-content;
+    max-width: 100%;
+    flex-wrap: wrap;
+    row-gap: 9px;
+    padding: 11px 15px;
+  }
+  body.home-page .social-bar .bar-divider {
+    display: none;
+  }
+  body.home-page .social-grid {
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    gap: 10px 13px;
+  }
+  body.home-page .social-grid img {
+    height: 23px !important;
+  }
+}
+
+
+/* Add clear breathing room below the Latest Books cards and their shadows */
+@media (min-width: 901px) {
+  body.home-page .social {
+    margin-top: 16px !important;
+  }
+}
+@media (max-width: 900px) {
+  body.home-page .social {
+    margin-top: 20px !important;
+  }
+}
+
+
+/* Use the finished bilingual banner artwork directly; no HTML headline overlay. */
+body.home-page .hero {
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 1916 / 177 !important;
+  flex: 0 0 auto;
+}
+body.home-page .hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill !important;
+  display: block;
+}
+
+
+/* Keep the navigation-to-banner boundary subtle and consistent. */
+body.home-page .site-header {
+  border-bottom: 1px solid #e6eaf2 !important;
+}
+body.home-page .hero {
+  border-top: 1px solid #e6eaf2;
+  box-sizing: border-box;
+}
+
+
+/* Draw the navigation/banner divider above the banner image itself. */
+body.home-page .site-header {
+  border-bottom: 1px solid #e6eaf2 !important;
+}
+body.home-page .hero {
+  position: relative;
+  border-top: 0 !important;
+}
+body.home-page .hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e6eaf2;
+  z-index: 5;
+  pointer-events: none;
+}

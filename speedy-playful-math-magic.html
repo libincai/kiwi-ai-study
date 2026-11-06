@@ -7,6 +7,20 @@
   <meta name="description" content="Find bookstores and retailers offering Speedy & Playful Math Magic by Libin Cai. ISBN 9781834380995.">
   <link rel="stylesheet" href="styles.css">
   <style>
+    .buy-results [hidden],
+    .buy-results .seller-result[hidden],
+    .buy-results .seller-group[hidden] {
+      display: none !important;
+    }
+    html, body.buy-listing-page {
+      height: auto !important;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: scroll !important;
+    }
+    body.buy-listing-page {
+      display: block !important;
+    }
     .buy-page{max-width:1120px;margin:0 auto;padding:34px 24px 64px}
     .buy-topline{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
     .back-home{color:#0756df;text-decoration:none;font-weight:700}
@@ -56,9 +70,34 @@
       .seller-visit{grid-column:2;justify-self:start;min-width:0;padding:8px 12px}
       .buy-results-head h2{font-size:21px}
     }
+    /* Match the homepage's restrained heading scale and sunrise-blue hero palette. */
+    .buy-intro {
+      background: linear-gradient(112deg, #f0f7ff 0%, #dedaff 52%, #ffd9e7 100%);
+      border-color: #c4d9fb;
+      padding: 20px;
+    }
+    .buy-cover {
+      max-height: 232px;
+    }
+    .buy-intro h1 {
+      font-size: clamp(23px, 1.8vw, 27px);
+      line-height: 1.18;
+      font-weight: 700;
+    }
+    @media (max-width: 650px) {
+      .buy-intro {
+        padding: 13px;
+      }
+      .buy-cover {
+        max-height: 152px;
+      }
+      .buy-intro h1 {
+        font-size: 22px;
+      }
+    }
   </style>
 </head>
-<body>
+<body class="buy-listing-page">
   <header class="site-header">
     <div class="brand-lockup">
       <a class="logo-link" href="index.html" aria-label="Kiwi 爱AI Study home">

@@ -45,12 +45,8 @@
     </nav>
   </header>
 
-  <section class="hero" aria-labelledby="hero-heading">
-    <img src="assets/hero/mountain-sunrise-hero.png" alt="Sunrise over mountains and forest">
-    <div class="hero-copy">
-      <h1 id="hero-heading">Making Learning<br>Smarter, Simpler &amp;<br>More Meaningful</h1>
-      <svg class="hero-swoosh" viewBox="0 0 300 20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 C75 -2 205 -2 296 10" fill="none" stroke="#f5b400" stroke-width="5" stroke-linecap="round"/></svg>
-    </div>
+  <section class="hero" aria-label="Kiwi 爱AI Study">
+    <img id="hero-banner-image" src="assets/hero/banner-en.png" alt="Making Learning Smarter, Simpler & More Meaningful">
   </section>
 
   <section class="features" aria-label="Education focus">
@@ -204,31 +200,7 @@
     if (el) el.textContent = value;
   };
 
-  function syncHeroSwoosh() {
-    const heading = document.querySelector("#hero-heading");
-    const swoosh = document.querySelector(".hero-swoosh");
-    if (!heading || !swoosh) return;
-
-    let widestLine = 0;
-    heading.childNodes.forEach((node) => {
-      if (node.nodeType !== Node.TEXT_NODE || !node.textContent.trim()) return;
-      const range = document.createRange();
-      range.selectNodeContents(node);
-      Array.from(range.getClientRects()).forEach((rect) => {
-        widestLine = Math.max(widestLine, rect.width);
-      });
-    });
-
-    if (widestLine > 0) {
-      swoosh.style.setProperty("width", `${widestLine}px`, "important");
-      swoosh.style.setProperty("height", "auto", "important");
-    }
-  }
-
-  window.addEventListener("resize", syncHeroSwoosh);
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(syncHeroSwoosh);
-  }
+  const heroBannerImage = document.querySelector("#hero-banner-image");
 
   function setLanguage(language) {
     const t = translations[language] || translations.en;
@@ -239,9 +211,14 @@
       if (t.nav[i]) el.textContent = t.nav[i];
     });
 
-    const hero = document.querySelector("#hero-heading");
-    if (hero) hero.innerHTML = t.hero;
-    requestAnimationFrame(syncHeroSwoosh);
+    if (heroBannerImage) {
+      heroBannerImage.src = language === "zh"
+        ? "assets/hero/banner-zh.png"
+        : "assets/hero/banner-en.png";
+      heroBannerImage.alt = language === "zh"
+        ? "让学习变得更智能，更简单、更有意义"
+        : "Making Learning Smarter, Simpler & More Meaningful";
+    }
 
 
 
@@ -278,7 +255,10 @@
   }
 
   buttons.forEach(button => {
-    button.addEventListener("click", () => setLanguage(button.dataset.language));
+    button.addEventListener("click", () => {
+      setLanguage(button.dataset.language);
+      window.scrollTo({ top: 0, behavior: "auto" });
+    });
   });
 
   let saved = "en";
