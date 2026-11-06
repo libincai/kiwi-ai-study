@@ -926,3 +926,879 @@ body.home-page .author-signature-image {
 
 /* Center the Sherry Cai wordmark slightly lower within the header row. */
 body.home-page .author-wrap { transform: translateY(5px); }
+
+
+/* About page */
+.about-page { overflow-x:hidden; }
+.about-page main { max-width:1240px; margin:0 auto; padding:0 34px 44px; }
+.about-intro { display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:38px; padding:48px 0 38px; }
+.about-intro-copy { max-width:610px; }
+.about-eyebrow { margin:0 0 12px; color:#0756df; font-size:12px; font-weight:800; letter-spacing:.16em; }
+.about-intro h1 { margin:0 0 18px; color:#101747; font-size:clamp(34px,4vw,54px); line-height:1.08; letter-spacing:-.035em; font-weight:700; }
+.about-lead { margin:0; max-width:590px; color:#405071; font-size:19px; line-height:1.65; }
+.about-mascot-wrap { display:flex; justify-content:center; align-items:center; min-width:0; }
+.about-mascot-wrap img { display:block; width:100%; max-width:570px; height:auto; object-fit:contain; }
+.about-section { padding:44px 0; }
+.about-section-heading { max-width:760px; margin:0 auto 27px; text-align:center; }
+.about-section-heading h2,.bridge-copy h2 { margin:0; color:#101747; font-size:clamp(28px,3vw,39px); line-height:1.15; letter-spacing:-.025em; }
+.section-intro { margin:14px auto 0; max-width:690px; color:#53617d; font-size:16px; line-height:1.65; }
+.story-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.story-card { padding:26px 25px 27px; border:1px solid #e5ebf6; border-radius:19px; background:#fff; box-shadow:0 8px 24px rgba(31,62,119,.06); }
+.story-mark { width:54px; height:54px; display:grid; place-items:center; margin-bottom:18px; border-radius:16px; font-size:25px; font-weight:800; }
+.bird-mark { color:#0756df; background:#e5f2ff; }
+.heart-mark { color:#e53952; background:#fff0f2; }
+.ai-mark { color:#6542bd; background:#f0efff; }
+.story-card h3,.method-item h3 { margin:0 0 10px; color:#101747; font-size:19px; line-height:1.25; }
+.story-card p,.method-item p,.bridge-copy p { margin:0; color:#4a5875; font-size:15px; line-height:1.72; }
+.philosophy-section { margin-top:8px; padding:48px 34px; border-radius:26px; background:#f4f8ff; }
+.philosophy-section .about-section-heading { margin-bottom:30px; }
+.method-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 32px; }
+.method-item { display:flex; align-items:flex-start; gap:17px; }
+.method-item>span { flex:0 0 38px; color:#0756df; font-size:16px; font-weight:800; padding-top:2px; }
+.method-item h3 { font-size:18px; }
+.bridge-section { display:grid; grid-template-columns:1.12fr .88fr; gap:50px; align-items:center; padding:58px 0; }
+.bridge-copy h2 { margin-bottom:19px; }
+.bridge-copy p { margin:0 0 14px; }
+.thinking-flow { padding:27px; border:1px solid #e2e9f6; border-radius:22px; background:#fff; box-shadow:0 8px 24px rgba(31,62,119,.07); text-align:center; }
+.thinking-flow h3 { margin:0 0 17px; color:#101747; font-size:20px; }
+.flow-step { padding:13px 12px; border-radius:12px; background:#eaf3ff; color:#123b82; }
+.flow-step b,.flow-step small { display:block; }
+.flow-step b { font-size:16px; }
+.flow-step small { margin-top:4px; color:#4d6389; font-size:12px; }
+.flow-arrow { padding:4px 0; color:#0756df; font-size:22px; font-weight:700; }
+.final-flow { background:#e9f8f1; color:#126b48; }
+.final-flow small { color:#38765e; }
+.about-closing { margin:10px 0 0; padding:42px 28px; border-radius:24px; background:linear-gradient(115deg,#eaf4ff,#f3f0ff); text-align:center; }
+.about-closing h2 { max-width:800px; margin:0 auto 12px; color:#101747; font-size:clamp(25px,3vw,36px); line-height:1.2; }
+.about-closing>p:last-child { margin:0; color:#0756df; font-weight:700; letter-spacing:.04em; }
+.about-page .site-footer { margin-top:0; }
+@media(max-width:900px) {
+ .about-page main { padding:0 22px 32px; }
+ .about-intro { grid-template-columns:1fr 1fr; gap:20px; padding:35px 0 25px; }
+ .about-intro h1 { font-size:36px; }
+ .about-lead { font-size:16px; }
+ .story-grid { gap:12px; }
+ .story-card { padding:20px 17px; }
+ .story-card h3 { font-size:17px; }
+ .story-card p,.method-item p,.bridge-copy p { font-size:14px; }
+ .philosophy-section { padding:36px 24px; }
+ .bridge-section { gap:25px; }
+}
+@media(max-width:620px) {
+ .about-page main { padding:0 16px 25px; }
+ .about-intro { grid-template-columns:1fr; gap:10px; padding:30px 0 18px; }
+ .about-intro h1 { font-size:34px; }
+ .about-lead { font-size:16px; }
+ .about-mascot-wrap img { max-width:460px; }
+ .about-section { padding:32px 0; }
+ .about-section-heading { margin-bottom:22px; }
+ .about-section-heading h2,.bridge-copy h2 { font-size:28px; }
+ .story-grid { grid-template-columns:1fr; gap:12px; }
+ .story-card { padding:21px; }
+ .story-mark { margin-bottom:12px; }
+ .philosophy-section { padding:30px 18px; border-radius:19px; }
+ .method-grid { grid-template-columns:1fr; gap:20px; }
+ .bridge-section { grid-template-columns:1fr; gap:25px; padding:36px 0; }
+ .thinking-flow { padding:22px 18px; }
+ .about-closing { padding:32px 19px; border-radius:18px; }
+}
+
+
+/* About page header fix: constrain the author wordmark just like the homepage. */
+body.about-page .author-image-link {
+  display: block;
+  width: 170px;
+  height: 55px;
+  line-height: 0;
+  overflow: hidden;
+}
+body.about-page .author-signature-image {
+  display: block;
+  width: 170px;
+  height: 55px;
+  max-width: 100%;
+  object-fit: contain;
+}
+/* Keep the mascot prominent without letting it dominate the About introduction. */
+body.about-page .about-mascot-wrap img {
+  width: 100%;
+  max-width: 470px;
+  height: auto;
+  object-fit: contain;
+}
+/* Only the desktop homepage is a fixed, no-scroll landing screen.
+   All inner pages, including About, retain normal vertical scrolling. */
+html { overflow-y: auto; }
+body.about-page {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+/* Shared inner-page banner template: same full-bleed proportions as the homepage hero. */
+.page-banner {
+  width: 100%;
+  aspect-ratio: 2172 / 405;
+  min-height: 190px;
+  max-height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 28px clamp(20px, 5vw, 76px);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(255,255,255,.52), transparent 42%),
+    radial-gradient(ellipse at 88% 100%, rgba(255,215,133,.28), transparent 40%),
+    linear-gradient(112deg, #dceaff 0%, #b9d4ff 44%, #e6efff 74%, #f6e6bd 100%);
+  position: relative;
+}
+.page-banner::before,
+.page-banner::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+}
+.page-banner::before {
+  width: 34vw;
+  height: 34vw;
+  min-width: 220px;
+  min-height: 220px;
+  right: -8vw;
+  top: -22vw;
+  border: 1px solid rgba(255,255,255,.55);
+}
+.page-banner::after {
+  width: 24vw;
+  height: 24vw;
+  min-width: 160px;
+  min-height: 160px;
+  left: -7vw;
+  bottom: -17vw;
+  border: 1px solid rgba(7,86,223,.12);
+}
+.page-banner-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1240px);
+  text-align: center;
+}
+.page-banner-kicker {
+  margin: 0 0 8px;
+  color: #1c4c91;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+.page-banner h1 {
+  margin: 0;
+  color: #102d63;
+  font: 700 clamp(28px, 3.4vw, 42px)/1.12 "Segoe UI", Tahoma, sans-serif;
+  letter-spacing: -.025em;
+}
+.page-banner-inner > p:not(.page-banner-kicker) {
+  margin: 9px 0 0;
+  color: #35527e;
+  font-size: clamp(14px, 1.35vw, 18px);
+  line-height: 1.4;
+}
+.page-banner-accent {
+  display: block;
+  width: 66px;
+  height: 4px;
+  margin: 15px auto 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #c38a22, #f2d38a);
+  box-shadow: 0 1px 5px rgba(139,95,17,.18);
+}
+@media (max-width: 620px) {
+  .page-banner {
+    min-height: 155px;
+    max-height: 190px;
+    aspect-ratio: auto;
+    padding: 22px 16px;
+  }
+  .page-banner h1 { font-size: 29px; }
+  .page-banner-kicker { font-size: 9px; }
+  .page-banner-inner > p:not(.page-banner-kicker) { font-size: 13px; }
+}
+/* Match the book listing intro to the shared system after moving its title into the banner. */
+.buy-intro { border-color: #e1e9f7; background: #f7faff; }
+
+
+/* Keep Sherry Cai's signature identical across the homepage and every inner page. */
+body .author-image-link {
+  display: block;
+  width: 170px;
+  height: 55px;
+  line-height: 0;
+  overflow: hidden;
+}
+body .author-signature-image {
+  display: block;
+  width: 170px;
+  height: 55px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+/* Final banner proportion: match the homepage hero exactly (1916:177), not a tall page masthead. */
+.page-banner {
+  aspect-ratio: 1916 / 177 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 12px clamp(20px, 5vw, 76px) !important;
+}
+@media (max-width: 620px) {
+  .page-banner {
+    aspect-ratio: auto !important;
+    height: 112px !important;
+    min-height: 112px !important;
+    max-height: 112px !important;
+    padding: 10px 14px !important;
+  }
+  .page-banner h1 { font-size: 25px !important; }
+  .page-banner-kicker { margin-bottom: 3px !important; }
+  .page-banner-inner > p:not(.page-banner-kicker) { margin-top: 4px !important; }
+  .page-banner-accent { margin-top: 6px !important; }
+}
+
+/* The book details area is content, not a second banner: remove its oversized gradient treatment. */
+.buy-intro {
+  background: #f7faff !important;
+  border: 1px solid #e1e9f7 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 5px 18px rgba(31,62,119,.05) !important;
+}
+
+
+/* Book page: all book identity and publication details live inside the single homepage-height banner. */
+.book-page-banner {
+  aspect-ratio: 1916 / 177 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 8px clamp(24px, 5vw, 76px) !important;
+  justify-content: center;
+}
+.book-banner-inner {
+  width: min(100%, 1240px);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 42px);
+  position: relative;
+  z-index: 1;
+}
+.book-banner-cover {
+  display: block;
+  width: auto;
+  height: min(145px, 90%);
+  max-width: 105px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 7px rgba(16,35,75,.2));
+  flex: 0 0 auto;
+}
+.book-banner-copy {
+  min-width: 0;
+  text-align: left;
+}
+.book-banner-copy .page-banner-kicker {
+  margin: 0 0 3px;
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+.book-banner-copy h1 {
+  margin: 0;
+  color: #102d63;
+  font: 700 clamp(23px, 2.35vw, 34px)/1.08 "Segoe UI", Tahoma, sans-serif;
+  letter-spacing: -.025em;
+}
+.book-banner-subtitle {
+  margin: 4px 0 6px;
+  color: #35527e;
+  font-size: clamp(12px, 1.05vw, 15px);
+  line-height: 1.25;
+}
+.book-banner-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 16px;
+  color: #29466f;
+  font-size: 11px;
+  line-height: 1.25;
+}
+.book-banner-meta strong { color: #173766; }
+@media (max-width: 620px) {
+  .book-page-banner {
+    height: auto !important;
+    min-height: 170px !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    padding: 12px 14px !important;
+  }
+  .book-banner-inner { gap: 12px; justify-content: flex-start; }
+  .book-banner-cover { height: 132px; max-width: 82px; }
+  .book-banner-copy { text-align: left; }
+  .book-banner-copy h1 { font-size: 20px; }
+  .book-banner-copy .page-banner-kicker { font-size: 8px; }
+  .book-banner-subtitle { font-size: 11px; }
+  .book-banner-meta { gap: 3px 9px; font-size: 9px; }
+}
+
+
+/* Shared compact inner-page banner template, based on the original horizontal book-page panel. */
+.compact-page-banner {
+  width: 100%;
+  max-width: 1120px;
+  min-height: 190px;
+  box-sizing: border-box;
+  margin: 0 auto 28px;
+  padding: 22px 26px;
+  display: grid;
+  grid-template-columns: 190px minmax(0,1fr);
+  gap: 30px;
+  align-items: center;
+  border: 1px solid rgba(45,78,135,.12);
+  border-radius: 22px;
+  background: linear-gradient(112deg, #dceaff 0%, #bfd7fb 43%, #e9edfa 72%, #f3dfb5 100%);
+}
+.compact-page-banner .buy-cover {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 10px rgba(16,23,71,.15));
+}
+.compact-banner-copy { min-width: 0; }
+.compact-banner-kicker {
+  margin: 0 0 6px;
+  color: #244b83;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .17em;
+}
+.compact-page-banner h1 {
+  margin: 0 0 8px;
+  color: #102d63;
+  font: 700 clamp(27px, 3vw, 38px)/1.12 "Segoe UI", Tahoma, sans-serif;
+  letter-spacing: -.025em;
+}
+.compact-page-banner .buy-subtitle,
+.compact-banner-subtitle {
+  margin: 0 0 10px;
+  color: #35527e;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.compact-page-banner .buy-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  color: #29466f;
+  font-size: 13px;
+}
+.compact-page-banner .buy-meta strong { color: #173766; }
+.about-compact-banner {
+  display: flex;
+  min-height: 190px;
+  margin-bottom: 34px;
+  padding-left: clamp(26px, 5vw, 64px);
+}
+.about-compact-banner .compact-banner-copy { width: 100%; }
+.about-compact-banner h1 { font-size: clamp(29px, 3.2vw, 40px); }
+.about-compact-banner .compact-banner-subtitle {
+  margin: 0;
+  color: #35527e;
+  font-size: 17px;
+}
+.buy-page { max-width: 1120px; }
+@media (max-width: 620px) {
+  .compact-page-banner {
+    min-height: 150px;
+    padding: 17px;
+    grid-template-columns: 105px minmax(0,1fr);
+    gap: 14px;
+    border-radius: 17px;
+  }
+  .compact-page-banner .buy-cover { max-height: 118px; }
+  .compact-page-banner h1 { font-size: 21px; }
+  .compact-page-banner .buy-subtitle,
+  .compact-banner-subtitle { font-size: 12px; }
+  .compact-page-banner .buy-meta { font-size: 10px; gap: 4px 9px; }
+  .about-compact-banner { min-height: 150px; padding: 20px; }
+  .about-compact-banner h1 { font-size: 28px; }
+  .about-compact-banner .compact-banner-subtitle { font-size: 13px; }
+}
+
+
+/* Inner-page banners follow the homepage hero spacing and desktop height.
+   The compact card remains content-width, while its top edge sits directly below the nav. */
+body.about-page main { padding-top: 0 !important; }
+.buy-page {
+  width: min(1120px, calc(100% - 68px));
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 0 40px;
+}
+.compact-page-banner {
+  width: 100%;
+  height: clamp(140px, 9.24vw, 177px);
+  min-height: 0;
+  margin-top: 0;
+  margin-bottom: 28px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.about-compact-banner {
+  width: min(1120px, 100%);
+  height: clamp(140px, 9.24vw, 177px);
+  min-height: 0;
+  margin: 0 auto 34px;
+}
+@media (max-width: 620px) {
+  .buy-page { width: calc(100% - 32px); }
+  .compact-page-banner { height: 150px; min-height: 150px; }
+  .about-compact-banner { height: 150px; min-height: 150px; }
+}
+
+
+/* Final refinement: align inner-page banners directly with the nav divider
+   and keep the book cover and typography comfortably inside the card. */
+body.about-page main { padding-top: 0 !important; }
+body.buy-listing-page .buy-page {
+  width: min(1120px, calc(100% - 68px)) !important;
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  padding: 0 0 40px !important;
+}
+.compact-page-banner,
+.about-compact-banner {
+  height: 175px !important;
+  min-height: 175px !important;
+  margin-top: 0 !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  box-sizing: border-box !important;
+  overflow: hidden;
+}
+.compact-page-banner {
+  grid-template-columns: 170px minmax(0, 1fr) !important;
+  gap: 26px !important;
+  align-items: center !important;
+}
+.compact-page-banner .buy-cover {
+  display: block;
+  width: 100% !important;
+  height: 126px !important;
+  max-height: 126px !important;
+  object-fit: contain !important;
+  object-position: center center;
+}
+.compact-page-banner h1,
+.about-compact-banner h1 {
+  font-size: clamp(25px, 2.25vw, 30px) !important;
+  line-height: 1.12 !important;
+  margin-bottom: 6px !important;
+}
+.compact-banner-kicker {
+  font-size: 9px !important;
+  margin-bottom: 5px !important;
+}
+.compact-page-banner .buy-subtitle,
+.compact-banner-subtitle {
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+  margin-bottom: 7px !important;
+}
+.compact-page-banner .buy-meta {
+  font-size: 11px !important;
+  gap: 5px 14px !important;
+}
+.about-compact-banner {
+  padding-left: clamp(26px, 5vw, 64px) !important;
+}
+@media (max-width: 620px) {
+  body.buy-listing-page .buy-page {
+    width: calc(100% - 32px) !important;
+    padding-bottom: 32px !important;
+  }
+  .compact-page-banner,
+  .about-compact-banner {
+    height: 150px !important;
+    min-height: 150px !important;
+    padding: 12px !important;
+  }
+  .compact-page-banner {
+    grid-template-columns: 88px minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+  .compact-page-banner .buy-cover {
+    height: 112px !important;
+    max-height: 112px !important;
+  }
+  .compact-page-banner h1,
+  .about-compact-banner h1 {
+    font-size: 20px !important;
+  }
+  .compact-page-banner .buy-subtitle,
+  .compact-banner-subtitle { font-size: 11px !important; }
+  .compact-page-banner .buy-meta { font-size: 9px !important; gap: 3px 7px !important; }
+}
+
+/* Consistent previous-page navigation for inner pages */
+.page-back-wrap {
+  max-width: 1120px;
+  margin: 24px auto 22px;
+  padding: 0 2px;
+}
+.page-back-link {
+  display: inline-flex;
+  align-items: center;
+  color: #0756d8;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.page-back-link:hover { text-decoration: underline; }
+@media (max-width: 700px) {
+  .page-back-wrap { margin: 18px 18px 18px; padding: 0; }
+  .page-back-link { font-size: 14px; }
+}
+
+
+/* About page refinement: use the section-label typography in the banner,
+   reduce oversized headings, and align the content column with the banner. */
+.about-compact-banner .compact-banner-subtitle {
+  margin: 0;
+  color: #0756df;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.about-compact-banner h1 {
+  font-size: clamp(24px, 2vw, 28px) !important;
+  line-height: 1.15 !important;
+}
+.about-intro,
+.about-section,
+.about-closing {
+  width: min(1120px, 100%);
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.about-intro h1 {
+  font-size: clamp(30px, 3.2vw, 43px);
+  line-height: 1.12;
+}
+.bird-mark { font-size: 16px; letter-spacing: -.04em; }
+@media (max-width: 620px) {
+  .about-compact-banner .compact-banner-subtitle { font-size: 9px; }
+  .about-compact-banner h1 { font-size: 23px !important; }
+  .about-intro h1 { font-size: 32px; }
+}
+
+
+/* About page visual refinement: lighter subtitle, smaller lead headline and mascot. */
+body.about-page .about-compact-banner .compact-banner-subtitle {
+  font-size: 9px !important;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+body.about-page .about-intro h1 {
+  font-size: clamp(24px, 2.56vw, 34.4px) !important;
+  line-height: 1.14;
+}
+body.about-page .about-mascot-wrap img {
+  max-width: 329px !important;
+}
+body.about-page .story-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 700px) {
+  body.about-page .story-grid { grid-template-columns: 1fr; }
+  body.about-page .about-intro h1 { font-size: 25.6px !important; }
+  body.about-page .about-mascot-wrap img { max-width: 70%; }
+}
+
+
+/* Keep the three About story cards side by side on desktop. */
+body.about-page .story-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+@media (max-width: 700px) {
+  body.about-page .story-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* Inner-page banner background: based on the user's approved abstract reference.
+   The homepage hero is intentionally excluded and remains unchanged. */
+.compact-page-banner,
+.page-banner {
+  background-image: url("assets/hero/inner-banner-blue-gold.jpg") !important;
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Approved abstract blue-gold banner background for inner pages only.
+   Homepage hero remains completely unchanged. */
+body:not(.home-page) .compact-page-banner,
+body:not(.home-page) .page-banner {
+  background-image: url("assets/hero/inner-banner-blue-gold.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+
+/* Final inner-banner rendering: clean rectangular artwork, rounded by CSS only. */
+body:not(.home-page) .compact-page-banner,
+body:not(.home-page) .page-banner {
+  background-image: url("assets/hero/inner-banner-blue-gold.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border: 0 !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+}
+body:not(.home-page) .compact-page-banner {
+  min-height: 190px;
+  box-sizing: border-box;
+}
+
+
+/* Book page banner: editorial copy left, upright book cover right. */
+body.buy-listing-page .book-compact-banner {
+  grid-template-columns: minmax(0, 1fr) 150px !important;
+  min-height: 190px !important;
+  gap: 28px !important;
+  padding: 22px 30px !important;
+}
+body.buy-listing-page .book-compact-banner .buy-cover {
+  grid-column: 2;
+  grid-row: 1;
+  width: 112px !important;
+  height: 150px !important;
+  max-height: 150px !important;
+  justify-self: center;
+  object-fit: contain;
+}
+body.buy-listing-page .book-compact-banner .compact-banner-copy {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: left;
+}
+body.buy-listing-page .book-compact-banner h1 {
+  font-size: clamp(24px, 2.2vw, 31px) !important;
+  line-height: 1.15 !important;
+}
+body.buy-listing-page .book-compact-banner .buy-subtitle {
+  font-size: 14px !important;
+  margin: 5px 0 9px !important;
+}
+body.buy-listing-page .book-compact-banner .buy-meta {
+  font-size: 12px !important;
+  gap: 5px 13px !important;
+}
+@media (max-width: 650px) {
+  body.buy-listing-page .book-compact-banner {
+    grid-template-columns: minmax(0, 1fr) 82px !important;
+    gap: 10px !important;
+    padding: 16px !important;
+    min-height: 145px !important;
+  }
+  body.buy-listing-page .book-compact-banner .buy-cover {
+    width: 76px !important;
+    height: 112px !important;
+    max-height: 112px !important;
+  }
+  body.buy-listing-page .book-compact-banner h1 { font-size: 19px !important; }
+  body.buy-listing-page .book-compact-banner .buy-subtitle { font-size: 12px !important; }
+  body.buy-listing-page .book-compact-banner .buy-meta { font-size: 10px !important; }
+}
+
+
+/* Banner crop correction: keep the complete artwork visible.
+   The source artwork is 2172 × 328; do not use cover, which crops its top and bottom. */
+body:not(.home-page) .compact-page-banner,
+body:not(.home-page) .page-banner {
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border: 0 !important;
+  border-radius: 22px !important;
+  overflow: visible !important;
+  clip-path: inset(0 round 22px);
+}
+body:not(.home-page) .compact-page-banner {
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 2172 / 328;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  box-sizing: border-box !important;
+}
+body.about-page .about-compact-banner {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 700px) {
+  body:not(.home-page) .compact-page-banner {
+    aspect-ratio: auto;
+    height: 150px !important;
+    min-height: 150px !important;
+  }
+}
+
+
+/* Book page: align the cover on the left with the text block, as requested. */
+body.buy-listing-page .book-compact-banner {
+  grid-template-columns: 150px minmax(0, 1fr) !important;
+  min-height: 0 !important;
+  aspect-ratio: 2172 / 328;
+  gap: 28px !important;
+  padding: 14px 30px !important;
+}
+body.buy-listing-page .book-compact-banner .buy-cover {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: 112px !important;
+  height: 145px !important;
+  max-height: 145px !important;
+  justify-self: center;
+  object-fit: contain !important;
+}
+body.buy-listing-page .book-compact-banner .compact-banner-copy {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  text-align: left;
+}
+@media (max-width: 650px) {
+  body.buy-listing-page .book-compact-banner {
+    grid-template-columns: 82px minmax(0, 1fr) !important;
+    aspect-ratio: auto;
+    height: 150px !important;
+    padding: 12px !important;
+    gap: 10px !important;
+  }
+  body.buy-listing-page .book-compact-banner .buy-cover {
+    width: 76px !important;
+    height: 112px !important;
+    max-height: 112px !important;
+  }
+}
+
+
+/* White typography on the approved blue-gold inner-page banner. */
+body:not(.home-page) .compact-page-banner h1,
+body:not(.home-page) .page-banner h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 5px rgba(5, 35, 105, .42);
+}
+body:not(.home-page) .compact-page-banner .compact-banner-subtitle,
+body:not(.home-page) .compact-page-banner .buy-subtitle,
+body:not(.home-page) .page-banner-inner > p:not(.page-banner-kicker) {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(5, 35, 105, .48);
+}
+body:not(.home-page) .compact-page-banner .page-banner-kicker,
+body:not(.home-page) .page-banner-kicker {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(5, 35, 105, .48);
+}
+
+
+/* Refined inner-banner typography: navy title, subtle white edge, gold underline. */
+body:not(.home-page) .compact-page-banner .compact-banner-copy h1,
+body:not(.home-page) .page-banner h1 {
+  display: inline-block;
+  position: relative;
+  color: #082b78 !important;
+  -webkit-text-stroke: .45px rgba(255,255,255,.9);
+  text-shadow:
+    0 2px 0 rgba(255,255,255,.48),
+    0 3px 7px rgba(4,28,92,.22);
+  padding-bottom: 9px;
+  margin-bottom: 5px;
+}
+body:not(.home-page) .compact-page-banner .compact-banner-copy h1::after,
+body:not(.home-page) .page-banner h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(100%, 230px);
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #ffd34d 0%, #ffe58a 72%, rgba(255,229,138,0) 100%);
+  box-shadow: 0 1px 2px rgba(5,35,105,.12);
+}
+body:not(.home-page) .compact-page-banner .compact-banner-subtitle,
+body:not(.home-page) .compact-page-banner .buy-subtitle,
+body:not(.home-page) .page-banner .page-banner-inner > p:not(.page-banner-kicker) {
+  color: #082b78 !important;
+  font-weight: 800 !important;
+  letter-spacing: .12em;
+  text-shadow: 0 1px 0 rgba(255,255,255,.58);
+}
+body:not(.home-page) .compact-page-banner .buy-meta {
+  color: #082b78 !important;
+}
+body:not(.home-page) .compact-page-banner .buy-meta strong {
+  color: #06266d !important;
+}
+
+
+/* Chinese typography correction: avoid heavy outlined CJK glyphs. */
+html[lang="zh-CN"] body:not(.home-page) .compact-page-banner .compact-banner-copy h1,
+html[lang="zh-CN"] body:not(.home-page) .page-banner h1 {
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 2px 4px rgba(4, 28, 92, .16) !important;
+  color: #082b78 !important;
+}
+html[lang="zh-CN"] body:not(.home-page) .compact-page-banner .compact-banner-subtitle,
+html[lang="zh-CN"] body:not(.home-page) .compact-page-banner .buy-subtitle,
+html[lang="zh-CN"] body:not(.home-page) .page-banner .page-banner-inner > p:not(.page-banner-kicker) {
+  letter-spacing: .04em !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+  color: #082b78 !important;
+}
+
+
+/* Refined Chinese title outline: crisp four-direction edge, no blurred halo. */
+html[lang="zh-CN"] body:not(.home-page) .compact-page-banner .compact-banner-copy h1,
+html[lang="zh-CN"] body:not(.home-page) .page-banner h1 {
+  -webkit-text-stroke: 0 !important;
+  color: #082b78 !important;
+  text-shadow:
+    -0.65px 0 0 #ffffff,
+     0.65px 0 0 #ffffff,
+     0 -0.65px 0 #ffffff,
+     0 0.65px 0 #ffffff,
+    -0.45px -0.45px 0 #ffffff,
+     0.45px -0.45px 0 #ffffff,
+    -0.45px 0.45px 0 #ffffff,
+     0.45px 0.45px 0 #ffffff,
+     0 2px 4px rgba(4, 28, 92, .16) !important;
+}
+html[lang="zh-CN"] body:not(.home-page) .compact-page-banner .compact-banner-subtitle,
+html[lang="zh-CN"] body:not(.home-page) .compact-page-banner .buy-subtitle,
+html[lang="zh-CN"] body:not(.home-page) .page-banner .page-banner-inner > p:not(.page-banner-kicker) {
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}

@@ -21,7 +21,7 @@
     body.buy-listing-page {
       display: block !important;
     }
-    .buy-page{max-width:1120px;margin:0 auto;padding:34px 24px 64px}
+    .buy-page{max-width:1120px;margin:0 auto;padding:0 24px 64px}
     .buy-topline{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
     .back-home{color:#0756df;text-decoration:none;font-weight:700}
     .buy-intro{display:grid;grid-template-columns:190px minmax(0,1fr);gap:30px;align-items:center;padding:26px;background:#f5f8ff;border:1px solid #e2e9f8;border-radius:22px}
@@ -98,6 +98,8 @@
   </style>
 </head>
 <body class="buy-listing-page">
+
+
   <header class="site-header">
     <div class="brand-lockup">
       <a class="logo-link" href="index.html" aria-label="Kiwi 爱AI Study home">
@@ -107,14 +109,16 @@
         <span class="tag-learn">Learn</span><span class="tag-sep"> • </span><span class="tag-create">Create</span><span class="tag-sep"> • </span><span class="tag-share">Share</span><span class="tag-sep"> • </span><span class="tag-grow">Grow</span>
       </p>
       <span class="divider" aria-hidden="true"></span>
-      <div class="author-wrap">
-        <a class="author" href="index.html">Sherry Cai</a>
-        <span class="author-underline" aria-hidden="true"><svg viewBox="0 0 140 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 8C36 2 104 2 138 8" stroke="#5fa832" stroke-width="2.8" fill="none" stroke-linecap="round"/></svg></span>
-      </div>
+      <div class="author-wrap"><a class="author-image-link" href="index.html" aria-label="Sherry Cai"><img class="author-signature-image" src="assets/logo/sherry-cai-signature.png" alt="Sherry Cai"></a></div>
     </div>
     <nav class="site-nav" aria-label="Primary">
-      <a href="index.html" data-nav-home>Home</a>
-      <a href="index.html#books" data-nav-books>My Books</a>
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="#" data-nav="math">Math Education</a>
+      <a href="#" data-nav="ai">AI Education</a>
+      <a class="active" href="speedy-playful-math-magic.html" data-nav="books">My Books</a>
+      <a href="#" data-nav="resources">Resources</a>
+      <a href="#" data-nav="contact">Contact</a>
       <span class="flags" aria-label="Languages">
         <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button>
         <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
@@ -122,27 +126,30 @@
     </nav>
   </header>
 
-  <main class="buy-page">
-    <div class="buy-topline">
-      <a class="back-home" href="index.html" data-back>← Back to Kiwi 爱AI Study</a>
-    </div>
+  
 
-    <section class="buy-intro" aria-labelledby="book-title">
+  <main class="buy-page">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to Previous Page" data-zh="← 返回上一页">← Back to Previous Page</a>
+    </div>
+    <section class="compact-page-banner book-compact-banner" aria-labelledby="book-title">
       <img class="buy-cover" src="assets/books/speedy-playful-math-magic.png" alt="Speedy &amp; Playful Math Magic book cover">
-      <div>
-        <h1 id="book-title">Speedy &amp; Playful Math Magic</h1>
+      <div class="compact-banner-copy">
+        <h1 id="book-title" data-en="Speedy &amp; Playful Math Magic" data-zh="Speedy &amp; Playful Math Magic">Speedy &amp; Playful Math Magic</h1>
         <p class="buy-subtitle" data-subtitle>Speedy little tricks to make kids fall in love with math</p>
         <div class="buy-meta">
-          <span><strong>Author:</strong> Libin Cai</span>
-          <span><strong>Format:</strong> Paperback</span>
-          <span><strong>Pages:</strong> 218</span>
-          <span><strong>ISBN:</strong> 9781834380995</span>
+          <span><strong data-en="Author:" data-zh="作者：">Author:</strong> Libin Cai</span>
+          <span><strong data-en="Format:" data-zh="版本：">Format:</strong> Paperback</span>
+          <span><strong data-en="Pages:" data-zh="页数：">Pages:</strong> 218</span>
+          <span><strong data-en="ISBN:" data-zh="ISBN：">ISBN:</strong> 9781834380995</span>
         </div>
       </div>
     </section>
 
+    
+
     <section class="buy-search-wrap" aria-label="Search bookstores">
-      <label class="buy-search-label" for="seller-search" data-search-label>Search bookstores and retailers</label>
+      <label class="buy-search-label" for="seller-search" data-search-label data-en="Search bookstores and retailers" data-zh="搜索书店和销售平台">Search bookstores and retailers</label>
       <input class="buy-search" id="seller-search" type="search" placeholder="Search by store or country..." data-placeholder="Search by store or country...">
     </section>
 
@@ -159,7 +166,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=amazon.ca&sz=64" alt=""><span class="seller-name">Amazon Canada</span></div>
           <span class="seller-url">amazon.ca</span>
-          <p class="seller-description">Amazon Canada product page for the paperback edition.</p>
+          <p class="seller-description" data-en="Amazon Canada product page for the paperback edition." data-zh="加拿大亚马逊平装版图书页面。">Amazon Canada product page for the paperback edition.</p>
           <span class="seller-region">Canada</span>
         </div>
         <a class="seller-visit" href="https://www.amazon.ca/-/fr/Speedy-Playful-Math-Magic-little/dp/1834380995" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -170,7 +177,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=amazon.co.uk&sz=64" alt=""><span class="seller-name">Amazon United Kingdom</span></div>
           <span class="seller-url">amazon.co.uk</span>
-          <p class="seller-description">Amazon UK product page.</p>
+          <p class="seller-description" data-en="Amazon UK product page." data-zh="英国亚马逊图书页面。">Amazon UK product page.</p>
           <span class="seller-region">United Kingdom</span>
         </div>
         <a class="seller-visit" href="https://www.amazon.co.uk/dp/1834380995" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -181,7 +188,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=amazon.com.au&sz=64" alt=""><span class="seller-name">Amazon Australia</span></div>
           <span class="seller-url">amazon.com.au</span>
-          <p class="seller-description">Amazon Australia product page.</p>
+          <p class="seller-description" data-en="Amazon Australia product page." data-zh="澳大利亚亚马逊图书页面。">Amazon Australia product page.</p>
           <span class="seller-region">Australia</span>
         </div>
         <a class="seller-visit" href="https://www.amazon.com.au/dp/1834380995" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -192,7 +199,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=indigo.ca&sz=64" alt=""><span class="seller-name">Indigo</span></div>
           <span class="seller-url">indigo.ca</span>
-          <p class="seller-description">Official Indigo Canada product page for the paperback edition.</p>
+          <p class="seller-description" data-en="Official Indigo Canada product page for the paperback edition." data-zh="Indigo 加拿大官方平装版图书页面。">Official Indigo Canada product page for the paperback edition.</p>
           <span class="seller-region">Canada</span>
         </div>
         <a class="seller-visit" href="https://www.indigo.ca/products/speedy-playful-math-magic-speedy-little-tricks-to-make-kids-fall-in-love-with-math?variant=46691729277138" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -203,7 +210,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=walmart.com&sz=64" alt=""><span class="seller-name">Walmart</span></div>
           <span class="seller-url">walmart.com</span>
-          <p class="seller-description">US retail listing for the paperback edition.</p>
+          <p class="seller-description" data-en="US retail listing for the paperback edition." data-zh="美国零售商的平装版图书页面。">US retail listing for the paperback edition.</p>
           <span class="seller-region">United States</span>
         </div>
         <a class="seller-visit" href="https://www.walmart.com/ip/18961015034?classType=REGULAR" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -214,7 +221,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=waterstones.com&sz=64" alt=""><span class="seller-name">Waterstones</span></div>
           <span class="seller-url">waterstones.com</span>
-          <p class="seller-description">UK bookstore product page by ISBN.</p>
+          <p class="seller-description" data-en="UK bookstore product page by ISBN." data-zh="英国书店的 ISBN 图书页面。">UK bookstore product page by ISBN.</p>
           <span class="seller-region">United Kingdom</span>
         </div>
         <a class="seller-visit" href="https://www.waterstones.com/book/9781834380995" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -225,7 +232,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=booksamillion.com&sz=64" alt=""><span class="seller-name">Books-A-Million</span></div>
           <span class="seller-url">booksamillion.com</span>
-          <p class="seller-description">US bookstore product page by ISBN.</p>
+          <p class="seller-description" data-en="US bookstore product page by ISBN." data-zh="美国书店的 ISBN 图书页面。">US bookstore product page by ISBN.</p>
           <span class="seller-region">United States</span>
         </div>
         <a class="seller-visit" href="https://www.booksamillion.com/p/9781834380995" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -239,7 +246,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=booktopia.com.au&sz=64" alt=""><span class="seller-name">Booktopia</span></div>
           <span class="seller-url">booktopia.com.au</span>
-          <p class="seller-description">Australian online bookstore product page.</p>
+          <p class="seller-description" data-en="Australian online bookstore product page." data-zh="澳大利亚网上书店图书页面。">Australian online bookstore product page.</p>
           <span class="seller-region">Australia</span>
         </div>
         <a class="seller-visit" href="https://www.booktopia.com.au/speedy-playful-math-magic-libin-cai/book/9781834380995.html?srsltid=AYCX9vLaWc9JuMG6vFmbWSpvuS-bXtX6F7R8Od74c6B-v6HKNbPWXC05" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -250,7 +257,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=adlibris.com&sz=64" alt=""><span class="seller-name">Adlibris</span></div>
           <span class="seller-url">adlibris.com</span>
-          <p class="seller-description">Swedish online bookstore product page.</p>
+          <p class="seller-description" data-en="Swedish online bookstore product page." data-zh="瑞典网上书店图书页面。">Swedish online bookstore product page.</p>
           <span class="seller-region">Sweden</span>
         </div>
         <a class="seller-visit" href="https://www.adlibris.com/sv/bok/speedy-playful-math-magic-9781834380995" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -261,7 +268,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=hugendubel.de&sz=64" alt=""><span class="seller-name">Hugendubel</span></div>
           <span class="seller-url">hugendubel.de</span>
-          <p class="seller-description">German bookstore listing. Paperback edition in English.</p>
+          <p class="seller-description" data-en="German bookstore listing. Paperback edition in English." data-zh="德国书店商品信息，英文平装版。">German bookstore listing. Paperback edition in English.</p>
           <span class="seller-region">Germany</span>
         </div>
         <a class="seller-visit" href="https://www.hugendubel.de/de/taschenbuch/libin_cai-speedy_playful_math_magic-52310238-produkt-details.html" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -272,7 +279,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=yes24.com&sz=64" alt=""><span class="seller-name">YES24</span></div>
           <span class="seller-url">yes24.com</span>
-          <p class="seller-description">Korean online bookstore listing for the imported paperback.</p>
+          <p class="seller-description" data-en="Korean online bookstore listing for the imported paperback." data-zh="韩国网上书店的进口平装版图书页面。">Korean online bookstore listing for the imported paperback.</p>
           <span class="seller-region">South Korea</span>
         </div>
         <a class="seller-visit" href="https://m.yes24.com/goods/detail/170416676" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -283,7 +290,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=sanmin.com.tw&sz=64" alt=""><span class="seller-name">Sanmin Bookstore 三民網路書店</span></div>
           <span class="seller-url">sanmin.com.tw</span>
-          <p class="seller-description">Taiwan listing. The retailer currently indicates it may need to order stock.</p>
+          <p class="seller-description" data-en="Taiwan listing. The retailer currently indicates it may need to order stock." data-zh="台湾地区商品页面；销售商目前提示可能需要订货。">Taiwan listing. The retailer currently indicates it may need to order stock.</p>
           <span class="seller-region">Taiwan</span>
         </div>
         <a class="seller-visit" href="https://www.sanmin.com.tw/product/index/015113838" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -294,7 +301,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=bookshop.org&sz=64" alt=""><span class="seller-name">Bookshop.org</span></div>
           <span class="seller-url">bookshop.org</span>
-          <p class="seller-description">Independent-bookstore marketplace product page.</p>
+          <p class="seller-description" data-en="Independent-bookstore marketplace product page." data-zh="独立书店线上平台的图书页面。">Independent-bookstore marketplace product page.</p>
           <span class="seller-region">United States / Online</span>
         </div>
         <a class="seller-visit" href="https://bookshop.org/p/books/speedy-playful-math-magic-speedy-little-tricks-to-make-kids-fall-in-love-with-math-libin-cai/e9aa895c3af85813" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -305,7 +312,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=tertulia.com&sz=64" alt=""><span class="seller-name">Tertulia</span></div>
           <span class="seller-url">tertulia.com</span>
-          <p class="seller-description">Bookstore listing with paperback details and online ordering.</p>
+          <p class="seller-description" data-en="Bookstore listing with paperback details and online ordering." data-zh="提供平装版信息及线上订购的书店页面。">Bookstore listing with paperback details and online ordering.</p>
           <span class="seller-region">United States / Online</span>
         </div>
         <a class="seller-visit" href="https://tertulia.com/book/speedy--playful-math-magic-speedy-little-tricks-to-make-kids-fall-in-love-with-math-libin-cai/9781834380995" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -319,7 +326,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=ebay.com&sz=64" alt=""><span class="seller-name">eBay United States</span></div>
           <span class="seller-url">ebay.com</span>
-          <p class="seller-description">Marketplace listing for the paperback edition.</p>
+          <p class="seller-description" data-en="Marketplace listing for the paperback edition." data-zh="平装版图书的线上交易平台页面。">Marketplace listing for the paperback edition.</p>
           <span class="seller-region">United States</span>
         </div>
         <a class="seller-visit" href="https://www.ebay.com/itm/366289805806" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -330,7 +337,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=ebay.co.uk&sz=64" alt=""><span class="seller-name">eBay United Kingdom</span></div>
           <span class="seller-url">ebay.co.uk</span>
-          <p class="seller-description">UK eBay book product page.</p>
+          <p class="seller-description" data-en="UK eBay book product page." data-zh="英国 eBay 图书商品页面。">UK eBay book product page.</p>
           <span class="seller-region">United Kingdom</span>
         </div>
         <a class="seller-visit" href="https://www.ebay.co.uk/p/4089204184" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -341,7 +348,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=ebay.de&sz=64" alt=""><span class="seller-name">eBay Germany</span></div>
           <span class="seller-url">ebay.de</span>
-          <p class="seller-description">Marketplace listing from a third-party bookseller.</p>
+          <p class="seller-description" data-en="Marketplace listing from a third-party bookseller." data-zh="第三方书商发布的线上交易信息。">Marketplace listing from a third-party bookseller.</p>
           <span class="seller-region">Germany / International marketplace</span>
         </div>
         <a class="seller-visit" href="https://www.ebay.de/sch/i.html?_nkw=9781834380995" target="_blank" rel="noopener noreferrer" data-visit>View listing</a>
@@ -352,7 +359,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=ebay.ch&sz=64" alt=""><span class="seller-name">eBay Switzerland</span></div>
           <span class="seller-url">ebay.ch</span>
-          <p class="seller-description">Marketplace listing from a third-party bookseller.</p>
+          <p class="seller-description" data-en="Marketplace listing from a third-party bookseller." data-zh="第三方书商发布的线上交易信息。">Marketplace listing from a third-party bookseller.</p>
           <span class="seller-region">Switzerland / International marketplace</span>
         </div>
         <a class="seller-visit" href="https://www.ebay.ch/sch/i.html?_nkw=9781834380995" target="_blank" rel="noopener noreferrer" data-visit>View listing</a>
@@ -363,7 +370,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=abebooks.co.uk&sz=64" alt=""><span class="seller-name">AbeBooks UK</span></div>
           <span class="seller-url">abebooks.co.uk</span>
-          <p class="seller-description">UK marketplace product listing.</p>
+          <p class="seller-description" data-en="UK marketplace product listing." data-zh="英国线上交易平台商品页面。">UK marketplace product listing.</p>
           <span class="seller-region">United Kingdom</span>
         </div>
         <a class="seller-visit" href="https://www.abebooks.co.uk/Speedy-Playful-Math-Magic-little-tricks/32431623235/bd" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -374,7 +381,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=abebooks.com&sz=64" alt=""><span class="seller-name">AbeBooks United States</span></div>
           <span class="seller-url">abebooks.com</span>
-          <p class="seller-description">US AbeBooks product search page by ISBN.</p>
+          <p class="seller-description" data-en="US AbeBooks product search page by ISBN." data-zh="按 ISBN 搜索美国 AbeBooks 商品的页面。">US AbeBooks product search page by ISBN.</p>
           <span class="seller-region">United States / Online</span>
         </div>
         <a class="seller-visit" href="https://www.abebooks.com/products/isbn/9781834380995" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -385,7 +392,7 @@
         <div>
           <div class="seller-name-line"><img class="seller-favicon" src="https://www.google.com/s2/favicons?domain=betterworldbooks.com&sz=64" alt=""><span class="seller-name">Better World Books</span></div>
           <span class="seller-url">betterworldbooks.com</span>
-          <p class="seller-description">Online bookseller product page.</p>
+          <p class="seller-description" data-en="Online bookseller product page." data-zh="网上书商的图书商品页面。">Online bookseller product page.</p>
           <span class="seller-region">United States / Online</span>
         </div>
         <a class="seller-visit" href="https://www.betterworldbooks.com/product/detail/speedy-playful-math-magic-speedy-little-tricks-to-make-kids-fall-in-love-with-math-9781834380995" target="_blank" rel="noopener noreferrer" data-visit>View book</a>
@@ -403,16 +410,21 @@
   (() => {
     const copy = {
       en: {
-        home: "Home", books: "My Books", back: "← Back to Kiwi 爱AI Study",
+        home: "Home", about: "About", math: "Math Education", ai: "AI Education",
+        books: "My Books", resources: "Resources", contact: "Contact",
+        back: "← Back to Previous Page",
         searchLabel: "Search bookstores and retailers", placeholder: "Search by store or country...",
         results: "Where to Buy", visit: "View book", listing: "View listing",
         categories: { popular: "Popular Bookstores", regional: "Regional Bookstores", marketplaces: "Online Marketplaces" },
         note: "Retailer listings, prices, shipping regions, and availability can change. Please confirm the details on the seller's website before ordering. Kiwi 爱AI Study is not the seller and does not process purchases.",
         subtitle: "Speedy little tricks to make kids fall in love with math",
-        empty: "No retailers match your search.", retailers: "retailers"
+        empty: "No retailers match your search.", retailers: "retailers",
+        descriptions: []
       },
       zh: {
-        home: "首页", books: "我的书籍", back: "← 返回 Kiwi 爱AI Study",
+        home: "首页", about: "关于我们", math: "数学教育", ai: "人工智能教育",
+        books: "我的书籍", resources: "学习资源", contact: "联系我们",
+        back: "← 返回上一页",
         searchLabel: "搜索书店和销售平台", placeholder: "输入书店名称或国家/地区...",
         results: "全球购买渠道", visit: "查看图书", listing: "查看商品",
         categories: { popular: "热门书店", regional: "地区性书店", marketplaces: "在线图书交易平台" },
@@ -450,20 +462,23 @@
     }
     function setLanguage(lang) {
       const t = copy[lang] || copy.en;
-      const zh = lang === "zh";
-      document.documentElement.lang = zh ? "zh-CN" : "en";
-      document.querySelector("[data-nav-home]").textContent = t.home;
-      document.querySelector("[data-nav-books]").textContent = t.books;
-      document.querySelector("[data-back]").textContent = t.back;
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      document.querySelectorAll("[data-nav]").forEach(el => {
+        const key = el.dataset.nav;
+        if (t[key]) el.textContent = t[key];
+      });
+      const back = document.querySelector("[data-page-back]");
+      if (back) back.textContent = t.back;
       document.querySelector("[data-search-label]").textContent = t.searchLabel;
       search.placeholder = t.placeholder;
       document.querySelector("[data-results-title]").textContent = t.results;
-      document.querySelectorAll("[data-category]").forEach(el => {
-        el.textContent = t.categories[el.dataset.category];
-      });
+      document.querySelectorAll("[data-category]").forEach(el => el.textContent = t.categories[el.dataset.category]);
       document.querySelector("[data-subtitle]").textContent = t.subtitle;
       document.querySelector("[data-note]").textContent = t.note;
-      document.querySelector("[data-footer-home]").textContent = "Kiwi 爱AI Study";
+      document.querySelectorAll("[data-en][data-zh]").forEach(el => {
+        const value = lang === "zh" ? el.dataset.zh : el.dataset.en;
+        if (value !== undefined) el.textContent = value;
+      });
       document.querySelectorAll("[data-visit]").forEach(a => a.textContent = a.href.includes("ebay.") ? t.listing : t.visit);
       buttons.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.language === lang)));
       try { localStorage.setItem("kiwi-site-language", lang); } catch(e) {}
@@ -475,6 +490,22 @@
     try { saved = localStorage.getItem("kiwi-site-language") || "en"; } catch(e) {}
     setLanguage(saved);
   })();
+  </script>
+
+  <script>
+    document.querySelectorAll('[data-page-back]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const referrer = document.referrer;
+        if (referrer) {
+          try {
+            if (new URL(referrer).origin === window.location.origin && window.history.length > 1) {
+              event.preventDefault();
+              window.history.back();
+            }
+          } catch (_) { /* Keep the Home fallback link. */ }
+        }
+      });
+    });
   </script>
 </body>
 </html>
