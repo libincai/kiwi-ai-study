@@ -1941,3 +1941,233 @@ body .author-signature-image {
     height: 27px !important;
   }
 }
+
+
+/* Mobile homepage hero: restore the taller scenic composition from the earlier
+   mobile layout. Desktop continues to use the existing wide banner unchanged. */
+body.home-page .hero-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+body.home-page .hero-picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+body.home-page .hero-mobile-copy {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  body.home-page .hero {
+    position: relative;
+    width: 100%;
+    height: clamp(290px, 49.5vw, 360px) !important;
+    min-height: 290px !important;
+    aspect-ratio: auto !important;
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+  body.home-page .hero-picture {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  body.home-page .hero-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    object-position: center 54%;
+  }
+  body.home-page .hero-mobile-copy {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: 5.2%;
+    top: 14%;
+    width: 55%;
+    color: #071d58;
+    pointer-events: none;
+  }
+  body.home-page .hero-mobile-copy h1 {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    font-size: clamp(25px, 5.1vw, 34px);
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: -.025em;
+    color: #071d58;
+    text-shadow: 0 1px 1px rgba(255,255,255,.24);
+  }
+  body.home-page .hero-mobile-swoosh {
+    display: block;
+    width: 74%;
+    height: 5px;
+    margin-top: 14px;
+    border-radius: 100%;
+    background: linear-gradient(90deg, #ffd23f 0%, #f5bd25 72%, rgba(245,189,37,0) 100%);
+    transform: rotate(-5deg);
+    transform-origin: left center;
+  }
+  html[lang^="zh"] body.home-page .hero-mobile-copy-en { display: none; }
+  html[lang^="zh"] body.home-page .hero-mobile-copy-zh { display: block; }
+  html:not([lang^="zh"]) body.home-page .hero-mobile-copy-en { display: block; }
+  html:not([lang^="zh"]) body.home-page .hero-mobile-copy-zh { display: none; }
+}
+
+
+/* Mobile: use the exact same homepage hero artwork as desktop.
+   Keep the banner compact and crop the panoramic image with CSS only. */
+@media (max-width: 620px) {
+  body.home-page .hero {
+    position: relative;
+    width: 100%;
+    height: clamp(170px, 27vw, 205px) !important;
+    min-height: 170px !important;
+    max-height: 205px !important;
+    aspect-ratio: auto !important;
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+  body.home-page .hero > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    /* Keep the sun in view while trimming the far-right side of the panorama. */
+    object-position: 65% center !important;
+  }
+}
+
+
+/* Dedicated bilingual mobile hero artwork.
+   Desktop keeps the existing wide desktop banner and language switching. */
+body.home-page .hero-mobile-banner {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  body.home-page .hero {
+    position: relative;
+    width: 100%;
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 190px !important;
+    aspect-ratio: auto !important;
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+  body.home-page .hero > #hero-banner-image {
+    display: none !important;
+  }
+  body.home-page .hero-mobile-banner {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+  html[lang^="zh"] body.home-page .hero-mobile-banner-zh {
+    display: block;
+  }
+  html:not([lang^="zh"]) body.home-page .hero-mobile-banner-en {
+    display: block;
+  }
+}
+
+
+/* Final mobile hero correction:
+   - Desktop continues to use the original desktop hero image unchanged.
+   - Mobile artwork is shown at its natural panoramic ratio so the complete
+     bilingual headline remains visible without being cropped. */
+body.home-page .hero > .hero-mobile-banner {
+  display: none !important;
+}
+
+@media (max-width: 620px) {
+  body.home-page .hero {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    overflow: hidden;
+    display: block;
+  }
+
+  body.home-page .hero > #hero-banner-image {
+    display: none !important;
+  }
+
+  body.home-page .hero > .hero-mobile-banner {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    vertical-align: top;
+  }
+
+  html[lang^="zh"] body.home-page .hero > .hero-mobile-banner-zh {
+    display: block !important;
+  }
+
+  html:not([lang^="zh"]) body.home-page .hero > .hero-mobile-banner-en {
+    display: block !important;
+  }
+}
+
+
+/* Reliable mobile hero visibility fix.
+   Desktop keeps the original desktop hero untouched.
+   JavaScript switches the mobile artwork according to the selected language. */
+body.home-page #hero-mobile-banner-image {
+  display: none !important;
+}
+
+@media screen and (max-width: 620px) {
+  body.home-page .hero {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+    visibility: visible !important;
+    flex: 0 0 auto !important;
+  }
+
+  body.home-page .hero > #hero-banner-image {
+    display: none !important;
+  }
+
+  body.home-page .hero > #hero-mobile-banner-image {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    vertical-align: top !important;
+  }
+}
+
+/* Mobile-only inner-page banner artwork. Desktop inner banners and the homepage hero remain unchanged.
+   The background contains no text; page titles/subtitles stay as live HTML for both languages. */
+@media (max-width: 700px) {
+  body:not(.home-page) .compact-page-banner,
+  body:not(.home-page) .page-banner {
+    background-image: url("assets/hero/inner-banner-mobile.png") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+  }
+}

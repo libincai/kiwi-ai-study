@@ -44,6 +44,7 @@
 
   <section class="hero" aria-label="Kiwi 爱AI Study">
     <img id="hero-banner-image" src="assets/hero/banner-en.png" alt="Making Learning Smarter, Simpler & More Meaningful">
+    <img id="hero-mobile-banner-image" class="hero-mobile-banner" src="assets/hero/mobile-banner-en.png" alt="Making Learning Smarter, Simpler & More Meaningful">
   </section>
 
   <section class="features" aria-label="Education focus">
@@ -198,6 +199,7 @@
   };
 
   const heroBannerImage = document.querySelector("#hero-banner-image");
+  const heroMobileBannerImage = document.querySelector("#hero-mobile-banner-image");
 
   function setLanguage(language) {
     const t = translations[language] || translations.en;
@@ -213,6 +215,14 @@
         ? "assets/hero/banner-zh.png"
         : "assets/hero/banner-en.png";
       heroBannerImage.alt = language === "zh"
+        ? "让学习变得更智能，更简单、更有意义"
+        : "Making Learning Smarter, Simpler & More Meaningful";
+    }
+    if (heroMobileBannerImage) {
+      heroMobileBannerImage.src = language === "zh"
+        ? "assets/hero/mobile-banner-zh.png"
+        : "assets/hero/mobile-banner-en.png";
+      heroMobileBannerImage.alt = language === "zh"
         ? "让学习变得更智能，更简单、更有意义"
         : "Making Learning Smarter, Simpler & More Meaningful";
     }
