@@ -20,7 +20,7 @@
   --site-page-gutter: 24px;
 
   /* Shared inner-page banner geometry */
-  --inner-banner-height: 175px;
+  --inner-banner-height: 150px;
   --inner-banner-height-mobile: 150px;
   --inner-banner-radius: 22px;
   --inner-banner-padding-x: 64px;
@@ -2735,9 +2735,9 @@ body:not(.home-page) .contact-banner {
 .compact-page-banner,
 .about-compact-banner,
 .contact-banner {
-  height: 175px !important;
-  min-height: 175px !important;
-  max-height: 175px !important;
+  height: 150px !important;
+  min-height: 150px !important;
+  max-height: 150px !important;
   box-sizing: border-box !important;
 }
 @media (max-width: 760px) {
@@ -2758,9 +2758,9 @@ body:not(.home-page) .contact-banner {
 html body:not(.home-page) main .compact-page-banner,
 html body:not(.home-page) main .about-compact-banner,
 html body:not(.home-page) main .contact-banner {
-  height: 175px !important;
-  min-height: 175px !important;
-  max-height: 175px !important;
+  height: 150px !important;
+  min-height: 150px !important;
+  max-height: 150px !important;
   aspect-ratio: auto !important;
   box-sizing: border-box !important;
 }
@@ -3031,4 +3031,82 @@ html[lang="zh-CN"] body:not(.legal-page) {
 }
 html[lang="zh-CN"] body:not(.legal-page) :is(p, li, td, th, dd, dt, blockquote, figcaption) {
   font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif !important;
+}
+
+
+/* ==========================================================================
+   SITE-WIDE BANNER HEIGHT — SINGLE STANDARD
+   Inner-page banners use an exact height of 150px.
+   The homepage hero is intentionally excluded and retains its original
+   responsive aspect ratio and artwork proportions.
+   ========================================================================== */
+html body :is(
+  .page-banner,
+  .compact-page-banner,
+  .about-compact-banner,
+  .book-compact-banner,
+  .book-page-banner,
+  .contact-banner,
+  .legal-banner,
+  .edu-hero,
+  .ai-hero,
+  .ai-detail-hero,
+  .car-hero,
+  .nf-hero,
+  .topic-page .topic-banner
+) {
+  height: 150px !important;
+  min-height: 150px !important;
+  max-height: 150px !important;
+  aspect-ratio: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* FINAL OVERRIDE: exact 150px height for every inner-page banner.
+   This intentionally comes last to defeat older page-level and mobile 175px rules.
+   The homepage hero is excluded and keeps its original responsive ratio. */
+html body:not(.home-page) main :is(
+  .page-banner,
+  .compact-page-banner,
+  .about-compact-banner,
+  .book-compact-banner,
+  .book-page-banner,
+  .contact-banner,
+  .legal-banner,
+  .edu-hero,
+  .ai-hero,
+  .ai-detail-hero,
+  .car-hero,
+  .nf-hero,
+  .topic-page .topic-banner
+),
+html body.nf-page .nf-main > .nf-hero {
+  height: 150px !important;
+  min-height: 150px !important;
+  max-height: 150px !important;
+  aspect-ratio: auto !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 760px) {
+  html body:not(.home-page) main :is(
+    .page-banner,
+    .compact-page-banner,
+    .about-compact-banner,
+    .book-compact-banner,
+    .book-page-banner,
+    .contact-banner,
+    .legal-banner,
+    .edu-hero,
+    .ai-hero,
+    .ai-detail-hero,
+    .car-hero,
+    .nf-hero,
+    .topic-page .topic-banner
+  ),
+  html body.nf-page .nf-main > .nf-hero {
+    height: 150px !important;
+    min-height: 150px !important;
+    max-height: 150px !important;
+    aspect-ratio: auto !important;
+  }
 }

@@ -72,7 +72,7 @@ Current site-wide base values found in the stylesheet:
 | `--font-site` | `Segoe UI, Tahoma, sans-serif` | Site-wide typography |
 | `--site-content-width` | `1120px` | Main reading/content column |
 | `--site-banner-width` | `1400px` | Inner-page banner and back-link frame |
-| `--inner-banner-height` | `175px` | Desktop inner-page banner height |
+| `--inner-banner-height` | `150px` | Desktop inner-page banner height |
 | `--inner-banner-height-mobile` | `150px` | Mobile inner-page banner height |
 | `--inner-banner-radius` | `22px` | Desktop inner-page banner corners |
 | `--inner-banner-title-size` | `clamp(24px, 2vw, 28px)` | Inner-page banner title |
@@ -352,3 +352,24 @@ All non-legal website body text must follow one consistent typography system in 
 - Do not introduce page-specific body font sizes, weights, or line heights. New body copy must inherit this shared standard.
 
 The shared rule is implemented in `assets/css/styles.css`. If a page-specific selector overrides body typography, remove that override or update it to comply with this standard.
+
+## Math Foundations topic-page banner alignment
+
+The Number Families page is a child topic page of Math Foundations. Its page container, breadcrumb, vertical spacing, and banner typography must match the Math Foundations page template. Only the banner background treatment and page-specific wording may differ. Keep the kicker uppercase, omit decorative separator dots, and preserve readable text contrast against each page's own background.
+
+
+### Number Families banner typography correction
+
+- The Number Families subtitle remains sentence case, regular weight, and normal letter spacing. Do not force it to uppercase or bold.
+- Its main title must use the same restrained size scale as the Math Foundations banner, not the oversized 50px topic-heading scale.
+- The Back link must use the shared inner-page back-link style and color.
+
+
+### Banner height consistency
+
+All banners within the same page-template family must share the same height. The Number Families banner uses the same fixed 150px height as the other inner-page banners on desktop and mobile.
+
+
+## Inner-page banner height — mandatory standard
+
+All inner-page banners use a consistent fixed height of **150px** on desktop and mobile. This includes section and topic banners, book banners, AI banners, Contact, About, and legal banners. The homepage hero is explicitly excluded: preserve its original responsive aspect ratio and artwork proportions; do not force it to a fixed height or stretch its image. Keep inner-page banner content within 150px by adjusting internal spacing or text sizing rather than changing the shared height.
