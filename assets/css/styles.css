@@ -1578,7 +1578,7 @@ body.about-page .story-grid {
    The homepage hero is intentionally excluded and remains unchanged. */
 .compact-page-banner,
 .page-banner {
-  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
+  background-image: url("../hero/inner-banner-blue-gold.webp") !important;
   background-size: 100% 100% !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -1588,7 +1588,7 @@ body.about-page .story-grid {
    Homepage hero remains completely unchanged. */
 body:not(.home-page) .compact-page-banner,
 body:not(.home-page) .page-banner {
-  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
+  background-image: url("../hero/inner-banner-blue-gold.webp") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -1598,7 +1598,7 @@ body:not(.home-page) .page-banner {
 /* Final inner-banner rendering: clean rectangular artwork, rounded by CSS only. */
 body:not(.home-page) .compact-page-banner,
 body:not(.home-page) .page-banner {
-  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
+  background-image: url("../hero/inner-banner-blue-gold.webp") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -2195,7 +2195,7 @@ body.home-page #hero-mobile-banner-image {
 @media (max-width: 700px) {
   body:not(.home-page) .compact-page-banner,
   body:not(.home-page) .page-banner {
-    background-image: url("../hero/inner-banner-mobile.png") !important;
+    background-image: url("../hero/inner-banner-mobile.webp") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
@@ -2229,7 +2229,7 @@ body.ai-page > main .ai-hero {
   justify-content: center !important;
   align-items: flex-start !important;
   gap: 0 !important;
-  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
+  background-image: url("../hero/inner-banner-blue-gold.webp") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -2303,7 +2303,7 @@ body.ai-page .about-compact-banner {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
+  background-image: url("../hero/inner-banner-blue-gold.webp") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -2373,7 +2373,7 @@ body.ai-page .about-compact-banner {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  background-image: url("../hero/inner-banner-blue-gold.jpg") !important;
+  background-image: url("../hero/inner-banner-blue-gold.webp") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
