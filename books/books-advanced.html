@@ -50,19 +50,7 @@
     font-size: 14px;
   }
 }
-</style><script>
-window.gtranslateSettings = {
-  "default_language": "en",
-  "languages": ["en", "fr", "es", "de", "it", "pt", "ja", "ko", "zh-CN", "zh-TW", "ar", "hi"],
-  "wrapper_selector": "#gtranslate-selector"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
-</head><body class="edu-page"><header class="site-header"><div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.png" alt="Kiwi 爱AI Study logo"></a><p class="logo-tagline" aria-hidden="true"><span class="tag-learn">Learn</span><span class="tag-sep"> • </span><span class="tag-create">Create</span><span class="tag-sep"> • </span><span class="tag-share">Share</span><span class="tag-sep"> • </span><span class="tag-grow">Grow</span></p><span class="divider" aria-hidden="true"></span><div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Sherry Cai"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.png" alt="Sherry Cai"></a></div></div><nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home">Home</a><a href="../about/index.html" data-nav="about">About</a><a href="../math/index.html" data-nav="math">Math Education</a><a href="../ai/index.html" data-nav="ai">AI Education</a><a href="../math/in-class-learning.html" data-nav="class">In-Class Learning</a><a href="index.html" data-nav="books">My Books</a><a href="../contact/index.html" data-nav="contact">Contact</a><span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
-        <button class="globe-language" type="button" aria-label="Other languages" title="Other languages" aria-expanded="false">
-          <span aria-hidden="true">🌐</span>
-        </button>
-        <span class="gtranslate-popover" id="gtranslate-selector" hidden aria-label="Choose another language"></span>
+</style></head><body class="edu-page"><header class="site-header"><div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.png" alt="Kiwi 爱AI Study logo"></a><p class="logo-tagline" aria-hidden="true"><span class="tag-learn">Learn</span><span class="tag-sep"> • </span><span class="tag-create">Create</span><span class="tag-sep"> • </span><span class="tag-share">Share</span><span class="tag-sep"> • </span><span class="tag-grow">Grow</span></p><span class="divider" aria-hidden="true"></span><div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Sherry Cai"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.png" alt="Sherry Cai"></a></div></div><nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home">Home</a><a href="../about/index.html" data-nav="about">About</a><a href="../math/index.html" data-nav="math">Math Education</a><a href="../ai/index.html" data-nav="ai">AI Education</a><a href="../math/in-class-learning.html" data-nav="class">In-Class Learning</a><a href="index.html" data-nav="books">My Books</a><a href="../contact/index.html" data-nav="contact">Contact</a><span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
       </span></nav></header><main class="edu-main"><div class="edu-back"><a class="book-back-link" href="../index.html" data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a></div><section class="edu-hero">
   <p class="edu-kicker">BOOK 03 · IN DEVELOPMENT</p>
   <h1>Math Quick Reference Library – Advanced</h1>
@@ -97,95 +85,25 @@ window.gtranslateSettings = {
 })();
 </script>
 <script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
 (() => {
-  const globe = document.querySelector(".globe-language");
-  const picker = document.getElementById("gtranslate-selector");
-  if (!globe || !picker) return;
-  globe.addEventListener("click", () => {
-    const open = picker.hasAttribute("hidden");
-    if (open) picker.removeAttribute("hidden");
-    else picker.setAttribute("hidden", "");
-    globe.setAttribute("aria-expanded", String(open));
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
   });
-  document.addEventListener("click", event => {
-    if (!picker.contains(event.target) && !globe.contains(event.target)) {
-      picker.setAttribute("hidden", "");
-      globe.setAttribute("aria-expanded", "false");
-    }
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
   });
 })();
 </script>
-
-
-<script>
-/* Return the Google Translate engine to its original language before Kiwi's native switch. */
-(() => {
-  const flags = document.querySelectorAll('.flag[data-language]');
-  if (!flags.length) return;
-
-  function fireChange(element) {
-    try {
-      element.dispatchEvent(new Event('change', { bubbles: true }));
-      element.dispatchEvent(new Event('change', { bubbles: true }));
-    } catch (e) {}
-  }
-
-  function clearTranslateCookies() {
-    const host = location.hostname;
-    const domains = new Set(['']);
-    if (host) {
-      domains.add(host);
-      domains.add('.' + host);
-    }
-
-    // Clear cookies at every ancestor path, including GitHub Pages project roots
-    // such as /kiwi-ai-study/, not only / and the current page directory.
-    const paths = new Set(['/']);
-    let current = location.pathname || '/';
-    const segments = current.split('/').filter(Boolean);
-    let prefix = '';
-    for (const segment of segments) {
-      prefix += '/' + segment;
-      paths.add(prefix);
-      paths.add(prefix + '/');
-    }
-    paths.add(location.pathname.replace(/[^/]*$/, '') || '/');
-
-    ['googtrans', 'googtransopt'].forEach(name => {
-      paths.forEach(path => {
-        domains.forEach(domain => {
-          let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path + '; SameSite=Lax';
-          if (domain) cookie += '; domain=' + domain;
-          document.cookie = cookie;
-        });
-      });
-    });
-  }
-
-  flags.forEach(flag => {
-    flag.addEventListener('click', event => {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-
-      const language = flag.dataset.language === 'zh' ? 'zh' : 'en';
-      try { localStorage.setItem('kiwi-site-language', language); } catch (e) {}
-
-      // Google Translate's actual translation control is .goog-te-combo.
-      // Empty value means return to the page's original language (English).
-      const googleCombo = document.querySelector('select.goog-te-combo');
-      if (googleCombo) {
-        googleCombo.value = '';
-        fireChange(googleCombo);
-      }
-
-      clearTranslateCookies();
-
-      // Allow the translation engine to restore the source text before reloading
-      // into Kiwi's own English/Chinese content. This is a single bounded delay.
-      window.setTimeout(() => location.reload(), googleCombo ? 700 : 100);
-    }, true);
-  });
-})();
-</script>
-
 </body></html>
