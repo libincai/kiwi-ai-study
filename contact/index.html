@@ -23,8 +23,8 @@
 .contact-field{display:flex;flex-direction:column;gap:7px}
 .contact-field.full{grid-column:1/-1}
 .contact-field label{font-size:14px;font-weight:750;color:#173e70}
-.contact-field input,.contact-field textarea{width:100%;box-sizing:border-box;border:1px solid #cbd9e9;border-radius:10px;padding:13px 14px;font:inherit;font-size:15px;color:#172b4d;background:#fbfdff;outline:none}
-.contact-field input:focus,.contact-field textarea:focus{border-color:#1768d5;box-shadow:0 0 0 3px rgba(23,104,213,.12)}
+.contact-field input,.contact-field select,.contact-field textarea{width:100%;box-sizing:border-box;border:1px solid #cbd9e9;border-radius:10px;padding:13px 14px;font:inherit;font-size:15px;color:#172b4d;background:#fbfdff;outline:none}
+.contact-field input:focus,.contact-field select:focus,.contact-field textarea:focus{border-color:#1768d5;box-shadow:0 0 0 3px rgba(23,104,213,.12)}
 .contact-field textarea{min-height:165px;resize:vertical}
 .contact-submit{margin-top:20px;border:0;border-radius:999px;padding:13px 25px;background:#0756df;color:white;font-size:15px;font-weight:800;cursor:pointer}
 .contact-submit:hover{background:#0648bd}
@@ -114,7 +114,16 @@
         </div>
         <div class="contact-field full">
           <label for="contact-subject" data-en="Subject *" data-zh="主题 *">Subject *</label>
-          <input id="contact-subject" type="text" name="subject" required maxlength="180" placeholder="How can we help?" data-en-placeholder="How can we help?" data-zh-placeholder="您希望咨询什么？">
+          <select id="contact-subject" name="subject" required>
+            <option value="" disabled selected data-en="Select a subject" data-zh="请选择主题">Select a subject</option>
+            <option value="Mathematics" data-en="Mathematics" data-zh="数学">Mathematics</option>
+            <option value="AI Education" data-en="AI Education" data-zh="人工智能教育">AI Education</option>
+            <option value="Books" data-en="Books" data-zh="书籍">Books</option>
+            <option value="In-Class Learning" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</option>
+            <option value="Collaboration" data-en="Collaboration" data-zh="合作交流">Collaboration</option>
+            <option value="General Inquiry" data-en="General Inquiry" data-zh="一般咨询">General Inquiry</option>
+            <option value="Other" data-en="Other" data-zh="其他">Other</option>
+          </select>
         </div>
         <div class="contact-field full">
           <label for="contact-message" data-en="Message *" data-zh="留言内容 *">Message *</label>
