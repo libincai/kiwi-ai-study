@@ -2697,3 +2697,64 @@ body.home-page .feature-card {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Final background-crop standard: use the same full artwork framing
+   across every inner-page banner, matching the Contact Us reference.
+   Keep the existing mobile artwork selection and all banner dimensions intact. */
+body:not(.home-page) .compact-page-banner,
+body:not(.home-page) .about-compact-banner,
+body:not(.home-page) .page-banner,
+body:not(.home-page) .edu-hero,
+body:not(.home-page) .ai-hero,
+body:not(.home-page) .contact-banner {
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+
+/* Unified primary inner-page banner height — Contact Us is the reference. */
+.compact-page-banner,
+.about-compact-banner,
+.contact-banner {
+  height: 175px !important;
+  min-height: 175px !important;
+  max-height: 175px !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 760px) {
+  .compact-page-banner,
+  .about-compact-banner,
+  .contact-banner {
+    height: 150px !important;
+    min-height: 150px !important;
+    max-height: 150px !important;
+  }
+}
+
+
+/* Corrected banner-height normalization.
+   The earlier aspect-ratio rule had higher specificity than the first height rule,
+   so some pages continued to render taller. Disable that ratio and force the
+   Contact Us reference height on every inner-page banner. */
+html body:not(.home-page) main .compact-page-banner,
+html body:not(.home-page) main .about-compact-banner,
+html body:not(.home-page) main .contact-banner {
+  height: 175px !important;
+  min-height: 175px !important;
+  max-height: 175px !important;
+  aspect-ratio: auto !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 760px) {
+  html body:not(.home-page) main .compact-page-banner,
+  html body:not(.home-page) main .about-compact-banner,
+  html body:not(.home-page) main .contact-banner {
+    height: 175px !important;
+    min-height: 175px !important;
+    max-height: 175px !important;
+    aspect-ratio: auto !important;
+  }
+}
