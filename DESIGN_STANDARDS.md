@@ -100,7 +100,35 @@ Every primary page uses the same shared header and navigation component.
 - The former “Resources” item is not part of the current primary navigation unless the site owner explicitly restores it.
 - Both language versions must show the equivalent navigation labels and active state.
 
-## 5. Inner-page banner — mandatory shared component
+## 5. Four-level page and banner system — mandatory for all new pages
+
+Every page must be assigned to exactly one of the four levels below before its layout is built. The homepage is intentionally separate from the inner-page banner system.
+
+| Level | Page type | Examples | Banner standard | Return link standard |
+|---|---|---|---|---|
+| 1 | Homepage | `index.html` | Homepage-only hero/banner. Keep its desktop and mobile artwork and layout independent. | No inner-page back link. |
+| 2 | Primary navigation page | Math Education, AI Education, In-Class Learning, About, My Books, Contact | Use the shared primary inner-page banner. This is the standard blue-and-gold banner and its approved dimensions, typography, padding, and spacing. | One return link above the banner only when the page design calls for it; align it to the banner frame. |
+| 3 | Category / landing page beneath a navigation page | Math Foundations, Math in Real Life, Visual Math & Patterns, Mathematical Thinking | **Use exactly the same banner component and visual rules as Level 2.** Do not create a separate category-banner design. | One return link above the banner. Match Level 2 in position, font, size, weight, color, and spacing. The label and destination reflect the parent page. |
+| 4 | Topic / detail page | Number Families and future individual concept pages | Use the distinct topic-level banner style. The current Number Families banner is the approved visual reference: topic-specific, lighter/illustrative, and visually distinct from Levels 2–3. | One return link above the topic banner. Use the same site link typography and alignment system, with wording and destination reflecting the parent category. |
+
+### Required rules for the return link and banner frame
+
+- A page must show **one and only one** return link in the banner area. Never leave an old link in place when adding or replacing a shared link.
+- The return link always appears above the banner, not inside the banner artwork.
+- On Levels 2 and 3, the return link and banner share the same left alignment and frame width. The vertical gaps above the link and between the link and banner use the shared CSS tokens.
+- On Level 4, keep the same clear hierarchy: navigation divider → one return link → topic banner → page content. Align the link and topic banner to the same topic-page content frame.
+- Keep the return link live HTML text so it can be translated. Never bake it into an image.
+- Do not use two different return-link implementations on the same page. Reuse the shared classes/tokens.
+- When a page is created, identify its level in the implementation notes and use the matching existing component. Do not invent a fifth banner type without explicit approval.
+
+### CSS source of truth
+
+- Level 2 and Level 3 use the shared `--inner-banner-*` and `--inner-page-back-*` tokens and the canonical primary-banner/back-link selectors in `assets/css/styles.css`.
+- Level 4 uses the `--topic-banner-*` and `--topic-page-*` tokens and the reusable `.topic-page`, `.topic-back-wrap`, and `.topic-banner` classes in the same stylesheet. Topic pages may customize their banner artwork or illustration, but not invent unrelated spacing or return-link typography.
+- Level 1 remains controlled by the homepage hero rules and must not be affected by inner-page selectors.
+- Markdown defines the design decisions; CSS custom properties and shared classes implement them. Update both whenever an approved shared standard changes.
+
+## 6. Inner-page banner — mandatory shared component
 
 All pages opened directly from the primary navigation use the same inner-page banner component and geometry.
 
@@ -130,7 +158,7 @@ Rules:
 - Preserve the approved title underline and text contrast treatment.
 - Do not put text into the banner background image itself; title and subtitle remain live HTML text so they can be translated and resized.
 
-## 6. Back-to-home row and page alignment
+## 7. Back-to-home row and page alignment
 
 - The “Back to Home” link appears above the inner-page banner.
 - Its left edge must align exactly with the banner's left edge.
@@ -139,7 +167,7 @@ Rules:
 - Keep the gap between the back link and banner consistent.
 - Do not use page-specific margins to compensate for a wrong parent container width.
 
-## 7. Main content layout
+## 8. Main content layout
 
 - The main content should align with the banner's left and right edges unless a page has an explicitly approved alternate layout.
 - Use the shared maximum content width (`1120px` in the current design) and center it.
@@ -148,7 +176,7 @@ Rules:
 - Do not let content overflow the banner or page container.
 - The homepage's introductory section and mascot/character illustration are important content and must not be removed as a side effect of changing the homepage navigation cards.
 
-## 8. Typography and color
+## 9. Typography and color
 
 ### Body H2 standard
 
@@ -168,7 +196,7 @@ Rules:
 - Do not set arbitrary local font sizes if a shared heading or body class already exists.
 - English and Chinese versions should have equivalent hierarchy and visual weight; adjust text length or line breaks where needed without changing the shared component dimensions.
 
-## 9. Language switching
+## 10. Language switching
 
 - Every bilingual page must support the same English/Chinese language switcher.
 - Use the same flag controls, selected-language treatment, and persistence behavior.
@@ -176,7 +204,7 @@ Rules:
 - A page is not complete until both languages have been tested.
 - Do not change the homepage mobile banner or other language-specific hero assets when fixing an unrelated page.
 
-## 10. Forms and interactions
+## 11. Forms and interactions
 
 - Contact form submissions must continue to use the approved Formspree endpoint configured for the project.
 - Keep the visitor's reply email field, subject/topic selection, message field, and spam-trap honeypot.
@@ -184,7 +212,7 @@ Rules:
 - Keep success and error feedback understandable in both languages.
 - Never replace a working form endpoint with a placeholder.
 
-## 11. Images and assets
+## 12. Images and assets
 
 - Reuse approved assets from `assets/` rather than recreating or duplicating them.
 - Do not stretch logos, book covers, mascot artwork, or illustrations.
@@ -266,3 +294,14 @@ All body H2 headings use the shared deep-blue heading color `#123B73` and the sh
 ### Math Education card image sizing
 - All four Math Education cards use the same image-frame height: 205px.
 - Keep the image frames visually consistent; do not enlarge an individual card image independently.
+
+## 13. New-page implementation checklist
+
+Before publishing a new page:
+
+1. Assign Level 1, 2, 3, or 4.
+2. Reuse the matching shared banner class and CSS tokens.
+3. Add no more than one parent/back link; verify the old link was removed if replacing it.
+4. Check the banner and return-link alignment, spacing, and typography at desktop and mobile widths.
+5. Test English and Chinese text, including the return-link label.
+6. Confirm the homepage hero is unchanged when editing any inner-page banner.

@@ -33,6 +33,18 @@
   --inner-page-back-top: 24px;
   --inner-page-back-bottom: 22px;
   --inner-banner-body-gap: 30px;
+
+  /* Level 4 — topic/detail page banner and return-link system */
+  --topic-page-width: 1160px;
+  --topic-page-gutter: 26px;
+  --topic-page-back-top: 18px;
+  --topic-page-back-bottom: 8px;
+  --topic-back-font-size: 13px;
+  --topic-back-color: #1768b2;
+  --topic-banner-radius: 20px;
+  --topic-banner-padding-y: 34px;
+  --topic-banner-padding-x: 38px;
+  --topic-banner-gap-bottom: 28px;
 }
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--font-site);font-size:var(--font-size-body);color:var(--color-body);background:var(--color-white)}
@@ -2934,4 +2946,109 @@ body.about-page .about-intro h2 {
   body.about-page .about-intro-copy {
     transform: none;
   }
+}
+
+
+/* ==========================================================================
+   LEVEL 4 — TOPIC / DETAIL PAGE COMPONENTS
+   Number Families is the approved visual reference for this page level.
+   Keep its topic-specific banner appearance, but use shared frame and link tokens.
+   ========================================================================== */
+.topic-page {
+  --topic-ink: #142b50;
+  --topic-muted: #5d6f86;
+}
+
+.topic-page .topic-main {
+  width: min(var(--topic-page-width), 100%);
+  margin: 0 auto;
+  padding: 0 var(--topic-page-gutter) 64px;
+  box-sizing: border-box;
+}
+
+.topic-page .topic-back-wrap {
+  padding: var(--topic-page-back-top) 0 var(--topic-page-back-bottom);
+  margin: 0;
+}
+
+.topic-page .topic-back-wrap a {
+  color: var(--topic-back-color);
+  font-family: var(--font-site);
+  font-size: var(--topic-back-font-size);
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.topic-page .topic-banner {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 var(--topic-banner-gap-bottom);
+  padding: var(--topic-banner-padding-y) var(--topic-banner-padding-x);
+  border: 1px solid #d8e8f8;
+  border-radius: var(--topic-banner-radius);
+  box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --topic-page-gutter: 15px;
+    --topic-page-back-top: 18px;
+    --topic-page-back-bottom: 8px;
+    --topic-banner-padding-y: 26px;
+    --topic-banner-padding-x: 22px;
+  }
+}
+
+
+/* Additional-language globe control — shared across all site pages */
+.flags { position: relative; }
+button.globe-language {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #244b8e;
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+button.globe-language:hover,
+button.globe-language:focus-visible {
+  background: #edf3ff;
+  outline: none;
+}
+.gtranslate-popover {
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 170px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #dbe5f2;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(20, 45, 85, .16);
+}
+.gtranslate-popover[hidden] { display: none !important; }
+.gtranslate-popover select {
+  width: 100%;
+  min-height: 36px;
+  padding: 6px 28px 6px 9px;
+  border: 1px solid #cbd7e7;
+  border-radius: 7px;
+  background: #fff;
+  color: #18345c;
+  font: inherit;
+  font-size: 13px;
+}
+@media (max-width: 760px) {
+  .gtranslate-popover { right: 0; }
 }

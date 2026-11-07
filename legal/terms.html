@@ -33,6 +33,14 @@
     }
 
   </style>
+<script>
+window.gtranslateSettings = {
+  "default_language": "en",
+  "languages": ["en", "fr", "es", "de", "it", "pt", "ja", "ko", "zh-CN", "zh-TW", "ar", "hi"],
+  "wrapper_selector": "#gtranslate-selector"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
 </head>
 <body class="legal-page">
   <header class="site-header">
@@ -56,6 +64,10 @@
       <span class="flags" aria-label="Languages">
         <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button>
         <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
+        <button class="globe-language" type="button" aria-label="Other languages" title="Other languages" aria-expanded="false">
+          <span aria-hidden="true">🌐</span>
+        </button>
+        <span class="gtranslate-popover" id="gtranslate-selector" hidden aria-label="Choose another language"></span>
       </span>
     </nav>
   </header>
@@ -145,5 +157,79 @@
     document.title = button.dataset.language === "zh" ? "服务条款 | Kiwi 爱AI Study" : "Terms of Service | Kiwi 爱AI Study";
   }));
 </script>
+
+<script>
+(() => {
+  const globe = document.querySelector(".globe-language");
+  const picker = document.getElementById("gtranslate-selector");
+  if (!globe || !picker) return;
+  globe.addEventListener("click", () => {
+    const open = picker.hasAttribute("hidden");
+    if (open) picker.removeAttribute("hidden");
+    else picker.setAttribute("hidden", "");
+    globe.setAttribute("aria-expanded", String(open));
+  });
+  document.addEventListener("click", event => {
+    if (!picker.contains(event.target) && !globe.contains(event.target)) {
+      picker.setAttribute("hidden", "");
+      globe.setAttribute("aria-expanded", "false");
+    }
+  });
+})();
+</script>
+
+
+<script>
+/* Return the Google Translate engine to its original language before Kiwi's native switch. */
+(() => {
+  const flags = document.querySelectorAll('.flag[data-language]');
+  if (!flags.length) return;
+
+  function fireChange(element) {
+    try {
+      element.dispatchEvent(new Event('change', { bubbles: true }));
+      element.dispatchEvent(new Event('change', { bubbles: true }));
+    } catch (e) {}
+  }
+
+  function clearTranslateCookies() {
+    const host = location.hostname;
+    const domains = ['', host, host ? '.' + host : ''];
+    const paths = ['/', location.pathname, location.pathname.replace(/[^/]*$/, '') || '/'];
+    ['googtrans', 'googtransopt'].forEach(name => {
+      paths.forEach(path => domains.forEach(domain => {
+        let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+        if (domain) cookie += '; domain=' + domain;
+        document.cookie = cookie;
+      }));
+    });
+  }
+
+  flags.forEach(flag => {
+    flag.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const language = flag.dataset.language === 'zh' ? 'zh' : 'en';
+      try { localStorage.setItem('kiwi-site-language', language); } catch (e) {}
+
+      // Google Translate's actual translation control is .goog-te-combo.
+      // Empty value means return to the page's original language (English).
+      const googleCombo = document.querySelector('select.goog-te-combo');
+      if (googleCombo) {
+        googleCombo.value = '';
+        fireChange(googleCombo);
+      }
+
+      clearTranslateCookies();
+
+      // Allow the translation engine to restore the source text before reloading
+      // into Kiwi's own English/Chinese content. This is a single bounded delay.
+      window.setTimeout(() => location.reload(), googleCombo ? 700 : 100);
+    }, true);
+  });
+})();
+</script>
+
 </body>
 </html>
