@@ -3110,3 +3110,81 @@ html body.nf-page .nf-main > .nf-hero {
     aspect-ratio: auto !important;
   }
 }
+
+/* Google Drive-style breadcrumb navigation */
+.drive-breadcrumb {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin: 18px 0 8px;
+  padding: 0;
+  min-height: 34px;
+  color: #26384d;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.drive-crumb-part { display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
+.drive-crumb-link {
+  color: #26384d;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.drive-crumb-link:hover { color: #1768b2; text-decoration: underline; }
+.drive-crumb-current { color: #26384d; font-weight: 500; }
+.drive-crumb-separator { width: 16px; height: 16px; flex: 0 0 16px; fill: none; stroke: #758397; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.drive-crumb-menu-wrap { position: relative; display: inline-flex; align-items: center; }
+.drive-crumb-menu-button {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #45566c;
+  cursor: pointer;
+}
+.drive-crumb-menu-button:hover,
+.drive-crumb-menu-button[aria-expanded="true"] { background: #edf2f8; }
+.drive-crumb-menu-button svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.drive-crumb-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  max-width: min(320px, calc(100vw - 36px));
+  max-height: 60vh;
+  overflow: auto;
+  padding: 6px;
+  border: 1px solid #dce3eb;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(20, 42, 70, .16);
+}
+.drive-crumb-menu[hidden] { display: none; }
+.drive-crumb-menu a {
+  display: block;
+  padding: 9px 11px;
+  border-radius: 6px;
+  color: #26384d;
+  font-size: 14px;
+  text-decoration: none;
+}
+.drive-crumb-menu a:hover { background: #f0f5fb; color: #1768b2; }
+@media (max-width: 640px) {
+  .drive-breadcrumb { width: 100%; margin: 14px 0 7px; padding: 0; gap: 3px; font-size: 14px; }
+  .drive-crumb-part { gap: 2px; }
+  .drive-crumb-separator { width: 14px; height: 14px; flex-basis: 14px; }
+  .drive-crumb-menu { right: auto; left: 0; }
+}
