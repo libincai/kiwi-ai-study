@@ -320,14 +320,33 @@ window.gtranslateSettings = {
 
   function clearTranslateCookies() {
     const host = location.hostname;
-    const domains = ['', host, host ? '.' + host : ''];
-    const paths = ['/', location.pathname, location.pathname.replace(/[^/]*$/, '') || '/'];
+    const domains = new Set(['']);
+    if (host) {
+      domains.add(host);
+      domains.add('.' + host);
+    }
+
+    // Clear cookies at every ancestor path, including GitHub Pages project roots
+    // such as /kiwi-ai-study/, not only / and the current page directory.
+    const paths = new Set(['/']);
+    let current = location.pathname || '/';
+    const segments = current.split('/').filter(Boolean);
+    let prefix = '';
+    for (const segment of segments) {
+      prefix += '/' + segment;
+      paths.add(prefix);
+      paths.add(prefix + '/');
+    }
+    paths.add(location.pathname.replace(/[^/]*$/, '') || '/');
+
     ['googtrans', 'googtransopt'].forEach(name => {
-      paths.forEach(path => domains.forEach(domain => {
-        let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
-        if (domain) cookie += '; domain=' + domain;
-        document.cookie = cookie;
-      }));
+      paths.forEach(path => {
+        domains.forEach(domain => {
+          let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path + '; SameSite=Lax';
+          if (domain) cookie += '; domain=' + domain;
+          document.cookie = cookie;
+        });
+      });
     });
   }
 
