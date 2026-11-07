@@ -305,3 +305,50 @@ Before publishing a new page:
 4. Check the banner and return-link alignment, spacing, and typography at desktop and mobile widths.
 5. Test English and Chinese text, including the return-link label.
 6. Confirm the homepage hero is unchanged when editing any inner-page banner.
+
+## Image optimization and asset size — mandatory
+
+All new images and replacement images must be optimized before they are added to the website. The goal is the smallest practical file size that still looks clear and works correctly at the actual size displayed on the website. Do not use unnecessarily high-resolution or oversized image files.
+
+- **Preferred format:** WebP for photographs, banners, book covers, cards, illustrations, and other raster images. Use SVG for suitable vector artwork and icons.
+- **Fallbacks / exceptions:** Keep PNG when lossless quality or transparency is essential and WebP does not meet the visual requirement. Keep JPEG when it is already smaller or WebP would make the file larger without a visible quality improvement.
+- **Right-size every image:** Resize to the maximum dimensions actually needed by the website, allowing for high-density screens where appropriate. Do not upload a 3000–4000 px image when a much smaller image will display just as clearly.
+- **Quality target:** Use a sensible WebP quality setting (normally around 80–90) and visually inspect the result. Adjust quality only as needed to avoid visible artifacts, blurry text, jagged edges, or damaged fine details.
+- **Preserve transparency:** Logos and illustrations that require transparent backgrounds must retain transparency after conversion.
+- **Do not sacrifice usability:** Text in graphics, mathematical symbols, diagrams, labels, and fine lines must remain readable at the intended display size. If compression makes them unclear, use a higher quality setting or a more suitable format.
+- **Update references:** When changing an image's filename or format, update every HTML, CSS, JavaScript, and other reference to it. Remove obsolete copies from the active website folder after verifying that no page uses them.
+- **Verify before publishing:** Check the image on desktop and mobile, confirm that it loads without errors, and inspect important pages such as the homepage, books, math, and AI sections. Check the browser console/network panel for missing asset requests.
+- **Keep source artwork separately when needed:** If an editable or lossless master is important, store it outside the deployed website assets or in the project's source/archive location. The deployed website should contain only the optimized assets it actually uses.
+
+**Default rule:** Use the lowest file size that preserves a clear, professional appearance on the website. Maximum resolution is not the goal; sufficient visual quality with efficient loading is.
+
+## Body text color — mandatory site-wide standard
+
+All main body text across the website must use one consistent near-black color for comfortable reading.
+
+- **Body text color:** `#222222`.
+- Apply this consistently to paragraphs, list items, explanations, examples, captions, table text, and instructional copy across all non-legal pages.
+- Keep headings in the approved navy/blue heading colors.
+- Keep links, navigation states, buttons, badges, and brand accents in their existing approved colors.
+- Legal pages under `legal/` are excluded from this global body-text rule and may retain their own typography and color treatment.
+- Do not introduce page-specific muted blue-gray body text colors. If a new component needs body copy, use `#222222`.
+
+When updating shared typography or colors, implement the rule in `assets/css/styles.css` and keep this document as the source of design guidance.
+
+## Bilingual body typography — mandatory site-wide standard
+
+All non-legal website body text must follow one consistent typography system in both English and Chinese. The homepage feature cards (Math Education, AI Education, and In-Class Learning) must match the body text in Latest Books and all other content pages.
+
+- **Body font size:** 15 px on desktop and mobile.
+- **Body font weight:** 400 (regular).
+- **Body line height:** 1.55.
+- **Body text color:** `#222222`.
+- Apply consistently to paragraphs, list items, table text, explanations, examples, captions, and instructional copy across Homepage, Math, AI, Books, About, Contact, and other non-legal pages.
+- English body text keeps the existing site font stack (`Segoe UI`, then fallbacks).
+- Chinese body text uses `Microsoft YaHei`, with `PingFang SC` and `Noto Sans SC` fallbacks.
+- Headings retain their existing size hierarchy, weights, and navy/blue colors.
+- Navigation, links, buttons, badges, labels, and decorative/brand text retain their existing styles.
+- Legal pages are excluded and keep their independent typography.
+- Do not introduce page-specific body font sizes, weights, or line heights. New body copy must inherit this shared standard.
+
+The shared rule is implemented in `assets/css/styles.css`. If a page-specific selector overrides body typography, remove that override or update it to comply with this standard.

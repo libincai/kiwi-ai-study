@@ -4,7 +4,7 @@
   /* Brand palette */
   --color-navy: #101747;
   --color-blue: #0756df;
-  --color-body: #101747;
+  --color-body: #222222;
   --color-soft-blue: #e5f2ff;
   --color-soft-lilac: #f0efff;
   --color-white: #ffffff;
@@ -3001,3 +3001,34 @@ body.about-page .about-intro h2 {
 }
 
 
+
+
+/* ==========================================================================
+   GLOBAL BODY TEXT COLOR — SITE-WIDE STANDARD
+   Keep all non-legal page body copy consistently near-black for readability.
+   Headings, links, navigation, badges, and brand accents retain their own colors.
+   Legal pages are intentionally excluded and keep their separate styling.
+   ========================================================================== */
+body:not(.legal-page) :is(p, li, td, dd, blockquote, figcaption, small, label) {
+  color: #222222 !important;
+}
+
+/* ==========================================================================
+   GLOBAL BODY TYPOGRAPHY — BILINGUAL SITE-WIDE STANDARD
+   One consistent size, weight, line-height and body color for all non-legal
+   page copy, in both English and Chinese. Headings and UI labels are excluded.
+   ========================================================================== */
+body:not(.legal-page) :is(p, li, td, th, dd, dt, blockquote, figcaption) {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  color: #222222 !important;
+}
+
+/* Chinese uses a suitable system font; English keeps the existing site font. */
+html[lang="zh-CN"] body:not(.legal-page) {
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+}
+html[lang="zh-CN"] body:not(.legal-page) :is(p, li, td, th, dd, dt, blockquote, figcaption) {
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif !important;
+}
