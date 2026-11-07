@@ -1,8 +1,41 @@
 /* KIWI 爱AI Study — homepage styling aligned to the approved 1536 × 1024 mockup */
 *{box-sizing:border-box}
-:root{--navy:#101747;--blue:#0756df;--text:#101747;--soft-blue:#e5f2ff;--soft-lilac:#f0efff}
+:root {
+  /* Brand palette */
+  --color-navy: #101747;
+  --color-blue: #0756df;
+  --color-body: #101747;
+  --color-soft-blue: #e5f2ff;
+  --color-soft-lilac: #f0efff;
+  --color-white: #ffffff;
+  --color-border: #e6eaf2;
+
+  /* Typography */
+  --font-site: "Segoe UI", Tahoma, sans-serif;
+  --font-size-body: 15px;
+
+  /* Layout */
+  --site-content-width: 1120px;
+  --site-banner-width: 1400px;
+  --site-page-gutter: 24px;
+
+  /* Shared inner-page banner geometry */
+  --inner-banner-height: 175px;
+  --inner-banner-height-mobile: 150px;
+  --inner-banner-radius: 22px;
+  --inner-banner-padding-x: 64px;
+  --inner-banner-title-size: clamp(24px, 2vw, 28px);
+  --body-h2-size: var(--inner-banner-title-size);
+  --body-h2-color: #123b73;
+  --inner-banner-subtitle-size: 13.5px;
+
+  /* Shared spacing */
+  --inner-page-back-top: 24px;
+  --inner-page-back-bottom: 22px;
+  --inner-banner-body-gap: 30px;
+}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Tahoma,sans-serif;color:var(--text);background:#fff}
+body{margin:0;font-family:var(--font-site);font-size:var(--font-size-body);color:var(--color-body);background:var(--color-white)}
 a{color:inherit}
 .site-header{min-height:73px;display:flex;align-items:center;gap:clamp(14px,1.55vw,26px);padding:7px clamp(24px,4.55vw,70px);background:#fff;border-bottom:1px solid #e6eaf2}
 .brand-lockup{display:grid;grid-template-columns:215px 1px 170px;grid-template-rows:38px 16px;column-gap:clamp(14px,1.8vw,28px);row-gap:0;align-items:center;flex:0 0 auto}
@@ -934,7 +967,6 @@ body.home-page .author-wrap { transform: translateY(5px); }
 .about-intro { display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:38px; padding:48px 0 38px; }
 .about-intro-copy { max-width:610px; }
 .about-eyebrow { margin:0 0 12px; color:#0756df; font-size:12px; font-weight:800; letter-spacing:.16em; }
-.about-intro h1 { margin:0 0 18px; color:#101747; font-size:clamp(34px,4vw,54px); line-height:1.08; letter-spacing:-.035em; font-weight:700; }
 .about-lead { margin:0; max-width:590px; color:#405071; font-size:19px; line-height:1.65; }
 .about-mascot-wrap { display:flex; justify-content:center; align-items:center; min-width:0; }
 .about-mascot-wrap img { display:block; width:100%; max-width:570px; height:auto; object-fit:contain; }
@@ -960,7 +992,7 @@ body.home-page .author-wrap { transform: translateY(5px); }
 .bridge-copy h2 { margin-bottom:19px; }
 .bridge-copy p { margin:0 0 14px; }
 .thinking-flow { padding:27px; border:1px solid #e2e9f6; border-radius:22px; background:#fff; box-shadow:0 8px 24px rgba(31,62,119,.07); text-align:center; }
-.thinking-flow h3 { margin:0 0 17px; color:#101747; font-size:20px; }
+.thinking-flow .flow-title { margin:0 0 17px; color:#101747; font-size:20px; font-weight:700; line-height:1.2; text-align:center; }
 .flow-step { padding:13px 12px; border-radius:12px; background:#eaf3ff; color:#123b82; }
 .flow-step b,.flow-step small { display:block; }
 .flow-step b { font-size:16px; }
@@ -975,7 +1007,6 @@ body.home-page .author-wrap { transform: translateY(5px); }
 @media(max-width:900px) {
  .about-page main { padding:0 22px 32px; }
  .about-intro { grid-template-columns:1fr 1fr; gap:20px; padding:35px 0 25px; }
- .about-intro h1 { font-size:36px; }
  .about-lead { font-size:16px; }
  .story-grid { gap:12px; }
  .story-card { padding:20px 17px; }
@@ -987,7 +1018,6 @@ body.home-page .author-wrap { transform: translateY(5px); }
 @media(max-width:620px) {
  .about-page main { padding:0 16px 25px; }
  .about-intro { grid-template-columns:1fr; gap:10px; padding:30px 0 18px; }
- .about-intro h1 { font-size:34px; }
  .about-lead { font-size:16px; }
  .about-mascot-wrap img { max-width:460px; }
  .about-section { padding:32px 0; }
@@ -1496,15 +1526,10 @@ body.buy-listing-page .buy-page {
   margin-right: auto;
   box-sizing: border-box;
 }
-.about-intro h1 {
-  font-size: clamp(30px, 3.2vw, 43px);
-  line-height: 1.12;
-}
 .bird-mark { font-size: 16px; letter-spacing: -.04em; }
 @media (max-width: 620px) {
   .about-compact-banner .compact-banner-subtitle { font-size: 9px; }
   .about-compact-banner h1 { font-size: 23px !important; }
-  .about-intro h1 { font-size: 32px; }
 }
 
 
@@ -1514,10 +1539,6 @@ body.about-page .about-compact-banner .compact-banner-subtitle {
   font-weight: 800;
   letter-spacing: .16em;
 }
-body.about-page .about-intro h1 {
-  font-size: clamp(24px, 2.56vw, 34.4px) !important;
-  line-height: 1.14;
-}
 body.about-page .about-mascot-wrap img {
   max-width: 329px !important;
 }
@@ -1526,7 +1547,6 @@ body.about-page .story-grid {
 }
 @media (max-width: 700px) {
   body.about-page .story-grid { grid-template-columns: 1fr; }
-  body.about-page .about-intro h1 { font-size: 25.6px !important; }
   body.about-page .about-mascot-wrap img { max-width: 70%; }
 }
 
@@ -2607,17 +2627,6 @@ body.about-page .about-intro {
     padding-top: 0 !important;
   }
 }
-
-
-/* About intro typography aligned with Math Education section typography. */
-body.about-page .about-intro h1 {
-  margin: 0 0 12px !important;
-  color: #153d70 !important;
-  font-size: clamp(24px, 2.7vw, 32px) !important;
-  line-height: 1.2 !important;
-  letter-spacing: 0 !important;
-  font-weight: 700 !important;
-}
 body.about-page .about-intro .about-lead {
   margin: 0 0 22px !important;
   max-width: 900px !important;
@@ -2626,10 +2635,6 @@ body.about-page .about-intro .about-lead {
   line-height: 1.75 !important;
 }
 @media (max-width: 700px) {
-  body.about-page .about-intro h1 {
-    font-size: 28px !important;
-    line-height: 1.2 !important;
-  }
   body.about-page .about-intro .about-lead {
     font-size: 16px !important;
     line-height: 1.75 !important;
@@ -2756,5 +2761,177 @@ html body:not(.home-page) main .contact-banner {
     min-height: 175px !important;
     max-height: 175px !important;
     aspect-ratio: auto !important;
+  }
+}
+
+
+/* ==========================================================================
+   GLOBAL DESIGN SYSTEM — CANONICAL SHARED COMPONENTS
+   Source of truth for shared page geometry and typography.
+   Update :root tokens above instead of adding page-specific overrides.
+   ========================================================================== */
+
+/* Shared inner-page banner used by all primary navigation landing pages. */
+html body:not(.home-page) main .compact-page-banner,
+html body:not(.home-page) main .about-compact-banner,
+html body:not(.home-page) main .page-banner,
+html body:not(.home-page) main .edu-hero,
+html body:not(.home-page) main .ai-hero,
+html body:not(.home-page) main .contact-banner {
+  height: var(--inner-banner-height) !important;
+  min-height: var(--inner-banner-height) !important;
+  max-height: var(--inner-banner-height) !important;
+  aspect-ratio: auto !important;
+  box-sizing: border-box !important;
+  border-radius: var(--inner-banner-radius) !important;
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Primary navigation banner frame. Keep width responsive but identical across pages. */
+html body.about-page main .about-compact-banner,
+html body.edu-page main .about-compact-banner,
+html body.ai-page main .about-compact-banner,
+html body.contact-page main .about-compact-banner,
+html body.books-page main .about-compact-banner,
+html body.in-class-page main .about-compact-banner {
+  width: min(var(--site-banner-width), calc(100% - 48px)) !important;
+  max-width: var(--site-banner-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--inner-banner-padding-x) !important;
+  padding-right: var(--inner-banner-padding-x) !important;
+  box-sizing: border-box !important;
+}
+
+/* Shared title styling for primary navigation banners. */
+html body:not(.home-page) main .about-compact-banner h1 {
+  margin: 0 0 8px !important;
+  color: #102d63 !important;
+  font-family: var(--font-site) !important;
+  font-size: var(--inner-banner-title-size) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.025em !important;
+}
+
+/* Shared subtitle styling — same size, color, weight and spacing across pages. */
+html body:not(.home-page) main .about-compact-banner .compact-banner-subtitle {
+  margin: 0 !important;
+  max-width: 760px !important;
+  color: #003b8f !important;
+  font-family: var(--font-site) !important;
+  font-size: var(--inner-banner-subtitle-size) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+  -webkit-text-stroke: 0.8px #ffffff;
+  paint-order: stroke fill;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+/* Back link alignment and spacing. Its container shares the banner width. */
+html body:not(.home-page) main .page-back-wrap {
+  width: min(var(--site-banner-width), calc(100% - 48px)) !important;
+  max-width: var(--site-banner-width) !important;
+  margin: var(--inner-page-back-top) auto var(--inner-page-back-bottom) !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Shared main content width for primary navigation landing pages. */
+html body.about-page main,
+html body.edu-page main,
+html body.ai-page main,
+html body.contact-page main,
+html body.books-page main,
+html body.in-class-page main {
+  box-sizing: border-box;
+}
+
+/* Mobile geometry: every inner-page banner remains the same height as its peers. */
+@media (max-width: 700px) {
+  html body:not(.home-page) main .compact-page-banner,
+  html body:not(.home-page) main .about-compact-banner,
+  html body:not(.home-page) main .page-banner,
+  html body:not(.home-page) main .edu-hero,
+  html body:not(.home-page) main .ai-hero,
+  html body:not(.home-page) main .contact-banner {
+    height: var(--inner-banner-height-mobile) !important;
+    min-height: var(--inner-banner-height-mobile) !important;
+    max-height: var(--inner-banner-height-mobile) !important;
+    border-radius: 17px !important;
+  }
+
+  html body.about-page main .about-compact-banner,
+  html body.edu-page main .about-compact-banner,
+  html body.ai-page main .about-compact-banner,
+  html body.contact-page main .about-compact-banner,
+  html body.books-page main .about-compact-banner,
+  html body.in-class-page main .about-compact-banner {
+    width: calc(100% - 36px) !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  html body:not(.home-page) main .about-compact-banner h1 {
+    font-size: 23px !important;
+  }
+
+  html body:not(.home-page) main .about-compact-banner .compact-banner-subtitle {
+    font-size: 13.5px !important;
+    letter-spacing: 0.10em !important;
+  }
+
+  html body:not(.home-page) main .page-back-wrap {
+    width: calc(100% - 36px) !important;
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+  }
+}
+
+
+/* ==========================================================================
+   BODY H2 STANDARD — same size as the inner-page banner title
+   Every H2 in page content uses one consistent size, deep-blue color and weight.
+   H2 must never become larger than the banner title.
+   ========================================================================== */
+body main h2 {
+  font-family: var(--font-site) !important;
+  font-size: var(--body-h2-size) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: var(--body-h2-color) !important;
+  letter-spacing: -0.025em !important;
+}
+
+/* Keep the same hierarchy on narrow screens; the shared token scales with viewport. */
+@media (max-width: 700px) {
+  body main h2 {
+    font-size: var(--body-h2-size) !important;
+  }
+}
+
+
+/* About intro heading: layout only; shared body H2 rule controls typography and color. */
+body.about-page .about-intro h2 {
+  margin: 0 0 12px !important;
+}
+
+
+/* About Us: align the first intro title with the Math Education section title.
+   The intro grid is vertically centered beside the mascot, which makes the
+   copy start lower than the Math Education heading. Lift only the copy block;
+   keep the mascot and the rest of the page layout unchanged. */
+@media (min-width: 701px) {
+  body.about-page .about-intro-copy {
+    transform: translateY(-14px);
+  }
+}
+@media (max-width: 700px) {
+  body.about-page .about-intro-copy {
+    transform: none;
   }
 }

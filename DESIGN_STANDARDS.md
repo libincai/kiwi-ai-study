@@ -1,0 +1,268 @@
+# Kiwi 爱AI Study — Website Design Standards
+
+**Status:** Project-wide design rules  
+**Applies to:** Every page, every language, desktop and mobile  
+**Rule:** Before creating or editing a page, read this file and reuse the existing shared components and CSS tokens. Do not invent page-specific styling when a shared standard already exists.
+
+---
+
+## 1. Core principle
+
+The website must look and behave like one coherent site.
+
+- Existing approved pages are the visual reference. Do not redesign them while adding a new page.
+- The shared navigation, inner-page banner, content container, typography, spacing, buttons, footer, and language switcher must remain consistent.
+- A new page must inherit the shared layout and styles rather than introducing a second, competing implementation.
+- If a requested change affects a global component, update the shared component once and check every page that uses it.
+- Do not append repeated CSS overrides indefinitely. Find and update the original shared rule, or consolidate the rules into one canonical section.
+
+## 2. Site structure
+
+Use the navigation categories to organize page files:
+
+```text
+kiwi-ai-study/
+├── index.html
+├── README.md
+├── DESIGN_STANDARDS.md
+├── about/
+│   └── index.html
+├── math/
+│   ├── index.html
+│   ├── in-class-learning.html
+│   └── ...
+├── ai/
+│   ├── index.html
+│   ├── episode-01.html
+│   └── ...
+├── books/
+│   ├── index.html
+│   └── ...
+├── contact/
+│   └── index.html
+├── legal/
+│   └── ...
+└── assets/
+    ├── css/
+    ├── hero/
+    ├── logo/
+    ├── books/
+    └── ...
+```
+
+- The root `index.html` is the homepage and primary entry point.
+- Put each page in the folder matching its navigation section.
+- Keep shared assets in `assets/`; do not duplicate the same logo, banner, or stylesheet in page folders.
+- Use relative links that work from the page's folder depth.
+- Keep the homepage hero separate from the inner-page banner system.
+
+## 3. Global design tokens
+
+The CSS `:root` block is the source of truth for reusable values. The Markdown file documents the rules; actual shared values must live in CSS custom properties, not be independently retyped on every page.
+
+Current site-wide base values found in the stylesheet:
+
+| Token | Current value | Use |
+|---|---:|---|
+| `--color-navy` | `#101747` | Main headings and primary text |
+| `--color-blue` | `#0756df` | Links, active navigation, primary actions |
+| `--color-body` | `#101747` | Main body text |
+| `--color-soft-blue` | `#e5f2ff` | Soft blue surfaces |
+| `--color-soft-lilac` | `#f0efff` | Soft lilac surfaces |
+| `--font-site` | `Segoe UI, Tahoma, sans-serif` | Site-wide typography |
+| `--site-content-width` | `1120px` | Main reading/content column |
+| `--site-banner-width` | `1400px` | Inner-page banner and back-link frame |
+| `--inner-banner-height` | `175px` | Desktop inner-page banner height |
+| `--inner-banner-height-mobile` | `150px` | Mobile inner-page banner height |
+| `--inner-banner-radius` | `22px` | Desktop inner-page banner corners |
+| `--inner-banner-title-size` | `clamp(24px, 2vw, 28px)` | Inner-page banner title |
+| `--inner-banner-subtitle-size` | `13.5px` | Inner-page banner subtitle |
+
+When a new global color, font, spacing, radius, or dimension is approved:
+1. Add or update one CSS custom property in `:root`.
+2. Use that variable in shared components.
+3. Update this table.
+4. Do not create slightly different values on individual pages without a documented reason.
+
+The canonical tokens are implemented in `assets/css/styles.css` under `:root`. Shared inner-page banner, title, subtitle, and back-link rules are consolidated in the final `GLOBAL DESIGN SYSTEM — CANONICAL SHARED COMPONENTS` section of that stylesheet.
+
+When changing an approved global value, update the corresponding `:root` token and this table. Do not append another page-specific override.
+
+## 4. Shared navigation
+
+Every primary page uses the same shared header and navigation component.
+
+- Keep logo, author mark, navigation links, language flags, spacing, and responsive behavior consistent.
+- The active navigation item must have the same blue highlight treatment on every page.
+- The active state must follow the current page, including the Contact page.
+- Do not remove or rename navigation items on only one page.
+- The current primary navigation is: Home, About, Math Education, AI Education, In-Class Learning, My Books, Contact.
+- The former “Resources” item is not part of the current primary navigation unless the site owner explicitly restores it.
+- Both language versions must show the equivalent navigation labels and active state.
+
+## 5. Inner-page banner — mandatory shared component
+
+All pages opened directly from the primary navigation use the same inner-page banner component and geometry.
+
+Applies to:
+- About
+- Math Education
+- AI Education
+- In-Class Learning
+- My Books
+- Contact Us
+
+Rules:
+- Use the approved blue-and-gold inner-banner artwork.
+- Use the same width, height, corner radius, title position, title typography, underline, subtitle position, and internal padding on every listed page.
+- The Contact Us banner is the currently selected height reference. All other inner-page banners must match its rendered height, not be taller.
+- Measure the actual rendered banner in the browser at the same viewport and zoom when checking equality. Do not infer height from screenshots taken at different zoom levels.
+- Use one canonical CSS class and one shared height token. Do not give each page a separate banner height.
+- Keep the homepage hero/banner separate; do not change it when editing inner-page banners.
+- Mobile uses the approved mobile artwork and shared mobile geometry. Do not let image aspect ratio silently determine the banner height.
+
+### Banner text
+
+- Title typography must be identical across pages and languages at equivalent responsive breakpoints.
+- Subtitle typography must be identical across pages: font family, size, weight, color, letter spacing, line height, and text treatment.
+- Keep subtitles short enough to preserve generous empty space. Prefer a concise phrase over a long sentence.
+- Do not add decorative kicker labels such as “QVS Study”, “Mastery”, or other extra headings unless explicitly requested.
+- Preserve the approved title underline and text contrast treatment.
+- Do not put text into the banner background image itself; title and subtitle remain live HTML text so they can be translated and resized.
+
+## 6. Back-to-home row and page alignment
+
+- The “Back to Home” link appears above the inner-page banner.
+- Its left edge must align exactly with the banner's left edge.
+- The back-link wrapper, banner, and main content should use the same page alignment guides where the layout calls for a shared content width.
+- Keep the vertical gap between the navigation divider and the back link consistent across all inner pages.
+- Keep the gap between the back link and banner consistent.
+- Do not use page-specific margins to compensate for a wrong parent container width.
+
+## 7. Main content layout
+
+- The main content should align with the banner's left and right edges unless a page has an explicitly approved alternate layout.
+- Use the shared maximum content width (`1120px` in the current design) and center it.
+- Cards in the same row should have consistent heights, gaps, corner radii, borders, and shadows.
+- Use responsive grids that collapse cleanly on smaller screens.
+- Do not let content overflow the banner or page container.
+- The homepage's introductory section and mascot/character illustration are important content and must not be removed as a side effect of changing the homepage navigation cards.
+
+## 8. Typography and color
+
+### Body H2 standard
+
+- Every H2 heading in the main page content uses the same typography as the inner-page Banner Title.
+- The shared CSS token is `--body-h2-size`, linked directly to `--inner-banner-title-size`.
+- All body H2 headings use the same navy color, Segoe UI font, 700 weight, and 1.2 line height.
+- No body H2 may be larger than the Banner Title.
+- Individual page styles must not override H2 size, color, font weight, or line height.
+- H3 and lower headings remain subordinate to H2 and must not be styled larger than H2.
+
+
+- Use the site-wide Segoe UI font stack.
+- Main headings use the approved navy color.
+- Links and active navigation use the approved blue.
+- Body text uses the approved body color and consistent readable line height.
+- Equivalent heading levels must have consistent sizes and weights across pages.
+- Do not set arbitrary local font sizes if a shared heading or body class already exists.
+- English and Chinese versions should have equivalent hierarchy and visual weight; adjust text length or line breaks where needed without changing the shared component dimensions.
+
+## 9. Language switching
+
+- Every bilingual page must support the same English/Chinese language switcher.
+- Use the same flag controls, selected-language treatment, and persistence behavior.
+- All visible page text, navigation labels, buttons, form labels, validation messages, and page metadata intended for visitors must switch correctly.
+- A page is not complete until both languages have been tested.
+- Do not change the homepage mobile banner or other language-specific hero assets when fixing an unrelated page.
+
+## 10. Forms and interactions
+
+- Contact form submissions must continue to use the approved Formspree endpoint configured for the project.
+- Keep the visitor's reply email field, subject/topic selection, message field, and spam-trap honeypot.
+- Do not expose the honeypot visually or remove it during styling changes.
+- Keep success and error feedback understandable in both languages.
+- Never replace a working form endpoint with a placeholder.
+
+## 11. Images and assets
+
+- Reuse approved assets from `assets/` rather than recreating or duplicating them.
+- Do not stretch logos, book covers, mascot artwork, or illustrations.
+- Preserve the homepage mascot/character illustration and homepage introduction unless the owner explicitly requests a change.
+- Keep homepage hero images independent from inner-page banner images.
+- Optimize image file sizes without changing the approved visual composition.
+
+## 12. Change-control rules
+
+Before editing:
+1. Read this file.
+2. Inspect the existing page and shared CSS.
+3. Identify the shared component or token responsible for the requested change.
+4. Confirm which pages could be affected.
+5. Preserve all unrelated approved content and assets.
+
+After editing:
+1. Check the edited page in English and Chinese.
+2. Check desktop and mobile layouts.
+3. Check the navigation active state and all links.
+4. Compare banner dimensions, title/subtitle typography, back-link alignment, and body spacing against the approved reference.
+5. Check the homepage separately if shared CSS was changed.
+6. Search for duplicate or conflicting CSS rules introduced by the change.
+7. Package the complete site in a ZIP and verify the ZIP contents before sharing it.
+
+## 13. Approval and exceptions
+
+- The site owner’s latest explicit visual approval takes precedence over older drafts.
+- A page-specific exception must be explicitly approved and documented here.
+- Never silently change a global standard to solve a local page issue.
+- When two screenshots appear different, compare them at the same browser viewport, zoom, and device scale before changing dimensions.
+- If the exact measurement is uncertain, inspect the rendered page and shared CSS first; do not guess a new value.
+
+
+## Heading hierarchy
+
+Use semantic heading levels consistently across inner pages:
+
+- H1: the inner-page banner title (one page-level H1).
+- H2: each major content section in the page body. Multiple sibling H2 headings are appropriate when sections are parallel.
+- H3: subsections or cards grouped under an H2.
+- H4: only when a genuine fourth level of content nesting is needed.
+- Eyebrow labels, taglines, captions, diagram labels, and flow-step labels are not headings. Use paragraph, span, or strong text instead.
+
+All body H2 headings use the shared deep-blue heading color `#123B73` and the shared H2 size token. Do not create oversized body H1 headings. Preserve established layout and spacing when correcting semantic heading tags.
+
+
+### First content heading spacing
+- On inner pages, keep the vertical distance from the bottom of the banner to the first main content heading visually consistent.
+- The Math Education page is the reference for this spacing.
+- On the About page, the mascot grid vertically centers the intro copy; compensate for this without moving the mascot or changing other sections.
+
+
+### Math Education card images
+- Keep the four Math Education card images fully visible; do not crop book covers or instructional diagrams.
+- Use a consistent image-frame height, centered contain behavior, and a soft neutral-blue background with balanced internal padding.
+
+
+### Math Education card artwork
+- The four Math Education cards use dedicated landscape artwork designed for the card image frame.
+- Keep a consistent 1200 × 448 px source size and use a full-width cover crop.
+- The original book covers and learning diagrams remain in the asset library and are not overwritten.
+
+
+### Math in Real Life graph accuracy
+- The card illustration for y = a t² uses a = 1, 3, and 5.
+- Time runs from 0 to 5 seconds; the vertical scale runs from 0 to 140.
+- At t = 5, the three plotted values are 25, 75, and 125 respectively.
+
+
+### Math in Real Life quadratic graph
+- Use y = a t² with a = 6, 8, and 10.
+- Time axis: 0 to 3 seconds.
+- Speed axis: 0 to 90 km/h.
+- At t = 3, the values are 54, 72, and 90 respectively.
+- Blend the car/road illustration into the graph background without a visible dividing line.
+
+
+### Math Education card image sizing
+- All four Math Education cards use the same image-frame height: 205px.
+- Keep the image frames visually consistent; do not enlarge an individual card image independently.
