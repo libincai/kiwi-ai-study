@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kiwi 爱AI Study | Sherry Cai</title>
   <meta name="description" content="Making learning smarter, simpler and more meaningful — math education, AI education, books and resources from Kiwi 爱AI Study.">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261107-tagline1">
 </head>
 <body class="home-page">
   <header class="site-header">
@@ -132,21 +132,32 @@
       <h2 id="social-heading">Follow Our Channels</h2>
       <span class="bar-divider" aria-hidden="true"></span>
       <div class="social-grid">
-        <a href="#" aria-label="TikTok"><img src="assets/social/TikTok-reference.webp" alt="TikTok"></a>
-        <a href="#" aria-label="Douyin"><img src="assets/social/Douyin-reference.webp" alt="Douyin"></a>
-        <a href="#" aria-label="WeChat Channels"><img src="assets/social/WeChat-Channels-reference.webp" alt="WeChat Channels"></a>
-        <a href="#" aria-label="Xiaohongshu"><img src="assets/social/Xiaohongshu-reference.webp" alt="Xiaohongshu"></a>
-        <a href="#" aria-label="YouTube"><img src="assets/social/YouTube-reference.webp" alt="YouTube"></a>
+        <a href="https://www.tiktok.com/@kiwi.aistudy?_r=1&amp;_t=ZS-9BD1M7BZdiO" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="assets/social/TikTok-reference.webp" alt="TikTok"></a>
+        <a href="https://v.douyin.com/Dp0lpGBXeEw/" target="_blank" rel="noopener noreferrer" aria-label="Douyin"><img src="assets/social/Douyin-reference.webp" alt="Douyin"></a>
+        <a href="#wechat-qr" class="wechat-qr-trigger" aria-label="Show WeChat Channels QR code" aria-haspopup="dialog"><img src="assets/social/WeChat-Channels-reference.webp" alt="WeChat Channels"></a>
+        <a href="https://www.rednote.com/user/profile/633067ff000000002303ff9f?xsec_token=YBZOVNrhg60wKdB8PNjtbKWbB19C4dhUkaM6Sn55ebN5M=&amp;xsec_source=app_share&amp;xhsshare=WeixinSession&amp;shareRedId=ODk1MDk8Sk82NzUyOTgwNjg2OTpKSz9P&amp;apptime=1794062676&amp;share_id=84ef125430e645a3a9f0554b1c86fbd0&amp;share_channel=wechat&amp;track_code=1VamdkRT3nf&amp;wechatWid=8de3258ced8e159d835a9dc6c4376a2b&amp;wechatOrigin=menu" target="_blank" rel="noopener noreferrer" aria-label="Xiaohongshu"><img src="assets/social/Xiaohongshu-reference.webp" alt="Xiaohongshu"></a>
+        <a href="https://www.youtube.com/@vacationbird" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="assets/social/YouTube-reference.webp" alt="YouTube"></a>
       </div>
     </div>
   </section>
 
+  <div id="wechat-qr" class="wechat-qr-overlay" role="dialog" aria-modal="true" aria-labelledby="wechat-qr-title" hidden>
+    <div class="wechat-qr-dialog">
+      <button type="button" class="wechat-qr-close" aria-label="Close">×</button>
+      <h2 id="wechat-qr-title">Follow KIWI爱AI学习 on WeChat Channels</h2>
+      <p>Scan the QR code to follow the channel. 扫一扫二维码，关注我的视频号。</p>
+      <img src="assets/social/wechat-channels-qr.jpg" alt="KIWI爱AI学习 WeChat Channels QR code">
+    </div>
+  </div>
+
   <footer class="site-footer">
     <nav aria-label="Legal">
       <a href="legal/privacy.html">Privacy Policy</a>
-      <a href="legal/terms.html">Terms of Service</a>
+      <a href="legal/terms.html">Copyright &amp; Content Usage Policy</a>
+      <a href="index.html">Home</a>
+      <a href="about/index.html#business-collaboration">Business &amp; Collaboration</a>
     </nav>
-    <p>© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+    <p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
   </footer>
 
 <script>
@@ -176,7 +187,7 @@
       ],
       learnMore: "Learn More →",
       socialTitle: "Follow Our Channels",
-      legal: ["Privacy Policy", "Terms of Service"],
+      legal: ["Privacy Policy", "Copyright & Content Usage Policy", "Home", "Business & Collaboration"],
       copyright: "© 2026 Kiwi 爱AI Study. All rights reserved."
     },
     zh: {
@@ -203,7 +214,7 @@
       ],
       learnMore: "了解更多 →",
       socialTitle: "关注我们的社交平台",
-      legal: ["隐私政策", "服务条款"],
+      legal: ["隐私政策", "版权声明与内容使用说明", "首页", "商业与合作"],
       copyright: "© 2026 Kiwi 爱AI Study。保留所有权利。"
     }
   };
@@ -317,6 +328,33 @@
       if (domain) cookie += '; domain=' + domain;
       document.cookie = cookie;
     }));
+  });
+})();
+</script>
+
+<script>
+(() => {
+  const trigger = document.querySelector(".wechat-qr-trigger");
+  const overlay = document.getElementById("wechat-qr");
+  if (!trigger || !overlay) return;
+  const closeButton = overlay.querySelector(".wechat-qr-close");
+  const close = () => {
+    overlay.hidden = true;
+    document.body.classList.remove("wechat-qr-open");
+    trigger.focus();
+  };
+  trigger.addEventListener("click", event => {
+    event.preventDefault();
+    overlay.hidden = false;
+    document.body.classList.add("wechat-qr-open");
+    closeButton.focus();
+  });
+  closeButton.addEventListener("click", close);
+  overlay.addEventListener("click", event => {
+    if (event.target === overlay) close();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !overlay.hidden) close();
   });
 })();
 </script>

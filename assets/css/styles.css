@@ -53,7 +53,7 @@ a{color:inherit}
 .brand-lockup{display:grid;grid-template-columns:215px 1px 170px;grid-template-rows:38px 16px;column-gap:clamp(14px,1.8vw,28px);row-gap:0;align-items:center;flex:0 0 auto}
 .logo-link{grid-column:1;grid-row:1;justify-self:center;align-self:end;line-height:0}
 .logo{display:block;width:215px;height:38px;object-fit:contain}
-.logo-tagline{grid-column:1;grid-row:2;margin:0;justify-self:center;font-size:12px;font-weight:800;line-height:15px;letter-spacing:.01em;white-space:nowrap}
+.logo-tagline{grid-column:1;grid-row:2;margin:0;justify-self:center;font-family:"Trebuchet MS","Segoe UI",Tahoma,sans-serif;font-size:13px;font-weight:700;line-height:15px;letter-spacing:.025em;white-space:nowrap}
 .tag-learn{color:#1260e8}.tag-create{color:#e53935}.tag-share{color:#238b43}.tag-grow{color:#6c48a8}.tag-sep{color:#252525}
 .brand-lockup>.divider{grid-column:2;grid-row:1/-1;align-self:center;height:43px;width:0;border-left:1.5px solid #2945a1}
 .author-wrap{grid-column:3;grid-row:1/-1;align-self:center;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
@@ -150,7 +150,7 @@ a:focus-visible{outline:3px solid #0756df;outline-offset:4px;border-radius:4px}
  .site-header{padding:10px 12px}
  .brand-lockup{grid-template-columns:155px 1px 120px;column-gap:10px;grid-template-rows:32px 14px}
  .logo{width:155px;height:32px}
- .logo-tagline{font-size:9px;line-height:13px}
+ .logo-tagline{font-family:"Trebuchet MS","Segoe UI",Tahoma,sans-serif;font-size:9px;font-weight:700;line-height:13px;letter-spacing:.015em}
  .author{font-size:23px}
  .author-underline{height:7px}
  .site-nav{gap:4px}
@@ -3188,3 +3188,128 @@ html body.nf-page .nf-main > .nf-hero {
   .drive-crumb-separator { width: 14px; height: 14px; flex-basis: 14px; }
   .drive-crumb-menu { right: auto; left: 0; }
 }
+
+
+/* In-Class Learning CTA: protect readable contrast from global typography rules */
+html body .edu-cta,
+html body .edu-cta * {
+  color: #ffffff !important;
+}
+html body .edu-cta p {
+  color: #e3edf9 !important;
+}
+html body .edu-cta .edu-button {
+  background: #ffffff !important;
+  color: #173e70 !important;
+}
+
+/* Instructor profile: text-led layout without the former Sherry Cai signature image */
+.edu-instructor-no-photo { display: block; }
+.edu-instructor-no-photo .instructor-name {
+  margin: 0 0 12px;
+  color: #173e70;
+  font-size: 23px;
+  line-height: 1.25;
+}
+.edu-instructor-no-photo .edu-lead { max-width: none; }
+
+
+/* Consistent footer hierarchy across the homepage and inner pages */
+.site-footer { font-size: 13px; }
+.site-footer nav { margin-bottom: 7px; }
+.site-footer p { margin: 0; font-size: inherit; line-height: 1.35; font-weight: 400; color: #52617b; }
+@media (min-width: 901px) and (min-height: 680px) {
+  body.home-page .site-footer { flex-basis: 58px; padding: 7px 16px 6px; }
+  body.home-page .site-footer nav { margin-bottom: 4px; gap: 16px; }
+  body.home-page .site-footer p { font-size: inherit; }
+}
+
+
+/* Final footer typography lock: copyright text must match footer navigation links exactly. */
+.site-footer nav a,
+.site-footer p {
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+}
+
+/* Explicit copyright sizing: match compact footer navigation text. */
+html body footer.site-footer > p { font-size:12px !important; line-height:1.35 !important; font-weight:400 !important; }
+
+
+/* Homepage: allow normal vertical scrolling on desktop */
+@media (min-width: 901px) and (min-height: 680px) {
+  html, body.home-page {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  body.home-page {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+  body.home-page .books {
+    flex: 0 0 auto !important;
+  }
+}
+
+
+/* WeChat Channels QR popup */
+.wechat-qr-overlay[hidden] { display: none !important; }
+.wechat-qr-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(12, 24, 48, .62);
+}
+.wechat-qr-dialog {
+  position: relative;
+  width: min(440px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 28px 24px 24px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 60px rgba(0,0,0,.24);
+  text-align: center;
+}
+.wechat-qr-dialog h2 {
+  margin: 0 32px 10px;
+  color: #18345b;
+  font-size: 19px;
+  line-height: 1.35;
+}
+.wechat-qr-dialog p {
+  margin: 0 0 16px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.wechat-qr-dialog > img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(68vh, 760px);
+  object-fit: contain;
+  margin: 0 auto;
+}
+.wechat-qr-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f3f6;
+  color: #24364f;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+body.wechat-qr-open { overflow: hidden; }
