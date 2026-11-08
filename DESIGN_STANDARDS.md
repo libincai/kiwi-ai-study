@@ -373,3 +373,303 @@ All banners within the same page-template family must share the same height. The
 ## Inner-page banner height — mandatory standard
 
 All inner-page banners use a consistent fixed height of **150px** on desktop and mobile. This includes section and topic banners, book banners, AI banners, Contact, About, and legal banners. The homepage hero is explicitly excluded: preserve its original responsive aspect ratio and artwork proportions; do not force it to a fixed height or stretch its image. Keep inner-page banner content within 150px by adjusting internal spacing or text sizing rather than changing the shared height.
+
+
+## Image asset optimization (mandatory)
+
+Every image newly added to the website, and every replacement image, must be optimized for web display before it is committed to the site. The goal is **clear appearance at the actual on-screen display size**, not maximum source resolution or print quality.
+
+### Required workflow
+
+1. Check where and how the image will appear (hero/banner, card, content illustration, logo, or portrait) and determine its largest rendered size on desktop and mobile.
+2. Resize the image to a sensible pixel dimension for that use. Do not upload a 3000–6000 px source when the page displays it at a few hundred pixels. Do not upscale small originals.
+3. Prefer **WebP** for photographic and illustrated raster images. Use AVIF only when the existing build/deployment workflow supports it reliably. Keep SVG for clean vector logos/icons when available.
+4. Compress the resized image and visually inspect the result at its real website display size. Text, fine lines, faces, and mathematical labels must remain legible; if artifacts are visible, increase quality slightly rather than keeping an unnecessarily huge file.
+5. Use descriptive, lowercase, hyphen-separated filenames. Store the image in the existing appropriate `assets/` or section-specific image folder. Reuse an existing image instead of creating another copy when possible.
+6. Update every affected HTML reference and check that the image loads correctly on desktop and mobile. Do not leave unused high-resolution originals in the deployed website folder.
+
+### Practical export targets
+
+These are guidelines, not rigid limits. A visually clear image may exceed a target when its detail genuinely requires it; do not sacrifice legibility just to hit a number.
+
+| Image use | Suggested maximum dimensions | Preferred target file size |
+|---|---:|---:|
+| Small icon / logo | Use SVG when possible; otherwise 300–600 px | 10–60 KB |
+| Card / thumbnail | 600–900 px on the longest edge | 40–120 KB |
+| Standard content image / illustration | 900–1200 px on the longest edge | 80–180 KB |
+| Portrait / 3:4 or 4:3 feature image | About 1000–1200 px on the longest edge | 100–200 KB |
+| Wide hero / banner | About 1600 px wide, or the actual required banner dimensions | 150–300 KB; up to 400 KB if needed |
+
+### Format and quality guidance
+
+- For WebP, start around **quality 78–85** and adjust after visual inspection.
+- For JPEG, start around **quality 75–82** when WebP is not suitable.
+- Strip unnecessary metadata such as camera, editing, and location metadata from public website images.
+- Keep transparency when it is required for logos or overlays; use lossless WebP or optimized PNG only when necessary.
+- Avoid saving multiple language/size variants unless the page actually uses them. Before generating variants such as `16x9`, `4x3`, and `3x4`, confirm each variant has a real placement in the site.
+- Do not replace a crisp image containing important text or math notation with a version that makes the text blurry. Optimize dimensions first, then compression.
+- Do not commit large source files, duplicate exports, or unused alternatives to the production website.
+
+**Default rule:** if an image is larger than approximately **250 KB**, review whether its dimensions or compression can be reduced before adding it. Images above **400 KB** require a clear reason to remain that large. These are review thresholds, not automatic rejection limits.
+
+
+## Inner-page banner standard (mandatory)
+
+All inner-page banners must use the same shared banner component and dimensions as the existing inner pages (`.compact-page-banner.about-compact-banner`). Do not create a taller, wider, or page-specific hero banner for an inner page.
+
+- Keep the banner height consistent across all inner pages: use the shared CSS height rule in `assets/css/styles.css` (desktop `clamp(140px, 9.24vw, 177px)`; mobile `150px`).
+- Keep the banner text-only: title and short subtitle only.
+- **Do not place images, illustrations, icons, emoji, SVGs, or decorative graphics inside an inner-page banner.**
+- Do not add a second visual column or increase banner height to accommodate artwork.
+- Keep page-specific diagrams, images, icons, and illustrations in the content sections below the banner.
+- Reuse the existing shared CSS component; do not override its height on individual pages.
+
+
+## Card icon and emoji placement (mandatory)
+
+Inside content cards, small icons and emoji must not occupy a separate row above the heading or description. Place the icon at the left side of the card and let the heading and body text flow beside it, then continue naturally below it when the text is longer (float/wrap treatment). Keep the icon compact and vertically aligned near the start of the text. This rule applies to all new and existing learning/content cards. Do not apply this rule to page banners, where icons and emoji are prohibited entirely.
+
+
+## Content-card icon column (mandatory)
+
+For cards containing an icon or emoji, use a dedicated narrow left column for the icon and a separate right text column for the heading and description. The heading and description must both remain in the right column; text must never flow or wrap underneath the icon. It is acceptable for the area below a short icon to remain empty. Do not use float-based text wrapping for these cards. This applies to all content and learning cards. Banners remain text-only and must not contain icons or imagery.
+
+
+## Primary navigation active highlight (mandatory)
+
+Only pages that are direct destinations of the main navigation may show the active/highlighted navigation state. On deeper inner pages, lesson pages, episode pages, and individual book/detail pages, do not highlight the parent navigation item merely because the page belongs to that section. The About page is the explicit exception and keeps its About highlight. Keep active states on the main landing pages for Home, Math Education, AI Education, In-Class Learning, My Books, Contact, and About.
+
+
+## Supplied lesson scripts are the source of truth
+
+When the user provides a complete lesson/video script, the corresponding episode page must be built from that supplied script. Do not replace it with a shortened generic summary or independently invented lesson copy. Preserve the supplied structure, examples, sequence, key wording and next-episode preview. English may be translated faithfully for the bilingual site, but the supplied Chinese script remains the source of truth.
+
+
+## Lesson-page editorial layout
+
+A supplied video script is the source for the lesson content, but the website page is a learning article, not a screenplay or teleprompter transcript. Preserve the full ideas, examples and teaching sequence while combining related sentences into coherent paragraphs and organizing them under clear section headings. Do not put every spoken sentence on a separate line unless the content is genuinely a list or emphasis. Do not add a large decorative next-episode banner at the end of a lesson. A brief next-lesson link or compact text note is sufficient.
+
+
+## Learning article density and navigation (mandatory)
+
+Learning pages must read like polished textbook/web articles, not line-by-line scripts. Use a restrained heading hierarchy: group related ideas under a small number of meaningful section headings, and use bold inline lead-ins for subtopics instead of creating a separate large heading for every point. Develop each paragraph enough to explain the idea with context and an example; avoid one-sentence fragments and excessive highlighted heading text. Do not add a separate next-lesson promo card when the page's bottom navigation already links to the next lesson. Keep only one clear next-lesson navigation destination.
+
+
+## Canonical inner leaf-page banner standard — Number Families
+
+The **Number Families** banner (`math/number-families.html`) is the single visual source of truth for every deepest-level / last-page banner across the website. New or revised leaf pages must reuse the shared `.topic-banner` component in `assets/css/styles.css`; do not invent page-specific banner dimensions or typography.
+
+Required shared structure:
+- One text-only banner with a category kicker, one H1 title, and one short subtitle.
+- No images, illustrations, icons, emoji, SVGs, or decorative artwork inside or behind the banner.
+- Reuse the shared background gradient, border, radius, spacing, typography, colors, and responsive rules exactly.
+- The kicker uses the shared blue bold uppercase style; the H1 and subtitle use the Number Families font scale, color and spacing.
+- Do not set a fixed page-specific height. Let the shared padding and content determine the banner height.
+- Use the same shared `.topic-banner` class and child classes: `.topic-banner-kicker`, `h1`, and `.topic-banner-subtitle`.
+- Keep the page container width and horizontal gutters aligned with the Number Families topic-page layout.
+- Before adding a new last-level page, reuse this component rather than copying or modifying its CSS locally.
+
+This standard applies to all new and existing deepest-level pages, including AI lessons, episode detail pages, math topic pages, and individual detail pages. The Number Families page itself must continue using the same shared component so it remains the reference implementation.
+
+
+Correction: the shared last-level banner must reuse the exact `.nf-hero.topic-banner` implementation from Number Families, including its existing font sizes, spacing, gradient and responsive behavior. Do not approximate it with a separately styled `.topic-banner` rule.
+
+When applying or updating a banner, change only the banner markup/classes and shared banner CSS. Preserve the existing article layout, image placement, body content, breadcrumbs, and navigation. In Episode 1, the cover image belongs in the article flow at the right on desktop and must not become a full-width image immediately below the banner.
+
+
+Correction based on the final Number Families implementation: desktop leaf-page banner is exactly 150px high, padding 24px 46px, margin 14px 0 34px, 24px radius, kicker 12px/800/#2676b7, H1 clamp(29px, 3.2vw, 38px), subtitle 16px/#405875. Mobile uses auto height, min-height 150px, padding 24px 23px and 29px H1. Never use a larger generic 50px topic-banner heading on these pages.
+
+Episode detail navigation must retain the existing flex layout: left-side All AI Episodes link and right-side episode link, with divider, top padding and spacing. Banner changes must not alter navigation or article layout.
+
+
+## Canonical deepest-level banner — Version 1.3
+All deepest-level/detail pages reuse the exact Number Families banner: 150px desktop height, 24px 46px padding, 14px 0 34px margin, 24px radius, gradient `linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8)`, 12px kicker, 38px maximum title scale and 16px regular subtitle. On mobile use auto height, 150px minimum height, 24px 23px padding and 29px title. Use `nf-hero topic-banner` and `topic-banner-kicker` classes.
+
+Do not alter page breadcrumbs, article content, images, image positions, bottom navigation or footer when changing a banner. Top-level and category/overview pages retain their hierarchy-specific banner design.
+
+
+## Canonical deepest-level page banner standard
+
+**Source of truth:** `math/number-families.html` — the approved Number Families banner. Every deepest-level/detail page must reuse this exact shared component. Do not create a page-specific variation.
+
+### Required HTML structure
+
+```html
+<section class="nf-hero topic-banner" aria-label="Page introduction">
+  <p class="topic-banner-kicker">SECTION LABEL</p>
+  <h1>Page Title</h1>
+  <p class="topic-banner-subtitle">Short page introduction.</p>
+</section>
+```
+
+### Exact desktop styling
+
+- Height, min-height and max-height: `150px`.
+- Padding: `24px 46px`.
+- Margin: `14px 0 34px`.
+- Border: `1px solid #d8e8f8`.
+- Corner radius: `24px`.
+- Background: `linear-gradient(112deg, #dff3ff, #eaf0ff 58%, #fff1d8)`.
+- Layout: flex column, vertically centered.
+- Kicker: `12px`, weight `800`, color `#2676b7`, letter spacing `.14em`, bottom margin `12px`.
+- H1: `clamp(29px, 3.2vw, 38px)`, weight `700`, color `#123d75`, line-height `1.12`, bottom margin `14px`.
+- Subtitle: `16px`, regular weight, color `#405875`, line-height `1.6`, max-width `850px`.
+
+### Mobile styling
+
+- Height: `auto`; min-height: `150px`; max-height: `none`.
+- Padding: `24px 23px`.
+- H1: `29px`.
+- Preserve the same gradient, border, radius and text hierarchy.
+
+### Content and change boundaries
+
+- The banner contains text only: no images, illustrations, icons, emoji, SVGs or decorative artwork.
+- Replace only the kicker, H1 and subtitle text for each page.
+- Do not change breadcrumbs, article content, page width, image placement, bottom navigation or footer when standardizing a banner.
+- Do not add page-specific banner heights, typography, gradients, padding or corner radii.
+- Homepage, primary navigation pages and category/overview pages keep their own hierarchy-specific banner designs; this rule applies only to deepest-level/detail pages.
+
+### Required workflow for new deepest-level pages
+
+1. Identify the page as a deepest-level/detail page.
+2. Reuse the shared `nf-hero topic-banner` markup and the canonical CSS in `assets/css/styles.css`.
+3. Replace only the category kicker, page title and short subtitle.
+4. Keep all existing page content, images, breadcrumbs and navigation intact.
+5. Check desktop and mobile rendering against `math/number-families.html` before publishing.
+
+The canonical CSS is maintained once in `assets/css/styles.css`. This Markdown section is the durable project rule for future edits; do not create a separate Word specification.
+
+
+### Banner text-length limits (mandatory)
+
+- The category kicker must remain on one line.
+- The main page title must remain on one line. If necessary, reduce its responsive font size; do not allow it to wrap onto a second line.
+- The subtitle must display no more than **two lines** on desktop or mobile. Keep it concise and summarize the page rather than placing a full paragraph in the banner.
+- Use the shared CSS line clamp for two lines. Prefer editing overly long subtitle copy so the complete key message fits within those two lines; do not rely on clipping to hide essential information.
+- The banner must grow naturally to fit the kicker, one-line title and up to two subtitle lines. Do not use a fixed height that cuts off any text.
+
+
+## Final canonical leaf-page banner specification — v2
+
+**This is the single source of truth for every deepest-level / last-page banner.**
+The approved visual reference is `math/number-families.html`. Every leaf page must use
+`<section class="nf-hero topic-banner">` and the shared CSS block named
+`FINAL CANONICAL LEAF-PAGE BANNER STANDARD — v2` in `assets/css/styles.css`.
+Do not create page-specific banner CSS.
+
+### Desktop measurements and typography
+
+| Part | Required value |
+|---|---|
+| Banner background | `linear-gradient(112deg, #dff3ff, #eaf0ff 58%, #fff1d8)` |
+| Border | `1px solid #d8e8f8` |
+| Corner radius | `24px` |
+| Width | `100%` of the page content container |
+| Height | Natural/content-driven; `min-height: 150px`; no fixed or maximum height |
+| Padding | `24px 46px` |
+| Margin | `14px 0 34px` |
+| Layout | Flex column, vertically centered |
+| Kicker font | Segoe UI, `12px`, weight `800`, line-height `1.2`, letter spacing `.14em`, color `#2676b7` |
+| Kicker spacing | `12px` below |
+| Main title font | **Segoe UI**, `38px`, weight `700`, line-height `1.12`, letter spacing `-.025em`, color `#123d75` |
+| Title spacing | `14px` below |
+| Subtitle font | Segoe UI, `16px`, weight `400`, line-height `1.6`, color `#405875`, max-width `850px` |
+| Subtitle length | Maximum **2 lines** |
+
+### Mobile measurements and typography
+
+- Horizontal/vertical padding: `24px 23px`.
+- Banner height remains content-driven, with `150px` minimum and no maximum.
+- Main title: Segoe UI, `29px`, weight `700`, line-height `1.12`.
+- Subtitle: Segoe UI, `15px`, line-height `1.55`, maximum 2 lines.
+- Keep the same gradient, border, radius, colours and text hierarchy.
+
+### Text and layout rules
+
+1. The kicker stays on one line.
+2. The main title stays on one line. Keep the specified font family, weight and size; do not enlarge it or replace it with a different heading style.
+3. The subtitle is a concise page summary and must not exceed two lines. Shorten the wording when necessary; do not hide important information through clipping.
+4. The banner height must grow naturally to fit its contents. Never force a fixed `150px` height or crop the title/subtitle.
+5. No images, icons, emoji, SVGs or decorative artwork inside the banner.
+6. Only the kicker, title and subtitle text vary from page to page.
+
+### Implementation rule
+
+All deepest-level pages must reuse the same `.nf-hero.topic-banner` component and the one
+canonical CSS block in `assets/css/styles.css`. The Markdown file is the permanent project
+standard. When changing the standard, update this section and the shared CSS together.
+Never create a separate Word specification.
+
+When applying the banner, do not modify breadcrumbs, page content, images, image placement,
+bottom navigation, footer or page width. Homepage, navigation landing pages and category/
+overview pages retain their separate hierarchy-specific banner designs.
+
+
+## Final canonical leaf-page banner specification — v3 (supersedes v2)
+
+This is the single source of truth for every deepest-level / last-page banner.
+All pages reuse `.nf-hero.topic-banner` and the shared CSS block
+`FINAL CANONICAL LEAF-PAGE BANNER STANDARD — v3` in `assets/css/styles.css`.
+Do not create page-specific banner CSS.
+
+### Desktop specification
+
+| Part | Required value |
+|---|---|
+| Background | `linear-gradient(112deg, #dff3ff, #eaf0ff 58%, #fff1d8)` |
+| Border / radius | `1px solid #d8e8f8` / `24px` |
+| Height | Content-driven; minimum `150px`; no fixed or maximum height |
+| Padding / margin | `24px 46px` / `14px 0 34px` |
+| Kicker | Segoe UI, `12px`, weight `800`, line-height `1.2`, letter spacing `.14em`, color `#2676b7` |
+| Main title | **Segoe UI, `36px`, weight `700`, line-height `1.25`, letter spacing `-.025em`, color `#123d75`** |
+| Title spacing | `12px` below; `2px` top and `3px` bottom internal padding |
+| Subtitle | Segoe UI, `16px`, weight `400`, line-height `1.6`, color `#405875`, max-width `850px` |
+| Subtitle length | Maximum **2 lines** |
+
+### Mobile specification
+
+- Padding: `24px 23px`.
+- Content-driven height, minimum `150px`.
+- Main title: Segoe UI, `28px`, weight `700`, line-height `1.25`.
+- Subtitle: Segoe UI, `15px`, line-height `1.55`, maximum 2 lines.
+
+### Mandatory text and layout rules
+
+1. Kicker remains on one line.
+2. Title remains on one line and uses the exact font family, size, weight and line-height above.
+3. Do not apply `overflow: hidden` to the H1. Preserve its line box and vertical padding so letters with descenders, such as `y` and `g`, are never clipped.
+4. Subtitle is a concise summary of no more than two lines. Shorten wording when needed instead of hiding essential content.
+5. Banner height grows naturally; never crop its text.
+6. No images, icons, emoji, SVGs or decorative artwork inside the banner.
+7. Only kicker, title and subtitle text vary between pages.
+
+All deepest-level pages must use the shared component and CSS. Keep this rule in Markdown;
+do not create a separate Word specification. Do not alter breadcrumbs, body content,
+images, bottom navigation or footer when applying the banner. Homepage, navigation landing
+pages and category/overview pages retain their separate hierarchy-specific banner designs.
+
+
+## AI Knowledge Classroom — student-friendly lesson page standard
+
+For lesson pages aimed at middle-school and high-school learners, avoid long uninterrupted
+text blocks. Preserve the teaching content, but break explanations up with compact visual
+learning aids: simple diagrams, illustrated real-world examples, comparison cards and short
+capability summaries. Use the site's light backgrounds, navy/blue typography, rounded cards,
+clear spacing and restrained decoration. Keep visuals bilingual through `data-en` / `data-zh`
+when the page supports language switching. Use lightweight inline SVG or optimized local
+illustrations; do not turn the whole page into a poster or place text inside decorative images.
+For Episode 1, the visuals explain: app → AI model → response; the car-brand analogy; AI in
+cars, medical imaging and factory robots; recognition/prediction versus generation; human
+judgement and checking; and the five broad AI abilities. Keep the original explanations and
+episode navigation intact.
+
+
+## Episode learning pages — bilingual comic format (approved for Episode 1)
+
+- The episode introduction appears before all comic illustrations and is localized independently in Chinese and English.
+- Use a lively, age-appropriate introduction of approximately 200–250 Chinese characters; provide a natural English equivalent.
+- Present 6–8 separate comic illustrations as individual responsive cards, not one long composite poster.
+- Each card has a concise scene title and a short explanatory caption.
+- Keep the existing shared header, topic banner, language switcher, footer, and next/previous episode navigation unchanged.
+- Character artwork should follow the established Episode 1 girl and white-blue robot references; do not redraw or alter the site-wide mascot or unrelated page art.

@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en-CA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Meet AI | Kiwi 爱AI Study</title><meta name="description" content="Artificial intelligence helps computers perform tasks that usually require human-like abilities, such as recognizing patterns, understanding language and making predictions."><link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1"><style>
+.lesson-main{max-width:var(--topic-page-width);margin:0 auto;padding:0 var(--topic-page-gutter) 64px}
+.lesson-crumb{padding:18px 0 8px;font-size:13px;color:#60728a}.lesson-crumb a{color:#1768b2;text-decoration:none;font-weight:800}
+
+
+.lesson-art span{width:100px;height:100px;border-radius:22px;background:white;border:1px solid #d7e5f4;box-shadow:0 8px 22px #18375f12;display:grid;place-items:center;font-size:34px}.lesson-art b{color:#4c83b7}
+.lesson-section{margin:30px 0}.lesson-section h2{font-size:25px;color:#153d70;margin:0 0 12px}.lesson-intro{max-width:900px;color:#536982;line-height:1.75;font-size:15px}
+.lesson-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:17px}.lesson-card{padding:19px;border:1px solid #dce6f1;border-radius:17px;background:white;box-shadow:0 6px 20px #18375f0b}.lesson-icon{float:left;width:42px;height:42px;border-radius:13px;background:#eaf3ff;display:grid;place-items:center;font-size:23px;margin:0 12px 6px 0}.lesson-card h3{font-size:17px;color:#173e70;margin:2px 0 7px;line-height:1.35}.lesson-card p{font-size:13px;line-height:1.65;color:#60728a;margin:0}.lesson-card:after{content:'';display:block;clear:both}
+.lesson-callout{padding:20px 22px;border:1px solid #d7e7f7;border-radius:17px;background:#f3f8fe;color:#294a6d;line-height:1.7;font-size:14px}.lesson-take{border-left:4px solid #3982bd;background:#f7f9fc;padding:20px 22px;color:#294a6d;line-height:1.7;font-size:14px}.lesson-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:30px}.lesson-link{display:inline-flex;padding:11px 16px;border-radius:999px;background:#1768b2;color:white;text-decoration:none;font-size:13px;font-weight:800}.lesson-link.secondary{background:white;color:#245b91;border:1px solid #cdddf0}
+@media(max-width:760px){.lesson-cards{grid-template-columns:1fr}}
+
+
+/* Match the Number Families topic-page breadcrumb and banner system exactly. */
+.lesson-main > .lesson-breadcrumb {
+  padding: var(--topic-page-back-top) 0 var(--topic-page-back-bottom) !important;
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  box-sizing: border-box;
+  color: #142b50;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.lesson-breadcrumb a {
+  color: #1768b2;
+  text-decoration: none;
+}
+.lesson-breadcrumb a:hover { text-decoration: underline; }
+.lesson-breadcrumb span:last-child { font-weight: 600; }
+.lesson-main > .lesson-banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 150px !important;
+  min-height: 150px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  padding: 24px 46px !important;
+  border-radius: 24px !important;
+  margin: 14px 0 34px !important;
+  background: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
+  border: 1px solid #d8e8f8 !important;
+}
+
+
+
+@media (max-width: 760px) {
+  .lesson-main { padding: 0 15px 52px !important; }
+  .lesson-main > .lesson-breadcrumb { padding-top: 18px !important; }
+  .lesson-main > .lesson-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    padding: 24px 23px !important;
+    margin-top: 14px !important;
+  }
+  
+}
+
+
+
+
+/* Lesson cards: fixed icon column + text column. Text never wraps underneath the icon. */
+.lesson-card {
+  display: grid !important;
+  grid-template-columns: 48px minmax(0, 1fr) !important;
+  grid-template-rows: auto auto !important;
+  column-gap: 14px !important;
+  row-gap: 5px !important;
+  align-items: start !important;
+  padding: 19px !important;
+}
+.lesson-card .lesson-icon {
+  float: none !important;
+  grid-column: 1 !important;
+  grid-row: 1 / span 2 !important;
+  width: 42px !important;
+  height: 42px !important;
+  margin: 0 !important;
+  flex: none !important;
+}
+.lesson-card h3 {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  margin: 2px 0 0 !important;
+  line-height: 1.35 !important;
+}
+.lesson-card p {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  margin: 0 !important;
+}
+.lesson-card::after { content: none !important; }
+@media (max-width: 760px) {
+  .lesson-card { grid-template-columns: 48px minmax(0,1fr) !important; }
+}
+
+
+/* Inner topic banner: match Number Families, with no background artwork or icon. */
+.lesson-main > .lesson-banner {
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 150px !important;
+  min-height: 150px !important;
+  max-height: 150px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  padding: 24px 46px !important;
+  border-radius: 24px !important;
+  margin: 14px 0 34px !important;
+  background: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
+  background-image: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
+  border: 1px solid #d8e8f8 !important;
+}
+.lesson-banner img,
+.lesson-banner svg,
+.lesson-banner .lesson-icon { display: none !important; }
+@media (max-width: 760px) {
+  .lesson-main > .lesson-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: none !important;
+    padding: 24px 23px !important;
+  }
+}
+
+</style></head><body class="ai-page"><header class="site-header">
+<div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a>
+<p class="logo-tagline" aria-hidden="true"><span class="tag-learn">Learn</span><span class="tag-sep"> • </span><span class="tag-create">Create</span><span class="tag-sep"> • </span><span class="tag-share">Share</span><span class="tag-sep"> • </span><span class="tag-grow">Grow</span></p><span class="divider" aria-hidden="true"></span>
+<div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Kiwi 爱AI Study"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt=""></a></div></div>
+<nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home">Home</a><a href="../about/index.html" data-nav="about">About</a><a href="../math/index.html" data-nav="math">Math Education</a><a href="index.html" data-nav="ai">AI Education</a><a href="../math/in-class-learning.html" data-nav="class">In-Class Learning</a><a href="../books/index.html" data-nav="books">My Books</a><a href="../contact/index.html" data-nav="contact">Contact</a>
+<span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
+      </span></nav></header><main class="lesson-main">
+<div class="edu-back lesson-breadcrumb"><a href="../index.html" data-en="Home" data-zh="首页">Home</a><span aria-hidden="true"> › </span><a href="index.html" data-en="AI Education" data-zh="人工智能教育">AI Education</a><span aria-hidden="true"> › </span><span data-en="Meet AI" data-zh="认识人工智能">Meet AI</span></div>
+<section class="nf-hero topic-banner" aria-label="Page introduction"><p class="topic-banner-kicker" data-en="AI FOUNDATIONS · DISCOVER" data-zh="人工智能基础 · 认识 AI">AI FOUNDATIONS · DISCOVER</p><h1 data-en="Meet AI" data-zh="认识人工智能">Meet AI</h1><p class="topic-banner-subtitle" data-en="Artificial intelligence helps computers perform tasks that usually require human-like abilities, such as recognizing patterns, understanding language and making predictions." data-zh="人工智能帮助计算机完成通常需要人类能力的任务，例如识别规律、理解语言和进行预测。">Artificial intelligence helps computers perform tasks that usually require human-like abilities, such as recognizing patterns, understanding language and making predictions.</p></section>
+<section class="lesson-section"><h2 data-en="So, what makes something AI?" data-zh="那么，什么样的技术算是 AI？">So, what makes something AI?</h2><p class="lesson-intro" data-en="AI systems learn patterns from data or follow carefully designed rules. Some recognize what is in a photo, recommend a song, understand a question or generate a response." data-zh="AI 系统可以从数据中学习规律，也可以按照精心设计的规则工作。有些能识别照片内容、推荐歌曲、理解问题或生成回答。">AI systems learn patterns from data or follow carefully designed rules. Some recognize what is in a photo, recommend a song, understand a question or generate a response.</p><div class="lesson-cards"><article class="lesson-card"><div class="lesson-icon">📱</div><h3 data-en="Your phone" data-zh="手机">Your phone</h3><p data-en="Face recognition, photo enhancement and voice typing can use AI." data-zh="人脸识别、照片优化和语音输入都可能用到 AI。">Face recognition, photo enhancement and voice typing can use AI.</p></article><article class="lesson-card"><div class="lesson-icon">🎬</div><h3 data-en="What you watch" data-zh="你观看的内容">What you watch</h3><p data-en="Platforms may recommend videos or music based on patterns in your activity." data-zh="平台可能根据你的使用习惯推荐视频或音乐。">Platforms may recommend videos or music based on patterns in your activity.</p></article><article class="lesson-card"><div class="lesson-icon">🗣️</div><h3 data-en="How you communicate" data-zh="你的沟通方式">How you communicate</h3><p data-en="Speech recognition and language tools help computers work with human language." data-zh="语音识别和语言工具帮助计算机处理人类语言。">Speech recognition and language tools help computers work with human language.</p></article></div></section>
+<section class="lesson-section"><h2 data-en="Try it yourself" data-zh="动手试一试">Try it yourself</h2><div class="lesson-callout" data-en="Find three examples today where a computer recognizes, predicts or recommends something." data-zh="今天找出三个计算机进行识别、预测或推荐的例子。">Find three examples today where a computer recognizes, predicts or recommends something.</div></section>
+<section class="lesson-section"><h2 data-en="Key takeaway" data-zh="本课重点">Key takeaway</h2><div class="lesson-take" data-en="AI is not one app or robot. It is a collection of methods used in many kinds of technology." data-zh="AI 并不是某一个应用程序或机器人，而是一系列应用于不同技术中的方法。">AI is not one app or robot. It is a collection of methods used in many kinds of technology.</div></section>
+<nav class="lesson-nav"><a class="lesson-link secondary" href="index.html#learning-map" data-en="↑ Back to learning path" data-zh="↑ 返回学习路线">↑ Back to learning path</a><a class="lesson-link" href="see-the-difference.html" data-en="Next lesson →" data-zh="下一课 →">Next lesson →</a></nav></main><footer class="site-footer"><nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav><p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p></footer><script>
+(()=>{const nav={en:['Home','About','Math Education','AI Education','In-Class Learning','My Books','Contact'],zh:['首页','关于我们','数学教育','人工智能教育','课堂学习','我的书籍','联系我们']};const legal={en:['Privacy Policy','Terms of Service','Home'],zh:['隐私政策','版权与内容使用政策','首页']};const btns=document.querySelectorAll('.flag[data-language]');function setLanguage(lang){const l=lang==='zh'?'zh':'en';document.documentElement.lang=l==='zh'?'zh-CN':'en-CA';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.innerHTML=el.getAttribute(l==='zh'?'data-zh':'data-en'));document.querySelectorAll('.site-nav [data-nav]').forEach((el,i)=>el.textContent=nav[l][i]);document.querySelectorAll('.site-footer [data-legal]').forEach((el,i)=>el.textContent=legal[l][i]);btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===l)));try{localStorage.setItem('kiwi-site-language',l)}catch(e){}}btns.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));let saved='en';try{saved=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(saved);window.addEventListener('pageshow',()=>{let l='en';try{l=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(l)});})();
+</script><script src="../assets/js/drive-breadcrumb.js?v=20261107-3" defer></script></body></html>

@@ -3447,3 +3447,712 @@ body.ai-page .ai-detail-hero > p:not(.ai-kicker) {
     font-size: 13px;
   }
 }
+
+
+
+/* ==========================================================================
+   KIWI INNER LEAF-PAGE BANNER — CANONICAL STANDARD
+   Source of truth: Number Families banner. Reuse on every deepest/last-level page.
+   ========================================================================== */
+.topic-banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 0 var(--topic-banner-gap-bottom) !important;
+  padding: var(--topic-banner-padding-y) var(--topic-banner-padding-x) !important;
+  border: 1px solid #d8e8f8 !important;
+  border-radius: var(--topic-banner-radius) !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
+  background-image: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
+}
+.topic-banner-kicker {
+  margin: 0 0 12px !important;
+  color: #2676b7 !important;
+  font-family: var(--font-site) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .14em !important;
+  line-height: normal !important;
+  text-transform: uppercase !important;
+}
+.topic-banner h1 {
+  margin: 0 0 14px !important;
+  color: #123d75 !important;
+  font-family: "Segoe UI",Tahoma,sans-serif !important;
+  font-size: clamp(32px,4vw,50px) !important;
+  font-weight: 700 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.03em !important;
+}
+.topic-banner-subtitle {
+  max-width: 850px !important;
+  margin: 0 !important;
+  color: #405875 !important;
+  font-family: "Segoe UI",Tahoma,sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  letter-spacing: normal !important;
+}
+@media (max-width:760px) {
+  .topic-banner {
+    padding: var(--topic-banner-padding-y) var(--topic-banner-padding-x) !important;
+  }
+  .topic-banner h1 { font-size: clamp(28px,7vw,36px) !important; }
+  .topic-banner-subtitle { font-size: 15px !important; }
+}
+
+
+
+/* SHARED LEAF-PAGE BANNER — exact Number Families reference styling */
+.nf-hero.topic-banner {
+  position: relative;
+  overflow: hidden;
+  padding: var(--topic-banner-padding-y) var(--topic-banner-padding-x);
+  border-radius: var(--topic-banner-radius);
+  background: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8);
+  border: 1px solid #d8e8f8;
+  margin: 29px 0 var(--topic-banner-gap-bottom);
+  box-sizing: border-box;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+}
+.nf-hero.topic-banner .nf-kicker,
+.nf-hero.topic-banner .topic-banner-kicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  color: #2676b7;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  line-height: normal;
+}
+.nf-hero.topic-banner h1 {
+  font-size: clamp(32px,4vw,50px);
+  line-height: 1.08;
+  color: #123d75;
+  margin: 0 0 14px;
+  letter-spacing: -.03em;
+  font-family: "Segoe UI",Tahoma,sans-serif;
+  font-weight: 700;
+}
+.nf-hero.topic-banner > p:last-child {
+  max-width: 850px;
+  color: #405875;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+  font-family: "Segoe UI",Tahoma,sans-serif;
+  font-weight: 400;
+}
+@media (max-width:760px) {
+  .nf-hero.topic-banner {
+    padding: 26px 22px;
+  }
+  .nf-hero.topic-banner h1 { font-size: clamp(28px,7vw,36px); }
+  .nf-hero.topic-banner > p:last-child { font-size: 15px; }
+}
+
+
+/* Episode 1 editorial cover image — keep it in the article flow, not full-width. */
+.ai-content .ai-inline-cover {
+  float: right;
+  width: min(34%, 430px);
+  max-width: 430px;
+  margin: 0 0 22px 30px;
+  padding: 0;
+}
+.ai-content .ai-inline-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+@media (max-width: 760px) {
+  .ai-content .ai-inline-cover {
+    float: none;
+    width: min(100%, 520px);
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+}
+
+
+/* Episode detail navigation — restored from the existing AI episode-page pattern. */
+.ai-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--ai-line);
+  padding-top: 22px;
+  margin-top: 42px;
+}
+.ai-bottom-nav a {
+  color: #1768b2;
+  font-weight: 800;
+  text-decoration: none;
+}
+.ai-footer-note {
+  text-align: center;
+  color: #718098;
+  font-size: 12px;
+  margin-top: 32px;
+}
+
+/* Episode cover image — same inline-right treatment used by the other AI episode pages. */
+.ai-inline-cover {
+  float: right;
+  width: 31%;
+  max-width: 360px;
+  min-width: 210px;
+  margin: 4px 24px 16px 0;
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 5px 18px rgba(24,55,95,.10);
+}
+.ai-inline-cover.ai-cover-right {
+  float: right;
+  margin: 4px 0 16px 24px;
+}
+.ai-inline-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 14px;
+}
+.ai-content:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@media(max-width:600px) {
+  .ai-inline-cover,
+  .ai-inline-cover.ai-cover-right {
+    float: none;
+    width: min(68%,320px);
+    min-width: 0;
+    max-width: 320px;
+    margin: 8px auto 22px;
+  }
+}
+
+/* Episode 1 banner: use the exact final Number Families banner geometry and type scale.
+   This overrides the earlier generic topic-banner rules without changing page content. */
+body.ai-page .ai-main > .nf-hero.topic-banner {
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 150px !important;
+  min-height: 150px !important;
+  max-height: 150px !important;
+  padding: 24px 46px !important;
+  border: 1px solid #d8e8f8 !important;
+  border-radius: 24px !important;
+  margin: 14px 0 34px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  background: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
+  background-image: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
+}
+body.ai-page .ai-main > .nf-hero.topic-banner > .topic-banner-kicker {
+  margin: 0 0 12px !important;
+  color: #2676b7 !important;
+  font-family: var(--font-site) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .14em !important;
+  line-height: normal !important;
+  text-transform: uppercase !important;
+}
+body.ai-page .ai-main > .nf-hero.topic-banner > h1 {
+  margin: 0 0 14px !important;
+  color: #123d75 !important;
+  font-family: "Segoe UI",Tahoma,sans-serif !important;
+  font-size: clamp(29px,3.2vw,38px) !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.025em !important;
+}
+body.ai-page .ai-main > .nf-hero.topic-banner > p:last-child {
+  max-width: 850px !important;
+  margin: 0 !important;
+  color: #405875 !important;
+  font-family: "Segoe UI",Tahoma,sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+@media(max-width:760px) {
+  body.ai-page .ai-main > .nf-hero.topic-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: none !important;
+    padding: 24px 23px !important;
+    margin: 14px 0 34px !important;
+  }
+  body.ai-page .ai-main > .nf-hero.topic-banner > h1 {
+    font-size: 29px !important;
+  }
+}
+
+
+/* ==========================================================================
+   CANONICAL LEAF-PAGE BANNER — exact Number Families reference
+   Applied to all deepest/detail pages. Change text only; do not alter layout.
+   ========================================================================== */
+html body main .nf-hero.topic-banner {
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 150px !important;
+  min-height: 150px !important;
+  max-height: 150px !important;
+  padding: 24px 46px !important;
+  margin: 14px 0 34px !important;
+  border: 1px solid #d8e8f8 !important;
+  border-radius: 24px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  background: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
+  background-image: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
+}
+html body main .nf-hero.topic-banner > .topic-banner-kicker {
+  margin: 0 0 12px !important;
+  color: #2676b7 !important;
+  font-family: var(--font-site) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .14em !important;
+  line-height: normal !important;
+  text-transform: uppercase !important;
+}
+html body main .nf-hero.topic-banner > h1 {
+  margin: 0 0 14px !important;
+  color: #123d75 !important;
+  font-family: "Segoe UI",Tahoma,sans-serif !important;
+  font-size: clamp(29px,3.2vw,38px) !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.025em !important;
+}
+html body main .nf-hero.topic-banner > p:last-child {
+  max-width: 850px !important;
+  margin: 0 !important;
+  color: #405875 !important;
+  font-family: "Segoe UI",Tahoma,sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+@media(max-width:760px) {
+  html body main .nf-hero.topic-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: none !important;
+    padding: 24px 23px !important;
+    margin: 14px 0 34px !important;
+  }
+  html body main .nf-hero.topic-banner > h1 {
+    font-size: 29px !important;
+  }
+}
+
+
+/* Leaf-page banner text limits: one-line title, maximum two-line subtitle. */
+html body main .nf-hero.topic-banner {
+  height: auto !important;
+  min-height: 150px !important;
+  max-height: none !important;
+  padding: 24px 46px !important;
+}
+html body main .nf-hero.topic-banner > h1 {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+html body main .nf-hero.topic-banner > p:last-child {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+  overflow: hidden !important;
+  max-height: 3.2em !important;
+}
+@media(max-width:760px) {
+  html body main .nf-hero.topic-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: none !important;
+    padding: 24px 23px !important;
+  }
+  html body main .nf-hero.topic-banner > h1 {
+    font-size: clamp(20px, 3.2vw, 29px) !important;
+  }
+}
+
+
+/* Higher-specificity override for the Episode 1 banner rule: allow up to two subtitle lines without clipping. */
+html body.ai-page main.ai-main > .nf-hero.topic-banner {
+  height: auto !important;
+  min-height: 150px !important;
+  max-height: none !important;
+  padding: 24px 46px !important;
+}
+html body.ai-page main.ai-main > .nf-hero.topic-banner > h1 {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+html body.ai-page main.ai-main > .nf-hero.topic-banner > p:last-child {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+  overflow: hidden !important;
+  max-height: 3.2em !important;
+}
+@media(max-width:760px) {
+  html body.ai-page main.ai-main > .nf-hero.topic-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: none !important;
+    padding: 24px 23px !important;
+  }
+}
+
+
+/* ==========================================================================
+   FINAL CANONICAL LEAF-PAGE BANNER STANDARD — v2
+   Reference: Number Families. This block is authoritative for every .topic-banner.
+   Desktop: 38px title / 16px subtitle. Mobile: 29px title / 15px subtitle.
+   The banner grows naturally to fit one title line and up to two subtitle lines.
+   ========================================================================== */
+html body main .nf-hero.topic-banner {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 150px !important;
+  max-height: none !important;
+  padding: 24px 46px !important;
+  margin: 14px 0 34px !important;
+  overflow: hidden !important;
+  border: 1px solid #d8e8f8 !important;
+  border-radius: 24px !important;
+  background: linear-gradient(112deg, #dff3ff, #eaf0ff 58%, #fff1d8) !important;
+  gap: 0 !important;
+}
+html body main .nf-hero.topic-banner > .topic-banner-kicker {
+  display: block !important;
+  flex: 0 0 auto !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  color: #2676b7 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+html body main .nf-hero.topic-banner > h1 {
+  display: block !important;
+  flex: 0 0 auto !important;
+  margin: 0 0 14px !important;
+  padding: 0 !important;
+  color: #123d75 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 38px !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.025em !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+html body main .nf-hero.topic-banner > p:last-child {
+  display: -webkit-box !important;
+  flex: 0 0 auto !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+  max-width: 850px !important;
+  max-height: 3.2em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  color: #405875 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+@media (max-width: 760px) {
+  html body main .nf-hero.topic-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: none !important;
+    padding: 24px 23px !important;
+  }
+  html body main .nf-hero.topic-banner > h1 {
+    font-size: 29px !important;
+    line-height: 1.12 !important;
+  }
+  html body main .nf-hero.topic-banner > p:last-child {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    max-height: 3.1em !important;
+  }
+}
+
+
+/* ==========================================================================
+   FINAL CANONICAL LEAF-PAGE BANNER STANDARD — v3
+   Authoritative final override for every deepest-level page banner.
+   Slightly smaller title + taller line box prevent descender clipping.
+   ========================================================================== */
+html body main .nf-hero.topic-banner {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 150px !important;
+  max-height: none !important;
+  padding: 24px 46px !important;
+  margin: 14px 0 34px !important;
+  overflow: hidden !important;
+  border: 1px solid #d8e8f8 !important;
+  border-radius: 24px !important;
+  background: linear-gradient(112deg, #dff3ff, #eaf0ff 58%, #fff1d8) !important;
+}
+html body main .nf-hero.topic-banner > .topic-banner-kicker {
+  display: block !important;
+  flex: 0 0 auto !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  color: #2676b7 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+html body main .nf-hero.topic-banner > h1 {
+  display: block !important;
+  flex: 0 0 auto !important;
+  margin: 0 0 12px !important;
+  padding: 2px 0 3px !important;
+  color: #123d75 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -.025em !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  max-width: 100% !important;
+}
+html body main .nf-hero.topic-banner > p:last-child {
+  display: -webkit-box !important;
+  flex: 0 0 auto !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+  max-width: 850px !important;
+  max-height: 3.2em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  color: #405875 !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+@media (max-width: 760px) {
+  html body main .nf-hero.topic-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: none !important;
+    padding: 24px 23px !important;
+  }
+  html body main .nf-hero.topic-banner > h1 {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+  }
+  html body main .nf-hero.topic-banner > p:last-child {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    max-height: 3.1em !important;
+  }
+}
+
+
+/* Episode 1 learning visuals — compact, bilingual and responsive. */
+.ai-visual-panel {
+  clear: both;
+  margin: 22px 0 28px;
+  padding: 18px 20px;
+  border: 1px solid #dbe8f7;
+  border-radius: 18px;
+  background: #f8fbff;
+}
+.ai-visual-heading {
+  margin: 0 0 14px;
+  color: #123d75;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+.ai-flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.ai-flow-item {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  padding: 13px 10px;
+  border-radius: 14px;
+  background: #edf6ff;
+}
+.ai-flow-icon, .ai-example-art, .ai-compare-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ai-flow-icon svg { width: 54px; height: 54px; }
+.ai-flow-item strong { color: #123d75; font-size: 15px; }
+.ai-flow-item small { color: #506782; font-size: 12px; line-height: 1.4; }
+.ai-flow-arrow { color: #3988c8; font-size: 25px; font-weight: 700; }
+.ai-flow-result { background: #fff5df; }
+.ai-flow-symbol { display: grid; place-items: center; width: 54px; height: 54px; color: #d98a2b; font-size: 42px; }
+.ai-visual-caption { margin: 12px 0 0; color: #5b7088; font-size: 13px; text-align: center; }
+.ai-brand-row { display: grid; grid-template-columns: repeat(3,1fr) 1.5fr; gap: 10px; align-items: stretch; }
+.ai-brand-chip, .ai-brand-conclusion {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 74px; padding: 12px; border-radius: 13px; background: #edf6ff; text-align: center;
+}
+.ai-brand-chip b { color: #123d75; font-size: 18px; }
+.ai-brand-chip span { margin-top: 3px; color: #60748a; font-size: 12px; }
+.ai-brand-conclusion { background: #fff4df; color: #7a5518; font-size: 14px; }
+.ai-example-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 13px; }
+.ai-example-card {
+  padding: 15px; border-radius: 15px; background: #fff;
+  border: 1px solid #e1ebf7; text-align: center;
+}
+.ai-example-art svg { width: 74px; height: 64px; }
+.ai-example-card strong { display: block; margin: 5px 0; color: #123d75; font-size: 15px; }
+.ai-example-card p { margin: 0; color: #536a82; font-size: 13px; line-height: 1.5; }
+.ai-compare-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.ai-compare-card {
+  display: flex; align-items: center; gap: 14px; padding: 15px;
+  border-radius: 15px; background: #eaf4ff;
+}
+.ai-compare-card.ai-creative { background: #fff3e3; }
+.ai-compare-icon svg { width: 62px; height: 62px; flex: 0 0 auto; }
+.ai-compare-card strong { color: #123d75; font-size: 15px; }
+.ai-compare-card p { margin: 4px 0 0; color: #536a82; font-size: 13px; line-height: 1.5; }
+.ai-check-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.ai-check-card {
+  display: grid; grid-template-columns: 58px 1fr; column-gap: 12px; align-items: center;
+  padding: 15px; border: 1px solid #e1ebf7; border-radius: 15px; background: #fff;
+}
+.ai-check-card span { grid-row: span 2; }
+.ai-check-card svg { width: 58px; height: 58px; }
+.ai-check-card strong { color: #123d75; font-size: 15px; }
+.ai-check-card p { margin: 3px 0 0; color: #536a82; font-size: 13px; line-height: 1.5; }
+.ai-capability-strip {
+  display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 9px;
+}
+.ai-capability-strip > div {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  padding: 12px 6px; border-radius: 13px; background: #edf6ff; text-align: center;
+}
+.ai-capability-strip > div:nth-child(2n) { background: #fff4e3; }
+.ai-capability-strip span { color: #2676b7; font-size: 25px; font-weight: 800; line-height: 1; }
+.ai-capability-strip strong { color: #123d75; font-size: 13px; }
+@media (max-width: 760px) {
+  .ai-visual-panel { margin: 18px 0 22px; padding: 14px; }
+  .ai-visual-heading { font-size: 16px; }
+  .ai-flow-diagram { gap: 5px; }
+  .ai-flow-item { padding: 10px 5px; }
+  .ai-flow-icon svg { width: 42px; height: 42px; }
+  .ai-flow-arrow { font-size: 18px; }
+  .ai-flow-item small { font-size: 10px; }
+  .ai-brand-row { grid-template-columns: repeat(3,1fr); }
+  .ai-brand-conclusion { grid-column: 1 / -1; min-height: 52px; }
+  .ai-example-grid { grid-template-columns: 1fr; }
+  .ai-example-card { display: grid; grid-template-columns: 74px 1fr; text-align: left; align-items: center; }
+  .ai-example-art { grid-row: span 2; }
+  .ai-example-card p { margin-top: 2px; }
+  .ai-compare-grid, .ai-check-grid { grid-template-columns: 1fr; }
+  .ai-capability-strip { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+
+
+/* Episode 1 misconception prompts: make each key idea easy to scan. */
+.ai-content p.misconception-lead {
+  margin: 26px 0 8px;
+  padding: 11px 15px;
+  border-left: 4px solid #5aa6dc;
+  border-radius: 0 12px 12px 0;
+  background: #f0f7ff;
+  color: #123d75;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.ai-content p.misconception-lead strong {
+  display: inline-block;
+  margin-right: 5px;
+  color: #2676b7;
+}
+.ai-content h2 {
+  margin-top: 34px;
+}
+.ai-content .ai-definition {
+  padding: 17px 20px;
+  border-left: 4px solid #2676b7;
+  border-radius: 0 14px 14px 0;
+  background: #eff6ff;
+}

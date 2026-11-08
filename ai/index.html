@@ -13,10 +13,11 @@
 .ai-section{margin:44px 0}.ai-section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
 .ai-section h2{font-size:clamp(25px,3vw,34px);line-height:1.15;color:#153d70;margin:0 0 8px}
 .ai-section-head p{max-width:760px;margin:0;color:var(--ai-muted);line-height:1.65;font-size:15px}
-.ai-why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.ai-why-card{padding:21px;border:1px solid var(--ai-line);border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(24,55,95,.045)}
-.ai-why-icon{width:48px;height:48px;border-radius:15px;background:#eaf3ff;display:grid;place-items:center;font-size:25px;margin-bottom:14px}
-.ai-why-card h3{font-size:18px;color:#173e70;margin:0 0 7px}.ai-why-card p{font-size:14px;line-height:1.65;color:#60728a;margin:0}
+.ai-why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ai-why-card{display:grid;grid-template-columns:38px minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:12px;align-items:start;padding:17px 19px;border:1px solid var(--ai-line);border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(24,55,95,.045)}
+.ai-why-icon{grid-column:1;grid-row:1 / span 2;width:38px;height:38px;border-radius:12px;background:#eaf3ff;display:grid;place-items:center;font-size:21px;margin:1px 0 0}
+.ai-why-card h3{grid-column:2;grid-row:1;font-size:17px;line-height:1.3;color:#173e70;margin:2px 0 6px}
+.ai-why-card p{grid-column:2;grid-row:2;font-size:14px;line-height:1.55;color:#60728a;margin:0}
 .ai-path{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .ai-path-item{position:relative;min-height:114px;padding:15px;border:1px solid var(--ai-line);border-radius:16px;background:#fff}
 .ai-path-item b{display:block;font-size:12px;color:#3982bd;letter-spacing:.06em;margin-bottom:7px}
@@ -62,6 +63,11 @@
 .ai-filter{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 20px}
 .ai-filter button{border:1px solid #d7e3f0;border-radius:999px;background:#fff;color:#3f5c7b;padding:8px 13px;font:700 12px "Segoe UI",sans-serif;cursor:pointer}
 .ai-filter button.active{background:#1768b2;border-color:#1768b2;color:#fff}
+
+@media(max-width:760px){
+  .ai-why{grid-template-columns:1fr}
+  .ai-why-card{padding:15px 17px}
+}
 @media(max-width:850px){.ai-hero{grid-template-columns:1fr;padding:30px}.ai-hero-art{max-width:310px}.ai-episodes{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-path{grid-template-columns:repeat(2,1fr)}.ai-special{grid-template-columns:1fr}.ai-special-art{max-width:240px}}
 @media(max-width:600px){.ai-main{padding:0 16px 55px}.ai-hero{padding:25px 22px;min-height:0}.ai-hero h1{font-size:35px}.ai-hero p{font-size:15px}.ai-why,.ai-episodes,.ai-compare{grid-template-columns:1fr}.ai-path{grid-template-columns:1fr 1fr}.ai-section-head{display:block}.ai-detail-hero{padding:25px 22px}.ai-content p,.ai-content li{font-size:14px}.ai-special{padding:22px}.ai-episode-art{height:135px}}
 
@@ -72,6 +78,11 @@
 .ai-special-cover{display:block;width:100%;max-width:320px;justify-self:center;border-radius:15px;overflow:hidden}
 .ai-special-cover img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 .ai-episode-art img{width:100%;height:100%;object-fit:cover}
+
+.ai-path-item{display:block;text-decoration:none;color:inherit;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.ai-path-item:hover{transform:translateY(-3px);border-color:#9fc4e8;box-shadow:0 9px 22px rgba(24,55,95,.09)}
+.ai-path-item em{display:block;margin-top:10px;color:#1768b2;font-size:12px;font-style:normal;font-weight:900}
+.ai-path-item:focus-visible{outline:3px solid #76b7ed;outline-offset:3px}
 </style></head><body class="ai-page"><header class="site-header">
 <div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a>
 <p class="logo-tagline" aria-hidden="true"><span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span><span class="tag-create" data-en="Create" data-zh="创造">Create</span><span class="tag-sep"> • </span><span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span><span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span></p><span class="divider" aria-hidden="true"></span>
@@ -95,11 +106,11 @@
 </div></section>
 <section class="ai-section" id="learning-map"><div class="ai-section-head"><div><h2 data-en="A learning path, not a pile of technical words" data-zh="循序渐进，而不是死记一堆专业名词">A learning path, not a pile of technical words</h2><p data-en="We start with what AI is, then learn how to communicate with it, understand its building blocks, and finally explore how AI can work through tasks." data-zh="我们先认识 AI，再学习怎样与它沟通，接着了解它的基本组成，最后探索 AI 怎样一步步完成任务。">We start with what AI is, then learn how to communicate with it, understand its building blocks, and finally explore how AI can work through tasks.</p></div></div>
 <div class="ai-path">
-<div class="ai-path-item"><b>01 · DISCOVER</b><strong data-en="Meet AI" data-zh="认识 AI">Meet AI</strong><span data-en="What it is and what it can do" data-zh="AI 是什么？它能做什么？">What it is and what it can do</span></div>
-<div class="ai-path-item"><b>02 · COMPARE</b><strong data-en="See the difference" data-zh="看懂不同类型">See the difference</strong><span data-en="Traditional AI and Generative AI" data-zh="传统 AI 与生成式 AI">Traditional AI and Generative AI</span></div>
-<div class="ai-path-item"><b>03 · COMMUNICATE</b><strong data-en="Talk to AI" data-zh="学会和 AI 沟通">Talk to AI</strong><span data-en="Prompt, context and clear goals" data-zh="Prompt、Context 和清晰目标">Prompt, context and clear goals</span></div>
-<div class="ai-path-item"><b>04 · UNDERSTAND</b><strong data-en="Explore the parts" data-zh="认识 AI 的组成">Explore the parts</strong><span data-en="Models, knowledge, memory and tools" data-zh="模型、知识、记忆与工具">Models, knowledge, memory and tools</span></div>
-<div class="ai-path-item"><b>05 · CREATE</b><strong data-en="Work with AI" data-zh="与 AI 一起完成任务">Work with AI</strong><span data-en="Skills, workflows and agents" data-zh="技能、工作流程与智能体">Skills, workflows and agents</span></div>
+<a class="ai-path-item" href="meet-ai.html"><b>01 · DISCOVER</b><strong data-en="Meet AI" data-zh="认识 AI">Meet AI</strong><span data-en="What it is and what it can do" data-zh="AI 是什么？它能做什么？">What it is and what it can do</span><em data-en="Explore this lesson →" data-zh="进入学习 →">Explore this lesson →</em></a>
+<a class="ai-path-item" href="see-the-difference.html"><b>02 · COMPARE</b><strong data-en="See the difference" data-zh="看懂不同类型">See the difference</strong><span data-en="Traditional AI and Generative AI" data-zh="传统 AI 与生成式 AI">Traditional AI and Generative AI</span><em data-en="Explore this lesson →" data-zh="进入学习 →">Explore this lesson →</em></a>
+<a class="ai-path-item" href="talk-to-ai.html"><b>03 · COMMUNICATE</b><strong data-en="Talk to AI" data-zh="学会与 AI 沟通">Talk to AI</strong><span data-en="Prompt, context and clear goals" data-zh="提示词、上下文与清晰目标">Prompt, context and clear goals</span><em data-en="Explore this lesson →" data-zh="进入学习 →">Explore this lesson →</em></a>
+<a class="ai-path-item" href="explore-the-parts.html"><b>04 · UNDERSTAND</b><strong data-en="Explore the parts" data-zh="了解 AI 的组成">Explore the parts</strong><span data-en="Models, knowledge, memory and tools" data-zh="模型、知识、记忆与工具">Models, knowledge, memory and tools</span><em data-en="Explore this lesson →" data-zh="进入学习 →">Explore this lesson →</em></a>
+<a class="ai-path-item" href="work-with-ai.html"><b>05 · CREATE</b><strong data-en="Work with AI" data-zh="与 AI 一起完成任务">Work with AI</strong><span data-en="Skills, workflows and agents" data-zh="技能、工作流与智能体">Skills, workflows and agents</span><em data-en="Explore this lesson →" data-zh="进入学习 →">Explore this lesson →</em></a>
 </div></section>
 <section class="ai-section" id="episodes"><div class="ai-section-head"><div><h2 data-en="AI Knowledge Classroom" data-zh="AI 知识小课堂">AI Knowledge Classroom</h2><p data-en="Short, friendly lessons for curious middle and high school students. Choose a topic and learn at your own pace." data-zh="为充满好奇心的初中生和高中生准备的轻松小课程。选择一个主题，按照自己的节奏学习。">Short, friendly lessons for curious middle and high school students. Choose a topic and learn at your own pace.</p></div></div>
 <div class="ai-filter"><button class="active" data-ai-filter="all" data-en="All topics" data-zh="全部主题">All topics</button><button data-ai-filter="foundations" data-en="AI Basics" data-zh="AI 基础">AI Basics</button><button data-ai-filter="concepts" data-en="AI Concepts" data-zh="AI 概念">AI Concepts</button><button data-ai-filter="prompt" data-en="Prompting" data-zh="提示词">Prompting</button><button data-ai-filter="agents" data-en="AI Agents" data-zh="AI 智能体">AI Agents</button></div>
