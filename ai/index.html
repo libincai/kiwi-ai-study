@@ -1,6 +1,15 @@
-<!DOCTYPE html><html lang="en-CA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title data-en="AI Education | Kiwi 爱AI Study" data-zh="人工智能教育 | Kiwi 爱AI Study">AI Education | Kiwi 爱AI Study</title><meta name="description" content="A friendly AI knowledge classroom for middle and high school students. Learn AI through everyday life, school examples and clear illustrations."><link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1"><style>
+<!DOCTYPE html>
+<!-- Level 2 primary nav — shell from templates/level-2-primary-nav.html (ai-page + ai-main) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="AI Education | Kiwi 爱AI Study" data-zh="人工智能教育 | Kiwi 爱AI Study">AI Education | Kiwi 爱AI Study</title>
+  <meta name="description" content="A friendly AI knowledge classroom for middle and high school students. Learn AI through everyday life, school examples and clear illustrations.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1">
+  <style>
 .ai-page{--ai-ink:#14264d;--ai-blue:#1768b2;--ai-purple:#6556b8;--ai-muted:#60728a;--ai-line:#dce6f1;--ai-pale:#f2f7fd;color:var(--ai-ink)}
-.ai-main{max-width:1180px;margin:0 auto;padding:0 26px 76px}
+.ai-page .ai-main{padding-bottom:76px}
 .ai-back{padding:18px 0 8px}.ai-back a{font-size:13px;color:#1768b2;text-decoration:none;font-weight:800}
 .ai-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:center;min-height:360px;padding:42px 48px;border-radius:26px;margin:14px 0 34px;background:linear-gradient(120deg,#edf5ff 0%,#f2efff 56%,#fff3e8 100%);border:1px solid #dce7f5}
 .ai-kicker{font-size:11px;letter-spacing:.16em;font-weight:900;color:#3878b4;text-transform:uppercase;margin:0 0 12px}
@@ -10,8 +19,9 @@
 .ai-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
 .ai-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:#1768b2;color:#fff;text-decoration:none;font-size:14px;font-weight:800}
 .ai-btn.secondary{background:#fff;color:#245b91;border:1px solid #cdddf0}
-.ai-section{margin:44px 0}.ai-page .compact-page-banner{margin-bottom:0}
-.ai-hub-intro{width:100%;padding:28px 0 12px;box-sizing:border-box}
+.ai-section{margin:44px 0}
+.ai-page .ai-main > .about-compact-banner{margin-bottom:30px!important}
+.ai-hub-intro{width:100%;margin:42px 0 0;padding:0 0 12px;box-sizing:border-box}
 .ai-page #episodes{width:100%;box-sizing:border-box;margin-top:0;padding-top:0}
 .ai-hub-intro h2{font-size:clamp(22px,2.8vw,30px);line-height:1.2;color:#153d70;margin:0 0 18px}
 .ai-hub-intro p{font-size:15px;line-height:1.78;color:#4f637c;margin:0 0 15px}
@@ -66,7 +76,7 @@
 }
 @media(max-width:1100px){.ai-episodes{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
 @media(max-width:850px){.ai-hero{grid-template-columns:1fr;padding:30px}.ai-hero-art{max-width:310px}.ai-episodes{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-path{grid-template-columns:repeat(2,1fr)}.ai-special{grid-template-columns:1fr}.ai-special-art{max-width:240px}}
-@media(max-width:600px){.ai-main{padding:0 16px 55px}.ai-hero{padding:25px 22px;min-height:0}.ai-hero h1{font-size:35px}.ai-hero p{font-size:15px}.ai-why,.ai-episodes,.ai-compare{grid-template-columns:1fr}.ai-path{grid-template-columns:1fr 1fr}.ai-section-head{display:block}.ai-detail-hero{padding:25px 22px}.ai-content p,.ai-content li{font-size:14px}.ai-special{padding:22px}}
+@media(max-width:600px){.ai-page .ai-main{padding-bottom:55px}.ai-hero{padding:25px 22px;min-height:0}.ai-hero h1{font-size:35px}.ai-hero p{font-size:15px}.ai-why,.ai-episodes,.ai-compare{grid-template-columns:1fr}.ai-path{grid-template-columns:1fr 1fr}.ai-section-head{display:block}.ai-detail-hero{padding:25px 22px}.ai-content p,.ai-content li{font-size:14px}.ai-special{padding:22px}}
 
 .ai-card-cover{width:100%;height:100%;object-fit:cover;display:block}
 .ai-episode-art .ai-card-cover{aspect-ratio:4/3}
@@ -78,28 +88,80 @@
 .ai-path-item:hover{transform:translateY(-3px);border-color:#9fc4e8;box-shadow:0 9px 22px rgba(24,55,95,.09)}
 .ai-path-item em{display:block;margin-top:10px;color:#1768b2;font-size:12px;font-style:normal;font-weight:900}
 .ai-path-item:focus-visible{outline:3px solid #76b7ed;outline-offset:3px}
-</style></head><body class="ai-page"><header class="site-header">
-<div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a>
-<p class="logo-tagline" aria-hidden="true"><span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span><span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span><span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span><span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span></p><span class="divider" aria-hidden="true"></span>
-<div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Kiwi 爱AI Study"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt=""></a></div></div>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a><a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a><a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a><a href="index.html" data-nav="ai" class="active" data-en="AI Education" data-zh="人工智能教育">AI Education</a><a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a><a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a><a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
-<span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
-      </span></nav></header><main class="ai-main">
-<div class="page-back-wrap"><a class="page-back-link" href="../index.html" data-page-back data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a></div>
-<section class="compact-page-banner about-compact-banner" aria-labelledby="ai-page-title">
-  <div class="compact-banner-copy">
-    <h1 id="ai-page-title" data-en="AI Education" data-zh="人工智能教育">AI Education</h1>
-    <p class="compact-banner-subtitle" data-en="Explore AI through school, hobbies, and everyday life." data-zh="从校园、兴趣爱好和日常生活中认识人工智能。">Explore AI through school, hobbies, and everyday life.</p>
-  </div>
-</section>
-<section class="ai-hub-intro" aria-labelledby="ai-hub-intro-title">
+</style>
+</head>
+<body class="ai-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span>
+        <span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span>
+        <span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span>
+        <span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" class="active" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
+
+  <main class="ai-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="../index.html" data-page-back data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a>
+    </div>
+
+    <section class="compact-page-banner about-compact-banner" aria-labelledby="ai-page-title">
+      <div class="compact-banner-copy">
+        <h1 id="ai-page-title" data-en="AI Education" data-zh="人工智能教育">AI Education</h1>
+        <p class="compact-banner-subtitle" data-en="Explore AI through school, hobbies, and everyday life." data-zh="从校园、兴趣爱好和日常生活中认识人工智能。">Explore AI through school, hobbies, and everyday life.</p>
+      </div>
+    </section>
+
+    <!-- LEVEL-2 BODY START -->
+    <section class="ai-hub-intro" aria-labelledby="ai-hub-intro-title">
 <h2 id="ai-hub-intro-title" data-en="AI Knowledge Classroom" data-zh="AI 知识小课堂">AI Knowledge Classroom</h2>
 <p data-en="<strong>AI Knowledge Classroom</strong> on Kiwi 爱AI Study offers short lessons for curious students, parents, and teachers. AI is bigger than one app or chatbot—we explain it through school life and everyday examples so the ideas stay clear and approachable." data-zh="Kiwi 爱AI Study 的 <strong>AI 知识小课堂</strong> 为好奇的学生、家长和老师提供短课程。AI 不止一个应用或聊天机器人——我们用校园与日常例子讲解，让概念清楚、好接近。"><strong>AI Knowledge Classroom</strong> on Kiwi 爱AI Study offers short lessons for curious students, parents, and teachers. AI is bigger than one app or chatbot—we explain it through school life and everyday examples so the ideas stay clear and approachable.</p>
 <p data-en="You will meet core topics—<em>models</em>, prompts, <em>context</em>, <em>memory</em>, generative AI, and agents—with illustrations and bilingual pages you can read at your own pace. Episodes connect, but you may start with whatever question you have today." data-zh="你会接触到 <em>模型</em>、提示词、<em>上下文</em>、<em>记忆</em>、生成式 AI、Agent 等核心主题，配有示意图与中英对照页面，可按自己的节奏阅读。课程前后相连，也可以从当下最关心的问题开始。">You will meet core topics—<em>models</em>, prompts, <em>context</em>, <em>memory</em>, generative AI, and agents—with illustrations and bilingual pages you can read at your own pace. Episodes connect, but you may start with whatever question you have today.</p>
 <p data-en="Stay curious, ask questions, and check answers—even from AI. Each card below links to one lesson; try Episode 1 if you are new, or pick the topic that fits you now." data-zh="保持好奇、敢于提问，并学会核对答案，包括 AI 给出的内容。下方每张卡片对应一集；初次学习可从第 1 集入手，也可直接打开你最关心的主题。">Stay curious, ask questions, and check answers—even from AI. Each card below links to one lesson; try Episode 1 if you are new, or pick the topic that fits you now.</p>
 </section>
 <section class="ai-section" id="episodes" aria-labelledby="ai-hub-intro-title"><div class="ai-episodes"><a class="ai-episode" data-category="foundations" href="episode-01.html" data-en-label="Episode 1: AI is not one app or chatbot—this lesson clears everyday mix-ups about what artificial intelligence really is." data-zh-label="第 1 集：AI 不是某一个应用或聊天机器人，本集澄清最常见的几种误会，说清人工智能到底是什么。" aria-label="Episode 1: AI is not one app or chatbot—this lesson clears everyday mix-ups about what artificial intelligence really is."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-001-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-001-cn-4x3.webp" src="images/ai-learning-studio-episode-001-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="AI is not one app or chatbot—this lesson clears everyday mix-ups about what artificial intelligence really is." data-zh="AI 不是某一个应用或聊天机器人，本集澄清最常见的几种误会，说清人工智能到底是什么。">AI is not one app or chatbot—this lesson clears everyday mix-ups about what artificial intelligence really is.</p></div></a><a class="ai-episode" data-category="foundations" href="episode-02.html" data-en-label="Episode 2: Traditional AI recognizes and predicts; generative AI creates new content—a smart car and a creative scene show the difference." data-zh-label="第 2 集：传统 AI 识别和预测，生成式 AI 创造新内容，本集用智能汽车等生活例子说明两者有何不同。" aria-label="Episode 2: Traditional AI recognizes and predicts; generative AI creates new content—a smart car and a creative scene show the difference."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-002-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-002-cn-4x3.webp" src="images/ai-learning-studio-episode-002-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="Traditional AI recognizes and predicts; generative AI creates new content—a smart car and a creative scene show the difference." data-zh="传统 AI 识别和预测，生成式 AI 创造新内容，本集用智能汽车等生活例子说明两者有何不同。">Traditional AI recognizes and predicts; generative AI creates new content—a smart car and a creative scene show the difference.</p></div></a><a class="ai-episode" data-category="concepts" href="episode-03.html" data-en-label="Episode 3: From machine learning and deep learning to LLMs and ChatGPT, a child-growing analogy maps how those technology layers stack up." data-zh-label="第 3 集：从机器学习、深度学习到大语言模型和 ChatGPT，本集用孩子成长的类比串起一层层叠起来的技术结构。" aria-label="Episode 3: From machine learning and deep learning to LLMs and ChatGPT, a child-growing analogy maps how those technology layers stack up."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-003-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-003-cn-4x3.webp" src="images/ai-learning-studio-episode-003-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="From machine learning and deep learning to LLMs and ChatGPT, a child-growing analogy maps how those technology layers stack up." data-zh="从机器学习、深度学习到大语言模型和 ChatGPT，本集用孩子成长的类比串起一层层叠起来的技术结构。">From machine learning and deep learning to LLMs and ChatGPT, a child-growing analogy maps how those technology layers stack up.</p></div></a><a class="ai-episode" data-category="concepts" href="episode-04.html" data-en-label="Episode 4: Meet the companies, model families, and products behind ChatGPT, Gemini, Claude, DeepSeek, and other AI names you see online." data-zh-label="第 4 集：认识 ChatGPT、Gemini、豆包、DeepSeek 等名字背后的公司、模型家族与产品，不再把三者混为一谈。" aria-label="Episode 4: Meet the companies, model families, and products behind ChatGPT, Gemini, Claude, DeepSeek, and other AI names you see online."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-004-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-004-cn-4x3.webp" src="images/ai-learning-studio-episode-004-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="Meet the companies, model families, and products behind ChatGPT, Gemini, Claude, DeepSeek, and other AI names you see online." data-zh="认识 ChatGPT、Gemini、豆包、DeepSeek 等名字背后的公司、模型家族与产品，不再把三者混为一谈。">Meet the companies, model families, and products behind ChatGPT, Gemini, Claude, DeepSeek, and other AI names you see online.</p></div></a><a class="ai-episode" data-category="concepts" href="episode-05.html" data-en-label="Episode 5: Invisible AI lives on screens; visible AI moves through robots and cars—and that is not the same as traditional vs generative AI." data-zh-label="第 5 集：看不见的 AI 活在屏幕里，看得见的 AI 在机器人与汽车中行动，且这与传统/生成式 AI 并不是同一种分法。" aria-label="Episode 5: Invisible AI lives on screens; visible AI moves through robots and cars—and that is not the same as traditional vs generative AI."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-005-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-005-cn-4x3.webp" src="images/ai-learning-studio-episode-005-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="Invisible AI lives on screens; visible AI moves through robots and cars—and that is not the same as traditional vs generative AI." data-zh="看不见的 AI 活在屏幕里，看得见的 AI 在机器人与汽车中行动，且这与传统/生成式 AI 并不是同一种分法。">Invisible AI lives on screens; visible AI moves through robots and cars—and that is not the same as traditional vs generative AI.</p></div></a><a class="ai-episode" data-category="concepts" href="episode-06.html" data-en-label="Episode 6: Face unlock, maps, and recommendations already hide AI in daily life—and this episode reviews what Phase 1 covered." data-zh-label="第 6 集：面容解锁、导航和推荐背后早就在用 AI，本集回顾第一阶段学过的内容并引出下一阶段。" aria-label="Episode 6: Face unlock, maps, and recommendations already hide AI in daily life—and this episode reviews what Phase 1 covered."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-006-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-006-cn-4x3.webp" src="images/ai-learning-studio-episode-006-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="Face unlock, maps, and recommendations already hide AI in daily life—and this episode reviews what Phase 1 covered." data-zh="面容解锁、导航和推荐背后早就在用 AI，本集回顾第一阶段学过的内容并引出下一阶段。">Face unlock, maps, and recommendations already hide AI in daily life—and this episode reviews what Phase 1 covered.</p></div></a><a class="ai-episode" data-category="concepts" href="episode-07.html" data-en-label="Episode 7: Imagine AI as a student: model, prompt, context, memory, skills, tools, workflow, and agent fit together on one concept map." data-zh-label="第 7 集：把 AI 想成一名学生，模型、提示词、上下文、记忆、技能、工具、流程与 Agent 在同一张概念地图上各就各位。" aria-label="Episode 7: Imagine AI as a student: model, prompt, context, memory, skills, tools, workflow, and agent fit together on one concept map."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-007-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-007-cn-4x3.webp" src="images/ai-learning-studio-episode-007-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="Imagine AI as a student: model, prompt, context, memory, skills, tools, workflow, and agent fit together on one concept map." data-zh="把 AI 想成一名学生，模型、提示词、上下文、记忆、技能、工具、流程与 Agent 在同一张概念地图上各就各位。">Imagine AI as a student: model, prompt, context, memory, skills, tools, workflow, and agent fit together on one concept map.</p></div></a><a class="ai-episode" data-category="special" href="episode-special-learning.html" data-en-label="Special episode: If AI can write and code, this special explains why judgement, understanding, and learning still matter before we study prompts." data-zh-label="特别篇：若 AI 能写作、写代码，本篇说明在系统学习提示词之前，为什么判断力和持续学习仍然不可缺少。" aria-label="Special episode: If AI can write and code, this special explains why judgement, understanding, and learning still matter before we study prompts."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-007bonus-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-007bonus-cn-4x3.webp" src="images/ai-learning-studio-episode-007bonus-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="If AI can write and code, this special explains why judgement, understanding, and learning still matter before we study prompts." data-zh="若 AI 能写作、写代码，本篇说明在系统学习提示词之前，为什么判断力和持续学习仍然不可缺少。">If AI can write and code, this special explains why judgement, understanding, and learning still matter before we study prompts.</p></div></a><a class="ai-episode" data-category="prompt" href="episode-08.html" data-en-label="Episode 8: AI cannot read your mind—this episode introduces Prompt and why you must tell it a clear destination, like riding a fast horse." data-zh-label="第 8 集：AI 没有读心术，本集认识 Prompt，并说明为什么要像骑马一样把目的地和目标说清楚。" aria-label="Episode 8: AI cannot read your mind—this episode introduces Prompt and why you must tell it a clear destination, like riding a fast horse."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-008-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-008-cn-4x3.webp" src="images/ai-learning-studio-episode-008-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="AI cannot read your mind—this episode introduces Prompt and why you must tell it a clear destination, like riding a fast horse." data-zh="AI 没有读心术，本集认识 Prompt，并说明为什么要像骑马一样把目的地和目标说清楚。">AI cannot read your mind—this episode introduces Prompt and why you must tell it a clear destination, like riding a fast horse.</p></div></a><a class="ai-episode" data-category="prompt" href="episode-09.html" data-en-label="Episode 9: A focused prompt names the goal, audience, and format; a scattered one leaves AI guessing—like sunlight through a magnifying glass." data-zh-label="第 9 集：聚焦式提示要说清目标、对象和形式，发散式只能让 AI 猜测——本集用放大镜聚光作比说明差别。" aria-label="Episode 9: A focused prompt names the goal, audience, and format; a scattered one leaves AI guessing—like sunlight through a magnifying glass."><div class="ai-episode-art"><img class="ai-card-cover" data-ai-cover data-en-src="images/ai-learning-studio-episode-009-en-4x3.webp" data-zh-src="images/ai-learning-studio-episode-009-cn-4x3.webp" src="images/ai-learning-studio-episode-009-en-4x3.webp" alt=""></div><div class="ai-episode-body"><p class="ai-episode-teaser" data-en="A focused prompt names the goal, audience, and format; a scattered one leaves AI guessing—like sunlight through a magnifying glass." data-zh="聚焦式提示要说清目标、对象和形式，发散式只能让 AI 猜测——本集用放大镜聚光作比说明差别。">A focused prompt names the goal, audience, and format; a scattered one leaves AI guessing—like sunlight through a magnifying glass.</p></div></a></div></section>
-</main><footer class="site-footer"><nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav><p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p></footer><script>
+    <!-- LEVEL-2 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
 (()=>{const nav={en:['Home','About','Math Education','AI Education','In-Class Learning','My Books','Contact'],zh:['首页','关于我们','数学教育','人工智能教育','课堂学习','我的书籍','联系我们']};const legal={en:['Privacy Policy','Terms of Service','Home'],zh:['隐私政策','服务条款','首页']};const btns=document.querySelectorAll('.flag[data-language]');function setLanguage(lang){const l=lang==='zh'?'zh':'en';document.documentElement.lang=l==='zh'?'zh-CN':'en-CA';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.innerHTML=el.getAttribute(l==='zh'?'data-zh':'data-en'));document.querySelectorAll('[data-ai-cover]').forEach(img=>{const source=img.getAttribute(l==='zh'?'data-zh-src':'data-en-src');if(source){img.src=source;img.style.display='block'}else{img.style.display='none'}});document.querySelectorAll('.ai-episode[data-en-label]').forEach(a=>{const lab=a.getAttribute(l==='zh'?'data-zh-label':'data-en-label');if(lab)a.setAttribute('aria-label',lab)});document.querySelectorAll('.site-nav [data-nav]').forEach((el,i)=>el.textContent=nav[l][i]);document.querySelectorAll('.site-footer [data-legal]').forEach((el,i)=>el.textContent=legal[l][i]);btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===l)));try{localStorage.setItem('kiwi-site-language',l)}catch(e){}}btns.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));let saved='en';try{saved=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(saved);window.addEventListener('pageshow',()=>{let l='en';try{l=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(l)});
 })();
 </script>
@@ -125,4 +187,6 @@
   });
 })();
 </script>
-<script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script></body></html>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script>
+</body>
+</html>

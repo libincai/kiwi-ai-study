@@ -975,7 +975,7 @@ body.home-page .author-wrap { transform: translateY(5px); }
 
 /* About page */
 .about-page { overflow-x:hidden; }
-.about-page main { max-width:1240px; margin:0 auto; padding:0 34px 44px; }
+.about-page main { max-width:1240px; margin:0 auto; padding:0 0 44px; box-sizing:border-box; }
 .about-intro { display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:38px; padding:48px 0 38px; }
 .about-intro-copy { max-width:610px; }
 .about-eyebrow { margin:0 0 12px; color:#0756df; font-size:12px; font-weight:800; letter-spacing:.16em; }
@@ -1017,7 +1017,7 @@ body.home-page .author-wrap { transform: translateY(5px); }
 .about-closing>p:last-child { margin:0; color:#0756df; font-weight:700; letter-spacing:.04em; }
 .about-page .site-footer { margin-top:0; }
 @media(max-width:900px) {
- .about-page main { padding:0 22px 32px; }
+ .about-page main { padding:0 0 32px; }
  .about-intro { grid-template-columns:1fr 1fr; gap:20px; padding:35px 0 25px; }
  .about-lead { font-size:16px; }
  .story-grid { gap:12px; }
@@ -1028,7 +1028,7 @@ body.home-page .author-wrap { transform: translateY(5px); }
  .bridge-section { gap:25px; }
 }
 @media(max-width:620px) {
- .about-page main { padding:0 16px 25px; }
+ .about-page main { padding:0 0 25px; }
  .about-intro { grid-template-columns:1fr; gap:10px; padding:30px 0 18px; }
  .about-lead { font-size:16px; }
  .about-mascot-wrap img { max-width:460px; }
@@ -1396,8 +1396,11 @@ body.about-page main { padding-top: 0 !important; }
   padding-top: 14px;
   padding-bottom: 14px;
 }
+body:not(.home-page) main > .about-compact-banner {
+  width: 100%;
+  max-width: 100%;
+}
 .about-compact-banner {
-  width: min(1120px, 100%);
   height: clamp(140px, 9.24vw, 177px);
   min-height: 0;
   margin: 0 auto 34px;
@@ -1529,11 +1532,11 @@ body.buy-listing-page .buy-page {
   font-size: clamp(24px, 2vw, 28px) !important;
   line-height: 1.15 !important;
 }
-.about-intro,
-.about-section,
-.about-closing {
-  width: min(1120px, 100%);
-  max-width: 1120px;
+body.about-page .about-intro,
+body.about-page .about-section,
+body.about-page .about-closing {
+  width: 100%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
@@ -2454,38 +2457,53 @@ body.ai-page .about-compact-banner .compact-banner-copy {
 }
 
 
-/* About page alignment: banner, content column, and Back to Home share one left edge. */
+/* About page: same Level 2 content frame as Math / AI / Books / Contact. */
 body.about-page main {
+  width: min(1240px, calc(100% - 64px)) !important;
   max-width: 1240px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  padding: 0 0 44px !important;
+  box-sizing: border-box !important;
 }
-body.about-page .about-compact-banner,
+body.about-page main > .about-compact-banner,
+body.about-page main > .page-back-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+body.about-page main > .about-compact-banner {
+  height: 175px !important;
+  min-height: 175px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+body.about-page main > .page-back-wrap {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
 body.about-page .about-intro,
 body.about-page .about-section,
 body.about-page .about-closing {
-  width: min(1120px, 100%) !important;
-  max-width: 1120px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   box-sizing: border-box !important;
 }
-body.about-page .page-back-wrap {
-  width: min(1120px, 100%) !important;
-  max-width: 1120px !important;
-  margin: 24px auto 22px !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-}
 @media (max-width: 700px) {
-  body.about-page .about-compact-banner,
-  body.about-page .about-intro,
-  body.about-page .about-section,
-  body.about-page .about-closing,
-  body.about-page .page-back-wrap {
-    width: 100% !important;
+  body.about-page main {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+    padding: 0 0 32px !important;
   }
-  body.about-page .page-back-wrap {
+  body.about-page main > .about-compact-banner {
+    height: 150px !important;
+    min-height: 150px !important;
+  }
+  body.about-page main > .page-back-wrap {
+    width: 100% !important;
     margin: 18px auto 18px !important;
   }
 }
@@ -2801,17 +2819,20 @@ html body:not(.home-page) main .contact-banner {
   background-repeat: no-repeat !important;
 }
 
-/* Primary navigation banner frame. Keep width responsive but identical across pages. */
-html body.about-page main .about-compact-banner,
-html body.edu-page main .about-compact-banner,
-html body.ai-page main .about-compact-banner,
-html body.contact-page main .about-compact-banner,
-html body.books-page main .about-compact-banner,
-html body.in-class-page main .about-compact-banner {
-  width: min(var(--site-banner-width), calc(100% - 48px)) !important;
-  max-width: var(--site-banner-width) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+/* Primary navigation banner frame. Full width inside main; main holds the 1240px gutters. */
+html body.about-page main > .about-compact-banner,
+html body.edu-page main > .about-compact-banner,
+html body.ai-page main > .about-compact-banner,
+html body.contact-page main > .about-compact-banner,
+html body.books-page main > .about-compact-banner,
+html body.in-class-page main > .about-compact-banner,
+html body.edu-page .edu-main > .about-compact-banner,
+html body.ai-page .ai-main > .about-compact-banner,
+html body.contact-page .contact-main > .about-compact-banner {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   padding-left: var(--inner-banner-padding-x) !important;
   padding-right: var(--inner-banner-padding-x) !important;
   box-sizing: border-box !important;
@@ -2844,11 +2865,14 @@ html body:not(.home-page) main .about-compact-banner .compact-banner-subtitle {
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
 }
 
-/* Back link alignment and spacing. Its container shares the banner width. */
-html body:not(.home-page) main .page-back-wrap {
-  width: min(var(--site-banner-width), calc(100% - 48px)) !important;
-  max-width: var(--site-banner-width) !important;
-  margin: var(--inner-page-back-top) auto var(--inner-page-back-bottom) !important;
+/* Back link alignment and spacing. Full width inside main on Level 2 landings. */
+html body:not(.home-page) main > .page-back-wrap,
+html body.edu-page .edu-main > .page-back-wrap,
+html body.ai-page .ai-main > .page-back-wrap,
+html body.contact-page .contact-main > .page-back-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: var(--inner-page-back-top) 0 var(--inner-page-back-bottom) !important;
   padding: 0 !important;
   box-sizing: border-box !important;
 }

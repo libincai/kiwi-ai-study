@@ -12,6 +12,9 @@
 The folder structure follows the main website navigation. Shared visual assets remain centralized in `assets/`.
 
 - `DESIGN_STANDARDS.md`: Project-wide design and implementation rules. Read it before changing pages or adding assets.
+- `templates/level-2-primary-nav.html`: Copy source for primary navigation landing pages (header, breadcrumb script, banner, body placeholder, footer). See DESIGN_STANDARDS.md §7.
+- `templates/level-3-category.html`: Copy source for category hubs under Math/AI (same compact banner as Level 2; short subtitle + `.edu-lead` in body). Reference: `math/math-foundations.html`.
+- `templates/level-4-topic.html`: Copy source for Level 4 topic/detail pages (gradient `nf-hero topic-banner`, breadcrumbs, body placeholder). Reference: `math/number-families.html`.
 - **Image rule:** Before adding or replacing any website image, resize and compress it for its actual display size. Prefer WebP, aim for a clear image rather than maximum resolution, review images over 250 KB, and avoid adding images over 400 KB without a specific reason. See `DESIGN_STANDARDS.md` for dimensions, quality guidance, and exceptions.
 
 - **Inner-page banners:** all inner pages must use the same-height, text-only shared banner. No images, icons, emoji, SVGs, or illustrations inside banners. See `DESIGN_STANDARDS.md`.
@@ -35,6 +38,6 @@ The folder structure follows the main website navigation. Shared visual assets r
 - **Canonical last-page banner:** follow v3 in `DESIGN_STANDARDS.md` and the shared CSS block `FINAL CANONICAL LEAF-PAGE BANNER STANDARD — v3` in `assets/css/styles.css`. Do not add page-specific banner styles.
 
 
-## Episode 1 picture-story learning page
+## AI episode pages (magazine layout)
 
-Episode 1 uses a 250-character Chinese introduction (with an equivalent English version), followed by 15 numbered picture-story panels. Each panel has one shared illustration and bilingual live-text captions beneath it. Desktop uses a three-column grid, tablet two columns, and mobile a single vertical reading column. The illustrations are optimized WebP files stored in `ai/images/comics/episode01-panels/`. Only `ai/episode-01.html` and its new Episode 1 illustration assets were changed.
+AI Knowledge Class episodes use a **text-first magazine article** with floated spot illustrations. **Agent guide:** `docs/AI_EPISODE_MAGAZINE.md`. **Reference:** `ai/episode-01.html`; images in `ai/images/episode-001/magazine/`.

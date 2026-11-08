@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Little Girl 3D</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #b8d4f0 0%, #e8f4fc 55%, #f5e6d3 100%);
+    }
+    canvas { display: block; width: 512px; height: 512px; }
+  </style>
+</head>
+<body>
+  <script type="importmap">
+    { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0xe8f4fc, 8, 22);
+
+    const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+    camera.position.set(0, 1.2, 3.8);
+    camera.lookAt(0, 1.0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(1024, 1024);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+    document.body.appendChild(renderer.domElement);
+
+    const hemi = new THREE.HemisphereLight(0xffffff, 0xf5d0c0, 1.1);
+    scene.add(hemi);
+    const key = new THREE.DirectionalLight(0xfff8ee, 1.4);
+    key.position.set(3, 6, 4);
+    key.castShadow = true;
+    key.shadow.mapSize.set(1024, 1024);
+    scene.add(key);
+    const fill = new THREE.DirectionalLight(0xa8c8ff, 0.45);
+    fill.position.set(-4, 2, 2);
+    scene.add(fill);
+
+    const skin = new THREE.MeshStandardMaterial({ color: 0xffd5c8, roughness: 0.55, metalness: 0 });
+    const hairMat = new THREE.MeshStandardMaterial({ color: 0x5a3828, roughness: 0.7 });
+    const dressMat = new THREE.MeshStandardMaterial({ color: 0xff6b9d, roughness: 0.65 });
+    const shoeMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.5 });
+    const eyeWhite = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.3 });
+    const eyeColor = new THREE.MeshStandardMaterial({ color: 0x3d5a80, roughness: 0.2 });
+    const cheekMat = new THREE.MeshStandardMaterial({ color: 0xffb4a8, roughness: 0.8, transparent: true, opacity: 0.45 });
+
+    const girl = new THREE.Group();
+    scene.add(girl);
+
+    const head = new THREE.Mesh(new THREE.SphereGeometry(0.42, 48, 48), skin);
+    head.position.y = 1.65;
+    head.castShadow = true;
+    girl.add(head);
+
+    const hairBack = new THREE.Mesh(new THREE.SphereGeometry(0.46, 32, 32, 0, Math.PI * 2, 0, Math.PI * 0.55), hairMat);
+    hairBack.position.set(0, 1.72, -0.06);
+    hairBack.scale.set(1.05, 1.1, 0.95);
+    girl.add(hairBack);
+
+    const hairBun = new THREE.Mesh(new THREE.SphereGeometry(0.18, 24, 24), hairMat);
+    hairBun.position.set(0.28, 1.95, -0.12);
+    girl.add(hairBun);
+
+    function addEye(x) {
+      const g = new THREE.Group();
+      const white = new THREE.Mesh(new THREE.SphereGeometry(0.09, 24, 24), eyeWhite);
+      g.add(white);
+      const iris = new THREE.Mesh(new THREE.SphereGeometry(0.055, 20, 20), eyeColor);
+      iris.position.set(0, 0, 0.045);
+      g.add(iris);
+      const highlight = new THREE.Mesh(new THREE.SphereGeometry(0.02, 12, 12), new THREE.MeshBasicMaterial({ color: 0xffffff }));
+      highlight.position.set(0.02, 0.03, 0.08);
+      g.add(highlight);
+      g.position.set(x, 1.68, 0.36);
+      g.scale.set(1, 1.15, 0.6);
+      girl.add(g);
+    }
+    addEye(-0.14);
+    addEye(0.14);
+
+    const cheekL = new THREE.Mesh(new THREE.CircleGeometry(0.07, 24), cheekMat);
+    cheekL.position.set(-0.22, 1.58, 0.37);
+    girl.add(cheekL);
+    const cheekR = cheekL.clone();
+    cheekR.position.x = 0.22;
+    girl.add(cheekR);
+
+    const smile = new THREE.Mesh(
+      new THREE.TorusGeometry(0.06, 0.012, 8, 24, Math.PI),
+      new THREE.MeshStandardMaterial({ color: 0xe88a7a, roughness: 0.6 })
+    );
+    smile.position.set(0, 1.52, 0.38);
+    smile.rotation.x = Math.PI;
+    smile.rotation.z = Math.PI;
+    girl.add(smile);
+
+    const torso = new THREE.Mesh(new THREE.CapsuleGeometry(0.32, 0.55, 12, 24), dressMat);
+    torso.position.y = 0.95;
+    torso.castShadow = true;
+    girl.add(torso);
+
+    const skirt = new THREE.Mesh(new THREE.CylinderGeometry(0.38, 0.52, 0.35, 32), dressMat);
+    skirt.position.y = 0.55;
+    skirt.castShadow = true;
+    girl.add(skirt);
+
+    function addLimb(material, w, h, d, x, y, z) {
+      const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), material);
+      m.position.set(x, y, z);
+      m.castShadow = true;
+      return m;
+    }
+    const armL = addLimb(skin, 0.14, 0.42, 0.14, -0.42, 1.05, 0);
+    armL.rotation.z = 0.25;
+    girl.add(armL);
+    const armR = addLimb(skin, 0.14, 0.42, 0.14, 0.42, 1.05, 0);
+    armR.rotation.z = -0.25;
+    girl.add(armR);
+
+    const legL = addLimb(skin, 0.16, 0.38, 0.16, -0.18, 0.15, 0);
+    girl.add(legL);
+    const legR = addLimb(skin, 0.16, 0.38, 0.16, 0.18, 0.15, 0);
+    girl.add(legR);
+
+    const shoeL = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.1, 0.28), shoeMat);
+    shoeL.position.set(-0.18, -0.08, 0.04);
+    shoeL.castShadow = true;
+    girl.add(shoeL);
+    const shoeR = shoeL.clone();
+    shoeR.position.x = 0.18;
+    girl.add(shoeR);
+
+    const floor = new THREE.Mesh(
+      new THREE.CircleGeometry(3, 48),
+      new THREE.MeshStandardMaterial({ color: 0xf0e4d8, roughness: 0.9 })
+    );
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = -0.12;
+    floor.receiveShadow = true;
+    scene.add(floor);
+
+    girl.rotation.y = 0.15;
+    renderer.render(scene, camera);
+
+    window.__ready = true;
+  </script>
+</body>
+</html>

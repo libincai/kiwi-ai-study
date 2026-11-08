@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+  Kiwi 爱AI Study — Level 2 (primary navigation) page shell
+
+  HOW TO USE
+  1. Copy this file to the target path (e.g. math/index.html, ai/index.html).
+  2. Adjust relative paths if depth is not one folder below site root (default ../assets).
+  3. Set <body class="…"> and <main class="…"> per section (see DESIGN_STANDARDS.md).
+  4. Set exactly one <a data-nav="…" class="active"> in the header.
+  5. Replace banner title, subtitle, <title>, and meta description (data-en / data-zh).
+  6. Paste unique page content between LEVEL-2 BODY markers.
+  7. Register the page in assets/js/drive-breadcrumb.js (parent: "" for top-level nav landings).
+  8. Include drive-breadcrumb.js on the page (replaces .page-back-wrap with Home › … trail).
+
+  Approved body / main pairs (banner + column width: shared rules in styles.css, 1240px frame):
+    about-page     → <main> (no extra class; same width as .edu-main / .ai-main)
+    edu-page       → <main class="edu-main">     (Math, Books; optional page CSS)
+    ai-page        → <main class="ai-main">      (AI Education hub)
+    contact-page   → <main class="contact-main"> (Contact; compact banner in shell)
+    in-class-page  → use math/in-class-learning.html as reference (breadcrumb parent: math/index.html)
+-->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><!-- PAGE_TITLE_EN --> | Kiwi 爱AI Study</title>
+  <meta name="description" content="<!-- META_DESCRIPTION -->">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1">
+  <!-- Optional: page-specific <style> or extra stylesheet -->
+</head>
+<body class="edu-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span>
+        <span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span>
+        <span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span>
+        <span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="../ai/index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
+
+  <main class="edu-main">
+    <!-- Fallback if JavaScript is off; drive-breadcrumb.js removes this and inserts Home › … -->
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="../index.html" data-page-back data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a>
+    </div>
+
+    <section class="compact-page-banner about-compact-banner" aria-labelledby="level2-page-title">
+      <div class="compact-banner-copy">
+        <h1 id="level2-page-title" data-en="Section title (EN)" data-zh="栏目标题（中文）">Section title (EN)</h1>
+        <p class="compact-banner-subtitle" data-en="Short subtitle (EN)" data-zh="简短副标题（中文）">Short subtitle (EN)</p>
+      </div>
+    </section>
+
+    <!-- ========== LEVEL-2 BODY START — replace with this page’s unique sections ========== -->
+    <section class="edu-section">
+      <h2 data-en="Example section heading" data-zh="示例章节标题">Example section heading</h2>
+      <p class="edu-lead" data-en="Replace this block with cards, intro copy, grids, or other content for this navigation landing page." data-zh="请将此区域替换为本栏目的卡片、简介、网格或其他正文内容。">
+        Replace this block with cards, intro copy, grids, or other content for this navigation landing page.
+      </p>
+    </section>
+    <!-- ========== LEVEL-2 BODY END ========== -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script>
+</body>
+</html>

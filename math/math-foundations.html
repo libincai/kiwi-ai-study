@@ -1,62 +1,194 @@
-<!DOCTYPE html><html lang="en-CA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Math Foundations | Kiwi 爱AI Study</title><meta name="description" content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies."><link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1"><style>
-.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;--pale:#f2f7fd;color:var(--ink)}
-.edu-main{max-width:1160px;margin:0 auto;padding:0 26px 72px}
-.edu-back{padding:18px 0 8px}.edu-back a{font-size:13px;color:#1768b2;text-decoration:none;font-weight:700}
-.edu-hero{padding:48px 46px;border-radius:24px;background:linear-gradient(118deg,#eaf5ff 0%,#f1f0ff 58%,#fff2df 100%);border:1px solid #dbe8f6;margin:14px 0 34px}
-.edu-kicker{margin:0 0 12px;color:#2676b7;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-.edu-hero h1{font-size:clamp(32px,4vw,50px);line-height:1.08;margin:0 0 14px;color:#123d75;letter-spacing:-.03em}
-.edu-hero p{max-width:850px;color:#405875;font-size:18px;line-height:1.7;margin:0}
-.edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
-.edu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.edu-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}.edu-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff;text-decoration:none;color:inherit;box-shadow:0 7px 22px rgba(24,55,95,.055);transition:transform .16s ease,box-shadow .16s ease}.edu-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,55,95,.11)}
-.edu-card img{display:block;width:100%;height:205px;object-fit:cover;background:#edf4fb}.edu-card-body{padding:20px 21px 22px;display:flex;flex-direction:column;flex:1}.edu-card h3{margin:0 0 8px;color:#173e70;font-size:21px;line-height:1.25}.edu-card p{margin:0 0 16px;color:#5a6d85;line-height:1.6;font-size:14px}.edu-link{margin-top:auto;color:#1768b2;font-weight:800;font-size:14px}.edu-card .edu-tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3982bd;margin-bottom:8px}
-.edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}.edu-callout h2{margin:0 0 8px;color:#153d70}.edu-callout p{margin:0;color:#526780;line-height:1.7}.edu-pillrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.edu-pill{display:inline-flex;padding:7px 12px;border-radius:999px;background:#eaf3fd;color:#245b91;font-size:12px;font-weight:700}
-.edu-feature{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}.edu-feature img{width:100%;height:260px;object-fit:contain;border-radius:12px;background:#f8fbff}.edu-feature h3{font-size:23px;margin:0 0 8px;color:#173e70}.edu-feature p{color:#5a6d85;line-height:1.65}.edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:white!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}.edu-button:hover{background:#10548f}
-.edu-topic-list{display:grid;gap:12px}.edu-topic{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:16px;align-items:center;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff;text-decoration:none;color:inherit}.edu-topic-link{transition:transform .16s ease,box-shadow .16s ease}.edu-topic-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(24,55,95,.09)}.edu-topic-number{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#eaf4ff;color:#1768b2;font-weight:900;font-size:19px}.edu-topic h3{margin:0 0 5px;font-size:18px;color:#173e70}.edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}.edu-topic .edu-link{white-space:nowrap}
-.edu-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.edu-panel{padding:22px;border:1px solid var(--line);border-radius:17px;background:#fff}.edu-panel h3{margin:0 0 9px;color:#173e70;font-size:19px}.edu-panel p,.edu-panel li{color:#5a6d85;line-height:1.65;font-size:14px}.edu-panel ul{padding-left:19px;margin:10px 0 0}.edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
-.edu-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.edu-step{padding:19px;border:1px solid var(--line);border-radius:16px;background:#fff}.edu-step .n{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#1768b2;color:#fff;font-weight:800;margin-bottom:12px}.edu-step h3{margin:0 0 7px;font-size:17px;color:#173e70}.edu-step p{margin:0;color:#60728a;font-size:13px;line-height:1.6}
-.edu-table-wrap{overflow-x:auto}.edu-table{width:100%;border-collapse:collapse;min-width:520px}.edu-table th,.edu-table td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}.edu-table th{background:#edf5fd;color:#1a4e7d}.edu-book-hero{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;align-items:center;padding:30px;background:linear-gradient(120deg,#eef6ff,#f6f4ff);border:1px solid var(--line);border-radius:22px}.edu-book-hero img{width:100%;max-height:320px;object-fit:contain;filter:drop-shadow(0 10px 16px rgba(20,40,80,.12))}.edu-book-hero h1{font-size:clamp(28px,3.4vw,42px);margin:0 0 12px;color:#153d70}.edu-book-hero p{color:#526780;line-height:1.7}.edu-version{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}.edu-version strong{color:#173e70}.edu-version p{margin:4px 0 0;color:#62738a;font-size:14px;line-height:1.55}.edu-muted{color:#718098;font-size:13px}.edu-instructor{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;align-items:start}.edu-instructor img{width:100%;max-height:220px;object-fit:contain;border-radius:15px;background:#f4f8fc;padding:10px}.edu-cta{background:#173e70;color:#fff;padding:34px;border-radius:20px;text-align:center}.edu-cta h2{color:#fff;margin:0 0 9px}.edu-cta p{color:#e3edf9;line-height:1.65;margin:0 auto;max-width:720px}.edu-cta .edu-button{background:#fff;color:#173e70!important}
-@media(max-width:760px){.edu-main{padding:0 15px 52px}.edu-hero{padding:30px 23px}.edu-grid,.edu-grid.four,.edu-two{grid-template-columns:1fr}.edu-feature{grid-template-columns:1fr}.edu-feature img{height:220px}.edu-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}.edu-book-hero{grid-template-columns:115px minmax(0,1fr);gap:17px;padding:18px}.edu-book-hero img{max-height:190px}.edu-instructor{grid-template-columns:1fr}.edu-instructor img{max-width:180px}.edu-version{grid-template-columns:82px minmax(0,1fr)}}
+<!DOCTYPE html>
+<!-- Level 3 category hub — shell from templates/level-3-category.html -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Foundations | Kiwi 爱AI Study</title>
+  <meta name="description" content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
+.edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
+.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
+.edu-topic-list{display:grid;gap:12px}
+.edu-topic{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:16px;align-items:center;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff;text-decoration:none;color:inherit}
+.edu-topic-link{transition:transform .16s ease,box-shadow .16s ease}
+.edu-topic-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(24,55,95,.09)}
+.edu-topic-number{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#eaf4ff;color:#1768b2;font-weight:900;font-size:19px}
+.edu-topic h3{margin:0 0 5px;font-size:18px;color:#173e70}
+.edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}
+.edu-topic .edu-link{white-space:nowrap;color:#1768b2;font-weight:800;font-size:14px}
+.edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
+.edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}
+.edu-callout h2{margin:0 0 8px;color:#153d70}
+.edu-callout p{margin:0;color:#526780;line-height:1.7}
+.edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:#fff!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}
+.edu-button:hover{background:#10548f}
+@media(max-width:760px){.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
+  </style>
+</head>
+<body class="edu-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span>
+        <span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span>
+        <span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span>
+        <span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="../ai/index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
 
-/* Math Foundations banner spacing and contrast refinement */
-.edu-back {
-  padding-top: 28px;
-  padding-bottom: 8px;
-}
-.edu-hero {
-  margin-top: 29px;
-}
-.edu-hero .edu-kicker,
-.edu-hero h1,
-.edu-hero > p {
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgba(5, 35, 95, 0.38);
-}
-.edu-hero h1 {
-  text-shadow: 0 2px 5px rgba(5, 35, 95, 0.42);
-}
-@media (max-width: 760px) {
-  .edu-back { padding-top: 22px; }
-  .edu-hero { margin-top: 22px; }
-}
-</style></head><body class="edu-page"><header class="site-header"><div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a><p class="logo-tagline" aria-hidden="true"><span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span><span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span><span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span><span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span></p><span class="divider" aria-hidden="true"></span><div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Sherry Cai"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai"></a></div></div><nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a><a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a><a href="index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a><a href="../ai/index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a><a href="in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a><a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a><a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a><span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
-      </span></nav></header><main class="edu-main"><div class="page-back-wrap"><a class="page-back-link" href="index.html" data-page-back data-en="← Back to Math Education" data-zh="← 返回数学教育">← Back to Math Education</a></div><section class="compact-page-banner about-compact-banner" aria-labelledby="math-foundations-title">
-  <div class="compact-banner-copy">
-    <h1 id="math-foundations-title" data-en="Math Foundations" data-zh="数学基础与知识体系">Math Foundations</h1>
-    <p class="compact-banner-subtitle" data-en="A clear pathway through the essential ideas of mathematics. Build understanding step by step — from number skills and operations to functions, geometry, trigonometry, and data." data-zh="沿着清晰的学习路径掌握数学核心知识。从数与运算开始，逐步学习函数、几何、三角学和数据知识。">A clear pathway through the essential ideas of mathematics. Build understanding step by step — from number skills and operations to functions, geometry, trigonometry, and data.</p>
-  </div>
-</section>
-<section class="edu-section"><h2 data-en="Explore the learning pathway" data-zh="探索数学学习路径">Explore the learning pathway</h2><div class="edu-topic-list">
-<a class="edu-topic edu-topic-link" href="number-families.html" aria-label="Explore Number Families"><span class="edu-topic-number">01</span><div><h3 data-en="Number Skills &amp; Operations" data-zh="数与运算">Number Skills &amp; Operations</h3><p data-en="Number families, fractions, decimals, divisibility, GCF, exponents, roots, and rates." data-zh="数的分类、分数、小数、整除规则、最大公因数、指数、根式和比率。">Number families, fractions, decimals, divisibility, GCF, exponents, roots, and rates.</p></div><span class="edu-link" data-en="Explore Number Families →" data-zh="探索数的家族 →">Explore Number Families →</span></a>
-<div class="edu-topic"><span class="edu-topic-number">02</span><div><h3>Functions &amp; Graphs</h3><p data-en="Algebra language, variables, expressions, function notation, domain, range, linear and quadratic relationships." data-zh="代数语言、变量、表达式、函数表示法、定义域、值域、一次与二次关系。">Algebra language, variables, expressions, function notation, domain, range, linear and quadratic relationships.</p></div><span class="edu-link">Core concepts</span></div>
-<div class="edu-topic"><span class="edu-topic-number">03</span><div><h3>Geometry &amp; Space</h3><p data-en="Geometric vocabulary, measurement, 2D and 3D figures, coordinates, and transformations." data-zh="几何术语、测量、二维与三维图形、坐标和图形变换。">Geometric vocabulary, measurement, 2D and 3D figures, coordinates, and transformations.</p></div><span class="edu-link">Core concepts</span></div>
-<div class="edu-topic"><span class="edu-topic-number">04</span><div><h3>Trigonometry</h3><p data-en="Right triangles, the Pythagorean theorem, trigonometric ratios, special angles, and applications." data-zh="直角三角形、勾股定理、三角比、特殊角和实际应用。">Right triangles, the Pythagorean theorem, trigonometric ratios, special angles, and applications.</p></div><span class="edu-link">Core concepts</span></div>
-<div class="edu-topic"><span class="edu-topic-number">05</span><div><h3>Data &amp; Chance</h3><p data-en="Data displays, frequency, measures of centre, probability, and independent or dependent events." data-zh="数据图表、频数、集中趋势、概率，以及独立事件和相关事件。">Data displays, frequency, measures of centre, probability, and independent or dependent events.</p></div><span class="edu-link">Core concepts</span></div>
-<div class="edu-topic"><span class="edu-topic-number">06</span><div><h3>Simplify Calculations</h3><p data-en="Number properties, friendly numbers, algebraic strategies, and geometric approaches to simplifying work." data-zh="数的性质、简便数、代数策略，以及利用几何思路简化计算。">Number properties, friendly numbers, algebraic strategies, and geometric approaches to simplifying work.</p></div><span class="edu-link">Core concepts</span></div>
-</div><div class="edu-note" data-en="This section follows the structure of Math Quick Reference Library. Full book PDFs and their release histories will be published on the Books pages when the editions are ready." data-zh="本栏目按照《Math Quick Reference Library》的知识结构组织。完整 PDF 和版本更新记录将在相应书籍完成后发布到 Books 页面。">This section follows the structure of Math Quick Reference Library. Full book PDFs and their release histories will be published on the Books pages when the editions are ready.</div></section>
-<section class="edu-section"><div class="edu-callout"><h2 data-en="A foundation is more than a list of formulas" data-zh="基础知识不只是公式清单">A foundation is more than a list of formulas</h2><p data-en="The aim is to understand what mathematical ideas mean, why rules work, and how one concept connects to another. Use the free topic explorations to revisit ideas and build confidence." data-zh="学习的目标不仅是记住公式，更是理解数学概念的含义、规则成立的原因，以及不同知识之间的联系。你可以通过免费的专题内容反复探索，逐步建立信心。">The aim is to understand what mathematical ideas mean, why rules work, and how one concept connects to another. Use the free topic explorations to revisit ideas and build confidence.</p><a class="edu-button" href="../books/index.html" data-en="Explore the Books →" data-zh="查看数学书籍 →">Explore the Books →</a></div></section></main><footer class="site-footer"><nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav><p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p></footer><script>
-(()=>{const nav={en:['Home','About','Math Education','AI Education','In-Class Learning','My Books','Contact'],zh:['首页','关于我们','数学教育','人工智能教育','课堂学习','我的书籍','联系我们']};const legal={en:['Privacy Policy','Terms of Service','Home'],zh:['隐私政策','服务条款','首页']};const btns=document.querySelectorAll('.flag[data-language]');function setLanguage(lang){const l=lang==='zh'?'zh':'en';document.documentElement.lang=l==='zh'?'zh-CN':'en-CA';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.innerHTML=el.getAttribute(l==='zh'?'data-zh':'data-en'));document.querySelectorAll('.site-nav [data-nav]').forEach((el,i)=>el.textContent=nav[l][i]);document.querySelectorAll('.site-footer [data-legal]').forEach((el,i)=>el.textContent=legal[l][i]);btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===l)));try{localStorage.setItem('kiwi-site-language',l)}catch(e){}}btns.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));let saved='en';try{saved=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(saved);window.addEventListener('pageshow',()=>{let l='en';try{l=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(l)})})();
-</script>
-<script>
+  <main class="edu-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to Math Education" data-zh="← 返回数学教育">← Back to Math Education</a>
+    </div>
+
+    <section class="compact-page-banner about-compact-banner" aria-labelledby="math-foundations-title">
+      <div class="compact-banner-copy">
+        <h1 id="math-foundations-title" data-en="Math Foundations" data-zh="数学基础与知识体系">Math Foundations</h1>
+        <p class="compact-banner-subtitle" data-en="A clear pathway through essential mathematical ideas." data-zh="沿着清晰的路径掌握数学核心知识。">A clear pathway through essential mathematical ideas.</p>
+      </div>
+    </section>
+
+    <!-- LEVEL-3 BODY START -->
+    <section class="edu-section">
+      <h2 data-en="Explore the learning pathway" data-zh="探索数学学习路径">Explore the learning pathway</h2>
+      <p class="edu-lead" data-en="Build understanding step by step — from number skills and operations to functions, geometry, trigonometry, and data." data-zh="从数与运算开始，逐步学习函数、几何、三角学和数据知识。">Build understanding step by step — from number skills and operations to functions, geometry, trigonometry, and data.</p>
+      <div class="edu-topic-list">
+        <a class="edu-topic edu-topic-link" href="number-families.html" aria-label="Explore Number Families">
+          <span class="edu-topic-number">01</span>
+          <div>
+            <h3 data-en="Number Skills &amp; Operations" data-zh="数与运算">Number Skills &amp; Operations</h3>
+            <p data-en="Number families, fractions, decimals, divisibility, GCF, exponents, roots, and rates." data-zh="数的分类、分数、小数、整除规则、最大公因数、指数、根式和比率。">Number families, fractions, decimals, divisibility, GCF, exponents, roots, and rates.</p>
+          </div>
+          <span class="edu-link" data-en="Explore Number Families →" data-zh="探索数的家族 →">Explore Number Families →</span>
+        </a>
+        <div class="edu-topic">
+          <span class="edu-topic-number">02</span>
+          <div>
+            <h3>Functions &amp; Graphs</h3>
+            <p data-en="Algebra language, variables, expressions, function notation, domain, range, linear and quadratic relationships." data-zh="代数语言、变量、表达式、函数表示法、定义域、值域、一次与二次关系。">Algebra language, variables, expressions, function notation, domain, range, linear and quadratic relationships.</p>
+          </div>
+          <span class="edu-link">Core concepts</span>
+        </div>
+        <div class="edu-topic">
+          <span class="edu-topic-number">03</span>
+          <div>
+            <h3>Geometry &amp; Space</h3>
+            <p data-en="Geometric vocabulary, measurement, 2D and 3D figures, coordinates, and transformations." data-zh="几何术语、测量、二维与三维图形、坐标和图形变换。">Geometric vocabulary, measurement, 2D and 3D figures, coordinates, and transformations.</p>
+          </div>
+          <span class="edu-link">Core concepts</span>
+        </div>
+        <div class="edu-topic">
+          <span class="edu-topic-number">04</span>
+          <div>
+            <h3>Trigonometry</h3>
+            <p data-en="Right triangles, the Pythagorean theorem, trigonometric ratios, special angles, and applications." data-zh="直角三角形、勾股定理、三角比、特殊角和实际应用。">Right triangles, the Pythagorean theorem, trigonometric ratios, special angles, and applications.</p>
+          </div>
+          <span class="edu-link">Core concepts</span>
+        </div>
+        <div class="edu-topic">
+          <span class="edu-topic-number">05</span>
+          <div>
+            <h3>Data &amp; Chance</h3>
+            <p data-en="Data displays, frequency, measures of centre, probability, and independent or dependent events." data-zh="数据图表、频数、集中趋势、概率，以及独立事件和相关事件。">Data displays, frequency, measures of centre, probability, and independent or dependent events.</p>
+          </div>
+          <span class="edu-link">Core concepts</span>
+        </div>
+        <div class="edu-topic">
+          <span class="edu-topic-number">06</span>
+          <div>
+            <h3>Simplify Calculations</h3>
+            <p data-en="Number properties, friendly numbers, algebraic strategies, and geometric approaches to simplifying work." data-zh="数的性质、简便数、代数策略，以及利用几何思路简化计算。">Number properties, friendly numbers, algebraic strategies, and geometric approaches to simplifying work.</p>
+          </div>
+          <span class="edu-link">Core concepts</span>
+        </div>
+      </div>
+      <div class="edu-note" data-en="This section follows the structure of Math Quick Reference Library. Full book PDFs and their release histories will be published on the Books pages when the editions are ready." data-zh="本栏目按照《Math Quick Reference Library》的知识结构组织。完整 PDF 和版本更新记录将在相应书籍完成后发布到 Books 页面。">This section follows the structure of Math Quick Reference Library. Full book PDFs and their release histories will be published on the Books pages when the editions are ready.</div>
+    </section>
+
+    <section class="edu-section">
+      <div class="edu-callout">
+        <h2 data-en="A foundation is more than a list of formulas" data-zh="基础知识不只是公式清单">A foundation is more than a list of formulas</h2>
+        <p data-en="The aim is to understand what mathematical ideas mean, why rules work, and how one concept connects to another. Use the free topic explorations to revisit ideas and build confidence." data-zh="学习的目标不仅是记住公式，更是理解数学概念的含义、规则成立的原因，以及不同知识之间的联系。你可以通过免费的专题内容反复探索，逐步建立信心。">The aim is to understand what mathematical ideas mean, why rules work, and how one concept connects to another. Use the free topic explorations to revisit ideas and build confidence.</p>
+        <a class="edu-button" href="../books/index.html" data-en="Explore the Books →" data-zh="查看数学书籍 →">Explore the Books →</a>
+      </div>
+    </section>
+    <!-- LEVEL-3 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+  <script>
 /* Remove legacy GTranslate cookies left by earlier test versions. */
 (() => {
   const host = location.hostname;
@@ -77,5 +209,7 @@
     }));
   });
 })();
-</script>
-<script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script></body></html>
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script>
+</body>
+</html>

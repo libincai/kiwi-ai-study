@@ -25,6 +25,10 @@ kiwi-ai-study/
 ├── index.html
 ├── README.md
 ├── DESIGN_STANDARDS.md
+├── templates/
+│   ├── level-2-primary-nav.html
+│   ├── level-3-category.html
+│   └── level-4-topic.html
 ├── about/
 │   └── index.html
 ├── math/
@@ -158,14 +162,75 @@ Rules:
 - Preserve the approved title underline and text contrast treatment.
 - Do not put text into the banner background image itself; title and subtitle remain live HTML text so they can be translated and resized.
 
-## 7. Back-to-home row and page alignment
+## 7. Breadcrumb trail and page alignment
 
-- The “Back to Home” link appears above the inner-page banner.
-- Its left edge must align exactly with the banner's left edge.
-- The back-link wrapper, banner, and main content should use the same page alignment guides where the layout calls for a shared content width.
-- Keep the vertical gap between the navigation divider and the back link consistent across all inner pages.
-- Keep the gap between the back link and banner consistent.
+Primary wayfinding above the Level 2 banner is the **breadcrumb** (`Home › Section name › …`), not a permanent visible “← Back” line.
+
+- Load `assets/js/drive-breadcrumb.js` on every inner page that participates in the site hierarchy.
+- The script removes `.page-back-wrap` (and legacy `.edu-back` / `.ai-back`) and inserts `.drive-breadcrumb` as the first child of `<main>`.
+- Register each new page in the `pages` object inside `drive-breadcrumb.js` with `en`, `zh`, and `parent` (use `parent: ""` for direct primary-nav landings such as About, Math Education, AI Education, My Books, and Contact).
+- Keep a `.page-back-wrap` link in the HTML as a no-JavaScript fallback; it is replaced when the script runs.
+- The breadcrumb, banner, and main content should share the same horizontal alignment and content width tokens.
 - Do not use page-specific margins to compensate for a wrong parent container width.
+
+### Level 2 page template (copy source)
+
+File: `templates/level-2-primary-nav.html`
+
+Use this file when creating or rebuilding a **Level 2 primary navigation** landing page (see §5). It is **not** served directly; copy it into the target folder (for example `math/index.html`).
+
+| Shell (fixed in template) | Per page |
+|---|---|
+| `site-header`, `site-nav`, language flags | One `class="active"` on the matching `data-nav` link |
+| Fallback `.page-back-wrap` + `drive-breadcrumb.js` | Breadcrumb registry entry |
+| `.compact-page-banner.about-compact-banner` | Banner `h1` + `.compact-banner-subtitle` (`data-en` / `data-zh`) |
+| `site-footer` + shared language script | `<title>`, meta description |
+| | All sections between `LEVEL-2 BODY` markers |
+
+Approved `body` / `<main>` pairs:
+
+- `about-page` → `<main>` (no extra class) — About
+- `edu-page` + `edu-main` — Math Education, My Books (and shared edu section styles when needed)
+- `ai-page` + `ai-main` — AI Education hub
+- `contact-page` + `contact-main` — Contact (banner may add `contact-banner` when required)
+
+**In-Class Learning** is a top-nav destination but lives at `math/in-class-learning.html`; clone that page or set breadcrumb `parent` to `math/index.html`, not the Level 2 shell alone.
+
+Reference implementations: `about/index.html`, `math/index.html`, `ai/index.html` (Level 2 shell applied), `books/index.html`, `contact/index.html`.
+
+### Level 3 page template (copy source)
+
+File: `templates/level-3-category.html`
+
+Use for category hubs beneath a Level 2 nav page (Level 3 in §5): same compact blue-gold banner as Level 2, not the Level 4 topic banner.
+
+| Shell (fixed in template) | Per page |
+|---|---|
+| `body.edu-page` + `main.edu-main` | Breadcrumb `parent` = Level 2 hub (e.g. `math/index.html`) |
+| Fallback `.page-back-wrap` + `drive-breadcrumb.js` | No active primary nav |
+| `.compact-page-banner.about-compact-banner` | Short `.compact-banner-subtitle`; longer intro in body `.edu-lead` |
+| `site-footer` + shared language script | `<title>`, meta description |
+| | Sections between `LEVEL-3 BODY` markers |
+
+Page CSS is content-only (grids, topic lists, callouts). Do not override `.edu-main` width or banner geometry in `styles.css`.
+
+Reference implementations: `math/math-foundations.html`, `math/math-real-life.html`, `math/visual-math-patterns.html`, `math/mathematical-thinking.html`.
+
+### Level 4 page template (copy source)
+
+File: `templates/level-4-topic.html`
+
+Reference implementation: **`math/number-families.html`**. Use for topic/detail/leaf pages (Level 4 in §5): gradient topic banner, not the Level 2 blue-gold compact banner.
+
+| Shell (fixed in template) | Per page |
+|---|---|
+| `body.topic-page` + `main.topic-main` | Breadcrumb `parent` = Level 3 category (or hub) |
+| Fallback `.page-back-wrap` + `drive-breadcrumb.js` | No active primary nav |
+| `.nf-hero.topic-banner` with kicker, `h1`, `.topic-banner-subtitle` | Kicker, title, short subtitle (`data-en` / `data-zh`) |
+| `site-footer` + shared language script | `<title>`, meta description |
+| | Sections between `LEVEL-4 BODY` markers |
+
+Do not add page-specific CSS that changes banner height, padding, gradient, or title scale; use the shared rules in `assets/css/styles.css` (`.nf-hero.topic-banner`).
 
 ## 8. Main content layout
 
@@ -448,6 +513,8 @@ When the user provides a complete lesson/video script, the corresponding episode
 ## Lesson-page editorial layout
 
 A supplied video script is the source for the lesson content, but the website page is a learning article, not a screenplay or teleprompter transcript. Preserve the full ideas, examples and teaching sequence while combining related sentences into coherent paragraphs and organizing them under clear section headings. Do not put every spoken sentence on a separate line unless the content is genuinely a list or emphasis. Do not add a large decorative next-episode banner at the end of a lesson. A brief next-lesson link or compact text note is sufficient.
+
+**AI Knowledge Class episode magazine pages:** follow **`docs/AI_EPISODE_MAGAZINE.md`** (image–text pairing, student tone, `.ep-pair` layout). Reference: `ai/episode-01.html`.
 
 
 ## Learning article density and navigation (mandatory)

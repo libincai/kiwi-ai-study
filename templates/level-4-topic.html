@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+  Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
+
+  Visual reference: math/number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+
+  HOW TO USE
+  1. Copy to target path (e.g. math/number-families.html, math/car-journey.html).
+  2. body.topic-page + main.topic-main — no primary nav item active.
+  3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
+  4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
+  5. Kicker = section path; subtitle = short intro (≤2 lines); longer copy goes in body .nf-lead / article.
+  6. Fallback .page-back-wrap → parent category; drive-breadcrumb.js replaces it with full trail.
+  7. Paste unique content between LEVEL-4 BODY markers.
+
+  Levels 2–3 use the blue-gold compact banner — not this template.
+-->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><!-- PAGE_TITLE_EN --> | Kiwi 爱AI Study</title>
+  <meta name="description" content="<!-- META_DESCRIPTION -->">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
+  <style>
+/* Example topic content tokens (Number Families pattern) — trim or extend per page */
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
+@media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span>
+        <span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span>
+        <span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span>
+        <span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="../ai/index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
+
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="../math/math-foundations.html" data-page-back data-en="← Back to Math Foundations" data-zh="← 返回数学基础">← Back to Math Foundations</a>
+    </div>
+
+  <section class="nf-hero topic-banner" aria-label="Page introduction">
+      <p class="topic-banner-kicker" data-en="MATH FOUNDATIONS · TOPIC LABEL" data-zh="数学基础 · 主题标签">MATH FOUNDATIONS · TOPIC LABEL</p>
+      <h1 data-en="Page title" data-zh="页面标题">Page title</h1>
+      <p class="topic-banner-subtitle" data-en="One or two short sentences that introduce this topic." data-zh="用一两句简短的话介绍本主题。">One or two short sentences that introduce this topic.</p>
+    </section>
+
+    <!-- LEVEL-4 BODY START -->
+    <section class="nf-section">
+      <h2 data-en="Section heading" data-zh="章节标题">Section heading</h2>
+      <p class="nf-lead" data-en="Longer instructional copy, cards, images, and examples belong here." data-zh="较长的讲解、卡片、图片和例题放在这里。">Longer instructional copy, cards, images, and examples belong here.</p>
+    </section>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+  <script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script>
+</body>
+</html>

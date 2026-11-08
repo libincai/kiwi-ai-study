@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+<!-- Level 2 primary nav — shell from templates/level-2-primary-nav.html (about-page + main) -->
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Kiwi 爱AI Study</title>
   <meta name="description" content="Discover the story, learning philosophy, and connection between mathematics and AI at Kiwi 爱AI Study.">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
 </head>
 <body class="about-page">
 
@@ -25,7 +26,8 @@
       <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
       <a href="index.html" data-nav="about" class="active" data-en="About" data-zh="关于我们">About</a>
       <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
-      <a href="../ai/index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a><a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../ai/index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
       <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
       <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
       <span class="flags" aria-label="Languages">
@@ -45,6 +47,8 @@
         <p class="compact-banner-subtitle" data-en="Our Story, Philosophy &amp; Vision" data-zh="我们的故事、理念与愿景">Our Story, Philosophy &amp; Vision</p>
       </div>
     </section>
+
+    <!-- LEVEL-2 BODY START -->
     <section class="about-intro">
       <div class="about-intro-copy">
         <h2 data-en="Making the complex simple. Making learning meaningful." data-zh="化繁为简，让学习更有意义。">Making the complex simple. Making learning meaningful.</h2>
@@ -132,11 +136,12 @@
       <h2 data-en="Learn with curiosity. Think with confidence. Grow with AI." data-zh="保持好奇，建立自信，在 AI 时代持续成长。">Learn with curiosity. Think with confidence. Grow with AI.</h2>
       <p data-en="Learn • Create • Share • Grow" data-zh="学习 • 创造 • 分享 • 成长">Learn • Create • Share • Grow</p>
     </section>
+    <!-- LEVEL-2 BODY END -->
   </main>
 
   <footer class="site-footer">
     <nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav>
-    <p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
   </footer>
 
 <script>
@@ -171,22 +176,6 @@
   });
 })();
 </script>
-
-  <script>
-    document.querySelectorAll('[data-page-back]').forEach((link) => {
-      link.addEventListener('click', (event) => {
-        const referrer = document.referrer;
-        if (referrer) {
-          try {
-            if (new URL(referrer).origin === window.location.origin && window.history.length > 1) {
-              event.preventDefault();
-              window.history.back();
-            }
-          } catch (_) { /* Keep the Home fallback link. */ }
-        }
-      });
-    });
-  </script>
 
 <script>
 /* Remove legacy GTranslate cookies left by earlier test versions. */
