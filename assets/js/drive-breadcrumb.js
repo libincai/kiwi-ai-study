@@ -42,9 +42,9 @@
   const current = pages[key];
   if (!current) return;
 
-  const isZh = /^zh/i.test(document.documentElement.lang || "") ||
+  const isZh = () => /^zh/i.test(document.documentElement.lang || "") ||
     document.documentElement.getAttribute("data-language") === "zh";
-  const label = item => isZh ? item.zh : item.en;
+  const label = item => isZh() ? item.zh : item.en;
   const urlFor = itemKey => {
     const from = key.split("/").slice(0, -1);
     const to = itemKey.split("/");
@@ -67,7 +67,7 @@
 
   const nav = document.createElement("nav");
   nav.className = "drive-breadcrumb";
-  nav.setAttribute("aria-label", isZh ? "页面路径" : "Breadcrumb");
+  nav.setAttribute("aria-label", isZh() ? "页面路径" : "Breadcrumb");
   nav.innerHTML = chain.map((entry, index) => {
     const isCurrent = index === chain.length - 1;
     const children = isCurrent ? childrenOf(entry.key) : [];
@@ -76,7 +76,7 @@
       : `<a class="drive-crumb-link" href="${urlFor(entry.key)}">${label(entry.item)}</a>`;
     const dropdown = children.length
       ? `<span class="drive-crumb-menu-wrap">
-           <button class="drive-crumb-menu-button" type="button" aria-label="${isZh ? "展开" : "Open"} ${label(entry.item)}" aria-expanded="false">
+           <button class="drive-crumb-menu-button" type="button" aria-label="${isZh() ? "展开" : "Open"} ${label(entry.item)}" aria-expanded="false">
              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
            </button>
            <span class="drive-crumb-menu" hidden>
@@ -115,4 +115,28 @@
   if (!main) return;
   main.querySelectorAll(":scope > .page-back-wrap, :scope > .edu-back, :scope > .ai-back").forEach(el => el.remove());
   main.insertBefore(nav, main.firstChild);
+
+  const refreshBreadcrumbLanguage = () => {
+    nav.setAttribute("aria-label", isZh() ? "页面路径" : "Breadcrumb");
+    nav.querySelectorAll(".drive-crumb-link").forEach((el, i) => {
+      const entry = chain[i];
+      if (entry) el.textContent = label(entry.item);
+    });
+    const currentEl = nav.querySelector(".drive-crumb-current");
+    if (currentEl) currentEl.textContent = label(chain[chain.length - 1].item);
+    const menuLinks = nav.querySelectorAll(".drive-crumb-menu a");
+    const currentChildren = childrenOf(chain[chain.length - 1].key);
+    menuLinks.forEach((el, i) => {
+      if (currentChildren[i]) el.textContent = label(currentChildren[i].item);
+    });
+    nav.querySelectorAll(".drive-crumb-menu-button").forEach(button => {
+      const wrap = button.closest(".drive-crumb-menu-wrap");
+      const crumbLabel = wrap && wrap.parentElement.querySelector(".drive-crumb-current, .drive-crumb-link");
+      button.setAttribute("aria-label", `${isZh() ? "展开" : "Open"} ${crumbLabel ? crumbLabel.textContent : ""}`);
+    });
+  };
+  new MutationObserver(refreshBreadcrumbLanguage).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["lang", "data-language"]
+  });
 })();
