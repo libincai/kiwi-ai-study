@@ -1,97 +1,238 @@
-<!DOCTYPE html><html lang="en-CA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Traditional AI vs. Generative AI | AI Knowledge Classroom</title><meta name="description" content="AI can recognize, judge and predict — and it can also create. Let's see the difference with a smart-car story."><link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1"><style>
-.ai-page{--ai-ink:#14264d;--ai-blue:#1768b2;--ai-purple:#6556b8;--ai-muted:#60728a;--ai-line:#dce6f1;--ai-pale:#f2f7fd;color:var(--ai-ink)}
-.ai-main{max-width:1180px;margin:0 auto;padding:0 26px 76px}
-.ai-back{padding:18px 0 8px}.ai-back a{font-size:13px;color:#1768b2;text-decoration:none;font-weight:800}
-.ai-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:center;min-height:360px;padding:42px 48px;border-radius:26px;margin:14px 0 34px;background:linear-gradient(120deg,#edf5ff 0%,#f2efff 56%,#fff3e8 100%);border:1px solid #dce7f5}
-.ai-kicker{font-size:11px;letter-spacing:.16em;font-weight:900;color:#3878b4;text-transform:uppercase;margin:0 0 12px}
-.ai-hero h1{font-size:clamp(34px,4.3vw,54px);line-height:1.05;letter-spacing:-.04em;color:#153d70;margin:0 0 15px}
-.ai-hero p{font-size:17px;line-height:1.72;color:#4e637e;max-width:650px;margin:0}
-.ai-hero-art{width:100%;max-width:430px;justify-self:center}
-.ai-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
-.ai-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:#1768b2;color:#fff;text-decoration:none;font-size:14px;font-weight:800}
-.ai-btn.secondary{background:#fff;color:#245b91;border:1px solid #cdddf0}
-.ai-section{margin:44px 0}.ai-section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
-.ai-section h2{font-size:clamp(25px,3vw,34px);line-height:1.15;color:#153d70;margin:0 0 8px}
-.ai-section-head p{max-width:760px;margin:0;color:var(--ai-muted);line-height:1.65;font-size:15px}
-.ai-why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.ai-why-card{padding:21px;border:1px solid var(--ai-line);border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(24,55,95,.045)}
-.ai-why-icon{width:48px;height:48px;border-radius:15px;background:#eaf3ff;display:grid;place-items:center;font-size:25px;margin-bottom:14px}
-.ai-why-card h3{font-size:18px;color:#173e70;margin:0 0 7px}.ai-why-card p{font-size:14px;line-height:1.65;color:#60728a;margin:0}
-.ai-path{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.ai-path-item{position:relative;min-height:114px;padding:15px;border:1px solid var(--ai-line);border-radius:16px;background:#fff}
-.ai-path-item b{display:block;font-size:12px;color:#3982bd;letter-spacing:.06em;margin-bottom:7px}
-.ai-path-item strong{display:block;color:#173e70;font-size:16px;margin-bottom:5px}
-.ai-path-item span{display:block;color:#64758b;font-size:12px;line-height:1.45}
-.ai-episodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ai-episode{overflow:hidden;border:1px solid var(--ai-line);border-radius:19px;background:#fff;box-shadow:0 7px 22px rgba(24,55,95,.055);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease}
-.ai-episode:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,55,95,.12)}
-.ai-episode-art{height:150px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#eaf4ff,#f1edff)}
-.ai-episode-art svg{width:100%;height:100%;max-width:300px}
-.ai-episode-body{padding:18px 19px 20px;display:flex;flex:1;flex-direction:column}
-.ai-episode-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
-.ai-episode-number{font-size:11px;font-weight:900;letter-spacing:.1em;color:#3982bd}
-.ai-status{font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;background:#e8f5ed;color:#277348}
-.ai-status.soon{background:#f1f3f7;color:#68778b}
-.ai-episode h3{font-size:19px;line-height:1.25;color:#173e70;margin:0 0 7px}
-.ai-episode p{font-size:13px;line-height:1.6;color:#60728a;margin:0 0 15px}
-.ai-episode .go{margin-top:auto;color:#1768b2;font-size:13px;font-weight:900}
-.ai-special{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px;align-items:center;padding:28px;border-radius:22px;background:linear-gradient(120deg,#173e70,#285f94);color:#fff}
-.ai-special-art{width:100%;max-width:320px;justify-self:center}
-.ai-special h2{color:#fff;margin:0 0 9px}.ai-special p{color:#e2edfa;line-height:1.7;margin:0 0 14px;font-size:14px}
-.ai-special .ai-btn{background:#fff;color:#173e70}
-.ai-note{padding:17px 20px;border:1px solid #f0dfaa;border-radius:15px;background:#fff9e9;color:#67572e;font-size:13px;line-height:1.65;margin-top:18px}
-
-
-
-.ai-content{width:100%;max-width:none;margin:0 auto}
-.ai-content h2{font-size:25px;color:#153d70;margin:34px 0 12px}
-.ai-content h3{font-size:18px;color:#1c5487;margin:24px 0 8px}
-.ai-content p,.ai-content li{font-size:15px;line-height:1.8;color:#4f637c}
-.ai-content ul{padding-left:22px}
-.ai-example{padding:21px 23px;background:#f1f7ff;border:1px solid #dbe9f8;border-radius:16px;margin:18px 0}
-.ai-example strong{color:#1d5487}.ai-example p{margin:8px 0 0}
-.ai-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
-.ai-compare>div{padding:18px;border:1px solid var(--ai-line);border-radius:15px;background:#fff}
-.ai-compare h3{margin:0 0 8px}
-.ai-compare p{margin:0;font-size:14px}
-.ai-lesson-art{margin:20px 0;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#edf5ff,#f4f0ff);padding:18px}
-.ai-lesson-art svg{display:block;width:100%;height:auto;max-height:280px}
-.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ai-line);padding-top:22px;margin-top:42px}
+<!DOCTYPE html>
+<!-- Level 4 — AI Knowledge Class Episode 2 (magazine layout; script-based prose + illustrations) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traditional AI vs. Generative AI | AI Knowledge Class · Episode 2 | Kiwi 爱AI Study</title>
+  <meta name="description" content="Traditional AI recognizes, judges, and predicts. Generative AI creates new content. See the difference with a smart-car story and everyday examples.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-lead{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px}
+.ep-article{width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box}
+.ep-article h2{clear:both;width:100%;text-align:left;margin:32px 0 14px;font-size:clamp(21px,2.15vw,26px);color:#153d70;line-height:1.28;font-weight:700}
+.ep-article h2:first-child{margin-top:0}
+.ep-article p{font-size:15px;line-height:1.85;color:#263f5b;margin:0 0 14px}
+.ep-article p.ep-label{color:#174a7e;font-weight:600;margin:18px 0 8px;font-size:15px}
+.ep-figure{width:min(34%,300px);margin:4px 0 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f4f8fc;box-shadow:0 5px 18px rgba(24,55,95,.07)}
+.ep-figure--right{float:right;margin-left:22px}
+.ep-figure--left{float:left;margin-right:22px}
+.ep-figure img{display:block;width:100%;height:auto}
+.ep-figure figcaption{font-size:11px;line-height:1.4;color:var(--muted);padding:7px 10px 9px;text-align:center;background:#fff}
+.ep-pair{overflow:hidden;margin:22px 0 6px}
+.ep-pair::after{content:"";display:table;clear:both}
+.ep-pair .ep-label{margin-top:0}
+.ep-pair .ep-figure{margin-top:2px}
+.ep-article::after{content:"";display:table;clear:both}
+.ep-abilities{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:4px 0 12px;padding:12px 16px;border-left:4px solid #8eb8dc;border-radius:0 10px 10px 0;background:#f4f9ff;list-style:none}
+.ep-abilities span{padding:0;border:none;background:transparent;font-size:15px;font-weight:700;color:#155a94}
+.ep-abilities span + span::before{content:"·";margin:0 10px;color:#8fa8c2;font-weight:400}
+.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-top:36px;width:100%;max-width:100%}
+@media(max-width:720px){
+  .ep-figure{float:none!important;width:min(72vw,280px);margin:18px auto}
+  .ep-figure img{margin:0 auto}
+}
 .ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
-.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:32px}
-.ai-filter{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 20px}
-.ai-filter button{border:1px solid #d7e3f0;border-radius:999px;background:#fff;color:#3f5c7b;padding:8px 13px;font:700 12px "Segoe UI",sans-serif;cursor:pointer}
-.ai-filter button.active{background:#1768b2;border-color:#1768b2;color:#fff}
-@media(max-width:850px){.ai-hero{grid-template-columns:1fr;padding:30px}.ai-hero-art{max-width:310px}.ai-episodes{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-path{grid-template-columns:repeat(2,1fr)}.ai-special{grid-template-columns:1fr}.ai-special-art{max-width:240px}}
-@media(max-width:600px){.ai-main{padding:0 16px 55px}.ai-hero{padding:25px 22px;min-height:0}.ai-hero h1{font-size:35px}.ai-hero p{font-size:15px}.ai-why,.ai-episodes,.ai-compare{grid-template-columns:1fr}.ai-path{grid-template-columns:1fr 1fr}.ai-section-head{display:block}.ai-content p,.ai-content li{font-size:14px}.ai-special{padding:22px}.ai-episode-art{height:135px}}
+.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span>
+        <span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span>
+        <span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span>
+        <span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
 
-.ai-card-cover{width:100%;height:100%;object-fit:cover;display:block}
-.ai-episode-art:has(img){padding:0;background:#eaf4ff}
-.ai-episode-cover{display:block;width:100%;max-width:none;margin:22px 0 30px;border-radius:18px;overflow:hidden;border:1px solid #dce6f1;background:#edf5ff}
-.ai-episode-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
-.ai-special-cover{display:block;width:100%;max-width:320px;justify-self:center;border-radius:15px;overflow:hidden}
-.ai-special-cover img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.ai-episode-art img{width:100%;height:100%;object-fit:cover}
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to AI Education" data-zh="← 返回人工智能教育">← Back to AI Education</a>
+    </div>
 
-.ai-inline-cover{float:right;width:31%;max-width:360px;min-width:210px;margin:4px 24px 16px 0;border:0;border-radius:14px;overflow:hidden;background:transparent;box-shadow:0 5px 18px rgba(24,55,95,.10)}
-.ai-inline-cover.ai-cover-right{float:right;margin:4px 0 16px 24px}
-.ai-inline-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:14px}
-.ai-content:after{content:"";display:block;clear:both}
-@media(max-width:600px){.ai-inline-cover,.ai-inline-cover.ai-cover-right{float:none;width:min(68%,320px);min-width:0;max-width:320px;margin:8px auto 22px}}
+    <section class="nf-hero topic-banner" aria-label="Episode introduction">
+      <p class="topic-banner-kicker" data-en="AI EDUCATION · EPISODE 2" data-zh="人工智能教育 · 第 2 集">AI EDUCATION · EPISODE 2</p>
+      <h1 data-en="Traditional AI vs. Generative AI" data-zh="传统 AI 和生成式 AI 有什么不同？">Traditional AI vs. Generative AI</h1>
+      <p class="topic-banner-subtitle" data-en="Two families of AI — one recognizes and predicts, the other creates. See the difference with a smart-car story." data-zh="两类人工智能——一类识别与预测，一类创造新内容。用智能汽车故事看懂差别。">Two families of AI — one recognizes and predicts, the other creates. See the difference with a smart-car story.</p>
+    </section>
 
-</style></head><body class="ai-page"><header class="site-header">
-<div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a>
-<p class="logo-tagline" aria-hidden="true"><span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span><span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span><span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span><span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span></p><span class="divider" aria-hidden="true"></span>
-<div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Kiwi 爱AI Study"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt=""></a></div></div>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a><a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a><a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a><a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a><a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a><a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a><a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
-<span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
-      </span></nav></header><main class="ai-main"><div class="ai-back"><a href="index.html" data-en="← Back to AI Education" data-zh="← 返回 AI 教育">← Back to AI Education</a></div><section class="nf-hero topic-banner" aria-label="Page introduction"><p class="topic-banner-kicker" data-en="AI KNOWLEDGE CLASSROOM · EPISODE 02" data-zh="AI 知识小课堂 · 第 2 集">AI KNOWLEDGE CLASSROOM · EPISODE 02</p><h1 data-en="Traditional AI vs. Generative AI" data-zh="传统 AI 与生成式 AI">Traditional AI vs. Generative AI</h1><p data-en="AI can recognize, judge and predict — and it can also create. Let's see the difference with a smart-car story." data-zh="AI 可以识别、判断和预测，也可以创造新的内容。我们用一辆智能汽车的故事来理解它们的区别。">AI can recognize, judge and predict — and it can also create. Let's see the difference with a smart-car story.</p></section><div class="ai-content"><figure class="ai-episode-cover ai-inline-cover ai-cover-right"><img data-ai-cover data-en-src="images/ai-learning-studio-episode-002-en-16x9.webp" data-zh-src="images/ai-learning-studio-episode-002-cn-16x9.webp" src="images/ai-learning-studio-episode-002-en-16x9.webp" alt="AI Knowledge Classroom Episode 2 cover"></figure><h2 data-en="A smart car on the road" data-zh="路上的智能汽车">A smart car on the road</h2><p data-en="Imagine a car moving along a street. Its camera and sensors detect a person ahead. An AI system may identify that the object is a pedestrian, estimate how far away the person is, and use information such as speed and road conditions to help predict what might happen next." data-zh="想象一辆汽车行驶在道路上。它的摄像头和传感器发现前方有一个人。AI 系统可能先识别出这是行人，再估计行人与汽车的距离，并结合车速、道路情况等信息，帮助判断接下来可能发生什么。">Imagine a car moving along a street. Its camera and sensors detect a person ahead. An AI system may identify that the object is a pedestrian, estimate how far away the person is, and use information such as speed and road conditions to help predict what might happen next.</p><p data-en="The system may then support a safety action, such as warning the driver or helping the car slow down. It is not writing a story or drawing a picture. It is recognizing, analysing, predicting and helping with a task." data-zh="系统接下来可能协助采取安全措施，例如提醒驾驶员或帮助汽车减速。它并没有写故事或画图片，而是在识别、分析、预测并协助完成任务。">The system may then support a safety action, such as warning the driver or helping the car slow down. It is not writing a story or drawing a picture. It is recognizing, analysing, predicting and helping with a task.</p><div class="ai-example"><strong data-en="Try this everyday example" data-zh="生活中的例子">Try this everyday example</strong><p data-en="Other examples include face recognition on a phone, traffic prediction in a map app, product recommendations in an online shop and AI-assisted medical image analysis." data-zh="其他例子还包括手机人脸识别、地图软件的交通预测、网购平台的商品推荐，以及 AI 辅助医学影像分析。">Other examples include face recognition on a phone, traffic prediction in a map app, product recommendations in an online shop and AI-assisted medical image analysis.</p></div><h2 data-en="Now imagine asking AI to create something" data-zh="再想象一下，让 AI 创作内容">Now imagine asking AI to create something</h2><p data-en="You ask an AI tool: “Write a short story about a trip to Mars.” It creates a new story. Then you ask it to make an image of an astronaut standing on Mars. It generates an image. It may also help draft music, videos or computer code." data-zh="你对 AI 说：“写一个关于火星旅行的小故事。”它可以生成一个新故事。接着你让它画一张宇航员站在火星上的图片，它又可以生成图片。它还可能帮助创作音乐、视频或程序代码。">You ask an AI tool: “Write a short story about a trip to Mars.” It creates a new story. Then you ask it to make an image of an astronaut standing on Mars. It generates an image. It may also help draft music, videos or computer code.</p><p data-en="This is Generative AI: AI designed to generate new content based on a request and the information it has learned from." data-zh="这就是生成式 AI：根据用户的要求以及它从数据中学习到的信息，生成新的内容。">This is Generative AI: AI designed to generate new content based on a request and the information it has learned from.</p><h2 data-en="The simple difference" data-zh="简单理解它们的区别">The simple difference</h2><p data-en="Traditional AI is often used to recognize, classify, predict or support decisions. Generative AI is designed to create new content, such as text, images, audio, video or code." data-zh="传统 AI 常用于识别、分类、预测或辅助判断。生成式 AI 则主要用于创造新的内容，例如文字、图片、音频、视频或代码。">Traditional AI is often used to recognize, classify, predict or support decisions. Generative AI is designed to create new content, such as text, images, audio, video or code.</p><p data-en="These categories are not completely separate. A modern AI system may combine several abilities. Just as a modern car brings together cameras, navigation, sensors and driver-assistance features, an AI product may combine different AI technologies." data-zh="这两类并不是完全分开的。现代 AI 系统可能把多种能力结合起来。就像现代汽车会结合摄像头、导航、传感器和驾驶辅助功能一样，一个 AI 产品也可能整合不同的 AI 技术。">These categories are not completely separate. A modern AI system may combine several abilities. Just as a modern car brings together cameras, navigation, sensors and driver-assistance features, an AI product may combine different AI technologies.</p><div style="clear:both"></div><div class="ai-bottom-nav"><a href="episode-01.html" data-en="← Episode 1: What Is AI?" data-zh="← 第 1 集：AI 到底是什么？">← Episode 1: What Is AI?</a><a href="episode-03.html" data-en="Episode 3: What Is an AI Model? →" data-zh="第 3 集：什么是 AI 模型？ →">Episode 3: What Is an AI Model? →</a></div><p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p></div></main><footer class="site-footer"><nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav><p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p></footer><script>
-(()=>{const nav={en:['Home','About','Math Education','AI Education','In-Class Learning','My Books','Contact'],zh:['首页','关于我们','数学教育','人工智能教育','课堂学习','我的书籍','联系我们']};const legal={en:['Privacy Policy','Terms of Service','Home'],zh:['隐私政策','服务条款','首页']};const btns=document.querySelectorAll('.flag[data-language]');function setLanguage(lang){const l=lang==='zh'?'zh':'en';document.documentElement.lang=l==='zh'?'zh-CN':'en-CA';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.innerHTML=el.getAttribute(l==='zh'?'data-zh':'data-en'));document.querySelectorAll('[data-ai-cover]').forEach(img=>{const source=img.getAttribute(l==='zh'?'data-zh-src':'data-en-src');if(source){img.src=source;img.style.display='block'}else{img.style.display='none'}});document.querySelectorAll('.site-nav [data-nav]').forEach((el,i)=>el.textContent=nav[l][i]);document.querySelectorAll('.site-footer [data-legal]').forEach((el,i)=>el.textContent=legal[l][i]);btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===l)));try{localStorage.setItem('kiwi-site-language',l)}catch(e){}}btns.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));let saved='en';try{saved=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(saved);window.addEventListener('pageshow',()=>{let l='en';try{l=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(l)});
-const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(x=>x.classList.toggle('active',x===btn));const f=btn.dataset.aiFilter;document.querySelectorAll('.ai-episode[data-category]').forEach(card=>card.hidden=!(f==='all'||card.dataset.category===f));}));
+    <!-- LEVEL-4 BODY START -->
+    <article class="nf-section ep-article" aria-label="Episode article">
+
+      <div class="ep-pair">
+        <p class="nf-lead" data-en="Welcome back to AI Knowledge Class. In Episode 1 we learned that AI is not just one app, and not only a chatbot. Some systems recognize and predict; others create new text, images, or audio. Today we compare those two families in plain language." data-zh="欢迎回到 AI 知识小课堂。第 1 集里我们知道，AI 不只是某一个软件，也不只是聊天机器人。有些系统更擅长识别和预测，有些则可以根据要求生成新的文字、图像或声音。今天用通俗的话比较这两类 AI。">Welcome back to AI Knowledge Class. In Episode 1 we learned that AI is not just one app, and not only a chatbot. Some systems recognize and predict; others create new text, images, or audio. Today we compare those two families in plain language.</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-002/magazine/ep02-mag-01-intro.webp" alt="" width="1280" height="563" decoding="async" loading="lazy">
+          <figcaption data-en="Two main ways AI shows up in daily life." data-zh="AI 在生活中的两种主要方式。">Two main ways AI shows up in daily life.</figcaption>
+        </figure>
+        <p data-en="We will use two simple scenes: a smart car on the road (traditional AI at work) and a creative request at home (generative AI). Each picture sits beside the idea it explains." data-zh="我们会用两个简单场景：路上的智能汽车（传统 AI 在工作）和在家里提出创作要求（生成式 AI）。每一张图都紧挨着它要说明的那一点。">We will use two simple scenes: a smart car on the road (traditional AI at work) and a creative request at home (generative AI). Each picture sits beside the idea it explains.</p>
+        <p data-en="You do not need formulas or product names to follow along. We only ask: what is the AI <em>doing</em> — sensing and deciding, or making something new? Keep that question in mind as you read." data-zh="你不需要记公式或产品名字也能跟上。只要一问：AI 是在<strong>感知和做决定</strong>，还是在<strong>创造新东西</strong>？读的时候带着这个问题就好。">You do not need formulas or product names to follow along. We only ask: what is the AI <em>doing</em> — sensing and deciding, or making something new? Keep that question in mind as you read.</p>
+        <p data-en="By the end you should be able to tell a friend which tools “recognize and predict” and which ones “generate,” and why a single product can use both." data-zh="读完后，你应该能向朋友说明：哪些工具更像“识别和预测”，哪些更像“生成”，以及为什么同一个产品可以两种能力都有。">By the end you should be able to tell a friend which tools “recognize and predict” and which ones “generate,” and why a single product can use both.</p>
+      </div>
+
+      <h2 id="ep2-traditional" data-en="Traditional AI: recognize, judge, predict" data-zh="传统 AI：识别、判断、预测">Traditional AI: recognize, judge, predict</h2>
+      <p data-en="Traditional artificial intelligence helps us recognize patterns, make judgments, predict what may happen next, and finish specific tasks — often without writing a story or drawing a picture." data-zh="传统人工智能帮助我们识别规律、作出判断、预测接下来可能发生的事，并完成特定任务——往往并不是写文章或画画。">Traditional artificial intelligence helps us recognize patterns, make judgments, predict what may happen next, and finish specific tasks — often without writing a story or drawing a picture.</p>
+      <p data-en="To make that concrete, we start with something familiar almost everyone has seen — a car that uses sensors and software to stay aware of the road." data-zh="为了把这一点讲具体，我们先从一个大家都很熟悉的东西说起——会用传感器和软件感知路况的汽车。">To make that concrete, we start with something familiar almost everyone has seen — a car that uses sensors and software to stay aware of the road.</p>
+
+      <div class="ep-pair">
+        <p class="ep-label" data-en="Example: a smart car" data-zh="例子：智能汽车">Example: a smart car</p>
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-002/magazine/ep02-mag-02-smart-car.webp" alt="" width="1280" height="563" decoding="async" loading="lazy">
+          <figcaption data-en="Recognize → judge → predict → act safely." data-zh="识别 → 判断 → 预测 → 安全行动。">Recognize → judge → predict → act safely.</figcaption>
+        </figure>
+        <p data-en="Imagine a very smart car driving down the street. A pedestrian steps into view. Cameras and sensors spot the person. The AI first <strong>recognizes</strong>: “There is a person ahead.” It <strong>judges</strong> distance and speed, <strong>predicts</strong> what could happen next, and may slow the car or trigger a safety action. No new essay — just recognition, judgment, prediction, and task completion." data-zh="想象一辆很智能的汽车在路上行驶，前面突然出现一位行人。摄像头和传感器发现了这个人。AI 先<strong>识别</strong>：“前面有一个人。”再<strong>判断</strong>距离和车速，<strong>预测</strong>可能发生的情况，并可能减速或采取安全措施。这里没有新写的文章——主要是识别、判断、预测和完成任务。">Imagine a very smart car driving down the street. A pedestrian steps into view. Cameras and sensors spot the person. The AI first <strong>recognizes</strong>: “There is a person ahead.” It <strong>judges</strong> distance and speed, <strong>predicts</strong> what could happen next, and may slow the car or trigger a safety action. No new essay — just recognition, judgment, prediction, and task completion.</p>
+        <p data-en="It also asks: “How far away is that person?” It weighs speed, lane position, and road conditions before it chooses to brake or warn the driver. Notice what is <em>missing</em>: no new essay, no freshly drawn poster — only recognition, judgment, prediction, and a safety task." data-zh="它还会问：“这个人离车有多远？”再结合车速、车道位置和路况，决定刹车或提醒驾驶员。注意这里<strong>没有</strong>新写的文章，也没有新画的图——只有识别、判断、预测和一项安全任务。">It also asks: “How far away is that person?” It weighs speed, lane position, and road conditions before it chooses to brake or warn the driver. Notice what is <em>missing</em>: no new essay, no freshly drawn poster — only recognition, judgment, prediction, and a safety task.</p>
+        <p data-en="That pattern — sense the world, think it through, predict, then act — is what people often mean by traditional AI. If you can describe those steps, you already understand the first half of today’s lesson." data-zh="这种“感知世界 → 分析 → 预测 → 行动”的模式，就是人们常说的传统 AI。你能说出这几步，今天课程的前半部分就已经懂了。">That pattern — sense the world, think it through, predict, then act — is what people often mean by traditional AI. If you can describe those steps, you already understand the first half of today’s lesson.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-002/magazine/ep02-mag-04-traditional-uses.webp" alt="" width="1280" height="563" decoding="async" loading="lazy">
+          <figcaption data-en="Traditional AI is already all around you." data-zh="传统 AI 早已在你身边。">Traditional AI is already all around you.</figcaption>
+        </figure>
+        <p data-en="Traditional AI shows up in many places: cars detecting people and vehicles, phones that recognize faces, maps that predict traffic, shops that recommend products, hospitals that help read scans, and factory robots guided by sensors. They analyze information, then recognize, judge, predict, or carry out a task." data-zh="传统 AI 出现在许多地方：汽车识别行人和车辆、手机人脸识别、地图预测路况、购物网站推荐商品、医院辅助分析影像、工厂里由传感器引导的机器人。它们分析信息，然后进行识别、判断、预测或执行任务。">Traditional AI shows up in many places: cars detecting people and vehicles, phones that recognize faces, maps that predict traffic, shops that recommend products, hospitals that help read scans, and factory robots guided by sensors. They analyze information, then recognize, judge, predict, or carry out a task.</p>
+        <p data-en="What they share is the same job description: take in data, find a pattern or risk, decide what it probably means, and do something useful. Your photo app sorting “beach” and “birthday” without you tagging every picture is the same <em>kind</em> of work as a car spotting a pedestrian — different scene, same style of thinking." data-zh="它们的共同点是一份“工作内容”：接收数据，发现规律或风险，判断它多半意味着什么，再做出有用的事。手机相册自动分出“海滩”和“生日”照片、而不用你每张都打标签，和汽车发现行人在做<strong>同一类</strong>事——场景不同，思路相似。">What they share is the same job description: take in data, find a pattern or risk, decide what it probably means, and do something useful. Your photo app sorting “beach” and “birthday” without you tagging every picture is the same <em>kind</em> of work as a car spotting a pedestrian — different scene, same style of thinking.</p>
+        <p data-en="When someone says “the AI recommended this video,” they usually mean traditional AI: the system watched patterns in what people clicked, guessed what you might like next, and ranked a list. It did not invent a new show from scratch." data-zh="当有人说“AI 给我推了这个视频”，多半是传统 AI：系统根据大家点击的规律，猜测你接下来可能喜欢什么并排好列表。并不是从零创作了一档新节目。">When someone says “the AI recommended this video,” they usually mean traditional AI: the system watched patterns in what people clicked, guessed what you might like next, and ranked a list. It did not invent a new show from scratch.</p>
+        <div class="ep-abilities" role="list" aria-label="Traditional AI strengths">
+          <span role="listitem" data-en="Recognize" data-zh="识别">Recognize</span>
+          <span role="listitem" data-en="Judge" data-zh="判断">Judge</span>
+          <span role="listitem" data-en="Predict" data-zh="预测">Predict</span>
+          <span role="listitem" data-en="Complete tasks" data-zh="完成任务">Complete tasks</span>
+        </div>
+      </div>
+
+      <h2 id="ep2-generative" data-en="Generative AI: create something new" data-zh="生成式 AI：创造新内容">Generative AI: create something new</h2>
+      <p data-en="Generative AI focuses on making new content when you ask — stories, pictures, songs, video ideas, or code." data-zh="生成式 AI 的重点是：当你提出要求时，创造新的内容——故事、图片、歌曲、视频创意或代码。">Generative AI focuses on making new content when you ask — stories, pictures, songs, video ideas, or code.</p>
+      <p data-en="Switch the scene from the street to your desk: you give a prompt, and the system answers with words or pixels that did not exist in that exact form a moment ago." data-zh="把场景从马路换到你的书桌：你给一句要求，系统用文字或图像回答——这些东西在上一秒还不存在。">Switch the scene from the street to your desk: you give a prompt, and the system answers with words or pixels that did not exist in that exact form a moment ago.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-002/magazine/ep02-mag-03-generative.webp" alt="" width="1280" height="563" decoding="async" loading="lazy">
+          <figcaption data-en="Ask once — get new words or images." data-zh="提一次要求——得到新的文字或图像。">Ask once — get new words or images.</figcaption>
+        </figure>
+        <p data-en="Picture yourself at home saying, “Write a short story about space travel.” The AI can draft a new story with characters and plot you did not type word for word. Ask again: “Draw an astronaut standing on Mars.” You may get an image that fits your idea even though you did not paint it yourself." data-zh="想象你在家说：“帮我写一个关于太空旅行的小故事。”AI 可以写出有新人物和情节的故事，并不是你一字不差打进去的。再说：“画一张宇航员站在火星上的图。”你可能会得到符合想法的图，而不是自己一笔笔画出来的。">Picture yourself at home saying, “Write a short story about space travel.” The AI can draft a new story with characters and plot you did not type word for word. Ask again: “Draw an astronaut standing on Mars.” You may get an image that fits your idea even though you did not paint it yourself.</p>
+        <p data-en="The same tool might help you outline a song, storyboard a short video, or suggest the first lines of a program. Each answer is <strong>generated</strong> for your request — that is the heart of generative AI." data-zh="同一个工具还可以帮你构思歌词、分镜短片，或写出程序的开头几行。每一次回答都是为你的要求<strong>生成</strong>出来的——这就是生成式 AI 的核心。">The same tool might help you outline a song, storyboard a short video, or suggest the first lines of a program. Each answer is <strong>generated</strong> for your request — that is the heart of generative AI.</p>
+        <p data-en="A quick contrast: the smart car <em>reacted</em> to the pedestrian; generative AI <em>produces</em> something you can read, hear, or see. Both use AI, but the “output” feels different — safety action versus a poem, a picture, or code." data-zh="简单对比：智能汽车是对行人<strong>作出反应</strong>；生成式 AI 是<strong>产出</strong>你能读、能听、能看的内容。都用 AI，但“结果”不同——安全措施，还是一首诗、一张图或一段代码。">A quick contrast: the smart car <em>reacted</em> to the pedestrian; generative AI <em>produces</em> something you can read, hear, or see. Both use AI, but the “output” feels different — safety action versus a poem, a picture, or code.</p>
+        <p data-en="We call that ability <strong>generative artificial intelligence</strong>. If traditional AI is like a careful observer, generative AI is more like a creative partner — still imperfect, still worth checking, but built to make new material when you ask." data-zh="这种能力就叫<strong>生成式人工智能</strong>。如果说传统 AI 像细心的观察者，生成式 AI 更像创作搭档——仍会出错，仍要核实，但专长是根据你的要求做出新内容。">We call that ability <strong>generative artificial intelligence</strong>. If traditional AI is like a careful observer, generative AI is more like a creative partner — still imperfect, still worth checking, but built to make new material when you ask.</p>
+        <div class="ep-abilities" role="list" aria-label="Generative AI strengths">
+          <span role="listitem" data-en="Write" data-zh="写作">Write</span>
+          <span role="listitem" data-en="Draw" data-zh="绘画">Draw</span>
+          <span role="listitem" data-en="Compose" data-zh="作曲">Compose</span>
+          <span role="listitem" data-en="Create" data-zh="生成">Create</span>
+        </div>
+      </div>
+
+      <h2 id="ep2-together" data-en="Better together" data-zh="可以一起工作">Better together</h2>
+      <p data-en="Traditional AI and generative AI are not totally separate boxes. Modern products often blend both." data-zh="传统 AI 和生成式 AI 并不是完全分开的两块。现在的产品常常把两种能力结合在一起。">Traditional AI and generative AI are not totally separate boxes. Modern products often blend both.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-002/magazine/ep02-mag-05-combined.webp" alt="" width="1280" height="563" decoding="async" loading="lazy">
+          <figcaption data-en="One car, many AI skills working together." data-zh="一辆车，多种 AI 能力协同。">One car, many AI skills working together.</figcaption>
+        </figure>
+        <p data-en="Think again about a modern car: cameras for safety, navigation that predicts traffic, a voice assistant you can talk to, and driver-assist features. Different AI tools cooperate so the car feels smarter." data-zh="再想一辆现代汽车：用于安全的摄像头、预测路况的导航、可以对话的语音助手，以及各种驾驶辅助功能。不同的 AI 工具协同工作，让汽车变得更智能。">Think again about a modern car: cameras for safety, navigation that predicts traffic, a voice assistant you can talk to, and driver-assist features. Different AI tools cooperate so the car feels smarter.</p>
+        <p data-en="The safety stack is mostly traditional AI — spot, judge, predict. The voice assistant may <em>sound</em> generative when it speaks full sentences back to you, while still using recognition under the hood. Real products mix skills instead of picking only one label." data-zh="安全相关多半是传统 AI——发现、判断、预测。语音助手回答整句话时可能<strong>听起来</strong>像生成式，背后仍有识别等环节。真实产品往往是多种能力组合，而不是只贴一个标签。">The safety stack is mostly traditional AI — spot, judge, predict. The voice assistant may <em>sound</em> generative when it speaks full sentences back to you, while still using recognition under the hood. Real products mix skills instead of picking only one label.</p>
+        <p data-en="Behind both families sits a bigger toolbox: machine learning, deep learning, large language models, and names like GPT. They are related, not random buzzwords — and they help explain why ChatGPT can chat while your map only reroutes you." data-zh="两类 AI 背后还有更大的工具箱：机器学习、深度学习、大型语言模型，以及 GPT 等名字。它们彼此有关联，不是乱蹦的热词——也能帮助理解：为什么 ChatGPT 能聊天，而地图主要是在给你改路线。">Behind both families sits a bigger toolbox: machine learning, deep learning, large language models, and names like GPT. They are related, not random buzzwords — and they help explain why ChatGPT can chat while your map only reroutes you.</p>
+        <p data-en="Episode 3 walks through that AI family tree step by step — what each name means and how the pieces nest inside one another." data-zh="第 3 集会一步一步梳理这棵 AI 家族树——每个名字指什么，以及它们如何一层套一层。">Episode 3 walks through that AI family tree step by step — what each name means and how the pieces nest inside one another.</p>
+      </div>
+
+      <h2 id="ep2-next" data-en="Coming up next" data-zh="下一集预告">Coming up next</h2>
+      <p data-en="Before we close, here is the one-line version: traditional AI recognizes, judges, predicts, and finishes tasks; generative AI creates new content from your request. Many apps you use every week touch both styles." data-zh="收尾前先记一句：传统 AI 识别、判断、预测并完成任务；生成式 AI 根据你的要求创造新内容。你每周用的许多应用，其实两种风格都有。">Before we close, here is the one-line version: traditional AI recognizes, judges, predicts, and finishes tasks; generative AI creates new content from your request. Many apps you use every week touch both styles.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-002/magazine/ep02-mag-06-next-preview.webp" alt="" width="1280" height="563" decoding="async" loading="lazy">
+          <figcaption data-en="Episode 3 maps the AI family tree." data-zh="第 3 集梳理 AI 大家族。">Episode 3 maps the AI family tree.</figcaption>
+        </figure>
+        <p data-en="Next time we unpack the AI family — machine learning, deep learning, large language models, GPT, and ChatGPT — and show how they nest together instead of competing like rival sports teams." data-zh="下一集会拆开 AI 大家族——机器学习、深度学习、大型语言模型、GPT 和 ChatGPT——看它们如何一层套一层，而不是像两支球队那样互相对立。">Next time we unpack the AI family — machine learning, deep learning, large language models, GPT, and ChatGPT — and show how they nest together instead of competing like rival sports teams.</p>
+        <p data-en="We will also answer a question you might already be wondering: why can ChatGPT understand what you say and write long answers, when a traffic app mostly predicts minutes and draws a new route?" data-zh="我们也会回答你可能已经在想的问题：为什么 ChatGPT 能听懂你的话并写出长答案，而路况应用多半只是在预测分钟数、画一条新路线？">We will also answer a question you might already be wondering: why can ChatGPT understand what you say and write long answers, when a traffic app mostly predicts minutes and draws a new route?</p>
+        <p data-en="Those complicated names start to make sense once you see the family tree. Bring your questions — we will take the AI Knowledge Class ladder one level deeper in Episode 3." data-zh="一旦看清家族树，这些听起来复杂的名字就会顺很多。带上你的问题——第 3 集我们会把 AI 知识小课堂再往上走一级。">Those complicated names start to make sense once you see the family tree. Bring your questions — we will take the AI Knowledge Class ladder one level deeper in Episode 3.</p>
+      </div>
+    </article>
+
+    <nav class="ai-bottom-nav" aria-label="Episode navigation">
+      <a href="episode-01.html" data-en="← Episode 1: What Is AI?" data-zh="← 第 1 集：AI 到底是什么？">← Episode 1: What Is AI?</a>
+      <a href="episode-03.html" data-en="Episode 3: AI Learning →" data-zh="第 3 集：AI 学习 →">Episode 3: AI Learning →</a>
+    </nav>
+    <p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
 })();
-</script>
-<script>
-/* Remove legacy GTranslate cookies left by earlier test versions. */
+  </script>
+  <script>
 (() => {
   const host = location.hostname;
   const domains = ['', host, host ? '.' + host : ''];
@@ -111,5 +252,7 @@ const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=
     }));
   });
 })();
-</script>
-<script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script></body></html>
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script>
+</body>
+</html>

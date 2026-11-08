@@ -13,7 +13,8 @@
 3. **Breadcrumb:** Register in `assets/js/drive-breadcrumb.js` (parent → `ai/index.html`).
 4. **Images:** Put WebP/JPG in `ai/images/episode-NNN/magazine/` as `epNN-mag-01-….webp` (see [Images](#images)).
 5. **Body:** Replace content between `<!-- LEVEL-4 BODY START -->` / `END` using patterns below. **Keep the page `<style>` block** from episode 01 unless adding episode-specific tokens only.
-6. **Checklist:** [Publish checklist](#publish-checklist).
+6. **Balance pass (required):** Walk every `.ep-pair` and apply [Balance & density](#balance--density). Do not skip this step — thin pairs and white gaps beside floats are blocking defects, not polish.
+7. **Checklist:** [Publish checklist](#publish-checklist).
 
 ---
 
@@ -59,7 +60,7 @@ p.ai-footer-note
 |--------|------|
 | `.ep-article` | Main magazine column; full topic width |
 | `.ep-pair` | One illustration + related copy; clearfix after floats |
-| `.ep-figure` / `--right` / `--left` | Floated spot still (~34%, max ~300px); alternate sides |
+| `.ep-figure` / `--right` / `--left` | Floated spot illustration — **same on-page size as Ep1** (`width: min(34%, 300px)`); alternate sides. **Do not** add wider variants (e.g. no `.ep-figure--landscape`). |
 | `.ep-myth` | Mix-up or mistaken belief label (semibold blue) |
 | `.nf-lead` | Opening lead paragraph |
 | `.nf-note` | Orange tip panel (use sparingly, ~1 per page) |
@@ -67,7 +68,7 @@ p.ai-footer-note
 | `.ep-abilities` | **Keyword strip** — not pills/buttons; `识别 · 学习 · …` with left bar |
 | `.ai-bottom-nav` | Episode prev/next; do not duplicate with a second promo banner |
 
-Mobile (`max-width: 720px`): figures unfloat, centered (`episode-01` media query).
+Mobile (`max-width: 720px`): figures unfloat, centered at `width: min(72vw, 280px)` — copy **exactly** from `episode-01.html` (do not use wider mobile widths).
 
 ---
 
@@ -77,7 +78,17 @@ Mobile (`max-width: 720px`): figures unfloat, centered (`episode-01` media query
 2. **DOM order:** `p.ep-myth` (if any) → `figure` (float) → explaining `p` block(s).
 3. Place figure on the **first paragraph** that matches the art (e.g. car analogy → car image next to that paragraph, not under mix-up label only).
 4. Alternate **right / left** floats for rhythm.
-5. If the text column beside a tall float has **>1 empty row**, add substantive script-backed sentences (or a bridge line under the next `h2`) — not filler.
+5. See [Balance & density](#balance--density) — expand copy when a float looks taller than its text or leaves visible gaps.
+
+### Balance & density
+
+Tall **9:16** spot figures need enough **paired prose** in the same `.ep-pair`. **Do not ship lopsided blocks.**
+
+- **Rule (gaps):** If you see **more than one empty row** of unused space beside an illustration (or a large gap before the next `h2`), **add real copy** until the block looks balanced.
+- **Rule (short copy):** If the text beside a figure is **too short** for that image (e.g. one light sentence next to a full-height spot, or the float clearly outlasts the paragraph), **add script-backed detail** until the pair reads and looks balanced — even when there is no obvious white band yet.
+- **What to add:** Extra sentences from the episode **script** — school-life examples, a second analogy, a bridge line under the next `h2`, or a short recap. Match Ep1’s student tone.
+- **What not to add:** Padding, repeated slogans, or lorem. Do **not** fix imbalance only by shrinking margins (unless the user asks).
+- **When drafting a new episode:** After placing figures, scan each `.ep-pair` in the browser; thicken thin copy and fill gaps before publish.
 
 ### Orange info panel (`.nf-note`)
 
@@ -91,8 +102,9 @@ Mobile (`max-width: 720px`): figures unfloat, centered (`episode-01` media query
 
 - **Path:** `ai/images/episode-NNN/magazine/`
 - **Naming:** `epNN-mag-01-welcome.webp`, `epNN-mag-02-….webp`, … (semantic slug)
-- **Aspect:** 9:16 vertical spots; `width`/`height` on `<img>` optional; `loading="lazy"`
-- **Alt:** Decorative spots → `alt=""` if caption + body carry the lesson
+- **On-page display size (standard):** Always match **`ai/episode-01.html`** — floated figures use `.ep-figure { width: min(34%, 300px); }` only. Source files may be 9:16, 16:9, or other aspects; the browser scales them inside the **same max ~300px column width**. Never widen floats for landscape art (no `52%` / `480px` rules).
+- **`<img>` dimensions:** Set `width` and `height` to the **file’s true pixel size** (e.g. Ep1 spots `360`×`640`; 1280×720 WebP → `1280`×`720`) so aspect ratio is correct while CSS controls display width.
+- **`loading="lazy"`** · Decorative spots → `alt=""` when caption + body carry the lesson
 - **Source:** User-generated / storyboard pipeline — do not copy reference JPGs into the repo without instruction
 
 ---
@@ -127,6 +139,8 @@ Mobile (`max-width: 720px`): figures unfloat, centered (`episode-01` media query
 - [ ] At most one `.nf-note`; width via `.ep-flow-col` when floated beside art.
 - [ ] No copied reference assets; WebP in `magazine/` folder.
 - [ ] Script beats preserved; student tone; no giant next-episode graphic (nav link is enough).
+- [ ] Each figure’s paired text is substantial enough to balance the spot; no multi-row gaps; expand from script where copy is thin.
+- [ ] Figure CSS matches Ep1 float width (`min(34%, 300px)`); no extra landscape/wide figure classes.
 
 ---
 

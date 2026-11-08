@@ -1,0 +1,17 @@
+---
+description: Build or edit AI Knowledge Class magazine episode pages (ai/episode-NN.html)
+globs: ai/episode-*.html
+alwaysApply: false
+---
+
+# AI episode magazine pages
+
+When creating or rewriting `ai/episode-*.html`, **read and follow** [docs/AI_EPISODE_MAGAZINE.md](docs/AI_EPISODE_MAGAZINE.md) end to end before considering the task done.
+
+**Non‑negotiables:**
+- Shell and CSS: copy from `ai/episode-01.html` (figure width `min(34%, 300px)` only).
+- Script = source of truth for ideas and order; student tone; bilingual `data-en` / `data-zh`.
+- **Balance & density:** Every `.ep-pair` must pass the doc’s rules — no multi‑row gaps beside figures, no thin copy next to spots. Add script‑backed sentences until each pair looks balanced in the layout.
+- Run the doc’s **publish checklist** mentally before handing off; fix gaps and CSS drift.
+
+Golden reference: `ai/episode-01.html`.

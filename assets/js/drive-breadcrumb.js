@@ -19,7 +19,7 @@
     "ai/index.html": { en:"AI Education", zh:"人工智能教育", parent:"" },
     "ai/episode-01.html": { en:"Episode 1: What Is AI?", zh:"第 1 集：什么是人工智能？", parent:"ai/index.html" },
     "ai/episode-02.html": { en:"Episode 2: Traditional AI vs. Generative AI", zh:"第 2 集：传统 AI 与生成式 AI", parent:"ai/index.html" },
-    "ai/episode-03.html": { en:"Episode 3: What Is an AI Model?", zh:"第 3 集：什么是 AI 模型？", parent:"ai/index.html" },
+    "ai/episode-03.html": { en:"Episode 3: AI Learning", zh:"第 3 集：AI 学习", parent:"ai/index.html" },
     "ai/episode-04.html": { en:"Episode 4: How Do We Talk to AI?", zh:"第 4 集：我们如何与 AI 对话？", parent:"ai/index.html" },
     "ai/episode-05.html": { en:"Episode 5: What Is Context?", zh:"第 5 集：什么是 Context？", parent:"ai/index.html" },
     "ai/episode-06.html": { en:"Episode 6: What Is AI Memory?", zh:"第 6 集：什么是 AI 记忆？", parent:"ai/index.html" },
