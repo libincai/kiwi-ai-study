@@ -4159,3 +4159,8 @@ html body main .nf-hero.topic-banner > p:last-child {
 
 /* Yiai Lake: retain independent inset card; fit native 2:1 image without letterboxing. */
 .hometown-photo img[src$="yiai-lake.webp"]{aspect-ratio:2 / 1;object-fit:cover;background:transparent;}
+
+/* Huanggang Mijuan: show full original artwork without side letterboxing.
+   Applies to both Chinese and English versions. */
+.hometown-photo img[src$="huanggang-mijuan-en.webp"],
+.hometown-photo img[src$="huanggang-mijuan.webp"]{aspect-ratio:auto;object-fit:contain;background:transparent;}
