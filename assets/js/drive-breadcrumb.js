@@ -25,7 +25,7 @@
     "ai/episode-06.html": { en:"Episode 6: Review", zh:"第 6 集：知识回顾", parent:"ai/index.html" },
     "ai/episode-07.html": { en:"Episode 7: The AI Concept Map", zh:"第 7 集：AI 的一张概念地图", parent:"ai/index.html" },
     "ai/episode-08.html": { en:"Episode 8: Prompt", zh:"第 8 集：提示词", parent:"ai/index.html" },
-    "ai/episode-09.html": { en:"Episode 9: Focused Prompts", zh:"第 9 集：聚焦式 Prompt", parent:"ai/index.html" },
+    "ai/episode-09.html": { en:"Episode 9: Focused Prompts", zh:"第 9 集：聚焦式提示词", parent:"ai/index.html" },
     "ai/episode-10.html": { en:"Episode 10: How Does an AI Agent Work?", zh:"第 10 集：AI Agent 如何工作？", parent:"ai/index.html" },
     "ai/episode-special-learning.html": { en:"Special (Ep 7): AI Is Powerful", zh:"第 7 集特别篇：AI 这么厉害", parent:"ai/index.html" },
 

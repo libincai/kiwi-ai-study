@@ -30,6 +30,31 @@
 | Short figure captions; lesson in HTML | Long text baked into images |
 | One orange `.nf-note` when a habit tip helps | Full-width note beside wrong column |
 
+### Em dashes (EN + 中文) — mandatory
+
+Bilingual nodes (`data-en` / `data-zh` on the same element) must use **different** dash typography. Apply the rule in **each** attribute separately; never copy EN spacing logic onto `data-zh`.
+
+| Locale | Character | Spacing | Example |
+|--------|-----------|---------|---------|
+| **English** (`data-en`) | Single em dash `—` (U+2014) | **One space before and after** | `…looks like — where to aim…` |
+| **Chinese** (`data-zh`) | Double em dash `——` (two U+2014) | **One space before and after** | `…谈的是<strong>品质</strong> —— 怎样…` |
+
+**Do**
+
+- Use ` — ` in English body, captions, banner subtitle, and figcaptions.
+- Use ` —— ` in Chinese for the same rhetorical break (aside, contrast, continuation).
+- When you edit one language, fix dashes in **that** `data-*` value only.
+
+**Do not**
+
+- Tight EN dashes: `word—word` or `—word`.
+- Tight CN doubles: `品质——怎样` (no spaces).
+- Single spaced em dash in Chinese where the script expects a 破折号: `品质 — 怎样`.
+- Broken doubles from bulk replace: ` —  — ` (two singles with spaces).
+- A whole-file regex that rewrites dashes in both `data-en` and `data-zh` at once.
+
+**Agent check:** Grep episode HTML for `data-zh=…` and confirm ` —— `; grep `data-en=…` and confirm ` — ` (not `--` or hyphen-minus `-` used as an em dash).
+
 ---
 
 ## Page structure
@@ -135,6 +160,7 @@ Tall **9:16** spot figures need enough **paired prose** in the same `.ep-pair`. 
 - [ ] Every magazine image in an `.ep-pair` with matching copy.
 - [ ] ≤4 section `h2`s; left-aligned; mix-ups only as `.ep-myth`.
 - [ ] EN + 中文 in sync on all new/edited nodes.
+- [ ] Em dashes: `data-en` uses spaced ` — `; `data-zh` uses spaced ` —— ` (no tight doubles, no ` —  — `).
 - [ ] `.ep-abilities` (if used) is keyword strip, not button pills.
 - [ ] At most one `.nf-note`; width via `.ep-flow-col` when floated beside art.
 - [ ] No copied reference assets; WebP in `magazine/` folder.
