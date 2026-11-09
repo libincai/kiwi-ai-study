@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<!--
+  Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
+
+  Visual reference: math/number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+
+  HOW TO USE
+  1. Copy to target path (e.g. math/number-families.html, math/car-journey.html).
+  2. body.topic-page + main.topic-main — no primary nav item active.
+  3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
+  4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
+  5. Kicker = section path; subtitle = short intro (≤2 lines); longer copy goes in body .nf-lead / article.
+  6. Fallback .page-back-wrap → parent category; drive-breadcrumb.js replaces it with full trail.
+  7. Paste unique content between LEVEL-4 BODY markers.
+
+  Levels 2–3 use the blue-gold compact banner — not this template.
+-->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Greatest Common Factor (GCF) | Kiwi 爱AI Study</title>
+<meta content="Learn Greatest Common Factor (GCF) in the KIWI 爱AI Study mathematical thinking library." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
+<style>
+/* Example topic content tokens (Number Families pattern) — trim or extend per page */
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
+@media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}}
+  
+.word-topic{max-width:1040px;margin:28px auto}.topic-intro{line-height:1.8;margin:0 0 20px}.lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}.lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}.lesson-card summary::after{content:'+';font-size:25px;color:#1768b2}.lesson-card[open] summary::after{content:'−'}.lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}.lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}.lesson-card-content h3{color:#153d70;font-size:17px;margin:20px 0 8px}.word-figure{display:block;max-width:100%;height:auto;margin:12px auto}.math-expression{font-family:Cambria Math,serif;white-space:pre-wrap}.lesson-card p{margin:10px 0}@media(max-width:600px){.lesson-card summary{padding:15px;font-size:16px}.lesson-card-content{padding:12px 16px}}
+
+/* Advanced GCF methods: explanatory introduction and two independent panels */
+.kiwi-topic-article .kiwi-advanced-intro{margin:24px 0 18px;line-height:1.75}
+.kiwi-topic-article .kiwi-advanced-intro h3{color:#153d70;font-size:20px;margin:0 0 12px}
+.kiwi-topic-article .kiwi-method-card{margin:14px 0}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math{display:flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;width:100%!important;max-width:100%!important;overflow:visible!important;box-sizing:border-box}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math math{display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:4.7rem!important;margin:.35rem 0 1.2rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li{list-style:decimal outside!important;text-align:left!important;padding-left:.35rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li p{display:inline!important;margin:0!important;text-align:left!important;font:inherit!important}
+@media(max-width:600px){.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:3.8rem!important}}
+
+</style>
+<style>.chapter-topic-nav{margin:24px 0;padding:16px 18px;border:1px solid #dce6f1;border-radius:14px;background:#f8fbff}.chapter-topic-nav p{margin:0 0 10px;font-weight:800;color:#153d70}.chapter-topic-links{display:flex;flex-wrap:wrap;gap:9px}.chapter-topic-links a{padding:9px 12px;border:1px solid #d3e2f4;border-radius:9px;color:#1768b2;text-decoration:none;font-size:14px;font-weight:700;background:#fff}.chapter-topic-links a[aria-current="page"]{background:#1768b2;color:#fff;border-color:#1768b2}</style><style>
+/* KIWI Level 4: category in banner, document-style topic navigation */
+.kiwi-learning-layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,1fr);gap:30px;align-items:start;max-width:1160px;margin:28px auto 50px}
+.kiwi-topic-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px}
+.kiwi-topic-sidebar h2{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#54708e;margin:0 8px 12px}
+.kiwi-topic-sidebar a{display:block;padding:12px 13px;color:#194a81;text-decoration:none;font-size:14px;line-height:1.5;border-radius:9px;overflow-wrap:break-word}
+.kiwi-topic-sidebar a:hover,.kiwi-topic-sidebar a:focus-visible{background:#e8f2fc;outline-offset:2px}
+.kiwi-topic-sidebar a[aria-current=page]{background:#dcecff;color:#103c74;font-weight:750;border-left:3px solid #1768b2}
+.kiwi-topic-sidebar .kiwi-sidebar-back{margin-top:12px;padding-top:16px;border-top:1px solid #dce7f3;font-size:13px}
+.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.5vw,31px);line-height:1.25;color:#153d70;margin:2px 0 20px}
+.kiwi-topic-article .word-topic{max-width:100%;margin:0}.kiwi-topic-article .lesson-card{max-width:100%}
+@media(max-width:760px){.kiwi-learning-layout{display:block;margin:20px auto}.kiwi-topic-sidebar{position:static;margin-bottom:24px;padding:12px}.kiwi-topic-sidebar h2{margin:2px 8px 6px}.kiwi-topic-sidebar a{padding:9px 12px}.kiwi-current-topic{margin:0 0 16px}}
+</style><style>
+/* Topic navigation and professional mathematics typography */
+.kiwi-topic-sidebar{padding-top:14px}
+.kiwi-topic-article .word-topic{line-height:1.75}
+.kiwi-topic-article .topic-intro{line-height:1.75}
+.kiwi-topic-article .kiwi-formula-row{display:block;text-align:center;margin:18px auto 22px;padding:5px 10px;max-width:100%;overflow-x:auto;font-family:"Cambria Math", "STIX Two Math", serif;font-size:1.12rem;line-height:1.75}
+.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-display-math{display:block;text-align:center;margin:16px auto;max-width:100%;overflow-x:auto;font-size:1.08em}
+.kiwi-topic-article .lesson-card-content p,.kiwi-topic-article .topic-intro p{margin:12px 0}
+.kiwi-topic-article .lesson-card-content ul,.kiwi-topic-article .topic-intro ul{padding-left:25px}
+.kiwi-topic-article .lesson-card-content li,.kiwi-topic-article .topic-intro li{margin:7px 0}
+.kiwi-topic-article .lesson-card-content blockquote{border-left:3px solid #d3e5f6;padding-left:15px;margin:14px 0;color:#334e68}
+.kiwi-topic-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:18px 0}
+.kiwi-topic-article th,.kiwi-topic-article td{border:1px solid #dce7f3;padding:8px 12px}
+.kiwi-topic-article .lesson-card-content img{max-width:100%;height:auto;display:block;margin:15px auto}
+@media(max-width:760px){.kiwi-topic-article .kiwi-formula-row{font-size:1rem}}
+</style><style>
+/* Word-to-web math and insight panel cleanup */
+.kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
+.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
+.kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
+.kiwi-topic-article .kiwi-insight-body ul{padding-left:22px;margin:12px 0}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row,.kiwi-topic-article .kiwi-insight-body math[display="block"]{text-align:center}
+.kiwi-topic-article .kiwi-formula-row{list-style:none}
+@media(max-width:600px){.kiwi-topic-article .kiwi-insight-panel{padding:14px 16px}}
+</style><style>
+/* KIWI mathematical equation steps: remove bullet markers without altering genuine teaching lists. */
+.kiwi-topic-article li.kiwi-equation-list-item{list-style-type:none!important;list-style-image:none!important;position:relative}
+.kiwi-topic-article li.kiwi-equation-list-item::marker{content:""!important}
+.kiwi-topic-article li.kiwi-equation-list-item::before{content:none!important}
+.kiwi-topic-article li.kiwi-equation-list-item>p{margin:10px 0;text-align:center}
+.kiwi-topic-article li.kiwi-equation-list-item>p math{margin-left:auto;margin-right:auto}
+.kiwi-topic-article .kiwi-insight-panel{background:#fff9ec!important;border-color:#f2d79c!important;border-left-color:#dfac49!important;color:#6b4b22!important}
+.kiwi-topic-article .kiwi-insight-header{color:#865915!important}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row{text-align:center}
+</style><style id="kiwi-gcf-notation-fix">
+/* Examples are a semantic list, not centered derivation blocks. */
+.kiwi-topic-article .kiwi-gcf-example-list{list-style:disc outside;padding-left:1.7rem;margin:12px 0 24px;}
+.kiwi-topic-article .kiwi-gcf-example-list li{display:list-item;list-style-type:disc;text-align:left;margin:9px 0;padding-left:5px;}
+.kiwi-topic-article .kiwi-gcf-example-list math{display:inline!important;overflow:visible!important;max-width:none!important;vertical-align:middle;}
+/* Remove native MathML vertical scroll controls; formulas remain centered. */
+.kiwi-topic-article math,.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-formula-row{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;scrollbar-width:none;}
+.kiwi-topic-article math::-webkit-scrollbar,.kiwi-topic-article .kiwi-formula-row::-webkit-scrollbar{display:none;}
+.kiwi-topic-article .kiwi-formula-row{text-align:center;}
+.kiwi-topic-article .kiwi-formula-row math[display="block"]{display:block;margin-inline:auto;text-align:center;}
+</style><style>
+/* GCF worked example: clear example indent and numbered procedure */
+.kiwi-example-list{padding-left:2.2rem;margin:0.6rem 0 1rem;list-style:disc outside}
+.kiwi-example-list li{padding-left:.25rem;line-height:1.7}
+.kiwi-numbered-steps{list-style:decimal outside;padding-left:2.4rem;margin:1rem 0 1.25rem}
+.kiwi-numbered-steps>li{padding-left:.3rem;margin:.45rem 0;line-height:1.6}
+.kiwi-numbered-steps>li::marker{font-weight:700;color:#111111}
+.kiwi-numbered-steps .kiwi-formula-row{margin:.15rem 0!important;text-align:center!important}
+.kiwi-numbered-steps math[display="block"]{display:block!important;margin:0 auto!important;text-align:center!important}
+</style><style id="kiwi-gcf-final-layout">
+/* Consistent one-level indentation for bullet and numbered lists. */
+.kiwi-topic-article ul.kiwi-example-list,
+.kiwi-topic-article ul.kiwi-gcf-example-list,
+.kiwi-topic-article ol.kiwi-numbered-steps { margin: .65rem 0 1.2rem 0 !important; padding-left: 2.5rem !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ul.kiwi-example-list > li,
+.kiwi-topic-article ul.kiwi-gcf-example-list > li { padding-left:.4rem !important; margin:.45rem 0 !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li { list-style-type:decimal !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li p.kiwi-step-text { display:inline !important; margin:0 !important; padding:0 !important; text-align:left !important; font:inherit !important; }
+.kiwi-topic-article .kiwi-gcd-display { display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; margin:1rem auto 1.3rem !important; padding:0 !important; border:0 !important; }
+.kiwi-topic-article .kiwi-gcd-display math { display:block !important; width:max-content !important; max-width:100%; margin:0 auto !important; text-align:center !important; overflow:visible !important; }
+</style><style>
+/* Word-to-Web: nested worked examples (GCF Division Method) */
+.kiwi-example-block { margin: .5rem 0 1.2rem 1.5rem; text-align: left; }
+.kiwi-example-question { margin: .35rem 0 .55rem; }
+.kiwi-example-steps { margin: .4rem 0 .45rem 2rem; padding-left: 1.25rem; list-style-type: decimal; }
+.kiwi-example-steps li { padding-left: .25rem; margin: .45rem 0; text-align: left; }
+.kiwi-example-steps li::marker { color: #111111; font-weight: 700; }
+.kiwi-example-explanation, .kiwi-example-answer { margin: .6rem 0 .6rem 2rem; text-align: left; }
+@media (max-width: 600px) { .kiwi-example-block { margin-left: .7rem; } .kiwi-example-steps { margin-left: 1rem; } .kiwi-example-explanation, .kiwi-example-answer { margin-left: 1rem; } }
+</style><style>
+/* KIWI Word-to-Web standards: math lesson lists (2026-11-09) */
+.kiwi-topic-article ol li::marker,
+.kiwi-topic-article .kiwi-numbered-steps > li::marker,
+.kiwi-topic-article .kiwi-example-steps > li::marker,
+.kiwi-topic-article .kiwi-method-card ol li::marker {
+  color: #111 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ol.kiwi-example-steps > li {font-weight:400; text-align:left;}
+/* Avoid centering calculation text within numbered steps. */
+.kiwi-topic-article ol.kiwi-numbered-steps > li > p.kiwi-step-text {font-weight:400!important;text-align:left!important;}
+</style>
+<style id="kiwi-shared-math-example-standards">
+/* KIWI shared Word-to-Web: formulas and worked examples (2026-11-09). */
+.kiwi-topic-article p.kiwi-formula-row {display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;box-sizing:border-box!important;overflow:visible!important;margin:1rem auto!important;padding:.25rem 0!important;}
+.kiwi-topic-article p.kiwi-formula-row > math[display="block"] {display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-scroll {overflow-x:auto!important;overflow-y:hidden!important;max-width:100%;}
+.kiwi-topic-article .kiwi-example-standard {margin:.35rem 0 1rem!important;padding:0!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question {margin:.35rem 0 .4rem 3ch!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps {margin:.35rem 0 .6rem 6ch!important;padding:0!important;list-style:decimal inside!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li {display:list-item!important;list-style:decimal inside!important;margin:.3rem 0!important;padding:0!important;font-weight:400!important;color:#111!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
+.kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
+</style><style>
+/* KIWI Word-to-Web: unified display math layout (2026-11) */
+.kiwi-topic-article math[display="block"], .kiwi-topic-article math.math-display, .kiwi-topic-article math.kiwi-display-math {display:block!important;text-align:center!important;margin:0 auto!important;max-width:100%!important;overflow:visible!important;overflow-y:visible!important;}
+.kiwi-topic-article .kiwi-math-block {display:block!important;width:100%!important;max-width:100%!important;text-align:center!important;margin:1.1rem auto!important;padding:.1rem 0!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;}
+.kiwi-topic-article .kiwi-math-block::-webkit-scrollbar {height:0!important;width:0!important;display:none!important;}
+.kiwi-topic-article .kiwi-math-block > math {display:block!important;width:max-content!important;max-width:none!important;margin:0 auto!important;text-align:center!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-block > p {text-align:center!important;margin:0!important;}
+.kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
+.kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
+</style></head>
+<body class="topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="../math/index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="topic-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Mathematical Thinking" data-page-back="" data-zh="← 返回数学思维" href="mathematical-thinking.html">← Back to Mathematical Thinking</a>
+</div>
+<section aria-label="Page introduction" class="nf-hero topic-banner">
+<p class="topic-banner-kicker" data-en="MATHEMATICAL THINKING" data-zh="数学思维">MATHEMATICAL THINKING</p>
+<h1 data-en="Number Skills &amp; Operations" data-zh="数的技能与运算">Number Skills &amp; Operations</h1>
+<p class="topic-banner-subtitle" data-en="Explore number relationships, operations, and practical calculation strategies." data-zh="探索数的关系、运算方法与实用计算策略。">Explore number relationships, operations, and practical calculation strategies.</p>
+</section>
+<!-- LEVEL-4 BODY START -->
+<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a aria-current="page" data-en="Greatest Common Factor (GCF)" data-zh="最大公因数" href="gcf.html">Greatest Common Factor (GCF)</a><a data-en="Unit Conversions and Rates" data-zh="单位换算与比率" href="unit-conversions-and-rates.html">Unit Conversions and Rates</a><a data-en="Mental Squaring and Square Rooting" data-zh="心算平方与平方根" href="mental-squaring-and-square-rooting.html">Mental Squaring and Square Rooting</a><a class="kiwi-sidebar-back" data-en="← All Mathematical Thinking" data-zh="← 返回数学思维目录" href="mathematical-thinking.html">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Greatest Common Factor (GCF)" data-zh="最大公因数">Greatest Common Factor (GCF)</h2><section class="nf-section word-topic"><div class="topic-intro"><p>The Greatest Common Factor (GCF) of two or more whole numbers is the
+<strong>largest number</strong> that divides all of them <strong>without
+leaving a remainder</strong>.</p><p>Examples:</p><ul class="kiwi-gcf-example-list"><li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">GCF</mi><mo>(</mo><mn>8</mn><mo>,</mo><mn>12</mn><mo>)</mo><mo>=</mo><mn>4</mn></mrow></math></li><li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">GCF</mi><mo>(</mo><mn>18</mn><mo>,</mo><mn>24</mn><mo>)</mo><mo>=</mo><mn>6</mn></mrow></math></li><li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">GCF</mi><mo>(</mo><mn>20</mn><mo>,</mo><mn>50</mn><mo>)</mo><mo>=</mo><mn>10</mn></mrow></math></li></ul><p>In higher mathematics, the same idea is called the <strong>Greatest
+Common Divisor (GCD)</strong>. Both mean the <strong>exact same
+thing</strong>.</p><p>In the examples below, you will see <strong>GCD</strong> inside math
+formula, even though we use <strong>GCF</strong> in the text for
+learning.</p></div><div class="kiwi-advanced-intro"><h3>Advanced Skills</h3><p>The basic methods work well for small numbers, but they become slow
+or impractical when the numbers get large.</p><p>Examples:</p><ul>
+<li><p>Listing all factors of numbers like 840 and 1260 would take a
+long time.</p></li>
+<li><p>Prime factorization becomes difficult when numbers are big or
+have many factors.</p></li>
+<li><p>Checking factors one by one is not efficient for larger
+values.</p></li>
+</ul><p>To handle bigger numbers quickly, mathematicians use faster and more
+powerful methods such as the <strong>Subtraction Method</strong> and the
+<strong>Division Method (Euclidean Algorithm)</strong>. These advanced
+skills help you find the GCF without listing dozens of factors or
+building large factor trees.</p></div><details class="lesson-card kiwi-method-card" open=""><summary>Subtraction Method</summary><div class="lesson-card-content"><p>This method uses the idea
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">gcd</mi><annotation encoding="application/x-tex">\gcd</annotation></semantics></math>
+is GCF):</p><div class="kiwi-formula-row kiwi-math-block kiwi-gcd-display kiwi-centered-math"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">gcd</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>=</mo><mi mathvariant="normal">gcd</mi><mo>(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow></math></div><p>Keep subtracting the smaller number from the larger one until both
+numbers match.</p><p>Example:</p><div class="kiwi-example-block kiwi-example-standard"><p class="kiwi-single-example">Find GCF(48, 18).</p><ol class="kiwi-numbered-steps kiwi-example-steps"><li><p class="kiwi-step-text">48−18=30 → (30, 18)</p></li><li><p class="kiwi-step-text">30−18=12 → (18, 12)</p></li><li><p class="kiwi-step-text">18−12=6 → (12, 6)</p></li><li><p class="kiwi-step-text">12−6=6 → both numbers match</p></li></ol><blockquote class="kiwi-example-answer">
+<p>∴ GCF(48, 18) = 6.</p>
+</blockquote></div><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">History of the Subtraction Method</span></div><div class="kiwi-insight-body">
+<p>The subtraction method for finding the GCF is actually <strong>very
+old</strong> — it appeared in both <strong>ancient China</strong> and
+<strong>ancient Greece</strong>, developed independently.</p>
+<ul>
+<li><p>In <strong>ancient China</strong>, the idea shows up in the
+classic math text 《九章算术》 (The Nine Chapters on the Mathematical
+Art), written around 200 BCE to 100 CE. Chinese mathematicians used
+repeated subtraction to simplify ratios and find common measures —
+exactly the same idea as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gcd(a,b) = gcd(a - b,b)</annotation></semantics></math>.</p></li>
+<li><p>In <strong>ancient Greece</strong>, around the same time (300
+BCE), the mathematician <strong>Euclid</strong> described the same
+method in <strong>Elements</strong>, Book VII. Because division was
+difficult back then, repeated subtraction was the easiest way to find
+the greatest common measure.</p></li>
+</ul>
+<p>So, the simple subtraction method has a long history — used by early
+mathematicians in both China and Greece more than <strong>2,000 years
+ago</strong>!</p></div></aside></div></details><details class="lesson-card kiwi-method-card"><summary>Division Method (Euclidean Algorithm)</summary><div class="lesson-card-content"><p>This method is also called <em>Euclidean Algorithm</em>. It is the
+fastest method for large numbers.</p><p>The Subtraction Method works, but it becomes slow when the numbers
+are far apart.</p><p>For example, to find GCF(84, 30) using subtraction:</p><p class="kiwi-formula-row kiwi-centered-math">84−30=54</p><p class="kiwi-formula-row kiwi-centered-math">54−30=24</p><p class="kiwi-formula-row kiwi-centered-math">30−24=6</p><p class="kiwi-formula-row kiwi-centered-math">24−6=18</p><p class="kiwi-formula-row kiwi-centered-math">18−6=12</p><p class="kiwi-formula-row kiwi-centered-math">12−6=6</p><p>You must keep subtracting many times to reach the answer.</p><p>If the numbers were even larger — like 840 and 126 — this method
+would take many more steps.</p><p>Because <strong>subtraction</strong> only <strong>reduces the number
+little by little</strong>, mathematicians created a faster method:
+<strong>division</strong>.</p><p>Division jumps straight to the remainder in one step:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>84</mn><mo>÷</mo><mn>30</mn><mo>=</mo><mn>2</mn><mspace width="0.222em"></mspace><mi>r</mi><mi>e</mi><mi>m</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>r</mi><mspace width="0.222em"></mspace><mn>24</mn></mrow><annotation encoding="application/x-tex">84 \div 30 = 2\ remainder\ 24</annotation></semantics></math>.</p><p>This reduces the problem immediately from (84, 30) to (30, 24),
+skipping all the repeated subtraction.</p><p>Therefore, the Division Method is the quickest and most powerful way
+to find the GCF, especially for large numbers.</p><p>Rule:</p><div class="kiwi-formula-row kiwi-math-block kiwi-gcd-display kiwi-centered-math"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mo>,</mo><mi>r</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gcd(a,b) = gcd(b,r)</annotation></semantics></math></div><p>where <strong>r</strong> is the remainder when <strong>a</strong> is
+divided by <strong>b</strong>. Repeat this process until the remainder
+becomes 0.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">gcd</mi><annotation encoding="application/x-tex">\gcd</annotation></semantics></math>
+is GCF.</p><p>Example:</p><div class="kiwi-example-block kiwi-example-standard"><p class="kiwi-example-question">Find <span class="kiwi-inline-math">GCF(84, 30)</span>.</p><ol class="kiwi-example-steps"><li>84 ÷ 30 = 2 remainder 24</li><li>30 ÷ 24 = 1 remainder 6</li><li>24 ÷ 6 = 4 remainder 0</li></ol><p class="kiwi-example-explanation">When the remainder is 0, the last divisor is the GCF.</p><p class="kiwi-example-answer">∴ GCF(84, 30) = 6.</p></div><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">History of the Division Method</span></div><div class="kiwi-insight-body">
+<p>The division method for finding the GCF is a faster version of the
+ancient subtraction method .</p>
+<ul>
+<li><p>Around <strong>300 BCE</strong>, the Greek mathematician
+<strong>Euclid</strong> discovered that you could jump straight to the
+answer by using division. He wrote this idea in
+<strong>Elements</strong>, Book VII:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mo>,</mo><mo>;</mo><mi>a</mi><mi>b</mi><mspace width="0.222em"></mspace><mi>m</mi><mi>o</mi><mi>d</mi><mspace width="0.222em"></mspace><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gcd(a,b) = gcd(b,;ab\ mod\ b)</annotation></semantics></math>.</p></li>
+<li><p>In <strong>ancient China</strong>, mathematicians also used
+division to simplify ratios and fractions, especially in 《九章算术》.
+The logic behind it is the same idea of reducing numbers using
+division.</p></li>
+<li><p>Over time, Euclid’s division method became known as the
+<strong>Euclidean Algorithm</strong>. Modern computers still use it
+today because it is extremely fast and efficient.</p></li>
+</ul>
+<p>So, the division method you learn in class is not new — it is a
+powerful idea that has been used for more than <strong>2,000
+years</strong>, and it is still the fastest way to find the
+GCF!</p></div></aside><p><strong>Why Does the Division Method Work?</strong></p><p>When we divide
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">a\ </annotation></semantics></math>by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+we can write:</p><div class="kiwi-formula-row kiwi-math-block kiwi-gcd-display kiwi-centered-math"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi><mi>q</mi><mo>+</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">a = bq + r</annotation></semantics></math></div><p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+is the quotient and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+is the remainder.</p><p>Rearranging gives:</p><div class="kiwi-formula-row kiwi-math-block kiwi-gcd-display kiwi-centered-math"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>a</mi><mo>−</mo><mi>b</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">r = a - bq</annotation></semantics></math></div><p>Any number that divides both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+must also divide
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>,
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>a</mi><mo>−</mo><mi>b</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">r = a - bq</annotation></semantics></math>.</p><p>Similarly, any number that divides both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+must also divide
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>,
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi><mi>q</mi><mo>+</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">a = bq + r</annotation></semantics></math>.</p><p>Therefore,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+have exactly the same common factors as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>.
+In particular,</p><div class="kiwi-formula-row kiwi-math-block kiwi-gcd-display kiwi-centered-math"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mrow><mi>G</mi><mi>C</mi><mi>F</mi></mrow><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mrow><mi>G</mi><mi>C</mi><mi>F</mi></mrow><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mo>,</mo><mi>r</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow></menclose><annotation encoding="application/x-tex">\boxed{{GCF}(a,b) = {GCF}(b,r)}</annotation></semantics></math></div><p>We can repeat this process, replacing the larger number with the
+remainder each time. When the remainder becomes zero, the last non-zero
+remainder is the GCF.</p></div></details></section></article></div>
+<!-- LEVEL-4 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+</body>
+</html>

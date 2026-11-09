@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+
+<!--
+  Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
+
+  Visual reference: math/number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+
+  HOW TO USE
+  1. Copy to target path (e.g. math/number-families.html, math/car-journey.html).
+  2. body.topic-page + main.topic-main — no primary nav item active.
+  3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
+  4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
+  5. Kicker = section path; subtitle = short intro (≤2 lines); longer copy goes in body .nf-lead / article.
+  6. Fallback .page-back-wrap → parent category; drive-breadcrumb.js replaces it with full trail.
+  7. Paste unique content between LEVEL-4 BODY markers.
+
+  Levels 2–3 use the blue-gold compact banner — not this template.
+-->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mental Squaring and Square Rooting | Kiwi 爱AI Study</title>
+<meta content="Learn Mental Squaring and Square Rooting in the KIWI 爱AI Study mathematical thinking library." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
+<style>
+/* Example topic content tokens (Number Families pattern) — trim or extend per page */
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
+@media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}}
+  
+.word-topic{max-width:1040px;margin:28px auto}.topic-intro{line-height:1.8;margin:0 0 20px}.lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}.lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}.lesson-card summary::after{content:'+';font-size:25px;color:#1768b2}.lesson-card[open] summary::after{content:'−'}.lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}.lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}.lesson-card-content h3{color:#153d70;font-size:17px;margin:20px 0 8px}.word-figure{display:block;max-width:100%;height:auto;margin:12px auto}.math-expression{font-family:Cambria Math,serif;white-space:pre-wrap}.lesson-card p{margin:10px 0}@media(max-width:600px){.lesson-card summary{padding:15px;font-size:16px}.lesson-card-content{padding:12px 16px}}
+</style>
+<style>.chapter-topic-nav{margin:24px 0;padding:16px 18px;border:1px solid #dce6f1;border-radius:14px;background:#f8fbff}.chapter-topic-nav p{margin:0 0 10px;font-weight:800;color:#153d70}.chapter-topic-links{display:flex;flex-wrap:wrap;gap:9px}.chapter-topic-links a{padding:9px 12px;border:1px solid #d3e2f4;border-radius:9px;color:#1768b2;text-decoration:none;font-size:14px;font-weight:700;background:#fff}.chapter-topic-links a[aria-current="page"]{background:#1768b2;color:#fff;border-color:#1768b2}</style><style>
+/* KIWI Level 4: category in banner, document-style topic navigation */
+.kiwi-learning-layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,1fr);gap:30px;align-items:start;max-width:1160px;margin:28px auto 50px}
+.kiwi-topic-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px}
+.kiwi-topic-sidebar h2{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#54708e;margin:0 8px 12px}
+.kiwi-topic-sidebar a{display:block;padding:12px 13px;color:#194a81;text-decoration:none;font-size:14px;line-height:1.5;border-radius:9px;overflow-wrap:break-word}
+.kiwi-topic-sidebar a:hover,.kiwi-topic-sidebar a:focus-visible{background:#e8f2fc;outline-offset:2px}
+.kiwi-topic-sidebar a[aria-current=page]{background:#dcecff;color:#103c74;font-weight:750;border-left:3px solid #1768b2}
+.kiwi-topic-sidebar .kiwi-sidebar-back{margin-top:12px;padding-top:16px;border-top:1px solid #dce7f3;font-size:13px}
+.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.5vw,31px);line-height:1.25;color:#153d70;margin:2px 0 20px}
+.kiwi-topic-article .word-topic{max-width:100%;margin:0}.kiwi-topic-article .lesson-card{max-width:100%}
+@media(max-width:760px){.kiwi-learning-layout{display:block;margin:20px auto}.kiwi-topic-sidebar{position:static;margin-bottom:24px;padding:12px}.kiwi-topic-sidebar h2{margin:2px 8px 6px}.kiwi-topic-sidebar a{padding:9px 12px}.kiwi-current-topic{margin:0 0 16px}}
+</style><style>
+/* Topic navigation and professional mathematics typography */
+.kiwi-topic-sidebar{padding-top:14px}
+.kiwi-topic-article .word-topic{line-height:1.75}
+.kiwi-topic-article .topic-intro{line-height:1.75}
+.kiwi-topic-article .kiwi-formula-row{display:block;text-align:center;margin:18px auto 22px;padding:5px 10px;max-width:100%;overflow-x:auto;font-family:"Cambria Math", "STIX Two Math", serif;font-size:1.12rem;line-height:1.75}
+.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-display-math{display:block;text-align:center;margin:16px auto;max-width:100%;overflow-x:auto;font-size:1.08em}
+.kiwi-topic-article .lesson-card-content p,.kiwi-topic-article .topic-intro p{margin:12px 0}
+.kiwi-topic-article .lesson-card-content ul,.kiwi-topic-article .topic-intro ul{padding-left:25px}
+.kiwi-topic-article .lesson-card-content li,.kiwi-topic-article .topic-intro li{margin:7px 0}
+.kiwi-topic-article .lesson-card-content blockquote{border-left:3px solid #d3e5f6;padding-left:15px;margin:14px 0;color:#334e68}
+.kiwi-topic-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:18px 0}
+.kiwi-topic-article th,.kiwi-topic-article td{border:1px solid #dce7f3;padding:8px 12px}
+.kiwi-topic-article .lesson-card-content img{max-width:100%;height:auto;display:block;margin:15px auto}
+@media(max-width:760px){.kiwi-topic-article .kiwi-formula-row{font-size:1rem}}
+</style><style>
+/* Word-to-web math and insight panel cleanup */
+.kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
+.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
+.kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
+.kiwi-topic-article .kiwi-insight-body ul{padding-left:22px;margin:12px 0}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row,.kiwi-topic-article .kiwi-insight-body math[display="block"]{text-align:center}
+.kiwi-topic-article .kiwi-formula-row{list-style:none}
+@media(max-width:600px){.kiwi-topic-article .kiwi-insight-panel{padding:14px 16px}}
+</style><style>
+/* KIWI mathematical equation steps: remove bullet markers without altering genuine teaching lists. */
+.kiwi-topic-article li.kiwi-equation-list-item{list-style-type:none!important;list-style-image:none!important;position:relative}
+.kiwi-topic-article li.kiwi-equation-list-item::marker{content:""!important}
+.kiwi-topic-article li.kiwi-equation-list-item::before{content:none!important}
+.kiwi-topic-article li.kiwi-equation-list-item>p{margin:10px 0;text-align:center}
+.kiwi-topic-article li.kiwi-equation-list-item>p math{margin-left:auto;margin-right:auto}
+.kiwi-topic-article .kiwi-insight-panel{background:#fff9ec!important;border-color:#f2d79c!important;border-left-color:#dfac49!important;color:#6b4b22!important}
+.kiwi-topic-article .kiwi-insight-header{color:#865915!important}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row{text-align:center}
+</style><style>
+/* KIWI Word-to-Web standards: math lesson lists (2026-11-09) */
+.kiwi-topic-article ol li::marker,
+.kiwi-topic-article .kiwi-numbered-steps > li::marker,
+.kiwi-topic-article .kiwi-example-steps > li::marker,
+.kiwi-topic-article .kiwi-method-card ol li::marker {
+  color: #111 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ol.kiwi-example-steps > li {font-weight:400; text-align:left;}
+/* Avoid centering calculation text within numbered steps. */
+.kiwi-topic-article ol.kiwi-numbered-steps > li > p.kiwi-step-text {font-weight:400!important;text-align:left!important;}
+</style>
+<style id="kiwi-shared-math-example-standards">
+/* KIWI shared Word-to-Web: formulas and worked examples (2026-11-09). */
+.kiwi-topic-article p.kiwi-formula-row {display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;box-sizing:border-box!important;overflow:visible!important;margin:1rem auto!important;padding:.25rem 0!important;}
+.kiwi-topic-article p.kiwi-formula-row > math[display="block"] {display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-scroll {overflow-x:auto!important;overflow-y:hidden!important;max-width:100%;}
+.kiwi-topic-article .kiwi-example-standard {margin:.35rem 0 1rem!important;padding:0!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question {margin:.35rem 0 .4rem 3ch!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps {margin:.35rem 0 .6rem 6ch!important;padding:0!important;list-style:decimal inside!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li {display:list-item!important;list-style:decimal inside!important;margin:.3rem 0!important;padding:0!important;font-weight:400!important;color:#111!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
+.kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
+</style><style>
+/* KIWI Word-to-Web: unified display math layout (2026-11) */
+.kiwi-topic-article math[display="block"], .kiwi-topic-article math.math-display, .kiwi-topic-article math.kiwi-display-math {display:block!important;text-align:center!important;margin:0 auto!important;max-width:100%!important;overflow:visible!important;overflow-y:visible!important;}
+.kiwi-topic-article .kiwi-math-block {display:block!important;width:100%!important;max-width:100%!important;text-align:center!important;margin:1.1rem auto!important;padding:.1rem 0!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;}
+.kiwi-topic-article .kiwi-math-block::-webkit-scrollbar {height:0!important;width:0!important;display:none!important;}
+.kiwi-topic-article .kiwi-math-block > math {display:block!important;width:max-content!important;max-width:none!important;margin:0 auto!important;text-align:center!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-block > p {text-align:center!important;margin:0!important;}
+.kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
+.kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
+</style></head>
+<body class="topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="../math/index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="topic-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Mathematical Thinking" data-page-back="" data-zh="← 返回数学思维" href="mathematical-thinking.html">← Back to Mathematical Thinking</a>
+</div>
+<section aria-label="Page introduction" class="nf-hero topic-banner">
+<p class="topic-banner-kicker" data-en="MATHEMATICAL THINKING" data-zh="数学思维">MATHEMATICAL THINKING</p>
+<h1 data-en="Number Skills &amp; Operations" data-zh="数的技能与运算">Number Skills &amp; Operations</h1>
+<p class="topic-banner-subtitle" data-en="Explore number relationships, operations, and practical calculation strategies." data-zh="探索数的关系、运算方法与实用计算策略。">Explore number relationships, operations, and practical calculation strategies.</p>
+</section>
+<!-- LEVEL-4 BODY START -->
+<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a data-en="Greatest Common Factor (GCF)" data-zh="最大公因数" href="gcf.html">Greatest Common Factor (GCF)</a><a data-en="Unit Conversions and Rates" data-zh="单位换算与比率" href="unit-conversions-and-rates.html">Unit Conversions and Rates</a><a aria-current="page" data-en="Mental Squaring and Square Rooting" data-zh="心算平方与平方根" href="mental-squaring-and-square-rooting.html">Mental Squaring and Square Rooting</a><a class="kiwi-sidebar-back" data-en="← All Mathematical Thinking" data-zh="← 返回数学思维目录" href="mathematical-thinking.html">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Mental Squaring and Square Rooting" data-zh="心算平方与平方根">Mental Squaring and Square Rooting</h2><section class="nf-section word-topic"><div class="topic-intro"><p>Squaring and rooting numbers doesn’t always require long
+multiplication or calculators. By identifying specific number ranges, we
+can use unique patterns to calculate results instantly.</p><p><strong>The Split-Digit Method:</strong> Most mental tricks involve
+calculating the first two digits and the last two digits separately,
+then joining them together.</p><p><strong>Range-Specific Shortcuts:</strong></p><p><strong>Squaring (90s):</strong> For a number 90+𝑛, the first two
+digits are 80+2𝑛 and the last two are (10−𝑛)2.</p><p>Example:</p><p class="kiwi-formula-row">92<sup>2</sup>→ (80+2×2) ‖ (10−2)<sup>2</sup>=8464.</p><p><strong>Hint</strong>: For mnemonics, 10−𝑛 can be called 𝑛’s
+10-friend.</p><p><strong>The 10-Friend:</strong> For any digit 𝑛, its “10-friend” is
+defined as the value 10−𝑛. These are pairs of numbers that sum exactly
+to 10 (e.g., 2 and 8 are 10-friends).</p><p><strong>Square Rooting (Inverse):</strong> Reverse the process by
+identifying the boundary hundreds and the “10-friend” of the last
+digit.</p><p>Example:</p><p>For √8464, it lies between 90<sup>2</sup>(8100) and
+100<sup>2</sup>(10000). Since it ends in 4, the root ends in 2 or its
+10-friend 8. Given the proximity to 8100, the answer is 92.</p><p><strong>Special Cases:</strong> Numbers ending in 5 or those between
+11–19 have their own “fast-track” rules that can be similarly inverted
+for quick rooting.</p></div><details class="lesson-card"><summary>Squaring Numbers Ending in 5</summary><div class="lesson-card-content"><p>If a number ends in <strong>5</strong>, we represent it as 10𝑎+5. The
+value <strong>a</strong> is the <strong>prefix</strong> and can be
+multiple digits (e.g., in 125, 𝑎=12). The shortcut for squaring it
+is:</p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mi>a</mi><mo>+</mo><mn>5</mn><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mrow><mo form="prefix" stretchy="true">[</mo><mi>a</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>+</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo form="postfix" stretchy="true">]</mo></mrow><mspace width="0.333em"></mspace><mrow><mo form="prefix" stretchy="true">|</mo><mo form="postfix" stretchy="true">|</mo></mrow><mspace width="0.333em"></mspace><msup><mn>5</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(10a + 5)^{2} = \left\lbrack a(a + 1) \right\rbrack\mspace{6mu}||\mspace{6mu} 5^{2}</annotation></semantics></math></div><p>Alternatively, we can write:</p><p><em>The Successor Rule</em></p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mi>a</mi><mo>+</mo><mn>5</mn><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><munder><mover><mi>︸</mi><mrow><mi>a</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>+</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow></mrow></mover><mtext mathvariant="normal">First part</mtext></munder><mspace width="1.0em"></mspace><munder><mover><mi>︸</mi><msup><mn>5</mn><mn>2</mn></msup></mover><mtext mathvariant="normal">Append 25</mtext></munder></mrow><annotation encoding="application/x-tex">(10a + 5)^{2} = \underset{\text{First~part}}{\overset{a(a + 1)}{︸}}\quad\underset{\text{Append~25}}{\overset{5^{2}}{︸}}</annotation></semantics></math></div><p>Examples:</p><blockquote>
+<p><strong>35<sup>2</sup></strong></p>
+</blockquote><ul>
+<li class="kiwi-equation-list-item"><div class="kiwi-formula-row kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">a = 3</annotation></semantics></math></div></li>
+<li class="kiwi-equation-list-item"><div class="kiwi-formula-row kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>×</mo><mrow><mo form="prefix" stretchy="true">(</mo><mn>3</mn><mo>+</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>3</mn><mo>×</mo><mn>4</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">3 \times (3 + 1) = 3 \times 4 = 12</annotation></semantics></math></div></li>
+<li><p>Append
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>5</mn><mn>2</mn></msup><annotation encoding="application/x-tex">5^{2}</annotation></semantics></math>:</p></li>
+<li class="kiwi-equation-list-item"><p class="kiwi-formula-row">=1,225</p></li>
+</ul><blockquote>
+<p><strong>75<sup>2</sup></strong></p>
+</blockquote><ul>
+<li class="kiwi-equation-list-item"><div class="kiwi-formula-row kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">a = 7</annotation></semantics></math></div></li>
+<li class="kiwi-equation-list-item"><div class="kiwi-formula-row kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>×</mo><mrow><mo form="prefix" stretchy="true">(</mo><mn>7</mn><mo>+</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>7</mn><mo>×</mo><mn>8</mn><mo>=</mo><mn>56</mn></mrow><annotation encoding="application/x-tex">7 \times (7 + 1) = 7 \times 8 = 56</annotation></semantics></math></div></li>
+<li><p>Append
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>5</mn><mn>2</mn></msup><annotation encoding="application/x-tex">5^{2}</annotation></semantics></math>:</p></li>
+<li class="kiwi-equation-list-item"><p class="kiwi-formula-row">=5,625</p></li>
+</ul><blockquote>
+<p><strong>125<sup>2</sup></strong></p>
+</blockquote><ul>
+<li class="kiwi-equation-list-item"><div class="kiwi-formula-row kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">a = 12</annotation></semantics></math></div></li>
+<li class="kiwi-equation-list-item"><div class="kiwi-formula-row kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn><mo>×</mo><mrow><mo form="prefix" stretchy="true">(</mo><mn>12</mn><mo>+</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>12</mn><mo>×</mo><mn>13</mn><mo>=</mo><mn>156</mn></mrow><annotation encoding="application/x-tex">12 \times (12 + 1) = 12 \times 13 = 156</annotation></semantics></math></div></li>
+<li><p>Append
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>5</mn><mn>2</mn></msup><annotation encoding="application/x-tex">5^{2}</annotation></semantics></math>:</p></li>
+<li class="kiwi-equation-list-item"><p class="kiwi-formula-row">=15,625</p></li>
+</ul><blockquote>
+<p><strong>205<sup>2</sup></strong></p>
+</blockquote><ul>
+<li class="kiwi-equation-list-item"><div class="kiwi-formula-row kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">a = 20</annotation></semantics></math></div></li>
+<li class="kiwi-equation-list-item"><div class="kiwi-formula-row kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn><mo>×</mo><mrow><mo form="prefix" stretchy="true">(</mo><mn>20</mn><mo>+</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>20</mn><mo>×</mo><mn>21</mn><mo>=</mo><mn>420</mn></mrow><annotation encoding="application/x-tex">20 \times (20 + 1) = 20 \times 21 = 420</annotation></semantics></math></div></li>
+<li><p>Append
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>5</mn><mn>2</mn></msup><annotation encoding="application/x-tex">5^{2}</annotation></semantics></math>:</p></li>
+<li class="kiwi-equation-list-item"><p class="kiwi-formula-row">=42,025</p></li>
+</ul><p>This works <strong>EVERY</strong> time. No exceptions.</p></div></details><details class="lesson-card"><summary>Square Rooting Numbers
+Ending in 25</summary><div class="lesson-card-content"><p>If a number ends in <strong>25</strong>, you can find its square root
+mentally by reversing the “<em>Squaring Numbers Ending in 5</em>”
+rule.</p><h4 id="the-method">The method</h4><p>To find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+is a perfect square ending in 25:</p><ol type="1">
+<li><p><strong>Identify the suffix</strong>: The last two digits are 25,
+so the square root ends in 5.</p></li>
+<li><p><strong>Find the prefix</strong>: Remove the last two digits to
+obtain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+Find two consecutive whole numbers,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a + 1</annotation></semantics></math>,
+whose product is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.</p></li>
+<li><p>Combine: The square root is the number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+followed by 5.</p></li>
+</ol><p>Examples:</p><blockquote>
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>625</mn></msqrt><annotation encoding="application/x-tex">\sqrt{625}</annotation></semantics></math></div>
+</blockquote><ul>
+<li><p>Remove 25:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">X = 6</annotation></semantics></math>.</p></li>
+<li><p>Find consecutive numbers:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">2 \times 3 = 6</annotation></semantics></math>.</p></li>
+<li><p>Append 5 to 2:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msqrt><mn>625</mn></msqrt><mo>=</mo><mn>25</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{\sqrt{625} = 25}</annotation></semantics></math>
+.</p></li>
+</ul><blockquote>
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2025</mn></msqrt><annotation encoding="application/x-tex">\sqrt{2025}</annotation></semantics></math></div>
+</blockquote><ul>
+<li><p>Remove 25:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">X = 20</annotation></semantics></math>.</p></li>
+<li><p>Find consecutive numbers:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>×</mo><mn>5</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">4 \times 5 = 20</annotation></semantics></math>.</p></li>
+<li><p>Append 5 to 4:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msqrt><mn>2025</mn></msqrt><mo>=</mo><mn>45</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{\sqrt{2025} = 45}</annotation></semantics></math>
+.</p></li>
+</ul><h4 id="why-it-works">Why it works</h4><p>A number ending in 5 can be written as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mi>a</mi><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">10a + 5</annotation></semantics></math>.
+Squaring it gives</p><blockquote>
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mi>a</mi><mo>+</mo><mn>5</mn><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>100</mn><mi>a</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>+</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>+</mo><mn>25</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">(10a + 5)^{2} = 100a(a + 1) + 25.</annotation></semantics></math></div>
+</blockquote><p>Therefore, the digits before 25 represent
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>+</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">a(a + 1)</annotation></semantics></math>,
+the product of two consecutive whole numbers.</p></div></details><details class="lesson-card"><summary>Squaring Numbers
+Near 50 (Specific Strategies)</summary><div class="lesson-card-content"><p>These strategies use the <strong>last digit</strong> of the number to
+find the result instantly. They focus on the “Last Digit” (𝑥).</p><h4 id="the-40s-range">The 40s range</h4><p>Let the number be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>40</mn><mo>+</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">40 + x</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is the last digit
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">x = 1,2,\ldots,9</annotation></semantics></math>).</p><ul>
+<li><p>First two digits:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn><mo>+</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">15 + x</annotation></semantics></math></p></li>
+<li><p>Last two digits:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mo>−</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">(10 - x)^{2}</annotation></semantics></math></p></li>
+</ul><p>Examples:</p><blockquote>
+<p><strong>42<sup>2</sup></strong></p>
+<p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>42</mn><mo>=</mo><mn>40</mn><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">42 = 40 + 2</annotation></semantics></math>,
+we have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x = 2</annotation></semantics></math>.</p>
+</blockquote><ul>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>17</mn></mrow><annotation encoding="application/x-tex">15 + 2 = 17</annotation></semantics></math></p></li>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mo>−</mo><mn>2</mn><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">(10 - 2)^{2} = 64</annotation></semantics></math></p></li>
+<li><p>Combine:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msup><mn>42</mn><mn>2</mn></msup><mo>=</mo><mn>1</mn><mo>,</mo><mn>764</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{42^{2} = 1,764}</annotation></semantics></math></p></li>
+</ul><blockquote>
+<p><strong>47<sup>2</sup></strong></p>
+<p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>47</mn><mo>=</mo><mn>40</mn><mo>+</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">47 = 40 + 7</annotation></semantics></math>,
+we have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">x = 7</annotation></semantics></math>.</p>
+</blockquote><ul>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn><mo>+</mo><mn>7</mn><mo>=</mo><mn>22</mn></mrow><annotation encoding="application/x-tex">15 + 7 = 22</annotation></semantics></math></p></li>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mo>−</mo><mn>7</mn><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>09</mn></mrow><annotation encoding="application/x-tex">(10 - 7)^{2} = 09</annotation></semantics></math>
+(must keep two digits)</p></li>
+<li><p>Combine:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msup><mn>47</mn><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo>,</mo><mn>209</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{47^{2} = 2,209}</annotation></semantics></math></p></li>
+</ul><p><strong>Why 15?</strong></p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>40</mn><mo>+</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>1600</mn><mo>+</mo><mn>80</mn><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(40 + x)^{2} = 1600 + 80x + x^{2}</annotation></semantics></math></div><p>We want to express the square as a number of hundreds plus a
+two-digit remainder:</p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>40</mn><mo>+</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1600</mn><mo>+</mo><mn>80</mn><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1600</mn><mo>+</mo><mn>100</mn><mi>x</mi><mo>−</mo><mn>20</mn><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1500</mn><mo>+</mo><mn>100</mn><mi>x</mi><mo>+</mo><mn>100</mn><mo>−</mo><mn>20</mn><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>100</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>15</mn><mo>+</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>+</mo><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mo>−</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+(40 + x)^{2} &amp; = 1600 + 80x + x^{2} \\
+ &amp; = 1600 + 100x - 20x + x^{2} \\
+ &amp; = 1500 + 100x + 100 - 20x + x^{2} \\
+ &amp; = 100(15 + x) + (10 - x)^{2}
+\end{aligned}</annotation></semantics></math></div><h4 id="the-50s-range">The 50s range</h4><p>Let the number be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>+</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">50 + x</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is the last digit.</p><ul>
+<li><p>First two digits:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>+</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">25 + x</annotation></semantics></math></p></li>
+<li><p>Last two digits:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mn>2</mn></msup><annotation encoding="application/x-tex">x^{2}</annotation></semantics></math></p></li>
+</ul><p>Examples:</p><blockquote>
+<p><strong>53<sup>2</sup></strong></p>
+<p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>53</mn><mo>=</mo><mn>50</mn><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">53 = 50 + 3</annotation></semantics></math>,
+we have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">x = 3</annotation></semantics></math>.</p>
+</blockquote><ul>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">25 + 3 = 28</annotation></semantics></math></p></li>
+</ul><ul>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>3</mn><mn>2</mn></msup><mo>=</mo><mn>09</mn></mrow><annotation encoding="application/x-tex">3^{2} = 09</annotation></semantics></math>
+(must keep two digits)</p></li>
+</ul><ul>
+<li><p>Combine:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msup><mn>53</mn><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo>,</mo><mn>809</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{53^{2} = 2,809}</annotation></semantics></math></p></li>
+</ul><blockquote>
+<p><strong>59<sup>2</sup></strong></p>
+<p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>53</mn><mo>=</mo><mn>50</mn><mo>+</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">53 = 50 + 9</annotation></semantics></math>,
+we have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">x = 9</annotation></semantics></math>.</p>
+</blockquote><ul>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>+</mo><mn>9</mn><mo>=</mo><mn>34</mn></mrow><annotation encoding="application/x-tex">25 + 9 = 34</annotation></semantics></math></p></li>
+</ul><ul>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>9</mn><mn>2</mn></msup><mo>=</mo><mn>81</mn></mrow><annotation encoding="application/x-tex">9^{2} = 81</annotation></semantics></math>
+(must keep two digits)</p></li>
+</ul><ul>
+<li><p>Combine:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msup><mn>59</mn><mn>2</mn></msup><mo>=</mo><mn>3</mn><mo>,</mo><mn>481</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{59^{2} = 3,481}</annotation></semantics></math></p></li>
+</ul><blockquote>
+<p><strong>Why 25?</strong></p>
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>50</mn><mo>+</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>2500</mn><mo>+</mo><mn>100</mn><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(50 + x)^{2} = 2500 + 100x + x^{2}</annotation></semantics></math></div>
+<p>We want to express the square as a number of hundreds plus a
+two-digit remainder:</p>
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>50</mn><mo>+</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>2500</mn><mo>+</mo><mn>100</mn><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>100</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>25</mn><mo>+</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+(50 + x)^{2} &amp; = 2500 + 100x + x^{2} \\
+ &amp; = 100(25 + x) + x^{2}
+\end{aligned}</annotation></semantics></math></div>
+</blockquote></div></details><details class="lesson-card"><summary>Squaring Numbers Near
+50 (Generic Strategy)</summary><div class="lesson-card-content"><p>For numbers near 50, we can express the value as 50±𝑑. This generic
+strategy focuses on the “Distance from 50” (𝑑). The result is a
+four-digit number where:</p><ol type="1">
+<li><p><strong>First two digits</strong>
+=<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>±</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">25 \pm d</annotation></semantics></math></p></li>
+<li class="kiwi-equation-list-item"><p class="kiwi-formula-row"><strong>Last two digits</strong> =𝑑<sup>2</sup></p></li>
+</ol><h4 id="numbers-below-50">Numbers below 50</h4><p>For numbers in the 40s, calculate how far the number is <strong>below
+50</strong>. This distance,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+determines both parts of the result.</p><p><strong>The Distance from 50 Rule:</strong></p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>50</mn><mo>−</mo><mi>d</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mrow><mo form="prefix" stretchy="true">(</mo><mn>25</mn><mo>−</mo><mi>d</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>×</mo><mn>100</mn><mo>+</mo><msup><mi>d</mi><mn>2</mn></msup></mrow></menclose><annotation encoding="application/x-tex">\boxed{(50 - d)^{2} = (25 - d) \times 100 + d^{2}}</annotation></semantics></math></div><ul>
+<li><p>First part<strong>:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>−</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">25 - d</annotation></semantics></math></p></li>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>d</mi><mn>2</mn></msup><annotation encoding="application/x-tex">d^{2}</annotation></semantics></math>,
+written using exactly two digits.</p></li>
+</ul><p>Examples:</p><blockquote>
+<p><strong>43<sup>2</sup></strong></p>
+</blockquote><ul>
+<li><p>Distance:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">d = 7</annotation></semantics></math>,
+since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>−</mo><mn>7</mn><mo>=</mo><mn>43</mn></mrow><annotation encoding="application/x-tex">50 - 7 = 43</annotation></semantics></math>.</p></li>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>−</mo><mn>7</mn><mo>=</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">25 - 7 = 18</annotation></semantics></math></p></li>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>7</mn><mn>2</mn></msup><mo>=</mo><mn>49</mn></mrow><annotation encoding="application/x-tex">7^{2} = 49</annotation></semantics></math></p></li>
+<li><p><strong>Combine:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>43</mn><mn>2</mn></msup><mo>=</mo><mn>1</mn><mo>,</mo><mn>849</mn></mrow><annotation encoding="application/x-tex">43^{2} = 1,849</annotation></semantics></math></p></li>
+</ul><blockquote>
+<p><strong>48<sup>2</sup></strong></p>
+</blockquote><ul>
+<li><p>Distance:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">d = 2</annotation></semantics></math>,
+since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>48</mn></mrow><annotation encoding="application/x-tex">50 - 2 = 48</annotation></semantics></math>.</p></li>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">25 - 2 = 23</annotation></semantics></math></p></li>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>2</mn></msup><mo>=</mo><mn>04</mn></mrow><annotation encoding="application/x-tex">2^{2} = 04</annotation></semantics></math>
+(must keep two digits)</p></li>
+<li><p><strong>Combine:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>48</mn><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo>,</mo><mn>304</mn></mrow><annotation encoding="application/x-tex">48^{2} = 2,304</annotation></semantics></math></p></li>
+</ul><h4 id="numbers-above-50">Numbers Above 50</h4><p>For numbers in the 50s, calculate how far the number is <strong>above
+50</strong>. Add this distance,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+to 25 to find the first part.</p><p><strong>The Distance from 50 Rule:</strong></p><blockquote>
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>50</mn><mo>+</mo><mi>d</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mrow><mo form="prefix" stretchy="true">(</mo><mn>25</mn><mo>+</mo><mi>d</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>×</mo><mn>100</mn><mo>+</mo><msup><mi>d</mi><mn>2</mn></msup></mrow></menclose><annotation encoding="application/x-tex">\boxed{(50 + d)^{2} = (25 + d) \times 100 + d^{2}}</annotation></semantics></math></div>
+</blockquote><ul>
+<li><p><strong>First part:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">25 + d</annotation></semantics></math></p></li>
+<li><p><strong>Last part:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>d</mi><mn>2</mn></msup><annotation encoding="application/x-tex">d^{2}</annotation></semantics></math>,
+written using exactly two digits.</p></li>
+</ul><p>Examples:</p><blockquote>
+<p><strong>53<sup>2</sup></strong></p>
+</blockquote><ul>
+<li><p>Distance:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">d = 3</annotation></semantics></math>,
+since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>53</mn></mrow><annotation encoding="application/x-tex">50 + 3 = 53</annotation></semantics></math>.</p></li>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">25 + 3 = 28</annotation></semantics></math></p></li>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>3</mn><mn>2</mn></msup><mo>=</mo><mn>09</mn></mrow><annotation encoding="application/x-tex">3^{2} = 09</annotation></semantics></math>
+(must keep two digits)</p></li>
+<li><p><strong>Combine:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>53</mn><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo>,</mo><mn>809</mn></mrow><annotation encoding="application/x-tex">53^{2} = 2,809</annotation></semantics></math></p></li>
+</ul><blockquote>
+<p><strong>59<sup>2</sup></strong></p>
+</blockquote><ul>
+<li><p>Distance:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">d = 9</annotation></semantics></math>,
+since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>+</mo><mn>9</mn><mo>=</mo><mn>59</mn></mrow><annotation encoding="application/x-tex">50 + 9 = 59</annotation></semantics></math>.</p></li>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>+</mo><mn>9</mn><mo>=</mo><mn>34</mn></mrow><annotation encoding="application/x-tex">25 + 9 = 34</annotation></semantics></math></p></li>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>9</mn><mn>2</mn></msup><mo>=</mo><mn>81</mn></mrow><annotation encoding="application/x-tex">9^{2} = 81</annotation></semantics></math></p></li>
+<li><p><strong>Combine:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>59</mn><mn>2</mn></msup><mo>=</mo><mn>3</mn><mo>,</mo><mn>481</mn></mrow><annotation encoding="application/x-tex">59^{2} = 3,481</annotation></semantics></math></p></li>
+</ul><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">Learning Insight</span></div><div class="kiwi-insight-body">Find the distance from 50, subtract it from 25 for numbers below 50,
+or add it to 25 for numbers above 50. Then append the two-digit square
+of the distance.</div></aside></div></details><details class="lesson-card"><summary>Square Rooting Numbers Near
+50</summary><div class="lesson-card-content"><h4 id="the-40s-range-1">The 40s range</h4><p>For perfect squares between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>40</mn><mn>2</mn></msup><mo>=</mo><mn>1</mn><mo>,</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">40^{2} = 1,600</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>50</mn><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo>,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">50^{2} = 2,500</annotation></semantics></math>,
+we can find the square root using the last two digits.</p><p>The Strategy</p><ol type="1">
+<li><p><strong>Check the range:</strong> Confirm that the number is
+between 1,600 and 2,500.</p></li>
+<li><p><strong>Find the distance:</strong> Take the square root of the
+last two digits to find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.</p></li>
+<li><p><strong>Subtract from 50:</strong> The square root is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>−</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">50 - d</annotation></semantics></math>.</p></li>
+</ol><p>Example:</p><blockquote class="kiwi-example-question-math">
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2116</mn></msqrt><annotation encoding="application/x-tex">\sqrt{2116}</annotation></semantics></math></div>
+</blockquote><ul>
+<li><p>The last two digits are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>16</mn><annotation encoding="application/x-tex">16</annotation></semantics></math>.</p></li>
+<li><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>16</mn></msqrt><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\sqrt{16} = 4</annotation></semantics></math>,
+the distance is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">d = 4</annotation></semantics></math>.</p></li>
+<li><p>Calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>−</mo><mn>4</mn><mo>=</mo><mn>46</mn></mrow><annotation encoding="application/x-tex">50 - 4 = 46</annotation></semantics></math>.</p></li>
+</ul><p class="kiwi-formula-row">Therefore,<br/>
+<div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msqrt><mn>2116</mn></msqrt><mo>=</mo><mn>46</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{\sqrt{2116} = 46}</annotation></semantics></math></div></p><h4 id="the-50s-range-1">The 50s range</h4><p>For perfect squares between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>50</mn><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo>,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">50^{2} = 2,500</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>60</mn><mn>2</mn></msup><mo>=</mo><mn>3</mn><mo>,</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">60^{2} = 3,600</annotation></semantics></math>,
+we can find the square root using the last two digits.</p><p>The Strategy</p><ol type="1">
+<li><p><strong>Check the range:</strong> Confirm that the number is
+between 2,500 and 3,600.</p></li>
+<li><p><strong>Find the distance:</strong> Take the square root of the
+last two digits to find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.</p></li>
+<li><p><strong>Add to 50:</strong> The square root is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">50 + d</annotation></semantics></math>.</p></li>
+</ol><p>Example:</p><blockquote class="kiwi-example-question-math">
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2809</mn></msqrt><annotation encoding="application/x-tex">\sqrt{2809}</annotation></semantics></math></div>
+</blockquote><ul>
+<li><p>The last two digits are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>09</mn><annotation encoding="application/x-tex">09</annotation></semantics></math>.</p></li>
+<li><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>9</mn></msqrt><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\sqrt{9} = 3</annotation></semantics></math>,
+the distance is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">d = 3</annotation></semantics></math>.</p></li>
+<li><p>Calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>53</mn></mrow><annotation encoding="application/x-tex">50 + 3 = 53</annotation></semantics></math>.</p></li>
+</ul><p>Therefore,</p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msqrt><mn>2809</mn></msqrt><mo>=</mo><mn>53</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{\sqrt{2809} = 53}</annotation></semantics></math></div></div></details><details class="lesson-card"><summary>Squaring Numbers: The 90s
+Range</summary><div class="lesson-card-content"><p>To square a number in the 90s, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+be the last digit. For example, for 96,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">n = 6</annotation></semantics></math>.</p><ol type="1">
+<li><p><strong>First two digits</strong>: Calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>80</mn><mo>+</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">80 + 2n</annotation></semantics></math>.</p></li>
+<li><p><strong>Last two digits</strong>: Calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mo>−</mo><mi>n</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">(10 - n)^{2}</annotation></semantics></math>.
+Use a leading zero if needed.</p></li>
+</ol><p>Example:</p><blockquote>
+<p><strong>96<sup>2</sup></strong></p>
+</blockquote><ul>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>80</mn><mo>+</mo><mn>2</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>6</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>92</mn></mrow><annotation encoding="application/x-tex">80 + 2(6) = 92</annotation></semantics></math></p></li>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mo>−</mo><mn>6</mn><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mn>4</mn><mn>2</mn></msup><mo>=</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">(10 - 6)^{2} = 4^{2} = 16</annotation></semantics></math></p></li>
+<li><p>Combine:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msup><mn>96</mn><mn>2</mn></msup><mo>=</mo><mn>9</mn><mo>,</mo><mn>216</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{96^{2} = 9,216}</annotation></semantics></math></p></li>
+</ul><blockquote>
+<p><strong>92<sup>2</sup></strong></p>
+</blockquote><ul>
+<li><p>First part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>80</mn><mo>+</mo><mn>2</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>2</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>84</mn></mrow><annotation encoding="application/x-tex">80 + 2(2) = 84</annotation></semantics></math></p></li>
+<li><p>Last part:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mo>−</mo><mn>2</mn><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">(10 - 2)^{2} = 8^{2} = 64</annotation></semantics></math></p></li>
+<li><p>Combine:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msup><mn>92</mn><mn>2</mn></msup><mo>=</mo><mn>8</mn><mo>,</mo><mn>464</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{92^{2} = 8,464}</annotation></semantics></math></p></li>
+</ul><p><strong>The 90s Shortcut:</strong></p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>90</mn><mo>+</mo><mi>n</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><munder><mover><mi>︸</mi><mrow><mn>80</mn><mo>+</mo><mn>2</mn><mi>n</mi></mrow></mover><mtext mathvariant="normal">First 2-dig.</mtext></munder><mspace width="1.0em"></mspace><munder><mover><mi>︸</mi><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mo>−</mo><mi>n</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup></mover><mtext mathvariant="normal">Last 2-dig.</mtext></munder></mrow><annotation encoding="application/x-tex">(90 + n)^{2} = \underset{\text{First~2-dig.}}{\overset{80 + 2n}{︸}}\quad\underset{\text{Last~2-dig.}}{\overset{(10 - n)^{2}}{︸}}</annotation></semantics></math></div></div></details><details class="lesson-card"><summary>Square Rooting: The 90s Range</summary><div class="lesson-card-content"><p>For perfect squares between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>90</mn><mn>2</mn></msup><mo>=</mo><mn>8</mn><mo>,</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">90^{2} = 8,100</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>100</mn><mn>2</mn></msup><mo>=</mo><mn>10</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">100^{2} = 10,000</annotation></semantics></math>,
+we can find the square root using the last two digits.</p><p>The Strategy</p><ol type="1">
+<li><p><strong>Check the range:</strong> Confirm that the number is
+between 8,100 and 10,000.</p></li>
+<li><p><strong>Find the distance:</strong> Take the square root of the
+last two digits to find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+This gives the distance from the square root to 100.</p></li>
+<li><p><strong>Subtract from 100</strong>: The square root is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mo>−</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">100 - d</annotation></semantics></math>.</p></li>
+</ol><p>Example:</p><blockquote class="kiwi-example-question-math">
+<div class="kiwi-formula-row kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>8281</mn></msqrt><annotation encoding="application/x-tex">\sqrt{8281}</annotation></semantics></math></div>
+</blockquote><ul>
+<li><p>The last two digits are 81.</p></li>
+<li><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>81</mn></msqrt><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\sqrt{81} = 9</annotation></semantics></math>,
+we have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">d = 9</annotation></semantics></math>.</p></li>
+<li><p>Calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mo>−</mo><mn>9</mn><mo>=</mo><mn>91</mn></mrow><annotation encoding="application/x-tex">100 - 9 = 91</annotation></semantics></math>.</p></li>
+</ul><p>Therefore,</p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msqrt><mn>8281</mn></msqrt><mo>=</mo><mn>91</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{\sqrt{8281} = 91}</annotation></semantics></math></div></div></details><details class="lesson-card"><summary>Square
+Rooting Numbers Between 𝟏𝟎 𝟐 \mathbf{10}^{\mathbf{2}} and 𝟏𝟎𝟎 𝟐 \mathbf{100}^{\mathbf{2}}</summary><div class="lesson-card-content"><p>For a perfect square
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">100\ </annotation></semantics></math>and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">10,000</annotation></semantics></math>,
+you can find its square root mentally by identifying its tens digit
+first, then its units digit.</p><p>The Strategy</p><h4 id="find-the-tens-digit">Find the tens digit</h4><p>You can estimate a square root without a calculator by using perfect
+squares and comparing the number with nearby benchmark squares.</p><p>Find two consecutive multiples of 10 whose squares surround the given
+number. The tens digit of the square root is the smaller multiple of 10
+divided by 10.</p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>10</mn><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><mi>N</mi><mo>&lt;</mo><msup><mrow><mo form="prefix" stretchy="true">[</mo><mn>10</mn><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>+</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo form="postfix" stretchy="true">]</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(10a)^{2} &lt; N &lt; \left\lbrack 10(a + 1) \right\rbrack^{2}</annotation></semantics></math></div><p>The tens digit of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.</p><p>For example, to find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>5329</mn></msqrt><annotation encoding="application/x-tex">\sqrt{5329}</annotation></semantics></math>:</p><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>70</mn><mn>2</mn></msup><mo>=</mo><mn>4900</mn></mrow><annotation encoding="application/x-tex">70^{2} = 4900</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>80</mn><mn>2</mn></msup><mo>=</mo><mn>6400</mn></mrow><annotation encoding="application/x-tex">80^{2} = 6400</annotation></semantics></math>,
+we know that</p><div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>70</mn><mo>&lt;</mo><msqrt><mn>5329</mn></msqrt><mo>&lt;</mo><mn>80</mn></mrow><annotation encoding="application/x-tex">70 &lt; \sqrt{5329} &lt; 80</annotation></semantics></math></div><p>The tens digit of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>5329</mn></msqrt><annotation encoding="application/x-tex">\sqrt{5329}</annotation></semantics></math>
+is 7.</p><h4 id="find-the-units-digit">Find the units digit</h4><p>Look at the last digit of the number under the square root. The last
+digits of perfect squares follow a pattern that helps identify the
+possible units digits.</p><ol type="1">
+<li><p>If the number ends in 25, use the <em>Square Rooting Numbers
+Ending in 25</em> shortcut.</p></li>
+<li><p>Otherwise, identify the possible units digits using the
+last-digit pattern. Then compare the number with the benchmark squares
+to decide which units digit is more likely. If the number has more than
+three digits, simplify the comparison by moving the decimal point two
+places to the left.</p></li>
+</ol><p>Examples:</p><blockquote>
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>5329</mn></msqrt><annotation encoding="application/x-tex">\sqrt{5329}</annotation></semantics></math></div>
+</blockquote><ol type="1">
+<li><p>Find the <strong>tens digit</strong>. Since</p></li>
+</ol><blockquote>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>70</mn><mn>2</mn></msup><mo>=</mo><mn>4900</mn><mo>&lt;</mo><mn>5329</mn><mo>&lt;</mo><msup><mrow><mn>6400</mn><mo>=</mo><mn>80</mn></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">70^{2} = 4900 &lt; 5329 &lt; {6400 = 80}^{2}</annotation></semantics></math>,</p>
+<p>the tens digit is 7.</p>
+</blockquote><ol start="2" type="1">
+<li><p>Find the possible <strong>units digits</strong>. The last digit
+of 5329 is 9. Since 3² and 7² end in 9, the square root could be 73 or
+77.</p></li>
+<li><p>Choose the <strong>units digit</strong>. Simplify by moving the
+decimal, 53.29 compared with 49 and 64. 53.29 is closer to 49, so the
+square root is closer to 70 than to 80. Therefore, we choose
+73.</p></li>
+</ol><p>Final answer:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>5329</mn></msqrt><mo>=</mo><mn>73</mn></mrow><annotation encoding="application/x-tex">\sqrt{5329} = 73</annotation></semantics></math>.
+It's a simple trick that mixes number patterns and a bit of
+comparison.</p><blockquote>
+<div class="kiwi-formula-row kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>361</mn></msqrt><annotation encoding="application/x-tex">\sqrt{361}</annotation></semantics></math></div>
+</blockquote><ol type="1">
+<li><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>2</mn></msup><mo>=</mo><mn>100</mn><mo>&lt;</mo><mn>361</mn><mo>&lt;</mo><msup><mrow><mn>400</mn><mo>=</mo><mn>20</mn></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">10^{2} = 100 &lt; 361 &lt; {400 = 20}^{2}</annotation></semantics></math>,
+the tens digit is 1.</p></li>
+<li><p>The last digit of 361 is 1. Since 1² and 9² end in 1, the square
+root could be 11 or 19.</p></li>
+<li><p>Since 361 is easy to compare with 100 and 400, we don’t need to
+move decimal. 361 is closer to 400 than to 100. Therefore, we choose
+19.</p></li>
+</ol><blockquote>
+<p>Final answer:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>361</mn></msqrt><mo>=</mo><mn>19</mn></mrow><annotation encoding="application/x-tex">\sqrt{361} = 19</annotation></semantics></math>.</p>
+</blockquote><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">Learning Insight</span></div><div class="kiwi-insight-body">First find the tens digit using the bounding squares. Then use the
+last digit of N and comparing to determine the units digit.</div></aside></div></details><details class="lesson-card"><summary>Reversible Mnemonics Tables</summary><div class="lesson-card-content"><p>For square rooting, if you forget the mnemonics, refer to “<em>Square
+Rooting Numbers Between</em>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>2</mn></msup><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">10^{2}\ </annotation></semantics></math><em>and</em>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>100</mn><mn>2</mn></msup><annotation encoding="application/x-tex">100^{2}</annotation></semantics></math>”.</p><h4 id="squaring-numbers-11-19">Squaring numbers 11-19 </h4><table>
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 61%"/>
+<col style="width: 20%"/>
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Problem</strong></td>
+<td><strong>Last 2-Dig. Mnemonics</strong></td>
+<td><strong>Answer</strong></td>
+</tr>
+<tr class="even">
+<td>11<sup>2</sup></td>
+<td>Remember</td>
+<td>121</td>
+</tr>
+<tr class="odd">
+<td>12<sup>2</sup></td>
+<td>Remember</td>
+<td>144</td>
+</tr>
+<tr class="even">
+<td>13<sup>2</sup></td>
+<td>Remember</td>
+<td>169</td>
+</tr>
+<tr class="odd">
+<td>14<sup>2</sup></td>
+<td>Reverse of 132: 69→96</td>
+<td>196</td>
+</tr>
+<tr class="even">
+<td>15<sup>2</sup></td>
+<td>Remember</td>
+<td>225</td>
+</tr>
+<tr class="odd">
+<td>16<sup>2</sup></td>
+<td>Count back from 6 to 56</td>
+<td>256</td>
+</tr>
+<tr class="even">
+<td>17<sup>2</sup></td>
+<td>Count forward from 7 to 89</td>
+<td>289</td>
+</tr>
+<tr class="odd">
+<td>18<sup>2</sup></td>
+<td>Axe 8 to 3→3×8=24</td>
+<td>324</td>
+</tr>
+<tr class="even">
+<td>19<sup>2</sup></td>
+<td>Turn 9 to 6 and append 1→61</td>
+<td>361</td>
+</tr>
+</tbody>
+</table><h4 id="square-rooting-numbers-121-361">Square rooting numbers
+121-361</h4><p>First digit is 1. Calculate the last digit.</p><table>
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 62%"/>
+<col style="width: 18%"/>
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Problem</strong></td>
+<td><strong>Last Dig. Mnemonics Check</strong></td>
+<td><strong>Answer</strong></td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>121</mn></msqrt><annotation encoding="application/x-tex">\sqrt{121}</annotation></semantics></math></div></td>
+<td>1<sup>2</sup>=1</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>144</mn></msqrt><annotation encoding="application/x-tex">\sqrt{144}</annotation></semantics></math></div></td>
+<td>2<sup>2</sup>=4</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>169</mn></msqrt><annotation encoding="application/x-tex">\sqrt{169}</annotation></semantics></math></div></td>
+<td>3<sup>2</sup>=9</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>196</mn></msqrt><annotation encoding="application/x-tex">\sqrt{196}</annotation></semantics></math></div></td>
+<td>4<sup>2</sup>=16</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>225</mn></msqrt><annotation encoding="application/x-tex">\sqrt{225}</annotation></semantics></math></div></td>
+<td>5<sup>2</sup>=25</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>256</mn></msqrt><annotation encoding="application/x-tex">\sqrt{256}</annotation></semantics></math></div></td>
+<td>6<sup>2</sup>=36</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>289</mn></msqrt><annotation encoding="application/x-tex">\sqrt{289}</annotation></semantics></math></div></td>
+<td>7<sup>2</sup>=49</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>324</mn></msqrt><annotation encoding="application/x-tex">\sqrt{324}</annotation></semantics></math></div></td>
+<td>8<sup>2</sup>=64</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>361</mn></msqrt><annotation encoding="application/x-tex">\sqrt{361}</annotation></semantics></math></div></td>
+<td>9<sup>2</sup>=81</td>
+<td>19</td>
+</tr>
+</tbody>
+</table><h4 id="squaring-numbers-2129">Squaring numbers 21–29</h4><table>
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 61%"/>
+<col style="width: 18%"/>
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Problem</strong></td>
+<td><strong>Mnemonic</strong></td>
+<td><strong>Answer</strong></td>
+</tr>
+<tr class="even">
+<td>21<sup>2</sup></td>
+<td>Reverse of 12<sup>2</sup>=144</td>
+<td>441</td>
+</tr>
+<tr class="odd">
+<td>22<sup>2</sup></td>
+<td>Remember</td>
+<td>484</td>
+</tr>
+<tr class="even">
+<td>23<sup>2</sup></td>
+<td>View 3 as 5, then reverse to 52</td>
+<td>529</td>
+</tr>
+<tr class="odd">
+<td>24<sup>2</sup></td>
+<td>After 4 is 5,6; then insert 7</td>
+<td>576</td>
+</tr>
+<tr class="even">
+<td>25<sup>2</sup></td>
+<td>Remember</td>
+<td>625</td>
+</tr>
+<tr class="odd">
+<td>26<sup>2</sup></td>
+<td>Count from 6: 676</td>
+<td>676</td>
+</tr>
+<tr class="even">
+<td>27<sup>2</sup></td>
+<td>Reverse 27 to 72, then tag 9</td>
+<td>729</td>
+</tr>
+<tr class="odd">
+<td>28<sup>2</sup></td>
+<td>Before 8 is 7; count 784</td>
+<td>784</td>
+</tr>
+<tr class="even">
+<td>29<sup>2</sup></td>
+<td>Follow 28<sup>2</sup>=784 (the last two digits)</td>
+<td>841</td>
+</tr>
+</tbody>
+</table><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">Fun Fact:</span></div><div class="kiwi-insight-body">
+<p>With 25<sup>2</sup> as the center, the last two digits of the squares
+are <strong>mirrored</strong>. Observe: 4<u>41</u>, 484, 529,
+5<u>76</u>, <strong>625</strong>, 6<u>76</u>, 729, 784,
+8<u>41</u>.</p></div></aside><h4 id="square-rooting-numbers-441841">Square rooting numbers
+441–841</h4><p>First digit is 1. Calculate the last digit.</p><table>
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 61%"/>
+<col style="width: 18%"/>
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Problem</strong></td>
+<td><strong>Last Dig. Mnemonics Check</strong></td>
+<td><strong>Answer</strong></td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>441</mn></msqrt><annotation encoding="application/x-tex">\sqrt{441}</annotation></semantics></math></div></td>
+<td>1<sup>2</sup>=1</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>484</mn></msqrt><annotation encoding="application/x-tex">\sqrt{484}</annotation></semantics></math></div></td>
+<td>2<sup>2</sup>=4</td>
+<td>22</td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>529</mn></msqrt><annotation encoding="application/x-tex">\sqrt{529}</annotation></semantics></math></div></td>
+<td>3<sup>2</sup>=9</td>
+<td>23</td>
+</tr>
+<tr class="odd">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>576</mn></msqrt><annotation encoding="application/x-tex">\sqrt{576}</annotation></semantics></math></div></td>
+<td>4<sup>2</sup>=16</td>
+<td>24</td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>625</mn></msqrt><annotation encoding="application/x-tex">\sqrt{625}</annotation></semantics></math></div></td>
+<td>5<sup>2</sup>=25</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>676</mn></msqrt><annotation encoding="application/x-tex">\sqrt{676}</annotation></semantics></math></div></td>
+<td>6<sup>2</sup>=36</td>
+<td>26</td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>729</mn></msqrt><annotation encoding="application/x-tex">\sqrt{729}</annotation></semantics></math></div></td>
+<td>7<sup>2</sup>=49</td>
+<td>27</td>
+</tr>
+<tr class="odd">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>784</mn></msqrt><annotation encoding="application/x-tex">\sqrt{784}</annotation></semantics></math></div></td>
+<td>8<sup>2</sup>=64</td>
+<td>28</td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="kiwi-display-math" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>841</mn></msqrt><annotation encoding="application/x-tex">\sqrt{841}</annotation></semantics></math></div></td>
+<td>9<sup>2</sup>=81</td>
+<td>29</td>
+</tr>
+</tbody>
+</table><h4 id="squaring-numbers-3139">Squaring numbers 31–39</h4><table>
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 61%"/>
+<col style="width: 18%"/>
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Problem</strong></td>
+<td><strong>Mnemonic</strong></td>
+<td><strong>Answer</strong></td>
+</tr>
+<tr class="even">
+<td>31<sup>2</sup></td>
+<td>Reverse of 13<sup>2</sup>=169</td>
+<td>961</td>
+</tr>
+<tr class="odd">
+<td>32<sup>2</sup></td>
+<td>2<sup>5</sup>=32; 32<sup>2</sup>=(2<sup>5</sup>)<sup>2</sup>
+=2<sup>10</sup>=1024</td>
+<td>1024</td>
+</tr>
+<tr class="even">
+<td>33<sup>2</sup></td>
+<td>Get 10 from 1024, then tag 89</td>
+<td>1089</td>
+</tr>
+<tr class="odd">
+<td>34<sup>2</sup></td>
+<td>Count 3,4 to 5,6, then 1156</td>
+<td>1156</td>
+</tr>
+<tr class="even">
+<td>35<sup>2</sup></td>
+<td>3×4=12 then tag 25</td>
+<td>1225</td>
+</tr>
+<tr class="odd">
+<td>36<sup>2</sup></td>
+<td>3×4=12 then tag 96</td>
+<td>1296</td>
+</tr>
+<tr class="even">
+<td>37<sup>2</sup></td>
+<td>Switch 69 from 36<sup>2</sup>=1296</td>
+<td>1369</td>
+</tr>
+<tr class="odd">
+<td>38<sup>2</sup></td>
+<td>Remember</td>
+<td>1444</td>
+</tr>
+<tr class="even">
+<td>39<sup>2</sup></td>
+<td>Remember</td>
+<td>1521</td>
+</tr>
+</tbody>
+</table><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">Fun Fact:</span></div><div class="kiwi-insight-body">
+<p>The last two digits of 𝑛<sup>2</sup> in this range are the same as
+(50−𝑛)<sup>2</sup>. Observe the symmetry between the 30s and 10s:</p>
+<blockquote>
+<p>312=961 ⇔ 192=361</p>
+<p>322=1024 ⇔ 182=324</p>
+<p>332=1089 ⇔ 172=289</p>
+<p>342=1156 ⇔ 162=256</p>
+<p>352=1225 ⇔ 152=225</p>
+<p>392=1521 ⇔ 112=121</p>
+</blockquote></div></aside></div></details></section></article></div>
+<!-- LEVEL-4 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+</body>
+</html>

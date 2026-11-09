@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<!--
+  Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
+
+  Visual reference: math/number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+
+  HOW TO USE
+  1. Copy to target path (e.g. math/number-families.html, math/car-journey.html).
+  2. body.topic-page + main.topic-main — no primary nav item active.
+  3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
+  4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
+  5. Kicker = section path; subtitle = short intro (≤2 lines); longer copy goes in body .nf-lead / article.
+  6. Fallback .page-back-wrap → parent category; drive-breadcrumb.js replaces it with full trail.
+  7. Paste unique content between LEVEL-4 BODY markers.
+
+  Levels 2–3 use the blue-gold compact banner — not this template.
+-->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rotation Transformation | KIWI 爱AI Study</title>
+<meta content="Explore Rotation Transformation in the KIWI 爱AI Study mathematical thinking library." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
+<style>
+/* Example topic content tokens (Number Families pattern) — trim or extend per page */
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
+@media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}}
+  
+.word-topic{max-width:1040px;margin:28px auto}.topic-intro{line-height:1.8;margin:0 0 20px}.lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}.lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}.lesson-card summary::after{content:'+';font-size:25px;color:#1768b2}.lesson-card[open] summary::after{content:'−'}.lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}.lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}.lesson-card-content h3{color:#153d70;font-size:17px;margin:20px 0 8px}.word-figure{display:block;max-width:100%;height:auto;margin:12px auto}.math-expression{font-family:Cambria Math,serif;white-space:pre-wrap}.lesson-card p{margin:10px 0}@media(max-width:600px){.lesson-card summary{padding:15px;font-size:16px}.lesson-card-content{padding:12px 16px}}
+
+/* Advanced GCF methods: explanatory introduction and two independent panels */
+.kiwi-topic-article .kiwi-advanced-intro{margin:24px 0 18px;line-height:1.75}
+.kiwi-topic-article .kiwi-advanced-intro h3{color:#153d70;font-size:20px;margin:0 0 12px}
+.kiwi-topic-article .kiwi-method-card{margin:14px 0}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math{display:flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;width:100%!important;max-width:100%!important;overflow:visible!important;box-sizing:border-box}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math math{display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:4.7rem!important;margin:.35rem 0 1.2rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li{list-style:decimal outside!important;text-align:left!important;padding-left:.35rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li p{display:inline!important;margin:0!important;text-align:left!important;font:inherit!important}
+@media(max-width:600px){.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:3.8rem!important}}
+
+</style>
+<style>.chapter-topic-nav{margin:24px 0;padding:16px 18px;border:1px solid #dce6f1;border-radius:14px;background:#f8fbff}.chapter-topic-nav p{margin:0 0 10px;font-weight:800;color:#153d70}.chapter-topic-links{display:flex;flex-wrap:wrap;gap:9px}.chapter-topic-links a{padding:9px 12px;border:1px solid #d3e2f4;border-radius:9px;color:#1768b2;text-decoration:none;font-size:14px;font-weight:700;background:#fff}.chapter-topic-links a[aria-current="page"]{background:#1768b2;color:#fff;border-color:#1768b2}</style><style>
+/* KIWI Level 4: category in banner, document-style topic navigation */
+.kiwi-learning-layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,1fr);gap:30px;align-items:start;max-width:1160px;margin:28px auto 50px}
+.kiwi-topic-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px}
+.kiwi-topic-sidebar h2{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#54708e;margin:0 8px 12px}
+.kiwi-topic-sidebar a{display:block;padding:12px 13px;color:#194a81;text-decoration:none;font-size:14px;line-height:1.5;border-radius:9px;overflow-wrap:break-word}
+.kiwi-topic-sidebar a:hover,.kiwi-topic-sidebar a:focus-visible{background:#e8f2fc;outline-offset:2px}
+.kiwi-topic-sidebar a[aria-current=page]{background:#dcecff;color:#103c74;font-weight:750;border-left:3px solid #1768b2}
+.kiwi-topic-sidebar .kiwi-sidebar-back{margin-top:12px;padding-top:16px;border-top:1px solid #dce7f3;font-size:13px}
+.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.5vw,31px);line-height:1.25;color:#153d70;margin:2px 0 20px}
+.kiwi-topic-article .word-topic{max-width:100%;margin:0}.kiwi-topic-article .lesson-card{max-width:100%}
+@media(max-width:760px){.kiwi-learning-layout{display:block;margin:20px auto}.kiwi-topic-sidebar{position:static;margin-bottom:24px;padding:12px}.kiwi-topic-sidebar h2{margin:2px 8px 6px}.kiwi-topic-sidebar a{padding:9px 12px}.kiwi-current-topic{margin:0 0 16px}}
+</style><style>
+/* Topic navigation and professional mathematics typography */
+.kiwi-topic-sidebar{padding-top:14px}
+.kiwi-topic-article .word-topic{line-height:1.75}
+.kiwi-topic-article .topic-intro{line-height:1.75}
+.kiwi-topic-article .kiwi-formula-row{display:block;text-align:center;margin:18px auto 22px;padding:5px 10px;max-width:100%;overflow-x:auto;font-family:"Cambria Math", "STIX Two Math", serif;font-size:1.12rem;line-height:1.75}
+.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-display-math{display:block;text-align:center;margin:16px auto;max-width:100%;overflow-x:auto;font-size:1.08em}
+.kiwi-topic-article .lesson-card-content p,.kiwi-topic-article .topic-intro p{margin:12px 0}
+.kiwi-topic-article .lesson-card-content ul,.kiwi-topic-article .topic-intro ul{padding-left:25px}
+.kiwi-topic-article .lesson-card-content li,.kiwi-topic-article .topic-intro li{margin:7px 0}
+.kiwi-topic-article .lesson-card-content blockquote{border-left:3px solid #d3e5f6;padding-left:15px;margin:14px 0;color:#334e68}
+.kiwi-topic-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:18px 0}
+.kiwi-topic-article th,.kiwi-topic-article td{border:1px solid #dce7f3;padding:8px 12px}
+.kiwi-topic-article .lesson-card-content img{max-width:100%;height:auto;display:block;margin:15px auto}
+@media(max-width:760px){.kiwi-topic-article .kiwi-formula-row{font-size:1rem}}
+</style><style>
+/* Word-to-web math and insight panel cleanup */
+.kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
+.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
+.kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
+.kiwi-topic-article .kiwi-insight-body ul{padding-left:22px;margin:12px 0}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row,.kiwi-topic-article .kiwi-insight-body math[display="block"]{text-align:center}
+.kiwi-topic-article .kiwi-formula-row{list-style:none}
+@media(max-width:600px){.kiwi-topic-article .kiwi-insight-panel{padding:14px 16px}}
+</style><style>
+/* KIWI mathematical equation steps: remove bullet markers without altering genuine teaching lists. */
+.kiwi-topic-article li.kiwi-equation-list-item{list-style-type:none!important;list-style-image:none!important;position:relative}
+.kiwi-topic-article li.kiwi-equation-list-item::marker{content:""!important}
+.kiwi-topic-article li.kiwi-equation-list-item::before{content:none!important}
+.kiwi-topic-article li.kiwi-equation-list-item>p{margin:10px 0;text-align:center}
+.kiwi-topic-article li.kiwi-equation-list-item>p math{margin-left:auto;margin-right:auto}
+.kiwi-topic-article .kiwi-insight-panel{background:#fff9ec!important;border-color:#f2d79c!important;border-left-color:#dfac49!important;color:#6b4b22!important}
+.kiwi-topic-article .kiwi-insight-header{color:#865915!important}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row{text-align:center}
+</style><style id="kiwi-gcf-notation-fix">
+/* Examples are a semantic list, not centered derivation blocks. */
+.kiwi-topic-article .kiwi-gcf-example-list{list-style:disc outside;padding-left:1.7rem;margin:12px 0 24px;}
+.kiwi-topic-article .kiwi-gcf-example-list li{display:list-item;list-style-type:disc;text-align:left;margin:9px 0;padding-left:5px;}
+.kiwi-topic-article .kiwi-gcf-example-list math{display:inline!important;overflow:visible!important;max-width:none!important;vertical-align:middle;}
+/* Remove native MathML vertical scroll controls; formulas remain centered. */
+.kiwi-topic-article math,.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-formula-row{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;scrollbar-width:none;}
+.kiwi-topic-article math::-webkit-scrollbar,.kiwi-topic-article .kiwi-formula-row::-webkit-scrollbar{display:none;}
+.kiwi-topic-article .kiwi-formula-row{text-align:center;}
+.kiwi-topic-article .kiwi-formula-row math[display="block"]{display:block;margin-inline:auto;text-align:center;}
+</style><style>
+/* GCF worked example: clear example indent and numbered procedure */
+.kiwi-example-list{padding-left:2.2rem;margin:0.6rem 0 1rem;list-style:disc outside}
+.kiwi-example-list li{padding-left:.25rem;line-height:1.7}
+.kiwi-numbered-steps{list-style:decimal outside;padding-left:2.4rem;margin:1rem 0 1.25rem}
+.kiwi-numbered-steps>li{padding-left:.3rem;margin:.45rem 0;line-height:1.6}
+.kiwi-numbered-steps>li::marker{font-weight:700;color:#111111}
+.kiwi-numbered-steps .kiwi-formula-row{margin:.15rem 0!important;text-align:center!important}
+.kiwi-numbered-steps math[display="block"]{display:block!important;margin:0 auto!important;text-align:center!important}
+</style><style id="kiwi-gcf-final-layout">
+/* Consistent one-level indentation for bullet and numbered lists. */
+.kiwi-topic-article ul.kiwi-example-list,
+.kiwi-topic-article ul.kiwi-gcf-example-list,
+.kiwi-topic-article ol.kiwi-numbered-steps { margin: .65rem 0 1.2rem 0 !important; padding-left: 2.5rem !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ul.kiwi-example-list > li,
+.kiwi-topic-article ul.kiwi-gcf-example-list > li { padding-left:.4rem !important; margin:.45rem 0 !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li { list-style-type:decimal !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li p.kiwi-step-text { display:inline !important; margin:0 !important; padding:0 !important; text-align:left !important; font:inherit !important; }
+.kiwi-topic-article .kiwi-gcd-display { display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; margin:1rem auto 1.3rem !important; padding:0 !important; border:0 !important; }
+.kiwi-topic-article .kiwi-gcd-display math { display:block !important; width:max-content !important; max-width:100%; margin:0 auto !important; text-align:center !important; overflow:visible !important; }
+</style><style>
+/* Word-to-Web: nested worked examples (GCF Division Method) */
+.kiwi-example-block { margin: .5rem 0 1.2rem 1.5rem; text-align: left; }
+.kiwi-example-question { margin: .35rem 0 .55rem; }
+.kiwi-example-steps { margin: .4rem 0 .45rem 2rem; padding-left: 1.25rem; list-style-type: decimal; }
+.kiwi-example-steps li { padding-left: .25rem; margin: .45rem 0; text-align: left; }
+.kiwi-example-steps li::marker { color: #111111; font-weight: 700; }
+.kiwi-example-explanation, .kiwi-example-answer { margin: .6rem 0 .6rem 2rem; text-align: left; }
+@media (max-width: 600px) { .kiwi-example-block { margin-left: .7rem; } .kiwi-example-steps { margin-left: 1rem; } .kiwi-example-explanation, .kiwi-example-answer { margin-left: 1rem; } }
+</style><style>
+/* KIWI Word-to-Web standards: math lesson lists (2026-11-09) */
+.kiwi-topic-article ol li::marker,
+.kiwi-topic-article .kiwi-numbered-steps > li::marker,
+.kiwi-topic-article .kiwi-example-steps > li::marker,
+.kiwi-topic-article .kiwi-method-card ol li::marker {
+  color: #111 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ol.kiwi-example-steps > li {font-weight:400; text-align:left;}
+/* Avoid centering calculation text within numbered steps. */
+.kiwi-topic-article ol.kiwi-numbered-steps > li > p.kiwi-step-text {font-weight:400!important;text-align:left!important;}
+</style>
+<style id="kiwi-shared-math-example-standards">
+/* KIWI shared Word-to-Web: formulas and worked examples (2026-11-09). */
+.kiwi-topic-article p.kiwi-formula-row {display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;box-sizing:border-box!important;overflow:visible!important;margin:1rem auto!important;padding:.25rem 0!important;}
+.kiwi-topic-article p.kiwi-formula-row > math[display="block"] {display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-scroll {overflow-x:auto!important;overflow-y:hidden!important;max-width:100%;}
+.kiwi-topic-article .kiwi-example-standard {margin:.35rem 0 1rem!important;padding:0!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question {margin:.35rem 0 .4rem 3ch!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps {margin:.35rem 0 .6rem 6ch!important;padding:0!important;list-style:decimal inside!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li {display:list-item!important;list-style:decimal inside!important;margin:.3rem 0!important;padding:0!important;font-weight:400!important;color:#111!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
+.kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
+</style><style>
+.kiwi-generated-content{line-height:1.72;color:#182d42}.kiwi-generated-content p{margin:12px 0}.kiwi-generated-content math[display="block"],.kiwi-generated-content .math-display{display:block;text-align:center;margin:18px auto;max-width:100%;overflow-x:auto;overflow-y:visible}.kiwi-generated-content math{font-size:1.04em}.kiwi-generated-content img{display:block;max-width:100%;height:auto;margin:18px auto}.kiwi-generated-content table{max-width:100%;display:block;overflow-x:auto;border-collapse:collapse}.kiwi-generated-content td,.kiwi-generated-content th{padding:7px 10px;border:1px solid #dce7f3}.kiwi-generated-content ul,.kiwi-generated-content ol{padding-left:3em;margin:10px 0}.kiwi-generated-content ol li::marker{color:#111;font-weight:400}.kiwi-generated-content li{padding-left:.2em;margin:6px 0}.kiwi-generated-content .kiwi-insight-panel{background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e6ad35;border-radius:12px;padding:16px 20px;margin:20px 0;text-align:left}.kiwi-generated-content .kiwi-insight-panel p{text-align:left}.kiwi-generated-content .lesson-card{border:1px solid #dce7f3;border-radius:12px;overflow:hidden;margin:12px 0}.kiwi-generated-content .lesson-card>summary{cursor:pointer;padding:16px 20px;background:#eef6ff;color:#143e75;font-weight:650;list-style:none;display:flex;justify-content:space-between}.kiwi-generated-content .lesson-card>summary:after{content:'+'}.kiwi-generated-content .lesson-card[open]>summary:after{content:'−'}.kiwi-generated-content .lesson-card-body{padding:14px 20px 20px}.kiwi-generated-content h3{font-size:1.05em;color:#143e75}.kiwi-generated-content .example-problem{margin-left:3ch}.kiwi-generated-content .example-steps{margin-left:6ch;padding-left:1.4em}.kiwi-generated-content .example-answer{margin-left:3ch;border-left:3px solid #cde3fa;padding:4px 12px}.kiwi-generated-content .math-display::-webkit-scrollbar{height:5px}.kiwi-topic-sidebar a{overflow-wrap:anywhere}
+</style></head>
+<body class="topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="../math/index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="topic-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Mathematical Thinking" data-page-back="" data-zh="← 返回数学思维" href="mathematical-thinking.html">← Back to Mathematical Thinking</a>
+</div>
+<section aria-label="Page introduction" class="nf-hero topic-banner">
+<p class="topic-banner-kicker" data-en="MATHEMATICAL THINKING" data-zh="数学思维">MATHEMATICAL THINKING</p>
+<h1 data-en="Geometry &amp; Space" data-zh="Geometry &amp; Space">Geometry &amp; Space</h1>
+<p class="topic-banner-subtitle" data-en="Explore mathematical concepts, methods, and worked examples." data-zh="探索数的关系、运算方法与实用计算策略。">Explore mathematical concepts, methods, and worked examples.</p>
+</section>
+<!-- LEVEL-4 BODY START -->
+<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a class="active" href="rotation-transformation.html">Rotation Transformation</a><a href="special-right-triangles.html">Special Right Triangles</a><a href="mathematical-thinking.html">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Rotation Transformation" data-zh="Rotation Transformation">Rotation Transformation</h2><section class="nf-section word-topic kiwi-generated-content"><p>In geometry, a transformation means changing the position, size, or
+direction of a shape while keeping its basic form the same.</p><p>There are four main types of transformations:</p><ol type="1">
+<li><p><strong>Translation</strong> — slides a shape from one place to
+another without turning it. (Think: move your drawing without lifting or
+spinning it!)</p></li>
+<li><p><strong>Reflection</strong> — flips a shape over a line to make a
+mirror image. (Like seeing your face in a mirror.)</p></li>
+<li><p><strong>Rotation</strong> — turns a shape around a point. Turning
+0° or 360° means no turn at all, and turning 180° clockwise is the same
+as 180° counterclockwise<strong>.</strong> (Like the hands of a clock
+turning around the center.)</p></li>
+<li><p><strong>Dilation</strong> — makes a shape larger or smaller but
+keeps its proportions the same. (Like zooming in or out on a
+photo.)</p></li>
+</ol><p>Each transformation changes how the shape looks on the grid, but the
+shape itself stays the same!</p><details class="lesson-card" open=""><summary>Why Rotation is Complex</summary><div class="lesson-card-body"><p>For a rotation transformation, the movement is a turn, not a slide,
+so finding the rotated coordinates can be tricky.</p><p>In the classroom way, we must remember the rotation direction mapping
+table for clockwise and counterclockwise turns — and that can be
+confusing!</p><p>But don’t worry — you’ll learn a magic trick here that makes it
+simple.</p><p>You’ll figure it out in seconds without memorizing those confusing
+mappings.</p><p>We only need to know how to rotate from 0° to 180°, because rotations
+from 180° to 360° can be converted to the first half.</p><p>For example, a 270° clockwise rotation is the same as a 90°
+counterclockwise rotation, and vice versa!</p></div></details><details class="lesson-card"><summary>Classroom Way</summary><div class="lesson-card-body"><p>Now let’s first review how rotation is taught in the classroom. After
+that, we’ll reveal the magic trick that makes it easier!</p><table>
+<colgroup>
+<col style="width: 7%"/>
+<col style="width: 92%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><img alt="Lights On with solid fill" src="../assets/math-word/image3.svg"/></th>
+<th>All rotation transformations discussed in this section are about the
+origin (0, 0). We’ll use CW to represent Clockwise and CCW to represent
+Counterclockwise.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h4 id="rotation">180° rotation</h4><p>This rotation is simple!</p><p>Both CW and CCW rotations are the same. We only need to change both
+signs of the coordinates — no switching needed.</p><p><img src="../assets/math-word/image11.png" style="width:168.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p><img src="../assets/math-word/image12.png" style="width:163.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>This rotation is so simple that we do not even need a trick for
+it.</p><h4 id="cw-rotation">90° cw rotation</h4><p>When we rotate a shape 90 degrees CW, each point turns a quarter turn
+to the right around the origin (0, 0). Think of it like the hands of a
+clock turning.</p><p>How to Rotate (90° CW):</p><ol type="1">
+<li><p>Label points in relation to the origin. Describe each point by
+how far it is right or left and up or down from (0, 0).</p></li>
+<li><p>Use the rotation direction map. The rotated point will be the
+same number of units from the origin, but directions change like
+this:</p></li>
+</ol><table>
+<colgroup>
+<col style="width: 41%"/>
+<col style="width: 58%"/>
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Original Direction</strong></td>
+<td><strong>Rotated Direction (90° CW)</strong></td>
+</tr>
+<tr class="even">
+<td>Right</td>
+<td>Down</td>
+</tr>
+<tr class="odd">
+<td>Down</td>
+<td>Left</td>
+</tr>
+<tr class="even">
+<td>Left</td>
+<td>Up</td>
+</tr>
+<tr class="odd">
+<td>Up</td>
+<td>Right</td>
+</tr>
+</tbody>
+</table><ol start="3" type="1">
+<li><p>Keep the same distances, switch the directions, and plot the new
+point.</p></li>
+</ol><p>Example:</p><p>Let’s <strong>Rotate A(2, 4)</strong>.</p><ol type="1">
+<li><p>From the origin, A(2, 4) is 2 right and 4 up.</p></li>
+<li><p>Apply the map:</p>
+<ol type="1">
+<li><p>Right → Down: now 2 down</p></li>
+<li><p>Up → Right: now 4 right</p></li>
+</ol></li>
+<li><p>From the origin, move 4 right and 2 down → A′(4, −2).</p></li>
+<li><p>See the illustration on the coordinate plane.</p></li>
+</ol><blockquote>
+<p><img src="../assets/math-word/image13.png" style="width:165.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+</blockquote><h4 id="ccw-rotation">90° ccw rotation</h4><p>When we rotate a shape 90 degrees CCW, each point turns a quarter
+turn to the left around the origin (0, 0).</p><p>It’s simply the reverse of the clockwise turn — imagine the clock’s
+hands moving backward.</p><p>How to Rotate (90° CCW):</p><ol type="1">
+<li><p>Label points in relation to the origin. Describe each point by
+how far it is right or left and up or down from (0, 0).</p></li>
+<li><p>Use the reverse rotation direction map.A 90° counterclockwise
+turn is the opposite of the clockwise one — directions shift the other
+way around:</p></li>
+</ol><table>
+<colgroup>
+<col style="width: 40%"/>
+<col style="width: 59%"/>
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><blockquote>
+<p><strong>Original Direction</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p><strong>Rotated Direction (90° CCW)</strong></p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>Right</td>
+<td>Up</td>
+</tr>
+<tr class="odd">
+<td>Up</td>
+<td>Left</td>
+</tr>
+<tr class="even">
+<td>Left</td>
+<td>Down</td>
+</tr>
+<tr class="odd">
+<td>Down</td>
+<td>Right</td>
+</tr>
+</tbody>
+</table><ol start="3" type="1">
+<li><p>Keep the same distances, but move each point according to the new
+directions. The figure turns to the left around the origin.</p></li>
+</ol><p>Example:</p><blockquote>
+<p>Let’s Rotate A(2, 4).</p>
+</blockquote><ol type="1">
+<li><p>From the origin, A(2, 4) is 2 right and 4 up.</p></li>
+<li><p>Apply the map:</p>
+<ol type="1">
+<li><p>Right → Up: now 2 up</p></li>
+<li><p>Up → Left: now 4 left</p></li>
+</ol></li>
+<li><p>From the origin, move 4 left and 2 up → A′ (-4, 2).</p></li>
+<li><p>See the illustration on the coordinate plane.</p></li>
+</ol><p><img src="../assets/math-word/image14.png" style="width:164.25px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><h4 id="summary-of-the-classroom-way">Summary of the classroom way</h4><p>The <strong>classroom way</strong> teaches us how to rotate points
+step by step — by labeling directions, using the rotation map, and
+switching positions carefully. It helps us understand what really
+happens during a rotation.</p><p>However, this method can be hard to remember because we must recall
+different direction changes for clockwise (CW) and counterclockwise
+(CCW) turns. The mapping table looks simple, but keeping track of all
+four directions and their opposites can be confusing and easy to mix
+up!</p><p>That’s why we need a Trick Way — a faster and easier method to find
+the rotated coordinates without memorizing all those directions.</p></div></details><details class="lesson-card"><summary>Trick Way</summary><div class="lesson-card-body"><p>Instead of remembering the confusing direction mappings, we can just
+take a shortcut.</p><h4 id="cw-rotation-1">90° cw rotation</h4><p><img src="../assets/math-word/image15.png" style="width:169.25px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>As you can see, the <em>x-</em> and <em>y-</em> coordinates are
+switched; then change the sign of the new y-coordinate (the one that
+moved into the vertical position).</p><ol type="1">
+<li><p>Use (2,4) as an example. First, write the coordinates vertically
+(top = original, bottom = switched):</p></li>
+</ol><p><img src="../assets/math-word/image16.png" style="width:156.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><ol start="2" type="1">
+<li><p>Imagine the clock hand starting at 12 o’clock (position |). A
+clockwise turn goes toward the / direction.<br/>
+<br/>
+This shows which part of the switched pair keeps its sign: the number
+that moves into the x-position keeps its sign; the number that moves
+into the y-position changes the sign.</p></li>
+</ol><p><img src="../assets/math-word/image17.png" style="width:153px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>You may also use your <strong>right hand</strong> as the clock hand
+to help you visualize the direction.</p><p><img src="../assets/math-word/image18.png" style="width:153.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>Example:</p><p>Let’s rotate triangle ΔABC 90° CW with the points 𝐴(2,4), 𝐵(1,2), and
+𝐶(4,1), as shown in the following coordinate plane.</p><p><img src="../assets/math-word/image19.png" style="width:166.25px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p><strong>Solution</strong>:</p><p>With this shortcut trick, we can easily find the rotated
+coordinates:</p><p><img src="../assets/math-word/image20.png" style="width:199.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>Now, you can mark the new points 𝐴′(4,−2), 𝐵′(2,−1), and 𝐶′(1,−4),
+then connect them on the coordinate plane as shown below:</p><p><img src="../assets/math-word/image21.png" style="width:163.25px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><table>
+<colgroup>
+<col style="width: 7%"/>
+<col style="width: 92%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><img alt="Lights On with solid fill" src="../assets/math-word/image3.svg"/></th>
+<th><p>After writing down the <em>switched coordinates</em> vertically,
+use your right hand as the clock hand. Turn it to the right to represent
+a clockwise rotation.</p>
+<p>The coordinate that moves in the same direction as your hand keeps
+its sign, while the other coordinate changes its sign<em>.</em></p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h4 id="ccw-rotation-1">90° ccw rotation</h4><p><img src="../assets/math-word/image22.png" style="width:170.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>Now let’s turn <em>the other way</em> — counterclockwise, or <em>to
+the left</em>. This is simply the reverse of the clockwise rotation you
+just learned. Instead of changing the sign on the new
+<em>y</em>-coordinate, this time we change the sign on the new
+<em>x</em>-coordinate.</p><ol type="1">
+<li><p>Try the same point (2,4) again. Write the coordinates vertically
+as before:</p></li>
+</ol><p><img src="../assets/math-word/image23.png" style="width:153.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><ol start="2" type="1">
+<li><p>Picture the clock hand moving <em>backward</em> — from the 12
+o’clock position | toward the / direction. This time, the x-position
+flips its sign, while the y-position keeps it.</p></li>
+</ol><blockquote>
+<p><img src="../assets/math-word/image24.png" style="width:153.25px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+</blockquote><p>You may also use your <strong>right hand</strong> as the clock hand
+to help you visualize the direction.</p><p><img src="../assets/math-word/image25.png" style="width:154px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>Example:</p><p>Let’s rotate triangle ΔABC <em>90° CCW</em> with the points 𝐴(2,4),
+𝐵(1,2), and 𝐶(4,1), as shown in the coordinate plane below.</p><p><img src="../assets/math-word/image26.png" style="width:166.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p><strong>Solution</strong>:</p><p>With this shortcut trick, we can quickly find the rotated
+coordinates:</p><p><img src="../assets/math-word/image27.png" style="width:200.25px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>Now, mark the new points 𝐴′(−4,2), 𝐵′(−2,1), and 𝐶′(−1,4), then
+connect them on the coordinate plane as shown below:</p><p><img src="../assets/math-word/image28.png" style="width:160.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><table>
+<colgroup>
+<col style="width: 7%"/>
+<col style="width: 92%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><img alt="Lights On with solid fill" src="../assets/math-word/image3.svg"/></th>
+<th><p>After writing down the <em>switched coordinates</em>
+vertically,</p>
+<p>imagine the clock’s hand turning in reverse. Use your right hand to
+show this motion — turning it to the left represents a counterclockwise
+rotation.</p>
+<p>The coordinate that moves in the same direction as your hand keeps
+its sign, while the other coordinate changes its sign (here, the new
+x-value becomes negative).</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div></details></section></article></div>
+<!-- LEVEL-4 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+</body>
+</html>

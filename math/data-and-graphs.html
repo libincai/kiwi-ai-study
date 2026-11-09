@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<!--
+  Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
+
+  Visual reference: math/number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+
+  HOW TO USE
+  1. Copy to target path (e.g. math/number-families.html, math/car-journey.html).
+  2. body.topic-page + main.topic-main — no primary nav item active.
+  3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
+  4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
+  5. Kicker = section path; subtitle = short intro (≤2 lines); longer copy goes in body .nf-lead / article.
+  6. Fallback .page-back-wrap → parent category; drive-breadcrumb.js replaces it with full trail.
+  7. Paste unique content between LEVEL-4 BODY markers.
+
+  Levels 2–3 use the blue-gold compact banner — not this template.
+-->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data and Graphs | KIWI 爱AI Study</title>
+<meta content="Explore Data and Graphs in the KIWI 爱AI Study mathematical thinking library." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
+<style>
+/* Example topic content tokens (Number Families pattern) — trim or extend per page */
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
+@media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}}
+  
+.word-topic{max-width:1040px;margin:28px auto}.topic-intro{line-height:1.8;margin:0 0 20px}.lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}.lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}.lesson-card summary::after{content:'+';font-size:25px;color:#1768b2}.lesson-card[open] summary::after{content:'−'}.lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}.lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}.lesson-card-content h3{color:#153d70;font-size:17px;margin:20px 0 8px}.word-figure{display:block;max-width:100%;height:auto;margin:12px auto}.math-expression{font-family:Cambria Math,serif;white-space:pre-wrap}.lesson-card p{margin:10px 0}@media(max-width:600px){.lesson-card summary{padding:15px;font-size:16px}.lesson-card-content{padding:12px 16px}}
+
+/* Advanced GCF methods: explanatory introduction and two independent panels */
+.kiwi-topic-article .kiwi-advanced-intro{margin:24px 0 18px;line-height:1.75}
+.kiwi-topic-article .kiwi-advanced-intro h3{color:#153d70;font-size:20px;margin:0 0 12px}
+.kiwi-topic-article .kiwi-method-card{margin:14px 0}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math{display:flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;width:100%!important;max-width:100%!important;overflow:visible!important;box-sizing:border-box}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math math{display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:4.7rem!important;margin:.35rem 0 1.2rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li{list-style:decimal outside!important;text-align:left!important;padding-left:.35rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li p{display:inline!important;margin:0!important;text-align:left!important;font:inherit!important}
+@media(max-width:600px){.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:3.8rem!important}}
+
+</style>
+<style>.chapter-topic-nav{margin:24px 0;padding:16px 18px;border:1px solid #dce6f1;border-radius:14px;background:#f8fbff}.chapter-topic-nav p{margin:0 0 10px;font-weight:800;color:#153d70}.chapter-topic-links{display:flex;flex-wrap:wrap;gap:9px}.chapter-topic-links a{padding:9px 12px;border:1px solid #d3e2f4;border-radius:9px;color:#1768b2;text-decoration:none;font-size:14px;font-weight:700;background:#fff}.chapter-topic-links a[aria-current="page"]{background:#1768b2;color:#fff;border-color:#1768b2}</style><style>
+/* KIWI Level 4: category in banner, document-style topic navigation */
+.kiwi-learning-layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,1fr);gap:30px;align-items:start;max-width:1160px;margin:28px auto 50px}
+.kiwi-topic-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px}
+.kiwi-topic-sidebar h2{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#54708e;margin:0 8px 12px}
+.kiwi-topic-sidebar a{display:block;padding:12px 13px;color:#194a81;text-decoration:none;font-size:14px;line-height:1.5;border-radius:9px;overflow-wrap:break-word}
+.kiwi-topic-sidebar a:hover,.kiwi-topic-sidebar a:focus-visible{background:#e8f2fc;outline-offset:2px}
+.kiwi-topic-sidebar a[aria-current=page]{background:#dcecff;color:#103c74;font-weight:750;border-left:3px solid #1768b2}
+.kiwi-topic-sidebar .kiwi-sidebar-back{margin-top:12px;padding-top:16px;border-top:1px solid #dce7f3;font-size:13px}
+.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.5vw,31px);line-height:1.25;color:#153d70;margin:2px 0 20px}
+.kiwi-topic-article .word-topic{max-width:100%;margin:0}.kiwi-topic-article .lesson-card{max-width:100%}
+@media(max-width:760px){.kiwi-learning-layout{display:block;margin:20px auto}.kiwi-topic-sidebar{position:static;margin-bottom:24px;padding:12px}.kiwi-topic-sidebar h2{margin:2px 8px 6px}.kiwi-topic-sidebar a{padding:9px 12px}.kiwi-current-topic{margin:0 0 16px}}
+</style><style>
+/* Topic navigation and professional mathematics typography */
+.kiwi-topic-sidebar{padding-top:14px}
+.kiwi-topic-article .word-topic{line-height:1.75}
+.kiwi-topic-article .topic-intro{line-height:1.75}
+.kiwi-topic-article .kiwi-formula-row{display:block;text-align:center;margin:18px auto 22px;padding:5px 10px;max-width:100%;overflow-x:auto;font-family:"Cambria Math", "STIX Two Math", serif;font-size:1.12rem;line-height:1.75}
+.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-display-math{display:block;text-align:center;margin:16px auto;max-width:100%;overflow-x:auto;font-size:1.08em}
+.kiwi-topic-article .lesson-card-content p,.kiwi-topic-article .topic-intro p{margin:12px 0}
+.kiwi-topic-article .lesson-card-content ul,.kiwi-topic-article .topic-intro ul{padding-left:25px}
+.kiwi-topic-article .lesson-card-content li,.kiwi-topic-article .topic-intro li{margin:7px 0}
+.kiwi-topic-article .lesson-card-content blockquote{border-left:3px solid #d3e5f6;padding-left:15px;margin:14px 0;color:#334e68}
+.kiwi-topic-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:18px 0}
+.kiwi-topic-article th,.kiwi-topic-article td{border:1px solid #dce7f3;padding:8px 12px}
+.kiwi-topic-article .lesson-card-content img{max-width:100%;height:auto;display:block;margin:15px auto}
+@media(max-width:760px){.kiwi-topic-article .kiwi-formula-row{font-size:1rem}}
+</style><style>
+/* Word-to-web math and insight panel cleanup */
+.kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
+.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
+.kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
+.kiwi-topic-article .kiwi-insight-body ul{padding-left:22px;margin:12px 0}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row,.kiwi-topic-article .kiwi-insight-body math[display="block"]{text-align:center}
+.kiwi-topic-article .kiwi-formula-row{list-style:none}
+@media(max-width:600px){.kiwi-topic-article .kiwi-insight-panel{padding:14px 16px}}
+</style><style>
+/* KIWI mathematical equation steps: remove bullet markers without altering genuine teaching lists. */
+.kiwi-topic-article li.kiwi-equation-list-item{list-style-type:none!important;list-style-image:none!important;position:relative}
+.kiwi-topic-article li.kiwi-equation-list-item::marker{content:""!important}
+.kiwi-topic-article li.kiwi-equation-list-item::before{content:none!important}
+.kiwi-topic-article li.kiwi-equation-list-item>p{margin:10px 0;text-align:center}
+.kiwi-topic-article li.kiwi-equation-list-item>p math{margin-left:auto;margin-right:auto}
+.kiwi-topic-article .kiwi-insight-panel{background:#fff9ec!important;border-color:#f2d79c!important;border-left-color:#dfac49!important;color:#6b4b22!important}
+.kiwi-topic-article .kiwi-insight-header{color:#865915!important}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row{text-align:center}
+</style><style id="kiwi-gcf-notation-fix">
+/* Examples are a semantic list, not centered derivation blocks. */
+.kiwi-topic-article .kiwi-gcf-example-list{list-style:disc outside;padding-left:1.7rem;margin:12px 0 24px;}
+.kiwi-topic-article .kiwi-gcf-example-list li{display:list-item;list-style-type:disc;text-align:left;margin:9px 0;padding-left:5px;}
+.kiwi-topic-article .kiwi-gcf-example-list math{display:inline!important;overflow:visible!important;max-width:none!important;vertical-align:middle;}
+/* Remove native MathML vertical scroll controls; formulas remain centered. */
+.kiwi-topic-article math,.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-formula-row{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;scrollbar-width:none;}
+.kiwi-topic-article math::-webkit-scrollbar,.kiwi-topic-article .kiwi-formula-row::-webkit-scrollbar{display:none;}
+.kiwi-topic-article .kiwi-formula-row{text-align:center;}
+.kiwi-topic-article .kiwi-formula-row math[display="block"]{display:block;margin-inline:auto;text-align:center;}
+</style><style>
+/* GCF worked example: clear example indent and numbered procedure */
+.kiwi-example-list{padding-left:2.2rem;margin:0.6rem 0 1rem;list-style:disc outside}
+.kiwi-example-list li{padding-left:.25rem;line-height:1.7}
+.kiwi-numbered-steps{list-style:decimal outside;padding-left:2.4rem;margin:1rem 0 1.25rem}
+.kiwi-numbered-steps>li{padding-left:.3rem;margin:.45rem 0;line-height:1.6}
+.kiwi-numbered-steps>li::marker{font-weight:700;color:#111111}
+.kiwi-numbered-steps .kiwi-formula-row{margin:.15rem 0!important;text-align:center!important}
+.kiwi-numbered-steps math[display="block"]{display:block!important;margin:0 auto!important;text-align:center!important}
+</style><style id="kiwi-gcf-final-layout">
+/* Consistent one-level indentation for bullet and numbered lists. */
+.kiwi-topic-article ul.kiwi-example-list,
+.kiwi-topic-article ul.kiwi-gcf-example-list,
+.kiwi-topic-article ol.kiwi-numbered-steps { margin: .65rem 0 1.2rem 0 !important; padding-left: 2.5rem !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ul.kiwi-example-list > li,
+.kiwi-topic-article ul.kiwi-gcf-example-list > li { padding-left:.4rem !important; margin:.45rem 0 !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li { list-style-type:decimal !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li p.kiwi-step-text { display:inline !important; margin:0 !important; padding:0 !important; text-align:left !important; font:inherit !important; }
+.kiwi-topic-article .kiwi-gcd-display { display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; margin:1rem auto 1.3rem !important; padding:0 !important; border:0 !important; }
+.kiwi-topic-article .kiwi-gcd-display math { display:block !important; width:max-content !important; max-width:100%; margin:0 auto !important; text-align:center !important; overflow:visible !important; }
+</style><style>
+/* Word-to-Web: nested worked examples (GCF Division Method) */
+.kiwi-example-block { margin: .5rem 0 1.2rem 1.5rem; text-align: left; }
+.kiwi-example-question { margin: .35rem 0 .55rem; }
+.kiwi-example-steps { margin: .4rem 0 .45rem 2rem; padding-left: 1.25rem; list-style-type: decimal; }
+.kiwi-example-steps li { padding-left: .25rem; margin: .45rem 0; text-align: left; }
+.kiwi-example-steps li::marker { color: #111111; font-weight: 700; }
+.kiwi-example-explanation, .kiwi-example-answer { margin: .6rem 0 .6rem 2rem; text-align: left; }
+@media (max-width: 600px) { .kiwi-example-block { margin-left: .7rem; } .kiwi-example-steps { margin-left: 1rem; } .kiwi-example-explanation, .kiwi-example-answer { margin-left: 1rem; } }
+</style><style>
+/* KIWI Word-to-Web standards: math lesson lists (2026-11-09) */
+.kiwi-topic-article ol li::marker,
+.kiwi-topic-article .kiwi-numbered-steps > li::marker,
+.kiwi-topic-article .kiwi-example-steps > li::marker,
+.kiwi-topic-article .kiwi-method-card ol li::marker {
+  color: #111 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ol.kiwi-example-steps > li {font-weight:400; text-align:left;}
+/* Avoid centering calculation text within numbered steps. */
+.kiwi-topic-article ol.kiwi-numbered-steps > li > p.kiwi-step-text {font-weight:400!important;text-align:left!important;}
+</style>
+<style id="kiwi-shared-math-example-standards">
+/* KIWI shared Word-to-Web: formulas and worked examples (2026-11-09). */
+.kiwi-topic-article p.kiwi-formula-row {display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;box-sizing:border-box!important;overflow:visible!important;margin:1rem auto!important;padding:.25rem 0!important;}
+.kiwi-topic-article p.kiwi-formula-row > math[display="block"] {display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-scroll {overflow-x:auto!important;overflow-y:hidden!important;max-width:100%;}
+.kiwi-topic-article .kiwi-example-standard {margin:.35rem 0 1rem!important;padding:0!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question {margin:.35rem 0 .4rem 3ch!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps {margin:.35rem 0 .6rem 6ch!important;padding:0!important;list-style:decimal inside!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li {display:list-item!important;list-style:decimal inside!important;margin:.3rem 0!important;padding:0!important;font-weight:400!important;color:#111!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
+.kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
+</style><style>
+.kiwi-generated-content{line-height:1.72;color:#182d42}.kiwi-generated-content p{margin:12px 0}.kiwi-generated-content math[display="block"],.kiwi-generated-content .math-display{display:block;text-align:center;margin:18px auto;max-width:100%;overflow-x:auto;overflow-y:visible}.kiwi-generated-content math{font-size:1.04em}.kiwi-generated-content img{display:block;max-width:100%;height:auto;margin:18px auto}.kiwi-generated-content table{max-width:100%;display:block;overflow-x:auto;border-collapse:collapse}.kiwi-generated-content td,.kiwi-generated-content th{padding:7px 10px;border:1px solid #dce7f3}.kiwi-generated-content ul,.kiwi-generated-content ol{padding-left:3em;margin:10px 0}.kiwi-generated-content ol li::marker{color:#111;font-weight:400}.kiwi-generated-content li{padding-left:.2em;margin:6px 0}.kiwi-generated-content .kiwi-insight-panel{background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e6ad35;border-radius:12px;padding:16px 20px;margin:20px 0;text-align:left}.kiwi-generated-content .kiwi-insight-panel p{text-align:left}.kiwi-generated-content .lesson-card{border:1px solid #dce7f3;border-radius:12px;overflow:hidden;margin:12px 0}.kiwi-generated-content .lesson-card>summary{cursor:pointer;padding:16px 20px;background:#eef6ff;color:#143e75;font-weight:650;list-style:none;display:flex;justify-content:space-between}.kiwi-generated-content .lesson-card>summary:after{content:'+'}.kiwi-generated-content .lesson-card[open]>summary:after{content:'−'}.kiwi-generated-content .lesson-card-body{padding:14px 20px 20px}.kiwi-generated-content h3{font-size:1.05em;color:#143e75}.kiwi-generated-content .example-problem{margin-left:3ch}.kiwi-generated-content .example-steps{margin-left:6ch;padding-left:1.4em}.kiwi-generated-content .example-answer{margin-left:3ch;border-left:3px solid #cde3fa;padding:4px 12px}.kiwi-generated-content .math-display::-webkit-scrollbar{height:5px}.kiwi-topic-sidebar a{overflow-wrap:anywhere}
+</style><style>
+/* KIWI Word-to-Web: unified display math layout (2026-11) */
+.kiwi-topic-article math[display="block"], .kiwi-topic-article math.math-display, .kiwi-topic-article math.kiwi-display-math {display:block!important;text-align:center!important;margin:0 auto!important;max-width:100%!important;overflow:visible!important;overflow-y:visible!important;}
+.kiwi-topic-article .kiwi-math-block {display:block!important;width:100%!important;max-width:100%!important;text-align:center!important;margin:1.1rem auto!important;padding:.1rem 0!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;}
+.kiwi-topic-article .kiwi-math-block::-webkit-scrollbar {height:0!important;width:0!important;display:none!important;}
+.kiwi-topic-article .kiwi-math-block > math {display:block!important;width:max-content!important;max-width:none!important;margin:0 auto!important;text-align:center!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-block > p {text-align:center!important;margin:0!important;}
+.kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
+.kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
+</style></head>
+<body class="topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="../math/index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="topic-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Mathematical Thinking" data-page-back="" data-zh="← 返回数学思维" href="mathematical-thinking.html">← Back to Mathematical Thinking</a>
+</div>
+<section aria-label="Page introduction" class="nf-hero topic-banner">
+<p class="topic-banner-kicker" data-en="MATHEMATICAL THINKING" data-zh="数学思维">MATHEMATICAL THINKING</p>
+<h1 data-en="Data &amp; Chance" data-zh="Data &amp; Chance">Data &amp; Chance</h1>
+<p class="topic-banner-subtitle" data-en="Explore mathematical concepts, methods, and worked examples." data-zh="探索数的关系、运算方法与实用计算策略。">Explore mathematical concepts, methods, and worked examples.</p>
+</section>
+<!-- LEVEL-4 BODY START -->
+<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a class="active" href="data-and-graphs.html">Data and Graphs</a><a href="measures-of-center.html">Measures of Center</a><a href="chance-and-probability.html">Chance and Probability</a><a href="mathematical-thinking.html">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Data and Graphs" data-zh="Data and Graphs">Data and Graphs</h2><section class="nf-section word-topic kiwi-generated-content"><p>Collect information (<strong>data</strong>) and present it visually
+using charts and graphs.</p><details class="lesson-card" open=""><summary>Data</summary><div class="lesson-card-body"><p>Data refers to information, usually numerical, that is collected for
+statistical purposes. It is a set of values or measurements.</p><p>Example:</p><blockquote>
+<p>Data set: {2,5,5,8,11}</p>
+</blockquote></div></details><details class="lesson-card"><summary>Frequency</summary><div class="lesson-card-body"><p>Frequency is the number of times a specific value or item appears in
+a data set.</p><p>Example:</p><blockquote>
+<p>In the data set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">{</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>11</mn><mo form="postfix" stretchy="true">}</mo></mrow><annotation encoding="application/x-tex">\left\{ 2,5,5,8,11 \right\}</annotation></semantics></math>,
+the frequency of the number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math>
+is 2.</p>
+</blockquote></div></details><details class="lesson-card"><summary>Range</summary><div class="lesson-card-body"><p>The range is a measure of spread within a data set. It is calculated
+by subtracting the smallest value (minimum) from the largest value
+(maximum).</p><p>Example:</p><blockquote>
+<p>In the data set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">{</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>11</mn><mo form="postfix" stretchy="true">}</mo></mrow><annotation encoding="application/x-tex">\left\{ 2,5,5,8,11 \right\}</annotation></semantics></math>,
+the maximum is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>11</mn><annotation encoding="application/x-tex">11</annotation></semantics></math>
+and the minimum is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>.</p>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Range</mtext><mo>=</mo><mn>11</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\text{Range} = 11 - 2 = 9</annotation></semantics></math></div>
+</blockquote></div></details><details class="lesson-card"><summary>Outlier</summary><div class="lesson-card-body"><p>An outlier (or <strong>far away value</strong>) is a data point that
+is significantly distant from the majority of the other data points in a
+set. It is an unusual or abnormal value.</p><p>Examples:</p><blockquote>
+<p>In the data set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">{</mo><mn>10</mn><mo>,</mo><mn>12</mn><mo>,</mo><mn>14</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>45</mn><mo form="postfix" stretchy="true">}</mo></mrow><annotation encoding="application/x-tex">\left\{ 10,12,14,15,45 \right\}</annotation></semantics></math>,
+the number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>45</mn><annotation encoding="application/x-tex">45</annotation></semantics></math>is
+likely an outlier.</p>
+</blockquote></div></details><details class="lesson-card"><summary>Bar graph</summary><div class="lesson-card-body"><p>A bar graph uses rectangular bars to show comparisons between
+different categories of data. The bars can be vertical or
+horizontal.</p><p>Example:</p><blockquote>
+<p>Used to compare favourite colours or numbers of pets owned by
+students.</p>
+<p><img alt="Image preview" src="../assets/math-word/image31.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+</blockquote></div></details><details class="lesson-card"><summary>Line graph</summary><div class="lesson-card-body"><p>A line graph uses points connected by lines to show how data changes
+over a continuous period of time or another sequence (trends).</p><p>Example:</p><blockquote>
+<p>Used to track temperature changes over a week or stock prices over
+several months.</p>
+<p><img alt="Image preview" src="../assets/math-word/image32.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+</blockquote></div></details><details class="lesson-card"><summary>Line plot</summary><div class="lesson-card-body"><p>A line plot, also called a <strong>dot plot</strong>, is a simple
+graph that uses dots or Xs above a number line to show the frequency of
+each value in a data set.</p><p>Example:</p><blockquote>
+<p>Use a line plot to quickly see how many students earned each score on
+a math quiz.</p>
+<p><img alt="Image preview" src="../assets/math-word/image33.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+</blockquote></div></details><details class="lesson-card"><summary>Histogram</summary><div class="lesson-card-body"><p>A histogram is a bar-style graph that displays the frequency of data
+within specific <strong>intervals</strong> (ranges of numbers) rather
+than individual categories. The bars touch each other.</p><p>Example:</p><blockquote>
+<p>Used to show how many students scored between 70-79, 80-89, and
+90-100 on a test.</p>
+</blockquote><p><img src="../assets/math-word/image34.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p></div></details><details class="lesson-card"><summary>Circle graph</summary><div class="lesson-card-body"><p>A circle graph (or <strong>pie chart</strong>) is a circle divided
+into sectors (slices) that represent the proportion or percentage of
+each category relative to the whole data set.</p><p>Example:</p><blockquote>
+<p>Used to show the breakdown of a monthly budget (e.g., rent makes up
+30% of expenses).</p>
+<p><img src="../assets/math-word/image35.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+</blockquote></div></details></section></article></div>
+<!-- LEVEL-4 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+</body>
+</html>

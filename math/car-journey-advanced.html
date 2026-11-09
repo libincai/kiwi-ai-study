@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+<!--
+  Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
+
+  Visual reference: math/number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+
+  HOW TO USE
+  1. Copy to target path (e.g. math/number-families.html, math/car-journey.html).
+  2. body.topic-page + main.topic-main — no primary nav item active.
+  3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
+  4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
+  5. Kicker = section path; subtitle = short intro (≤2 lines); longer copy goes in body .nf-lead / article.
+  6. Fallback .page-back-wrap → parent category; drive-breadcrumb.js replaces it with full trail.
+  7. Paste unique content between LEVEL-4 BODY markers.
+
+  Levels 2–3 use the blue-gold compact banner — not this template.
+-->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Function in Real Life: A Car’s Journey | KIWI 爱AI Study</title>
+<meta content="Explore Function in Real Life: A Car’s Journey in the KIWI 爱AI Study mathematical thinking library." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
+<style>
+/* Example topic content tokens (Number Families pattern) — trim or extend per page */
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
+@media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}}
+  
+.word-topic{max-width:1040px;margin:28px auto}.topic-intro{line-height:1.8;margin:0 0 20px}.lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}.lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}.lesson-card summary::after{content:'+';font-size:25px;color:#1768b2}.lesson-card[open] summary::after{content:'−'}.lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}.lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}.lesson-card-content h3{color:#153d70;font-size:17px;margin:20px 0 8px}.word-figure{display:block;max-width:100%;height:auto;margin:12px auto}.math-expression{font-family:Cambria Math,serif;white-space:pre-wrap}.lesson-card p{margin:10px 0}@media(max-width:600px){.lesson-card summary{padding:15px;font-size:16px}.lesson-card-content{padding:12px 16px}}
+
+/* Advanced GCF methods: explanatory introduction and two independent panels */
+.kiwi-topic-article .kiwi-advanced-intro{margin:24px 0 18px;line-height:1.75}
+.kiwi-topic-article .kiwi-advanced-intro h3{color:#153d70;font-size:20px;margin:0 0 12px}
+.kiwi-topic-article .kiwi-method-card{margin:14px 0}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math{display:flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;width:100%!important;max-width:100%!important;overflow:visible!important;box-sizing:border-box}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math math{display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:4.7rem!important;margin:.35rem 0 1.2rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li{list-style:decimal outside!important;text-align:left!important;padding-left:.35rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li p{display:inline!important;margin:0!important;text-align:left!important;font:inherit!important}
+@media(max-width:600px){.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:3.8rem!important}}
+
+</style>
+<style>.chapter-topic-nav{margin:24px 0;padding:16px 18px;border:1px solid #dce6f1;border-radius:14px;background:#f8fbff}.chapter-topic-nav p{margin:0 0 10px;font-weight:800;color:#153d70}.chapter-topic-links{display:flex;flex-wrap:wrap;gap:9px}.chapter-topic-links a{padding:9px 12px;border:1px solid #d3e2f4;border-radius:9px;color:#1768b2;text-decoration:none;font-size:14px;font-weight:700;background:#fff}.chapter-topic-links a[aria-current="page"]{background:#1768b2;color:#fff;border-color:#1768b2}</style><style>
+/* KIWI Level 4: category in banner, document-style topic navigation */
+.kiwi-learning-layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,1fr);gap:30px;align-items:start;max-width:1160px;margin:28px auto 50px}
+.kiwi-topic-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px}
+.kiwi-topic-sidebar h2{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#54708e;margin:0 8px 12px}
+.kiwi-topic-sidebar a{display:block;padding:12px 13px;color:#194a81;text-decoration:none;font-size:14px;line-height:1.5;border-radius:9px;overflow-wrap:break-word}
+.kiwi-topic-sidebar a:hover,.kiwi-topic-sidebar a:focus-visible{background:#e8f2fc;outline-offset:2px}
+.kiwi-topic-sidebar a[aria-current=page]{background:#dcecff;color:#103c74;font-weight:750;border-left:3px solid #1768b2}
+.kiwi-topic-sidebar .kiwi-sidebar-back{margin-top:12px;padding-top:16px;border-top:1px solid #dce7f3;font-size:13px}
+.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.5vw,31px);line-height:1.25;color:#153d70;margin:2px 0 20px}
+.kiwi-topic-article .word-topic{max-width:100%;margin:0}.kiwi-topic-article .lesson-card{max-width:100%}
+@media(max-width:760px){.kiwi-learning-layout{display:block;margin:20px auto}.kiwi-topic-sidebar{position:static;margin-bottom:24px;padding:12px}.kiwi-topic-sidebar h2{margin:2px 8px 6px}.kiwi-topic-sidebar a{padding:9px 12px}.kiwi-current-topic{margin:0 0 16px}}
+</style><style>
+/* Topic navigation and professional mathematics typography */
+.kiwi-topic-sidebar{padding-top:14px}
+.kiwi-topic-article .word-topic{line-height:1.75}
+.kiwi-topic-article .topic-intro{line-height:1.75}
+.kiwi-topic-article .kiwi-formula-row{display:block;text-align:center;margin:18px auto 22px;padding:5px 10px;max-width:100%;overflow-x:auto;font-family:"Cambria Math", "STIX Two Math", serif;font-size:1.12rem;line-height:1.75}
+.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-display-math{display:block;text-align:center;margin:16px auto;max-width:100%;overflow-x:auto;font-size:1.08em}
+.kiwi-topic-article .lesson-card-content p,.kiwi-topic-article .topic-intro p{margin:12px 0}
+.kiwi-topic-article .lesson-card-content ul,.kiwi-topic-article .topic-intro ul{padding-left:25px}
+.kiwi-topic-article .lesson-card-content li,.kiwi-topic-article .topic-intro li{margin:7px 0}
+.kiwi-topic-article .lesson-card-content blockquote{border-left:3px solid #d3e5f6;padding-left:15px;margin:14px 0;color:#334e68}
+.kiwi-topic-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:18px 0}
+.kiwi-topic-article th,.kiwi-topic-article td{border:1px solid #dce7f3;padding:8px 12px}
+.kiwi-topic-article .lesson-card-content img{max-width:100%;height:auto;display:block;margin:15px auto}
+@media(max-width:760px){.kiwi-topic-article .kiwi-formula-row{font-size:1rem}}
+</style><style>
+/* Word-to-web math and insight panel cleanup */
+.kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
+.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
+.kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
+.kiwi-topic-article .kiwi-insight-body ul{padding-left:22px;margin:12px 0}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row,.kiwi-topic-article .kiwi-insight-body math[display="block"]{text-align:center}
+.kiwi-topic-article .kiwi-formula-row{list-style:none}
+@media(max-width:600px){.kiwi-topic-article .kiwi-insight-panel{padding:14px 16px}}
+</style><style>
+/* KIWI mathematical equation steps: remove bullet markers without altering genuine teaching lists. */
+.kiwi-topic-article li.kiwi-equation-list-item{list-style-type:none!important;list-style-image:none!important;position:relative}
+.kiwi-topic-article li.kiwi-equation-list-item::marker{content:""!important}
+.kiwi-topic-article li.kiwi-equation-list-item::before{content:none!important}
+.kiwi-topic-article li.kiwi-equation-list-item>p{margin:10px 0;text-align:center}
+.kiwi-topic-article li.kiwi-equation-list-item>p math{margin-left:auto;margin-right:auto}
+.kiwi-topic-article .kiwi-insight-panel{background:#fff9ec!important;border-color:#f2d79c!important;border-left-color:#dfac49!important;color:#6b4b22!important}
+.kiwi-topic-article .kiwi-insight-header{color:#865915!important}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row{text-align:center}
+</style><style id="kiwi-gcf-notation-fix">
+/* Examples are a semantic list, not centered derivation blocks. */
+.kiwi-topic-article .kiwi-gcf-example-list{list-style:disc outside;padding-left:1.7rem;margin:12px 0 24px;}
+.kiwi-topic-article .kiwi-gcf-example-list li{display:list-item;list-style-type:disc;text-align:left;margin:9px 0;padding-left:5px;}
+.kiwi-topic-article .kiwi-gcf-example-list math{display:inline!important;overflow:visible!important;max-width:none!important;vertical-align:middle;}
+/* Remove native MathML vertical scroll controls; formulas remain centered. */
+.kiwi-topic-article math,.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-formula-row{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;scrollbar-width:none;}
+.kiwi-topic-article math::-webkit-scrollbar,.kiwi-topic-article .kiwi-formula-row::-webkit-scrollbar{display:none;}
+.kiwi-topic-article .kiwi-formula-row{text-align:center;}
+.kiwi-topic-article .kiwi-formula-row math[display="block"]{display:block;margin-inline:auto;text-align:center;}
+</style><style>
+/* GCF worked example: clear example indent and numbered procedure */
+.kiwi-example-list{padding-left:2.2rem;margin:0.6rem 0 1rem;list-style:disc outside}
+.kiwi-example-list li{padding-left:.25rem;line-height:1.7}
+.kiwi-numbered-steps{list-style:decimal outside;padding-left:2.4rem;margin:1rem 0 1.25rem}
+.kiwi-numbered-steps>li{padding-left:.3rem;margin:.45rem 0;line-height:1.6}
+.kiwi-numbered-steps>li::marker{font-weight:700;color:#111111}
+.kiwi-numbered-steps .kiwi-formula-row{margin:.15rem 0!important;text-align:center!important}
+.kiwi-numbered-steps math[display="block"]{display:block!important;margin:0 auto!important;text-align:center!important}
+</style><style id="kiwi-gcf-final-layout">
+/* Consistent one-level indentation for bullet and numbered lists. */
+.kiwi-topic-article ul.kiwi-example-list,
+.kiwi-topic-article ul.kiwi-gcf-example-list,
+.kiwi-topic-article ol.kiwi-numbered-steps { margin: .65rem 0 1.2rem 0 !important; padding-left: 2.5rem !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ul.kiwi-example-list > li,
+.kiwi-topic-article ul.kiwi-gcf-example-list > li { padding-left:.4rem !important; margin:.45rem 0 !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li { list-style-type:decimal !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li p.kiwi-step-text { display:inline !important; margin:0 !important; padding:0 !important; text-align:left !important; font:inherit !important; }
+.kiwi-topic-article .kiwi-gcd-display { display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; margin:1rem auto 1.3rem !important; padding:0 !important; border:0 !important; }
+.kiwi-topic-article .kiwi-gcd-display math { display:block !important; width:max-content !important; max-width:100%; margin:0 auto !important; text-align:center !important; overflow:visible !important; }
+</style><style>
+/* Word-to-Web: nested worked examples (GCF Division Method) */
+.kiwi-example-block { margin: .5rem 0 1.2rem 1.5rem; text-align: left; }
+.kiwi-example-question { margin: .35rem 0 .55rem; }
+.kiwi-example-steps { margin: .4rem 0 .45rem 2rem; padding-left: 1.25rem; list-style-type: decimal; }
+.kiwi-example-steps li { padding-left: .25rem; margin: .45rem 0; text-align: left; }
+.kiwi-example-steps li::marker { color: #111111; font-weight: 700; }
+.kiwi-example-explanation, .kiwi-example-answer { margin: .6rem 0 .6rem 2rem; text-align: left; }
+@media (max-width: 600px) { .kiwi-example-block { margin-left: .7rem; } .kiwi-example-steps { margin-left: 1rem; } .kiwi-example-explanation, .kiwi-example-answer { margin-left: 1rem; } }
+</style><style>
+/* KIWI Word-to-Web standards: math lesson lists (2026-11-09) */
+.kiwi-topic-article ol li::marker,
+.kiwi-topic-article .kiwi-numbered-steps > li::marker,
+.kiwi-topic-article .kiwi-example-steps > li::marker,
+.kiwi-topic-article .kiwi-method-card ol li::marker {
+  color: #111 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ol.kiwi-example-steps > li {font-weight:400; text-align:left;}
+/* Avoid centering calculation text within numbered steps. */
+.kiwi-topic-article ol.kiwi-numbered-steps > li > p.kiwi-step-text {font-weight:400!important;text-align:left!important;}
+</style>
+<style id="kiwi-shared-math-example-standards">
+/* KIWI shared Word-to-Web: formulas and worked examples (2026-11-09). */
+.kiwi-topic-article p.kiwi-formula-row {display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;box-sizing:border-box!important;overflow:visible!important;margin:1rem auto!important;padding:.25rem 0!important;}
+.kiwi-topic-article p.kiwi-formula-row > math[display="block"] {display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-scroll {overflow-x:auto!important;overflow-y:hidden!important;max-width:100%;}
+.kiwi-topic-article .kiwi-example-standard {margin:.35rem 0 1rem!important;padding:0!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question {margin:.35rem 0 .4rem 3ch!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps {margin:.35rem 0 .6rem 6ch!important;padding:0!important;list-style:decimal inside!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li {display:list-item!important;list-style:decimal inside!important;margin:.3rem 0!important;padding:0!important;font-weight:400!important;color:#111!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
+.kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
+</style><style>
+.kiwi-generated-content{line-height:1.72;color:#182d42}.kiwi-generated-content p{margin:12px 0}.kiwi-generated-content math[display="block"],.kiwi-generated-content .math-display{display:block;text-align:center;margin:18px auto;max-width:100%;overflow-x:auto;overflow-y:visible}.kiwi-generated-content math{font-size:1.04em}.kiwi-generated-content img{display:block;max-width:100%;height:auto;margin:18px auto}.kiwi-generated-content table{max-width:100%;display:block;overflow-x:auto;border-collapse:collapse}.kiwi-generated-content td,.kiwi-generated-content th{padding:7px 10px;border:1px solid #dce7f3}.kiwi-generated-content ul,.kiwi-generated-content ol{padding-left:3em;margin:10px 0}.kiwi-generated-content ol li::marker{color:#111;font-weight:400}.kiwi-generated-content li{padding-left:.2em;margin:6px 0}.kiwi-generated-content .kiwi-insight-panel{background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e6ad35;border-radius:12px;padding:16px 20px;margin:20px 0;text-align:left}.kiwi-generated-content .kiwi-insight-panel p{text-align:left}.kiwi-generated-content .lesson-card{border:1px solid #dce7f3;border-radius:12px;overflow:hidden;margin:12px 0}.kiwi-generated-content .lesson-card>summary{cursor:pointer;padding:16px 20px;background:#eef6ff;color:#143e75;font-weight:650;list-style:none;display:flex;justify-content:space-between}.kiwi-generated-content .lesson-card>summary:after{content:'+'}.kiwi-generated-content .lesson-card[open]>summary:after{content:'−'}.kiwi-generated-content .lesson-card-body{padding:14px 20px 20px}.kiwi-generated-content h3{font-size:1.05em;color:#143e75}.kiwi-generated-content .example-problem{margin-left:3ch}.kiwi-generated-content .example-steps{margin-left:6ch;padding-left:1.4em}.kiwi-generated-content .example-answer{margin-left:3ch;border-left:3px solid #cde3fa;padding:4px 12px}.kiwi-generated-content .math-display::-webkit-scrollbar{height:5px}.kiwi-topic-sidebar a{overflow-wrap:anywhere}
+</style><style>
+/* KIWI Word-to-Web: unified display math layout (2026-11) */
+.kiwi-topic-article math[display="block"], .kiwi-topic-article math.math-display, .kiwi-topic-article math.kiwi-display-math {display:block!important;text-align:center!important;margin:0 auto!important;max-width:100%!important;overflow:visible!important;overflow-y:visible!important;}
+.kiwi-topic-article .kiwi-math-block {display:block!important;width:100%!important;max-width:100%!important;text-align:center!important;margin:1.1rem auto!important;padding:.1rem 0!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;}
+.kiwi-topic-article .kiwi-math-block::-webkit-scrollbar {height:0!important;width:0!important;display:none!important;}
+.kiwi-topic-article .kiwi-math-block > math {display:block!important;width:max-content!important;max-width:none!important;margin:0 auto!important;text-align:center!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-block > p {text-align:center!important;margin:0!important;}
+.kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
+.kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
+</style></head>
+<body class="topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="../math/index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="topic-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Mathematical Thinking" data-page-back="" data-zh="← 返回数学思维" href="mathematical-thinking.html">← Back to Mathematical Thinking</a>
+</div>
+<section aria-label="Page introduction" class="nf-hero topic-banner">
+<p class="topic-banner-kicker" data-en="MATHEMATICAL THINKING" data-zh="数学思维">MATHEMATICAL THINKING</p>
+<h1 data-en="Functions &amp; Graphs" data-zh="Functions &amp; Graphs">Functions &amp; Graphs</h1>
+<p class="topic-banner-subtitle" data-en="Explore mathematical concepts, methods, and worked examples." data-zh="探索数的关系、运算方法与实用计算策略。">Explore mathematical concepts, methods, and worked examples.</p>
+</section>
+<!-- LEVEL-4 BODY START -->
+<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a href="recovering-function-rule.html">Recovering a Function Rule from Function Notation</a><a class="active" href="car-journey-advanced.html">Function in Real Life: A Car’s Journey</a><a href="mathematical-thinking.html">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Function in Real Life: A Car’s Journey" data-zh="Function in Real Life: A Car’s Journey">Function in Real Life: A Car’s Journey</h2><section class="nf-section word-topic kiwi-generated-content"><p>Imagine a car travelling along a country road with a speed limit of
+90 km/h. The car starts from rest, accelerates, travels at a constant
+speed, and then slows down to a stop.</p><details class="lesson-card" open=""><summary>1. One Journey, Many
+Mathematical Ideas</summary><div class="lesson-card-body"><p>We can use this journey to explore several mathematical concepts,
+including:</p><ul>
+<li><p>Functions, domain and range</p></li>
+<li><p>Linear, quadratic, and constant functions</p></li>
+<li><p>Step patterns and rate of change</p></li>
+<li><p>How the coefficient affects step patterns</p></li>
+<li><p>Inverse functions</p></li>
+</ul><p>For this example, we will use simplified mathematical models to
+describe the car’s speed over time.</p><ul>
+<li><p>Stage 1: Accelerating (0–3 seconds)<br/>
+The car starts at 0 km/h and reaches 90 km/h after 3 seconds.</p></li>
+<li><p>Stage 2: Constant Speed (3–8 seconds)<br/>
+The car maintains a constant speed of 90 km/h for 5 seconds.</p></li>
+<li><p>Stage 3: Decelerating (8–13 seconds)<br/>
+The car slows down from 90 km/h to 0 km/h over 5 seconds.</p></li>
+</ul></div></details><details class="lesson-card"><summary>2. The Speed–Time Function</summary><div class="lesson-card-body"><p>Let:</p><ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+= time in seconds
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">v(t)</annotation></semantics></math>
+= speed in kilometres per hour
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">km/h</annotation></semantics></math>)</p></li>
+</ul><p>The complete journey can be represented by a piecewise function:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mrow><mo form="prefix" stretchy="true">{</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>90</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>90</mn><mo>−</mo><mn>18</mn><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo>−</mo><mn>8</mn><mo form="postfix" stretchy="true">)</mo></mrow></mtd><mtd columnalign="center" style="text-align: center"><mn>8</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>13</mn></mtd></mtr></mtable></mrow><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">v(t) = \left\{ \begin{matrix}
+10t^{2} &amp; 0 \leq t \leq 3 \\
+90 &amp; 3 &lt; t \leq 8 \\
+90 - 18(t - 8) &amp; 8 &lt; t \leq 13
+\end{matrix} \right.\ 
+</annotation></semantics></math></div><p><img loading="lazy" src="../assets/math-word/image5.jpg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><p>Each part describes a different stage of the journey.</p></div></details><details class="lesson-card"><summary>3. Linear, Non-Linear,
+and Constant Functions</summary><div class="lesson-card-body"><p>The car’s journey demonstrates three types of functions.</p><h4 id="stage-1-quadratic-function">Stage 1: Quadratic function</h4><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">v(t) = 10t^{2},\quad 0 \leq t \leq 3</annotation></semantics></math></div><p>The speed increases from 0 to 90 km/h.</p><p>This is a quadratic function because the input variable (t) is
+squared. Its graph is a curved parabola.</p><h4 id="stage-2-constant-function">Stage 2: Constant function</h4><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>90</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>3</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">v(t) = 90,\quad 3 &lt; t \leq 8</annotation></semantics></math></div><p>The speed remains at 90 km/h.</p><p>This is a constant function, represented by a horizontal line. The
+rate of change of speed is zero during this stage.</p><h4 id="stage-3-linear-function">Stage 3: Linear function</h4><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>90</mn><mo>−</mo><mn>18</mn><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo>−</mo><mn>8</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mn>8</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">v(t) = 90 - 18(t - 8),\quad 8 &lt; t \leq 13</annotation></semantics></math></div><p>The speed decreases by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">18km/h</annotation></semantics></math>
+every second.</p><p>This is a linear function because the speed changes at a constant
+rate. Its graph is a straight line sloping downward.</p><p><em>Note: The quadratic model in Stage 1 is a simplified mathematical
+model for studying functions and patterns. It does not represent
+constant physical acceleration.</em></p></div></details><details class="lesson-card"><summary>4. Domain and Range</summary><div class="lesson-card-body"><p>The domain is the set of allowed input values. The range is the set
+of possible output values.</p><p>In this example:</p><ul>
+<li><p>Input
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>):
+Time, measured in seconds.</p></li>
+<li><p>Output
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>):
+Speed, measured in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">km/h</annotation></semantics></math>.</p></li>
+</ul><p>For the complete journey:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Domain</mtext><mo>:</mo><mspace width="0.222em"></mspace><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">\text{Domain}:\ 0 \leq t \leq 13</annotation></semantics></math></div><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Range: </mtext><mn>0</mn><mo>≤</mo><mi>v</mi><mo>≤</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">\text{Range:~}0 \leq v \leq 90</annotation></semantics></math></div><p>The domain tells us when the journey is being modelled. The range
+tells us which speeds occur during the journey.</p><p>Each stage also has its own domain and range:</p><table>
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 33%"/>
+<col style="width: 32%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Domain (Time)</th>
+<th>Range (Speed)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Accelerating</td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">0 \leq t \leq 3</annotation></semantics></math></div></td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>v</mi><mo>≤</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">0 \leq v \leq 90</annotation></semantics></math></div></td>
+</tr>
+<tr class="even">
+<td>Constant speed</td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">3 &lt; t \leq 8</annotation></semantics></math></div></td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">v = 90</annotation></semantics></math></div></td>
+</tr>
+<tr class="odd">
+<td>Decelerating</td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">8 &lt; t \leq 13</annotation></semantics></math></div></td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>v</mi><mo>&lt;</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">0 \leq v &lt; 90</annotation></semantics></math></div></td>
+</tr>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 7%"/>
+<col style="width: 92%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><img alt="Lights On with solid fill" src="../assets/math-word/image3.svg"/></th>
+<th><p><strong>IMPORTANT ALERT: Avoid Overlapping Domains!</strong></p>
+<p>When defining a piecewise function, make sure the domains of
+different stages do not overlap and leave no gaps.</p>
+<p>At each boundary, one stage includes the endpoint, and the next stage
+excludes it.</p>
+<p>For example:</p>
+<ul>
+<li><p>Stage 1:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">0 \leq t \leq 3</annotation></semantics></math></p></li>
+<li><p>Stage 2:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">3 &lt; t \leq 8</annotation></semantics></math></p></li>
+<li><p>Stage 3:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">8 &lt; t \leq 13</annotation></semantics></math></p>
+<p>Notice that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">t = 3</annotation></semantics></math>
+belongs only to Stage 1, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">t = 8</annotation></semantics></math>
+belongs only to Stage 2.</p>
+<p><strong>Remember:</strong> Every input must belong to exactly one
+stage!</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div></details><details class="lesson-card"><summary>5. Discrete vs. Continuous
+Functions</summary><div class="lesson-card-body"><p>A <strong>discrete function</strong> has separate, distinct input
+values. Its graph consists of individual points that are not
+connected.</p><p>For example, we could record the car’s speed at each whole second: 0,
+1, 2, 3, and so on.</p><p>A <strong>continuous function</strong> allows input values to vary
+continuously over an interval. Its graph is a connected line or curve,
+with no gaps over that interval.</p><p>The car’s speed during the journey is modelled as a continuous
+function because time and speed change continuously in this simplified
+model.</p><p>The same mathematical rule can be represented by discrete points or
+by a continuous curve, depending on the allowed domain.</p></div></details><details class="lesson-card"><summary>6. Step
+Patterns, First Differences and Second Difference</summary><div class="lesson-card-body"><p>We can examine the first stage of the journey to discover a quadratic
+step pattern.</p><h4 id="first-ifferences">First ifferences</h4><p>Using:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v(t) = 10t^{2}</annotation></semantics></math></div><p>we obtain the following table:</p><table>
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 36%"/>
+<col style="width: 40%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time (s)</th>
+<th>Speed (km/h)</th>
+<th>First Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>10</td>
+<td>+10</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>40</td>
+<td>+30</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>90</td>
+<td>+50</td>
+</tr>
+</tbody>
+</table><p>The first differences are:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>10</mn><mo>,</mo><mspace width="0.222em"></mspace><mo>+</mo><mn>30</mn><mo>,</mo><mspace width="0.222em"></mspace><mo>+</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">+ 10,\  + 30,\  + 50</annotation></semantics></math></div><h4 id="step-pattern">Step pattern</h4><p>These values form the step pattern of the quadratic function.</p><p>For the basic quadratic function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">y = x^{2}</annotation></semantics></math>,
+the step pattern is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>3</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>5</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>7</mn><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">1,\quad 3,\quad 5,\quad 7,\ldots</annotation></semantics></math></div><p>Our function is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v(t) = 10t^{2}</annotation></semantics></math>.
+Since its coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">a = 10</annotation></semantics></math>,
+each step in the basic pattern is multiplied by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>10</mn><annotation encoding="application/x-tex">10</annotation></semantics></math>:</p><p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mo>×</mo><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>10</mn><mo>×</mo><mn>3</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>10</mn><mo>×</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">10 \times 1,\quad 10 \times 3,\quad 10 \times 5
+</annotation></semantics></math></div>Therefore, the step pattern is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mn>10</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>30</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>50</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{10,\quad 30,\quad 50}</annotation></semantics></math></div><p><strong>Key Idea:</strong> The coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+multiplies the basic quadratic step pattern
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">1,3,5,\ldots</annotation></semantics></math>).
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v(t) = at^{2}</annotation></semantics></math>,
+the step pattern is
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>3</mn><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>5</mn><mi>a</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">a,\ 3a,\ 5a,\ldots</annotation></semantics></math>).</p><p>Notice that the speed increases by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">10km/h</annotation></semantics></math>
+during the 1st second, by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>30</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">30km/h</annotation></semantics></math>
+during the 2nd second, and by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">50km/h</annotation></semantics></math>
+during the 3rd second.</p><p>The increases themselves become larger.</p><h4 id="second-differences">Second differences</h4><p>The second differences are found by subtracting consecutive first
+differences:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>30</mn><mo>−</mo><mn>10</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">30 - 10 = 20</annotation></semantics></math></div><p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>−</mo><mn>30</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">50 - 30 = 20
+</annotation></semantics></math></div>Therefore:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Second differences: </mtext><mo>+</mo><mn>20</mn><mo>,</mo><mspace width="0.222em"></mspace><mo>+</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">\text{Second~differences:~} + 20,\  + 20</annotation></semantics></math></div><p>The second differences are constant, which is a characteristic of a
+quadratic pattern.</p><p><strong>Remember:</strong></p><ul>
+<li><p>First differences describe how much the output changes.</p></li>
+<li><p>Second differences describe how much the first differences
+change.</p></li>
+<li><p>Constant second differences indicate a quadratic pattern when the
+input intervals are equal.</p></li>
+</ul><h4 id="a-connection-to-physics">A connection to physics</h4><p>In a speed–timetable, first differences show how much the speed
+changes over equal time intervals. Second differences show how those
+speed increments change.</p><p>This is related to the study of acceleration, but second differences
+should not be confused with physical acceleration itself.</p><p>In the quadratic model
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v(t) = 10t^{2}</annotation></semantics></math>,
+the continuous acceleration changes with time. The model is intended to
+illustrate the mathematical pattern rather than constant physical
+acceleration.</p></div></details><details class="lesson-card"><summary>7. Rate of Change (ROC)</summary><div class="lesson-card-body"><p>The rate of change describes how one quantity changes relative to
+another.</p><p>For a speed–time relationship:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>O</mi><mi>C</mi><mo>=</mo><mfrac><mtext mathvariant="normal">Change in speed</mtext><mtext mathvariant="normal">Change in time</mtext></mfrac></mrow><annotation encoding="application/x-tex">ROC = \frac{\text{Change~in~speed}}{\text{Change~in~time}}</annotation></semantics></math></div><h4 id="constant-speed">Constant speed</h4><p>During Stage 2, the speed remains at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>90</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">90km/h</annotation></semantics></math>.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>O</mi><mi>C</mi><mo>=</mo><mfrac><mrow><mn>90</mn><mo>−</mo><mn>90</mn></mrow><mn>5</mn></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">ROC = \frac{90 - 90}{5} = 0</annotation></semantics></math></div><p>The speed does not change, so the acceleration is zero during this
+stage.</p><h4 id="constant-deceleration">Constant deceleration</h4><p>During Stage 3, the speed decreases from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>90</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">90km/h</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">0km/h</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math>
+seconds.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>O</mi><mi>C</mi><mo>=</mo><mfrac><mrow><mn>0</mn><mo>−</mo><mn>90</mn></mrow><mrow><mn>13</mn><mo>−</mo><mn>8</mn></mrow></mfrac><mo>=</mo><mi>−</mi><mn>18</mn></mrow><annotation encoding="application/x-tex">ROC = \frac{0 - 90}{13 - 8} = - 18</annotation></semantics></math></div><p>The rate of change is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>18</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">- 18km/h\ </annotation></semantics></math>per
+second.</p><p>This means that the speed decreases by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mspace width="0.222em"></mspace><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">18\ km/h</annotation></semantics></math>
+every second. The car has constant negative acceleration, commonly
+described as constant deceleration in this example.</p><p>The constant first differences correspond to the constant rate of
+change.</p></div></details><details class="lesson-card"><summary>8. Functions and Their
+Inverses</summary><div class="lesson-card-body"><p>A function maps each input to exactly one output. An inverse reverses
+the input–output relationship.</p><p>In our original function:</p><ul>
+<li><p>Input
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>):
+Time (seconds)</p></li>
+<li><p>Output
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>):
+Speed (km/h)</p></li>
+</ul><p>In the inverse relationship:</p><ul>
+<li><p>Input
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>):
+Speed (km/h)</p></li>
+<li><p>Output
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>):
+Time (seconds)</p></li>
+</ul><p>To find an inverse, we exchange
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>,
+then solve for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.</p><h4 id="symmetry-about-the-line-yx-a-function-and-its-inverse">Symmetry
+about the line y=x: a function and its inverse</h4><p>The graph of a function and its inverse are reflections of each other
+across the line:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y = x</annotation></semantics></math></div><p>A point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
+on the original function becomes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(b,a)</annotation></semantics></math>
+on its inverse.</p><h4 id="which-stages-have-function-inverses">Which stages have function
+inverses?</h4><p><strong>Important:</strong></p><p>The inverse of the entire journey is not a function because the same
+speed can occur at multiple times when the speed is constant from
+3<sup>rd</sup> second to 8<sup>th</sup> second. Restricting the original
+function to a one-to-one stage allows us to obtain a function
+inverse.</p><p><strong>Reversing a Car’s Journey ≠ Finding Its Inverse</strong></p><p><img loading="lazy" src="../assets/math-word/image6.png" style="width:425px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h5 id="stage-1-quadratic-function-1">Stage 1: Quadratic function</h5><p>The function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = f(t) = 10t^{2}</annotation></semantics></math><em>,</em>
+restricted to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">0 \leq t \leq 3</annotation></semantics></math>,
+is one-to-one. Every speed in its range corresponds to exactly one
+time.</p><p>Starting with:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = 10t^{2}</annotation></semantics></math></div><p>Isolate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>:</p><p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msqrt><mfrac><mi>v</mi><mn>10</mn></mfrac></msqrt></mrow><annotation encoding="application/x-tex">t = \sqrt{\frac{v}{10}}
+</annotation></semantics></math></div>Thus, the inverse relationship is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>v</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><msqrt><mfrac><mi>v</mi><mn>10</mn></mfrac></msqrt></mrow><annotation encoding="application/x-tex">t = f^{- 1}(v) = \sqrt{\frac{v}{10}}</annotation></semantics></math></div><p>The inverse input is the original speed, and the inverse output is
+the original time.</p><table>
+<colgroup>
+<col style="width: 7%"/>
+<col style="width: 92%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><img alt="Lights On with solid fill" src="../assets/math-word/image3.svg"/></th>
+<th><p><strong>Understanding Function Notation</strong></p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow></mrow><annotation encoding="application/x-tex">f^{- 1}\text{ }</annotation></semantics></math>represents
+the <strong>inverse function</strong>, not the reciprocal of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</p></li>
+<li><p>In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">v = f(t)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+represents time and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+represents speed. Their meanings are fixed.</p></li>
+<li><p>Unlike generic variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+represent specific quantities. Instead of simply swapping their letters,
+solve for time in terms of speed:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>v</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">t = f^{- 1}(v)</annotation></semantics></math>.</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Remember:</strong> In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">y = f(x)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+are general variables. Finding the inverse reverses the input and output
+roles, regardless of the variable names.</p><p><img loading="lazy" src="../assets/math-word/image7.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h5 id="stage-2-constant-function-1">Stage 2: Constant function</h5><p>The function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">v = 90</annotation></semantics></math>
+is not one-to-one. Many different times correspond to the same speed of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>90</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">90km/h</annotation></semantics></math>.</p><p>When the input and output are exchanged, the inverse relation assigns
+multiple times to one speed. It is therefore not a function.</p><p><img loading="lazy" src="../assets/math-word/image8.jpeg" style="width:425px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><table>
+<colgroup>
+<col style="width: 7%"/>
+<col style="width: 92%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><img alt="Lights On with solid fill" src="../assets/math-word/image3.svg"/></th>
+<th><p><strong>A Symmetric Graph, but No Inverse Function?</strong></p>
+<p>A function and its inverse relation are reflections across the line
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y = x</annotation></semantics></math>.
+but the inverse relation is not always a function.</p>
+<p>Consider the constant-speed function:</p>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>90</mn><mo>,</mo><mspace width="1.0em"></mspace><mspace width="1.0em"></mspace><mn>3</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">v(t) = 90,\quad\quad 3 \leq t \leq 8</annotation></semantics></math></div>
+<ul>
+<li><p><strong>Original function:</strong> A horizontal line at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">v = 90</annotation></semantics></math>.</p></li>
+<li><p><strong>Inverse relation:</strong> Swapping the input and output
+gives a vertical line at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">v = 90</annotation></semantics></math>,
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">t = 3</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">t = 8</annotation></semantics></math>.</p></li>
+<li><p><strong>Why is it not an inverse function?</strong> The same
+speed of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>90</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">90km/h</annotation></semantics></math>
+corresponds to many different times. Therefore, the inverse relation
+fails the vertical line test.</p>
+<p><strong>Remember:</strong> The graphs are symmetric about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y = x</annotation></semantics></math>,
+but the inverse is not a function because the original function is not
+one-to-one.</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h5 id="stage-3-linear-function-1">Stage 3: Linear function</h5><p>The deceleration function is one-to-one. Each speed corresponds to
+exactly one time during this stage.</p><p>Starting with:</p><p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>90</mn><mo>−</mo><mn>18</mn><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo>−</mo><mn>8</mn><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">v = 90 - 18(t - 8)
+</annotation></semantics></math></div>Solving for time gives:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>8</mn><mo>+</mo><mfrac><mrow><mn>90</mn><mo>−</mo><mi>v</mi></mrow><mn>18</mn></mfrac></mrow><annotation encoding="application/x-tex">t = 8 + \frac{90 - v}{18}</annotation></semantics></math></div><p>Therefore, the inverse relationship is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>v</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>8</mn><mo>+</mo><mfrac><mrow><mn>90</mn><mo>−</mo><mi>t</mi></mrow><mn>18</mn></mfrac></mrow><annotation encoding="application/x-tex">t = f^{- 1}(v) = 8 + \frac{90 - t}{18}</annotation></semantics></math></div><p>The inverse is a function because every speed in the stage’s range
+corresponds to exactly one time.</p><p><img loading="lazy" src="../assets/math-word/image9.jpeg" style="width:425px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h4 id="the-physical-meaning-of-an-inverse-function-car-journey">The
+physical meaning of an inverse function: Car Journey</h4><p>In this car journey, the function describes how the car’s speed
+changes over time.</p><h5 id="acceleration-03-seconds">Acceleration (0–3 seconds): </h5><p>The car accelerates from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">0\ </annotation></semantics></math>to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>90</mn><mspace width="0.222em"></mspace><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">90\ km/h</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>
+seconds. The function tells us the car’s speed at any given time. The
+inverse function tells us how long it takes the car to reach a given
+speed.</p><h5 id="constant-speed-38-seconds">Constant speed (3–8 seconds): </h5><p>The car travels at a constant speed of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>90</mn><mspace width="0.222em"></mspace><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">90\ km/h\ </annotation></semantics></math>for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">5\ </annotation></semantics></math>seconds.
+The speed remains the same throughout this interval, so we cannot use
+the inverse function to determine one unique time from the speed
+alone.</p><h5 id="deceleration-813-seconds">Deceleration (8–13 seconds): </h5><p>The car slows down from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>90</mn><mspace width="0.222em"></mspace><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">90\ km/h</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math>
+seconds. The inverse function tells us when the car reaches a given
+speed during deceleration.</p></div></details><details class="lesson-card"><summary>9. How
+Does the Coefficient (a) Affect a Quadratic Function?</summary><div class="lesson-card-body"><p>Now let us compare three simplified quadratic speed models. Each
+model starts at zero and is evaluated over the same three-second
+interval.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = at^{2}</annotation></semantics></math></div><table>
+<colgroup>
+<col style="width: 43%"/>
+<col style="width: 24%"/>
+<col style="width: 32%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vehicle Model</th>
+<th>Function</th>
+<th>Speed at 3 s</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Slow increase</td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>5</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = 5t^{2}</annotation></semantics></math></div></td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>45</mn><mspace width="0.222em"></mspace><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">45\ km/h</annotation></semantics></math></div></td>
+</tr>
+<tr class="even">
+<td>Medium increase</td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = 10t^{2}</annotation></semantics></math></div></td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>90</mn><mspace width="0.222em"></mspace><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">90\ km/h</annotation></semantics></math></div></td>
+</tr>
+<tr class="odd">
+<td>Fast increase</td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>20</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = 20t^{2}</annotation></semantics></math></div></td>
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>180</mn><mspace width="0.222em"></mspace><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">180\ km/h</annotation></semantics></math></div></td>
+</tr>
+</tbody>
+</table><p>The coefficient (a) controls the vertical scale of the quadratic
+graph.</p><h4 id="larger-a-narrower-parabola">Larger a, narrower parabola</h4><p>When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+is larger, the output values grow more rapidly for the same input
+values. The parabola becomes narrower.</p><p><img loading="lazy" src="../assets/math-word/image10.jpeg" style="width:264.25px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h4 id="compare-the-step-patterns">Compare the step patterns</h4><p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = at^{2}</annotation></semantics></math>,
+the first differences over one-second intervals are:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>3</mn><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>5</mn><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>7</mn><mi>a</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">a,\ 3a,\ 5a,\ 7a,\ldots</annotation></semantics></math></div><p>The second differences are constant:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>2</mn><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>2</mn><mi>a</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">2a,\ 2a,\ 2a,\ldots</annotation></semantics></math></div><table style="width:100%;">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 11%"/>
+<col style="width: 30%"/>
+<col style="width: 27%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>a</th>
+<th>First Differences</th>
+<th>Second Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Slow increase</td>
+<td>5</td>
+<td>5, 15, 25</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Medium increase</td>
+<td>10</td>
+<td>10, 30, 50</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Fast increase</td>
+<td>20</td>
+<td>20, 60, 100</td>
+<td>40</td>
+</tr>
+</tbody>
+</table><p>The larger the value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>,
+the larger the second difference.</p><p>This demonstrates the relationship between the coefficient (a), the
+step pattern, and the shape of a quadratic graph.</p><p><em>These three quadratic models are mathematical comparisons, not
+realistic constant-acceleration models. The 180 km/h result is also
+above the 90 km/h speed limit used in the original country-road
+example.</em></p></div></details><details class="lesson-card"><summary>10. Final Review: One
+Journey, Many Connections</summary><div class="lesson-card-body"><p>This car journey connects the key ideas from the Functions and Graphs
+chapter.</p><ul>
+<li><p><strong>Domain and Range:</strong> Identify the allowed input and
+output values.</p></li>
+<li><p><strong>Linear, Non-Linear, and Constant Functions:</strong>
+Recognize different function types from their equations and
+graphs.</p></li>
+<li><p><strong>Discrete vs. Continuous:</strong> Distinguish separate
+data points from a continuous relationship.</p></li>
+<li><p><strong>Step Patterns:</strong> Identify how outputs change over
+equal input intervals.</p></li>
+<li><p><strong>First and Second Differences:</strong> Recognize linear
+and quadratic patterns.</p></li>
+<li><p><strong>Rate of Change:</strong> Describe how speed changes over
+time.</p></li>
+<li><p><strong>Inverse Functions:</strong> Reverse the input and output
+and determine whether the inverse is a function.</p></li>
+<li><p><strong>The Coefficient (a):</strong> Understand how it affects
+the step pattern and shape of a quadratic graph.</p></li>
+</ul><h4 id="think-about-it">Think about it</h4><ol type="1">
+<li><p>Why is the constant-speed stage represented by a horizontal
+line?</p></li>
+<li><p>Why are the first differences constant during the linear
+deceleration stage?</p></li>
+<li><p>What do constant second differences tell us about a quadratic
+pattern?</p></li>
+<li><p>Why does the constant function not have an inverse that is also a
+function?</p></li>
+<li><p>Why does the coefficient (a) affect the width of a
+parabola?</p></li>
+</ol><h4 id="answer-key-1">Answer key</h4><ol type="1">
+<li><p>Because the speed remains the same over time, the graph has a
+constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-value.</p></li>
+<li><p>The first differences are constant because the speed decreases by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mspace width="0.222em"></mspace><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">18\ km/h</annotation></semantics></math>
+every second.</p></li>
+<li><p>They tell us that the pattern is quadratic. For equally spaced
+inputs, the second differences are constant.</p></li>
+<li><p>Because many different input values correspond to the same output
+value. Reversing the inputs and outputs would assign multiple outputs to
+one input, so the inverse relation is not a function.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+multiplies the basic quadratic pattern. A larger
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">|</mo><mi>a</mi><mo form="postfix" stretchy="true">|</mo></mrow><annotation encoding="application/x-tex">|a|</annotation></semantics></math>
+makes the parabola narrower, while a smaller positive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">|</mo><mi>a</mi><mo form="postfix" stretchy="true">|</mo></mrow><annotation encoding="application/x-tex">|a|</annotation></semantics></math>
+makes it wider. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+is negative, the parabola opens downward.</p></li>
+</ol><h4 id="the-big-idea">The big idea</h4><p>Functions are not just equations. They describe relationships between
+quantities, and their graphs, differences, and inverses help us
+understand how those relationships behave.</p></div></details></section></article></div>
+<!-- LEVEL-4 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+</body>
+</html>

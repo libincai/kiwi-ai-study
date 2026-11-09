@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+<!--
+  Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
+
+  Visual reference: math/number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+
+  HOW TO USE
+  1. Copy to target path (e.g. math/number-families.html, math/car-journey.html).
+  2. body.topic-page + main.topic-main — no primary nav item active.
+  3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
+  4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
+  5. Kicker = section path; subtitle = short intro (≤2 lines); longer copy goes in body .nf-lead / article.
+  6. Fallback .page-back-wrap → parent category; drive-breadcrumb.js replaces it with full trail.
+  7. Paste unique content between LEVEL-4 BODY markers.
+
+  Levels 2–3 use the blue-gold compact banner — not this template.
+-->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Algebraic Strategies | KIWI 爱AI Study</title>
+<meta content="Explore Algebraic Strategies in the KIWI 爱AI Study mathematical thinking library." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
+<style>
+/* Example topic content tokens (Number Families pattern) — trim or extend per page */
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
+@media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}}
+  
+.word-topic{max-width:1040px;margin:28px auto}.topic-intro{line-height:1.8;margin:0 0 20px}.lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}.lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}.lesson-card summary::after{content:'+';font-size:25px;color:#1768b2}.lesson-card[open] summary::after{content:'−'}.lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}.lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}.lesson-card-content h3{color:#153d70;font-size:17px;margin:20px 0 8px}.word-figure{display:block;max-width:100%;height:auto;margin:12px auto}.math-expression{font-family:Cambria Math,serif;white-space:pre-wrap}.lesson-card p{margin:10px 0}@media(max-width:600px){.lesson-card summary{padding:15px;font-size:16px}.lesson-card-content{padding:12px 16px}}
+
+/* Advanced GCF methods: explanatory introduction and two independent panels */
+.kiwi-topic-article .kiwi-advanced-intro{margin:24px 0 18px;line-height:1.75}
+.kiwi-topic-article .kiwi-advanced-intro h3{color:#153d70;font-size:20px;margin:0 0 12px}
+.kiwi-topic-article .kiwi-method-card{margin:14px 0}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math{display:flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;width:100%!important;max-width:100%!important;overflow:visible!important;box-sizing:border-box}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math math{display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:4.7rem!important;margin:.35rem 0 1.2rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li{list-style:decimal outside!important;text-align:left!important;padding-left:.35rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li p{display:inline!important;margin:0!important;text-align:left!important;font:inherit!important}
+@media(max-width:600px){.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:3.8rem!important}}
+
+</style>
+<style>.chapter-topic-nav{margin:24px 0;padding:16px 18px;border:1px solid #dce6f1;border-radius:14px;background:#f8fbff}.chapter-topic-nav p{margin:0 0 10px;font-weight:800;color:#153d70}.chapter-topic-links{display:flex;flex-wrap:wrap;gap:9px}.chapter-topic-links a{padding:9px 12px;border:1px solid #d3e2f4;border-radius:9px;color:#1768b2;text-decoration:none;font-size:14px;font-weight:700;background:#fff}.chapter-topic-links a[aria-current="page"]{background:#1768b2;color:#fff;border-color:#1768b2}</style><style>
+/* KIWI Level 4: category in banner, document-style topic navigation */
+.kiwi-learning-layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,1fr);gap:30px;align-items:start;max-width:1160px;margin:28px auto 50px}
+.kiwi-topic-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px}
+.kiwi-topic-sidebar h2{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#54708e;margin:0 8px 12px}
+.kiwi-topic-sidebar a{display:block;padding:12px 13px;color:#194a81;text-decoration:none;font-size:14px;line-height:1.5;border-radius:9px;overflow-wrap:break-word}
+.kiwi-topic-sidebar a:hover,.kiwi-topic-sidebar a:focus-visible{background:#e8f2fc;outline-offset:2px}
+.kiwi-topic-sidebar a[aria-current=page]{background:#dcecff;color:#103c74;font-weight:750;border-left:3px solid #1768b2}
+.kiwi-topic-sidebar .kiwi-sidebar-back{margin-top:12px;padding-top:16px;border-top:1px solid #dce7f3;font-size:13px}
+.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.5vw,31px);line-height:1.25;color:#153d70;margin:2px 0 20px}
+.kiwi-topic-article .word-topic{max-width:100%;margin:0}.kiwi-topic-article .lesson-card{max-width:100%}
+@media(max-width:760px){.kiwi-learning-layout{display:block;margin:20px auto}.kiwi-topic-sidebar{position:static;margin-bottom:24px;padding:12px}.kiwi-topic-sidebar h2{margin:2px 8px 6px}.kiwi-topic-sidebar a{padding:9px 12px}.kiwi-current-topic{margin:0 0 16px}}
+</style><style>
+/* Topic navigation and professional mathematics typography */
+.kiwi-topic-sidebar{padding-top:14px}
+.kiwi-topic-article .word-topic{line-height:1.75}
+.kiwi-topic-article .topic-intro{line-height:1.75}
+.kiwi-topic-article .kiwi-formula-row{display:block;text-align:center;margin:18px auto 22px;padding:5px 10px;max-width:100%;overflow-x:auto;font-family:"Cambria Math", "STIX Two Math", serif;font-size:1.12rem;line-height:1.75}
+.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-display-math{display:block;text-align:center;margin:16px auto;max-width:100%;overflow-x:auto;font-size:1.08em}
+.kiwi-topic-article .lesson-card-content p,.kiwi-topic-article .topic-intro p{margin:12px 0}
+.kiwi-topic-article .lesson-card-content ul,.kiwi-topic-article .topic-intro ul{padding-left:25px}
+.kiwi-topic-article .lesson-card-content li,.kiwi-topic-article .topic-intro li{margin:7px 0}
+.kiwi-topic-article .lesson-card-content blockquote{border-left:3px solid #d3e5f6;padding-left:15px;margin:14px 0;color:#334e68}
+.kiwi-topic-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:18px 0}
+.kiwi-topic-article th,.kiwi-topic-article td{border:1px solid #dce7f3;padding:8px 12px}
+.kiwi-topic-article .lesson-card-content img{max-width:100%;height:auto;display:block;margin:15px auto}
+@media(max-width:760px){.kiwi-topic-article .kiwi-formula-row{font-size:1rem}}
+</style><style>
+/* Word-to-web math and insight panel cleanup */
+.kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
+.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
+.kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
+.kiwi-topic-article .kiwi-insight-body ul{padding-left:22px;margin:12px 0}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row,.kiwi-topic-article .kiwi-insight-body math[display="block"]{text-align:center}
+.kiwi-topic-article .kiwi-formula-row{list-style:none}
+@media(max-width:600px){.kiwi-topic-article .kiwi-insight-panel{padding:14px 16px}}
+</style><style>
+/* KIWI mathematical equation steps: remove bullet markers without altering genuine teaching lists. */
+.kiwi-topic-article li.kiwi-equation-list-item{list-style-type:none!important;list-style-image:none!important;position:relative}
+.kiwi-topic-article li.kiwi-equation-list-item::marker{content:""!important}
+.kiwi-topic-article li.kiwi-equation-list-item::before{content:none!important}
+.kiwi-topic-article li.kiwi-equation-list-item>p{margin:10px 0;text-align:center}
+.kiwi-topic-article li.kiwi-equation-list-item>p math{margin-left:auto;margin-right:auto}
+.kiwi-topic-article .kiwi-insight-panel{background:#fff9ec!important;border-color:#f2d79c!important;border-left-color:#dfac49!important;color:#6b4b22!important}
+.kiwi-topic-article .kiwi-insight-header{color:#865915!important}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row{text-align:center}
+</style><style id="kiwi-gcf-notation-fix">
+/* Examples are a semantic list, not centered derivation blocks. */
+.kiwi-topic-article .kiwi-gcf-example-list{list-style:disc outside;padding-left:1.7rem;margin:12px 0 24px;}
+.kiwi-topic-article .kiwi-gcf-example-list li{display:list-item;list-style-type:disc;text-align:left;margin:9px 0;padding-left:5px;}
+.kiwi-topic-article .kiwi-gcf-example-list math{display:inline!important;overflow:visible!important;max-width:none!important;vertical-align:middle;}
+/* Remove native MathML vertical scroll controls; formulas remain centered. */
+.kiwi-topic-article math,.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-formula-row{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;scrollbar-width:none;}
+.kiwi-topic-article math::-webkit-scrollbar,.kiwi-topic-article .kiwi-formula-row::-webkit-scrollbar{display:none;}
+.kiwi-topic-article .kiwi-formula-row{text-align:center;}
+.kiwi-topic-article .kiwi-formula-row math[display="block"]{display:block;margin-inline:auto;text-align:center;}
+</style><style>
+/* GCF worked example: clear example indent and numbered procedure */
+.kiwi-example-list{padding-left:2.2rem;margin:0.6rem 0 1rem;list-style:disc outside}
+.kiwi-example-list li{padding-left:.25rem;line-height:1.7}
+.kiwi-numbered-steps{list-style:decimal outside;padding-left:2.4rem;margin:1rem 0 1.25rem}
+.kiwi-numbered-steps>li{padding-left:.3rem;margin:.45rem 0;line-height:1.6}
+.kiwi-numbered-steps>li::marker{font-weight:700;color:#111111}
+.kiwi-numbered-steps .kiwi-formula-row{margin:.15rem 0!important;text-align:center!important}
+.kiwi-numbered-steps math[display="block"]{display:block!important;margin:0 auto!important;text-align:center!important}
+</style><style id="kiwi-gcf-final-layout">
+/* Consistent one-level indentation for bullet and numbered lists. */
+.kiwi-topic-article ul.kiwi-example-list,
+.kiwi-topic-article ul.kiwi-gcf-example-list,
+.kiwi-topic-article ol.kiwi-numbered-steps { margin: .65rem 0 1.2rem 0 !important; padding-left: 2.5rem !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ul.kiwi-example-list > li,
+.kiwi-topic-article ul.kiwi-gcf-example-list > li { padding-left:.4rem !important; margin:.45rem 0 !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li { list-style-type:decimal !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li p.kiwi-step-text { display:inline !important; margin:0 !important; padding:0 !important; text-align:left !important; font:inherit !important; }
+.kiwi-topic-article .kiwi-gcd-display { display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; margin:1rem auto 1.3rem !important; padding:0 !important; border:0 !important; }
+.kiwi-topic-article .kiwi-gcd-display math { display:block !important; width:max-content !important; max-width:100%; margin:0 auto !important; text-align:center !important; overflow:visible !important; }
+</style><style>
+/* Word-to-Web: nested worked examples (GCF Division Method) */
+.kiwi-example-block { margin: .5rem 0 1.2rem 1.5rem; text-align: left; }
+.kiwi-example-question { margin: .35rem 0 .55rem; }
+.kiwi-example-steps { margin: .4rem 0 .45rem 2rem; padding-left: 1.25rem; list-style-type: decimal; }
+.kiwi-example-steps li { padding-left: .25rem; margin: .45rem 0; text-align: left; }
+.kiwi-example-steps li::marker { color: #111111; font-weight: 700; }
+.kiwi-example-explanation, .kiwi-example-answer { margin: .6rem 0 .6rem 2rem; text-align: left; }
+@media (max-width: 600px) { .kiwi-example-block { margin-left: .7rem; } .kiwi-example-steps { margin-left: 1rem; } .kiwi-example-explanation, .kiwi-example-answer { margin-left: 1rem; } }
+</style><style>
+/* KIWI Word-to-Web standards: math lesson lists (2026-11-09) */
+.kiwi-topic-article ol li::marker,
+.kiwi-topic-article .kiwi-numbered-steps > li::marker,
+.kiwi-topic-article .kiwi-example-steps > li::marker,
+.kiwi-topic-article .kiwi-method-card ol li::marker {
+  color: #111 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ol.kiwi-example-steps > li {font-weight:400; text-align:left;}
+/* Avoid centering calculation text within numbered steps. */
+.kiwi-topic-article ol.kiwi-numbered-steps > li > p.kiwi-step-text {font-weight:400!important;text-align:left!important;}
+</style>
+<style id="kiwi-shared-math-example-standards">
+/* KIWI shared Word-to-Web: formulas and worked examples (2026-11-09). */
+.kiwi-topic-article p.kiwi-formula-row {display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;box-sizing:border-box!important;overflow:visible!important;margin:1rem auto!important;padding:.25rem 0!important;}
+.kiwi-topic-article p.kiwi-formula-row > math[display="block"] {display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-scroll {overflow-x:auto!important;overflow-y:hidden!important;max-width:100%;}
+.kiwi-topic-article .kiwi-example-standard {margin:.35rem 0 1rem!important;padding:0!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question {margin:.35rem 0 .4rem 3ch!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps {margin:.35rem 0 .6rem 6ch!important;padding:0!important;list-style:decimal inside!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li {display:list-item!important;list-style:decimal inside!important;margin:.3rem 0!important;padding:0!important;font-weight:400!important;color:#111!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
+.kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
+</style><style>
+.kiwi-generated-content{line-height:1.72;color:#182d42}.kiwi-generated-content p{margin:12px 0}.kiwi-generated-content math[display="block"],.kiwi-generated-content .math-display{display:block;text-align:center;margin:18px auto;max-width:100%;overflow-x:auto;overflow-y:visible}.kiwi-generated-content math{font-size:1.04em}.kiwi-generated-content img{display:block;max-width:100%;height:auto;margin:18px auto}.kiwi-generated-content table{max-width:100%;display:block;overflow-x:auto;border-collapse:collapse}.kiwi-generated-content td,.kiwi-generated-content th{padding:7px 10px;border:1px solid #dce7f3}.kiwi-generated-content ul,.kiwi-generated-content ol{padding-left:3em;margin:10px 0}.kiwi-generated-content ol li::marker{color:#111;font-weight:400}.kiwi-generated-content li{padding-left:.2em;margin:6px 0}.kiwi-generated-content .kiwi-insight-panel{background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e6ad35;border-radius:12px;padding:16px 20px;margin:20px 0;text-align:left}.kiwi-generated-content .kiwi-insight-panel p{text-align:left}.kiwi-generated-content .lesson-card{border:1px solid #dce7f3;border-radius:12px;overflow:hidden;margin:12px 0}.kiwi-generated-content .lesson-card>summary{cursor:pointer;padding:16px 20px;background:#eef6ff;color:#143e75;font-weight:650;list-style:none;display:flex;justify-content:space-between}.kiwi-generated-content .lesson-card>summary:after{content:'+'}.kiwi-generated-content .lesson-card[open]>summary:after{content:'−'}.kiwi-generated-content .lesson-card-body{padding:14px 20px 20px}.kiwi-generated-content h3{font-size:1.05em;color:#143e75}.kiwi-generated-content .example-problem{margin-left:3ch}.kiwi-generated-content .example-steps{margin-left:6ch;padding-left:1.4em}.kiwi-generated-content .example-answer{margin-left:3ch;border-left:3px solid #cde3fa;padding:4px 12px}.kiwi-generated-content .math-display::-webkit-scrollbar{height:5px}.kiwi-topic-sidebar a{overflow-wrap:anywhere}
+</style><style>
+/* KIWI Word-to-Web: unified display math layout (2026-11) */
+.kiwi-topic-article math[display="block"], .kiwi-topic-article math.math-display, .kiwi-topic-article math.kiwi-display-math {display:block!important;text-align:center!important;margin:0 auto!important;max-width:100%!important;overflow:visible!important;overflow-y:visible!important;}
+.kiwi-topic-article .kiwi-math-block {display:block!important;width:100%!important;max-width:100%!important;text-align:center!important;margin:1.1rem auto!important;padding:.1rem 0!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;}
+.kiwi-topic-article .kiwi-math-block::-webkit-scrollbar {height:0!important;width:0!important;display:none!important;}
+.kiwi-topic-article .kiwi-math-block > math {display:block!important;width:max-content!important;max-width:none!important;margin:0 auto!important;text-align:center!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-block > p {text-align:center!important;margin:0!important;}
+.kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
+.kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
+</style></head>
+<body class="topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="../math/index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="topic-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Mathematical Thinking" data-page-back="" data-zh="← 返回数学思维" href="mathematical-thinking.html">← Back to Mathematical Thinking</a>
+</div>
+<section aria-label="Page introduction" class="nf-hero topic-banner">
+<p class="topic-banner-kicker" data-en="MATHEMATICAL THINKING" data-zh="数学思维">MATHEMATICAL THINKING</p>
+<h1 data-en="Simplify Calculations" data-zh="Simplify Calculations">Simplify Calculations</h1>
+<p class="topic-banner-subtitle" data-en="Explore mathematical concepts, methods, and worked examples." data-zh="探索数的关系、运算方法与实用计算策略。">Explore mathematical concepts, methods, and worked examples.</p>
+</section>
+<!-- LEVEL-4 BODY START -->
+<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a href="why-simplified-calculation.html">Why Simplified Calculation</a><a href="number-strategies.html">Number Strategies</a><a class="active" href="algebraic-strategies.html">Algebraic Strategies</a><a href="geometric-strategies.html">Geometric Strategies</a><a href="number-shape-thinking.html">Number–Shape Thinking</a><a href="mathematical-thinking.html">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Algebraic Strategies" data-zh="Algebraic Strategies">Algebraic Strategies</h2><section class="nf-section word-topic kiwi-generated-content"><p>Use algebraic relationships to transform complicated expressions into
+simpler forms.</p><details class="lesson-card" open=""><summary>Taming Infinity —
+The Disappearing Tail Trick</summary><div class="lesson-card-body"><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Ontario Curriculum Connection</strong></p>
+<p><strong>Grade 9 Mathematics — B1.3</strong></p>
+<p>The Ontario Ministry of Education includes the following expectation
+in the Grade 9 Mathematics curriculum:</p>
+<p>“Use patterns and number relationships to explain density, infinity,
+and limit as they relate to number sets.”</p>
+<p>— <em>The Ontario Curriculum, Grade 9 Mathematics</em>, 2021, Strand
+B: Number, Expectation B1.3.</p>
+<p>Official source: <a href="https://assets-us-01.kc-usercontent.com/fbd574c4-da36-0066-a0c5-849ffb2de96e/2c41223a-5f39-4dd2-b94c-c75d2fae1fbd/Math_9_strand%20chart_AODA_06-May-21.pdf">https://assets-us-01.kc-usercontent.com/fbd574c4-da36-0066-a0c5-849ffb2de96e/2c41223a-5f39-4dd2-b94c-c75d2fae1fbd/Math_9_strand%20chart_AODA_06-May-21.pdf</a></p>
+<p><strong>How This Topic Connects</strong></p>
+<p>This activity explores infinity through repeating decimals and
+endless sums. The Disappearing Tail Trick demonstrates how algebraic
+reasoning can be used to work with an apparently endless decimal and
+express it as an exact fraction.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Sometimes in math we meet numbers that <strong>never end</strong> —
+like repeating decimals (0.3333…) or sums that keep going
+forever:12+14+18+…</p><p>They look impossible to finish — but there’s a smart trick to “trap”
+the infinity “<strong>∞</strong>” and turn it into a normal number.</p><p>The idea is simple:</p><ol type="1">
+<li><p><strong>Give</strong> the infinite thing a <strong>name</strong>
+(usually <strong>a</strong>).</p></li>
+<li><p><strong>Make</strong> a <strong>second version</strong> of it (by
+×10 or ×2, etc.), then line them up so the repeating part is the
+same.</p></li>
+<li><p><strong>Subtract</strong> to make the infinite tail
+disappear.</p></li>
+<li><p><strong>Solve</strong> the equation.</p></li>
+</ol><p>We call this the <strong>Disappearing Tail Trick</strong> — because
+we make the endless part vanish!</p><h4 id="repeating-decimal-to-fraction">Repeating Decimal to
+Fraction</h4><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Ontario Curriculum Connection</strong></p>
+<p><strong>Grade 6 Mathematics — B1.6</strong></p>
+<p>The Ontario Mathematics curriculum addresses relationships and
+equivalences between fractions and decimal numbers, including repeating
+decimals.</p>
+<p>— <em>Ontario Mathematics Curriculum</em>, Grade 6, Strand B: Number,
+Expectation B1.6.</p>
+<p>Official source: <a href="https://www.dcp.edu.gov.on.ca/en/curriculum/elementary-mathematics/grades/g6-math/strand-b/b1">https://www.dcp.edu.gov.on.ca/en/curriculum/elementary-mathematics/grades/g6-math/strand-b/b1</a></p>
+<p><strong>How This Topic Connects</strong></p>
+<p>Repeating decimals, such as 0.333…, can be expressed as equivalent
+fractions. This activity builds on that relationship by introducing an
+algebraic method for converting a repeating decimal into an exact
+fraction.</p>
+<p><strong>Why This Activity Matters</strong></p>
+<p>Building on these curriculum concepts, the Disappearing Tail Trick
+introduces a more advanced algebraic strategy. Students learn to
+represent a repeating decimal with a variable, create an equivalent
+equation, and subtract the equations to eliminate the repeating
+part.</p>
+<p>The technique connects number patterns, fraction equivalence, and
+algebraic manipulation while encouraging mathematical
+reasoning.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h5 id="digit-repeating-decimal">1-digit repeating decimal </h5><p>Let’s turn
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>.</mi><mover><mn>3</mn><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">0.\overline{3}</annotation></semantics></math>
+into a fraction.</p><ol type="1">
+<li><p>Let</p></li>
+</ol><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>0</mn><mi>.</mi><mover><mn>3</mn><mo accent="true">¯</mo></mover><mo>=</mo><mn>0.33333</mn><mi>…</mi></mrow><annotation encoding="application/x-tex">a = 0.\overline{3} = 0.33333\ldots</annotation></semantics></math></div><ol start="2" type="1">
+<li><p>Multiply by 10:</p></li>
+</ol><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mi>a</mi><mo>=</mo><mn>3.3333</mn><mi>…</mi><mo>=</mo><mn>3</mn><mo>+</mo><mn>0.3333</mn><mi>…</mi></mrow><annotation encoding="application/x-tex">10a = 3.3333\ldots = 3 + 0.3333\ldots</annotation></semantics></math></div><ol start="3" type="1">
+<li><p>Now the tails are the same, so we substitute 0.3333… with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>:</p></li>
+</ol><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mn>10</mn><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>3</mn><mo>+</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>10</mn><mi>a</mi><mo>−</mo><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>3</mn><mo>+</mo><mi>a</mi><mo>−</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>9</mn><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>9</mn><mi>a</mi><mo>÷</mo><mn>9</mn></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>3</mn><mo>÷</mo><mn>9</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><msup><menclose notation="box"><mn>3</mn></menclose><mn>1</mn></msup><msup><menclose notation="box"><mn>9</mn></menclose><mn>3</mn></msup></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+10a &amp; = 3 + a \\
+ &amp; \phantom{=} \\
+10a - a &amp; = 3 + a - a \\
+ &amp; \phantom{=} \\
+9a &amp; = 3 \\
+ &amp; \phantom{=} \\
+9a \div 9 &amp; = 3 \div 9 \\
+ &amp; \phantom{=} \\
+a &amp; = \frac{\boxed{3}^{1}}{\boxed{9}^{3}} \\
+ &amp; \phantom{=} \\
+a &amp; = \frac{1}{3}
+\end{aligned}</annotation></semantics></math>So,</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>.</mi><mover><mn>3</mn><mo accent="true">¯</mo></mover><mo>=</mo><mn>0.3333</mn><mi>…</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding="application/x-tex">0.\overline{3} = 0.3333\ldots = \frac{1}{3}</annotation></semantics></math></div><p>From the above calculation, you may already have discovered the
+solution pattern: 10 times a 1-digit repeating decimal equals its
+whole-number part plus the same repeating decimal. So the result is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝐫</mi><mi>𝐞</mi><mi>𝐩</mi><mi>𝐞</mi><mi>𝐚</mi><mi>𝐭</mi><mi>𝐢</mi><mi>𝐧</mi><mi>𝐠</mi><mspace width="0.222em"></mspace><mi>𝐝</mi><mi>𝐢</mi><mi>𝐠</mi><mi>𝐢</mi><mi>𝐭</mi></mrow><mo>÷</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\mathbf{repeating\ digit} \div 9</annotation></semantics></math></div><p>In this case the repeating digit is 3, so the result is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>.</mi><mover><mn>3</mn><mo accent="true">¯</mo></mover><mo>=</mo><mfrac><mn>3</mn><mn>9</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding="application/x-tex">0.\overline{3} = \frac{3}{9} = \frac{1}{3}</annotation></semantics></math></div><p>You can do the same for other 1-digit repeating decimals such as
+0.7777…</p><p>Here lists all 1-Digit repeat decimals and their fractions:</p><p><img src="../assets/math-word/image36.jpg" style="width:172.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><h5 id="digit-repeating-decimal-1">2-digit repeating decimal</h5><p>Let’s turn 0.18 into a fraction.</p><ol type="1">
+<li><p>Let</p></li>
+</ol><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>0</mn><mi>.</mi><mover><mn>18</mn><mo accent="true">¯</mo></mover><mo>=</mo><mn>0.181818</mn><mi>…</mi></mrow><annotation encoding="application/x-tex">a = 0.\overline{18} = 0.181818\ldots</annotation></semantics></math></div><ol start="2" type="1">
+<li><p>Multiply by 100:</p></li>
+</ol><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mi>a</mi><mo>=</mo><mn>18.181818</mn><mi>…</mi><mo>=</mo><mn>18</mn><mo>+</mo><mn>0.181818</mn><mi>…</mi></mrow><annotation encoding="application/x-tex">100a = 18.181818\ldots = 18 + 0.181818\ldots
+</annotation></semantics></math></div><ol start="3" type="1">
+<li><p>Now the tails are the same, so we substitute 0.181818… with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mn>100</mn><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>18</mn><mo>+</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>100</mn><mi>a</mi><mo>−</mo><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>18</mn><mo>+</mo><mi>a</mi><mo>−</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>99</mn><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>18</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>99</mn><mi>a</mi><mo>÷</mo><mn>99</mn></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>18</mn><mo>÷</mo><mn>99</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>18</mn><mn>99</mn></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+100a &amp; = 18 + a \\
+ &amp; \phantom{=} \\
+100a - a &amp; = 18 + a - a \\
+ &amp; \phantom{=} \\
+99a &amp; = 18 \\
+ &amp; \phantom{=} \\
+99a \div 99 &amp; = 18 \div 99 \\
+ &amp; \phantom{=} \\
+a &amp; = \frac{18}{99}
+\end{aligned}</annotation></semantics></math></p></li>
+</ol><p>So,</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>.</mi><mover><mn>18</mn><mo accent="true">¯</mo></mover><mo>=</mo><mn>0.181818</mn><mi>…</mi><mo>=</mo><mfrac><mn>18</mn><mn>99</mn></mfrac></mrow><annotation encoding="application/x-tex">0.\overline{18} = 0.181818\ldots = \frac{18}{99}</annotation></semantics></math></div><p>From this we can see the pattern:</p><ul>
+<li><p>for a <strong>2-digit</strong> repeating decimal, multiply by
+<strong>100</strong> to line up the repeating part;</p></li>
+<li><p>the answer is:</p></li>
+</ul><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝐫</mi><mi>𝐞</mi><mi>𝐩</mi><mi>𝐞</mi><mi>𝐚</mi><mi>𝐭</mi><mi>𝐢</mi><mi>𝐧</mi><mi>𝐠</mi><mspace width="0.222em"></mspace><mi>𝐝</mi><mi>𝐢</mi><mi>𝐠</mi><mi>𝐢</mi><mi>𝐭</mi></mrow><mo>÷</mo><mn>99</mn></mrow><annotation encoding="application/x-tex">\mathbf{repeating\ digit} \div 99</annotation></semantics></math></div><p>In this example the repeating digits are 18, so</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>.</mi><mover><mn>18</mn><mo accent="true">¯</mo></mover><mo>=</mo><mfrac><mn>18</mn><mn>99</mn></mfrac></mrow><annotation encoding="application/x-tex">0.\overline{18} = \frac{18}{99}</annotation></semantics></math></div><p>This works even when the first repeating digit is 0, for example:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>.</mi><mover><mn>08</mn><mo accent="true">¯</mo></mover><mo>=</mo><mn>0.080808</mn><mi>…</mi><mo>=</mo><mfrac><mn>8</mn><mn>99</mn></mfrac></mrow><annotation encoding="application/x-tex">0.\overline{08} = 0.080808\ldots = \frac{8}{99}</annotation></semantics></math></div><p>— as long as it repeats, you can “<strong>name it, shift it, subtract
+it</strong>”.</p><h5 id="any-digits-repeating-decimal">Any digits repeating decimal</h5><p>As we explored the 1-digit and 2-digit repeating decimal-to-fraction
+conversion, a general pattern comes out:</p><ul>
+<li><p>the <strong>numerator</strong> of the fraction is <strong>the
+repeating digits</strong>, and</p></li>
+<li><p>the <strong>denominator</strong> is <strong>9s</strong> with
+<strong>the same number of digits as the repeating
+part</strong>.</p></li>
+</ul><p>With this rule, we can easily convert any repeating decimal, as shown
+below:</p><p><img src="../assets/math-word/image37.jpeg" style="width:170.75px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><h4 id="infinite-halves-thirds-and-more">Infinite Halves, Thirds, and
+More</h4><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Ontario Curriculum Connection</strong></p>
+<p><strong>Grade 11 Functions — C2: Sequences and Series</strong></p>
+<p>The Ontario curriculum expects students to demonstrate an
+understanding of the relationships involved in arithmetic and geometric
+sequences and series, and to solve related problems.</p>
+<p><strong>How This Topic Connects</strong></p>
+<p>This activity extends students’ understanding of geometric patterns
+by exploring infinite sums such as</p>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>16</mn></mfrac><mo>+</mo><mi>…</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \ldots = 1</annotation></semantics></math></div>
+<p>Students use algebraic reasoning to identify a repeating structure,
+eliminate the repeated part, and derive a general formula for the
+sum.</p>
+<p>The infinite-series method is presented as an extension of the
+curriculum concepts, rather than as a claim that the curriculum
+explicitly requires this particular technique.</p>
+<p>Official source: <a href="https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf">https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf</a></p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h5 id="infinite-halves">Infinite halves</h5><p>Now let’s look at a sum that never ends:</p><blockquote>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>16</mn></mfrac><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \cdots</annotation></semantics></math></div>
+</blockquote><p>It looks infinite, but it has a value!</p><ol type="1">
+<li><p>Let</p></li>
+</ol><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>16</mn></mfrac><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">a = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \cdots
+</annotation></semantics></math></div><ol start="2" type="1">
+<li><p>Multiply both sides by 2:</p></li>
+</ol><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>16</mn></mfrac><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">2a = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \cdots
+</annotation></semantics></math></div><ol start="3" type="1">
+<li><p>Notice: the part after the 1 is the <strong>same as</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.</p></li>
+<li><p>So:</p></li>
+</ol><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>=</mo><mn>1</mn><mo>+</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">2a = 1 + a</annotation></semantics></math></div><ol start="5" type="1">
+<li><p>Subtract 𝑎 from both sides:</p></li>
+</ol><blockquote>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mn>2</mn><mi>a</mi><mo>−</mo><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn><mo>+</mo><mi>a</mi><mo>−</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+2a - a &amp; = 1 + a - a \\
+a &amp; = 1
+\end{aligned}</annotation></semantics></math></div>
+<p>So even though the sum goes on forever, its value is
+<strong>1</strong>.</p>
+</blockquote><h5 id="infinite-thirds">Infinite thirds</h5><p>Follow the same pattern, we can calculate the infinite thirds as:</p><blockquote>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>9</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>27</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>81</mn></mfrac><mo>+</mo><mi>⋯</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>3</mn><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>9</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>27</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>81</mn></mfrac><mo>+</mo><mi>⋯</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>3</mn><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn><mo>+</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>3</mn><mi>a</mi><mo>−</mo><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn><mo>+</mo><mi>a</mi><mo>−</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>2</mn><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+a &amp; = \frac{1}{3} + \frac{1}{9} + \frac{1}{27} + \frac{1}{81} + \cdots \\
+ &amp; \phantom{=} \\
+3a &amp; = 1 + \frac{1}{3} + \frac{1}{9} + \frac{1}{27} + \frac{1}{81} + \cdots \\
+ &amp; \phantom{=} \\
+3a &amp; = 1 + a \\
+ &amp; \phantom{=} \\
+3a - a &amp; = 1 + a - a \\
+ &amp; \phantom{=} \\
+2a &amp; = 1 \\
+ &amp; \phantom{=} \\
+a &amp; = \frac{1}{2}
+\end{aligned}</annotation></semantics></math></div>
+</blockquote><h5 id="same-infinite-pattern">Same infinite pattern</h5><p>From the infinite halves and thirds, we can see a pattern:</p><ul>
+<li><p>The sum starts with a fraction, such as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mn>2</mn></mfrac><annotation encoding="application/x-tex">\frac{1}{2}</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mn>3</mn></mfrac><annotation encoding="application/x-tex">\frac{1}{3}</annotation></semantics></math>.</p></li>
+<li><p>Each next term is obtained by multiplying the previous term by
+the same fraction.</p></li>
+<li><p>Multiply both sides by the denominator of that fraction to align
+the terms of the series.</p></li>
+<li><p>Subtract the original equation from the new equation to eliminate
+the repeating terms and obtain a simple equation.</p></li>
+</ul><blockquote>
+<p>In general, for a repeating sum like</p>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>3</mn></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>4</mn></msup></mfrac><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">\frac{1}{n} + \frac{1}{n^{2}} + \frac{1}{n^{3}} + \frac{1}{n^{4}} + \cdots</annotation></semantics></math></div>
+</blockquote><p>we can write:</p><ul>
+<li><p>Let</p></li>
+</ul><blockquote>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>3</mn></msup></mfrac><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">a = \frac{1}{n} + \frac{1}{n^{2}} + \frac{1}{n^{3}} + \cdots</annotation></semantics></math></div>
+</blockquote><ul>
+<li><p>Multiply by 𝑛:</p></li>
+</ul><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>a</mi><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>3</mn></msup></mfrac><mo>+</mo><mi>⋯</mi><mo>=</mo><mn>1</mn><mo>+</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">na = 1 + \frac{1}{n} + \frac{1}{n^{2}} + \frac{1}{n^{3}} + \cdots = 1 + a</annotation></semantics></math></div><ul>
+<li><p>So</p></li>
+</ul><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>n</mi><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn><mo>+</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>n</mi><mi>a</mi><mo>−</mo><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn><mo>+</mo><mi>a</mi><mo>−</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mrow><mo form="prefix" stretchy="true">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+na &amp; = 1 + a \\
+ &amp; \phantom{=} \\
+na - a &amp; = 1 + a - a \\
+ &amp; \phantom{=} \\
+(n - 1)a &amp; = 1 \\
+ &amp; \phantom{=} \\
+a &amp; = \frac{1}{n - 1}
+\end{aligned}</annotation></semantics></math></div><p>There comes the pattern:</p><blockquote>
+<p><strong>Infinite sum of “1 over powers of n (n&gt;1)”</strong></p>
+<p>The sum</p>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>3</mn></msup></mfrac><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">\frac{1}{n} + \frac{1}{n^{2}} + \frac{1}{n^{3}} + \cdots</annotation></semantics></math></div>
+<p>has a simple formula:</p>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi>a</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mrow></menclose><annotation encoding="application/x-tex">\boxed{a = \frac{1}{n - 1}}</annotation></semantics></math></div>
+<p>Let's check it using the examples we already solved.</p>
+<p>For halves:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n = 2</annotation></semantics></math></p>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>1</mn></mfrac><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a = \frac{1}{2 - 1} = \frac{1}{1} = 1</annotation></semantics></math></div>
+<p>For thirds:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">n = 3</annotation></semantics></math></p>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>3</mn><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">a = \frac{1}{3 - 1} = \frac{1}{2}</annotation></semantics></math></div>
+<p>So, this rule works for any infinite sum of the form</p>
+<div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>3</mn></msup></mfrac><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">\frac{1}{n} + \frac{1}{n^{2}} + \frac{1}{n^{3}} + \cdots</annotation></semantics></math></div>
+<p>Just substitute the value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+into the formula!</p>
+<p>Important: This formula applies when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n &gt; 1</annotation></semantics></math>,
+so the terms get smaller and the infinite sum converges.</p>
+</blockquote></div></details><details class="lesson-card"><summary>Discovering a
+Square Root Estimation Formula</summary><div class="lesson-card-body"><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Ontario Curriculum Connection</strong></p>
+<p><strong>Grade 9 Mathematics — C1.2: Generalizing
+Relationships</strong></p>
+<p>The Ontario curriculum expects students to create algebraic
+expressions to generalize relationships expressed in words, numbers, and
+visual representations.</p>
+<p><strong>How This Topic Connects</strong></p>
+<p>In this activity, students use a known perfect square and algebraic
+reasoning to derive a general formula for estimating square roots.
+Rather than memorizing a formula, they explore the relationship between
+a number and its square root and use that relationship to develop a
+useful approximation method.</p>
+<p>Official source: <a href="https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1">https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1</a></p>
+<p><strong>Grade 9 Mathematics — C1.3: Equivalent Algebraic
+Expressions</strong></p>
+<p>The Ontario curriculum expects students to compare algebraic
+expressions using concrete, numerical, graphical, and algebraic methods
+to identify equivalent expressions and justify their choices.</p>
+<p><strong>How This Topic Connects</strong></p>
+<p>Students expand and rearrange algebraic expressions to establish a
+relationship between a known square root and an unknown one. They then
+simplify the resulting expression by recognizing that a small squared
+difference can be treated as a correction term when developing an
+approximation.</p>
+<p><strong>This activity extends the curriculum concepts</strong> by
+applying algebraic reasoning to discover a square root estimation
+formula rather than simply memorizing a rule.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>A calculator can give us a decimal approximation of a square root,
+but can we use mathematical reasoning and algebra to discover a useful
+approximation ourselves?</p><p>Before deriving a formula, let us explore two simple ways to estimate
+square roots. Each method will help us understand the problem a little
+better.</p><h4 id="method-1-rough-estimation-using-perfect-squares">Method 1: Rough
+Estimation Using Perfect Squares</h4><p>Suppose we want to estimate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>63</mn></msqrt><annotation encoding="application/x-tex">\sqrt{63}</annotation></semantics></math>.</p><p>We know that</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>7</mn><mn>2</mn></msup><mo>=</mo><mn>49</mn></mrow><annotation encoding="application/x-tex">7^{2} = 49</annotation></semantics></math></div><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">8^{2} = 64</annotation></semantics></math></div><p>Since</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>49</mn><mo>&lt;</mo><mn>63</mn><mo>&lt;</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">49 &lt; 63 &lt; 64</annotation></semantics></math></div><p>we know that</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>&lt;</mo><msqrt><mn>63</mn></msqrt><mo>&lt;</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">7 &lt; \sqrt{63} &lt; 8</annotation></semantics></math></div><p>We can make a rough estimate by finding the average of the two
+perfect squares:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>49</mn><mo>+</mo><mn>64</mn></mrow><mn>2</mn></mfrac><mo>=</mo><mn>56.5</mn></mrow><annotation encoding="application/x-tex">\frac{49 + 64}{2} = 56.5</annotation></semantics></math></div><p>The number 63 is greater than 56.5, so it is closer to 64 than to 49.
+This suggests that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>63</mn></msqrt><annotation encoding="application/x-tex">\sqrt{63}</annotation></semantics></math>
+lies in the upper half of the interval from 7 to 8.</p><p>Therefore, we can make the rough estimate</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.5</mn><mo>&lt;</mo><msqrt><mn>63</mn></msqrt><mo>&lt;</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">7.5 &lt; \sqrt{63} &lt; 8</annotation></semantics></math></div><p>This method helps us locate the square root without using a
+calculator or a complicated formula.</p><p>However, it gives us only a rough range. Can we obtain a more
+accurate estimate?</p><h4 id="method-2-estimation-by-dividing-the-interval">Method 2:
+Estimation by Dividing the Interval</h4><p>We know that</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>7</mn><mn>2</mn></msup><mo>=</mo><mn>49</mn></mrow><annotation encoding="application/x-tex">7^{2} = 49</annotation></semantics></math></div><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">8^{2} = 64</annotation></semantics></math></div><p>The difference between the two perfect squares is</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn><mo>−</mo><mn>49</mn><mo>=</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">64 - 49 = 15</annotation></semantics></math></div><p>Since 63 is just 1 less than 64, we can estimate its square root by
+dividing the interval from 7 to 8 into 15 equal parts.</p><p>If we assume that the square root changes approximately uniformly
+across this interval, then being 1 unit below 64 corresponds to being
+approximately
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mn>15</mn></mfrac><annotation encoding="application/x-tex">\frac{1}{15}</annotation></semantics></math>
+of the interval below 8.</p><p>Therefore,</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>63</mn></msqrt><mo>≈</mo><mn>8</mn><mo>−</mo><mfrac><mn>1</mn><mn>15</mn></mfrac></mrow><annotation encoding="application/x-tex">\sqrt{63} \approx 8 - \frac{1}{15}</annotation></semantics></math></div><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>63</mn></msqrt><mo>≈</mo><mn>7.933333</mn><mi>…</mi></mrow><annotation encoding="application/x-tex">\sqrt{63} \approx 7.933333\ldots</annotation></semantics></math></div><p>The actual value is approximately 7.937254. This estimate is more
+precise than simply knowing that the square root lies between 7.5 and
+8.</p><p>However, there is a limitation: the relationship between a number and
+its square root is not linear. The square root does not change by
+exactly the same amount for each equal increase in the original
+number.</p><p>Can we use algebra to develop a better approximation?</p><h4 id="discovering-a-more-accurate-formula">Discovering a More Accurate
+Formula</h4><p>Let us begin with a simple example.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>63</mn></msqrt><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">\sqrt{63} = a</annotation></semantics></math></div><p>We know that</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>64</mn></msqrt><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">\sqrt{64} = 8</annotation></semantics></math></div><p>Therefore,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+is slightly less than 8. Instead of guessing its value, let us use this
+relationship to derive an approximation.</p><h5 id="start-with-what-we-know">Start with what we know</h5><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msqrt><mn>63</mn></msqrt></mrow><annotation encoding="application/x-tex">a = \sqrt{63}</annotation></semantics></math>,
+we have</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>=</mo><mn>63</mn></mrow><annotation encoding="application/x-tex">a^{2} = 63</annotation></semantics></math></div><p>Consider the square of the difference between 8 and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">(8 - a)^{2}</annotation></semantics></math></div><p>Expanding the expression gives</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mn>8</mn><mn>2</mn></msup><mo>−</mo><mn>16</mn><mi>a</mi><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(8 - a)^{2} = 8^{2} - 16a + a^{2}</annotation></semantics></math></div><p>Substituting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">8^{2} = 64</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>=</mo><mn>63</mn></mrow><annotation encoding="application/x-tex">a^{2} = 63</annotation></semantics></math>,
+we obtain</p><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>64</mn><mo>−</mo><mn>16</mn><mi>a</mi><mo>+</mo><mn>63</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>127</mn><mo>−</mo><mn>16</mn><mi>a</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>16</mn><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>127</mn><mo>−</mo><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+(8 - a)^{2} &amp; = 64 - 16a + 63 \\
+ &amp; \phantom{=} \\
+(8 - a)^{2} &amp; = 127 - 16a \\
+ &amp; \phantom{=} \\
+16a &amp; = 127 - (8 - a)^{2}
+\end{aligned}</annotation></semantics></math>Therefore,</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mfrac><mn>127</mn><mn>16</mn></mfrac><mo>−</mo><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mn>16</mn></mfrac></mrow><annotation encoding="application/x-tex">a = \frac{127}{16} - \frac{(8 - a)^{2}}{16}</annotation></semantics></math></div><p>Notice that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>−</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">8 - a</annotation></semantics></math>
+is a small positive number because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+is slightly less than 8. Its square is even smaller.</p><p>We can therefore obtain a useful approximation by temporarily
+ignoring the small, squared term.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≈</mo><mfrac><mn>127</mn><mn>16</mn></mfrac></mrow><annotation encoding="application/x-tex">a \approx \frac{127}{16}</annotation></semantics></math></div><p>Hence,</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>63</mn></msqrt><mo>≈</mo><mn>7.9375</mn></mrow><annotation encoding="application/x-tex">\sqrt{63} \approx 7.9375</annotation></semantics></math></div><p>The actual value is approximately 7.937254, so our estimate is very
+close.</p><p><strong>The key idea:</strong> We did not memorize a special rule for
+estimating
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>63</mn></msqrt><annotation encoding="application/x-tex">\sqrt{63}</annotation></semantics></math>.
+We used a known square root, an algebraic identity, and the fact that a
+small number has an even smaller square.</p><h4 id="discovering-a-general-formula">Discovering a general
+formula</h4><p>Can we apply the same reasoning to other square roots?</p><p>Suppose we want to estimate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>.</p><p>Let</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">a = \sqrt{N}</annotation></semantics></math></div><p>Choose a positive number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+whose value is close to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>.
+For example, if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>63</mn></mrow><annotation encoding="application/x-tex">N = 63</annotation></semantics></math>,
+we can choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">m = 8</annotation></semantics></math>
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">8^{2} = 64</annotation></semantics></math>.</p><p>Now consider</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">(m - a)^{2}</annotation></semantics></math></div><p>Expanding gives</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>m</mi><mi>a</mi><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(m - a)^{2} = m^{2} - 2ma + a^{2}</annotation></semantics></math></div><p>Because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">m\ </annotation></semantics></math>is
+chosen close to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>,
+the difference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>−</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">m - a</annotation></semantics></math>
+is small. Its square is therefore small as well.</p><p>Ignoring this small correction term gives the general estimation
+formula.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>m</mi><mi>a</mi><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m^{2} - 2ma + a^{2} = 0</annotation></semantics></math></div><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">a^{2} = N</annotation></semantics></math>,</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>m</mi><mi>a</mi><mo>+</mo><mi>N</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>2</mn><mi>m</mi><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><mi>N</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><mi>N</mi></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+m^{2} - 2ma + N &amp; = 0 \\
+ &amp; \phantom{=} \\
+2ma &amp; = m^{2} + N \\
+ &amp; \phantom{=} \\
+a &amp; = \frac{m^{2} + N}{2m}
+\end{aligned}</annotation></semantics></math></div><p>Here,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is a positive number chosen close to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>.</p><h5 id="choosing-the-best-value-of-mathbfm">Choosing the best value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐦</mi><annotation encoding="application/x-tex">\mathbf{m}</annotation></semantics></math></h5><p>Choosing a suitable value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is an important part of this method. A good choice can make the estimate
+more accurate.</p><p>A simple strategy is to find the two perfect squares surrounding the
+number, then compare their distances from the number.</p><p>For example, consider
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>58</mn></msqrt><annotation encoding="application/x-tex">\sqrt{58}</annotation></semantics></math>.</p><p>We know that</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>7</mn><mn>2</mn></msup><mo>=</mo><mn>49</mn></mrow><annotation encoding="application/x-tex">7^{2} = 49</annotation></semantics></math></div><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">8^{2} = 64</annotation></semantics></math></div><p>Therefore,</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>&lt;</mo><msqrt><mn>58</mn></msqrt><mo>&lt;</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">7 &lt; \sqrt{58} &lt; 8</annotation></semantics></math></div><p>Now compare the distances.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>58</mn><mo>−</mo><mn>49</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">58 - 49 = 9</annotation></semantics></math></div><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn><mo>−</mo><mn>58</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">64 - 58 = 6</annotation></semantics></math></div><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo>&lt;</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">6 &lt; 9</annotation></semantics></math>,
+the number 58 is closer to 64 than to 49.</p><p>Therefore, we choose</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">m = 8</annotation></semantics></math></div><p><strong>A useful rule:</strong> Choose the integer whose perfect
+square is closest to the number you want to estimate.</p><p>This is a practical strategy that usually gives a good starting
+point. However, it does not guarantee the most accurate estimate in
+every possible case.</p><h5 id="can-mathbfm-be-greater-or-smaller-than-the-square-root">Can
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐦</mi><annotation encoding="application/x-tex">\mathbf{m}</annotation></semantics></math>
+be greater or smaller than the square root?</h5><p>Yes! The number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+can be either greater than or less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>,
+as long as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is positive and reasonably close to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>.</p><p><strong>Why are both choices possible?</strong></p><p>The key is that our formula comes from the identity</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>m</mi><mi>a</mi><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(m - a)^{2} = m^{2} - 2ma + a^{2}</annotation></semantics></math></div><p>where</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">a = \sqrt{N}</annotation></semantics></math></div><p>The difference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>−</mo><mi>a</mi><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">m - a\ </annotation></semantics></math>can
+be positive or negative. However, when we square the difference, the
+result is always non-negative.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">(m - a)^{2} \geq 0</annotation></semantics></math></div><p>Therefore, the derivation works whether
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is above or below the square root.</p><p>The closer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>,
+the smaller the squared difference generally becomes, and the more
+accurate our estimate tends to be.</p><p><strong>The key lesson:</strong> We do not have to choose a number
+that is always greater than the square root. We simply need a positive
+number close to it.</p><h5 id="applying-the-formula">Applying the formula</h5><p><strong>Example 1: Estimate</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>58</mn></msqrt><annotation encoding="application/x-tex">\sqrt{58}</annotation></semantics></math></p><p>Since 58 is closer to 64 than to 49, choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">m = 8</annotation></semantics></math>.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msqrt><mn>58</mn></msqrt></mtd><mtd columnalign="left" style="text-align: left"><mo>≈</mo><mfrac><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>+</mo><mn>58</mn></mrow><mrow><mn>2</mn><mo>×</mo><mn>8</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><mn>64</mn><mo>+</mo><mn>58</mn></mrow><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>122</mn><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msqrt><mn>58</mn></msqrt></mtd><mtd columnalign="left" style="text-align: left"><mo>≈</mo><mn>7.625</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+\sqrt{58} &amp; \approx \frac{8^{2} + 58}{2 \times 8} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{64 + 58}{16} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{122}{16} \\
+ &amp; \phantom{=} \\
+\sqrt{58} &amp; \approx 7.625
+\end{aligned}</annotation></semantics></math></div><p>The actual value is approximately 7.6158.</p><p><strong>Example 2: What If We Choose</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">m = 7</annotation></semantics></math>
+<strong>Instead?</strong></p><p>We can also use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">m = 7</annotation></semantics></math>.
+Let us see what happens.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msqrt><mn>58</mn></msqrt></mtd><mtd columnalign="left" style="text-align: left"><mo>≈</mo><mfrac><mrow><msup><mn>7</mn><mn>2</mn></msup><mo>+</mo><mn>58</mn></mrow><mrow><mn>2</mn><mo>×</mo><mn>7</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><mn>49</mn><mo>+</mo><mn>58</mn></mrow><mn>14</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>107</mn><mn>14</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msqrt><mn>58</mn></msqrt></mtd><mtd columnalign="left" style="text-align: left"><mo>≈</mo><mn>7.6429</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+\sqrt{58} &amp; \approx \frac{7^{2} + 58}{2 \times 7} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{49 + 58}{14} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{107}{14} \\
+ &amp; \phantom{=} \\
+\sqrt{58} &amp; \approx 7.6429
+\end{aligned}</annotation></semantics></math></div><p>Both choices produce reasonable estimates, but choosing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">m = 8</annotation></semantics></math>
+gives a more accurate result in this example.</p><p><strong>Example 3: Estimate</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>55</mn></msqrt><annotation encoding="application/x-tex">\sqrt{55}</annotation></semantics></math></p><p>The number 55 lies between 49 and 64.</p><p>Compare the distances.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>55</mn><mo>−</mo><mn>49</mn><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">55 - 49 = 6</annotation></semantics></math></div><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn><mo>−</mo><mn>55</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">64 - 55 = 9</annotation></semantics></math></div><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo>&lt;</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">6 &lt; 9</annotation></semantics></math>,
+choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">m = 7</annotation></semantics></math>.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msqrt><mn>55</mn></msqrt></mtd><mtd columnalign="left" style="text-align: left"><mo>≈</mo><mfrac><mrow><msup><mn>7</mn><mn>2</mn></msup><mo>+</mo><mn>55</mn></mrow><mrow><mn>2</mn><mo>×</mo><mn>7</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><mn>49</mn><mo>+</mo><mn>55</mn></mrow><mn>14</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>104</mn><mn>14</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msqrt><mn>55</mn></msqrt></mtd><mtd columnalign="left" style="text-align: left"><mo>≈</mo><mn>7.4286</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+\sqrt{55} &amp; \approx \frac{7^{2} + 55}{2 \times 7} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{49 + 55}{14} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{104}{14} \\
+ &amp; \phantom{=} \\
+\sqrt{55} &amp; \approx 7.4286
+\end{aligned}</annotation></semantics></math></div><p>The actual value is approximately 7.4162.</p><p><strong>Example 4: Estimate</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>60</mn></msqrt><annotation encoding="application/x-tex">\sqrt{60}</annotation></semantics></math></p><p>The number 60 lies between 49 and 64.</p><p>Compare the distances.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>60</mn><mo>−</mo><mn>49</mn><mo>=</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">60 - 49 = 11</annotation></semantics></math></div><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn><mo>−</mo><mn>60</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">64 - 60 = 4</annotation></semantics></math></div><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>&lt;</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">4 &lt; 11</annotation></semantics></math>,
+choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">m = 8</annotation></semantics></math>.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msqrt><mn>60</mn></msqrt></mtd><mtd columnalign="left" style="text-align: left"><mo>≈</mo><mfrac><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>+</mo><mn>60</mn></mrow><mrow><mn>2</mn><mo>×</mo><mn>8</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><mn>64</mn><mo>+</mo><mn>60</mn></mrow><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>124</mn><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msqrt><mn>60</mn></msqrt></mtd><mtd columnalign="left" style="text-align: left"><mo>≈</mo><mn>7.75</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+\sqrt{60} &amp; \approx \frac{8^{2} + 60}{2 \times 8} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{64 + 60}{16} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{124}{16} \\
+ &amp; \phantom{=} \\
+\sqrt{60} &amp; \approx 7.75
+\end{aligned}</annotation></semantics></math></div><p>The actual value is approximately 7.7460.</p><h5 id="why-does-choosing-a-better-m-help">Why does choosing a better m
+help?</h5><p>The exact relationship behind our estimation formula is</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mi>N</mi></msqrt><mo>=</mo><mfrac><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><mi>N</mi></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>−</mo><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><msqrt><mi>N</mi></msqrt><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sqrt{N} = \frac{m^{2} + N}{2m} - \frac{\left( m - \sqrt{N} \right)^{2}}{2m}</annotation></semantics></math></div><p>The term being subtracted is the correction term.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><msqrt><mi>N</mi></msqrt><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><annotation encoding="application/x-tex">\frac{\left( m - \sqrt{N} \right)^{2}}{2m}</annotation></semantics></math></div><p>When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is close to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>,
+the squared difference becomes small. This generally makes the
+correction term smaller and the estimate more accurate.</p><p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>58</mn></msqrt><annotation encoding="application/x-tex">\sqrt{58}</annotation></semantics></math>,
+compare the two results.</p><table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 25%"/>
+<col style="width: 40%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Choice of m</th>
+<th>Estimate</th>
+<th>Absolute error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐦</mi><mo mathvariant="bold">=</mo><mn>𝟕</mn></mrow><annotation encoding="application/x-tex">\mathbf{m = 7}</annotation></semantics></math></div></td>
+<td>7.6429</td>
+<td>0.0271</td>
+</tr>
+<tr class="even">
+<td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐦</mi><mo mathvariant="bold">=</mo><mn>𝟖</mn></mrow><annotation encoding="application/x-tex">\mathbf{m = 8}</annotation></semantics></math></div></td>
+<td>7.6250</td>
+<td>0.0092</td>
+</tr>
+</tbody>
+</table><p>The estimate using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>8</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">m = 8\ </annotation></semantics></math>is
+more accurate.</p><p>Strictly speaking, the correction term depends on both the squared
+difference and the denominator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">2m</annotation></semantics></math>.
+Therefore, choosing the nearest perfect square is an effective practical
+rule, but it is not guaranteed to produce the best estimate in every
+situation.</p><h4 id="the-bigger-lesson-derive-do-not-just-memorize">The bigger
+lesson: derive, do not just memorize</h4><p>The purpose of this method is not to replace a calculator or to make
+every calculation more complicated. It is to demonstrate how
+mathematical reasoning can turn familiar knowledge into a new
+result.</p><p>By knowing a nearby perfect square, we can use algebra to derive an
+estimation formula rather than memorize a separate rule for every
+number.</p><p>The same habit of thinking can be applied throughout mathematics:</p><ul>
+<li><p>Start with facts and formulas you already understand.</p></li>
+<li><p>Look for relationships between known and unknown
+quantities.</p></li>
+<li><p>Use algebra to derive new results.</p></li>
+<li><p>Choose a suitable value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+to improve your estimate.</p></li>
+<li><p>Compare your estimate with the actual value when
+possible.</p></li>
+<li><p>Examine whether your reasoning makes sense.</p></li>
+</ul><p>Mathematics is not simply a collection of formulas to memorize. It is
+a connected system of ideas in which many results can be discovered
+through reasoning.</p></div></details><details class="lesson-card"><summary>Estimating
+Square Roots with Repeated Correction</summary><div class="lesson-card-body"><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Ontario Curriculum Connection</strong></p>
+<p><strong>Grade 9 Mathematics — C1.2: Generalizing
+Relationships</strong></p>
+<p>The Ontario curriculum expects students to create algebraic
+expressions to generalize relationships expressed in words, numbers, and
+visual representations.</p>
+<p><strong>How This Topic Connects</strong></p>
+<p>In this activity, students use the relationship between a number and
+its square root to derive an estimation formula. They then extend this
+idea by repeatedly correcting an initial estimate to improve its
+accuracy.</p>
+<p>Rather than memorizing a formula, students explore how algebraic
+relationships can be used to develop a practical method for solving a
+mathematical problem.</p>
+<p><strong>Grade 9 Mathematics — C1.3: Equivalent Algebraic
+Expressions</strong></p>
+<p>The Ontario curriculum expects students to compare algebraic
+expressions using numerical and algebraic methods to identify equivalent
+expressions and justify their choices.</p>
+<p><strong>How This Topic Connects</strong></p>
+<p>Students expand and rearrange an algebraic identity to establish an
+exact relationship between a square root and its estimate. They then use
+this relationship to develop a repeated-correction method.</p>
+<p><strong>This activity extends the curriculum</strong> by applying
+algebraic reasoning to numerical approximation and iterative
+improvement.</p>
+<p>Official source: <a href="https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1">https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1</a></p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h4 id="a-smart-way-to-estimate-square-roots">A smart way to estimate
+square roots</h4><p>Let’s recall how to estimate a square root that is not a perfect
+square. Suppose we want to estimate</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">a = \sqrt{N}</annotation></semantics></math></div><p>Choose a positive number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+close to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>N</mi></msqrt><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">a^{2} = N</annotation></semantics></math>,
+we can use the following formula:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi>a</mi><mo>≈</mo><mfrac><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><mi>N</mi></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow></menclose><annotation encoding="application/x-tex">\boxed{a \approx \frac{m^{2} + N}{2m}}</annotation></semantics></math></div><p>This gives us an initial estimate. The closer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is to the actual square root, the better our estimate will usually
+be.</p><p><strong>Example 1: Estimate</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>63</mn></msqrt><annotation encoding="application/x-tex">\sqrt{63}</annotation></semantics></math></p><p>We know that</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>7</mn><mn>2</mn></msup><mo>=</mo><mn>49</mn><mo>,</mo><mspace width="1.0em"></mspace><mspace width="1.0em"></mspace><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">7^{2} = 49,\quad\quad 8^{2} = 64</annotation></semantics></math></div><p>Therefore,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>63</mn></msqrt><annotation encoding="application/x-tex">\sqrt{63}</annotation></semantics></math>
+is between 7 and 8 and is very close to 8. Choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">m = 8</annotation></semantics></math>.</p><p>Substitute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">m = 8</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>63</mn></mrow><annotation encoding="application/x-tex">N = 63</annotation></semantics></math>
+into the formula:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>a</mi><mn>0</mn></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>+</mo><mn>63</mn></mrow><mrow><mn>2</mn><mo>×</mo><mn>8</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><mn>64</mn><mo>+</mo><mn>63</mn></mrow><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>127</mn><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>7.9375</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+a_{0} &amp; = \frac{8^{2} + 63}{2 \times 8} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{64 + 63}{16} \\
+ &amp; \phantom{=} \\
+ &amp; = \frac{127}{16} \\
+ &amp; \phantom{=} \\
+ &amp; = 7.9375
+\end{aligned}</annotation></semantics></math></div><p>Our initial estimate is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>7.9375</mn><annotation encoding="application/x-tex">7.9375</annotation></semantics></math>.</p><p>But can we make it even more accurate?</p><h4 id="where-does-the-correction-formula-come-from">Where does the
+correction formula come from?</h4><p>To understand how we can improve our estimate, let's look at a useful
+algebraic identity.</p><p>Recall that the square of a difference can be expanded as
+follows:<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>m</mi><mi>a</mi><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+ &amp; \phantom{=} \\
+ &amp; (m - a)^{2} = m^{2} - 2ma + a^{2}
+\end{aligned}</annotation></semantics></math></p><p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">a = \sqrt{N}</annotation></semantics></math>,
+we know that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">a^{2} = N</annotation></semantics></math>.
+Substituting this into the identity gives</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>m</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>m</mi><mi>a</mi><mo>+</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">(m - a)^{2} = m^{2} - 2ma + N</annotation></semantics></math></div><p>Rearranging the equation, we obtain</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mn>2</mn><mi>m</mi><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><mi>N</mi><mo>−</mo><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><mi>N</mi><mo>−</mo><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>a</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><mi>N</mi></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>−</mo><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+2ma &amp; = m^{2} + N - (m - a)^{2} \\
+ &amp; \phantom{=} \\
+a &amp; = \frac{m^{2} + N - (m - a)^{2}}{2m} \\
+ &amp; \phantom{=} \\
+a &amp; = \frac{m^{2} + N}{2m} - \frac{(m - a)^{2}}{2m}
+\end{aligned}</annotation></semantics></math></div><p>This equation reveals the key idea behind repeated correction: the
+exact square root equals the initial estimate minus a correction
+term.</p><p>Because we do not know the exact value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>,
+we replace it in the correction term with our latest estimate. This
+leads to the repeated-correction formula introduced in the next
+section.</p><h4 id="improving-the-estimate-with-repeated-correction">Improving the
+estimate with repeated correction</h4><p>The initial estimate is slightly larger than the actual value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>63</mn></msqrt><annotation encoding="application/x-tex">\sqrt{63}</annotation></semantics></math>.
+We can improve it by subtracting a small correction.</p><p>The correction formula is</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>a</mi><mn>0</mn></msub><mo>−</mo><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><msub><mi>a</mi><mi>n</mi></msub><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow></menclose><annotation encoding="application/x-tex">\boxed{a_{n + 1} = a_{0} - \frac{\left( m - a_{n} \right)^{2}}{2m}}</annotation></semantics></math></div><p>Here:</p><ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mn>0</mn></msub><annotation encoding="application/x-tex">a_{0}</annotation></semantics></math>
+is the initial estimate</p></li>
+</ul><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>≈</mo><mfrac><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><mi>N</mi></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_{0} \approx \frac{m^{2} + N}{2m}</annotation></semantics></math></div><blockquote>
+<p>and remains fixed.</p>
+</blockquote><ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>n</mi></msub><annotation encoding="application/x-tex">a_{n}</annotation></semantics></math>
+is the latest estimate.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is the original nearby number, which remains fixed.</p></li>
+<li><p>The correction becomes smaller as the estimate approaches the
+actual square root.</p></li>
+</ul><p><strong>First correction</strong></p><p>Start with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>7.9375</mn></mrow><annotation encoding="application/x-tex">a_{0} = 7.9375</annotation></semantics></math>.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>a</mi><mn>1</mn></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>7.9375</mn><mo>−</mo><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>−</mo><mn>7.9375</mn><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>7.9375</mn><mo>−</mo><mfrac><msup><mn>0.0625</mn><mn>2</mn></msup><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>7.937255859375</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+a_{1} &amp; = 7.9375 - \frac{(8 - 7.9375)^{2}}{16} \\
+ &amp; \phantom{=} \\
+ &amp; = 7.9375 - \frac{{0.0625}^{2}}{16} \\
+ &amp; \phantom{=} \\
+ &amp; = 7.937255859375
+\end{aligned}</annotation></semantics></math></div><p>The improved estimate is approximately
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>7.93725586</mn><annotation encoding="application/x-tex">7.93725586</annotation></semantics></math>.</p><p><strong>Second correction</strong></p><p>Use the latest estimate,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mn>1</mn></msub><annotation encoding="application/x-tex">a_{1}</annotation></semantics></math>,
+in the correction term, while keeping the initial estimate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>7.9375</mn></mrow><annotation encoding="application/x-tex">a_{0} = 7.9375</annotation></semantics></math>
+unchanged.</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>a</mi><mn>2</mn></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>7.9375</mn><mo>−</mo><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>−</mo><msub><mi>a</mi><mn>1</mn></msub><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>7.9375</mn><mo>−</mo><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>−</mo><mn>7.937255859375</mn><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mn>16</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mphantom><mo>=</mo></mphantom></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>≈</mo><mn>7.93725394</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+a_{2} &amp; = 7.9375 - \frac{\left( 8 - a_{1} \right)^{2}}{16} \\
+ &amp; \phantom{=} \\
+ &amp; = 7.9375 - \frac{(8 - 7.937255859375)^{2}}{16} \\
+ &amp; \phantom{=} \\
+ &amp; \approx 7.93725394
+\end{aligned}</annotation></semantics></math></div><p>The estimate is now approximately
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>7.93725394</mn><annotation encoding="application/x-tex">7.93725394</annotation></semantics></math>,
+which is extremely close to the actual value:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>63</mn></msqrt><mo>≈</mo><mn>7.93725393</mn></mrow><annotation encoding="application/x-tex">\sqrt{63} \approx 7.93725393</annotation></semantics></math></div><p>Just two corrections have produced a remarkably accurate result!</p><h4 id="the-mathematics-behind-repeated-correction">The mathematics
+behind repeated correction</h4><p>Why does this method work so well?</p><p>The key idea is that the initial estimate is already close to the
+actual square root. The correction formula then uses the square of the
+small difference between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+and the latest estimate.</p><p>The exact relationship is</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi>a</mi><mo>=</mo><mfrac><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><mi>N</mi></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>−</mo><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><mi>a</mi><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow></menclose><annotation encoding="application/x-tex">\boxed{a = \frac{m^{2} + N}{2m} - \frac{(m - a)^{2}}{2m}}</annotation></semantics></math></div><p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">a = \sqrt{N}</annotation></semantics></math>.</p><p>The first term gives the initial estimate. The second term tells us
+how much to subtract to obtain the exact value.</p><p>However, we do not know the exact value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+yet. So, we replace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+in the correction term with our latest estimate. After each correction,
+the estimate becomes more accurate, allowing us to calculate an even
+smaller correction.</p><p>This process is an example of fixed-point iteration.</p><p>In simple terms, fixed-point iteration means repeatedly applying a
+formula to improve an estimate until the result changes very little.</p><p>For this method, we keep the initial estimate fixed and update only
+the value used in the correction term:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>a</mi><mn>0</mn></msub><mo>−</mo><mfrac><msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mo>−</mo><msub><mi>a</mi><mi>n</mi></msub><mo form="postfix" stretchy="true">)</mo></mrow><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow></menclose><annotation encoding="application/x-tex">\boxed{a_{n + 1} = a_{0} - \frac{\left( m - a_{n} \right)^{2}}{2m}}</annotation></semantics></math></div><p>The closer our estimate gets to the actual square root, the smaller
+the correction becomes. The estimates therefore settle toward the true
+value.</p><p><strong>4. The Big Idea</strong></p><p>This method illustrates an important mathematical strategy:</p><p>Find a good starting point, calculate the error, correct the
+estimate, and repeat.</p><p>You do not need to memorize many separate tricks. Instead, you can
+understand one formula and use it repeatedly to achieve greater
+accuracy.</p><p>The same general idea of improving an approximation through repeated
+calculations appears in many areas of mathematics, science, and
+computing.</p></div></details></section></article></div>
+<!-- LEVEL-4 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+</body>
+</html>

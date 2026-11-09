@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <!-- Level 2 primary nav — shell from templates/level-2-primary-nav.html (edu-page + edu-main) -->
 <html lang="en-CA">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math Education | Kiwi 爱AI Study</title>
-  <meta name="description" content="Explore mathematics foundations, real-life applications, visual patterns, mathematical thinking and in-class learning.">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math Education | Kiwi 爱AI Study</title>
+<meta content="Explore mathematics foundations, real-life applications, visual patterns, mathematical thinking and in-class learning." name="description"/>
+<link href="../assets/css/styles.css?v=20261107-tagline1" rel="stylesheet"/>
+<style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;--pale:#f2f7fd;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
 .edu-kicker{margin:0 0 12px;color:#2676b7;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
@@ -48,120 +49,114 @@
   </style>
 </head>
 <body class="edu-page">
-  <header class="site-header">
-    <div class="brand-lockup">
-      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
-        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
-      </a>
-      <span class="divider" aria-hidden="true"></span>
-      <div class="author-wrap">
-        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
-          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
-        </a>
-      </div>
-    </div>
-    <nav class="site-nav" aria-label="Primary">
-      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
-      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
-      <a href="index.html" data-nav="math" class="active" data-en="Math Education" data-zh="数学教育">Math Education</a>
-      <a href="../ai/index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
-      <a href="in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
-      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
-      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
-      <span class="flags" aria-label="Languages">
-        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
-          <img src="https://flagcdn.com/w160/ca.png" alt="English">
-        </button>
-        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
-          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
-        </button>
-      </span>
-    </nav>
-  </header>
-
-  <main class="edu-main">
-    <div class="page-back-wrap">
-      <a class="page-back-link" href="../index.html" data-page-back data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a>
-    </div>
-
-    <section class="compact-page-banner about-compact-banner" aria-labelledby="math-page-title">
-      <div class="compact-banner-copy">
-        <h1 id="math-page-title" data-en="Math Education" data-zh="数学教育">Math Education</h1>
-        <p class="compact-banner-subtitle" data-en="Clear ideas, visual learning, and real-life mathematics." data-zh="清晰讲解、直观学习与生活中的数学。">Clear ideas, visual learning, and real-life mathematics.</p>
-      </div>
-    </section>
-
-    <!-- LEVEL-2 BODY START -->
-    <section class="edu-section">
-      <h2 data-en="Explore Mathematics" data-zh="探索数学">Explore Mathematics</h2>
-      <p class="edu-lead" data-en="Four ways to explore mathematical ideas — from essential concepts to visual discoveries and deeper thinking." data-zh="通过四个方向探索数学思想 —— 从基础概念，到可视化发现，再到更深入的数学思考。">Four ways to explore mathematical ideas — from essential concepts to visual discoveries and deeper thinking.</p>
-      <div class="edu-grid four">
-        <a class="edu-card" href="math-foundations.html">
-          <img src="../assets/math-cards/math-foundations-card.webp" alt="Math foundations book">
-          <div class="edu-card-body">
-            <span class="edu-tag" data-en="01 · BUILD YOUR BASE" data-zh="01 · 奠定基础">01 · BUILD YOUR BASE</span>
-            <h3 data-en="Math Foundations" data-zh="数学基础与知识体系">Math Foundations</h3>
-            <p data-en="Understand essential mathematical language, rules, formulas, number skills, functions, geometry, trigonometry, and data." data-zh="理解重要的数学语言、规则、公式、数与运算、函数、几何、三角学和数据知识。">Understand essential mathematical language, rules, formulas, number skills, functions, geometry, trigonometry, and data.</p>
-            <span class="edu-link" data-en="Explore foundations →" data-zh="探索数学基础 →">Explore foundations →</span>
-          </div>
-        </a>
-        <a class="edu-card" href="math-real-life.html">
-          <img src="../assets/math-cards/math-real-life-card.webp" alt="Car speed mathematical models">
-          <div class="edu-card-body">
-            <span class="edu-tag" data-en="02 · CONNECT TO THE WORLD" data-zh="02 · 联系现实">02 · CONNECT TO THE WORLD</span>
-            <h3 data-en="Math in Real Life" data-zh="现实生活中的数学">Math in Real Life</h3>
-            <p data-en="See how mathematical models explain familiar situations and help us design, understand, and solve real problems." data-zh="看看数学模型如何解释熟悉的生活情境，并帮助我们设计、理解和解决实际问题。">See how mathematical models explain familiar situations and help us design, understand, and solve real problems.</p>
-            <span class="edu-link" data-en="Explore real-life math →" data-zh="探索生活中的数学 →">Explore real-life math →</span>
-          </div>
-        </a>
-        <a class="edu-card" href="visual-math-patterns.html">
-          <img src="../assets/math-cards/visual-math-patterns-card.webp" alt="Linear and quadratic step patterns">
-          <div class="edu-card-body">
-            <span class="edu-tag" data-en="03 · SEE THE PATTERNS" data-zh="03 · 发现规律">03 · SEE THE PATTERNS</span>
-            <h3 data-en="Visual Math &amp; Patterns" data-zh="数学可视化与规律">Visual Math &amp; Patterns</h3>
-            <p data-en="Make abstract relationships visible through diagrams, graphs, step patterns, first differences, and second differences." data-zh="通过图示、图像、步进规律、一阶差分和二阶差分，让抽象的数学关系变得直观可见。">Make abstract relationships visible through diagrams, graphs, step patterns, first differences, and second differences.</p>
-            <span class="edu-link" data-en="Explore visual math →" data-zh="探索数学图解 →">Explore visual math →</span>
-          </div>
-        </a>
-        <a class="edu-card" href="mathematical-thinking.html">
-          <img src="../assets/math-cards/mathematical-thinking-card.webp" alt="Advanced mathematical thinking book">
-          <div class="edu-card-body">
-            <span class="edu-tag" data-en="04 · THINK DEEPLY" data-zh="04 · 深入思考">04 · THINK DEEPLY</span>
-            <h3 data-en="Mathematical Thinking" data-zh="数学思维与拓展">Mathematical Thinking</h3>
-            <p data-en="Explore clever strategies, formula discovery, geometric reasoning, theorems, and creative problem solving." data-zh="探索巧妙策略、公式发现、几何推理、数学定理和创造性问题解决。">Explore clever strategies, formula discovery, geometric reasoning, theorems, and creative problem solving.</p>
-            <span class="edu-link" data-en="Explore deeper thinking →" data-zh="探索数学思维 →">Explore deeper thinking →</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="edu-section">
-      <div class="edu-callout">
-        <p class="edu-kicker" data-en="LEARN WITH GUIDANCE" data-zh="在指导中学习">LEARN WITH GUIDANCE</p>
-        <h2 data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</h2>
-        <p data-en="Free resources are a great place to begin. In class, students can ask questions, test ideas, receive guidance, explain their reasoning, and build understanding through structured learning and discussion." data-zh="免费学习资源是很好的起点。在课堂上，学生可以提出问题、检验想法、获得指导、解释自己的推理，并通过有系统的学习和讨论建立真正的理解。">Free resources are a great place to begin. In class, students can ask questions, test ideas, receive guidance, explain their reasoning, and build understanding through structured learning and discussion.</p>
-        <div class="edu-pillrow">
-          <span class="edu-pill" data-en="Understand why" data-zh="理解原理">Understand why</span>
-          <span class="edu-pill" data-en="Think independently" data-zh="独立思考">Think independently</span>
-          <span class="edu-pill" data-en="Learn by explaining" data-zh="通过讲解来学习">Learn by explaining</span>
-        </div>
-        <a class="edu-button" href="in-class-learning.html" data-en="Discover In-Class Learning →" data-zh="了解课堂学习 →">Discover In-Class Learning →</a>
-      </div>
-    </section>
-    <!-- LEVEL-2 BODY END -->
-  </main>
-
-  <footer class="site-footer">
-    <nav aria-label="Legal">
-      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
-      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
-      <a href="../index.html" data-legal="home">Home</a>
-      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
-    </nav>
-    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
-  </footer>
-
-  <script>
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a class="active" data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="edu-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Home" data-page-back="" data-zh="← 返回首页" href="../index.html">← Back to Home</a>
+</div>
+<section aria-labelledby="math-page-title" class="compact-page-banner about-compact-banner">
+<div class="compact-banner-copy">
+<h1 data-en="Math Education" data-zh="数学教育" id="math-page-title">Math Education</h1>
+<p class="compact-banner-subtitle" data-en="Clear ideas, visual learning, and real-life mathematics." data-zh="清晰讲解、直观学习与生活中的数学。">Clear ideas, visual learning, and real-life mathematics.</p>
+</div>
+</section>
+<!-- LEVEL-2 BODY START -->
+<section class="edu-section">
+<h2 data-en="Explore Mathematics" data-zh="探索数学">Explore Mathematics</h2>
+<p class="edu-lead" data-en="Four ways to explore mathematical ideas — from essential concepts to visual discoveries and deeper thinking." data-zh="通过四个方向探索数学思想 —— 从基础概念，到可视化发现，再到更深入的数学思考。">Four ways to explore mathematical ideas — from essential concepts to visual discoveries and deeper thinking.</p>
+<div class="edu-grid four">
+<a class="edu-card" href="math-foundations.html">
+<img alt="Math foundations book" src="../assets/math-cards/math-foundations-card.webp"/>
+<div class="edu-card-body">
+<span class="edu-tag" data-en="01 · BUILD YOUR BASE" data-zh="01 · 奠定基础">01 · BUILD YOUR BASE</span>
+<h3 data-en="Math Foundations" data-zh="数学基础与知识体系">Math Foundations</h3>
+<p data-en="Understand essential mathematical language, rules, formulas, number skills, functions, geometry, trigonometry, and data." data-zh="理解重要的数学语言、规则、公式、数与运算、函数、几何、三角学和数据知识。">Understand essential mathematical language, rules, formulas, number skills, functions, geometry, trigonometry, and data.</p>
+<span class="edu-link" data-en="Explore foundations →" data-zh="探索数学基础 →">Explore foundations →</span>
+</div>
+</a>
+<a class="edu-card" href="math-real-life.html">
+<img alt="Car speed mathematical models" src="../assets/math-cards/math-real-life-card.webp"/>
+<div class="edu-card-body">
+<span class="edu-tag" data-en="02 · CONNECT TO THE WORLD" data-zh="02 · 联系现实">02 · CONNECT TO THE WORLD</span>
+<h3 data-en="Math in Real Life" data-zh="现实生活中的数学">Math in Real Life</h3>
+<p data-en="See how mathematical models explain familiar situations and help us design, understand, and solve real problems." data-zh="看看数学模型如何解释熟悉的生活情境，并帮助我们设计、理解和解决实际问题。">See how mathematical models explain familiar situations and help us design, understand, and solve real problems.</p>
+<span class="edu-link" data-en="Explore real-life math →" data-zh="探索生活中的数学 →">Explore real-life math →</span>
+</div>
+</a>
+<a class="edu-card" href="visual-math-patterns.html">
+<img alt="Linear and quadratic step patterns" src="../assets/math-cards/visual-math-patterns-card.webp"/>
+<div class="edu-card-body">
+<span class="edu-tag" data-en="03 · SEE THE PATTERNS" data-zh="03 · 发现规律">03 · SEE THE PATTERNS</span>
+<h3 data-en="Visual Math &amp; Patterns" data-zh="数学可视化与规律">Visual Math &amp; Patterns</h3>
+<p data-en="Make abstract relationships visible through diagrams, graphs, step patterns, first differences, and second differences." data-zh="通过图示、图像、步进规律、一阶差分和二阶差分，让抽象的数学关系变得直观可见。">Make abstract relationships visible through diagrams, graphs, step patterns, first differences, and second differences.</p>
+<span class="edu-link" data-en="Explore visual math →" data-zh="探索数学图解 →">Explore visual math →</span>
+</div>
+</a>
+<a class="edu-card" href="mathematical-thinking.html">
+<img alt="Advanced mathematical thinking book" src="../assets/math-cards/mathematical-thinking-card.webp"/>
+<div class="edu-card-body">
+<span class="edu-tag" data-en="04 · THINK DEEPLY" data-zh="04 · 深入思考">04 · THINK DEEPLY</span>
+<h3 data-en="Mathematical Thinking" data-zh="数学思维与拓展">Mathematical Thinking</h3>
+<p data-en="Explore clever strategies, formula discovery, geometric reasoning, theorems, and creative problem solving." data-zh="探索巧妙策略、公式发现、几何推理、数学定理和创造性问题解决。">Explore clever strategies, formula discovery, geometric reasoning, theorems, and creative problem solving.</p>
+<span class="edu-link" data-en="Explore deeper thinking →" data-zh="探索数学思维 →">Explore deeper thinking →</span>
+</div>
+</a>
+</div>
+</section>
+<section class="edu-section">
+<div class="edu-callout">
+<p class="edu-kicker" data-en="LEARN WITH GUIDANCE" data-zh="在指导中学习">LEARN WITH GUIDANCE</p>
+<h2 data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</h2>
+<p data-en="Free resources are a great place to begin. In class, students can ask questions, test ideas, receive guidance, explain their reasoning, and build understanding through structured learning and discussion." data-zh="免费学习资源是很好的起点。在课堂上，学生可以提出问题、检验想法、获得指导、解释自己的推理，并通过有系统的学习和讨论建立真正的理解。">Free resources are a great place to begin. In class, students can ask questions, test ideas, receive guidance, explain their reasoning, and build understanding through structured learning and discussion.</p>
+<div class="edu-pillrow">
+<span class="edu-pill" data-en="Understand why" data-zh="理解原理">Understand why</span>
+<span class="edu-pill" data-en="Think independently" data-zh="独立思考">Think independently</span>
+<span class="edu-pill" data-en="Learn by explaining" data-zh="通过讲解来学习">Learn by explaining</span>
+</div>
+<a class="edu-button" data-en="Discover In-Class Learning →" data-zh="了解课堂学习 →" href="in-class-learning.html">Discover In-Class Learning →</a>
+</div>
+</section>
+<!-- LEVEL-2 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
 (() => {
   const nav = {
     en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
@@ -194,7 +189,7 @@
   });
 })();
   </script>
-  <script>
+<script>
 /* Remove legacy GTranslate cookies left by earlier test versions. */
 (() => {
   const host = location.hostname;
@@ -216,6 +211,6 @@
   });
 })();
   </script>
-  <script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 </body>
 </html>

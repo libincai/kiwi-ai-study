@@ -740,3 +740,229 @@ episode navigation intact.
 - Each card has a concise scene title and a short explanatory caption.
 - Keep the existing shared header, topic banner, language switcher, footer, and next/previous episode navigation unchanged.
 - Character artwork should follow the established Episode 1 girl and white-blue robot references; do not redraw or alter the site-wide mascot or unrelated page art.
+
+
+## Word-to-Web Conversion & Mathematical Content Standards (Approved)
+
+### Scope and source hierarchy
+
+- Apply these rules to converting **Math Quick Reference Library – Advanced** Word content into KIWI 爱AI Study topic pages. The Word book supplies content, but the website is **not** a synchronized companion edition: never embed book page numbers or require identical chapter order.
+- Preserve all teaching content, examples, formula meaning, figures and pedagogical sequencing unless the user explicitly requests restructuring. Do not include Worksheet or Answer Key sections when excluded by the task.
+- Use existing site templates and CSS; do not rebuild global header, footer, breadcrumbs or language switching. Check existing topic URLs before creating new ones.
+- Level 3 **Mathematical Thinking** is a compact, single-column directory of top-level subject categories, not nested topic cards.
+- Level 4 pages use the shared Level 4 banner. Put the **category** (for example, *Number Skills & Operations*) in the banner; the current topic title belongs in the content column. Desktop layout: narrow left navigation listing sibling topics **without** a “TOPICS” heading; main reading column on the right. Long navigation titles wrap naturally. Mobile navigation moves above the content.
+- Heading 2 normally defines a Level 4 topic/page; Heading 3 normally defines a collapsible teaching card; Heading 4 is an internal subheading. **Pedagogical structure overrides mechanical heading mapping**: a section such as “Advanced Skills” may be introductory text outside cards, while its Subtraction Method and Division Method become separate cards.
+
+### Accordion / teaching cards
+
+- Use semantic `<details>` / `<summary>` or an accessible equivalent with keyboard support and an accurate expanded state.
+- The **first teaching card is expanded by default**, all subsequent cards collapsed. Users may close the first and open others.
+- Card headings use the established pale-blue header, navy text and right-aligned plus/minus affordance. Avoid a large “card inside card” hierarchy unless required by the actual learning structure.
+- In GCF, keep the Advanced Skills overview outside the cards, then create independent **Subtraction Method** and **Division Method (Euclidean Algorithm)** cards.
+
+### Math rendering: classify before converting
+
+1. **Display formulas** (rules, identities, derivations): one line/paragraph, centered within the reading column; examples include `\gcd(a,b)=\gcd(a-b,b)` and `\gcd(a,b)=\gcd(b,r)`. Use semantic MathML or a consistently configured MathJax/KaTeX renderer. Do not convert LaTeX commands to raw visible text.
+2. **Inline math** (variables or expressions within a sentence): remain inline and do not center the surrounding prose.
+3. **Worked calculation steps** inside an example: normal **left-aligned** text in a numbered list, not display-math blocks. Keep the number close to the calculation.
+4. **Short multiple examples** may be bullet items; one example question must **not** receive a decorative bullet merely because it came from Word list formatting.
+5. Operators and notation: preserve `÷`, `×`, `−`, `=`, `→`, fractions, superscripts, roots and parentheses. Write `gcd`/`GCF` as an upright operator name (not three italic variables). Check rendered math visually and against the Word source; never trust successful HTML conversion alone.
+6. No vertical scrollbars, up/down spinner arrows, clipped formulas, or formula containers with accidental `overflow-y: auto`. On narrow screens allow **horizontal overflow only if truly needed**, without distorting the math.
+
+### Examples, lists and indentation
+
+- Use semantic `<ul>` for genuine bullet lists and `<ol>` for sequential methods. Preserve bullets for several distinct examples, but do not insert bullets before a single question.
+- A list is indented **one level (approximately three character spaces)** relative to its introducing text. Avoid literal repeated spaces or tab characters; implement indentation with CSS `margin-inline-start` and `padding-inline-start`.
+- Example hierarchy: `Example:` (base indent) → `Find GCF(84, 30).` (one indent) → `1. 84 ÷ 30 = 2 remainder 24` etc. (a **second** indent). Place the example question **before** its steps.
+- Keep the entire example together: the explanatory sentence **“When the remainder is 0, the last divisor is the GCF.”** follows step 3 **at the same text indent as the numbered calculation**, within the example block. The final result `∴ GCF(84, 30) = 6` belongs to the same example, not an unrelated top-level paragraph.
+- Do not render steps as centered formulas; do not use a layout that puts numbers at the far left and calculations at the far right.
+- For GCF division example the correct step text is exactly:
+  1. `84 ÷ 30 = 2 remainder 24`
+  2. `30 ÷ 24 = 1 remainder 6`
+  3. `24 ÷ 6 = 4 remainder 0`
+- Do **not** allow escaped TeX to leak into text (e.g. `\div` appearing literally or `84 \div 30 = 2\ remainder 24` concatenated with raw MathML). If the source expression is mixed prose and math, render the arithmetic and “remainder” separately or as verified plain Unicode text.
+
+### Learning Insight / Info Panel
+
+- Convert Word hint/history/insight boxes to a native semantic `<aside role="note">`, **not** an HTML table or blockquote.
+- Match the site's existing **warm pale-cream/yellow** callout: light cream background, subtle warm-yellow border, rounded corners, a small lightbulb beside the title.
+- Title and prose are **left-aligned**; standalone math inside the panel remains centered. Preserve the original content, including history notes and actual bullet lists.
+- Do not substitute a blue panel or center all the text; do not leave empty icon columns or Word table borders.
+
+### Required QA and acceptance checks
+
+- Inspect the actual source DOCX structure, including equations (OMML), drawings, tables, heading levels and text in images. Convert in logical reading order; do not silently drop content.
+- Validate generated HTML, CSS, anchor destinations, accessible accordion behavior, first-card-open default and mobile layout.
+- Render the actual page in a browser and visually inspect **all formula blocks**, especially division signs, upright `gcd`, line alignment, clipping and scroll arrows.
+- Check every example's nesting and sequence: question → numbered steps → explanation → answer; verify bullets appear only where intended.
+- Check the site's English/Chinese language behavior without fabricating translations or breaking existing language flags.
+- Do not claim a ZIP integrity test alone proves the website or math is correct. Compare representative rendered pages to the Word original before final delivery.
+
+### Minimal HTML pattern for a nested example
+
+```html
+<p>Example:</p>
+<div class="kiwi-example-block">
+  <p class="kiwi-example-question">Find GCF(84, 30).</p>
+  <ol class="kiwi-example-steps">
+    <li>84 ÷ 30 = 2 remainder 24</li>
+    <li>30 ÷ 24 = 1 remainder 6</li>
+    <li>24 ÷ 6 = 4 remainder 0</li>
+  </ol>
+  <p class="kiwi-example-explanation">When the remainder is 0, the last divisor is the GCF.</p>
+  <p class="kiwi-example-answer">∴ GCF(84, 30) = 6.</p>
+</div>
+```
+
+Indent the question once and the numbered steps/explanation twice with CSS; do not use literal spaces. The explanation aligns with the **step text**, not with the leftmost number marker.
+
+
+### Example numbered-list indentation (refined)
+
+- Within a single-example block, place the numbered steps **one tab (approximately three character spaces)** to the right of the example question, not two tabs.
+- Keep the step number adjacent to the left-aligned step text. Avoid legacy broad `padding-left: 4.7rem` rules overriding example-specific indentation.
+- Keep the explanation and final answer in the same example block, visually aligned with the step text.
+- Use scoped CSS for `.kiwi-example-block ol.kiwi-example-steps` and verify both desktop and mobile rendering.
+
+
+### Numbered List Marker Color
+
+For mathematical worked examples, numbered list markers (1., 2., 3., etc.) must use near-black (`#111111`), not the site accent blue. Preserve the approved single-tab indentation and left-aligned calculation text. Use `li::marker { color: #111111; }` on both `.kiwi-numbered-steps` and `.kiwi-example-steps`.
+
+
+## Word-to-Web Conversion: Approved Math Lesson Formatting (2026-11-09)
+
+These rules apply to the KIWI Mathematical Thinking Level 4 teaching pages and future Word-to-Web conversions. Preserve the original source's mathematical meaning, examples and teaching order; do not blindly turn every Word paragraph into a display equation.
+
+### Page hierarchy and navigation
+
+- Level 3 Mathematical Thinking: a clean single-column list of primary categories, without nested cards.
+- Level 4: each actual topic is a separate page with the category (e.g., Number Skills & Operations) in its banner. The topic title is in the article body. A compact left-side topic navigation has no `TOPICS` heading, supports long wrapping labels, and moves above content on small screens.
+- Heading 3 is generally a collapsible teaching card; Heading 4 is an internal subsection. Editorial teaching logic overrides automatic mapping: for example, put the Advanced Skills introduction outside the cards, and give Subtraction Method and Division Method separate cards.
+- First accordion card starts open; all other cards start closed. Cards remain independently collapsible.
+- Do not display Advanced book page numbers or claim the site is a companion book. Exclude worksheets and answer keys when requested.
+
+### Numbered and bulleted lists
+
+- **Number markers must be normal-weight BLACK (`font-weight: 400; color: #111`)**, not blue and not bold. Do not inherit accent colors or bold styling from general list/card rules.
+- Text of numbered steps is normal-weight unless a specific mathematical term needs emphasis.
+- Real multi-item examples and conceptual bullet lists use bullet markers. A *single* example question (e.g., `Find GCF(48, 18).`) has no bullet.
+- Example question: indent one tab (~3 character widths) relative to the `Example:` label. Numbered steps: indent one further tab (~3 character widths) relative to the question, not two. Keep the numeral near its step text; both are left-aligned. Use real `<ol><li>` markup, not centered display equations.
+- The explanation and final answer belonging to an example remain within the example block, aligned to its step text, not reset to the page's outer margin.
+- A computation sequence may be an ordered list; standalone mathematical identities/rules are display equations instead. Do not introduce unwanted bullet markers on formulas.
+
+Example markup:
+
+```html
+<p>Example:</p>
+<div class="kiwi-example-block">
+  <p class="kiwi-example-question">Find GCF(84, 30).</p>
+  <ol class="kiwi-example-steps">
+    <li>84 ÷ 30 = 2 remainder 24</li>
+    <li>30 ÷ 24 = 1 remainder 6</li>
+    <li>24 ÷ 6 = 4 remainder 0</li>
+  </ol>
+  <p class="kiwi-example-explanation">When the remainder is 0, the last divisor is the GCF.</p>
+  <p class="kiwi-example-answer">∴ GCF(84, 30) = 6.</p>
+</div>
+```
+
+```css
+.kiwi-topic-article ol li::marker {
+  color: #111 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+```
+
+### Mathematics formulas
+
+- Independent formulas and identities are separate, horizontally centered display blocks. Inline variables and short expressions remain inline. Keep numbered calculation steps left-aligned as text, with inline math only where necessary.
+- Use semantically correct MathML or a consistently configured math renderer; do not flatten Word equation objects into broken plain text. Preserve `÷`, fractions, superscripts, roots, parentheses, equality and `\operatorname{GCF}` / `\gcd` notation.
+- Display `gcd` as a proper upright mathematical operator: `gcd(a,b) = gcd(a-b,b)` and `gcd(a,b) = gcd(b,r)`. Do not split `gcd` into italic individual letters.
+- Never show vertical scroll arrows/scrollbars on math containers. For unusually wide formulas on narrow screens, allow only an intentional horizontal overflow treatment.
+- Verify all formulas visually in a real browser, especially division and dimensional analysis; a valid ZIP or syntactically valid HTML is not enough.
+
+### Info panels
+
+- Use the site's established warm cream/yellow panel with a soft gold border and a small lightbulb icon beside the heading. Keep prose left-aligned, formulas centered only when they are standalone. Avoid importing Word table cells and centered table text as the website's info panel layout.
+
+### QA checklist
+
+- Compare page text and teaching sequence against the source Word document.
+- Check every Heading 3 accordion, including the first-open default, and all Level 4 links.
+- Check ordinary black, nonbold ordered-list markers; single-example indentation; ordered steps and their explanations.
+- Check display-vs-inline math, correct symbols, formula alignment, and no vertical math scroll arrows.
+- Check cream info panels, desktop/mobile layout, language toggle, and preservation of existing site pages.
+
+
+### Canonical example layout (approved)
+
+- The `Example:` label remains at the normal paragraph left margin.
+- A single problem statement is **not** a bullet. Indent it by **3ch** (approximately three spaces / one tab) relative to the label.
+- Ordered solution steps are indented by one more **3ch** relative to the problem. The list marker is black, normal-weight, not bold. Keep markers adjacent to their step text and left-align the whole list; do not center each step as a display formula.
+- Any concluding explanation belongs to the same example, immediately after the numbered steps, aligned with the step text (not the list number).
+- The final answer uses the therefore symbol `∴` and the site's subtle pale-blue left border, as a distinct answer line. Do not turn the answer into an extra numbered step.
+- Preserve the teaching order: Example → problem → steps → explanation (when needed) → answer.
+- For subtraction and division methods, use the same markup and CSS rather than per-example indentation hacks.
+
+```html
+<p>Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+  <p class="kiwi-example-question">Find GCF(84, 30).</p>
+  <ol class="kiwi-example-steps">
+    <li>84 ÷ 30 = 2 remainder 24</li>
+    <li>30 ÷ 24 = 1 remainder 6</li>
+    <li>24 ÷ 6 = 4 remainder 0</li>
+  </ol>
+  <p class="kiwi-example-explanation">When the remainder is 0, the last divisor is the GCF.</p>
+  <p class="kiwi-example-answer">∴ GCF(84, 30) = 6.</p>
+</div>
+```
+
+Use the `.kiwi-example-standard` CSS rules in `math/gcf.html` as the reference implementation. On mobile, keep indentation relative and avoid horizontal overflow.
+
+
+### Example ordered-list alignment correction
+
+- `Example:` is at the normal text margin.
+- Problem line starts at `3ch` from the example margin.
+- The **visible numbered marker** (1., 2., 3.) must start about another `3ch` to the right of the problem line, never to its left. Account for the browser's list-marker gutter: do not equate `ol` margin with the marker's visible position.
+- In the current `math/gcf.html` reference CSS, use `ol.kiwi-example-steps { margin-left: 9ch; padding-left: 2.1ch; }` with marker outside, and align the subsequent explanation with the step text. Test visually in a browser and adjust the marker gutter if fonts change.
+- Apply the same alignment to Subtraction Method and Division Method; markers remain normal-weight black.
+
+
+### Example step indentation: CSS conflict prevention
+
+The `Example:` label is at the base text margin. The problem begins at `3ch`. The **visible number marker** (1., 2., 3.) begins at `6ch` from the base, not `9ch`; the marker and text remain adjacent. Use `list-style-position: inside` and `margin-left: 6ch; padding-left: 0` for the numbered list, and use normal-weight black numerals. Do not combine a `9ch` margin with extra `padding-left` or legacy `4.7rem` overrides. Verify actual browser rendering, not just ZIP validity.
+
+
+### Example indentation: final alignment rule
+
+- Example label starts at 0ch. The single problem statement begins at 3ch.
+- The **visible number** (not just its content) of each numbered step begins at 6ch, three characters farther right than the problem statement.
+- Number markers are normal-weight black; working text follows the number immediately. Use `list-style-position: inside` with zero list padding to avoid browser default marker offsets.
+- The blue vertical rule for the conclusion aligns with the problem statement at 3ch; conclusion text is padded inside the rule.
+- Never stack conflicting `ol` padding and margin overrides. Verify the final rendered marker position on desktop and mobile.
+
+
+## Shared Mathematics Formula and Example Quality Rules (2026-11-09)
+
+Applies to `math/gcf.html`, `math/unit-conversions-and-rates.html`, and `math/mental-squaring-and-square-rooting.html`.
+
+- **Display equations:** one row, horizontally centered; MathML remains structurally intact; do not put a display equation in a scrolling vertical container. Only permit horizontal overflow on narrow screens. Inline math stays inline. Verify rendering in a real browser.
+- **Examples:** `Example:` remains at the body margin; a single problem begins 3ch to the right. An ordered working list begins at 6ch relative to `Example:` (one additional 3ch indent). The *visible number*, not just the text, must align at 6ch. Numbers are black and normal weight. Do not center numbered steps.
+- **Example conclusion:** after all working and explanation, use a `∴` answer line with a subtle pale-blue left border aligned with the problem at 3ch. Explanatory prose associated with a worked example stays within that example.
+- **True multiple examples:** preserve an ordinary bullet list; do not confuse a list of independent examples with a numbered solution.
+- **Content fidelity:** never silently repair ambiguous Word mathematics; compare the source Word equation and verify the correct `÷`, `−`, exponents, radicals, units, parentheses and GCF/gcd notation. MathML may be mathematically incorrect even when visually centered.
+- **QA:** check all three Level 4 pages, including expanded accordion cards, at desktop and mobile widths. Check computed CSS, not only ZIP validity.
+
+
+### Display Formula Alignment — Sitewide Enforcement
+
+- Only standalone mathematical equations are centered. Inline math remains inline, and numbered calculation steps stay left aligned.
+- Wrap a standalone MathML equation in `.kiwi-math-block` and use `display="block"`; center both wrapper and MathML.
+- Use horizontal overflow only when an equation cannot fit a narrow viewport; do not allow vertical scrollbars or spinner-like scroll indicators.
+- Keep actual examples and numbered lists left aligned, with normal-weight black numbering and established indentation.
+- Never turn a multi-sentence paragraph or a curriculum panel into a centered math block.
+- Validate the mathematics against the source Word file separately from CSS/layout checks.

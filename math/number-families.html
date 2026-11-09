@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <!-- Level 4 topic — shell from templates/level-4-topic.html (reference implementation) -->
 <html lang="en-CA">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Number Families | Kiwi 爱AI Study</title>
-  <meta name="description" content="Explore number families, examples, and the history of numbers in a visual, student-friendly guide.">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Number Families | Kiwi 爱AI Study</title>
+<meta content="Explore number families, examples, and the history of numbers in a visual, student-friendly guide." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<style>
 .topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
 .nf-section{margin:30px 0}
 .nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
@@ -33,187 +34,165 @@
   </style>
 </head>
 <body class="topic-page">
-  <header class="site-header">
-    <div class="brand-lockup">
-      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
-        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
-      </a>
-      <span class="divider" aria-hidden="true"></span>
-      <div class="author-wrap">
-        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
-          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
-        </a>
-      </div>
-    </div>
-    <nav class="site-nav" aria-label="Primary">
-      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
-      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
-      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
-      <a href="../ai/index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
-      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
-      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
-      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
-      <span class="flags" aria-label="Languages">
-        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
-          <img src="https://flagcdn.com/w160/ca.png" alt="English">
-        </button>
-        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
-          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
-        </button>
-      </span>
-    </nav>
-  </header>
-
-  <main class="topic-main">
-    <div class="page-back-wrap">
-      <a class="page-back-link" href="math-foundations.html" data-page-back data-en="← Back to Math Foundations" data-zh="← 返回数学基础">← Back to Math Foundations</a>
-    </div>
-
-    <section class="nf-hero topic-banner" aria-label="Page introduction">
-      <p class="topic-banner-kicker" data-en="MATH FOUNDATIONS · NUMBER SKILLS &amp; OPERATIONS" data-zh="数学基础 · 数与运算">MATH FOUNDATIONS · NUMBER SKILLS &amp; OPERATIONS</p>
-      <h1 data-en="Number Families" data-zh="数的家族">Number Families</h1>
-      <p class="topic-banner-subtitle" data-en="Numbers come in different families. Each family has its own features, uses, and a fascinating story." data-zh="数字有不同的家族。每一类数都有自己的特点和用途，也有一段有趣的发展历史。">Numbers come in different families. Each family has its own features, uses, and a fascinating story.</p>
-    </section>
-
-    <!-- LEVEL-4 BODY START -->
-    <section class="nf-section">
-      <h2 data-en="Meet the Number Families" data-zh="认识不同的数">Meet the Number Families</h2>
-      <p class="nf-lead" data-en="Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line." data-zh="从日常计数的数字开始，再认识表示部分、零以下数值，以及超越普通数轴的数。">Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line.</p>
-      <div class="nf-grid">
-        <article class="nf-card">
-          <div class="nf-card-main">
-            <h3 data-en="1. Natural Numbers" data-zh="1. 自然数">1. Natural Numbers</h3>
-            <p data-en="The counting numbers we use every day. They start at 1 and continue forever." data-zh="日常生活中用来计数的数，从 1 开始，可以一直数下去。">The counting numbers we use every day. They start at 1 and continue forever.</p>
-            <p class="examples" data-en="Examples: 1, 2, 3, 4, 5, …" data-zh="例子：1、2、3、4、5、……">Examples: 1, 2, 3, 4, 5, …</p>
-            </div>
-
-            <img src="../assets/number-families-natural.jpg" alt="A child counting pebbles">
-
-            <p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br><span data-en="Long before written symbols, people counted with fingers, pebbles, and tally marks to keep track of animals and food. These counting ideas became the natural numbers." data-zh="很久以前，人们还没有数字符号，就用手指、石子和刻痕来计算动物和食物的数量。这些最早的计数方式逐渐发展成今天的自然数。">Long before written symbols, people counted with fingers, pebbles, and tally marks to keep track of animals and food. These counting ideas became the natural numbers.</span></p>
-        </article>
-        <article class="nf-card">
-          <div class="nf-card-main">
-            <h3 data-en="2. Whole Numbers" data-zh="2. 整数（非负整数）">2. Whole Numbers</h3>
-            <p data-en="Whole numbers include zero and all natural numbers." data-zh="整数（这里指非负整数）包括 0 和所有自然数。">Whole numbers include zero and all natural numbers.</p>
-            <p class="examples" data-en="Examples: 0, 1, 2, 3, 4, …" data-zh="例子：0、1、2、3、4、……">Examples: 0, 1, 2, 3, 4, …</p>
-            </div>
-
-            <img src="../assets/number-families-whole.jpg" alt="A scholar writing the number zero">
-
-            <p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br><span data-en="Zero developed over time. Indian mathematicians gave zero a clear place in the number system; Brahmagupta described rules for zero around 628 CE. The idea later spread widely." data-zh="零的概念经历了漫长的发展。印度数学家逐渐把零纳入数系；约公元 628 年，数学家婆罗摩笈多系统地描述了零的运算规则。这个概念后来广泛传播。">Zero developed over time. Indian mathematicians gave zero a clear place in the number system; Brahmagupta described rules for zero around 628 CE. The idea later spread widely.</span></p>
-        </article>
-        <article class="nf-card">
-          <div class="nf-card-main">
-            <h3 data-en="3. Integers" data-zh="3. 整数">3. Integers</h3>
-            <p data-en="Integers include zero, positive whole numbers, and negative whole numbers." data-zh="整数包括零、正整数和负整数。">Integers include zero, positive whole numbers, and negative whole numbers.</p>
-            <p class="examples" data-en="Examples: …, −3, −2, −1, 0, 1, 2, 3, …" data-zh="例子：……、−3、−2、−1、0、1、2、3、……">Examples: …, −3, −2, −1, 0, 1, 2, 3, …</p>
-            </div>
-
-            <img src="../assets/number-families-integers.jpg" alt="A balance scale showing positive and negative values">
-
-            <p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br><span data-en="Negative numbers once seemed strange. In the 7th century, Indian mathematician Brahmagupta described positive amounts as fortunes and negative amounts as debts. The symbol ℤ comes from the German word Zahlen, meaning numbers." data-zh="负数曾经让数学家感到难以接受。公元 7 世纪，印度数学家婆罗摩笈多把正数比作财富，把负数比作债务。整数符号 ℤ 来自德语 Zahlen，意思是“数字”。">Negative numbers once seemed strange. In the 7th century, Indian mathematician Brahmagupta described positive amounts as fortunes and negative amounts as debts. The symbol ℤ comes from the German word Zahlen, meaning numbers.</span></p>
-        </article>
-        <article class="nf-card">
-          <div class="nf-card-main">
-            <h3 data-en="4. Fractions" data-zh="4. 分数">4. Fractions</h3>
-            <p data-en="Fractions show equal parts of a whole. The top number is the numerator; the bottom number is the denominator." data-zh="分数表示一个整体被平均分成若干份后取其中的一部分。上面的数叫分子，下面的数叫分母。">Fractions show equal parts of a whole. The top number is the numerator; the bottom number is the denominator.</p>
-            <p class="examples" data-en="Examples: 1/2, 9/8, 3/8, 1 3/4" data-zh="例子：1/2、9/8、3/8、1 又 3/4">Examples: 1/2, 9/8, 3/8, 1 3/4</p>
-            </div>
-
-            <img src="../assets/number-families-fractions.jpg" alt="A fraction diagram and ancient Egyptian setting">
-
-            <p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br><span data-en="About 4,000 years ago, Egyptians used unit fractions to share food and measure land. Babylonians and Greeks also used fractions in trade and astronomy. Fraction notation gradually developed into the form we use today." data-zh="大约 4,000 年前，古埃及人就用分数来分配食物和测量土地。巴比伦人和古希腊人也在贸易和天文学中使用分数。分数的书写方式经过长期发展，逐渐形成今天熟悉的样子。">About 4,000 years ago, Egyptians used unit fractions to share food and measure land. Babylonians and Greeks also used fractions in trade and astronomy. Fraction notation gradually developed into the form we use today.</span></p>
-        </article>
-        <article class="nf-card">
-          <div class="nf-card-main">
-            <h3 data-en="5. Decimals" data-zh="5. 小数">5. Decimals</h3>
-            <p data-en="Decimals are another way to write parts of a whole, using place value and a decimal point." data-zh="小数是表示整体部分的另一种方式，利用数位和小数点来表达。">Decimals are another way to write parts of a whole, using place value and a decimal point.</p>
-            <p class="examples" data-en="Examples: 0.5 = 1/2; 0.25 = 1/4" data-zh="例子：0.5 = 1/2；0.25 = 1/4">Examples: 0.5 = 1/2; 0.25 = 1/4</p>
-            </div>
-
-            <img src="../assets/number-families-decimals.jpg" alt="A historical mathematician studying decimal notation">
-
-            <p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br><span data-en="In 1585, Simon Stevin published a book explaining decimal fractions and how they could make calculations easier. Decimal notation became especially useful for money, measurement, and science." data-zh="1585 年，西蒙·斯蒂文出版了一本介绍十进制小数的书，说明小数如何让计算更方便。后来，小数在货币、测量和科学计算中变得非常重要。">In 1585, Simon Stevin published a book explaining decimal fractions and how they could make calculations easier. Decimal notation became especially useful for money, measurement, and science.</span></p>
-        </article>
-        <article class="nf-card">
-          <div class="nf-card-main">
-            <h3 data-en="6. Rational Numbers" data-zh="6. 有理数">6. Rational Numbers</h3>
-            <p data-en="A rational number can be written as a fraction of two integers, with a non-zero denominator. Its decimal ends or repeats." data-zh="有理数可以写成两个整数相除的形式，分母不能为零。它的小数形式要么有限，要么无限循环。">A rational number can be written as a fraction of two integers, with a non-zero denominator. Its decimal ends or repeats.</p>
-            <p class="examples" data-en="Examples: 1/2, 3/4, 0.5, 0.333…" data-zh="例子：1/2、3/4、0.5、0.333……">Examples: 1/2, 3/4, 0.5, 0.333…</p>
-            </div>
-
-            <img src="../assets/number-families-rational.jpg" alt="An ancient Greek building representing mathematical ratios">
-
-            <p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br><span data-en="People have used ratios for thousands of years to compare lengths, share goods, and study the sky. Greek mathematicians explored ratios deeply, while many cultures developed practical fraction methods." data-zh="几千年来，人们一直用比率比较长度、分配物品和研究天体。古希腊数学家深入研究了比例关系，许多文明也发展出了实用的分数计算方法。">People have used ratios for thousands of years to compare lengths, share goods, and study the sky. Greek mathematicians explored ratios deeply, while many cultures developed practical fraction methods.</span></p>
-        </article>
-        <article class="nf-card">
-          <div class="nf-card-main">
-            <h3 data-en="7. Irrational Numbers" data-zh="7. 无理数">7. Irrational Numbers</h3>
-            <p data-en="Irrational numbers cannot be written as a fraction of two integers. Their decimals never end and never repeat in a pattern." data-zh="无理数不能写成两个整数相除的分数。它们的小数既不会结束，也不会循环重复。">Irrational numbers cannot be written as a fraction of two integers. Their decimals never end and never repeat in a pattern.</p>
-            <p class="examples" data-en="Examples: π = 3.14159…; √2 = 1.41421…" data-zh="例子：π = 3.14159……；√2 = 1.41421……">Examples: π = 3.14159…; √2 = 1.41421…</p>
-            </div>
-
-            <img src="../assets/number-families-irrational.jpg" alt="A geometric square-root diagram">
-
-            <p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br><span data-en="Around 500 BCE, Greek mathematicians discovered that the diagonal of a unit square, √2, cannot be expressed as a ratio of whole numbers. This surprising discovery changed how people thought about numbers." data-zh="大约公元前 500 年，古希腊数学家发现，边长为 1 的正方形对角线 √2 不能表示成两个整数的比。这个发现改变了人们对数字世界的认识。">Around 500 BCE, Greek mathematicians discovered that the diagonal of a unit square, √2, cannot be expressed as a ratio of whole numbers. This surprising discovery changed how people thought about numbers.</span></p>
-        </article>
-        <article class="nf-card">
-          <div class="nf-card-main">
-            <h3 data-en="8. Imaginary Numbers" data-zh="8. 虚数">8. Imaginary Numbers</h3>
-            <p data-en="Imaginary numbers involve the square root of a negative number. The basic imaginary unit is i, where i² = −1." data-zh="虚数涉及负数的平方根。基本虚数单位是 i，其中 i² = −1。">Imaginary numbers involve the square root of a negative number. The basic imaginary unit is i, where i² = −1.</p>
-            <p class="examples" data-en="Example: √−1 = i" data-zh="例子：√−1 = i">Example: √−1 = i</p>
-            </div>
-
-            <img src="../assets/number-families-imaginary.jpg" alt="A complex plane showing the imaginary axis">
-
-            <p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br><span data-en="In the 1500s, mathematicians met square roots of negative numbers while solving equations. Euler later helped establish the symbol i, and Gauss helped develop the theory of complex numbers. These ideas are now useful in physics and engineering." data-zh="16 世纪，数学家在解方程时遇到了负数的平方根。后来，欧拉推动了符号 i 的使用，高斯则发展了复数理论。今天，这些概念在物理和工程领域都很有用。">In the 1500s, mathematicians met square roots of negative numbers while solving equations. Euler later helped establish the symbol i, and Gauss helped develop the theory of complex numbers. These ideas are now useful in physics and engineering.</span></p>
-        </article>
-      </div>
-      <div class="nf-note" data-en="A helpful connection: natural numbers are part of the whole numbers, whole numbers are part of the integers, and integers are part of the rational numbers. Irrational numbers are real numbers too, while imaginary numbers help form the larger complex number system." data-zh="知识联系：自然数属于非负整数，非负整数属于整数，整数又属于有理数。无理数也属于实数；虚数则帮助我们建立更大的复数系统。">A helpful connection: natural numbers are part of the whole numbers, whole numbers are part of the integers, and integers are part of the rational numbers. Irrational numbers are real numbers too, while imaginary numbers help form the larger complex number system.</div>
-    </section>
-
-    <section class="nf-section">
-      <h2 data-en="Number Basics: 0 and 1" data-zh="数字基础：0 和 1">Number Basics: 0 and 1</h2>
-      <p class="nf-lead" data-en="These two small numbers have some very special properties." data-zh="这两个看似简单的数字，其实有许多特别的性质。">These two small numbers have some very special properties.</p>
-      <div class="nf-basics">
-        <article class="nf-basic">
-          <h3 data-en="Number 0" data-zh="数字 0">Number 0</h3>
-          <ul>
-            <li data-en="0 is neither positive nor negative." data-zh="0 既不是正数，也不是负数。">0 is neither positive nor negative.</li>
-            <li data-en="In this guide, 0 is not a natural number." data-zh="本指南采用的定义中，0 不属于自然数。">In this guide, 0 is not a natural number.</li>
-            <li data-en="0 is a whole number, an integer, and a rational number." data-zh="0 是非负整数、整数，也是有理数。">0 is a whole number, an integer, and a rational number.</li>
-            <li data-en="0 is even because 0 ÷ 2 = 0 with no remainder." data-zh="0 是偶数，因为 0 ÷ 2 = 0，没有余数。">0 is even because 0 ÷ 2 = 0 with no remainder.</li>
-            <li data-en="Division by 0 is undefined; 0 cannot be a fraction's denominator." data-zh="除数不能为 0；0 也不能作为分数的分母。">Division by 0 is undefined; 0 cannot be a fraction's denominator.</li>
-            <li data-en="0.0 is a decimal representation of zero." data-zh="0.0 是 0 的一种小数表示形式。">0.0 is a decimal representation of zero.</li>
-          </ul>
-        </article>
-        <article class="nf-basic">
-          <h3 data-en="Number 1" data-zh="数字 1">Number 1</h3>
-          <ul>
-            <li data-en="1 raised to any whole-number power is still 1: 1² = 1, 1⁵ = 1, 1¹⁰⁰ = 1." data-zh="1 的任何整数次幂仍然是 1：1² = 1、1⁵ = 1、1¹⁰⁰ = 1。">1 raised to any whole-number power is still 1: 1² = 1, 1⁵ = 1, 1¹⁰⁰ = 1.</li>
-            <li data-en="1 is neither prime nor composite." data-zh="1 既不是质数，也不是合数。">1 is neither prime nor composite.</li>
-            <li data-en="A prime number has exactly two positive factors: 1 and itself. For example, 2 has factors 1 and 2." data-zh="质数恰好有两个正因数：1 和它本身。例如，2 的因数是 1 和 2。">A prime number has exactly two positive factors: 1 and itself. For example, 2 has factors 1 and 2.</li>
-            <li data-en="A composite number has more than two positive factors. For example, 6 has 1, 2, 3, and 6." data-zh="合数有两个以上的正因数。例如，6 的因数有 1、2、3 和 6。">A composite number has more than two positive factors. For example, 6 has 1, 2, 3, and 6.</li>
-            <li data-en="1 has only one positive factor — itself — so it belongs to neither group." data-zh="1 只有一个正因数，就是它本身，因此不属于上述任何一类。">1 has only one positive factor — itself — so it belongs to neither group.</li>
-          </ul>
-        </article>
-      </div>
-      <p class="nf-footer-note" data-en="Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses." data-zh="提示：有些教材会把 0 也归入自然数。学习时请以老师或教材采用的定义为准。">Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses.</p>
-    </section>
-    <!-- LEVEL-4 BODY END -->
-  </main>
-
-  <footer class="site-footer">
-    <nav aria-label="Legal">
-      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
-      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
-      <a href="../index.html" data-legal="home">Home</a>
-      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="← 返回数学基础0">Business &amp; Collaboration</a>
-    </nav>
-    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="← 返回数学基础1">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
-  </footer>
-
-  <script>
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="../math/index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="topic-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Math Foundations" data-page-back="" data-zh="← 返回数学基础" href="math-foundations.html">← Back to Math Foundations</a>
+</div>
+<section aria-label="Page introduction" class="nf-hero topic-banner">
+<p class="topic-banner-kicker" data-en="MATH FOUNDATIONS · NUMBER SKILLS &amp; OPERATIONS" data-zh="数学基础 · 数与运算">MATH FOUNDATIONS · NUMBER SKILLS &amp; OPERATIONS</p>
+<h1 data-en="Number Families" data-zh="数的家族">Number Families</h1>
+<p class="topic-banner-subtitle" data-en="Numbers come in different families. Each family has its own features, uses, and a fascinating story." data-zh="数字有不同的家族。每一类数都有自己的特点和用途，也有一段有趣的发展历史。">Numbers come in different families. Each family has its own features, uses, and a fascinating story.</p>
+</section>
+<!-- LEVEL-4 BODY START -->
+<section class="nf-section">
+<h2 data-en="Meet the Number Families" data-zh="认识不同的数">Meet the Number Families</h2>
+<p class="nf-lead" data-en="Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line." data-zh="从日常计数的数字开始，再认识表示部分、零以下数值，以及超越普通数轴的数。">Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line.</p>
+<div class="nf-grid">
+<article class="nf-card">
+<div class="nf-card-main">
+<h3 data-en="1. Natural Numbers" data-zh="1. 自然数">1. Natural Numbers</h3>
+<p data-en="The counting numbers we use every day. They start at 1 and continue forever." data-zh="日常生活中用来计数的数，从 1 开始，可以一直数下去。">The counting numbers we use every day. They start at 1 and continue forever.</p>
+<p class="examples" data-en="Examples: 1, 2, 3, 4, 5, …" data-zh="例子：1、2、3、4、5、……">Examples: 1, 2, 3, 4, 5, …</p>
+</div>
+<img alt="A child counting pebbles" src="../assets/number-families-natural.jpg"/>
+<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="Long before written symbols, people counted with fingers, pebbles, and tally marks to keep track of animals and food. These counting ideas became the natural numbers." data-zh="很久以前，人们还没有数字符号，就用手指、石子和刻痕来计算动物和食物的数量。这些最早的计数方式逐渐发展成今天的自然数。">Long before written symbols, people counted with fingers, pebbles, and tally marks to keep track of animals and food. These counting ideas became the natural numbers.</span></p>
+</article>
+<article class="nf-card">
+<div class="nf-card-main">
+<h3 data-en="2. Whole Numbers" data-zh="2. 整数（非负整数）">2. Whole Numbers</h3>
+<p data-en="Whole numbers include zero and all natural numbers." data-zh="整数（这里指非负整数）包括 0 和所有自然数。">Whole numbers include zero and all natural numbers.</p>
+<p class="examples" data-en="Examples: 0, 1, 2, 3, 4, …" data-zh="例子：0、1、2、3、4、……">Examples: 0, 1, 2, 3, 4, …</p>
+</div>
+<img alt="A scholar writing the number zero" src="../assets/number-families-whole.jpg"/>
+<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="Zero developed over time. Indian mathematicians gave zero a clear place in the number system; Brahmagupta described rules for zero around 628 CE. The idea later spread widely." data-zh="零的概念经历了漫长的发展。印度数学家逐渐把零纳入数系；约公元 628 年，数学家婆罗摩笈多系统地描述了零的运算规则。这个概念后来广泛传播。">Zero developed over time. Indian mathematicians gave zero a clear place in the number system; Brahmagupta described rules for zero around 628 CE. The idea later spread widely.</span></p>
+</article>
+<article class="nf-card">
+<div class="nf-card-main">
+<h3 data-en="3. Integers" data-zh="3. 整数">3. Integers</h3>
+<p data-en="Integers include zero, positive whole numbers, and negative whole numbers." data-zh="整数包括零、正整数和负整数。">Integers include zero, positive whole numbers, and negative whole numbers.</p>
+<p class="examples" data-en="Examples: …, −3, −2, −1, 0, 1, 2, 3, …" data-zh="例子：……、−3、−2、−1、0、1、2、3、……">Examples: …, −3, −2, −1, 0, 1, 2, 3, …</p>
+</div>
+<img alt="A balance scale showing positive and negative values" src="../assets/number-families-integers.jpg"/>
+<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="Negative numbers once seemed strange. In the 7th century, Indian mathematician Brahmagupta described positive amounts as fortunes and negative amounts as debts. The symbol ℤ comes from the German word Zahlen, meaning numbers." data-zh="负数曾经让数学家感到难以接受。公元 7 世纪，印度数学家婆罗摩笈多把正数比作财富，把负数比作债务。整数符号 ℤ 来自德语 Zahlen，意思是“数字”。">Negative numbers once seemed strange. In the 7th century, Indian mathematician Brahmagupta described positive amounts as fortunes and negative amounts as debts. The symbol ℤ comes from the German word Zahlen, meaning numbers.</span></p>
+</article>
+<article class="nf-card">
+<div class="nf-card-main">
+<h3 data-en="4. Fractions" data-zh="4. 分数">4. Fractions</h3>
+<p data-en="Fractions show equal parts of a whole. The top number is the numerator; the bottom number is the denominator." data-zh="分数表示一个整体被平均分成若干份后取其中的一部分。上面的数叫分子，下面的数叫分母。">Fractions show equal parts of a whole. The top number is the numerator; the bottom number is the denominator.</p>
+<p class="examples" data-en="Examples: 1/2, 9/8, 3/8, 1 3/4" data-zh="例子：1/2、9/8、3/8、1 又 3/4">Examples: 1/2, 9/8, 3/8, 1 3/4</p>
+</div>
+<img alt="A fraction diagram and ancient Egyptian setting" src="../assets/number-families-fractions.jpg"/>
+<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="About 4,000 years ago, Egyptians used unit fractions to share food and measure land. Babylonians and Greeks also used fractions in trade and astronomy. Fraction notation gradually developed into the form we use today." data-zh="大约 4,000 年前，古埃及人就用分数来分配食物和测量土地。巴比伦人和古希腊人也在贸易和天文学中使用分数。分数的书写方式经过长期发展，逐渐形成今天熟悉的样子。">About 4,000 years ago, Egyptians used unit fractions to share food and measure land. Babylonians and Greeks also used fractions in trade and astronomy. Fraction notation gradually developed into the form we use today.</span></p>
+</article>
+<article class="nf-card">
+<div class="nf-card-main">
+<h3 data-en="5. Decimals" data-zh="5. 小数">5. Decimals</h3>
+<p data-en="Decimals are another way to write parts of a whole, using place value and a decimal point." data-zh="小数是表示整体部分的另一种方式，利用数位和小数点来表达。">Decimals are another way to write parts of a whole, using place value and a decimal point.</p>
+<p class="examples" data-en="Examples: 0.5 = 1/2; 0.25 = 1/4" data-zh="例子：0.5 = 1/2；0.25 = 1/4">Examples: 0.5 = 1/2; 0.25 = 1/4</p>
+</div>
+<img alt="A historical mathematician studying decimal notation" src="../assets/number-families-decimals.jpg"/>
+<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="In 1585, Simon Stevin published a book explaining decimal fractions and how they could make calculations easier. Decimal notation became especially useful for money, measurement, and science." data-zh="1585 年，西蒙·斯蒂文出版了一本介绍十进制小数的书，说明小数如何让计算更方便。后来，小数在货币、测量和科学计算中变得非常重要。">In 1585, Simon Stevin published a book explaining decimal fractions and how they could make calculations easier. Decimal notation became especially useful for money, measurement, and science.</span></p>
+</article>
+<article class="nf-card">
+<div class="nf-card-main">
+<h3 data-en="6. Rational Numbers" data-zh="6. 有理数">6. Rational Numbers</h3>
+<p data-en="A rational number can be written as a fraction of two integers, with a non-zero denominator. Its decimal ends or repeats." data-zh="有理数可以写成两个整数相除的形式，分母不能为零。它的小数形式要么有限，要么无限循环。">A rational number can be written as a fraction of two integers, with a non-zero denominator. Its decimal ends or repeats.</p>
+<p class="examples" data-en="Examples: 1/2, 3/4, 0.5, 0.333…" data-zh="例子：1/2、3/4、0.5、0.333……">Examples: 1/2, 3/4, 0.5, 0.333…</p>
+</div>
+<img alt="An ancient Greek building representing mathematical ratios" src="../assets/number-families-rational.jpg"/>
+<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="People have used ratios for thousands of years to compare lengths, share goods, and study the sky. Greek mathematicians explored ratios deeply, while many cultures developed practical fraction methods." data-zh="几千年来，人们一直用比率比较长度、分配物品和研究天体。古希腊数学家深入研究了比例关系，许多文明也发展出了实用的分数计算方法。">People have used ratios for thousands of years to compare lengths, share goods, and study the sky. Greek mathematicians explored ratios deeply, while many cultures developed practical fraction methods.</span></p>
+</article>
+<article class="nf-card">
+<div class="nf-card-main">
+<h3 data-en="7. Irrational Numbers" data-zh="7. 无理数">7. Irrational Numbers</h3>
+<p data-en="Irrational numbers cannot be written as a fraction of two integers. Their decimals never end and never repeat in a pattern." data-zh="无理数不能写成两个整数相除的分数。它们的小数既不会结束，也不会循环重复。">Irrational numbers cannot be written as a fraction of two integers. Their decimals never end and never repeat in a pattern.</p>
+<p class="examples" data-en="Examples: π = 3.14159…; √2 = 1.41421…" data-zh="例子：π = 3.14159……；√2 = 1.41421……">Examples: π = 3.14159…; √2 = 1.41421…</p>
+</div>
+<img alt="A geometric square-root diagram" src="../assets/number-families-irrational.jpg"/>
+<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="Around 500 BCE, Greek mathematicians discovered that the diagonal of a unit square, √2, cannot be expressed as a ratio of whole numbers. This surprising discovery changed how people thought about numbers." data-zh="大约公元前 500 年，古希腊数学家发现，边长为 1 的正方形对角线 √2 不能表示成两个整数的比。这个发现改变了人们对数字世界的认识。">Around 500 BCE, Greek mathematicians discovered that the diagonal of a unit square, √2, cannot be expressed as a ratio of whole numbers. This surprising discovery changed how people thought about numbers.</span></p>
+</article>
+<article class="nf-card">
+<div class="nf-card-main">
+<h3 data-en="8. Imaginary Numbers" data-zh="8. 虚数">8. Imaginary Numbers</h3>
+<p data-en="Imaginary numbers involve the square root of a negative number. The basic imaginary unit is i, where i² = −1." data-zh="虚数涉及负数的平方根。基本虚数单位是 i，其中 i² = −1。">Imaginary numbers involve the square root of a negative number. The basic imaginary unit is i, where i² = −1.</p>
+<p class="examples" data-en="Example: √−1 = i" data-zh="例子：√−1 = i">Example: √−1 = i</p>
+</div>
+<img alt="A complex plane showing the imaginary axis" src="../assets/number-families-imaginary.jpg"/>
+<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="In the 1500s, mathematicians met square roots of negative numbers while solving equations. Euler later helped establish the symbol i, and Gauss helped develop the theory of complex numbers. These ideas are now useful in physics and engineering." data-zh="16 世纪，数学家在解方程时遇到了负数的平方根。后来，欧拉推动了符号 i 的使用，高斯则发展了复数理论。今天，这些概念在物理和工程领域都很有用。">In the 1500s, mathematicians met square roots of negative numbers while solving equations. Euler later helped establish the symbol i, and Gauss helped develop the theory of complex numbers. These ideas are now useful in physics and engineering.</span></p>
+</article>
+</div>
+<div class="nf-note" data-en="A helpful connection: natural numbers are part of the whole numbers, whole numbers are part of the integers, and integers are part of the rational numbers. Irrational numbers are real numbers too, while imaginary numbers help form the larger complex number system." data-zh="知识联系：自然数属于非负整数，非负整数属于整数，整数又属于有理数。无理数也属于实数；虚数则帮助我们建立更大的复数系统。">A helpful connection: natural numbers are part of the whole numbers, whole numbers are part of the integers, and integers are part of the rational numbers. Irrational numbers are real numbers too, while imaginary numbers help form the larger complex number system.</div>
+</section>
+<section class="nf-section">
+<h2 data-en="Number Basics: 0 and 1" data-zh="数字基础：0 和 1">Number Basics: 0 and 1</h2>
+<p class="nf-lead" data-en="These two small numbers have some very special properties." data-zh="这两个看似简单的数字，其实有许多特别的性质。">These two small numbers have some very special properties.</p>
+<div class="nf-basics">
+<article class="nf-basic">
+<h3 data-en="Number 0" data-zh="数字 0">Number 0</h3>
+<ul>
+<li data-en="0 is neither positive nor negative." data-zh="0 既不是正数，也不是负数。">0 is neither positive nor negative.</li>
+<li data-en="In this guide, 0 is not a natural number." data-zh="本指南采用的定义中，0 不属于自然数。">In this guide, 0 is not a natural number.</li>
+<li data-en="0 is a whole number, an integer, and a rational number." data-zh="0 是非负整数、整数，也是有理数。">0 is a whole number, an integer, and a rational number.</li>
+<li data-en="0 is even because 0 ÷ 2 = 0 with no remainder." data-zh="0 是偶数，因为 0 ÷ 2 = 0，没有余数。">0 is even because 0 ÷ 2 = 0 with no remainder.</li>
+<li data-en="Division by 0 is undefined; 0 cannot be a fraction's denominator." data-zh="除数不能为 0；0 也不能作为分数的分母。">Division by 0 is undefined; 0 cannot be a fraction's denominator.</li>
+<li data-en="0.0 is a decimal representation of zero." data-zh="0.0 是 0 的一种小数表示形式。">0.0 is a decimal representation of zero.</li>
+</ul>
+</article>
+<article class="nf-basic">
+<h3 data-en="Number 1" data-zh="数字 1">Number 1</h3>
+<ul>
+<li data-en="1 raised to any whole-number power is still 1: 1² = 1, 1⁵ = 1, 1¹⁰⁰ = 1." data-zh="1 的任何整数次幂仍然是 1：1² = 1、1⁵ = 1、1¹⁰⁰ = 1。">1 raised to any whole-number power is still 1: 1² = 1, 1⁵ = 1, 1¹⁰⁰ = 1.</li>
+<li data-en="1 is neither prime nor composite." data-zh="1 既不是质数，也不是合数。">1 is neither prime nor composite.</li>
+<li data-en="A prime number has exactly two positive factors: 1 and itself. For example, 2 has factors 1 and 2." data-zh="质数恰好有两个正因数：1 和它本身。例如，2 的因数是 1 和 2。">A prime number has exactly two positive factors: 1 and itself. For example, 2 has factors 1 and 2.</li>
+<li data-en="A composite number has more than two positive factors. For example, 6 has 1, 2, 3, and 6." data-zh="合数有两个以上的正因数。例如，6 的因数有 1、2、3 和 6。">A composite number has more than two positive factors. For example, 6 has 1, 2, 3, and 6.</li>
+<li data-en="1 has only one positive factor — itself — so it belongs to neither group." data-zh="1 只有一个正因数，就是它本身，因此不属于上述任何一类。">1 has only one positive factor — itself — so it belongs to neither group.</li>
+</ul>
+</article>
+</div>
+<p class="nf-footer-note" data-en="Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses." data-zh="提示：有些教材会把 0 也归入自然数。学习时请以老师或教材采用的定义为准。">Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses.</p>
+</section>
+<!-- LEVEL-4 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="← 返回数学基础0" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="← 返回数学基础1">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
 (() => {
   const nav = {
     en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
@@ -246,7 +225,7 @@
   });
 })();
   </script>
-  <script>
+<script>
 /* Remove legacy GTranslate cookies left by earlier test versions. */
 (() => {
   const host = location.hostname;
@@ -268,6 +247,6 @@
   });
 })();
   </script>
-  <script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 </body>
 </html>
