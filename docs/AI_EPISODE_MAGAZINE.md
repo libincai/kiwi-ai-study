@@ -142,6 +142,24 @@ Tall **9:16** spot figures need enough **paired prose** in the same `.ep-pair`. 
 
 ---
 
+## AI hub (`ai/index.html`) — episode search
+
+The hub has a **client-side episode search** above the card grid. New cards are searchable automatically when you copy the existing pattern.
+
+| Field on `.ai-episode` | Used for search |
+|------------------------|-----------------|
+| `data-en-label` / `data-zh-label` | Primary (episode title + summary) |
+| `data-category` | e.g. `foundations`, `prompt`, `special` |
+| `href` | e.g. `episode-10.html`, `episode-special-learning.html` |
+| Teaser `data-en` / `data-zh` | Visible card text after language switch |
+| Optional `data-search` | Extra keywords (synonyms, topic tags) |
+
+**When publishing a new episode:** add the hub card with the same attributes as siblings; optionally set `data-search="agent tools workflow"` for extra aliases. No other search wiring required.
+
+The **Coming soon** placeholder (`.ai-episode--soon`) is excluded from search: it stays visible with an empty query and is hidden while the user is filtering.
+
+---
+
 ## Files & metadata
 
 | Item | Pattern |
@@ -157,6 +175,7 @@ Tall **9:16** spot figures need enough **paired prose** in the same `.ep-pair`. 
 
 - [ ] Shell matches ep01 (header, banner, bottom nav, language JS).
 - [ ] Breadcrumb entry in `drive-breadcrumb.js`.
+- [ ] New episode card on `ai/index.html` (search uses labels + teaser; optional `data-search`).
 - [ ] Every magazine image in an `.ep-pair` with matching copy.
 - [ ] ≤4 section `h2`s; left-aligned; mix-ups only as `.ep-myth`.
 - [ ] EN + 中文 in sync on all new/edited nodes.
