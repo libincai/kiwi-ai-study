@@ -12,20 +12,19 @@
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
 .edu-kicker{margin:0 0 12px;color:#2676b7;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
 .edu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.edu-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}.edu-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff;text-decoration:none;color:inherit;box-shadow:0 7px 22px rgba(24,55,95,.055);transition:transform .16s ease,box-shadow .16s ease}.edu-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,55,95,.11)}
-.edu-card img{display:block;width:100%;height:auto;aspect-ratio:3 / 1;object-fit:contain;object-position:center;background:#eaf2fb;padding:0;box-sizing:border-box}.edu-card:nth-child(3) img{object-fit:contain;background:#fff}.edu-card:nth-child(4) img{display:block;width:100%;height:201px;object-fit:cover;object-position:center;background:#052f72;border-radius:0}.edu-card-body{padding:20px 21px 22px;display:flex;flex-direction:column;flex:1}.edu-card h3{margin:0 0 8px;color:#173e70;font-size:21px;line-height:1.25}.edu-card p{margin:0 0 16px;color:#5a6d85;line-height:1.6;font-size:14px}.edu-link{margin-top:auto;color:#1768b2;font-weight:800;font-size:14px}.edu-card .edu-tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3982bd;margin-bottom:8px}
+.edu-card img{display:block;width:100%;height:auto;aspect-ratio:3 / 1;object-fit:contain;object-position:center;background:#eaf2fb;padding:0;box-sizing:border-box}.edu-card:nth-child(3) img{object-fit:contain;background:#fff}.edu-card-body{padding:20px 21px 22px;display:flex;flex-direction:column;flex:1}.edu-card h3{margin:0 0 8px;color:#173e70;font-size:21px;line-height:1.25}.edu-card p{margin:0 0 16px;color:#5a6d85;line-height:1.6;font-size:14px}.edu-link{margin-top:auto;color:#1768b2;font-weight:800;font-size:14px}.edu-card .edu-tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3982bd;margin-bottom:8px}
 .edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}.edu-callout h2{margin:0 0 8px;color:#153d70}.edu-callout p{margin:0;color:#526780;line-height:1.7}.edu-pillrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.edu-pill{display:inline-flex;padding:7px 12px;border-radius:999px;background:#eaf3fd;color:#245b91;font-size:12px;font-weight:700}
 .edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:white!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}.edu-button:hover{background:#10548f}
 @media(max-width:760px){.edu-grid,.edu-grid.four{grid-template-columns:1fr}}
-/* Mobile image fit: preserve the complete artwork on cards 01, 02 and 04. */
+/* Mobile image fit: preserve the complete artwork on cards 01 and 02. */
 @media (max-width: 760px) {
   .edu-card:nth-child(1) > img,
-  .edu-card:nth-child(2) > img,
-  .edu-card:nth-child(4) > img {
+  .edu-card:nth-child(2) > img {
     height: auto;
     object-fit: contain;
   }
 }
-/* Regenerated Math Education card illustrations: same wide ratio, no cropping. */
+/* Regenerated Math Education card illustrations: match each asset’s aspect ratio. */
 .edu-card:nth-child(1) > img,
 .edu-card:nth-child(2) > img {
   display: block;
@@ -35,6 +34,16 @@
   object-fit: contain !important;
   object-position: center;
   background: transparent;
+}
+.edu-card:nth-child(4) > img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 1600 / 576;
+  object-fit: cover;
+  object-position: center;
+  background: #052f72;
+  border-radius: 0;
 }
   </style>
 </head>
