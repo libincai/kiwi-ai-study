@@ -1,97 +1,256 @@
-<!DOCTYPE html><html lang="en-CA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI Is Powerful. Why Should We Keep Learning? | AI Knowledge Classroom</title><meta name="description" content="If AI can write, translate, code and analyse information, what is the point of learning? Let's explore why human understanding still matters."><link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1"><style>
-.ai-page{--ai-ink:#14264d;--ai-blue:#1768b2;--ai-purple:#6556b8;--ai-muted:#60728a;--ai-line:#dce6f1;--ai-pale:#f2f7fd;color:var(--ai-ink)}
-.ai-main{max-width:1180px;margin:0 auto;padding:0 26px 76px}
-.ai-back{padding:18px 0 8px}.ai-back a{font-size:13px;color:#1768b2;text-decoration:none;font-weight:800}
-.ai-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:center;min-height:360px;padding:42px 48px;border-radius:26px;margin:14px 0 34px;background:linear-gradient(120deg,#edf5ff 0%,#f2efff 56%,#fff3e8 100%);border:1px solid #dce7f5}
-.ai-kicker{font-size:11px;letter-spacing:.16em;font-weight:900;color:#3878b4;text-transform:uppercase;margin:0 0 12px}
-.ai-hero h1{font-size:clamp(34px,4.3vw,54px);line-height:1.05;letter-spacing:-.04em;color:#153d70;margin:0 0 15px}
-.ai-hero p{font-size:17px;line-height:1.72;color:#4e637e;max-width:650px;margin:0}
-.ai-hero-art{width:100%;max-width:430px;justify-self:center}
-.ai-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
-.ai-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:#1768b2;color:#fff;text-decoration:none;font-size:14px;font-weight:800}
-.ai-btn.secondary{background:#fff;color:#245b91;border:1px solid #cdddf0}
-.ai-section{margin:44px 0}.ai-section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
-.ai-section h2{font-size:clamp(25px,3vw,34px);line-height:1.15;color:#153d70;margin:0 0 8px}
-.ai-section-head p{max-width:760px;margin:0;color:var(--ai-muted);line-height:1.65;font-size:15px}
-.ai-why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.ai-why-card{padding:21px;border:1px solid var(--ai-line);border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(24,55,95,.045)}
-.ai-why-icon{width:48px;height:48px;border-radius:15px;background:#eaf3ff;display:grid;place-items:center;font-size:25px;margin-bottom:14px}
-.ai-why-card h3{font-size:18px;color:#173e70;margin:0 0 7px}.ai-why-card p{font-size:14px;line-height:1.65;color:#60728a;margin:0}
-.ai-path{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.ai-path-item{position:relative;min-height:114px;padding:15px;border:1px solid var(--ai-line);border-radius:16px;background:#fff}
-.ai-path-item b{display:block;font-size:12px;color:#3982bd;letter-spacing:.06em;margin-bottom:7px}
-.ai-path-item strong{display:block;color:#173e70;font-size:16px;margin-bottom:5px}
-.ai-path-item span{display:block;color:#64758b;font-size:12px;line-height:1.45}
-.ai-episodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ai-episode{overflow:hidden;border:1px solid var(--ai-line);border-radius:19px;background:#fff;box-shadow:0 7px 22px rgba(24,55,95,.055);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease}
-.ai-episode:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,55,95,.12)}
-.ai-episode-art{height:150px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#eaf4ff,#f1edff)}
-.ai-episode-art svg{width:100%;height:100%;max-width:300px}
-.ai-episode-body{padding:18px 19px 20px;display:flex;flex:1;flex-direction:column}
-.ai-episode-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
-.ai-episode-number{font-size:11px;font-weight:900;letter-spacing:.1em;color:#3982bd}
-.ai-status{font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;background:#e8f5ed;color:#277348}
-.ai-status.soon{background:#f1f3f7;color:#68778b}
-.ai-episode h3{font-size:19px;line-height:1.25;color:#173e70;margin:0 0 7px}
-.ai-episode p{font-size:13px;line-height:1.6;color:#60728a;margin:0 0 15px}
-.ai-episode .go{margin-top:auto;color:#1768b2;font-size:13px;font-weight:900}
-.ai-special{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px;align-items:center;padding:28px;border-radius:22px;background:linear-gradient(120deg,#173e70,#285f94);color:#fff}
-.ai-special-art{width:100%;max-width:320px;justify-self:center}
-.ai-special h2{color:#fff;margin:0 0 9px}.ai-special p{color:#e2edfa;line-height:1.7;margin:0 0 14px;font-size:14px}
-.ai-special .ai-btn{background:#fff;color:#173e70}
-.ai-note{padding:17px 20px;border:1px solid #f0dfaa;border-radius:15px;background:#fff9e9;color:#67572e;font-size:13px;line-height:1.65;margin-top:18px}
-
-
-
-.ai-content{width:100%;max-width:none;margin:0 auto}
-.ai-content h2{font-size:25px;color:#153d70;margin:34px 0 12px}
-.ai-content h3{font-size:18px;color:#1c5487;margin:24px 0 8px}
-.ai-content p,.ai-content li{font-size:15px;line-height:1.8;color:#4f637c}
-.ai-content ul{padding-left:22px}
-.ai-example{padding:21px 23px;background:#f1f7ff;border:1px solid #dbe9f8;border-radius:16px;margin:18px 0}
-.ai-example strong{color:#1d5487}.ai-example p{margin:8px 0 0}
-.ai-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
-.ai-compare>div{padding:18px;border:1px solid var(--ai-line);border-radius:15px;background:#fff}
-.ai-compare h3{margin:0 0 8px}
-.ai-compare p{margin:0;font-size:14px}
-.ai-lesson-art{margin:20px 0;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#edf5ff,#f4f0ff);padding:18px}
-.ai-lesson-art svg{display:block;width:100%;height:auto;max-height:280px}
-.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ai-line);padding-top:22px;margin-top:42px}
+<!DOCTYPE html>
+<!-- Level 4 — AI Knowledge Class Special (Ep 7 bonus; magazine layout) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Is Powerful | Special · Episode 7 Bonus | Kiwi 爱AI Study</title>
+  <meta name="description" content="If AI can write and code, this special explains why judgement, understanding, and learning still matter before we study prompts.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-lead{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px}
+.ep-article{width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box}
+.ep-article h2{clear:both;width:100%;text-align:left;margin:32px 0 14px;font-size:clamp(21px,2.15vw,26px);color:#153d70;line-height:1.28;font-weight:700}
+.ep-article h2:first-child{margin-top:0}
+.ep-article p{font-size:15px;line-height:1.85;color:#263f5b;margin:0 0 14px}
+.ep-figure{width:min(34%,300px);margin:4px 0 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f4f8fc;box-shadow:0 5px 18px rgba(24,55,95,.07)}
+.ep-figure--right{float:right;margin-left:22px}
+.ep-figure--left{float:left;margin-right:22px}
+.ep-figure img{display:block;width:100%;height:auto}
+.ep-figure figcaption{font-size:11px;line-height:1.4;color:var(--muted);padding:7px 10px 9px;text-align:center;background:#fff}
+.ep-pair{overflow:hidden;margin:22px 0 6px}
+.ep-pair::after{content:"";display:table;clear:both}
+.ep-article::after{content:"";display:table;clear:both}
+.nf-note{margin:18px 0;padding:14px 17px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:14px;line-height:1.65}
+.ep-flow-col{overflow:hidden;min-width:0}
+.ep-flow-col > p:last-child{margin-bottom:0}
+.ep-flow-col .nf-note{margin:8px 0 0;width:100%;max-width:100%;box-sizing:border-box}
+.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-top:36px;width:100%;max-width:100%}
+@media(max-width:720px){
+  .ep-figure{float:none!important;width:min(72vw,280px);margin:18px auto}
+  .ep-figure img{margin:0 auto}
+}
 .ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
-.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:32px}
-.ai-filter{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 20px}
-.ai-filter button{border:1px solid #d7e3f0;border-radius:999px;background:#fff;color:#3f5c7b;padding:8px 13px;font:700 12px "Segoe UI",sans-serif;cursor:pointer}
-.ai-filter button.active{background:#1768b2;border-color:#1768b2;color:#fff}
-@media(max-width:850px){.ai-hero{grid-template-columns:1fr;padding:30px}.ai-hero-art{max-width:310px}.ai-episodes{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-path{grid-template-columns:repeat(2,1fr)}.ai-special{grid-template-columns:1fr}.ai-special-art{max-width:240px}}
-@media(max-width:600px){.ai-main{padding:0 16px 55px}.ai-hero{padding:25px 22px;min-height:0}.ai-hero h1{font-size:35px}.ai-hero p{font-size:15px}.ai-why,.ai-episodes,.ai-compare{grid-template-columns:1fr}.ai-path{grid-template-columns:1fr 1fr}.ai-section-head{display:block}.ai-content p,.ai-content li{font-size:14px}.ai-special{padding:22px}.ai-episode-art{height:135px}}
+.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span>
+        <span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span>
+        <span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span>
+        <span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
 
-.ai-card-cover{width:100%;height:100%;object-fit:cover;display:block}
-.ai-episode-art:has(img){padding:0;background:#eaf4ff}
-.ai-episode-cover{display:block;width:100%;max-width:none;margin:22px 0 30px;border-radius:18px;overflow:hidden;border:1px solid #dce6f1;background:#edf5ff}
-.ai-episode-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
-.ai-special-cover{display:block;width:100%;max-width:320px;justify-self:center;border-radius:15px;overflow:hidden}
-.ai-special-cover img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.ai-episode-art img{width:100%;height:100%;object-fit:cover}
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to AI Education" data-zh="← 返回人工智能教育">← Back to AI Education</a>
+    </div>
 
-.ai-inline-cover{float:left;width:26%;max-width:310px;min-width:210px;margin:4px 24px 16px 0;border:0;border-radius:14px;overflow:hidden;background:transparent;box-shadow:0 5px 18px rgba(24,55,95,.10)}
-.ai-inline-cover.ai-cover-right{float:right;margin:4px 0 16px 24px}
-.ai-inline-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:14px}
-.ai-content:after{content:"";display:block;clear:both}
-@media(max-width:600px){.ai-inline-cover,.ai-inline-cover.ai-cover-right{float:none;width:min(68%,320px);min-width:0;max-width:320px;margin:8px auto 22px}}
+    <section class="nf-hero topic-banner" aria-label="Episode introduction">
+      <p class="topic-banner-kicker" data-en="AI EDUCATION · EPISODE 7 SPECIAL" data-zh="人工智能教育 · 第 7 集特别篇">AI EDUCATION · EPISODE 7 SPECIAL</p>
+      <h1 data-en="AI Is Powerful" data-zh="AI 这么厉害">AI Is Powerful</h1>
+      <p class="topic-banner-subtitle" data-en="If AI can write and code, this special explains why judgement, understanding, and learning still matter before we study prompts." data-zh="若 AI 能写作、写代码，本篇说明在系统学习提示词之前，为什么判断力和持续学习仍然不可缺少。">If AI can write and code, this special explains why judgement, understanding, and learning still matter before we study prompts.</p>
+    </section>
 
-</style></head><body class="ai-page"><header class="site-header">
-<div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a>
-<p class="logo-tagline" aria-hidden="true"><span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span><span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span><span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span><span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span></p><span class="divider" aria-hidden="true"></span>
-<div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Kiwi 爱AI Study"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt=""></a></div></div>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a><a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a><a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a><a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a><a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a><a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a><a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
-<span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
-      </span></nav></header><main class="ai-main"><div class="ai-back"><a href="index.html" data-en="← Back to AI Education" data-zh="← 返回 AI 教育">← Back to AI Education</a></div><section class="nf-hero topic-banner" aria-label="Page introduction"><p class="topic-banner-kicker" data-en="AI KNOWLEDGE CLASSROOM · SPECIAL EPISODE" data-zh="AI 知识小课堂 · 特别篇">AI KNOWLEDGE CLASSROOM · SPECIAL EPISODE</p><h1 data-en="AI Is Powerful. Why Should We Keep Learning?" data-zh="AI 已经这么强大了，我们为什么还要学习？">AI Is Powerful. Why Should We Keep Learning?</h1><p data-en="If AI can write, translate, code and analyse information, what is the point of learning? Let's explore why human understanding still matters." data-zh="如果 AI 已经能写作、翻译、编程和分析信息，我们为什么还要学习？一起看看人的理解力为什么依然重要。">If AI can write, translate, code and analyse information, what is the point of learning? Let's explore why human understanding still matters.</p></section><div class="ai-content"><figure class="ai-episode-cover ai-inline-cover ai-cover-right"><img data-ai-cover data-en-src="images/ai-learning-studio-episode-007bonus-en-16x9.webp" data-zh-src="images/ai-learning-studio-episode-007bonus-cn-16x9.webp" src="images/ai-learning-studio-episode-007bonus-en-16x9.webp" alt="AI Knowledge Classroom Bonus episode cover"></figure><div class="ai-lesson-art"><div><svg viewBox="0 0 400 170" role="img" aria-label="Illustration for AI learning episode"><circle cx="200" cy="85" r="78" fill="#d8e9fb" opacity=".55"/><circle cx="200" cy="85" r="34" fill="#fff" stroke="#6689bb" stroke-width="4"/><g fill="#fff" stroke="#6689bb" stroke-width="3"><rect x="48" y="42" width="82" height="38" rx="10"/><rect x="270" y="42" width="82" height="38" rx="10"/><rect x="48" y="104" width="82" height="38" rx="10"/><rect x="270" y="104" width="82" height="38" rx="10"/></g><g stroke="#6689bb" stroke-width="3"><path d="M130 61l39 14m62-14-39 14M130 123l39-23m62 23-39-23"/></g><text x="200" y="93" font-size="18" text-anchor="middle" fill="#315e9d" font-weight="800">AI</text></svg></div></div><h2 data-en="Technology changes how people work" data-zh="技术会改变人们工作的方式">Technology changes how people work</h2><p data-en="Before modern agricultural machines, many farming tasks depended on human and animal labour. Machines changed how the work was done and created new needs for people who could operate, maintain and improve them. Technology changed work; it did not remove the need to learn." data-zh="在现代农业机械出现之前，许多农业工作依靠人力和牲畜完成。机器改变了工作的方式，也产生了操作、维护和改进机器的新需求。技术改变了工作，却没有消除学习的必要。">Before modern agricultural machines, many farming tasks depended on human and animal labour. Machines changed how the work was done and created new needs for people who could operate, maintain and improve them. Technology changed work; it did not remove the need to learn.</p><p data-en="AI may be bringing a similar change to many kinds of thinking work. It can help draft text, translate, write code, organize information and analyse data. Some jobs and tasks may change, and new kinds of work may appear." data-zh="AI 可能正在给许多脑力工作带来类似的变化。它可以帮助写文字、翻译、编写代码、整理信息和分析数据。一些工作和任务可能会改变，也可能出现新的工作方式。">AI may be bringing a similar change to many kinds of thinking work. It can help draft text, translate, write code, organize information and analyse data. Some jobs and tasks may change, and new kinds of work may appear.</p><h2 data-en="Understanding helps you use AI wisely" data-zh="理解力帮助你更好地使用 AI">Understanding helps you use AI wisely</h2><p data-en="Imagine AI generates a website or a computer program. If you understand nothing about software, it may be difficult to notice whether the result is secure, reliable or suitable for the real need. Knowing the subject helps you give better instructions, check the result and improve it." data-zh="想象 AI 帮你生成一个网站或程序。如果你完全不了解软件，就可能很难发现结果是否安全、可靠，是否真正满足需求。懂得相关知识，才能更好地提出要求、检查结果并改进它。">Imagine AI generates a website or a computer program. If you understand nothing about software, it may be difficult to notice whether the result is secure, reliable or suitable for the real need. Knowing the subject helps you give better instructions, check the result and improve it.</p><p data-en="The goal of learning is not to compete with AI at remembering more facts. Learning builds understanding, judgement, communication and problem-solving — the abilities that help you decide what to ask and whether an answer makes sense." data-zh="学习的目的不是和 AI 比谁记住的事实更多。学习能建立理解力、判断力、沟通能力和解决问题的能力，帮助你决定该问什么，以及答案是否合理。">The goal of learning is not to compete with AI at remembering more facts. Learning builds understanding, judgement, communication and problem-solving — the abilities that help you decide what to ask and whether an answer makes sense.</p><div class="ai-example"><strong data-en="Try this everyday example" data-zh="生活中的例子">Try this everyday example</strong><p data-en="If AI explains a math answer, you still need to understand the steps. If it gives you a science fact, you should check whether it is supported. If it helps with an essay, your ideas and your own voice still matter." data-zh="如果 AI 解释一道数学题，你仍然需要理解解题步骤；如果它给出科学事实，你应该检查有没有依据；如果它帮助写作文，你自己的观点和表达依然重要。">If AI explains a math answer, you still need to understand the steps. If it gives you a science fact, you should check whether it is supported. If it helps with an essay, your ideas and your own voice still matter.</p></div><h2 data-en="Learn AI concepts, not just which buttons to press" data-zh="学习 AI 概念，而不只是学会按按钮">Learn AI concepts, not just which buttons to press</h2><p data-en="Understanding basic AI terms helps you communicate more clearly with AI and with other people. You will meet words such as Prompt, Context, Knowledge, Memory, Skills and Tools in apps, articles and conversations." data-zh="理解 AI 的基本概念，能帮助你更清楚地与 AI 以及其他人沟通。你会在应用程序、文章和讨论中遇到 Prompt、Context、Knowledge、Memory、Skills 和 Tools 等词。">Understanding basic AI terms helps you communicate more clearly with AI and with other people. You will meet words such as Prompt, Context, Knowledge, Memory, Skills and Tools in apps, articles and conversations.</p><p data-en="You can build understanding in three steps: know what a concept is, understand why it works that way, and recognize when it is useful. The goal is not to memorize vocabulary without meaning." data-zh="你可以分三个层次学习概念：知道它是什么，理解它为什么这样工作，并知道什么时候适合使用。目标不是不理解含义地背诵术语。">You can build understanding in three steps: know what a concept is, understand why it works that way, and recognize when it is useful. The goal is not to memorize vocabulary without meaning.</p><div style="clear:both"></div><div class="ai-bottom-nav"><a href="episode-07.html" data-en="← Episode 7: The AI Concept Map" data-zh="← 第 7 集：AI 概念地图">← Episode 7: The AI Concept Map</a><a href="episode-08.html" data-en="Episode 8: What Is a Prompt? →" data-zh="第 8 集：什么是 Prompt？ →">Episode 8: What Is a Prompt? →</a></div><p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p></div></main><footer class="site-footer"><nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav><p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p></footer><script>
-(()=>{const nav={en:['Home','About','Math Education','AI Education','In-Class Learning','My Books','Contact'],zh:['首页','关于我们','数学教育','人工智能教育','课堂学习','我的书籍','联系我们']};const legal={en:['Privacy Policy','Terms of Service','Home'],zh:['隐私政策','服务条款','首页']};const btns=document.querySelectorAll('.flag[data-language]');function setLanguage(lang){const l=lang==='zh'?'zh':'en';document.documentElement.lang=l==='zh'?'zh-CN':'en-CA';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.innerHTML=el.getAttribute(l==='zh'?'data-zh':'data-en'));document.querySelectorAll('[data-ai-cover]').forEach(img=>{const source=img.getAttribute(l==='zh'?'data-zh-src':'data-en-src');if(source){img.src=source;img.style.display='block'}else{img.style.display='none'}});document.querySelectorAll('.site-nav [data-nav]').forEach((el,i)=>el.textContent=nav[l][i]);document.querySelectorAll('.site-footer [data-legal]').forEach((el,i)=>el.textContent=legal[l][i]);btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===l)));try{localStorage.setItem('kiwi-site-language',l)}catch(e){}}btns.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));let saved='en';try{saved=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(saved);window.addEventListener('pageshow',()=>{let l='en';try{l=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(l)});
-const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(x=>x.classList.toggle('active',x===btn));const f=btn.dataset.aiFilter;document.querySelectorAll('.ai-episode[data-category]').forEach(card=>card.hidden=!(f==='all'||card.dataset.category===f));}));
+    <!-- LEVEL-4 BODY START -->
+    <article class="nf-section ep-article" aria-label="Episode article">
+
+      <div class="ep-pair">
+        <p class="nf-lead" data-en="Welcome to the special episode. Episode 7 gave you the concept map; the plan was to jump straight into <strong>Prompt</strong>. A viewer asked a question worth pausing for." data-zh="欢迎来到特别篇。第 7 集认识了概念地图，按计划本该直接进入 <strong>Prompt（提示词）</strong>。一位观众提了一个值得停下来的问题。">Welcome to the special episode. Episode 7 gave you the concept map; the plan was to jump straight into <strong>Prompt</strong>. A viewer asked a question worth pausing for.</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-special-learning/magazine/ep-special-mag-03-big-question.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Skip school? Skip work?" data-zh="不用上学？不用上班？">Skip school? Skip work?</figcaption>
+        </figure>
+        <p data-en="“AI can already write, draw, code, translate, analyse data, and help with pro tasks—so will students stop going to school and adults stop working?”" data-zh="“AI 已经能写文章、做图、写代码、翻译、分析数据，甚至帮很多专业工作——以后学生是不是不用上学，大人也不用上班了？”">“AI can already write, draw, code, translate, analyse data, and help with pro tasks—so will students stop going to school and adults stop working?”</p>
+        <p data-en="That question matters. Before the basic-concept series continues, we answer it here: <em>why keep learning</em> when AI looks so capable?" data-zh="这个问题很重要。在继续基本概念系列之前，我们在这里回答：<em>AI 这么厉害了，为什么还要学习？</em>">That question matters. Before the basic-concept series continues, we answer it here: <em>why keep learning</em> when AI looks so capable?</p>
+        <p data-en="This is not a detour from the map—it is fuel for the ride. Episode 8 on Prompt lands better when you know <em>why</em> your words still count." data-zh="这不是绕开地图——而是给旅程加油。当你明白<em>为什么</em>自己的话仍然重要，第 8 集的 Prompt 才会听得进去。">This is not a detour from the map—it is fuel for the ride. Episode 8 on Prompt lands better when you know <em>why</em> your words still count.</p>
+        <p data-en="We will use one long metaphor—a fast horse—and one short example—checking AI-written code—to keep the answer concrete." data-zh="我们会用一个长比喻——骏马——和一个短例子——检查 AI 写的代码——让答案具体一点。">We will use one long metaphor—a fast horse—and one short example—checking AI-written code—to keep the answer concrete.</p>
+      </div>
+
+      <h2 id="sp-machines" data-en="Machines changed work before" data-zh="机器早就改过工作方式">Machines changed work before</h2>
+      <p data-en="Look back before industrial machines—and before AI." data-zh="先回到工业化和机械化之前——也早于 AI。">Look back before industrial machines—and before AI.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-special-learning/magazine/ep-special-mag-01-farm-machines.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Ox and plow → tractor." data-zh="牛犁 → 拖拉机。">Ox and plow → tractor.</figcaption>
+        </figure>
+        <p data-en="Farming once needed huge human and animal effort—ploughing, sowing, harvesting, exhausting and slow. Agricultural machines eventually did jobs many people used to share." data-zh="农业曾靠大量人力和牲畜——耕地、播种、收割，又累又慢。后来农业机械逐渐能做过去许多人才能完成的工作。">Farming once needed huge human and animal effort—ploughing, sowing, harvesting, exhausting and slow. Agricultural machines eventually did jobs many people used to share.</p>
+        <p data-en="People still learned—how to drive equipment, repair it, or move into new trades. Machines reshaped work; they did not erase the need to study." data-zh="人们仍在学习——怎么用机器、怎么维修，或转入新行业。机器改变了工作方式，却没有让人类失去学习的必要。">People still learned—how to drive equipment, repair it, or move into new trades. Machines reshaped work; they did not erase the need to study.</p>
+        <p data-en="AI may be doing something similar now—except more of the load is <em>thinking</em> work, not only muscle." data-zh="今天的 AI 可能在重演类似的事——只不过更多分担的是<em>脑力</em>劳动，而不只是体力。">AI may be doing something similar now—except more of the load is <em>thinking</em> work, not only muscle.</p>
+        <p data-en="Some learners trained for tractors; others opened shops or studied medicine. Change created new paths—not a world without students." data-zh="有人学会了开农机，有人开了新店，有人去学医。变化带来了新路——不是没有学生的世界。">Some learners trained for tractors; others opened shops or studied medicine. Change created new paths—not a world without students.</p>
+      </div>
+
+      <h2 id="sp-brain" data-en="AI and “brain work”" data-zh="AI 与脑力劳动">AI and “brain work”</h2>
+      <p data-en="Past machines moved soil; today’s tools move sentences, pixels, and numbers." data-zh="过去的机器搬土；今天的工具搬句子、像素和数字。">Past machines moved soil; today’s tools move sentences, pixels, and numbers.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-special-learning/magazine/ep-special-mag-02-ai-powers.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Write · draw · code · translate · analyse." data-zh="写作 · 绘图 · 编程 · 翻译 · 分析。">Write · draw · code · translate · analyse.</figcaption>
+        </figure>
+        <p data-en="Early machines mostly spared our backs. AI increasingly helps with words, pictures, programs, languages, and messy datasets." data-zh="早期机器主要省体力。AI 越来越多地帮文字、图像、程序、语言和数据整理出力。">Early machines mostly spared our backs. AI increasingly helps with words, pictures, programs, languages, and messy datasets.</p>
+        <p data-en="So do pros disappear? Not that simply. Tools change; they rarely delete every judgment call." data-zh="专业人士会消失吗？没那么简单。工具会变，却很少消灭每一次判断。">So do pros disappear? Not that simply. Tools change; they rarely delete every judgment call.</p>
+        <p data-en="The better question is not “human <em>or</em> AI” but “human <em>with</em> AI”—who checks, who decides, who owns the goal." data-zh="更好的问题不是“人 <em>还是</em> AI”，而是“人 <em>加</em> AI”——谁检查、谁决定、谁对目标负责。">The better question is not “human <em>or</em> AI” but “human <em>with</em> AI”—who checks, who decides, who owns the goal.</p>
+        <p data-en="Future headlines may not say “replace” so much as “redesign.” Your job description might change before your job vanishes." data-zh="未来的标题也许少写“替代”，多写“重塑”。工作岗位的描述，可能比岗位本身先变。">Future headlines may not say “replace” so much as “redesign.” Your job description might change before your job vanishes.</p>
+        <p data-en="That is why this special sits between the map and Prompt: concepts matter because <em>you</em> still steer." data-zh="所以这篇特别篇夹在地图和 Prompt 之间：概念重要，因为<em>你</em>仍在掌舵。">That is why this special sits between the map and Prompt: concepts matter because <em>you</em> still steer.</p>
+      </div>
+
+      <h2 id="sp-code" data-en="Example: code with AI" data-zh="例子：AI 写代码">Example: code with AI</h2>
+      <p data-en="AI can draft sites and scripts from a request. Does that end programming class?" data-zh="AI 能按需求生成网站和代码。编程课就结束了吗？">AI can draft sites and scripts from a request. Does that end programming class?</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-special-learning/magazine/ep-special-mag-04-code-with-ai.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Run ≠ right · safe · on-spec." data-zh="能跑 ≠ 正确 · 安全 · 符合需求。">Run ≠ right · safe · on-spec.</figcaption>
+        </figure>
+        <p data-en="If you know zero development, it is hard to tell whether AI output is correct. Code may run yet hide security holes, slow paths, wrong data, or a feature you never asked for." data-zh="若完全不懂软件开发，很难判断 AI 写的代码是否正确。程序也许能运行，却可能有安全、性能、数据问题，或根本没满足真正需求。">If you know zero development, it is hard to tell whether AI output is correct. Code may run yet hide security holes, slow paths, wrong data, or a feature you never asked for.</p>
+        <p data-en="Skilled developers know what to assign AI, how to prompt it, how to review, and how to fix. That partnership is the future skill—not button-only clicking." data-zh="懂开发的人更知道该让 AI 做什么、怎样说、怎样检查、发现错误后怎样改。这种协作才是未来能力——不只是会点按钮。">Skilled developers know what to assign AI, how to prompt it, how to review, and how to fix. That partnership is the future skill—not button-only clicking.</p>
+        <p data-en="Swap “coder” for writer, analyst, or designer—the pattern repeats: AI drafts; humans steer and verify." data-zh="把“程序员”换成写作者、分析师或设计师——模式相同：AI 起草，人掌舵、人核实。">Swap “coder” for writer, analyst, or designer—the pattern repeats: AI drafts; humans steer and verify.</p>
+        <p data-en="Episode 8 will show <em>how</em> to tell AI the task. This special answers <em>why</em> your standards still belong in the loop." data-zh="第 8 集会讲<em>怎样</em>告诉 AI 任务。本篇回答<em>为什么</em>你的标准仍要留在流程里。">Episode 8 will show <em>how</em> to tell AI the task. This special answers <em>why</em> your standards still belong in the loop.</p>
+      </div>
+
+      <h2 id="sp-judgment" data-en="Judgment and changing jobs" data-zh="判断力与职业变化">Judgment and changing jobs</h2>
+      <p data-en="Tools speed tasks; they do not remove responsibility for the outcome." data-zh="工具加快任务，却不会拿走对结果的责任。">Tools speed tasks; they do not remove responsibility for the outcome.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-special-learning/magazine/ep-special-mag-05-judgment.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Ideas · scales · gears." data-zh="想法 · 权衡 · 方法。">Ideas · scales · gears.</figcaption>
+        </figure>
+        <p data-en="AI will shift careers—some tasks shrink, new roles and workflows appear. Every tech wave reshuffles what employers need." data-zh="AI 会改变许多职业——部分工作减少，也会出现新岗位和新方式。每次技术进步都会改写社会需要什么样的人。">AI will shift careers—some tasks shrink, new roles and workflows appear. Every tech wave reshuffles what employers need.</p>
+        <p data-en="Instead of “Will AI replace me?” try “If AI changes my job, can I adapt?” Learning is how you build that flexibility." data-zh="与其问“AI 会不会替代我”，不如问：“若 AI 改变了我的工作，我能不能适应？” 学习就是在练这种适应力。">Instead of “Will AI replace me?” try “If AI changes my job, can I adapt?” Learning is how you build that flexibility.</p>
+        <p data-en="School matters more in an AI age, not less—because the prize is understanding, judgment, and problem-solving, not out-memorising a model." data-zh="AI 时代学校更重要，不是更不重要——要比的是理解、判断和解决问题，不是和模型比谁背得多。">School matters more in an AI age, not less—because the prize is understanding, judgment, and problem-solving, not out-memorising a model.</p>
+        <p data-en="Math is not only formulas; science is how the world fits together; language is precise expression; computing is knowing what software and AI can and cannot do." data-zh="数学不只是记公式；科学是理解世界；语言是准确表达；计算机也不只是亲手敲每一行，而是懂软件与 AI 能做什么、不能做什么。">Math is not only formulas; science is how the world fits together; language is precise expression; computing is knowing what software and AI can and cannot do.</p>
+      </div>
+
+      <h2 id="sp-study" data-en="Study subjects—and use AI" data-zh="认真学，也学会用">Study subjects—and use AI</h2>
+      <p data-en="Should you start “how to use AI” classes right away? Yes—and keep the subject classes too." data-zh="是不是应该马上学“怎么用 AI”？应该——同时继续学各门学科。">Should you start “how to use AI” classes right away? Yes—and keep the subject classes too.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-special-learning/magazine/ep-special-mag-06-why-study.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Math · science · language · tech." data-zh="数学 · 科学 · 语言 · 技术。">Math · science · language · tech.</figcaption>
+        </figure>
+        <p data-en="Yes, you should learn how to use AI tools—and yes, you should keep studying the subjects behind them. The two reinforce each other." data-zh="当然要学怎么用 AI，也要继续学背后的学科。两件事互相加强。">Yes, you should learn how to use AI tools—and yes, you should keep studying the subjects behind them. The two reinforce each other.</p>
+        <p data-en="Stronger AI raises the bar for <em>your</em> skill: clearer goals, sharper checks, deeper context. The tool climbs; so should you." data-zh="AI 越强，<em>你</em>的能力标准越高：目标更清、检查更严、背景更深。工具升级，你也该升级。">Stronger AI raises the bar for <em>your</em> skill: clearer goals, sharper checks, deeper context. The tool climbs; so should you.</p>
+        <p data-en="Someone will ask, “If I learn to use AI, why learn concepts?” Because concepts are the floor under the buttons." data-zh="有人会问：“既然要学怎么用 AI，为什么还要学概念？” 因为概念是按钮下面的地基。">Someone will ask, “If I learn to use AI, why learn concepts?” Because concepts are the floor under the buttons.</p>
+        <p data-en="Learning is not a race to beat AI at memory. It is practice for understanding, judging, and fixing what tools produce." data-zh="学习不是和 AI 比谁记得多，而是练理解、判断、以及修正工具产出的能力。">Learning is not a race to beat AI at memory. It is practice for understanding, judging, and fixing what tools produce.</p>
+        <p data-en="The stronger models get, the more your clarity and ethics matter—not less." data-zh="模型越强，你的清晰度和判断力越重要——而不是越不重要。">The stronger models get, the more your clarity and ethics matter—not less.</p>
+      </div>
+
+      <h2 id="sp-concepts" data-en="Concepts beat calculator-only habits" data-zh="不能只会按计算器">Concepts beat calculator-only habits</h2>
+      <p data-en="Understanding basics is how you use AI well—not magic phrases alone." data-zh="懂基本概念，才能用好 AI——不只靠几句“咒语”。">Understanding basics is how you use AI well—not magic phrases alone.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-special-learning/magazine/ep-special-mag-07-concepts.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Definition · not examples only." data-zh="定义 · 不只记例子。">Definition · not examples only.</figcaption>
+        </figure>
+        <p data-en="In math you do not only punch a calculator—you learn why a rule works. Scientific notation, for instance, is a number from 1 up to (but not including) 10 times a power of ten: 1.3×10³ fits; so can other valid forms once you know the rule." data-zh="学数学不能只会按计算器——还要理解为什么。比如科学计数法：大于等于 1、小于 10 的数乘 10 的整数次方；1.3×10³ 可以，真正懂定义后你也知道什么符合、什么不符合。">In math you do not only punch a calculator—you learn why a rule works. Scientific notation, for instance, is a number from 1 up to (but not including) 10 times a power of ten: 1.3×10³ fits; so can other valid forms once you know the rule.</p>
+        <p data-en="AI concepts work the same way. We learn them to see <em>how</em> systems behave, not to collect flashcards." data-zh="AI 概念也一样。学它们是为了看清系统<em>怎样</em>工作，不是为了攒名词卡。">AI concepts work the same way. We learn them to see <em>how</em> systems behave, not to collect flashcards.</p>
+        <p data-en="Say “Make me a spreadsheet.” AI still needs purpose, data, layout, and formulas. The clearer you think, the clearer you type—and the closer the result." data-zh="你说“帮我做个表格”，AI 仍要知道用途、数据、格式和计算。你想得越清楚，字打得越清楚，结果越近。">Say “Make me a spreadsheet.” AI still needs purpose, data, layout, and formulas. The clearer you think, the clearer you type—and the closer the result.</p>
+        <p data-en="Concept study is also a communication upgrade: with classmates, with software, with AI apps. Bilingual labels help—Chinese for meaning, English for manuals and tools." data-zh="学概念也是升级沟通：和同学、和软件、和 AI 应用。中英对照有帮助——中文懂意思，英文读资料、用软件常见。">Concept study is also a communication upgrade: with classmates, with software, with AI apps. Bilingual labels help—Chinese for meaning, English for manuals and tools.</p>
+      </div>
+
+      <h2 id="sp-next" data-en="Coming up next" data-zh="下一集预告">Coming up next</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-special-learning/magazine/ep-special-mag-08-together.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Back to the main course—Episode 8." data-zh="回到正课——第 8 集。">Back to the main course—Episode 8.</figcaption>
+        </figure>
+        <p data-en="That wraps today’s special. From the next episode we return to the AI Knowledge Class roadmap: Episode 8 opens the deep dive with <strong>Prompt</strong>—how to tell AI what you want it to do." data-zh="今天的特别篇就到这里。从下一集起回到 AI 知识小课堂的正课路线：第 8 集开始深入第一个概念 <strong>Prompt（提示词）</strong>——我们应该怎样告诉 AI，想让它做什么。">That wraps today’s special. From the next episode we return to the AI Knowledge Class roadmap: Episode 8 opens the deep dive with <strong>Prompt</strong>—how to tell AI what you want it to do.</p>
+        <p data-en="Until then, notice one AI output you trusted today—and one fact you checked yourself. Both habits belong in the AI age." data-zh="在那之前，留神今天你信用了哪一条 AI 结果、又亲自核实了哪一条。两种习惯都属于 AI 时代。">Until then, notice one AI output you trusted today—and one fact you checked yourself. Both habits belong in the AI age.</p>
+        <p data-en="See you in Episode 8." data-zh="第 8 集见。">See you in Episode 8.</p>
+      </div>
+    </article>
+
+    <nav class="ai-bottom-nav" aria-label="Episode navigation">
+      <a href="episode-07.html" data-en="← Episode 7: The AI Concept Map" data-zh="← 第 7 集：AI 的一张概念地图">← Episode 7: The AI Concept Map</a>
+      <a href="episode-08.html" data-en="Episode 8: Prompt →" data-zh="第 8 集：提示词 →">Episode 8: Prompt →</a>
+    </nav>
+    <p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
 })();
-</script>
-<script>
-/* Remove legacy GTranslate cookies left by earlier test versions. */
+  </script>
+  <script>
 (() => {
   const host = location.hostname;
   const domains = ['', host, host ? '.' + host : ''];
@@ -111,5 +270,7 @@ const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=
     }));
   });
 })();
-</script>
-<script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script></body></html>
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261109-special" defer></script>
+</body>
+</html>

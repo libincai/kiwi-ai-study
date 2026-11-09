@@ -1,97 +1,262 @@
-<!DOCTYPE html><html lang="en-CA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>What Is Context? | AI Knowledge Classroom</title><meta name="description" content="Context is the background information that helps AI understand what you mean right now. Imagine the materials on your desk while you work on an assignment."><link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1"><style>
-.ai-page{--ai-ink:#14264d;--ai-blue:#1768b2;--ai-purple:#6556b8;--ai-muted:#60728a;--ai-line:#dce6f1;--ai-pale:#f2f7fd;color:var(--ai-ink)}
-.ai-main{max-width:1180px;margin:0 auto;padding:0 26px 76px}
-.ai-back{padding:18px 0 8px}.ai-back a{font-size:13px;color:#1768b2;text-decoration:none;font-weight:800}
-.ai-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:center;min-height:360px;padding:42px 48px;border-radius:26px;margin:14px 0 34px;background:linear-gradient(120deg,#edf5ff 0%,#f2efff 56%,#fff3e8 100%);border:1px solid #dce7f5}
-.ai-kicker{font-size:11px;letter-spacing:.16em;font-weight:900;color:#3878b4;text-transform:uppercase;margin:0 0 12px}
-.ai-hero h1{font-size:clamp(34px,4.3vw,54px);line-height:1.05;letter-spacing:-.04em;color:#153d70;margin:0 0 15px}
-.ai-hero p{font-size:17px;line-height:1.72;color:#4e637e;max-width:650px;margin:0}
-.ai-hero-art{width:100%;max-width:430px;justify-self:center}
-.ai-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
-.ai-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:#1768b2;color:#fff;text-decoration:none;font-size:14px;font-weight:800}
-.ai-btn.secondary{background:#fff;color:#245b91;border:1px solid #cdddf0}
-.ai-section{margin:44px 0}.ai-section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
-.ai-section h2{font-size:clamp(25px,3vw,34px);line-height:1.15;color:#153d70;margin:0 0 8px}
-.ai-section-head p{max-width:760px;margin:0;color:var(--ai-muted);line-height:1.65;font-size:15px}
-.ai-why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.ai-why-card{padding:21px;border:1px solid var(--ai-line);border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(24,55,95,.045)}
-.ai-why-icon{width:48px;height:48px;border-radius:15px;background:#eaf3ff;display:grid;place-items:center;font-size:25px;margin-bottom:14px}
-.ai-why-card h3{font-size:18px;color:#173e70;margin:0 0 7px}.ai-why-card p{font-size:14px;line-height:1.65;color:#60728a;margin:0}
-.ai-path{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.ai-path-item{position:relative;min-height:114px;padding:15px;border:1px solid var(--ai-line);border-radius:16px;background:#fff}
-.ai-path-item b{display:block;font-size:12px;color:#3982bd;letter-spacing:.06em;margin-bottom:7px}
-.ai-path-item strong{display:block;color:#173e70;font-size:16px;margin-bottom:5px}
-.ai-path-item span{display:block;color:#64758b;font-size:12px;line-height:1.45}
-.ai-episodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ai-episode{overflow:hidden;border:1px solid var(--ai-line);border-radius:19px;background:#fff;box-shadow:0 7px 22px rgba(24,55,95,.055);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease}
-.ai-episode:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,55,95,.12)}
-.ai-episode-art{height:150px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#eaf4ff,#f1edff)}
-.ai-episode-art svg{width:100%;height:100%;max-width:300px}
-.ai-episode-body{padding:18px 19px 20px;display:flex;flex:1;flex-direction:column}
-.ai-episode-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
-.ai-episode-number{font-size:11px;font-weight:900;letter-spacing:.1em;color:#3982bd}
-.ai-status{font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;background:#e8f5ed;color:#277348}
-.ai-status.soon{background:#f1f3f7;color:#68778b}
-.ai-episode h3{font-size:19px;line-height:1.25;color:#173e70;margin:0 0 7px}
-.ai-episode p{font-size:13px;line-height:1.6;color:#60728a;margin:0 0 15px}
-.ai-episode .go{margin-top:auto;color:#1768b2;font-size:13px;font-weight:900}
-.ai-special{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px;align-items:center;padding:28px;border-radius:22px;background:linear-gradient(120deg,#173e70,#285f94);color:#fff}
-.ai-special-art{width:100%;max-width:320px;justify-self:center}
-.ai-special h2{color:#fff;margin:0 0 9px}.ai-special p{color:#e2edfa;line-height:1.7;margin:0 0 14px;font-size:14px}
-.ai-special .ai-btn{background:#fff;color:#173e70}
-.ai-note{padding:17px 20px;border:1px solid #f0dfaa;border-radius:15px;background:#fff9e9;color:#67572e;font-size:13px;line-height:1.65;margin-top:18px}
-
-
-
-.ai-content{width:100%;max-width:none;margin:0 auto}
-.ai-content h2{font-size:25px;color:#153d70;margin:34px 0 12px}
-.ai-content h3{font-size:18px;color:#1c5487;margin:24px 0 8px}
-.ai-content p,.ai-content li{font-size:15px;line-height:1.8;color:#4f637c}
-.ai-content ul{padding-left:22px}
-.ai-example{padding:21px 23px;background:#f1f7ff;border:1px solid #dbe9f8;border-radius:16px;margin:18px 0}
-.ai-example strong{color:#1d5487}.ai-example p{margin:8px 0 0}
-.ai-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
-.ai-compare>div{padding:18px;border:1px solid var(--ai-line);border-radius:15px;background:#fff}
-.ai-compare h3{margin:0 0 8px}
-.ai-compare p{margin:0;font-size:14px}
-.ai-lesson-art{margin:20px 0;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#edf5ff,#f4f0ff);padding:18px}
-.ai-lesson-art svg{display:block;width:100%;height:auto;max-height:280px}
-.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ai-line);padding-top:22px;margin-top:42px}
+<!DOCTYPE html>
+<!-- Level 4 — AI Knowledge Class Episode 5 (magazine layout; script-based prose + illustrations) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invisible and Visible AI | AI Knowledge Class · Episode 5 | Kiwi 爱AI Study</title>
+  <meta name="description" content="Invisible AI lives on screens; visible AI moves through robots and cars — and that is not the same as traditional vs generative AI.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-lead{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px}
+.ep-article{width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box}
+.ep-article h2{clear:both;width:100%;text-align:left;margin:32px 0 14px;font-size:clamp(21px,2.15vw,26px);color:#153d70;line-height:1.28;font-weight:700}
+.ep-article h2:first-child{margin-top:0}
+.ep-article p{font-size:15px;line-height:1.85;color:#263f5b;margin:0 0 14px}
+.ep-article p.ep-myth{color:#174a7e;font-weight:600;margin:18px 0 8px;font-size:15px}
+.ep-figure{width:min(34%,300px);margin:4px 0 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f4f8fc;box-shadow:0 5px 18px rgba(24,55,95,.07)}
+.ep-figure--right{float:right;margin-left:22px}
+.ep-figure--left{float:left;margin-right:22px}
+.ep-figure img{display:block;width:100%;height:auto}
+.ep-figure figcaption{font-size:11px;line-height:1.4;color:var(--muted);padding:7px 10px 9px;text-align:center;background:#fff}
+.ep-pair{overflow:hidden;margin:22px 0 6px}
+.ep-pair::after{content:"";display:table;clear:both}
+.ep-pair .ep-myth{margin-top:0}
+.ep-pair .ep-figure{margin-top:2px}
+.ep-article::after{content:"";display:table;clear:both}
+.nf-note{margin:18px 0;padding:14px 17px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:14px;line-height:1.65}
+.ep-flow-col{overflow:hidden;min-width:0}
+.ep-flow-col > p:last-child{margin-bottom:0}
+.ep-flow-col .nf-note{margin:8px 0 0;width:100%;max-width:100%;box-sizing:border-box}
+.ep-abilities{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:4px 0 12px;padding:12px 16px;border-left:4px solid #8eb8dc;border-radius:0 10px 10px 0;background:#f4f9ff;list-style:none}
+.ep-abilities span{padding:0;border:none;background:transparent;font-size:15px;font-weight:700;color:#155a94}
+.ep-abilities span + span::before{content:"·";margin:0 10px;color:#8fa8c2;font-weight:400}
+.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-top:36px;width:100%;max-width:100%}
+@media(max-width:720px){
+  .ep-figure{float:none!important;width:min(72vw,280px);margin:18px auto}
+  .ep-figure img{margin:0 auto}
+}
 .ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
-.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:32px}
-.ai-filter{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 20px}
-.ai-filter button{border:1px solid #d7e3f0;border-radius:999px;background:#fff;color:#3f5c7b;padding:8px 13px;font:700 12px "Segoe UI",sans-serif;cursor:pointer}
-.ai-filter button.active{background:#1768b2;border-color:#1768b2;color:#fff}
-@media(max-width:850px){.ai-hero{grid-template-columns:1fr;padding:30px}.ai-hero-art{max-width:310px}.ai-episodes{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-path{grid-template-columns:repeat(2,1fr)}.ai-special{grid-template-columns:1fr}.ai-special-art{max-width:240px}}
-@media(max-width:600px){.ai-main{padding:0 16px 55px}.ai-hero{padding:25px 22px;min-height:0}.ai-hero h1{font-size:35px}.ai-hero p{font-size:15px}.ai-why,.ai-episodes,.ai-compare{grid-template-columns:1fr}.ai-path{grid-template-columns:1fr 1fr}.ai-section-head{display:block}.ai-content p,.ai-content li{font-size:14px}.ai-special{padding:22px}.ai-episode-art{height:135px}}
+.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span>
+        <span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span>
+        <span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span>
+        <span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
 
-.ai-card-cover{width:100%;height:100%;object-fit:cover;display:block}
-.ai-episode-art:has(img){padding:0;background:#eaf4ff}
-.ai-episode-cover{display:block;width:100%;max-width:none;margin:22px 0 30px;border-radius:18px;overflow:hidden;border:1px solid #dce6f1;background:#edf5ff}
-.ai-episode-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
-.ai-special-cover{display:block;width:100%;max-width:320px;justify-self:center;border-radius:15px;overflow:hidden}
-.ai-special-cover img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.ai-episode-art img{width:100%;height:100%;object-fit:cover}
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to AI Education" data-zh="← 返回人工智能教育">← Back to AI Education</a>
+    </div>
 
-.ai-inline-cover{float:right;width:31%;max-width:360px;min-width:210px;margin:4px 24px 16px 0;border:0;border-radius:14px;overflow:hidden;background:transparent;box-shadow:0 5px 18px rgba(24,55,95,.10)}
-.ai-inline-cover.ai-cover-right{float:right;margin:4px 0 16px 24px}
-.ai-inline-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:14px}
-.ai-content:after{content:"";display:block;clear:both}
-@media(max-width:600px){.ai-inline-cover,.ai-inline-cover.ai-cover-right{float:none;width:min(68%,320px);min-width:0;max-width:320px;margin:8px auto 22px}}
+    <section class="nf-hero topic-banner" aria-label="Episode introduction">
+      <p class="topic-banner-kicker" data-en="AI EDUCATION · EPISODE 5" data-zh="人工智能教育 · 第 5 集">AI EDUCATION · EPISODE 5</p>
+      <h1 data-en="Invisible and Visible AI" data-zh="看不见的 AI 和看得见的 AI">Invisible and Visible AI</h1>
+      <p class="topic-banner-subtitle" data-en="Invisible AI lives on screens; visible AI moves through robots and cars — and that is not the same as traditional vs generative AI." data-zh="看不见的 AI 活在屏幕里，看得见的 AI 在机器人与汽车中行动，且这与传统/生成式 AI 并不是同一种分法。">Invisible AI lives on screens; visible AI moves through robots and cars — and that is not the same as traditional vs generative AI.</p>
+    </section>
 
-</style></head><body class="ai-page"><header class="site-header">
-<div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a>
-<p class="logo-tagline" aria-hidden="true"><span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span><span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span><span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span><span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span></p><span class="divider" aria-hidden="true"></span>
-<div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Kiwi 爱AI Study"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt=""></a></div></div>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a><a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a><a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a><a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a><a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a><a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a><a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
-<span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
-      </span></nav></header><main class="ai-main"><div class="ai-back"><a href="index.html" data-en="← Back to AI Education" data-zh="← 返回 AI 教育">← Back to AI Education</a></div><section class="nf-hero topic-banner" aria-label="Page introduction"><p class="topic-banner-kicker" data-en="AI KNOWLEDGE CLASSROOM · EPISODE 05" data-zh="AI 知识小课堂 · 第 5 集">AI KNOWLEDGE CLASSROOM · EPISODE 05</p><h1 data-en="What Is Context?" data-zh="什么是 Context？">What Is Context?</h1><p data-en="Context is the background information that helps AI understand what you mean right now. Imagine the materials on your desk while you work on an assignment." data-zh="Context 是帮助 AI 理解你当前意思的背景信息。想象一下你做作业时，桌面上正在使用的资料。">Context is the background information that helps AI understand what you mean right now. Imagine the materials on your desk while you work on an assignment.</p></section><div class="ai-content"><figure class="ai-episode-cover ai-inline-cover ai-cover-right"><img data-ai-cover data-en-src="images/ai-learning-studio-episode-005-en-16x9.webp" data-zh-src="images/ai-learning-studio-episode-005-cn-16x9.webp" src="images/ai-learning-studio-episode-005-en-16x9.webp" alt="AI Knowledge Classroom Episode 5 cover"></figure><h2 data-en="Why does AI need context?" data-zh="为什么 AI 需要上下文？">Why does AI need context?</h2><p data-en="Imagine your teacher points to a worksheet and asks, “Can you explain question two?” You know which question they mean because you can see the worksheet and remember what the class is discussing." data-zh="想象老师指着一张练习纸问你：“你能解释第二题吗？”你知道老师指的是哪道题，是因为你看得到练习纸，也知道课堂正在讨论什么。">Imagine your teacher points to a worksheet and asks, “Can you explain question two?” You know which question they mean because you can see the worksheet and remember what the class is discussing.</p><p data-en="If someone simply says “What about the second one?” without showing you the worksheet or explaining the topic, you may not know what they mean. The surrounding information makes the message understandable." data-zh="如果有人没有给你看练习纸，也没有说明主题，只说“那第二个呢？”，你可能就不知道他在说什么。周围的背景信息让这句话变得容易理解。">If someone simply says “What about the second one?” without showing you the worksheet or explaining the topic, you may not know what they mean. The surrounding information makes the message understandable.</p><h2 data-en="Context is the current work area" data-zh="Context 就像当前的工作区域">Context is the current work area</h2><p data-en="In an AI conversation, context may include your recent messages, the question being discussed, files you shared and relevant details from earlier in the conversation." data-zh="在 AI 对话中，Context 可能包括最近的消息、正在讨论的问题、你分享的文件，以及对当前对话有帮助的前置信息。">In an AI conversation, context may include your recent messages, the question being discussed, files you shared and relevant details from earlier in the conversation.</p><p data-en="A useful analogy is your study desk. Your worksheet, notes, textbook page and calculator are all there because you are using them for the task in front of you." data-zh="一个有用的比喻是你的学习桌。练习纸、笔记、课本页面和计算器都放在桌面上，因为你正在用它们完成眼前的任务。">A useful analogy is your study desk. Your worksheet, notes, textbook page and calculator are all there because you are using them for the task in front of you.</p><div class="ai-example"><strong data-en="Try this everyday example" data-zh="生活中的例子">Try this everyday example</strong><p data-en="First message: “I am studying linear equations.” Follow-up: “Can you show me another example?” The context helps AI understand that “another example” means another example of a linear equation." data-zh="第一句话：“我正在学习一次方程。”接着你问：“能再给我一个例子吗？”上下文能帮助 AI 明白，你说的“再给一个例子”是指一次方程的例子。">First message: “I am studying linear equations.” Follow-up: “Can you show me another example?” The context helps AI understand that “another example” means another example of a linear equation.</p></div><h2 data-en="Context has limits" data-zh="Context 也有容量限制">Context has limits</h2><p data-en="AI systems can only process a limited amount of information at one time. If a conversation becomes very long, some earlier details may no longer be available in the active context, depending on the system." data-zh="AI 系统一次能够处理的信息量是有限的。如果对话变得很长，根据具体系统的设计，一些较早的信息可能不再处于当前可用的上下文中。">AI systems can only process a limited amount of information at one time. If a conversation becomes very long, some earlier details may no longer be available in the active context, depending on the system.</p><p data-en="That is why it can help to restate important details, summarize a long discussion or share the relevant page again when starting a new task." data-zh="因此，在开始新任务时，重新说明重要细节、总结较长的讨论，或再次分享相关页面，往往会有帮助。">That is why it can help to restate important details, summarize a long discussion or share the relevant page again when starting a new task.</p><div style="clear:both"></div><div class="ai-bottom-nav"><a href="episode-04.html" data-en="← Episode 4: How Do We Talk to AI?" data-zh="← 第 4 集：我们怎样和 AI 沟通？">← Episode 4: How Do We Talk to AI?</a><a href="episode-06.html" data-en="Episode 6: What Is AI Memory? →" data-zh="第 6 集：什么是 AI 记忆？ →">Episode 6: What Is AI Memory? →</a></div><p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p></div></main><footer class="site-footer"><nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav><p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p></footer><script>
-(()=>{const nav={en:['Home','About','Math Education','AI Education','In-Class Learning','My Books','Contact'],zh:['首页','关于我们','数学教育','人工智能教育','课堂学习','我的书籍','联系我们']};const legal={en:['Privacy Policy','Terms of Service','Home'],zh:['隐私政策','服务条款','首页']};const btns=document.querySelectorAll('.flag[data-language]');function setLanguage(lang){const l=lang==='zh'?'zh':'en';document.documentElement.lang=l==='zh'?'zh-CN':'en-CA';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.innerHTML=el.getAttribute(l==='zh'?'data-zh':'data-en'));document.querySelectorAll('[data-ai-cover]').forEach(img=>{const source=img.getAttribute(l==='zh'?'data-zh-src':'data-en-src');if(source){img.src=source;img.style.display='block'}else{img.style.display='none'}});document.querySelectorAll('.site-nav [data-nav]').forEach((el,i)=>el.textContent=nav[l][i]);document.querySelectorAll('.site-footer [data-legal]').forEach((el,i)=>el.textContent=legal[l][i]);btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===l)));try{localStorage.setItem('kiwi-site-language',l)}catch(e){}}btns.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));let saved='en';try{saved=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(saved);window.addEventListener('pageshow',()=>{let l='en';try{l=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(l)});
-const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(x=>x.classList.toggle('active',x===btn));const f=btn.dataset.aiFilter;document.querySelectorAll('.ai-episode[data-category]').forEach(card=>card.hidden=!(f==='all'||card.dataset.category===f));}));
+    <!-- LEVEL-4 BODY START -->
+    <article class="nf-section ep-article" aria-label="Episode article">
+
+      <div class="ep-pair">
+        <p class="nf-lead" data-en="Welcome to Episode 5. Last time we met the companies and products behind famous AI names. Today we start with a simple question: where is AI, really?" data-zh="欢迎来到第 5 集。上一集我们认识了 famous AI 名字背后的公司与产品。今天从一个有趣的问题开始：AI 到底在哪里？">Welcome to Episode 5. Last time we met the companies and products behind famous AI names. Today we start with a simple question: where is AI, really?</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-005/magazine/ep05-mag-01-ai-world.webp" alt="" width="320" height="180" decoding="async" loading="lazy">
+          <figcaption data-en="AI in screens and in the physical world." data-zh="屏幕里的 AI 与物理世界里的 AI。">AI in screens and in the physical world.</figcaption>
+        </figure>
+        <p data-en="You may use AI every day without seeing a body. ChatGPT, DeepSeek, and Gemini live in the digital world — you meet them through laptops and phones, not through eyes in a hallway." data-zh="你可能每天都在使用 AI，却看不见它。比如 ChatGPT、DeepSeek 和 Gemini——你通过电脑或手机和它们交流，它们住在数字世界里，我们看不见真正的“大脑”。">You may use AI every day without seeing a body. ChatGPT, DeepSeek, and Gemini live in the digital world — you meet them through laptops and phones, not through eyes in a hallway.</p>
+        <p data-en="Other AI is visible: robots, self-driving cars, drones, and smart arms in factories. They move, sense, and change the real world. Today we learn both forms — and we clear up a mix-up from Episode 2." data-zh="还有一些 AI 是可以看得见的：机器人、无人驾驶汽车、无人机、工厂里的智能机械臂。它们可以移动、抓取、识别环境，甚至帮助人类完成复杂工作。今天认识这两种形式，也澄清第 2 集里一个容易混在一起的点子。">Other AI is visible: robots, self-driving cars, drones, and smart arms in factories. They move, sense, and change the real world. Today we learn both forms — and we clear up a mix-up from Episode 2.</p>
+        <p data-en="Each illustration sits beside the idea it explains. By the end you should spot whether an AI story is about pixels or about machines." data-zh="每一张图都紧挨着它要说明的那一点。读完后，你应该能分辨一则 AI 新闻讲的是屏幕里的能力，还是机器里的行动。">Each illustration sits beside the idea it explains. By the end you should spot whether an AI story is about pixels or about machines.</p>
+      </div>
+
+      <h2 id="ep5-two-worlds" data-en="Digital world and physical world" data-zh="数字世界与物理世界">Digital world and physical world</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-005/magazine/ep05-mag-02-digital-physical.webp" alt="" width="320" height="180" decoding="async" loading="lazy">
+          <figcaption data-en="Two homes for AI — not two rival teams." data-zh="AI 的两种“住处”——不是两支队伍。">Two homes for AI — not two rival teams.</figcaption>
+        </figure>
+        <p data-en="Think of <strong>invisible AI</strong> as software you touch through glass: answers in a chat, a new image file, a draft story. Think of <strong>visible AI</strong> as AI tied to hardware that rolls, lifts, or drives." data-zh="把<strong>看不见的 AI</strong> 想成透过屏幕使用的软件：聊天回答、生成图片、写故事。把<strong>看得见的 AI</strong> 想成和能移动、抓取、行驶的硬件绑在一起的 AI。">Think of <strong>invisible AI</strong> as software you touch through glass: answers in a chat, a new image file, a draft story. Think of <strong>visible AI</strong> as AI tied to hardware that rolls, lifts, or drives.</p>
+        <p data-en="Neither label is “better.” Homework help on a phone is invisible; a warehouse robot that sorts boxes is visible. Both count as AI." data-zh="两种都不更“高级”。手机上写作业帮助是看不见的；仓库里分拣箱子的机器人是看得见的。它们都是 AI。">Neither label is “better.” Homework help on a phone is invisible; a warehouse robot that sorts boxes is visible. Both count as AI.</p>
+        <div class="ep-abilities" role="list" aria-label="Two forms">
+          <span role="listitem" data-en="Invisible · screens" data-zh="看不见 · 屏幕">Invisible · screens</span>
+          <span role="listitem" data-en="Visible · machines" data-zh="看得见 · 机器">Visible · machines</span>
+        </div>
+      </div>
+
+      <h2 id="ep5-invisible" data-en="Invisible AI" data-zh="看不见的 AI">Invisible AI</h2>
+      <p data-en="Open ChatGPT, ask a question, and it replies. Ask for a picture or a story, and new content appears. There is no metal body — only servers, networks, and the device in your hands." data-zh="打开 ChatGPT 提问，它能理解并回答；让它画画或写故事，就能生成新内容。没有具体的身体，主要靠电脑、手机和网络为我们服务。">Open ChatGPT, ask a question, and it replies. Ask for a picture or a story, and new content appears. There is no metal body — only servers, networks, and the device in your hands.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-005/magazine/ep05-mag-03-invisible.webp" alt="" width="320" height="180" decoding="async" loading="lazy">
+          <figcaption data-en="Chat, images, stories — all on screen." data-zh="聊天、图像、故事——都在屏幕上。">Chat, images, stories — all on screen.</figcaption>
+        </figure>
+        <p data-en="That is why we call it AI in the <em>digital</em> world: you interact through keyboards, microphones, and touchscreens. The “brain” runs far away in a data center." data-zh="所以我们说它存在于<strong>数字世界</strong>：你用键盘、麦克风和触控屏互动，“大脑”往往在远方的数据中心里运行。">That is why we call it AI in the <em>digital</em> world: you interact through keyboards, microphones, and touchscreens. The “brain” runs far away in a data center.</p>
+        <p data-en="You might not see the math, but you see the result — text, audio, or pixels. Episode 1 already warned: checking answers still matters here." data-zh="你看不见背后的计算，但看得见结果——文字、声音或图像。第 1 集说过：这里的回答仍然要核实。">You might not see the math, but you see the result — text, audio, or pixels. Episode 1 already warned: checking answers still matters here.</p>
+        <p data-en="DeepSeek, Gemini, and 豆包 fit the same pattern: products on a screen, models you never physically touch." data-zh="DeepSeek、Gemini、豆包也是同一模式：屏幕上的产品，你看不见也摸不着的模型在后台工作。">DeepSeek, Gemini, and 豆包 fit the same pattern: products on a screen, models you never physically touch.</p>
+      </div>
+
+      <h2 id="ep5-visible" data-en="Visible AI" data-zh="看得见的 AI">Visible AI</h2>
+      <p data-en="Now switch to machines you could point at in a room. They sense, decide, and act — wheels turn, arms move, cars slow down." data-zh="现在切换到房间里能指着说的机器：它们感知、决定、行动——车轮转动、机械臂移动、汽车减速。">Now switch to machines you could point at in a room. They sense, decide, and act — wheels turn, arms move, cars slow down.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-005/magazine/ep05-mag-04-visible.webp" alt="" width="320" height="180" decoding="async" loading="lazy">
+          <figcaption data-en="Robots, cars, drones, factory arms." data-zh="机器人、汽车、无人机、工厂机械臂。">Robots, cars, drones, factory arms.</figcaption>
+        </figure>
+        <p data-en="A robot can use cameras to find objects and choose a path. A self-driving car fuses sensors to track lanes, cars, and pedestrians. A factory arm can pick a part and place it on an assembly line." data-zh="机器人可用摄像头观察环境、识别物体、决定怎样移动。无人驾驶汽车用传感器分析道路、车辆和行人。工厂机械臂可识别零件、抓取并安装到指定位置。">A robot can use cameras to find objects and choose a path. A self-driving car fuses sensors to track lanes, cars, and pedestrians. A factory arm can pick a part and place it on an assembly line.</p>
+        <p data-en="What they share: they process information <em>and</em> change the physical world. That is visible AI — intelligence with a body in space." data-zh="它们的共同点：不只处理信息，还能通过真实设备对现实世界产生影响——在空间里具有实体形态的 AI 应用。">What they share: they process information <em>and</em> change the physical world. That is visible AI — intelligence with a body in space.</p>
+        <p data-en="Episode 2’s smart-car example was visible AI at work, even when the code inside looks invisible on a diagram." data-zh="第 2 集的智能汽车例子就是看得见的 AI 在工作，尽管示意图里的代码本身看不见。">Episode 2’s smart-car example was visible AI at work, even when the code inside looks invisible on a diagram.</p>
+      </div>
+
+      <h2 id="ep5-trad-gen" data-en="Not the same as traditional vs generative" data-zh="不等于传统 AI 与生成式 AI">Not the same as traditional vs generative</h2>
+      <p data-en="Episode 2 introduced traditional AI and generative AI. This section goes deeper — and clears a common mistake that confuses them with invisible vs visible AI." data-zh="第 2 集介绍了传统 AI 和生成式 AI。这一节再深入一层，并澄清一个常见误会：把这两者等同于看不见和看得见的 AI。">Episode 2 introduced traditional AI and generative AI. This section goes deeper — and clears a common mistake that confuses them with invisible vs visible AI.</p>
+
+      <div class="ep-pair">
+        <p class="ep-myth" data-en="Mix-up: “Invisible = generative, visible = traditional.”" data-zh="误会：“看不见 = 生成式，看得见 = 传统 AI。”">Mix-up: “Invisible = generative, visible = traditional.”</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-005/magazine/ep05-mag-05-trad-gen.webp" alt="" width="320" height="180" decoding="async" loading="lazy">
+          <figcaption data-en="Two different ways to sort AI ideas." data-zh="两套不同的分类方式。">Two different ways to sort AI ideas.</figcaption>
+        </figure>
+        <div class="ep-flow-col">
+          <p data-en="Seen or unseen describes <em>where</em> AI shows up. Traditional vs generative describes <em>what</em> it does — recognize and predict, or create new content." data-zh="看得见/看不见描述的是 AI <em>出现在哪里</em>。传统/生成式描述的是 <em>做什么</em>——识别预测，还是创造新内容。">Seen or unseen describes <em>where</em> AI shows up. Traditional vs generative describes <em>what</em> it does — recognize and predict, or create new content.</p>
+          <p data-en="Both traditional and generative AI can live in apps <em>or</em> inside robots. The labels do not line up in a simple grid." data-zh="传统 AI 和生成式 AI 既可以出现在数字世界，也可以用在真实机器里。两套标签不能简单画成一张对应表。">Both traditional and generative AI can live in apps <em>or</em> inside robots. The labels do not line up in a simple grid.</p>
+          <p data-en="A chatbot on your phone is invisible but might use generative models. A factory arm you can see might run traditional vision code. Two axes, not one straight line." data-zh="手机里的聊天机器人是看不见的，却可能用生成式模型；你能看见的工厂机械臂，也可能跑的是传统视觉算法。这是两条轴，不是一条直线。">A chatbot on your phone is invisible but might use generative models. A factory arm you can see might run traditional vision code. Two axes, not one straight line.</p>
+          <p class="nf-note" data-en="Remember two questions: Where is it? (screen or machine.) What job? (predict or generate.)" data-zh="记两个问题：在哪里？（屏幕还是机器。）做什么？（预测还是生成。）">Remember two questions: Where is it? (screen or machine.) What job? (predict or generate.)</p>
+        </div>
+      </div>
+
+      <h2 id="ep5-traditional" data-en="Traditional AI — task by task" data-zh="传统 AI——按任务工作">Traditional AI — task by task</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-005/magazine/ep05-mag-06-traditional-tasks.webp" alt="" width="320" height="180" decoding="async" loading="lazy">
+          <figcaption data-en="Recognize · classify · predict." data-zh="识别 · 分类 · 预测。">Recognize · classify · predict.</figcaption>
+        </figure>
+        <p data-en="Traditional AI is like an assistant that follows a trained job: spot cats vs dogs in photos, flag spam mail, or forecast tomorrow’s weather from patterns." data-zh="传统 AI 更像按任务要求工作的助手：识别图里的猫狗、判断邮件是否垃圾、根据规律预测明天天气。">Traditional AI is like an assistant that follows a trained job: spot cats vs dogs in photos, flag spam mail, or forecast tomorrow’s weather from patterns.</p>
+        <p data-en="It usually does not invent a brand-new poem from scratch — it sorts, scores, or guesses what comes next from data it already studied." data-zh="它通常不会从零写出全新的诗——而是从学过的数据里做分类、打分或预测。">It usually does not invent a brand-new poem from scratch — it sorts, scores, or guesses what comes next from data it already studied.</p>
+        <p data-en="That assistant can run on a server you never see, or on a chip inside a car you do see. Location and “traditional” are separate ideas." data-zh="这个助手可以跑在你看不见的服务器上，也可以跑在你看得见的汽车芯片里。“在哪里”和“是不是传统 AI”要分开想。">That assistant can run on a server you never see, or on a chip inside a car you do see. Location and “traditional” are separate ideas.</p>
+      </div>
+
+      <h2 id="ep5-generative" data-en="Generative AI — new designs and content" data-zh="生成式 AI——新内容与方案">Generative AI — new designs and content</h2>
+      <p data-en="Generative AI goes further: it can produce new text, images, plans, and sometimes whole design drafts from your instructions." data-zh="生成式 AI 不止识别和分析，还能根据我们的要求生成新内容——文字、图像、方案，甚至设计草稿。">Generative AI goes further: it can produce new text, images, plans, and sometimes whole design drafts from your instructions.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-005/magazine/ep05-mag-07-into-real-world.webp" alt="" width="320" height="180" decoding="async" loading="lazy">
+          <figcaption data-en="From concept on screen to metal in the world." data-zh="从屏幕上的概念到现实中的金属。">From concept on screen to metal in the world.</figcaption>
+        </figure>
+        <p data-en="Imagine you ask AI to design a robot that carries boxes. Generative tools might propose shapes, render a look, and sketch structure. Engineers refine the plan; factories and arms build the real machine." data-zh="想象你请 AI 设计搬运物品的机器人：生成式工具可能提出造型、画出外观、勾勒结构；工程师完善方案，再用设备制造出来——机器人就不只是图片，而是真正能干活的机器。">Imagine you ask AI to design a robot that carries boxes. Generative tools might propose shapes, render a look, and sketch structure. Engineers refine the plan; factories and arms build the real machine.</p>
+        <p data-en="The same chain can touch cars, drones, and factory lines: think on a screen, then act in the world. That is invisible and visible AI working as a chain, not as opposites." data-zh="汽车、无人机、工厂产线也类似：先在屏幕里思考，再到现实里行动。这是看不见与看得见 AI 连成一条链，而不是非此即彼。">The same chain can touch cars, drones, and factory lines: think on a screen, then act in the world. That is invisible and visible AI working as a chain, not as opposites.</p>
+        <p data-en="None of that happens alone — computers, sensors, mechanical tools, and human engineers still matter at every step." data-zh="这一切都需要计算机、传感器、机械设备和工程师的共同配合，任何一步都不是魔法自动完成。">None of that happens alone — computers, sensors, mechanical tools, and human engineers still matter at every step.</p>
+      </div>
+
+      <h2 id="ep5-future" data-en="Looking ahead" data-zh="展望未来">Looking ahead</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-005/magazine/ep05-mag-08-future.webp" alt="" width="320" height="180" decoding="async" loading="lazy">
+          <figcaption data-en="Design · build · operate — closer together." data-zh="设计 · 制造 · 执行——结合更紧。">Design · build · operate — closer together.</figcaption>
+        </figure>
+        <p data-en="We are likely to see more pairs: AI that drafts a robot, plus robots that run the task; AI that helps design a car, plus smart driving on the road; AI that plans a factory line, plus arms that build smarter." data-zh="未来可能更多见这样的组合：AI 设计机器人，机器人执行任务；AI 协助设计汽车，智能汽车在路上行驶；AI 规划产线，设备更智能地完成制造。">We are likely to see more pairs: AI that drafts a robot, plus robots that run the task; AI that helps design a car, plus smart driving on the road; AI that plans a factory line, plus arms that build smarter.</p>
+        <p data-en="One side thinks, analyzes, and generates options; the other side moves, lifts, and delivers in real space. They will link more tightly over time." data-zh="一侧负责思考、分析和生成方案；另一侧负责在现实世界执行任务。两者会越来越紧密地结合在一起。">One side thinks, analyzes, and generates options; the other side moves, lifts, and delivers in real space. They will link more tightly over time.</p>
+        <p data-en="The world of AI is bigger than any one chat window or any one robot arm — you now have words for both." data-zh="AI 的世界远比一个聊天窗口或一只机械臂更大——你现在对两种形式都有了名字。">The world of AI is bigger than any one chat window or any one robot arm — you now have words for both.</p>
+      </div>
+
+      <h2 id="ep5-next" data-en="Coming up next" data-zh="下一集预告">Coming up next</h2>
+      <p data-en="Quick recap: <strong>invisible AI</strong> mainly serves you through digital devices; <strong>visible AI</strong> acts through robots, vehicles, and machines. Traditional AI handles recognition, judgment, and prediction; generative AI can also create new content and designs." data-zh="简短回顾：<strong>看不见的 AI</strong> 主要在数字世界服务我们；<strong>看得见的 AI</strong> 通过机器人、汽车和设备进入现实。传统 AI 擅长识别、判断和预测；生成式 AI 还能创造新内容和方案。">Quick recap: <strong>invisible AI</strong> mainly serves you through digital devices; <strong>visible AI</strong> acts through robots, vehicles, and machines. Traditional AI handles recognition, judgment, and prediction; generative AI can also create new content and designs.</p>
+      <p data-en="Next episode we ask whether AI has already entered daily life—from face unlock to feeds—and we close Phase 1 before the concept map in Episode 7. See you in Episode 6." data-zh="下一集要问：AI 是否早已进入日常生活——从面容解锁到推荐信息流，并在第 7 集概念地图之前完成第一阶段回顾。第 6 集见。">Next episode we ask whether AI has already entered daily life—from face unlock to feeds—and we close Phase 1 before the concept map in Episode 7. See you in Episode 6.</p>
+    </article>
+
+    <nav class="ai-bottom-nav" aria-label="Episode navigation">
+      <a href="episode-04.html" data-en="← Episode 4: Who Creates AI?" data-zh="← 第 4 集：谁创造了 AI？">← Episode 4: Who Creates AI?</a>
+      <a href="episode-06.html" data-en="Episode 6: Review →" data-zh="第 6 集：知识回顾 →">Episode 6: Review →</a>
+    </nav>
+    <p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
 })();
-</script>
-<script>
-/* Remove legacy GTranslate cookies left by earlier test versions. */
+  </script>
+  <script>
 (() => {
   const host = location.hostname;
   const domains = ['', host, host ? '.' + host : ''];
@@ -111,5 +276,7 @@ const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=
     }));
   });
 })();
-</script>
-<script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script></body></html>
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261109-ep5" defer></script>
+</body>
+</html>

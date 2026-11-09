@@ -1,97 +1,275 @@
-<!DOCTYPE html><html lang="en-CA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The AI Concept Map | AI Knowledge Classroom</title><meta name="description" content="Imagine AI as a student at school. Meet the key words you will hear as you explore how AI works."><link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1"><style>
-.ai-page{--ai-ink:#14264d;--ai-blue:#1768b2;--ai-purple:#6556b8;--ai-muted:#60728a;--ai-line:#dce6f1;--ai-pale:#f2f7fd;color:var(--ai-ink)}
-.ai-main{max-width:1180px;margin:0 auto;padding:0 26px 76px}
-.ai-back{padding:18px 0 8px}.ai-back a{font-size:13px;color:#1768b2;text-decoration:none;font-weight:800}
-.ai-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:center;min-height:360px;padding:42px 48px;border-radius:26px;margin:14px 0 34px;background:linear-gradient(120deg,#edf5ff 0%,#f2efff 56%,#fff3e8 100%);border:1px solid #dce7f5}
-.ai-kicker{font-size:11px;letter-spacing:.16em;font-weight:900;color:#3878b4;text-transform:uppercase;margin:0 0 12px}
-.ai-hero h1{font-size:clamp(34px,4.3vw,54px);line-height:1.05;letter-spacing:-.04em;color:#153d70;margin:0 0 15px}
-.ai-hero p{font-size:17px;line-height:1.72;color:#4e637e;max-width:650px;margin:0}
-.ai-hero-art{width:100%;max-width:430px;justify-self:center}
-.ai-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
-.ai-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:#1768b2;color:#fff;text-decoration:none;font-size:14px;font-weight:800}
-.ai-btn.secondary{background:#fff;color:#245b91;border:1px solid #cdddf0}
-.ai-section{margin:44px 0}.ai-section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
-.ai-section h2{font-size:clamp(25px,3vw,34px);line-height:1.15;color:#153d70;margin:0 0 8px}
-.ai-section-head p{max-width:760px;margin:0;color:var(--ai-muted);line-height:1.65;font-size:15px}
-.ai-why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.ai-why-card{padding:21px;border:1px solid var(--ai-line);border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(24,55,95,.045)}
-.ai-why-icon{width:48px;height:48px;border-radius:15px;background:#eaf3ff;display:grid;place-items:center;font-size:25px;margin-bottom:14px}
-.ai-why-card h3{font-size:18px;color:#173e70;margin:0 0 7px}.ai-why-card p{font-size:14px;line-height:1.65;color:#60728a;margin:0}
-.ai-path{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.ai-path-item{position:relative;min-height:114px;padding:15px;border:1px solid var(--ai-line);border-radius:16px;background:#fff}
-.ai-path-item b{display:block;font-size:12px;color:#3982bd;letter-spacing:.06em;margin-bottom:7px}
-.ai-path-item strong{display:block;color:#173e70;font-size:16px;margin-bottom:5px}
-.ai-path-item span{display:block;color:#64758b;font-size:12px;line-height:1.45}
-.ai-episodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ai-episode{overflow:hidden;border:1px solid var(--ai-line);border-radius:19px;background:#fff;box-shadow:0 7px 22px rgba(24,55,95,.055);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease}
-.ai-episode:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,55,95,.12)}
-.ai-episode-art{height:150px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#eaf4ff,#f1edff)}
-.ai-episode-art svg{width:100%;height:100%;max-width:300px}
-.ai-episode-body{padding:18px 19px 20px;display:flex;flex:1;flex-direction:column}
-.ai-episode-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
-.ai-episode-number{font-size:11px;font-weight:900;letter-spacing:.1em;color:#3982bd}
-.ai-status{font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;background:#e8f5ed;color:#277348}
-.ai-status.soon{background:#f1f3f7;color:#68778b}
-.ai-episode h3{font-size:19px;line-height:1.25;color:#173e70;margin:0 0 7px}
-.ai-episode p{font-size:13px;line-height:1.6;color:#60728a;margin:0 0 15px}
-.ai-episode .go{margin-top:auto;color:#1768b2;font-size:13px;font-weight:900}
-.ai-special{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px;align-items:center;padding:28px;border-radius:22px;background:linear-gradient(120deg,#173e70,#285f94);color:#fff}
-.ai-special-art{width:100%;max-width:320px;justify-self:center}
-.ai-special h2{color:#fff;margin:0 0 9px}.ai-special p{color:#e2edfa;line-height:1.7;margin:0 0 14px;font-size:14px}
-.ai-special .ai-btn{background:#fff;color:#173e70}
-.ai-note{padding:17px 20px;border:1px solid #f0dfaa;border-radius:15px;background:#fff9e9;color:#67572e;font-size:13px;line-height:1.65;margin-top:18px}
-
-
-
-.ai-content{width:100%;max-width:none;margin:0 auto}
-.ai-content h2{font-size:25px;color:#153d70;margin:34px 0 12px}
-.ai-content h3{font-size:18px;color:#1c5487;margin:24px 0 8px}
-.ai-content p,.ai-content li{font-size:15px;line-height:1.8;color:#4f637c}
-.ai-content ul{padding-left:22px}
-.ai-example{padding:21px 23px;background:#f1f7ff;border:1px solid #dbe9f8;border-radius:16px;margin:18px 0}
-.ai-example strong{color:#1d5487}.ai-example p{margin:8px 0 0}
-.ai-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
-.ai-compare>div{padding:18px;border:1px solid var(--ai-line);border-radius:15px;background:#fff}
-.ai-compare h3{margin:0 0 8px}
-.ai-compare p{margin:0;font-size:14px}
-.ai-lesson-art{margin:20px 0;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#edf5ff,#f4f0ff);padding:18px}
-.ai-lesson-art svg{display:block;width:100%;height:auto;max-height:280px}
-.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ai-line);padding-top:22px;margin-top:42px}
+<!DOCTYPE html>
+<!-- Level 4 — AI Knowledge Class Episode 7 (magazine layout; script-based prose + illustrations) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Concept Map | AI Knowledge Class · Episode 7 | Kiwi 爱AI Study</title>
+  <meta name="description" content="Imagine AI as a student at school. Meet the map of ideas—model, prompt, context, knowledge, memory, skills, tools, workflow, RAG, and agents—before we study each one.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-lead{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px}
+.ep-article{width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box}
+.ep-article h2{clear:both;width:100%;text-align:left;margin:32px 0 14px;font-size:clamp(21px,2.15vw,26px);color:#153d70;line-height:1.28;font-weight:700}
+.ep-article h2:first-child{margin-top:0}
+.ep-article p{font-size:15px;line-height:1.85;color:#263f5b;margin:0 0 14px}
+.ep-article p.ep-myth{color:#174a7e;font-weight:600;margin:18px 0 8px;font-size:15px}
+.ep-figure{width:min(34%,300px);margin:4px 0 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f4f8fc;box-shadow:0 5px 18px rgba(24,55,95,.07)}
+.ep-figure--right{float:right;margin-left:22px}
+.ep-figure--left{float:left;margin-right:22px}
+.ep-figure img{display:block;width:100%;height:auto}
+.ep-figure figcaption{font-size:11px;line-height:1.4;color:var(--muted);padding:7px 10px 9px;text-align:center;background:#fff}
+.ep-pair{overflow:hidden;margin:22px 0 6px}
+.ep-pair::after{content:"";display:table;clear:both}
+.ep-pair .ep-myth{margin-top:0}
+.ep-pair .ep-figure{margin-top:2px}
+.ep-article::after{content:"";display:table;clear:both}
+.nf-note{margin:18px 0;padding:14px 17px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:14px;line-height:1.65}
+.ep-flow-col{overflow:hidden;min-width:0}
+.ep-flow-col > p:last-child{margin-bottom:0}
+.ep-flow-col .nf-note{margin:8px 0 0;width:100%;max-width:100%;box-sizing:border-box}
+.ep-abilities{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:4px 0 12px;padding:12px 16px;border-left:4px solid #8eb8dc;border-radius:0 10px 10px 0;background:#f4f9ff;list-style:none}
+.ep-abilities span{padding:0;border:none;background:transparent;font-size:15px;font-weight:700;color:#155a94}
+.ep-abilities span + span::before{content:"·";margin:0 10px;color:#8fa8c2;font-weight:400}
+.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-top:36px;width:100%;max-width:100%}
+@media(max-width:720px){
+  .ep-figure{float:none!important;width:min(72vw,280px);margin:18px auto}
+  .ep-figure img{margin:0 auto}
+}
 .ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
-.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:32px}
-.ai-filter{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 20px}
-.ai-filter button{border:1px solid #d7e3f0;border-radius:999px;background:#fff;color:#3f5c7b;padding:8px 13px;font:700 12px "Segoe UI",sans-serif;cursor:pointer}
-.ai-filter button.active{background:#1768b2;border-color:#1768b2;color:#fff}
-@media(max-width:850px){.ai-hero{grid-template-columns:1fr;padding:30px}.ai-hero-art{max-width:310px}.ai-episodes{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-path{grid-template-columns:repeat(2,1fr)}.ai-special{grid-template-columns:1fr}.ai-special-art{max-width:240px}}
-@media(max-width:600px){.ai-main{padding:0 16px 55px}.ai-hero{padding:25px 22px;min-height:0}.ai-hero h1{font-size:35px}.ai-hero p{font-size:15px}.ai-why,.ai-episodes,.ai-compare{grid-template-columns:1fr}.ai-path{grid-template-columns:1fr 1fr}.ai-section-head{display:block}.ai-content p,.ai-content li{font-size:14px}.ai-special{padding:22px}.ai-episode-art{height:135px}}
+.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span>
+        <span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span>
+        <span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span>
+        <span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
 
-.ai-card-cover{width:100%;height:100%;object-fit:cover;display:block}
-.ai-episode-art:has(img){padding:0;background:#eaf4ff}
-.ai-episode-cover{display:block;width:100%;max-width:none;margin:22px 0 30px;border-radius:18px;overflow:hidden;border:1px solid #dce6f1;background:#edf5ff}
-.ai-episode-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
-.ai-special-cover{display:block;width:100%;max-width:320px;justify-self:center;border-radius:15px;overflow:hidden}
-.ai-special-cover img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.ai-episode-art img{width:100%;height:100%;object-fit:cover}
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to AI Education" data-zh="← 返回人工智能教育">← Back to AI Education</a>
+    </div>
 
-.ai-inline-cover{float:right;width:31%;max-width:360px;min-width:210px;margin:4px 24px 16px 0;border:0;border-radius:14px;overflow:hidden;background:transparent;box-shadow:0 5px 18px rgba(24,55,95,.10)}
-.ai-inline-cover.ai-cover-right{float:right;margin:4px 0 16px 24px}
-.ai-inline-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:14px}
-.ai-content:after{content:"";display:block;clear:both}
-@media(max-width:600px){.ai-inline-cover,.ai-inline-cover.ai-cover-right{float:none;width:min(68%,320px);min-width:0;max-width:320px;margin:8px auto 22px}}
+    <section class="nf-hero topic-banner" aria-label="Episode introduction">
+      <p class="topic-banner-kicker" data-en="AI EDUCATION · EPISODE 7" data-zh="人工智能教育 · 第 7 集">AI EDUCATION · EPISODE 7</p>
+      <h1 data-en="The AI Concept Map" data-zh="AI 的一张“概念地图”">The AI Concept Map</h1>
+      <p class="topic-banner-subtitle" data-en="We will not dive deep into any one idea today—just meet the map. Picture AI as a student at school and learn the words you will hear again and again." data-zh="今天不深入讲任何一个概念，先认识一张“AI 地图”。把 AI 想象成一位正在学校学习的学生，弄清以后会反复听到的关键词。">We will not dive deep into any one idea today—just meet the map. Picture AI as a student at school and learn the words you will hear again and again.</p>
+    </section>
 
-</style></head><body class="ai-page"><header class="site-header">
-<div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a>
-<p class="logo-tagline" aria-hidden="true"><span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span><span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span><span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span><span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span></p><span class="divider" aria-hidden="true"></span>
-<div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Kiwi 爱AI Study"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt=""></a></div></div>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a><a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a><a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a><a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a><a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a><a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a><a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
-<span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
-      </span></nav></header><main class="ai-main"><div class="ai-back"><a href="index.html" data-en="← Back to AI Education" data-zh="← 返回 AI 教育">← Back to AI Education</a></div><section class="nf-hero topic-banner" aria-label="Page introduction"><p class="topic-banner-kicker" data-en="AI KNOWLEDGE CLASSROOM · EPISODE 07" data-zh="AI 知识小课堂 · 第 7 集">AI KNOWLEDGE CLASSROOM · EPISODE 07</p><h1 data-en="The AI Concept Map" data-zh="AI 的一张概念地图">The AI Concept Map</h1><p data-en="Imagine AI as a student at school. Meet the key words you will hear as you explore how AI works." data-zh="把 AI 想象成一位正在学校学习的学生。先认识以后学习 AI 时经常会遇到的关键词。">Imagine AI as a student at school. Meet the key words you will hear as you explore how AI works.</p></section><div class="ai-content"><figure class="ai-episode-cover ai-inline-cover ai-cover-right"><img data-ai-cover data-en-src="images/ai-learning-studio-episode-007-en-16x9.webp" data-zh-src="images/ai-learning-studio-episode-007-cn-16x9.webp" src="images/ai-learning-studio-episode-007-en-16x9.webp" alt="AI Knowledge Classroom Episode 7 cover"></figure><h2 data-en="Start with the AI model" data-zh="先认识 AI Model">Start with the AI model</h2><p data-en="An AI Model is often compared to the brain of an AI system. It is the part trained to process information and produce outputs. But a model needs more than a “brain” to complete a useful task." data-zh="AI Model（AI 模型）常被比喻成 AI 系统的大脑。它经过训练，可以处理信息并产生结果。但要完成一项实际任务，光有“大脑”还不够。">An AI Model is often compared to the brain of an AI system. It is the part trained to process information and produce outputs. But a model needs more than a “brain” to complete a useful task.</p><h2 data-en="The words you will meet" data-zh="你会遇到的这些概念">The words you will meet</h2><p data-en="Prompt is the task or instruction you give AI — like the question a teacher gives you. Context is the information around the task — like the worksheet and lesson you are working on right now." data-zh="Prompt（提示词）是你交给 AI 的任务或指令，就像老师给你的一道题。Context（上下文）是任务周围的背景信息，就像你现在正在做的练习题和老师刚讲过的内容。">Prompt is the task or instruction you give AI — like the question a teacher gives you. Context is the information around the task — like the worksheet and lesson you are working on right now.</p><p data-en="Knowledge is the information and subject knowledge available to help answer a question. Memory is information that may be saved and used again later. Context is what is relevant now; memory is what may be retained for later." data-zh="Knowledge（知识）是帮助回答问题的信息和学科知识。Memory（记忆）是可能被保存下来、以后再次使用的信息。Context 更偏向当前相关的信息；Memory 则是可能留存到以后使用的信息。">Knowledge is the information and subject knowledge available to help answer a question. Memory is information that may be saved and used again later. Context is what is relevant now; memory is what may be retained for later.</p><p data-en="Skills are methods for carrying out a kind of task — like the methods in a textbook. Tools are things used to do the work — like a ruler, calculator or computer. Workflow is the order of steps used to complete a task." data-zh="Skills（技能）是完成某类任务的方法，就像课本里的解题方法。Tools（工具）是帮助完成任务的工具，就像尺子、计算器或电脑。Workflow（工作流程）则是完成任务时安排步骤的顺序。">Skills are methods for carrying out a kind of task — like the methods in a textbook. Tools are things used to do the work — like a ruler, calculator or computer. Workflow is the order of steps used to complete a task.</p><p data-en="RAG stands for Retrieval-Augmented Generation. A simple way to picture it is: look up relevant information in a textbook or library first, then use that information to prepare an answer." data-zh="RAG 的全称是 Retrieval-Augmented Generation，中文叫检索增强生成。可以简单想象成：先去课本或图书馆查找相关资料，再利用这些资料组织答案。">RAG stands for Retrieval-Augmented Generation. A simple way to picture it is: look up relevant information in a textbook or library first, then use that information to prepare an answer.</p><p data-en="An Agent can work toward a goal by deciding what to do next and using available tools. Multi-Agent means multiple agents working together, often with different roles — like a study group where one person researches, another calculates and another organizes the result." data-zh="Agent（智能体）可以围绕一个目标决定下一步做什么，并使用可用工具完成任务。Multi-Agent（多智能体）则是多个智能体一起合作，可能各自承担不同角色，就像学习小组里有人查资料、有人计算、有人整理结果。">An Agent can work toward a goal by deciding what to do next and using available tools. Multi-Agent means multiple agents working together, often with different roles — like a study group where one person researches, another calculates and another organizes the result.</p><div class="ai-example"><strong data-en="Try this everyday example" data-zh="生活中的例子">Try this everyday example</strong><p data-en="Imagine your teacher gives you a science project. You understand the task, use your notes, remember what you learned, follow a plan, use a computer to research and work through the steps. The school analogy helps you picture how different AI components can work together — even though an AI system is not literally a human student." data-zh="想象老师布置了一个科学项目。你先理解任务，使用笔记，回忆学过的知识，按照计划行动，用电脑查资料，再一步步完成项目。学校的比喻可以帮助你理解 AI 的不同组成部分怎样配合，但 AI 并不是真的人类学生。">Imagine your teacher gives you a science project. You understand the task, use your notes, remember what you learned, follow a plan, use a computer to research and work through the steps. The school analogy helps you picture how different AI components can work together — even though an AI system is not literally a human student.</p></div><div style="clear:both"></div><div class="ai-bottom-nav"><a href="episode-06.html" data-en="← Episode 6: What Is AI Memory?" data-zh="← 第 6 集：什么是 AI 记忆？">← Episode 6: What Is AI Memory?</a><a href="episode-special-learning.html" data-en="Episode 7 Bonus: Why Keep Learning? →" data-zh="第 7 集特别篇：为什么还要继续学习？ →">Episode 7 Bonus: Why Keep Learning? →</a></div><p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p></div></main><footer class="site-footer"><nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav><p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p></footer><script>
-(()=>{const nav={en:['Home','About','Math Education','AI Education','In-Class Learning','My Books','Contact'],zh:['首页','关于我们','数学教育','人工智能教育','课堂学习','我的书籍','联系我们']};const legal={en:['Privacy Policy','Terms of Service','Home'],zh:['隐私政策','服务条款','首页']};const btns=document.querySelectorAll('.flag[data-language]');function setLanguage(lang){const l=lang==='zh'?'zh':'en';document.documentElement.lang=l==='zh'?'zh-CN':'en-CA';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.innerHTML=el.getAttribute(l==='zh'?'data-zh':'data-en'));document.querySelectorAll('[data-ai-cover]').forEach(img=>{const source=img.getAttribute(l==='zh'?'data-zh-src':'data-en-src');if(source){img.src=source;img.style.display='block'}else{img.style.display='none'}});document.querySelectorAll('.site-nav [data-nav]').forEach((el,i)=>el.textContent=nav[l][i]);document.querySelectorAll('.site-footer [data-legal]').forEach((el,i)=>el.textContent=legal[l][i]);btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===l)));try{localStorage.setItem('kiwi-site-language',l)}catch(e){}}btns.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));let saved='en';try{saved=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(saved);window.addEventListener('pageshow',()=>{let l='en';try{l=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(l)});
-const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(x=>x.classList.toggle('active',x===btn));const f=btn.dataset.aiFilter;document.querySelectorAll('.ai-episode[data-category]').forEach(card=>card.hidden=!(f==='all'||card.dataset.category===f));}));
+    <!-- LEVEL-4 BODY START -->
+    <article class="nf-section ep-article" aria-label="Episode article">
+
+      <div class="ep-pair">
+        <p class="nf-lead" data-en="Welcome to Episode 7. Episodes 1–6 built the big picture—what AI is, how it learns, who makes it, where it hides or moves, and how it already shapes daily life. From here we start Phase 2: the basic vocabulary of how AI works." data-zh="欢迎来到第 7 集。第 1–6 集搭好了大图景——AI 是什么、怎样学习、谁创造它、在哪里运行、怎样进入日常生活。从这一集起进入第二阶段：认识 AI 最基本的一些概念与词汇。">Welcome to Episode 7. Episodes 1–6 built the big picture—what AI is, how it learns, who makes it, where it hides or moves, and how it already shapes daily life. From here we start Phase 2: the basic vocabulary of how AI works.</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-007/magazine/ep07-mag-02-concept-map.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="One map, many connected ideas." data-zh="一张地图，许多相连的概念。">One map, many connected ideas.</figcaption>
+        </figure>
+        <p data-en="Today we will <em>not</em> master every detail. We walk the whole map once so later episodes can zoom in. Every concept will come back—with classroom analogies you already know." data-zh="今天不会把每个概念都讲透。我们先走完整张地图，后面每一集再放大其中一个点。概念都会回来——而且都会用你熟悉的课堂学习来类比。">Today we will <em>not</em> master every detail. We walk the whole map once so later episodes can zoom in. Every concept will come back—with classroom analogies you already know.</p>
+        <p data-en="To make that easier, imagine AI as a student learning at school. What does that student need besides a brain?" data-zh="为了更好理解，我们把 AI 想象成一位正在学校学习的学生。除了“大脑”，完成一项任务还需要什么呢？">To make that easier, imagine AI as a student learning at school. What does that student need besides a brain?</p>
+        <p data-en="Today’s lesson adds ten more ideas—prompt, context, knowledge, memory, skills, tools, workflow, RAG, agent, and multi-agent. Picture them as lockers, notebooks, and lab gear around that student, not as ten separate apps to download tonight." data-zh="今天要认识另外十个词——Prompt、Context、Knowledge、Memory、Skills、Tools、Workflow、RAG、Agent 和 Multi-Agent。把它们想成学生身边的储物柜、笔记本和实验器材，而不是今晚就要装的十个 App。">Today’s lesson adds ten more ideas—prompt, context, knowledge, memory, skills, tools, workflow, RAG, agent, and multi-agent. Picture them as lockers, notebooks, and lab gear around that student, not as ten separate apps to download tonight.</p>
+      </div>
+
+      <h2 id="ep7-recap" data-en="What we already built" data-zh="我们已经搭好的基础">What we already built</h2>
+      <p data-en="Episodes 1–6 were the foundation. This episode is the table of contents for everything that follows." data-zh="第 1–6 集是地基。这一集是后面内容的“目录页”。">Episodes 1–6 were the foundation. This episode is the table of contents for everything that follows.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-007/magazine/ep07-mag-04-products-recap.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="From “what is AI?” to names you recognize." data-zh="从“什么是 AI？”到你熟悉的名字。">From “what is AI?” to names you recognize.</figcaption>
+        </figure>
+        <p data-en="You already know that AI is not one app. You compared traditional and generative AI, traced how models learn, and met GPT-style large language models. You also saw ChatGPT, Gemini, 豆包, and DeepSeek as products—not as the whole field." data-zh="你已经知道 AI 不是一个 App；比较过传统 AI 与生成式 AI，了解模型怎样学习，也认识了大语言模型与 GPT。你还见过 ChatGPT、Gemini、豆包、DeepSeek 等产品——它们不代表整个 AI 世界。">You already know that AI is not one app. You compared traditional and generative AI, traced how models learn, and met GPT-style large language models. You also saw ChatGPT, Gemini, 豆包, and DeepSeek as products—not as the whole field.</p>
+        <p data-en="Along the way you also met machine learning, deep learning, large language models, and GPT—and you saw how invisible AI on screens can pair with visible AI in machines. None of that disappears; the map shows how new words connect to what you already know." data-zh="一路上你还认识了机器学习、深度学习、大语言模型和 GPT，也看到屏幕里的看不见 AI 怎样和机器里的看得见 AI 配合。这些都不会消失；地图说明新词汇怎样接到你已有的认识上。">Along the way you also met machine learning, deep learning, large language models, and GPT—and you saw how invisible AI on screens can pair with visible AI in machines. None of that disappears; the map shows how new words connect to what you already know.</p>
+        <p data-en="Episode 6 closed Phase 1—everyday AI in apps plus a six-part recap. Today’s map adds the vocabulary for Phase 2: what happens after you hand AI a task." data-zh="第 6 集结束了第一阶段——日常生活中的 AI 与六点回顾。今天的地图补上第二阶段的词汇：交给 AI 任务之后，背后发生什么。">Episode 6 closed Phase 1—everyday AI in apps plus a six-part recap. Today’s map adds the vocabulary for Phase 2: what happens after you hand AI a task.</p>
+        <p data-en="Phase 1 was the wide view; Phase 2 needs names for the pipeline—what you ask, what the system knows, what it keeps, and how steps chain together." data-zh="第一阶段是鸟瞰；第二阶段需要给整条链路命名——你问什么、系统知道什么、保留什么、步骤怎样串联。">Phase 1 was the wide view; Phase 2 needs names for the pipeline—what you ask, what the system knows, what it keeps, and how steps chain together.</p>
+      </div>
+
+      <h2 id="ep7-model-prompt" data-en="Brain, prompt, and context" data-zh="大脑、题目与上下文">Brain, prompt, and context</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-007/magazine/ep07-mag-01-ai-model.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="AI Model — the “brain.”" data-zh="AI Model — AI 的“大脑”。">AI Model — the “brain.”</figcaption>
+        </figure>
+        <p data-en="Start with the <strong>AI Model</strong>. Think of it as the brain: software trained on data that can read, reason, and respond. Products like ChatGPT are doors; the model is what thinks behind them." data-zh="从 <strong>AI Model（AI 模型）</strong> 开始。把它想成“大脑”：在海量数据上训练出来的程序，能阅读、推理、回应。ChatGPT 等产品是“门”，模型才是背后的思考者。">Start with the <strong>AI Model</strong>. Think of it as the brain: software trained on data that can read, reason, and respond. Products like ChatGPT are doors; the model is what thinks behind them.</p>
+        <p data-en="A brain still needs a question. A <strong>Prompt</strong> is that question—the instruction from the “teacher.” For example: “Compare these two fractions. Which is larger?” The prompt tells the AI <em>what to do</em>." data-zh="大脑还需要一道题。<strong>Prompt（提示词/指令）</strong> 就像老师出的题目。比如说：“请比较这两个分数哪个更大。” Prompt 告诉 AI <em>你要做什么</em>。">A brain still needs a question. A <strong>Prompt</strong> is that question—the instruction from the “teacher.” For example: “Compare these two fractions. Which is larger?” The prompt tells the AI <em>what to do</em>.</p>
+        <p data-en="While it works, the AI also holds a scratch pad of what matters <em>right now</em>. That is <strong>Context</strong>—like short-term working memory or RAM. The current question, recent chat lines, and related facts in this moment all belong here." data-zh="工作时它还要记住<em>此刻</em>相关的信息，这就是 <strong>Context（上下文）</strong>——有点像电脑的短期工作记忆（RAM）。当前问题、刚才的对话、和本题相关的材料，都可以放在 Context 里。">While it works, the AI also holds a scratch pad of what matters <em>right now</em>. That is <strong>Context</strong>—like short-term working memory or RAM. The current question, recent chat lines, and related facts in this moment all belong here.</p>
+        <p data-en="Picture the model as the student, the prompt as today’s worksheet, and context as what is still on the desk from earlier in class—three pieces before knowledge, tools, or agents enter the story." data-zh="把模型想成学生，Prompt 是今天的作业纸，Context 是课桌上还摊着的刚才的内容——在知识、工具、Agent 出场之前，先有三件套。">Picture the model as the student, the prompt as today’s worksheet, and context as what is still on the desk from earlier in class—three pieces before knowledge, tools, or agents enter the story.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-007/magazine/ep07-mag-03-connections.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Prompt, context, and model link together." data-zh="题目、上下文与模型彼此连接。">Prompt, context, and model link together.</figcaption>
+        </figure>
+        <p data-en="Put the three together: you write a prompt, the model reads it with whatever context is active, and an answer appears. Change the prompt or the context and the same brain can give a different result—just like a student with a new worksheet." data-zh="三者合在一起：你写下 Prompt，模型带着当前的 Context 去理解，然后给出回答。换一道题或换一段上下文，同一个“大脑”也可能得出不同结果——就像学生换了一张练习卷。">Put the three together: you write a prompt, the model reads it with whatever context is active, and an answer appears. Change the prompt or the context and the same brain can give a different result—just like a student with a new worksheet.</p>
+        <p data-en="None of these three words mean “generative” or “traditional” by themselves. They describe <em>how</em> you talk to AI and <em>what</em> it sees this second—not which company built it." data-zh="这三个词本身不代表“生成式”或“传统”。它们描述的是<em>怎样</em>与 AI 交流、以及<em>这一刻</em>它看见什么——而不是哪家公司造的。">None of these three words mean “generative” or “traditional” by themselves. They describe <em>how</em> you talk to AI and <em>what</em> it sees this second—not which company built it.</p>
+        <p data-en="Example: if you are discussing a math problem, the last few messages, the current question, and any numbers you pasted can all sit in <strong>Context</strong>. Swap to a new subject without that history and the model may answer as if the whiteboard was erased." data-zh="举例：若正在讨论一道数学题，刚说过的话、当前问题、你贴进去的数字，都可能属于 <strong>Context</strong>。若换成新话题且不带这段历史，模型就可能像擦掉了白板一样重新回答。">Example: if you are discussing a math problem, the last few messages, the current question, and any numbers you pasted can all sit in <strong>Context</strong>. Swap to a new subject without that history and the model may answer as if the whiteboard was erased.</p>
+        <p data-en="On the map, draw a line from you → prompt → model, with context looping beside that arrow. Most confusion later comes from mixing up those three stops." data-zh="在地图上画一条线：你 → Prompt → 模型，Context 在旁循环。以后的大部分混淆，都来自分不清这三站。">On the map, draw a line from you → prompt → model, with context looping beside that arrow. Most confusion later comes from mixing up those three stops.</p>
+      </div>
+
+      <h2 id="ep7-know-skills" data-en="Knowledge, memory, and skills" data-zh="知识、记忆与技能">Knowledge, memory, and skills</h2>
+      <p data-en="A student also carries years of classwork. AI vocabulary splits that into three related ideas." data-zh="学生还带着多年课堂学过的东西。AI 的词汇把这部分拆成三个相关概念。">A student also carries years of classwork. AI vocabulary splits that into three related ideas.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-007/magazine/ep07-mag-05-tools-knowledge.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Know what · remember what · know how." data-zh="知道什么 · 记住什么 · 怎么做。">Know what · remember what · know how.</figcaption>
+        </figure>
+        <p data-en="<strong>Knowledge</strong> answers “What do you know?”—math facts, science ideas, history dates, language rules baked into training, like subjects you studied before the test." data-zh="<strong>Knowledge（知识）</strong> 回答“你知道什么？”——数学、科学、历史、语言等，像训练数据里已经学过的内容，也像你进考场前就背过的科目。"><strong>Knowledge</strong> answers “What do you know?”—math facts, science ideas, history dates, language rules baked into training, like subjects you studied before the test.</p>
+        <p data-en="<strong>Memory</strong> answers “What might we need again later?” It can store names, preferences, or facts from earlier chats when a product allows it. Context is the whiteboard for <em>this</em> problem; Memory is the binder you keep in your locker." data-zh="<strong>Memory（记忆）</strong> 回答“以后还可能用到什么？”在允许的情况下，它可以保存名字、偏好或更早对话里的信息。Context 是<em>这道题</em>的白板；Memory 是放在储物柜里的本子。"><strong>Memory</strong> answers “What might we need again later?” It can store names, preferences, or facts from earlier chats when a product allows it. Context is the whiteboard for <em>this</em> problem; Memory is the binder you keep in your locker.</p>
+        <p data-en="<strong>Skills</strong> are closer to “How do you do it?” Knowing what a triangle is belongs to knowledge; choosing steps to use the Pythagorean theorem is skill. For AI, skills can mean patterns the system learned for solving certain task types—not just listing facts." data-zh="<strong>Skills（技能）</strong> 更接近“你知道怎么做吗？”知道什么是三角形属于 Knowledge；会选用勾股定理解题属于 Skill。对 AI 来说，技能可以是学会处理某类任务的套路——而不只是背事实。"><strong>Skills</strong> are closer to “How do you do it?” Knowing what a triangle is belongs to knowledge; choosing steps to use the Pythagorean theorem is skill. For AI, skills can mean patterns the system learned for solving certain task types—not just listing facts.</p>
+        <p data-en="Both context and memory sound like “remembering,” but they play different roles. Context holds what is on the desk for <em>this</em> task; memory holds what you filed away because a <em>later</em> assignment might need it again." data-zh="Context 和 Memory 都和“记”有关，作用却不同：Context 像是<em>这次</em>作业桌上摊开的内容；Memory 像收进文件夹、因为<em>以后</em>作业还可能要用的信息。">Both context and memory sound like “remembering,” but they play different roles. Context holds what is on the desk for <em>this</em> task; memory holds what you filed away because a <em>later</em> assignment might need it again.</p>
+      </div>
+
+      <h2 id="ep7-tools-rag" data-en="Tools, workflow, and RAG" data-zh="工具、流程与 RAG">Tools, workflow, and RAG</h2>
+      <p data-en="Once the student knows the question and has facts in reach, the next pieces are gear and a plan." data-zh="学生知道题目、手边也有材料之后，接下来就需要工具和步骤。">Once the student knows the question and has facts in reach, the next pieces are gear and a plan.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-007/magazine/ep07-mag-06-map-overview.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Steps and tools on the way to an answer." data-zh="通向答案的步骤与工具。">Steps and tools on the way to an answer.</figcaption>
+        </figure>
+        <p data-en="Students use <strong>Tools</strong>: pencils, rulers, calculators, laptops. AI can call tools too—search the web, run code, read a file—when the product is built to allow it." data-zh="学生需要 <strong>Tools（工具）</strong>：铅笔、尺子、计算器、电脑。AI 也可以调用工具——例如搜索网页、运行代码、读取文件——只要产品设计允许。">Students use <strong>Tools</strong>: pencils, rulers, calculators, laptops. AI can call tools too—search the web, run code, read a file—when the product is built to allow it.</p>
+        <p data-en="Hard problems need order. A <strong>Workflow</strong> is the recipe: step one gather facts, step two plan, step three check. Many homework rubrics are tiny workflows written by your teacher." data-zh="难题需要顺序。<strong>Workflow（工作流程）</strong> 就是解题步骤：第一步做什么、第二步做什么……把步骤按正确顺序串起来，就是 Workflow。老师发的作业要求，有时就是一份小 workflow。">Hard problems need order. A <strong>Workflow</strong> is the recipe: step one gather facts, step two plan, step three check. Many homework rubrics are tiny workflows written by your teacher.</p>
+        <p data-en="<strong>RAG</strong> stands for <em>Retrieval-Augmented Generation</em> (检索增强生成). Plain-language version: “I do not know yet—let me check the textbook or library, <em>then</em> answer.” The AI retrieves sources first, then writes with those facts in mind." data-zh="<strong>RAG</strong> 的全称是 <em>Retrieval-Augmented Generation</em>（检索增强生成）。用大白话说：“我还不知道——先去课本或资料库里查，<em>再</em>回答。” AI 先检索相关资料，再据此生成答案。"><strong>RAG</strong> stands for <em>Retrieval-Augmented Generation</em> (检索增强生成). Plain-language version: “I do not know yet—let me check the textbook or library, <em>then</em> answer.” The AI retrieves sources first, then writes with those facts in mind.</p>
+        <p data-en="Workflow and RAG often show up together: look up notes, outline steps, draft the answer, then proofread. That is still one student—or one AI—following a recipe, not magic." data-zh="Workflow 和 RAG 常一起出现：查资料、列步骤、写答案、再检查。仍然是一个学生——或一个 AI——按菜谱做事，并不是魔法。">Workflow and RAG often show up together: look up notes, outline steps, draft the answer, then proofread. That is still one student—or one AI—following a recipe, not magic.</p>
+      </div>
+
+      <h2 id="ep7-agents" data-en="Agents and study groups" data-zh="智能体与学习小组">Agents and study groups</h2>
+      <p data-en="The last two labels describe AI that keeps working after the first reply—alone or in a team." data-zh="最后两个概念，说的是 AI 在第一次回答之后仍继续推进——单独完成或小组协作。">The last two labels describe AI that keeps working after the first reply—alone or in a team.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-007/magazine/ep07-mag-07-agents.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="One agent—or many—working a plan." data-zh="一个智能体，或许多个分工合作。">One agent—or many—working a plan.</figcaption>
+        </figure>
+        <p data-en="An <strong>Agent</strong> is like a student who can pursue a goal: understand the task, pick the next move, use tools, and keep going until something is finished—not only spit out one quick reply." data-zh="<strong>Agent（智能体）</strong> 像能自己推进任务的学生：理解目标、决定下一步、使用工具、一步一步做到完成——而不只是抛出一句话。">An <strong>Agent</strong> is like a student who can pursue a goal: understand the task, pick the next move, use tools, and keep going until something is finished—not only spit out one quick reply.</p>
+        <p data-en="<strong>Multi-Agent</strong> systems split the work like a project team: one role hunts sources, another calculates, another polishes the final write-up. You will hear this term when several AIs coordinate on one big job." data-zh="<strong>Multi-Agent（多智能体）</strong> 像学习小组分工：有人查资料、有人计算、有人整理答案。当多个 AI 协作完成一个大任务时，就会听到这个词。"><strong>Multi-Agent</strong> systems split the work like a project team: one role hunts sources, another calculates, another polishes the final write-up. You will hear this term when several AIs coordinate on one big job.</p>
+        <p data-en="Agents sit at the top of the map because they combine almost everything below: model, prompt, context, memory, skills, tools, workflow, and sometimes RAG." data-zh="Agent 在地图顶端，因为它几乎把下面所有概念都用上：模型、Prompt、Context、Memory、Skills、Tools、Workflow，有时还有 RAG。">Agents sit at the top of the map because they combine almost everything below: model, prompt, context, memory, skills, tools, workflow, and sometimes RAG.</p>
+        <p data-en="In a multi-agent setup, roles mirror a study group: one classmate searches the textbook, one runs the numbers, one writes the clean final version. You stay the human who checks whether the group’s answer makes sense." data-zh="多智能体就像学习小组分工：有人查课本、有人算数、有人整理成最终答案。你仍然是那个要判断“小组答得对不对”的人。">In a multi-agent setup, roles mirror a study group: one classmate searches the textbook, one runs the numbers, one writes the clean final version. You stay the human who checks whether the group’s answer makes sense.</p>
+      </div>
+
+      <h2 id="ep7-today" data-en="Your map for today" data-zh="今天带走的地图">Your map for today</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-007/magazine/ep07-mag-08-map-summary.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Labels only—depth comes episode by episode." data-zh="先记名字——深度留给后面每一集。">Labels only—depth comes episode by episode.</figcaption>
+        </figure>
+        <div class="ep-flow-col">
+          <p data-en="Feeling fuzzy? That is normal. We only pinned names to the map today. Starting next episode we unpack them one by one—still using school and homework as our compass." data-zh="觉得有点抽象？很正常。今天只是在地图上贴了标签。从下一集起会一个一个拆开讲——仍然用课堂和作业当指南针。">Feeling fuzzy? That is normal. We only pinned names to the map today. Starting next episode we unpack them one by one—still using school and homework as our compass.</p>
+          <p data-en="Quick anchors: <strong>Model</strong> = brain · <strong>Prompt</strong> = teacher’s question · <strong>Context</strong> = short-term workspace · <strong>Knowledge</strong> = what you know · <strong>Memory</strong> = what to keep · <strong>Skills</strong> = how to do it · <strong>Tools</strong> = gear you use · <strong>Workflow</strong> = ordered steps · <strong>RAG</strong> = look up, then answer · <strong>Agent</strong> = self-directed helper · <strong>Multi-Agent</strong> = team of helpers." data-zh="速记：<strong>Model</strong> = 大脑 · <strong>Prompt</strong> = 老师给的题 · <strong>Context</strong> = 短期工作记忆 · <strong>Knowledge</strong> = 你知道什么 · <strong>Memory</strong> = 长期可留的信息 · <strong>Skills</strong> = 怎么做 · <strong>Tools</strong> = 手里的工具 · <strong>Workflow</strong> = 按步骤完成 · <strong>RAG</strong> = 先查再答 · <strong>Agent</strong> = 能自己推进任务的助手 · <strong>Multi-Agent</strong> = 多个 AI 合作。">Quick anchors: <strong>Model</strong> = brain · <strong>Prompt</strong> = teacher’s question · <strong>Context</strong> = short-term workspace · <strong>Knowledge</strong> = what you know · <strong>Memory</strong> = what to keep · <strong>Skills</strong> = how to do it · <strong>Tools</strong> = gear you use · <strong>Workflow</strong> = ordered steps · <strong>RAG</strong> = look up, then answer · <strong>Agent</strong> = self-directed helper · <strong>Multi-Agent</strong> = team of helpers.</p>
+          <p data-en="If the labels feel tangled, that is expected today. We only name the towns on the map; starting Episode 8 we drive to each one slowly, still using school habits you already trust." data-zh="若觉得这些词缠在一起，今天很正常。我们只标出地图上的地名；从第 8 集起再慢慢开到每一处，仍用你熟悉的课堂习惯来理解。">If the labels feel tangled, that is expected today. We only name the towns on the map; starting Episode 8 we drive to each one slowly, still using school habits you already trust.</p>
+          <p class="nf-note" data-en="When a headline throws five new acronyms at you, pause and sort them: Is this about the brain, the question, what it remembers, the tools, or who is in charge? The map keeps you oriented." data-zh="看见标题里一串新缩写时，先停一下分类：这是在说大脑、题目、记忆、工具，还是谁在指挥？用这张地图，你就不会迷路。">When a headline throws five new acronyms at you, pause and sort them: Is this about the brain, the question, what it remembers, the tools, or who is in charge? The map keeps you oriented.</p>
+        </div>
+      </div>
+
+      <div class="ep-abilities" role="list" aria-label="Concept map keywords">
+        <span role="listitem" data-en="Model" data-zh="Model 模型">Model</span>
+        <span role="listitem" data-en="Prompt" data-zh="Prompt 提示词">Prompt</span>
+        <span role="listitem" data-en="Context" data-zh="Context 上下文">Context</span>
+        <span role="listitem" data-en="Knowledge" data-zh="Knowledge 知识">Knowledge</span>
+        <span role="listitem" data-en="Memory" data-zh="Memory 记忆">Memory</span>
+        <span role="listitem" data-en="Skills" data-zh="Skills 技能">Skills</span>
+        <span role="listitem" data-en="Tools" data-zh="Tools 工具">Tools</span>
+        <span role="listitem" data-en="Workflow" data-zh="Workflow 流程">Workflow</span>
+        <span role="listitem" data-en="RAG" data-zh="RAG 检索增强">RAG</span>
+        <span role="listitem" data-en="Agent" data-zh="Agent 智能体">Agent</span>
+        <span role="listitem" data-en="Multi-Agent" data-zh="Multi-Agent 多智能体">Multi-Agent</span>
+      </div>
+
+      <h2 id="ep7-next" data-en="Coming up next" data-zh="下一集预告">Coming up next</h2>
+      <p data-en="Today we only met the map. Up next: a special on why we still study when AI looks so capable—then Episode 8 dives into <strong>Prompt</strong> in detail." data-zh="今天只是认识地图。接下来：特别篇聊 AI 这么厉害为什么还要学习——然后第 8 集细讲 <strong>Prompt</strong>。">Today we only met the map. Up next: a special on why we still study when AI looks so capable—then Episode 8 dives into <strong>Prompt</strong> in detail.</p>
+    </article>
+
+    <nav class="ai-bottom-nav" aria-label="Episode navigation">
+      <a href="episode-06.html" data-en="← Episode 6: Review" data-zh="← 第 6 集：知识回顾">← Episode 6: Review</a>
+      <a href="episode-special-learning.html" data-en="Special: Why keep learning? →" data-zh="特别篇：为什么还要学习？ →">Special: Why keep learning? →</a>
+    </nav>
+    <p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
 })();
-</script>
-<script>
-/* Remove legacy GTranslate cookies left by earlier test versions. */
+  </script>
+  <script>
 (() => {
   const host = location.hostname;
   const domains = ['', host, host ? '.' + host : ''];
@@ -111,5 +289,7 @@ const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=
     }));
   });
 })();
-</script>
-<script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script></body></html>
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261109-ep7" defer></script>
+</body>
+</html>

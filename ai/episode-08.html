@@ -1,97 +1,239 @@
-<!DOCTYPE html><html lang="en-CA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>What Is a Prompt? | AI Knowledge Classroom</title><meta name="description" content="A prompt is how you tell AI what you want. AI may be powerful, but it cannot read your mind."><link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1"><style>
-.ai-page{--ai-ink:#14264d;--ai-blue:#1768b2;--ai-purple:#6556b8;--ai-muted:#60728a;--ai-line:#dce6f1;--ai-pale:#f2f7fd;color:var(--ai-ink)}
-.ai-main{max-width:1180px;margin:0 auto;padding:0 26px 76px}
-.ai-back{padding:18px 0 8px}.ai-back a{font-size:13px;color:#1768b2;text-decoration:none;font-weight:800}
-.ai-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:center;min-height:360px;padding:42px 48px;border-radius:26px;margin:14px 0 34px;background:linear-gradient(120deg,#edf5ff 0%,#f2efff 56%,#fff3e8 100%);border:1px solid #dce7f5}
-.ai-kicker{font-size:11px;letter-spacing:.16em;font-weight:900;color:#3878b4;text-transform:uppercase;margin:0 0 12px}
-.ai-hero h1{font-size:clamp(34px,4.3vw,54px);line-height:1.05;letter-spacing:-.04em;color:#153d70;margin:0 0 15px}
-.ai-hero p{font-size:17px;line-height:1.72;color:#4e637e;max-width:650px;margin:0}
-.ai-hero-art{width:100%;max-width:430px;justify-self:center}
-.ai-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
-.ai-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:#1768b2;color:#fff;text-decoration:none;font-size:14px;font-weight:800}
-.ai-btn.secondary{background:#fff;color:#245b91;border:1px solid #cdddf0}
-.ai-section{margin:44px 0}.ai-section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
-.ai-section h2{font-size:clamp(25px,3vw,34px);line-height:1.15;color:#153d70;margin:0 0 8px}
-.ai-section-head p{max-width:760px;margin:0;color:var(--ai-muted);line-height:1.65;font-size:15px}
-.ai-why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.ai-why-card{padding:21px;border:1px solid var(--ai-line);border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(24,55,95,.045)}
-.ai-why-icon{width:48px;height:48px;border-radius:15px;background:#eaf3ff;display:grid;place-items:center;font-size:25px;margin-bottom:14px}
-.ai-why-card h3{font-size:18px;color:#173e70;margin:0 0 7px}.ai-why-card p{font-size:14px;line-height:1.65;color:#60728a;margin:0}
-.ai-path{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.ai-path-item{position:relative;min-height:114px;padding:15px;border:1px solid var(--ai-line);border-radius:16px;background:#fff}
-.ai-path-item b{display:block;font-size:12px;color:#3982bd;letter-spacing:.06em;margin-bottom:7px}
-.ai-path-item strong{display:block;color:#173e70;font-size:16px;margin-bottom:5px}
-.ai-path-item span{display:block;color:#64758b;font-size:12px;line-height:1.45}
-.ai-episodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ai-episode{overflow:hidden;border:1px solid var(--ai-line);border-radius:19px;background:#fff;box-shadow:0 7px 22px rgba(24,55,95,.055);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease}
-.ai-episode:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,55,95,.12)}
-.ai-episode-art{height:150px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#eaf4ff,#f1edff)}
-.ai-episode-art svg{width:100%;height:100%;max-width:300px}
-.ai-episode-body{padding:18px 19px 20px;display:flex;flex:1;flex-direction:column}
-.ai-episode-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
-.ai-episode-number{font-size:11px;font-weight:900;letter-spacing:.1em;color:#3982bd}
-.ai-status{font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;background:#e8f5ed;color:#277348}
-.ai-status.soon{background:#f1f3f7;color:#68778b}
-.ai-episode h3{font-size:19px;line-height:1.25;color:#173e70;margin:0 0 7px}
-.ai-episode p{font-size:13px;line-height:1.6;color:#60728a;margin:0 0 15px}
-.ai-episode .go{margin-top:auto;color:#1768b2;font-size:13px;font-weight:900}
-.ai-special{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px;align-items:center;padding:28px;border-radius:22px;background:linear-gradient(120deg,#173e70,#285f94);color:#fff}
-.ai-special-art{width:100%;max-width:320px;justify-self:center}
-.ai-special h2{color:#fff;margin:0 0 9px}.ai-special p{color:#e2edfa;line-height:1.7;margin:0 0 14px;font-size:14px}
-.ai-special .ai-btn{background:#fff;color:#173e70}
-.ai-note{padding:17px 20px;border:1px solid #f0dfaa;border-radius:15px;background:#fff9e9;color:#67572e;font-size:13px;line-height:1.65;margin-top:18px}
-
-
-
-.ai-content{width:100%;max-width:none;margin:0 auto}
-.ai-content h2{font-size:25px;color:#153d70;margin:34px 0 12px}
-.ai-content h3{font-size:18px;color:#1c5487;margin:24px 0 8px}
-.ai-content p,.ai-content li{font-size:15px;line-height:1.8;color:#4f637c}
-.ai-content ul{padding-left:22px}
-.ai-example{padding:21px 23px;background:#f1f7ff;border:1px solid #dbe9f8;border-radius:16px;margin:18px 0}
-.ai-example strong{color:#1d5487}.ai-example p{margin:8px 0 0}
-.ai-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
-.ai-compare>div{padding:18px;border:1px solid var(--ai-line);border-radius:15px;background:#fff}
-.ai-compare h3{margin:0 0 8px}
-.ai-compare p{margin:0;font-size:14px}
-.ai-lesson-art{margin:20px 0;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#edf5ff,#f4f0ff);padding:18px}
-.ai-lesson-art svg{display:block;width:100%;height:auto;max-height:280px}
-.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ai-line);padding-top:22px;margin-top:42px}
+<!DOCTYPE html>
+<!-- Level 4 — AI Knowledge Class Episode 8 (magazine layout; script-based prose + illustrations) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt | AI Knowledge Class · Episode 8 | Kiwi 爱AI Study</title>
+  <meta name="description" content="AI cannot read your mind—this episode introduces Prompt and why you must tell it a clear destination, like riding a fast horse.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-lead{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px}
+.ep-article{width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box}
+.ep-article h2{clear:both;width:100%;text-align:left;margin:32px 0 14px;font-size:clamp(21px,2.15vw,26px);color:#153d70;line-height:1.28;font-weight:700}
+.ep-article h2:first-child{margin-top:0}
+.ep-article p{font-size:15px;line-height:1.85;color:#263f5b;margin:0 0 14px}
+.ep-article p.ep-myth{color:#174a7e;font-weight:600;margin:18px 0 8px;font-size:15px}
+.ep-figure{width:min(34%,300px);margin:4px 0 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f4f8fc;box-shadow:0 5px 18px rgba(24,55,95,.07)}
+.ep-figure--right{float:right;margin-left:22px}
+.ep-figure--left{float:left;margin-right:22px}
+.ep-figure img{display:block;width:100%;height:auto}
+.ep-figure figcaption{font-size:11px;line-height:1.4;color:var(--muted);padding:7px 10px 9px;text-align:center;background:#fff}
+.ep-pair{overflow:hidden;margin:22px 0 6px}
+.ep-pair::after{content:"";display:table;clear:both}
+.ep-pair .ep-myth{margin-top:0}
+.ep-pair .ep-figure{margin-top:2px}
+.ep-article::after{content:"";display:table;clear:both}
+.nf-note{margin:18px 0;padding:14px 17px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:14px;line-height:1.65}
+.ep-flow-col{overflow:hidden;min-width:0}
+.ep-flow-col > p:last-child{margin-bottom:0}
+.ep-flow-col .nf-note{margin:8px 0 0;width:100%;max-width:100%;box-sizing:border-box}
+.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-top:36px;width:100%;max-width:100%}
+@media(max-width:720px){
+  .ep-figure{float:none!important;width:min(72vw,280px);margin:18px auto}
+  .ep-figure img{margin:0 auto}
+}
 .ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
-.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:32px}
-.ai-filter{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 20px}
-.ai-filter button{border:1px solid #d7e3f0;border-radius:999px;background:#fff;color:#3f5c7b;padding:8px 13px;font:700 12px "Segoe UI",sans-serif;cursor:pointer}
-.ai-filter button.active{background:#1768b2;border-color:#1768b2;color:#fff}
-@media(max-width:850px){.ai-hero{grid-template-columns:1fr;padding:30px}.ai-hero-art{max-width:310px}.ai-episodes{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-path{grid-template-columns:repeat(2,1fr)}.ai-special{grid-template-columns:1fr}.ai-special-art{max-width:240px}}
-@media(max-width:600px){.ai-main{padding:0 16px 55px}.ai-hero{padding:25px 22px;min-height:0}.ai-hero h1{font-size:35px}.ai-hero p{font-size:15px}.ai-why,.ai-episodes,.ai-compare{grid-template-columns:1fr}.ai-path{grid-template-columns:1fr 1fr}.ai-section-head{display:block}.ai-content p,.ai-content li{font-size:14px}.ai-special{padding:22px}.ai-episode-art{height:135px}}
+.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <p class="logo-tagline" aria-hidden="true">
+        <span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span>
+        <span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span>
+        <span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span>
+        <span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span>
+      </p>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
 
-.ai-card-cover{width:100%;height:100%;object-fit:cover;display:block}
-.ai-episode-art:has(img){padding:0;background:#eaf4ff}
-.ai-episode-cover{display:block;width:100%;max-width:none;margin:22px 0 30px;border-radius:18px;overflow:hidden;border:1px solid #dce6f1;background:#edf5ff}
-.ai-episode-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
-.ai-special-cover{display:block;width:100%;max-width:320px;justify-self:center;border-radius:15px;overflow:hidden}
-.ai-special-cover img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.ai-episode-art img{width:100%;height:100%;object-fit:cover}
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to AI Education" data-zh="← 返回人工智能教育">← Back to AI Education</a>
+    </div>
 
-.ai-inline-cover{float:right;width:31%;max-width:360px;min-width:210px;margin:4px 24px 16px 0;border:0;border-radius:14px;overflow:hidden;background:transparent;box-shadow:0 5px 18px rgba(24,55,95,.10)}
-.ai-inline-cover.ai-cover-right{float:right;margin:4px 0 16px 24px}
-.ai-inline-cover img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:14px}
-.ai-content:after{content:"";display:block;clear:both}
-@media(max-width:600px){.ai-inline-cover,.ai-inline-cover.ai-cover-right{float:none;width:min(68%,320px);min-width:0;max-width:320px;margin:8px auto 22px}}
+    <section class="nf-hero topic-banner" aria-label="Episode introduction">
+      <p class="topic-banner-kicker" data-en="AI EDUCATION · EPISODE 8" data-zh="人工智能教育 · 第 8 集">AI EDUCATION · EPISODE 8</p>
+      <h1 data-en="Prompt" data-zh="提示词">Prompt</h1>
+      <p class="topic-banner-subtitle" data-en="AI cannot read your mind—this episode introduces Prompt and why you must tell it a clear destination, like riding a fast horse." data-zh="AI 没有读心术，本集认识 Prompt，并说明为什么要像骑马一样把目的地和目标说清楚。">AI cannot read your mind—this episode introduces Prompt and why you must tell it a clear destination, like riding a fast horse.</p>
+    </section>
 
-</style></head><body class="ai-page"><header class="site-header">
-<div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a>
-<p class="logo-tagline" aria-hidden="true"><span class="tag-learn" data-en="Learn" data-zh="学习">Learn</span><span class="tag-sep"> • </span><span class="tag-create" data-en="Create" data-zh="创作">Create</span><span class="tag-sep"> • </span><span class="tag-share" data-en="Share" data-zh="分享">Share</span><span class="tag-sep"> • </span><span class="tag-grow" data-en="Grow" data-zh="成长">Grow</span></p><span class="divider" aria-hidden="true"></span>
-<div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Kiwi 爱AI Study"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt=""></a></div></div>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a><a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a><a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a><a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a><a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a><a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a><a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
-<span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
-      </span></nav></header><main class="ai-main"><div class="ai-back"><a href="index.html" data-en="← Back to AI Education" data-zh="← 返回 AI 教育">← Back to AI Education</a></div><section class="nf-hero topic-banner" aria-label="Page introduction"><p class="topic-banner-kicker" data-en="AI KNOWLEDGE CLASSROOM · EPISODE 08" data-zh="AI 知识小课堂 · 第 8 集">AI KNOWLEDGE CLASSROOM · EPISODE 08</p><h1 data-en="What Is a Prompt?" data-zh="什么是 Prompt？">What Is a Prompt?</h1><p data-en="A prompt is how you tell AI what you want. AI may be powerful, but it cannot read your mind." data-zh="Prompt 是你告诉 AI 自己想做什么的沟通方式。AI 再强大，也不会读心术。">A prompt is how you tell AI what you want. AI may be powerful, but it cannot read your mind.</p></section><div class="ai-content"><figure class="ai-episode-cover ai-inline-cover ai-cover-right"><img data-ai-cover data-en-src="images/ai-learning-studio-episode-008-en-16x9.webp" data-zh-src="images/ai-learning-studio-episode-008-cn-16x9.webp" src="images/ai-learning-studio-episode-008-en-16x9.webp" alt="AI Knowledge Classroom Episode 8 cover"></figure><h2 data-en="AI cannot read your mind" data-zh="AI 不会读心术">AI cannot read your mind</h2><p data-en="Imagine a very fast, powerful horse. You climb on and say, “Run!” The horse can run — but where should it go? Without a destination, its power alone cannot take you where you want to be." data-zh="想象一匹速度很快、力量很强的骏马。你骑上去，只说一句：“跑！”马当然能跑，但它应该跑到哪里呢？没有目的地，光有力量也无法保证带你去想去的地方。">Imagine a very fast, powerful horse. You climb on and say, “Run!” The horse can run — but where should it go? Without a destination, its power alone cannot take you where you want to be.</p><p data-en="AI is similar. It can write, explain, create and help with complex tasks, but it does not know the details you have not provided. It needs to understand your goal, situation, requirements and the result you want." data-zh="AI 也有点像这匹马。它可以写作、解释、创作，也能帮助完成复杂任务，但它不知道你没有告诉它的细节。它需要理解你的目标、情况、要求，以及你希望得到什么结果。">AI is similar. It can write, explain, create and help with complex tasks, but it does not know the details you have not provided. It needs to understand your goal, situation, requirements and the result you want.</p><h2 data-en="A school-life example" data-zh="一个校园生活中的例子">A school-life example</h2><p data-en="Suppose you ask: “Write an absence email.” AI can produce an email, but it does not know who the email is for, why the student will be absent, how long the absence will be, or what tone you prefer." data-zh="假设你只说：“帮我写一封请假邮件。”AI 可以写出一封邮件，但它不知道邮件是写给谁的、学生为什么请假、请几天假，也不知道你希望语气正式还是轻松。">Suppose you ask: “Write an absence email.” AI can produce an email, but it does not know who the email is for, why the student will be absent, how long the absence will be, or what tone you prefer.</p><p data-en="Now try: “Write a short, polite email to my child's teacher. My child is sick and will be absent from school tomorrow for one day.” The extra details help AI understand the request more clearly." data-zh="现在换一种说法：“请帮我写一封简短、礼貌的邮件给孩子的老师。孩子生病了，明天需要请假一天。”这些补充信息能帮助 AI 更清楚地理解你的要求。">Now try: “Write a short, polite email to my child's teacher. My child is sick and will be absent from school tomorrow for one day.” The extra details help AI understand the request more clearly.</p><div class="ai-example"><strong data-en="Try this everyday example" data-zh="生活中的例子">Try this everyday example</strong><p data-en="Try it yourself: ask AI to explain a math problem. Include your grade, the topic you are studying, what part confuses you and whether you want a hint or a step-by-step explanation." data-zh="你也可以试试：让 AI 解释一道数学题。告诉它你的年级、正在学习的主题、具体哪里不明白，以及你希望它给提示还是一步步讲解。">Try it yourself: ask AI to explain a math problem. Include your grade, the topic you are studying, what part confuses you and whether you want a hint or a step-by-step explanation.</p></div><h2 data-en="A prompt does not need to be complicated" data-zh="Prompt 不一定要复杂">A prompt does not need to be complicated</h2><p data-en="The key is not to write the longest possible prompt. The key is to include the information that matters. A clear prompt gives AI a better direction and makes it easier for you to judge whether the answer meets your needs." data-zh="关键不是把 Prompt 写得越长越好，而是提供真正重要的信息。清晰的 Prompt 能让 AI 更明确方向，也方便你判断它的回答是否符合需要。">The key is not to write the longest possible prompt. The key is to include the information that matters. A clear prompt gives AI a better direction and makes it easier for you to judge whether the answer meets your needs.</p><p data-en="Next, we will explore focused prompts: how to keep a request on track instead of making it vague or scattered." data-zh="下一集，我们会进一步认识聚焦式提示词：怎样让要求保持清晰，而不是变得模糊、发散。">Next, we will explore focused prompts: how to keep a request on track instead of making it vague or scattered.</p><div style="clear:both"></div><div class="ai-bottom-nav"><a href="episode-special-learning.html" data-en="← Episode 7 Bonus: Why Keep Learning?" data-zh="← 第 7 集特别篇：为什么还要继续学习？">← Episode 7 Bonus: Why Keep Learning?</a><a href="episode-09.html" data-en="Episode 9: Focused Prompts →" data-zh="第 9 集：聚焦式提示词 →">Episode 9: Focused Prompts →</a></div><p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p></div></main><footer class="site-footer"><nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav><p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p></footer><script>
-(()=>{const nav={en:['Home','About','Math Education','AI Education','In-Class Learning','My Books','Contact'],zh:['首页','关于我们','数学教育','人工智能教育','课堂学习','我的书籍','联系我们']};const legal={en:['Privacy Policy','Terms of Service','Home'],zh:['隐私政策','服务条款','首页']};const btns=document.querySelectorAll('.flag[data-language]');function setLanguage(lang){const l=lang==='zh'?'zh':'en';document.documentElement.lang=l==='zh'?'zh-CN':'en-CA';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.innerHTML=el.getAttribute(l==='zh'?'data-zh':'data-en'));document.querySelectorAll('[data-ai-cover]').forEach(img=>{const source=img.getAttribute(l==='zh'?'data-zh-src':'data-en-src');if(source){img.src=source;img.style.display='block'}else{img.style.display='none'}});document.querySelectorAll('.site-nav [data-nav]').forEach((el,i)=>el.textContent=nav[l][i]);document.querySelectorAll('.site-footer [data-legal]').forEach((el,i)=>el.textContent=legal[l][i]);btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===l)));try{localStorage.setItem('kiwi-site-language',l)}catch(e){}}btns.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));let saved='en';try{saved=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(saved);window.addEventListener('pageshow',()=>{let l='en';try{l=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(l)});
-const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(x=>x.classList.toggle('active',x===btn));const f=btn.dataset.aiFilter;document.querySelectorAll('.ai-episode[data-category]').forEach(card=>card.hidden=!(f==='all'||card.dataset.category===f));}));
+    <!-- LEVEL-4 BODY START -->
+    <article class="nf-section ep-article" aria-label="Episode article">
+
+      <div class="ep-pair">
+        <p class="nf-lead" data-en="Welcome to Episode 8. Before the keyword: this is not a traditional classroom—I am not your teacher. Think of me as a classmate, friend, or colleague learning AI with you." data-zh="欢迎来到第 8 集。先说几句：这里不是传统课堂，我不是你的老师。我更愿意把自己当成你身边的同学、朋友或同事。">Welcome to Episode 8. Before the keyword: this is not a traditional classroom—I am not your teacher. Think of me as a classmate, friend, or colleague learning AI with you.</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-008/magazine/ep08-mag-01-learn-together.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Learn · use · explore—together." data-zh="一起学习 · 使用 · 探索。">Learn · use · explore—together.</figcaption>
+        </figure>
+        <p data-en="We learn AI, use AI, and explore AI side by side. You can question me, correct me, and teach me something I missed—that back-and-forth is part of how humans and tools grow." data-zh="我们一起学习 AI、使用 AI、探索 AI。你也可以质疑我、纠正我、教我我不懂的事——这种来回正是人和工具一起成长的方式。">We learn AI, use AI, and explore AI side by side. You can question me, correct me, and teach me something I missed—that back-and-forth is part of how humans and tools grow.</p>
+        <p data-en="Episode 7 drew the concept map; today we zoom in on the first big label: <strong>Prompt</strong> (提示词)—how you tell AI what you want." data-zh="第 7 集画了概念地图；今天放大第一个重要标签：<strong>Prompt</strong>（提示词）——你怎样告诉 AI 你想要什么。">Episode 7 drew the concept map; today we zoom in on the first big label: <strong>Prompt</strong> (提示词)—how you tell AI what you want.</p>
+        <p data-en="You might wonder: if AI is so powerful, can’t we just say “do everything for me” and walk away? That fantasy breaks the moment you remember—AI does not know what you never said." data-zh="你可能会想：AI 这么强大，能不能只说“帮我做一切”就走开？只要一想起——你没说的事，AI 并不知道——这个幻想就站不住了。">You might wonder: if AI is so powerful, can’t we just say “do everything for me” and walk away? That fantasy breaks the moment you remember—AI does not know what you never said.</p>
+        <p data-en="You can be my teacher too—if you spot a better example or a clearer way to say it, that feedback is part of the lesson." data-zh="你也完全可以成为我的老师——若你发现更好的例子或更清楚的表达方式，那种反馈本身就是课程的一部分。">You can be my teacher too—if you spot a better example or a clearer way to say it, that feedback is part of the lesson.</p>
+      </div>
+
+      <h2 id="ep8-no-mind" data-en="No mind-reading" data-zh="没有读心术">No mind-reading</h2>
+      <p data-en="AI has no telepathy. It works from the words and files you supply—not from silent wishes." data-zh="AI 没有读心术。它依据你提供的文字和文件工作——而不是无声的心愿。">AI has no telepathy. It works from the words and files you supply—not from silent wishes.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-008/magazine/ep08-mag-03-no-mind-reading.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Powerful brain · not a psychic." data-zh="强大的“大脑”· 不是通灵者。">Powerful brain · not a psychic.</figcaption>
+        </figure>
+        <p data-en="A model can draft essays, code, and plans—but it cannot see inside your head. It guesses from <em>prompt</em> text plus whatever context the app keeps on the desk." data-zh="模型能写 Essay、写代码、做方案——但看不见你脑子里的想法。它只能根据<em>提示词</em>文本，加上应用留在“桌上”的上下文去推测。">A model can draft essays, code, and plans—but it cannot see inside your head. It guesses from <em>prompt</em> text plus whatever context the app keeps on the desk.</p>
+        <p data-en="What is your goal? What situation are you in? What limits apply? What result counts as “done”? Unspoken details stay unknown; the reply can only reflect what you typed." data-zh="你的目标是什么？面对什么情况？有什么限制？什么算“完成”？没写出来的细节 AI 就不知道；回答只能反映你打下的字。">What is your goal? What situation are you in? What limits apply? What result counts as “done”? Unspoken details stay unknown; the reply can only reflect what you typed.</p>
+        <p data-en="The smarter the tool, the more important your directions become. Power without a heading is like horsepower without a map." data-zh="工具越聪明，你的方向说明越重要。有能力却没有指向，就像有力气却没有地图。">The smarter the tool, the more important your directions become. Power without a heading is like horsepower without a map.</p>
+        <p data-en="It only helps from the information in your prompt (plus what the product allows as context). Missing facts are not hidden guesses—they are simply missing." data-zh="它只会根据你提示词里的信息（以及产品允许的上下文）来帮忙。缺的事实不是藏在心里的猜测——就是没提供。">It only helps from the information in your prompt (plus what the product allows as context). Missing facts are not hidden guesses—they are simply missing.</p>
+      </div>
+
+      <h2 id="ep8-horse" data-en="The fast horse" data-zh="骏马与方向">The fast horse</h2>
+      <p data-en="Picture an excellent horse—fast, strong, able to travel far." data-zh="想象一匹非常优秀的骏马——跑得很快、力量很大、能带你走很远。">Picture an excellent horse—fast, strong, able to travel far.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-008/magazine/ep08-mag-02-horse-destination.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="“Run!” is not enough—name the flag." data-zh="只说“跑！”不够——要指出旗子。">“Run!” is not enough—name the flag.</figcaption>
+        </figure>
+        <p data-en="You climb on and shout, “Run!” It can sprint—but <em>where</em>? Without a destination, all that energy has no target. A vague direction might move you roughly right; the path stays fuzzy." data-zh="你骑上去喊一声：“跑！” 它当然能跑——但<em>跑到哪里</em>？不说目的地，再强的奔跑也没有目标。只给大概方向，也许能朝那边走，具体怎么走仍不清楚。">You climb on and shout, “Run!” It can sprint—but <em>where</em>? Without a destination, all that energy has no target. A vague direction might move you roughly right; the path stays fuzzy.</p>
+        <p data-en="Point the wrong way and the same horse will gallop confidently toward the wrong town. The issue is not the legs; it is the rider’s instructions." data-zh="若指错方向，同一匹马也会很有信心地奔向错误的小镇。问题不在腿力，而在骑手有没有说清楚要去哪里。">Point the wrong way and the same horse will gallop confidently toward the wrong town. The issue is not the legs; it is the rider’s instructions.</p>
+        <p data-en="AI is like that horse: capable of long, complex work, faster every year—yet it still needs you to say where you are going." data-zh="AI 也像这匹马：能完成一连串复杂任务，一年比一年快——但仍需要你说明要去哪里。">AI is like that horse: capable of long, complex work, faster every year—yet it still needs you to say where you are going.</p>
+        <p data-en="Episode 7’s <strong>Prompt</strong> is the reins and the route you hand over before the run starts." data-zh="第 7 集地图上的 <strong>Prompt</strong>，就是你开跑前递过去的缰绳与路线。">Episode 7’s <strong>Prompt</strong> is the reins and the route you hand over before the run starts.</p>
+      </div>
+
+      <h2 id="ep8-details" data-en="Tell AI what matters" data-zh="把重要信息说清楚">Tell AI what matters</h2>
+      <p data-en="The real question is not “Can it run?” but “Did I say where to run?”" data-zh="真正重要的不是“它能不能跑”，而是“我有没有说清要跑到哪里”。">The real question is not “Can it run?” but “Did I say where to run?”</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-008/magazine/ep08-mag-04-tell-ai-what.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Goal · situation · limits · outcome." data-zh="目标 · 情况 · 限制 · 结果。">Goal · situation · limits · outcome.</figcaption>
+        </figure>
+        <p data-en="A useful prompt often bundles the questions your classmate would ask before helping: Who is this for? What happened? What format? How formal? How long?" data-zh="有用的 Prompt 常打包同学帮忙前会问清的事：写给谁？发生什么了？要什么格式？语气如何？多长？">A useful prompt often bundles the questions your classmate would ask before helping: Who is this for? What happened? What format? How formal? How long?</p>
+        <p data-en="You do not need jargon—plain sentences work. The habit is: notice what you already know in your head, then move it into the message." data-zh="不必堆砌术语——大白话就可以。习惯是：先察觉脑子里已有的信息，再写进消息里。">You do not need jargon—plain sentences work. The habit is: notice what you already know in your head, then move it into the message.</p>
+        <p data-en="The stronger AI gets, the more this habit pays off. You are not “babysitting” the tool; you are steering it." data-zh="AI 越强，这个习惯越值钱。你不是在“哄”工具，而是在驾驭它。">The stronger AI gets, the more this habit pays off. You are not “babysitting” the tool; you are steering it.</p>
+        <p data-en="When someone says AI “should have known,” translate that in your head: “I expected it to read my mind.” Prompt is where you stop expecting magic and start giving directions." data-zh="若有人说 AI“本该知道”，你心里翻译成：“我以为它会读心。” Prompt 就是你不再指望魔法、开始给方向的地方。">When someone says AI “should have known,” translate that in your head: “I expected it to read my mind.” Prompt is where you stop expecting magic and start giving directions.</p>
+        <p data-en="That communication channel is the heart of Phase 2 on the Episode 7 map—everything else plugs in after you speak first." data-zh="这种人机沟通方式，就是第 7 集地图第二阶段的核心——你先开口，后面的概念才能接上。">That communication channel is the heart of Phase 2 on the Episode 7 map—everything else plugs in after you speak first.</p>
+      </div>
+
+      <h2 id="ep8-everyday" data-en="A prompt you already use" data-zh="你其实每天都在写 Prompt">A prompt you already use</h2>
+      <p data-en="You may have been prompting for months without the label." data-zh="你可能几个月来一直在写 Prompt，只是没意识到这个名字。">You may have been prompting for months without the label.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-008/magazine/ep08-mag-05-leave-email.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Vague ask → specific ask." data-zh="模糊请求 → 具体请求。">Vague ask → specific ask.</figcaption>
+        </figure>
+        <p data-en="Try: “Help me write a leave email.” AI can draft something—but does it know how many days, the reason, the teacher’s name, or the tone you want?" data-zh="试着说：“帮我写一封请假邮件。” AI 能写——但它知道请几天、为什么请、写给哪位老师、要什么语气吗？">Try: “Help me write a leave email.” AI can draft something—but does it know how many days, the reason, the teacher’s name, or the tone you want?</p>
+        <p data-en="Compare: “Write a polite note to my child’s teacher. My kid is sick and cannot attend school tomorrow—one day off. Keep it short.” Now the model has a destination on the map." data-zh="对比：“帮我写一封给老师的请假邮件，孩子明天生病不能上学，请假一天，语气礼貌、简单一点。” 模型就知道地图上的目的地了。">Compare: “Write a polite note to my child’s teacher. My kid is sick and cannot attend school tomorrow—one day off. Keep it short.” Now the model has a destination on the map.</p>
+        <p data-en="That is a <strong>Prompt</strong>. It need not be fancy; it must be honest about what you actually want." data-zh="这就是 <strong>Prompt</strong>。不必花哨，关键是把你真正想要的事说清楚。">That is a <strong>Prompt</strong>. It need not be fancy; it must be honest about what you actually want.</p>
+        <p data-en="Next time you paste a one-line question, ask yourself what a helpful friend would still need to know—and type that too." data-zh="下次你若只贴一行问题，先问自己：一个想帮你的朋友还会想知道什么——也一起写下来。">Next time you paste a one-line question, ask yourself what a helpful friend would still need to know—and type that too.</p>
+      </div>
+
+      <h2 id="ep8-good" data-en="What makes a good prompt?" data-zh="什么样的 Prompt 算好？">What makes a good prompt?</h2>
+      <p data-en="Since prompt is how people and AI talk, the next puzzle is quality—not length for its own sake." data-zh="提示词是人机沟通方式，下一个谜题是“好坏”——不是为了长而长。">Since prompt is how people and AI talk, the next puzzle is quality—not length for its own sake.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-008/magazine/ep08-mag-06-focused-next.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Next: focused direction." data-zh="下一集：聚焦方向。">Next: focused direction.</figcaption>
+        </figure>
+        <div class="ep-flow-col">
+          <p data-en="A new question follows: Is longer always better? Or does a <em>focused</em> prompt—clear aim, fewer wrong paths—help more?" data-zh="新问题来了：是不是越长越好？还是<em>聚焦</em>的 Prompt——目标清楚、少绕弯路——更有用？">A new question follows: Is longer always better? Or does a <em>focused</em> prompt—clear aim, fewer wrong paths—help more?</p>
+          <p data-en="Episode 9 introduces <strong>focused prompts</strong>: how they differ from scattered, “throw everything in” prompts, and why more words sometimes mean more noise." data-zh="第 9 集讲 <strong>聚焦式提示词</strong>：它和“什么都往里扔”的发散式有什么不同，为什么有时字越多反而越吵。">Episode 9 introduces <strong>focused prompts</strong>: how they differ from scattered, “throw everything in” prompts, and why more words sometimes mean more noise.</p>
+          <p data-en="Today’s job was simple: name Prompt, drop the mind-reading myth, and practice telling AI the destination. Depth on focus comes next." data-zh="今天的任务很简单：认识 Prompt，放下读心术幻想，练习告诉 AI 目的地。关于“聚焦”的深度，下一集再聊。">Today’s job was simple: name Prompt, drop the mind-reading myth, and practice telling AI the destination. Depth on focus comes next.</p>
+          <p data-en="We will compare <strong>focused</strong> prompts with looser, scattershot ones, and ask when extra detail helps—and when it only distracts." data-zh="我们会比较<strong>聚焦式</strong>与较发散的 Prompt，并讨论：何时多写一点有用，何时只会添乱。">We will compare <strong>focused</strong> prompts with looser, scattershot ones, and ask when extra detail helps—and when it only distracts.</p>
+          <p class="nf-note" data-en="Before you send a prompt, silently add: goal, audience, facts, limits, and the result I need. Five checkpoints—one quick breath." data-zh="发送前默念：目标、对象、事实、限制、我要的结果。五个检查点——吸一口气就够。">Before you send a prompt, silently add: goal, audience, facts, limits, and the result I need. Five checkpoints—one quick breath.</p>
+        </div>
+      </div>
+
+      <h2 id="ep8-next" data-en="Coming up next" data-zh="下一集预告">Coming up next</h2>
+      <p data-en="Episode 9: <strong>Focused prompts</strong>—how to aim AI’s horsepower at one flag instead of a field of maybes." data-zh="第 9 集：<strong>聚焦式提示词</strong>——怎样让 AI 的“马力”对准一面旗，而不是一片问号。">Episode 9: <strong>Focused prompts</strong>—how to aim AI’s horsepower at one flag instead of a field of maybes.</p>
+      <p data-en="Until then, rewrite one vague message you send often—add destination, facts, and tone. Small edit, big difference. See you next time." data-zh="在那之前，挑一条你常发的模糊消息改写——补上目的地、事实和语气。小改动，大差别。下一集见。">Until then, rewrite one vague message you send often—add destination, facts, and tone. Small edit, big difference. See you next time.</p>
+    </article>
+
+    <nav class="ai-bottom-nav" aria-label="Episode navigation">
+      <a href="episode-special-learning.html" data-en="← Special: AI Is Powerful" data-zh="← 第 7 集特别篇：AI 这么厉害">← Special: AI Is Powerful</a>
+      <a href="episode-09.html" data-en="Episode 9: Focused Prompts →" data-zh="第 9 集：聚焦式提示词 →">Episode 9: Focused Prompts →</a>
+    </nav>
+    <p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
 })();
-</script>
-<script>
-/* Remove legacy GTranslate cookies left by earlier test versions. */
+  </script>
+  <script>
 (() => {
   const host = location.hostname;
   const domains = ['', host, host ? '.' + host : ''];
@@ -111,5 +253,7 @@ const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=
     }));
   });
 })();
-</script>
-<script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script></body></html>
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261109-ep8" defer></script>
+</body>
+</html>
