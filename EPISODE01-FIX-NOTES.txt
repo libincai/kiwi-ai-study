@@ -1,5 +1,0 @@
-Episode 1 corrections
-- Hero banner has square top corners and rounded bottom corners.
-- Hero image participates in the existing language switch; Chinese and English hero assets are selected by language.
-- Panels 06-15 have been replaced with clean standalone artwork crops without the old yellow title-strip remnants.
-- Other pages and the homepage were not intentionally changed.
