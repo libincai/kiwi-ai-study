@@ -1080,3 +1080,29 @@ Every Math Foundations Level 4 sidebar must end with a separate, visually divide
 - Geometry & Space Level 4 sidebars must not contain Trigonometry.
 - Trigonometry Level 4 sidebars contain its own lessons (Understanding Trigonometry, Three Sides, Four Ratios, Special Right Triangles).
 - The Level 3 category card links directly to the first Trigonometry Level 4 lesson.
+
+
+### Level 4 topic banner overflow fix (desktop and mobile)
+
+- Use min-height: 150px and height: auto; never fixed height or maximum height.
+- Do not clip title or subtitle with overflow:hidden, max-height, or line-clamp.
+- On narrow screens, allow the title to wrap rather than cropping it.
+- Keep subtitle copy concise (prefer two lines), but never truncate text via CSS.
+- Apply the shared .nf-hero.topic-banner rule to both Math Foundations and Mathematical Thinking.
+
+
+### Level 4 Banner — Mobile Text Containment (2026-11-09)
+- Applies to Math Foundations and Mathematical Thinking Level 4 topic pages.
+- Keep the kicker, category heading, and category-level subtitle **inside** the gradient banner and its rounded border at every viewport size.
+- Use content-driven height (`height:auto; min-height:150px`) with adequate padding, never clipping text or placing it outside the banner.
+- On mobile, allow kicker and heading to wrap naturally, and do not line-clamp the subtitle.
+- The kicker identifies the Level 3 parent (e.g., `MATH FOUNDATIONS`), not a lesson-specific name.
+- The subtitle describes the Level 4 **category**, not the first lesson (e.g., Number Families).
+
+
+### Level 3 category cards — mobile CTA alignment (2026-11-09)
+For both Math Foundations and Mathematical Thinking category indexes, preserve the desktop horizontal card layout. On screens at or below 760px, use a two-column first row (number badge at left, heading and description at right) and a second full-width row with the “Explore topics →” CTA right-aligned. The CTA must remain on one line; never allow it to collapse into a narrow first column or wrap into stacked words. Apply identically in English and Chinese.
+
+
+### Level 3 Mobile Category CTA Typography
+On mobile, place the Explore topics CTA at the bottom right of each category card, but retain the same inherited font, weight, and text color as the desktop version. Do not add mobile-only blue coloring or bold emphasis. Applies to Math Foundations and Mathematical Thinking.

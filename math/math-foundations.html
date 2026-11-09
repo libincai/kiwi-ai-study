@@ -28,6 +28,14 @@
 .edu-button:hover{background:#10548f}
 @media(max-width:760px){.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
   
+
+/* Level 3 category cards: on phones keep the CTA on its own bottom row. */
+@media (max-width:760px){
+  .edu-topic{grid-template-columns:46px minmax(0,1fr);column-gap:12px;row-gap:12px;align-items:start;padding:16px}
+  .edu-topic-number{grid-column:1;grid-row:1;width:46px;height:46px}
+  .edu-topic>div{grid-column:2;grid-row:1;min-width:0}
+  .edu-topic-cta{grid-column:1 / -1;grid-row:2;justify-self:end;align-self:center;white-space:nowrap;max-width:100%;font-size:inherit;font-weight:inherit;color:inherit;text-align:right;line-height:1.4}
+}
 </style>
 </head>
 <body class="edu-page">

@@ -4244,3 +4244,95 @@ html body main .nf-hero.topic-banner > p:last-child {
     box-sizing: border-box !important;
   }
 }
+
+/* Level 4 topic banner: content-driven height on desktop and mobile.
+   No clipping, line clamp or fixed height; mobile headings may wrap. */
+html body main .nf-hero.topic-banner,
+html body.ai-page main.ai-main > .nf-hero.topic-banner {
+  height: auto !important;
+  min-height: 150px !important;
+  max-height: none !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+html body main .nf-hero.topic-banner > h1,
+html body.ai-page main.ai-main > .nf-hero.topic-banner > h1 {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  max-height: none !important;
+}
+html body main .nf-hero.topic-banner > p:last-child,
+html body.ai-page main.ai-main > .nf-hero.topic-banner > p:last-child {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  -webkit-box-orient: initial !important;
+  overflow: visible !important;
+  max-height: none !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+}
+@media (max-width: 760px) {
+  html body main .nf-hero.topic-banner,
+  html body.ai-page main.ai-main > .nf-hero.topic-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: none !important;
+    padding: 24px 23px !important;
+  }
+}
+
+
+/* Level 4 responsive banner: 2026-11-09. Keep every text node inside the rounded panel. */
+html body.topic-page main .nf-hero.topic-banner,
+html body main .nf-hero.topic-banner,
+html body main .nf-hero.topic-banner.foundation-topic-banner {
+  display: block !important; position: relative !important;
+  box-sizing: border-box !important; width: 100% !important;
+  height: auto !important; min-height: 150px !important;
+  max-height: none !important; overflow: hidden !important;
+  padding: 24px 38px !important;
+}
+html body main .nf-hero.topic-banner > .topic-banner-kicker {
+  position: static !important; display: block !important;
+  width: auto !important; max-width: 100% !important;
+  white-space: normal !important; overflow-wrap: break-word !important;
+  overflow: visible !important; text-overflow: clip !important;
+  margin: 0 0 12px !important;
+}
+html body main .nf-hero.topic-banner > h1 {
+  position: static !important; display: block !important;
+  white-space: normal !important; overflow-wrap: break-word !important;
+  overflow: visible !important; text-overflow: clip !important;
+  max-height: none !important;
+}
+html body main .nf-hero.topic-banner > .topic-banner-subtitle,
+html body main .nf-hero.topic-banner > p:last-child {
+  position: static !important; display: block !important;
+  white-space: normal !important; overflow-wrap: break-word !important;
+  overflow: visible !important; max-height: none !important;
+  -webkit-line-clamp: unset !important; line-clamp: unset !important;
+  margin-bottom: 0 !important;
+}
+@media (max-width: 700px) {
+  html body.topic-page main .nf-hero.topic-banner,
+  html body main .nf-hero.topic-banner,
+  html body main .nf-hero.topic-banner.foundation-topic-banner {
+    height: auto !important; min-height: 150px !important;
+    padding: 22px 22px 25px !important;
+  }
+  html body main .nf-hero.topic-banner > .topic-banner-kicker {
+    font-size: 11px !important; line-height: 1.45 !important;
+    letter-spacing: .10em !important;
+  }
+  html body main .nf-hero.topic-banner > h1 {
+    font-size: clamp(25px, 7vw, 29px) !important;
+    line-height: 1.25 !important;
+  }
+  html body main .nf-hero.topic-banner > .topic-banner-subtitle,
+  html body main .nf-hero.topic-banner > p:last-child {
+    font-size: 15px !important; line-height: 1.55 !important;
+  }
+}
