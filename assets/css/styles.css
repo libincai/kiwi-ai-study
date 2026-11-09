@@ -3185,15 +3185,33 @@ html body .edu-cta .edu-button {
   color: #173e70 !important;
 }
 
-/* Instructor profile: text-led layout without the former Sherry Cai signature image */
-.edu-instructor-no-photo { display: block; }
+/* Instructor profile: text-led layout without the former photo column */
+.edu-instructor.edu-instructor-no-photo {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: none !important;
+  grid-template-rows: none !important;
+  gap: 0 !important;
+}
+.edu-instructor.edu-instructor-no-photo > div {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+}
 .edu-instructor-no-photo .instructor-name {
   margin: 0 0 12px;
   color: #173e70;
   font-size: 23px;
   line-height: 1.25;
 }
-.edu-instructor-no-photo .edu-lead { max-width: none; }
+.edu-instructor-no-photo p,
+.edu-instructor-no-photo .edu-lead {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
 
 
 /* Consistent footer hierarchy across the homepage and inner pages */
@@ -4000,6 +4018,43 @@ html body main .nf-hero.topic-banner > p:last-child {
     font-size: 15px !important;
     line-height: 1.55 !important;
     max-height: 3.1em !important;
+  }
+}
+
+
+/* Level 4 topic banner — mobile: grow in height when kicker, title, or subtitle wrap. */
+@media (max-width: 760px) {
+  html body:not(.home-page) main .topic-banner,
+  html body:not(.home-page) main .nf-hero.topic-banner {
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: none !important;
+    overflow: visible !important;
+    justify-content: flex-start !important;
+  }
+  html body:not(.home-page) main .topic-banner .topic-banner-kicker,
+  html body:not(.home-page) main .nf-hero.topic-banner > .topic-banner-kicker {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
+  }
+  html body:not(.home-page) main .topic-banner h1,
+  html body:not(.home-page) main .nf-hero.topic-banner > h1 {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere !important;
+  }
+  html body:not(.home-page) main .topic-banner-subtitle,
+  html body:not(.home-page) main .topic-banner > p:last-child,
+  html body:not(.home-page) main .nf-hero.topic-banner > p:last-child {
+    display: block !important;
+    -webkit-box-orient: unset !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 }
 
