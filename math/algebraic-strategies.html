@@ -179,6 +179,29 @@
 .kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
 .kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
 .kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+<style>
+/* Word-to-Web: consistent educational information panels */
+.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{box-sizing:border-box;display:block;width:100%;max-width:100%;margin:1.15rem 0;padding:1rem 1.2rem;background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e4b54e;border-radius:12px;color:#503d24;text-align:left;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
+.kiwi-insight-panel p,.kiwi-curriculum-panel p,.kiwi-word-info-panel p,.kiwi-insight-panel li,.kiwi-curriculum-panel li,.kiwi-word-info-panel li{color:inherit;text-align:left;font-weight:400}
+.kiwi-insight-panel strong,.kiwi-curriculum-panel strong,.kiwi-word-info-panel strong{font-weight:700}
+.kiwi-insight-header,.kiwi-word-info-header{display:flex;align-items:center;gap:.65rem;margin:0 0 .55rem;font-weight:700;color:#895b0e;text-align:left}
+.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
+.kiwi-insight-icon,.kiwi-word-info-icon{flex:none;font-size:1.1rem;line-height:1.2}
+.kiwi-insight-body>*:first-child,.kiwi-word-info-body>*:first-child{margin-top:0}
+.kiwi-insight-body>*:last-child,.kiwi-word-info-body>*:last-child{margin-bottom:0}
+.kiwi-curriculum-panel{border-left-color:#e4b54e}
+.kiwi-curriculum-panel .kiwi-curriculum-heading{display:block;margin-bottom:.5rem;color:#895b0e;font-weight:700;text-align:left}
+.kiwi-curriculum-panel p:first-child{margin-top:0}
+.kiwi-word-info-panel ul,.kiwi-word-info-panel ol{padding-left:1.5rem;margin-left:0}
+.kiwi-word-info-panel .kiwi-math-block,.kiwi-insight-panel .kiwi-math-block,.kiwi-curriculum-panel .kiwi-math-block{text-align:center;margin-left:auto;margin-right:auto}
+.kiwi-word-info-panel math[display="block"],.kiwi-insight-panel math[display="block"],.kiwi-curriculum-panel math[display="block"]{display:block;margin-inline:auto}
+@media(max-width:600px){.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{padding:.85rem 1rem}}
 </style></head>
 <body class="topic-page">
 <header class="site-header">
@@ -223,13 +246,7 @@
 <!-- LEVEL-4 BODY START -->
 <div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a href="why-simplified-calculation.html">Why Simplified Calculation</a><a href="number-strategies.html">Number Strategies</a><a class="active" href="algebraic-strategies.html">Algebraic Strategies</a><a href="geometric-strategies.html">Geometric Strategies</a><a href="number-shape-thinking.html">Number–Shape Thinking</a><a href="mathematical-thinking.html">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Algebraic Strategies" data-zh="Algebraic Strategies">Algebraic Strategies</h2><section class="nf-section word-topic kiwi-generated-content"><p>Use algebraic relationships to transform complicated expressions into
 simpler forms.</p><details class="lesson-card" open=""><summary>Taming Infinity —
-The Disappearing Tail Trick</summary><div class="lesson-card-body"><table>
-<colgroup>
-<col style="width: 100%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th><p><strong>Ontario Curriculum Connection</strong></p>
+The Disappearing Tail Trick</summary><div class="lesson-card-body"><aside class="kiwi-curriculum-panel" role="note"><p class="kiwi-curriculum-heading"><strong>Ontario Curriculum Connection</strong></p>
 <p><strong>Grade 9 Mathematics — B1.3</strong></p>
 <p>The Ontario Ministry of Education includes the following expectation
 in the Grade 9 Mathematics curriculum:</p>
@@ -242,12 +259,7 @@ B: Number, Expectation B1.3.</p>
 <p>This activity explores infinity through repeating decimals and
 endless sums. The Disappearing Tail Trick demonstrates how algebraic
 reasoning can be used to work with an apparently endless decimal and
-express it as an exact fraction.</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table><p>Sometimes in math we meet numbers that <strong>never end</strong> —
+express it as an exact fraction.</p></aside><p>Sometimes in math we meet numbers that <strong>never end</strong> —
 like repeating decimals (0.3333…) or sums that keep going
 forever:12+14+18+…</p><p>They look impossible to finish — but there’s a smart trick to “trap”
 the infinity “<strong>∞</strong>” and turn it into a normal number.</p><p>The idea is simple:</p><ol type="1">
@@ -261,13 +273,7 @@ disappear.</p></li>
 <li><p><strong>Solve</strong> the equation.</p></li>
 </ol><p>We call this the <strong>Disappearing Tail Trick</strong> — because
 we make the endless part vanish!</p><h4 id="repeating-decimal-to-fraction">Repeating Decimal to
-Fraction</h4><table>
-<colgroup>
-<col style="width: 100%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th><p><strong>Ontario Curriculum Connection</strong></p>
+Fraction</h4><aside class="kiwi-curriculum-panel" role="note"><p class="kiwi-curriculum-heading"><strong>Ontario Curriculum Connection</strong></p>
 <p><strong>Grade 6 Mathematics — B1.6</strong></p>
 <p>The Ontario Mathematics curriculum addresses relationships and
 equivalences between fractions and decimal numbers, including repeating
@@ -288,12 +294,7 @@ equation, and subtract the equations to eliminate the repeating
 part.</p>
 <p>The technique connects number patterns, fraction equivalence, and
 algebraic manipulation while encouraging mathematical
-reasoning.</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table><h5 id="digit-repeating-decimal">1-digit repeating decimal </h5><p>Let’s turn
+reasoning.</p></aside><h5 id="digit-repeating-decimal">1-digit repeating decimal </h5><p>Let’s turn
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>.</mi><mover><mn>3</mn><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">0.\overline{3}</annotation></semantics></math>
 into a fraction.</p><ol type="1">
 <li><p>Let</p></li>
@@ -317,7 +318,7 @@ a &amp; = \frac{1}{3}
 \end{aligned}</annotation></semantics></math>So,</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>.</mi><mover><mn>3</mn><mo accent="true">¯</mo></mover><mo>=</mo><mn>0.3333</mn><mi>…</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding="application/x-tex">0.\overline{3} = 0.3333\ldots = \frac{1}{3}</annotation></semantics></math></div><p>From the above calculation, you may already have discovered the
 solution pattern: 10 times a 1-digit repeating decimal equals its
 whole-number part plus the same repeating decimal. So the result is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝐫</mi><mi>𝐞</mi><mi>𝐩</mi><mi>𝐞</mi><mi>𝐚</mi><mi>𝐭</mi><mi>𝐢</mi><mi>𝐧</mi><mi>𝐠</mi><mspace width="0.222em"></mspace><mi>𝐝</mi><mi>𝐢</mi><mi>𝐠</mi><mi>𝐢</mi><mi>𝐭</mi></mrow><mo>÷</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\mathbf{repeating\ digit} \div 9</annotation></semantics></math></div><p>In this case the repeating digit is 3, so the result is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi>.</mi><mover><mn>3</mn><mo accent="true">¯</mo></mover><mo>=</mo><mfrac><mn>3</mn><mn>9</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding="application/x-tex">0.\overline{3} = \frac{3}{9} = \frac{1}{3}</annotation></semantics></math></div><p>You can do the same for other 1-digit repeating decimals such as
-0.7777…</p><p>Here lists all 1-Digit repeat decimals and their fractions:</p><p><img src="../assets/math-word/image36.jpg" style="width:172.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><h5 id="digit-repeating-decimal-1">2-digit repeating decimal</h5><p>Let’s turn 0.18 into a fraction.</p><ol type="1">
+0.7777…</p><p>Here lists all 1-Digit repeat decimals and their fractions:</p><p><img loading="lazy" src="../assets/math-word/image36.jpg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h5 id="digit-repeating-decimal-1">2-digit repeating decimal</h5><p>Let’s turn 0.18 into a fraction.</p><ol type="1">
 <li><p>Let</p></li>
 </ol><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>0</mn><mi>.</mi><mover><mn>18</mn><mo accent="true">¯</mo></mover><mo>=</mo><mn>0.181818</mn><mi>…</mi></mrow><annotation encoding="application/x-tex">a = 0.\overline{18} = 0.181818\ldots</annotation></semantics></math></div><ol start="2" type="1">
 <li><p>Multiply by 100:</p></li>
@@ -349,14 +350,8 @@ repeating digits</strong>, and</p></li>
 <strong>the same number of digits as the repeating
 part</strong>.</p></li>
 </ul><p>With this rule, we can easily convert any repeating decimal, as shown
-below:</p><p><img src="../assets/math-word/image37.jpeg" style="width:170.75px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><h4 id="infinite-halves-thirds-and-more">Infinite Halves, Thirds, and
-More</h4><table>
-<colgroup>
-<col style="width: 100%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th><p><strong>Ontario Curriculum Connection</strong></p>
+below:</p><p><img loading="lazy" src="../assets/math-word/image37.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h4 id="infinite-halves-thirds-and-more">Infinite Halves, Thirds, and
+More</h4><aside class="kiwi-curriculum-panel" role="note"><p class="kiwi-curriculum-heading"><strong>Ontario Curriculum Connection</strong></p>
 <p><strong>Grade 11 Functions — C2: Sequences and Series</strong></p>
 <p>The Ontario curriculum expects students to demonstrate an
 understanding of the relationships involved in arithmetic and geometric
@@ -371,12 +366,7 @@ sum.</p>
 <p>The infinite-series method is presented as an extension of the
 curriculum concepts, rather than as a claim that the curriculum
 explicitly requires this particular technique.</p>
-<p>Official source: <a href="https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf">https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf</a></p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table><h5 id="infinite-halves">Infinite halves</h5><p>Now let’s look at a sum that never ends:</p><blockquote>
+<p>Official source: <a href="https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf">https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf</a></p></aside><h5 id="infinite-halves">Infinite halves</h5><p>Now let’s look at a sum that never ends:</p><blockquote>
 <div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>16</mn></mfrac><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \cdots</annotation></semantics></math></div>
 </blockquote><p>It looks infinite, but it has a value!</p><ol type="1">
 <li><p>Let</p></li>
@@ -463,13 +453,7 @@ into the formula!</p>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n &gt; 1</annotation></semantics></math>,
 so the terms get smaller and the infinite sum converges.</p>
 </blockquote></div></details><details class="lesson-card"><summary>Discovering a
-Square Root Estimation Formula</summary><div class="lesson-card-body"><table>
-<colgroup>
-<col style="width: 100%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th><p><strong>Ontario Curriculum Connection</strong></p>
+Square Root Estimation Formula</summary><div class="lesson-card-body"><aside class="kiwi-curriculum-panel" role="note"><p class="kiwi-curriculum-heading"><strong>Ontario Curriculum Connection</strong></p>
 <p><strong>Grade 9 Mathematics — C1.2: Generalizing
 Relationships</strong></p>
 <p>The Ontario curriculum expects students to create algebraic
@@ -495,12 +479,7 @@ difference can be treated as a correction term when developing an
 approximation.</p>
 <p><strong>This activity extends the curriculum concepts</strong> by
 applying algebraic reasoning to discover a square root estimation
-formula rather than simply memorizing a rule.</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table><p>A calculator can give us a decimal approximation of a square root,
+formula rather than simply memorizing a rule.</p></aside><p>A calculator can give us a decimal approximation of a square root,
 but can we use mathematical reasoning and algebra to discover a useful
 approximation ourselves?</p><p>Before deriving a formula, let us explore two simple ways to estimate
 square roots. Each method will help us understand the problem a little
@@ -718,13 +697,7 @@ possible.</p></li>
 </ul><p>Mathematics is not simply a collection of formulas to memorize. It is
 a connected system of ideas in which many results can be discovered
 through reasoning.</p></div></details><details class="lesson-card"><summary>Estimating
-Square Roots with Repeated Correction</summary><div class="lesson-card-body"><table>
-<colgroup>
-<col style="width: 100%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th><p><strong>Ontario Curriculum Connection</strong></p>
+Square Roots with Repeated Correction</summary><div class="lesson-card-body"><aside class="kiwi-curriculum-panel" role="note"><p class="kiwi-curriculum-heading"><strong>Ontario Curriculum Connection</strong></p>
 <p><strong>Grade 9 Mathematics — C1.2: Generalizing
 Relationships</strong></p>
 <p>The Ontario curriculum expects students to create algebraic
@@ -750,12 +723,7 @@ this relationship to develop a repeated-correction method.</p>
 <p><strong>This activity extends the curriculum</strong> by applying
 algebraic reasoning to numerical approximation and iterative
 improvement.</p>
-<p>Official source: <a href="https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1">https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1</a></p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table><h4 id="a-smart-way-to-estimate-square-roots">A smart way to estimate
+<p>Official source: <a href="https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1">https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1</a></p></aside><h4 id="a-smart-way-to-estimate-square-roots">A smart way to estimate
 square roots</h4><p>Let’s recall how to estimate a square root that is not a perfect
 square. Suppose we want to estimate</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">a = \sqrt{N}</annotation></semantics></math></div><p>Choose a positive number
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
@@ -930,5 +898,37 @@ computing.</p></div></details></section></article></div>
 })();
   </script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      // Keep the established default: first section open, remaining sections closed.
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

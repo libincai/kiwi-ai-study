@@ -966,3 +966,44 @@ Applies to `math/gcf.html`, `math/unit-conversions-and-rates.html`, and `math/me
 - Keep actual examples and numbered lists left aligned, with normal-weight black numbering and established indentation.
 - Never turn a multi-sentence paragraph or a curriculum panel into a centered math block.
 - Validate the mathematics against the source Word file separately from CSS/layout checks.
+
+
+## Level 4 Accordion: Expand All / Collapse All (2026-11-09)
+
+- When a Level 4 teaching article has at least two `.lesson-card` accordion sections, display compact **Expand All** and **Collapse All** buttons immediately above the first card, right aligned in the content column (not in the banner or topic sidebar).
+- On initial page load, open the first lesson card and close the remaining cards. Each card remains independently toggleable via its native `<summary>`.
+- Expand All opens all lesson cards in the current article; Collapse All closes all lesson cards. Do not affect unrelated site navigation, nested disclosure widgets outside the lesson-card collection, or other pages.
+- For a single lesson card, omit both controls. Use real `<button type="button">` controls, responsive wrapping, accessible group labels, and English/Chinese text via the site's language setting.
+- Implement in the shared Level 4 template for future pages, and apply to existing Level 4 pages. Keep the existing math formula, Example, list, and Info Panel standards unchanged.
+
+
+### Readability-first sizing for educational diagrams
+
+- Do not apply repeated percentage reductions to already resized image widths. Base any new size on the original image and its legibility.
+- For composite images containing two side-by-side charts, use a readable desktop display width (typically 700–800px, constrained by `max-width:100%`), not the single-figure 50% rule.
+- Preserve aspect ratio and center diagrams. Inspect labels, axis ticks and annotations at the actual rendered size.
+- For narrow mobile viewports, use responsive sizing and consider a dedicated stacked layout when annotations become unreadable.
+
+
+## Teaching Image Readability and Sizing (Level 4)
+
+**Do not repeatedly scale an already scaled image.** Always determine display size from the original asset dimensions and content, never from the previous CSS width. Imported mathematical diagrams must remain readable at normal browser zoom.
+
+- Small symbols or simple icons: retain their natural size; do not enlarge unnecessarily.
+- Single coordinate graphs, geometric diagrams, and formula diagrams: typically 500–680 CSS px depending on density and aspect ratio.
+- Wide, side-by-side comparisons with axes, legends, or text: typically 680–760 CSS px (or the available content width).
+- Portrait diagrams: generally up to 500 CSS px, keeping their aspect ratio.
+- Preserve original source image resolution and aspect ratio; never crop, stretch, blur-pad, or resize the raster asset merely to adjust on-page presentation.
+- Use `max-width: 100%; height: auto; display: block; margin: 1rem auto` for responsive centered display.
+- Do not change logos, flags, banners, or decorative site images when adjusting Word-imported teaching illustrations.
+- Visually inspect labels, tick marks, equations, and comparison graphs at 100% browser zoom on desktop and mobile. If they are illegible, increase display width or offer a full-size view rather than blindly applying a 50% reduction.
+
+
+## Word-to-Web Info Panel Conversion — Final Standard (2026-11-09)
+
+- Convert **Word two-column tables containing a lightbulb icon** into semantic `<aside class="kiwi-word-info-panel" role="note">`, not HTML tables. Preserve all original prose, mathematics, and real lists.
+- Convert **Ontario Curriculum Connection** one-cell Word tables into `<aside class="kiwi-curriculum-panel" role="note">`, with no lightbulb. Preserve curriculum title, grade, citations, source links, and paragraphs in original order.
+- Convert standalone **historical/learning notes** (e.g. A Short History) into the same warm-cream insight panel; include a small lightbulb for insight/history, but not for curriculum panels.
+- Style panels consistently: pale cream `#fff8e9`, subtle gold border `#f0d58d`, rounded corners, left-aligned prose and heading. Standalone display mathematics inside panels remains centered; inline math stays inline.
+- Never center all the text in an imported table or keep empty Word icon columns. Do not convert actual data tables (multi-row numerical tables, comparisons, formula tables) into panels.
+- QA: review panel types and links across every imported Level 4 page, including mobile, while preserving the existing example, math and image readability standards.

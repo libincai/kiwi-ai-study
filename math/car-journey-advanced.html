@@ -179,6 +179,29 @@
 .kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
 .kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
 .kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+<style>
+/* Word-to-Web: consistent educational information panels */
+.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{box-sizing:border-box;display:block;width:100%;max-width:100%;margin:1.15rem 0;padding:1rem 1.2rem;background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e4b54e;border-radius:12px;color:#503d24;text-align:left;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
+.kiwi-insight-panel p,.kiwi-curriculum-panel p,.kiwi-word-info-panel p,.kiwi-insight-panel li,.kiwi-curriculum-panel li,.kiwi-word-info-panel li{color:inherit;text-align:left;font-weight:400}
+.kiwi-insight-panel strong,.kiwi-curriculum-panel strong,.kiwi-word-info-panel strong{font-weight:700}
+.kiwi-insight-header,.kiwi-word-info-header{display:flex;align-items:center;gap:.65rem;margin:0 0 .55rem;font-weight:700;color:#895b0e;text-align:left}
+.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
+.kiwi-insight-icon,.kiwi-word-info-icon{flex:none;font-size:1.1rem;line-height:1.2}
+.kiwi-insight-body>*:first-child,.kiwi-word-info-body>*:first-child{margin-top:0}
+.kiwi-insight-body>*:last-child,.kiwi-word-info-body>*:last-child{margin-bottom:0}
+.kiwi-curriculum-panel{border-left-color:#e4b54e}
+.kiwi-curriculum-panel .kiwi-curriculum-heading{display:block;margin-bottom:.5rem;color:#895b0e;font-weight:700;text-align:left}
+.kiwi-curriculum-panel p:first-child{margin-top:0}
+.kiwi-word-info-panel ul,.kiwi-word-info-panel ol{padding-left:1.5rem;margin-left:0}
+.kiwi-word-info-panel .kiwi-math-block,.kiwi-insight-panel .kiwi-math-block,.kiwi-curriculum-panel .kiwi-math-block{text-align:center;margin-left:auto;margin-right:auto}
+.kiwi-word-info-panel math[display="block"],.kiwi-insight-panel math[display="block"],.kiwi-curriculum-panel math[display="block"]{display:block;margin-inline:auto}
+@media(max-width:600px){.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{padding:.85rem 1rem}}
 </style></head>
 <body class="topic-page">
 <header class="site-header">
@@ -251,7 +274,7 @@ The car slows down from 90 km/h to 0 km/h over 5 seconds.</p></li>
 90 &amp; 3 &lt; t \leq 8 \\
 90 - 18(t - 8) &amp; 8 &lt; t \leq 13
 \end{matrix} \right.\ 
-</annotation></semantics></math></div><p><img loading="lazy" src="../assets/math-word/image5.jpg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><p>Each part describes a different stage of the journey.</p></div></details><details class="lesson-card"><summary>3. Linear, Non-Linear,
+</annotation></semantics></math></div><p><img loading="lazy" src="../assets/math-word/image5.jpg" style="width:408px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><p>Each part describes a different stage of the journey.</p></div></details><details class="lesson-card"><summary>3. Linear, Non-Linear,
 and Constant Functions</summary><div class="lesson-card-body"><p>The car’s journey demonstrates three types of functions.</p><h4 id="stage-1-quadratic-function">Stage 1: Quadratic function</h4><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">v(t) = 10t^{2},\quad 0 \leq t \leq 3</annotation></semantics></math></div><p>The speed increases from 0 to 90 km/h.</p><p>This is a quadratic function because the input variable (t) is
 squared. Its graph is a curved parabola.</p><h4 id="stage-2-constant-function">Stage 2: Constant function</h4><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>90</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>3</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">v(t) = 90,\quad 3 &lt; t \leq 8</annotation></semantics></math></div><p>The speed remains at 90 km/h.</p><p>This is a constant function, represented by a horizontal line. The
 rate of change of speed is zero during this stage.</p><h4 id="stage-3-linear-function">Stage 3: Linear function</h4><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>90</mn><mo>−</mo><mn>18</mn><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo>−</mo><mn>8</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mn>8</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">v(t) = 90 - 18(t - 8),\quad 8 &lt; t \leq 13</annotation></semantics></math></div><p>The speed decreases by
@@ -299,15 +322,7 @@ tells us which speeds occur during the journey.</p><p>Each stage also has its ow
 <td><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>v</mi><mo>&lt;</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">0 \leq v &lt; 90</annotation></semantics></math></div></td>
 </tr>
 </tbody>
-</table><table>
-<colgroup>
-<col style="width: 7%"/>
-<col style="width: 92%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th><img alt="Lights On with solid fill" src="../assets/math-word/image3.svg"/></th>
-<th><p><strong>IMPORTANT ALERT: Avoid Overlapping Domains!</strong></p>
+</table><aside class="kiwi-word-info-panel" role="note"><div class="kiwi-word-info-header"><span aria-hidden="true" class="kiwi-word-info-icon">💡</span><span class="kiwi-word-info-title"><strong>IMPORTANT ALERT: Avoid Overlapping Domains!</strong></span></div><div class="kiwi-word-info-body">
 <p>When defining a piecewise function, make sure the domains of
 different stages do not overlap and leave no gaps.</p>
 <p>At each boundary, one stage includes the endpoint, and the next stage
@@ -327,12 +342,7 @@ belongs only to Stage 1, and
 belongs only to Stage 2.</p>
 <p><strong>Remember:</strong> Every input must belong to exactly one
 stage!</p></li>
-</ul></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table></div></details><details class="lesson-card"><summary>5. Discrete vs. Continuous
+</ul></div></aside></div></details><details class="lesson-card"><summary>5. Discrete vs. Continuous
 Functions</summary><div class="lesson-card-body"><p>A <strong>discrete function</strong> has separate, distinct input
 values. Its graph consists of individual points that are not
 connected.</p><p>For example, we could record the car’s speed at each whole second: 0,
@@ -462,7 +472,7 @@ inverses?</h4><p><strong>Important:</strong></p><p>The inverse of the entire jou
 speed can occur at multiple times when the speed is constant from
 3<sup>rd</sup> second to 8<sup>th</sup> second. Restricting the original
 function to a one-to-one stage allows us to obtain a function
-inverse.</p><p><strong>Reversing a Car’s Journey ≠ Finding Its Inverse</strong></p><p><img loading="lazy" src="../assets/math-word/image6.png" style="width:425px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h5 id="stage-1-quadratic-function-1">Stage 1: Quadratic function</h5><p>The function
+inverse.</p><p><strong>Reversing a Car’s Journey ≠ Finding Its Inverse</strong></p><p><img loading="lazy" src="../assets/math-word/image6.png" style="width:760px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h5 id="stage-1-quadratic-function-1">Stage 1: Quadratic function</h5><p>The function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = f(t) = 10t^{2}</annotation></semantics></math><em>,</em>
 restricted to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">0 \leq t \leq 3</annotation></semantics></math>,
@@ -470,15 +480,7 @@ is one-to-one. Every speed in its range corresponds to exactly one
 time.</p><p>Starting with:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = 10t^{2}</annotation></semantics></math></div><p>Isolate
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>:</p><p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msqrt><mfrac><mi>v</mi><mn>10</mn></mfrac></msqrt></mrow><annotation encoding="application/x-tex">t = \sqrt{\frac{v}{10}}
 </annotation></semantics></math></div>Thus, the inverse relationship is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>v</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><msqrt><mfrac><mi>v</mi><mn>10</mn></mfrac></msqrt></mrow><annotation encoding="application/x-tex">t = f^{- 1}(v) = \sqrt{\frac{v}{10}}</annotation></semantics></math></div><p>The inverse input is the original speed, and the inverse output is
-the original time.</p><table>
-<colgroup>
-<col style="width: 7%"/>
-<col style="width: 92%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th><img alt="Lights On with solid fill" src="../assets/math-word/image3.svg"/></th>
-<th><p><strong>Understanding Function Notation</strong></p>
+the original time.</p><aside class="kiwi-word-info-panel" role="note"><div class="kiwi-word-info-header"><span aria-hidden="true" class="kiwi-word-info-icon">💡</span><span class="kiwi-word-info-title"><strong>Understanding Function Notation</strong></span></div><div class="kiwi-word-info-body">
 <ul>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow></mrow><annotation encoding="application/x-tex">f^{- 1}\text{ }</annotation></semantics></math>represents
 the <strong>inverse function</strong>, not the reciprocal of
@@ -499,30 +501,17 @@ and
 represent specific quantities. Instead of simply swapping their letters,
 solve for time in terms of speed:
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>v</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">t = f^{- 1}(v)</annotation></semantics></math>.</p></li>
-</ul></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table><p><strong>Remember:</strong> In
+</ul></div></aside><p><strong>Remember:</strong> In
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">y = f(x)</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
 are general variables. Finding the inverse reverses the input and output
-roles, regardless of the variable names.</p><p><img loading="lazy" src="../assets/math-word/image7.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h5 id="stage-2-constant-function-1">Stage 2: Constant function</h5><p>The function
+roles, regardless of the variable names.</p><p><img loading="lazy" src="../assets/math-word/image7.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h5 id="stage-2-constant-function-1">Stage 2: Constant function</h5><p>The function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">v = 90</annotation></semantics></math>
 is not one-to-one. Many different times correspond to the same speed of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>90</mn><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">90km/h</annotation></semantics></math>.</p><p>When the input and output are exchanged, the inverse relation assigns
-multiple times to one speed. It is therefore not a function.</p><p><img loading="lazy" src="../assets/math-word/image8.jpeg" style="width:425px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><table>
-<colgroup>
-<col style="width: 7%"/>
-<col style="width: 92%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th><img alt="Lights On with solid fill" src="../assets/math-word/image3.svg"/></th>
-<th><p><strong>A Symmetric Graph, but No Inverse Function?</strong></p>
+multiple times to one speed. It is therefore not a function.</p><p><img loading="lazy" src="../assets/math-word/image8.jpeg" style="width:740px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><aside class="kiwi-word-info-panel" role="note"><div class="kiwi-word-info-header"><span aria-hidden="true" class="kiwi-word-info-icon">💡</span><span class="kiwi-word-info-title"><strong>A Symmetric Graph, but No Inverse Function?</strong></span></div><div class="kiwi-word-info-body">
 <p>A function and its inverse relation are reflections across the line
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y = x</annotation></semantics></math>.
 but the inverse relation is not always a function.</p>
@@ -547,15 +536,10 @@ fails the vertical line test.</p>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y = x</annotation></semantics></math>,
 but the inverse is not a function because the original function is not
 one-to-one.</p></li>
-</ul></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table><h5 id="stage-3-linear-function-1">Stage 3: Linear function</h5><p>The deceleration function is one-to-one. Each speed corresponds to
+</ul></div></aside><h5 id="stage-3-linear-function-1">Stage 3: Linear function</h5><p>The deceleration function is one-to-one. Each speed corresponds to
 exactly one time during this stage.</p><p>Starting with:</p><p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>90</mn><mo>−</mo><mn>18</mn><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo>−</mo><mn>8</mn><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">v = 90 - 18(t - 8)
 </annotation></semantics></math></div>Solving for time gives:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>8</mn><mo>+</mo><mfrac><mrow><mn>90</mn><mo>−</mo><mi>v</mi></mrow><mn>18</mn></mfrac></mrow><annotation encoding="application/x-tex">t = 8 + \frac{90 - v}{18}</annotation></semantics></math></div><p>Therefore, the inverse relationship is:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>v</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>8</mn><mo>+</mo><mfrac><mrow><mn>90</mn><mo>−</mo><mi>t</mi></mrow><mn>18</mn></mfrac></mrow><annotation encoding="application/x-tex">t = f^{- 1}(v) = 8 + \frac{90 - t}{18}</annotation></semantics></math></div><p>The inverse is a function because every speed in the stage’s range
-corresponds to exactly one time.</p><p><img loading="lazy" src="../assets/math-word/image9.jpeg" style="width:425px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h4 id="the-physical-meaning-of-an-inverse-function-car-journey">The
+corresponds to exactly one time.</p><p><img loading="lazy" src="../assets/math-word/image9.jpeg" style="width:740px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h4 id="the-physical-meaning-of-an-inverse-function-car-journey">The
 physical meaning of an inverse function: Car Journey</h4><p>In this car journey, the function describes how the car’s speed
 changes over time.</p><h5 id="acceleration-03-seconds">Acceleration (0–3 seconds): </h5><p>The car accelerates from
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">0\ </annotation></semantics></math>to
@@ -613,7 +597,7 @@ interval.</p><div class="kiwi-math-block"><math class="math-display" display="bl
 graph.</p><h4 id="larger-a-narrower-parabola">Larger a, narrower parabola</h4><p>When
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
 is larger, the output values grow more rapidly for the same input
-values. The parabola becomes narrower.</p><p><img loading="lazy" src="../assets/math-word/image10.jpeg" style="width:264.25px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h4 id="compare-the-step-patterns">Compare the step patterns</h4><p>For
+values. The parabola becomes narrower.</p><p><img loading="lazy" src="../assets/math-word/image10.jpeg" style="width:500px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h4 id="compare-the-step-patterns">Compare the step patterns</h4><p>For
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v = at^{2}</annotation></semantics></math>,
 the first differences over one-second intervals are:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>3</mn><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>5</mn><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>7</mn><mi>a</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">a,\ 3a,\ 5a,\ 7a,\ldots</annotation></semantics></math></div><p>The second differences are constant:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>2</mn><mi>a</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>2</mn><mi>a</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">2a,\ 2a,\ 2a,\ldots</annotation></semantics></math></div><table style="width:100%;">
 <colgroup>
@@ -777,5 +761,37 @@ understand how those relationships behave.</p></div></details></section></articl
 })();
   </script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      // Keep the established default: first section open, remaining sections closed.
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

@@ -179,7 +179,13 @@
 .kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
 .kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
 .kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
-</style></head>
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+</head>
 <body class="topic-page">
 <header class="site-header">
 <div class="brand-lockup">
@@ -224,7 +230,7 @@
 <div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a href="rotation-transformation.html">Rotation Transformation</a><a class="active" href="special-right-triangles.html">Special Right Triangles</a><a href="mathematical-thinking.html">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Special Right Triangles" data-zh="Special Right Triangles">Special Right Triangles</h2><section class="nf-section word-topic kiwi-generated-content"><p>You do not need to memorize every special-angle trigonometric value
 separately. You can derive them from two special right triangles.</p><details class="lesson-card" open=""><summary>The 30°–60°–90° Triangle</summary><div class="lesson-card-body"><p>Start with an equilateral triangle whose sides are all 2 units
 long.</p><p>Draw an altitude from one vertex to the opposite side. This divides
-the equilateral triangle into two congruent right triangles.</p><p><img src="../assets/math-word/image29.jpeg" style="width:330.5px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>The altitude:</p><ul>
+the equilateral triangle into two congruent right triangles.</p><p><img src="../assets/math-word/image29.jpeg" style="width:740px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p>The altitude:</p><ul>
 <li><p>Bisects the opposite side into two segments of length 1.</p></li>
 <li><p>Splits the
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">60^{\circ}</annotation></semantics></math>
@@ -256,7 +262,7 @@ is
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>3</mn></msqrt><annotation encoding="application/x-tex">\sqrt{3}</annotation></semantics></math>
 times the shorter leg.</p></div></details><details class="lesson-card"><summary>The 45°–45°–90° Triangle</summary><div class="lesson-card-body"><p>Start with an isosceles right triangle. Its two legs are equal, so
 its two acute angles are equal.</p><p>Since the angles in a triangle add to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>180</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">180^{\circ}</annotation></semantics></math>:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msup><mn>180</mn><mo>∘</mo></msup><mo>−</mo><msup><mn>90</mn><mo>∘</mo></msup></mrow><mn>2</mn></mfrac><mo>=</mo><msup><mn>45</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\frac{180^{\circ} - 90^{\circ}}{2} = 45^{\circ}</annotation></semantics></math></div><p><img src="../assets/math-word/image30.jpeg" style="width:96.25px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy">Let each leg have length 1. By
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>180</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">180^{\circ}</annotation></semantics></math>:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msup><mn>180</mn><mo>∘</mo></msup><mo>−</mo><msup><mn>90</mn><mo>∘</mo></msup></mrow><mn>2</mn></mfrac><mo>=</mo><msup><mn>45</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\frac{180^{\circ} - 90^{\circ}}{2} = 45^{\circ}</annotation></semantics></math></div><p><img src="../assets/math-word/image30.jpeg" style="width:385px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy">Let each leg have length 1. By
 the Pythagorean Theorem:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>c</mi><mn>2</mn></msup><mo>=</mo><msup><mn>1</mn><mn>2</mn></msup><mo>+</mo><msup><mn>1</mn><mn>2</mn></msup><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">c^{2} = 1^{2} + 1^{2} = 2</annotation></semantics></math></div><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">c = \sqrt{2}</annotation></semantics></math></div><p>Therefore, the side lengths are:</p><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mn>1</mn><mo>:</mo><mn>1</mn><mo>:</mo><msqrt><mn>2</mn></msqrt></mrow></menclose><annotation encoding="application/x-tex">\boxed{1:1:\sqrt{2}}</annotation></semantics></math></div><p>Because the two legs are equal, the sine and cosine of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>45</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">45^{\circ}</annotation></semantics></math>
 are equal.</p></div></details><details class="lesson-card"><summary>Special Angles: Derive,
@@ -426,5 +432,37 @@ Cosine at 45° are equal</h4><p>Because the opposite and adjacent sides are equa
 })();
   </script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      // Keep the established default: first section open, remaining sections closed.
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

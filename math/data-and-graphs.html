@@ -179,7 +179,13 @@
 .kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
 .kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
 .kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
-</style></head>
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+</head>
 <body class="topic-page">
 <header class="site-header">
 <div class="brand-lockup">
@@ -255,29 +261,29 @@ different categories of data. The bars can be vertical or
 horizontal.</p><p>Example:</p><blockquote>
 <p>Used to compare favourite colours or numbers of pets owned by
 students.</p>
-<p><img alt="Image preview" src="../assets/math-word/image31.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+<p><img alt="Image preview" src="../assets/math-word/image31.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
 </blockquote></div></details><details class="lesson-card"><summary>Line graph</summary><div class="lesson-card-body"><p>A line graph uses points connected by lines to show how data changes
 over a continuous period of time or another sequence (trends).</p><p>Example:</p><blockquote>
 <p>Used to track temperature changes over a week or stock prices over
 several months.</p>
-<p><img alt="Image preview" src="../assets/math-word/image32.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+<p><img alt="Image preview" src="../assets/math-word/image32.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
 </blockquote></div></details><details class="lesson-card"><summary>Line plot</summary><div class="lesson-card-body"><p>A line plot, also called a <strong>dot plot</strong>, is a simple
 graph that uses dots or Xs above a number line to show the frequency of
 each value in a data set.</p><p>Example:</p><blockquote>
 <p>Use a line plot to quickly see how many students earned each score on
 a math quiz.</p>
-<p><img alt="Image preview" src="../assets/math-word/image33.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+<p><img alt="Image preview" src="../assets/math-word/image33.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
 </blockquote></div></details><details class="lesson-card"><summary>Histogram</summary><div class="lesson-card-body"><p>A histogram is a bar-style graph that displays the frequency of data
 within specific <strong>intervals</strong> (ranges of numbers) rather
 than individual categories. The bars touch each other.</p><p>Example:</p><blockquote>
 <p>Used to show how many students scored between 70-79, 80-89, and
 90-100 on a test.</p>
-</blockquote><p><img src="../assets/math-word/image34.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p></div></details><details class="lesson-card"><summary>Circle graph</summary><div class="lesson-card-body"><p>A circle graph (or <strong>pie chart</strong>) is a circle divided
+</blockquote><p><img src="../assets/math-word/image34.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p></div></details><details class="lesson-card"><summary>Circle graph</summary><div class="lesson-card-body"><p>A circle graph (or <strong>pie chart</strong>) is a circle divided
 into sectors (slices) that represent the proportion or percentage of
 each category relative to the whole data set.</p><p>Example:</p><blockquote>
 <p>Used to show the breakdown of a monthly budget (e.g., rent makes up
 30% of expenses).</p>
-<p><img src="../assets/math-word/image35.jpeg" style="width:384px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
+<p><img src="../assets/math-word/image35.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
 </blockquote></div></details></section></article></div>
 <!-- LEVEL-4 BODY END -->
 </main>
@@ -346,5 +352,37 @@ each category relative to the whole data set.</p><p>Example:</p><blockquote>
 })();
   </script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      // Keep the established default: first section open, remaining sections closed.
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

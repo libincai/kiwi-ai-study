@@ -169,7 +169,13 @@
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
 .kiwi-generated-content{line-height:1.72;color:#182d42}.kiwi-generated-content p{margin:12px 0}.kiwi-generated-content math[display="block"],.kiwi-generated-content .math-display{display:block;text-align:center;margin:18px auto;max-width:100%;overflow-x:auto;overflow-y:visible}.kiwi-generated-content math{font-size:1.04em}.kiwi-generated-content img{display:block;max-width:100%;height:auto;margin:18px auto}.kiwi-generated-content table{max-width:100%;display:block;overflow-x:auto;border-collapse:collapse}.kiwi-generated-content td,.kiwi-generated-content th{padding:7px 10px;border:1px solid #dce7f3}.kiwi-generated-content ul,.kiwi-generated-content ol{padding-left:3em;margin:10px 0}.kiwi-generated-content ol li::marker{color:#111;font-weight:400}.kiwi-generated-content li{padding-left:.2em;margin:6px 0}.kiwi-generated-content .kiwi-insight-panel{background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e6ad35;border-radius:12px;padding:16px 20px;margin:20px 0;text-align:left}.kiwi-generated-content .kiwi-insight-panel p{text-align:left}.kiwi-generated-content .lesson-card{border:1px solid #dce7f3;border-radius:12px;overflow:hidden;margin:12px 0}.kiwi-generated-content .lesson-card>summary{cursor:pointer;padding:16px 20px;background:#eef6ff;color:#143e75;font-weight:650;list-style:none;display:flex;justify-content:space-between}.kiwi-generated-content .lesson-card>summary:after{content:'+'}.kiwi-generated-content .lesson-card[open]>summary:after{content:'−'}.kiwi-generated-content .lesson-card-body{padding:14px 20px 20px}.kiwi-generated-content h3{font-size:1.05em;color:#143e75}.kiwi-generated-content .example-problem{margin-left:3ch}.kiwi-generated-content .example-steps{margin-left:6ch;padding-left:1.4em}.kiwi-generated-content .example-answer{margin-left:3ch;border-left:3px solid #cde3fa;padding:4px 12px}.kiwi-generated-content .math-display::-webkit-scrollbar{height:5px}.kiwi-topic-sidebar a{overflow-wrap:anywhere}
-</style></head>
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+</head>
 <body class="topic-page">
 <header class="site-header">
 <div class="brand-lockup">
@@ -321,5 +327,37 @@ number.</p></li>
 })();
   </script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      // Keep the established default: first section open, remaining sections closed.
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

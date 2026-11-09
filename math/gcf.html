@@ -177,6 +177,29 @@
 .kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
 .kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
 .kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+<style>
+/* Word-to-Web: consistent educational information panels */
+.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{box-sizing:border-box;display:block;width:100%;max-width:100%;margin:1.15rem 0;padding:1rem 1.2rem;background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e4b54e;border-radius:12px;color:#503d24;text-align:left;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
+.kiwi-insight-panel p,.kiwi-curriculum-panel p,.kiwi-word-info-panel p,.kiwi-insight-panel li,.kiwi-curriculum-panel li,.kiwi-word-info-panel li{color:inherit;text-align:left;font-weight:400}
+.kiwi-insight-panel strong,.kiwi-curriculum-panel strong,.kiwi-word-info-panel strong{font-weight:700}
+.kiwi-insight-header,.kiwi-word-info-header{display:flex;align-items:center;gap:.65rem;margin:0 0 .55rem;font-weight:700;color:#895b0e;text-align:left}
+.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
+.kiwi-insight-icon,.kiwi-word-info-icon{flex:none;font-size:1.1rem;line-height:1.2}
+.kiwi-insight-body>*:first-child,.kiwi-word-info-body>*:first-child{margin-top:0}
+.kiwi-insight-body>*:last-child,.kiwi-word-info-body>*:last-child{margin-bottom:0}
+.kiwi-curriculum-panel{border-left-color:#e4b54e}
+.kiwi-curriculum-panel .kiwi-curriculum-heading{display:block;margin-bottom:.5rem;color:#895b0e;font-weight:700;text-align:left}
+.kiwi-curriculum-panel p:first-child{margin-top:0}
+.kiwi-word-info-panel ul,.kiwi-word-info-panel ol{padding-left:1.5rem;margin-left:0}
+.kiwi-word-info-panel .kiwi-math-block,.kiwi-insight-panel .kiwi-math-block,.kiwi-curriculum-panel .kiwi-math-block{text-align:center;margin-left:auto;margin-right:auto}
+.kiwi-word-info-panel math[display="block"],.kiwi-insight-panel math[display="block"],.kiwi-curriculum-panel math[display="block"]{display:block;margin-inline:auto}
+@media(max-width:600px){.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{padding:.85rem 1rem}}
 </style></head>
 <body class="topic-page">
 <header class="site-header">
@@ -392,5 +415,37 @@ remainder is the GCF.</p></div></details></section></article></div>
 })();
   </script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      // Keep the established default: first section open, remaining sections closed.
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>
