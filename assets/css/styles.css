@@ -50,13 +50,13 @@ html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--font-site);font-size:var(--font-size-body);color:var(--color-body);background:var(--color-white)}
 a{color:inherit}
 .site-header{min-height:73px;display:flex;align-items:center;gap:clamp(14px,1.55vw,26px);padding:7px clamp(24px,4.55vw,70px);background:#fff;border-bottom:1px solid #e6eaf2}
-.brand-lockup{display:grid;grid-template-columns:215px 1px 170px;grid-template-rows:38px 16px;column-gap:clamp(14px,1.8vw,28px);row-gap:0;align-items:center;flex:0 0 auto}
-.logo-link{grid-column:1;grid-row:1;justify-self:center;align-self:end;line-height:0}
+.brand-lockup{display:grid;grid-template-columns:215px 1px 170px;grid-template-rows:auto;column-gap:clamp(14px,1.8vw,28px);row-gap:0;align-items:center;flex:0 0 auto}
+.logo-link{grid-column:1;grid-row:1;justify-self:center;align-self:center;line-height:0}
 .logo{display:block;width:215px;height:38px;object-fit:contain}
-.logo-tagline{grid-column:1;grid-row:2;margin:0;justify-self:center;font-family:"Trebuchet MS","Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;font-size:13px;font-weight:700;line-height:13px;letter-spacing:.025em;white-space:nowrap;transform:scaleY(.84);transform-origin:center top}
+.logo-tagline{display:none}
 .tag-learn{color:#1260e8}.tag-create{color:#e53935}.tag-share{color:#238b43}.tag-grow{color:#6c48a8}.tag-sep{color:#252525}
-.brand-lockup>.divider{grid-column:2;grid-row:1/-1;align-self:center;height:43px;width:0;border-left:1.5px solid #2945a1}
-.author-wrap{grid-column:3;grid-row:1/-1;align-self:center;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.brand-lockup>.divider{grid-column:2;grid-row:1;align-self:center;height:43px;width:0;border-left:1.5px solid #2945a1}
+.author-wrap{grid-column:3;grid-row:1;align-self:center;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
 .author{font:700 34px/1 "Segoe UI",Tahoma,sans-serif;color:#101747;text-decoration:none;white-space:nowrap}
 .author-underline{display:block;width:88%;height:10px;margin:4px 0 0 2px}
 .author-underline svg{width:100%;height:100%;display:block}
@@ -148,9 +148,8 @@ a:focus-visible{outline:3px solid #0756df;outline-offset:4px;border-radius:4px}
 }
 @media(max-width:620px){
  .site-header{padding:10px 12px}
- .brand-lockup{grid-template-columns:155px 1px 120px;column-gap:10px;grid-template-rows:32px 14px}
+ .brand-lockup{grid-template-columns:155px 1px 120px;column-gap:10px}
  .logo{width:155px;height:32px}
- .logo-tagline{font-family:"Trebuchet MS","Segoe UI",Tahoma,sans-serif;font-size:9px;font-weight:700;line-height:13px;letter-spacing:.015em}
  .author{font-size:23px}
  .author-underline{height:7px}
  .site-nav{gap:4px}
@@ -362,10 +361,10 @@ body { font-size: 15px; }
     flex-direction: column;
   }
   body.home-page .site-header {
-    flex: 0 0 65px;
-    min-height: 65px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    flex: 0 0 auto;
+    min-height: 73px;
+    padding-top: 7px;
+    padding-bottom: 7px;
   }
   body.home-page .hero {
     flex: 0 0 auto;
@@ -936,41 +935,6 @@ body.home-page .hero::before {
   z-index: 5;
   pointer-events: none;
 }
-
-
-/* Sherry Cai signature wordmark with the reference's elegant green arc. */
-body.home-page .author-wrap {
-  justify-content: center;
-  align-items: flex-start;
-}
-body.home-page .author-image-link {
-  display: block;
-  width: 170px;
-  height: 50px;
-  line-height: 0;
-}
-body.home-page .author-signature-image {
-  display: block;
-  width: 170px;
-  height: 50px;
-  object-fit: contain;
-}
-
-
-/* Use the exact Sherry Cai wordmark and green arc cropped from the approved reference. */
-body.home-page .author-image-link {
-  width: 170px !important;
-  height: 55px !important;
-}
-body.home-page .author-signature-image {
-  width: 170px !important;
-  height: 55px !important;
-  object-fit: contain !important;
-}
-
-
-/* Center the Sherry Cai wordmark slightly lower within the header row. */
-body.home-page .author-wrap { transform: translateY(5px); }
 
 
 /* About page */
@@ -1839,13 +1803,12 @@ html[lang="zh-CN"] body:not(.home-page) .page-banner .page-banner-inner > p:not(
 }
 
 
-/* Header signature refinement: reduce the Sherry Cai wordmark by 20%.
-   Keep the brand-lockup column and divider in place; center the smaller mark
-   within its existing column so the navigation layout does not shift. */
+/* Header signature: match homepage placement (slightly lower in the header row). */
 body .author-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  transform: translateY(5px);
 }
 body .author-image-link {
   width: 136px !important;
@@ -1911,11 +1874,6 @@ body .author-signature-image {
   height: 44px !important;
   max-width: 100%;
   object-fit: contain !important;
-}
-body.home-page .author-wrap,
-body.about-page .author-wrap {
-  justify-content: center !important;
-  align-items: center !important;
 }
 @media (max-width: 1250px) {
   body.home-page .author-image-link,
