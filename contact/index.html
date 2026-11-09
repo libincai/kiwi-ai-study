@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<!-- Level 2 primary nav — shell from templates/level-2-primary-nav.html (edu-page + edu-main) -->
+<!-- Level 2 primary nav — shell from templates/level-2-primary-nav.html (contact-page + contact-main) -->
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Kiwi 爱AI Study</title>
   <meta name="description" content="Contact Kiwi 爱AI Study about mathematics, AI learning, books and in-class learning.">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1">
   <style>
-.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
-.edu-page .edu-main{padding-bottom:76px;box-sizing:border-box}
-.edu-section{margin:42px 0}
-.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
-.contact-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:start}
-.contact-intro p{color:#526780;line-height:1.75;font-size:15px}
+.contact-page{color:#14264d}
+.contact-main{padding-bottom:76px;box-sizing:border-box}
+.contact-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:start;margin-top:42px}
+.contact-intro h2{margin:0 0 12px;font-size:30px;color:#123d75}
+.contact-intro p{color:#526780;line-height:1.75;font-size:16px}
 .contact-note{margin-top:22px;padding:18px 20px;background:#eef5ff;border-radius:15px;color:#345777;line-height:1.65;font-size:14px}
 .contact-form{padding:28px;border:1px solid #dce6f1;border-radius:20px;background:#fff;box-shadow:0 10px 28px rgba(25,60,110,.07)}
 .contact-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
@@ -27,10 +26,10 @@
 .contact-submit:hover{background:#0648bd}
 .contact-privacy{font-size:12px;color:#718098;line-height:1.5;margin:13px 0 0}
 .contact-honeypot{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
-@media(max-width:760px){.edu-page .edu-main{padding-bottom:55px}.contact-layout{grid-template-columns:1fr;gap:22px}.contact-form{padding:20px}.contact-form-grid{grid-template-columns:1fr}.contact-field.full{grid-column:auto}}
+@media(max-width:760px){.contact-main{padding-bottom:55px}.contact-layout{grid-template-columns:1fr;gap:22px;margin-top:32px}.contact-form{padding:20px}.contact-form-grid{grid-template-columns:1fr}.contact-field.full{grid-column:auto}}
   </style>
 </head>
-<body class="edu-page">
+<body class="contact-page">
   <header class="site-header">
     <div class="brand-lockup">
       <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
@@ -62,7 +61,7 @@
     </nav>
   </header>
 
-  <main class="edu-main">
+  <main class="contact-main">
     <div class="page-back-wrap">
       <a class="page-back-link" href="../index.html" data-page-back data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a>
     </div>
@@ -75,17 +74,16 @@
     </section>
 
     <!-- LEVEL-2 BODY START -->
-    <section class="edu-section" aria-labelledby="contact-intro-heading">
-      <h2 id="contact-intro-heading" data-en="Let's get in touch" data-zh="期待与您交流">Let's get in touch</h2>
-      <div class="contact-layout">
-        <div class="contact-intro">
+    <div class="contact-layout">
+      <section class="contact-intro">
+        <h2 data-en="Let's get in touch" data-zh="期待与您交流">Let's get in touch</h2>
         <p data-en="Have a question about mathematics, AI learning, our books, or in-class learning? Send us a message using the form. Please include a valid email address so we can reply to you." data-zh="如果您对数学学习、人工智能教育、我们的书籍或课堂教学有任何问题，欢迎填写右侧表单给我们留言。请填写有效的邮箱地址，方便我们回复您。">
           Have a question about mathematics, AI learning, our books, or in-class learning? Send us a message using the form. Please include a valid email address so we can reply to you.
         </p>
         <div class="contact-note" data-en="Your email address will only be used to respond to your inquiry. We do not display it publicly." data-zh="您的邮箱地址仅用于回复您的咨询，不会公开显示。">
           Your email address will only be used to respond to your inquiry. We do not display it publicly.
         </div>
-        </div>
+      </section>
 
       <form class="contact-form" action="https://formspree.io/f/mzeeqezo" method="POST">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="contact-honeypot">
@@ -122,8 +120,7 @@
           * Required fields. Please do not include sensitive personal or financial information.
         </p>
       </form>
-      </div>
-    </section>
+    </div>
     <!-- LEVEL-2 BODY END -->
   </main>
 
@@ -139,35 +136,31 @@
 
   <script>
 (() => {
-  const nav = {
+  const navText = {
     en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
     zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
   };
-  const legal = {
-    en: ['Privacy Policy', 'Terms of Service', 'Home'],
-    zh: ['隐私政策', '服务条款', '首页']
+  const legalText = {
+    en: ['Privacy Policy', 'Copyright & Content Usage Policy', 'Home'],
+    zh: ['隐私政策', '版权声明与内容使用说明', '首页']
   };
-  const titles = {
-    en: 'Contact Us | Kiwi 爱AI Study',
-    zh: '联系我们 | Kiwi 爱AI Study'
-  };
-  const btns = document.querySelectorAll('.flag[data-language]');
+  const buttons = document.querySelectorAll('.flag[data-language]');
   function setLanguage(lang) {
-    const l = lang === 'zh' ? 'zh' : 'en';
-    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    const language = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en-CA';
     document.querySelectorAll('[data-en][data-zh]').forEach(el => {
-      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+      el.innerHTML = el.getAttribute(language === 'zh' ? 'data-zh' : 'data-en');
     });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = navText[language][i]; });
     document.querySelectorAll('[data-en-placeholder][data-zh-placeholder]').forEach(el => {
-      el.placeholder = el.getAttribute(l === 'zh' ? 'data-zh-placeholder' : 'data-en-placeholder');
+      el.placeholder = el.getAttribute(language === 'zh' ? 'data-zh-placeholder' : 'data-en-placeholder');
     });
-    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
-    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
-    document.title = titles[l];
-    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
-    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    document.title = language === 'zh' ? '联系我们 | Kiwi 爱AI Study' : 'Contact Us | Kiwi 爱AI Study';
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legalText[language][i]; });
+    buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === language)));
+    try { localStorage.setItem('kiwi-site-language', language); } catch (e) {}
   }
-  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  buttons.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
   try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
   setLanguage(saved);

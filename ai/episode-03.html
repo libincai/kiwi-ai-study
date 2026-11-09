@@ -198,6 +198,17 @@
         </div>
       </div>
 
+      <section class="ep3-model-stack" aria-labelledby="ep3-model-stack-title" style="margin:2rem 0 2.25rem;">
+        <h2 id="ep3-model-stack-title" data-en="From Data to ChatGPT: How AI Models Work" data-zh="从数据到 ChatGPT：AI 模型的层层构建">From Data to ChatGPT: How AI Models Work</h2>
+        <p data-en="This visual brings together the key layers behind ChatGPT, from machine learning and deep learning to language models, GPT and the app you use. Select the image to view the full-size diagram." data-zh="这张图把 ChatGPT 背后的关键技术连接起来：从机器学习、深度学习、大语言模型到 GPT 模型，以及我们使用的 ChatGPT 应用。点击图片可查看完整大图。">This visual brings together the key layers behind ChatGPT, from machine learning and deep learning to language models, GPT and the app you use. Select the image to view the full-size diagram.</p>
+        <figure style="margin:1rem 0 0; padding:clamp(8px,2vw,18px);border:1px solid #d9e6f6;border-radius:16px;background:#fff;">
+          <a href="images/episode-003/openai-model-stack.webp" data-en-href="images/episode-003/openai-model-stack.webp" data-zh-href="images/episode-003/openai-model-stack-zh.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the full-size OpenAI model stack diagram" style="display:block;">
+            <img src="images/episode-003/openai-model-stack.webp" data-en-src="images/episode-003/openai-model-stack.webp" data-zh-src="images/episode-003/openai-model-stack-zh.webp" alt="Illustrated diagram of the path from training data through machine learning, deep learning, large language models and GPT to the ChatGPT app." width="1427" height="1102" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:9px;object-fit:contain;" />
+          </a>
+          <figcaption style="margin-top:.7rem;font-size:.88rem;color:#52647a;text-align:center;" data-en="OpenAI model stack · Tap or click to enlarge · Illustrative model names may change over time." data-zh="OpenAI 模型技术层级 · 点击查看大图 · 图中模型名称可能随时间更新。">OpenAI model stack · Tap or click to enlarge · Illustrative model names may change over time.</figcaption>
+        </figure>
+      </section>
+
       <h2 id="ep3-next" data-en="Coming up next" data-zh="下一集预告">Coming up next</h2>
       <p data-en="Remember the child story one last time: sense patterns, learn harder links, learn language, then create with language — always still learning. AI’s road rhymes with that shape, even though machines are not human." data-zh="最后再想一次孩子的比喻：接触世界、学规律、学复杂联系、学语言、用语言创造 —— 并且一直在学。AI 的发展经历类似的过程，但 AI 并不是真的像孩子一样成长。">Remember the child story one last time: sense patterns, learn harder links, learn language, then create with language — always still learning. AI’s road rhymes with that shape, even though machines are not human.</p>
 
@@ -245,6 +256,13 @@
   function setLanguage(lang) {
     const l = lang === 'zh' ? 'zh' : 'en';
     document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    // Switch both the inline infographic and its full-size link with the selected language.
+    document.querySelectorAll('img[data-en-src][data-zh-src]').forEach(img => {
+      img.src = img.getAttribute(l === 'zh' ? 'data-zh-src' : 'data-en-src');
+    });
+    document.querySelectorAll('a[data-en-href][data-zh-href]').forEach(link => {
+      link.href = link.getAttribute(l === 'zh' ? 'data-zh-href' : 'data-en-href');
+    });
     document.querySelectorAll('[data-en][data-zh]').forEach(el => {
       el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
     });

@@ -40,6 +40,13 @@
 }
 .ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
 .ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+
+/* Full-width AI family reference image for the Phase 1 review */
+.ep-family-figure{clear:both;width:100%;margin:20px 0 26px;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff;box-sizing:border-box;box-shadow:0 5px 18px rgba(24,55,95,.06)}
+.ep-family-figure a{display:block;cursor:zoom-in}
+.ep-family-figure img{display:block;width:100%;height:auto;border-radius:9px}
+.ep-family-figure figcaption{padding:11px 6px 2px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center}
+@media(max-width:720px){.ep-family-figure{padding:7px;margin:18px 0 22px}.ep-family-figure figcaption{font-size:12px}}
   </style>
 </head>
 <body class="topic-page">
@@ -182,6 +189,15 @@
         <span role="listitem" data-en="Everyday life" data-zh="日常生活">Everyday life</span>
       </div>
 
+      <h2 id="ep6-family" data-en="AI Family" data-zh="AI 大家族">AI Family</h2>
+
+      <figure class="ep-family-figure">
+        <a href="images/episode-006/ai-family-review.webp" data-en-href="images/episode-006/ai-family-review.webp" data-zh-href="images/episode-006/ai-family-review-zh.webp" target="_blank" rel="noopener" aria-label="Open the full-size AI Family diagram">
+          <img src="images/episode-006/ai-family-review.webp" data-en-src="images/episode-006/ai-family-review.webp" data-zh-src="images/episode-006/ai-family-review-zh.webp" width="1427" height="1102" alt="AI Family infographic showing traditional and generative AI, machine learning, deep learning, large language models, AI companies, models, and apps" loading="lazy" decoding="async">
+        </a>
+        <figcaption data-en="AI Family — a visual review of companies, models, apps, and the wider AI field. Select the image to view it at full size." data-zh="AI 家族关系图 —— 回顾 AI 领域、公司、模型与应用之间的关系。点击图片可查看大图。">AI Family — a visual review of companies, models, apps, and the wider AI field. Select the image to view it at full size.</figcaption>
+      </figure>
+
       <h2 id="ep6-next" data-en="Coming up next" data-zh="下一集预告">Coming up next</h2>
       <p data-en="Episode 7 will not drill deep into any single word yet. It lays out the AI concept map — your toolbox diagram — so each later lesson has a place to land. See you there." data-zh="第 7 集还不会深入某一个概念，而是先摆出 AI 概念地图 —— 你的“工具箱示意图” —— 让后面每一课都有落脚点。下一集见。">Episode 7 will not drill deep into any single word yet. It lays out the AI concept map—your toolbox diagram—so each later lesson has a place to land. See you there.</p>
     </article>
@@ -218,6 +234,13 @@
   function setLanguage(lang) {
     const l = lang === 'zh' ? 'zh' : 'en';
     document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    // Switch both the inline infographic and its full-size link with the selected language.
+    document.querySelectorAll('img[data-en-src][data-zh-src]').forEach(img => {
+      img.src = img.getAttribute(l === 'zh' ? 'data-zh-src' : 'data-en-src');
+    });
+    document.querySelectorAll('a[data-en-href][data-zh-href]').forEach(link => {
+      link.href = link.getAttribute(l === 'zh' ? 'data-zh-href' : 'data-en-href');
+    });
     document.querySelectorAll('[data-en][data-zh]').forEach(el => {
       el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
     });
