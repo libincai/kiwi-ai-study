@@ -94,6 +94,8 @@
     <div class="hometown-copy">
     <h3 data-en="Li Shizhen · Qichun County" data-zh="李时珍故里 · 蕲春县">Li Shizhen · Qichun County</h3>
     <p data-en="I come from Qichun County in Huanggang, Hubei Province, China. Qichun is the hometown of Li Shizhen (1518–1593), the renowned physician and author of the Compendium of Materia Medica (Bencao Gangmu). His dedication to observation, research, and knowledge remains inspiring. Qichun is also known as a “County of Professors,” reflecting its long tradition of valuing education." data-zh="我的家乡是中国湖北省黄冈市蕲春县。这里是明代著名医药学家李时珍（1518—1593）的故乡。他编写的《本草纲目》是中国医药学的重要著作。他重视观察、实践与探索的精神，至今仍值得学习。蕲春也素有“教授县”的美誉，体现了家乡重视知识与教育的传统。">I come from Qichun County in Huanggang, Hubei Province, China. Qichun is the hometown of Li Shizhen (1518–1593), the renowned physician and author of the Compendium of Materia Medica (Bencao Gangmu). His dedication to observation, research, and knowledge remains inspiring. Qichun is also known as a “County of Professors,” reflecting its long tradition of valuing education.</p>
+    <div><a class="hometown-source" href="https://www.harvardmagazine.com/2010/01/pharmacologist-li-shizhen-biography" target="_blank" rel="noopener noreferrer" data-en="Harvard Magazine — Li Shizhen Biography ↗" data-zh="哈佛大学杂志 — 李时珍人物介绍 ↗">Harvard Magazine — Li Shizhen Biography ↗</a></div>
+    <div><a class="hometown-source" href="https://en.wikipedia.org/wiki/Qichun_County" data-href-en="https://en.wikipedia.org/wiki/Qichun_County" data-href-zh="https://www.chinanews.com/sh/news/2008/10-18/1417016.shtml" target="_blank" rel="noopener noreferrer" data-en="Wikipedia — Qichun County (Professor County) ↗" data-zh="中国新闻网 — 湖北蕲春“教授县”人才济济 ↗">Wikipedia — Qichun County (Professor County) ↗</a></div>
     </div>
     </article>
     <article class="hometown-item">
@@ -202,6 +204,7 @@
     const language = lang === "zh" ? "zh" : "en";
     document.documentElement.lang = language === "zh" ? "zh-CN" : "en-CA";
     document.querySelectorAll("img[data-src-en][data-src-zh]").forEach(img => { img.src = img.getAttribute(language === "zh" ? "data-src-zh" : "data-src-en"); });
+    document.querySelectorAll("a[data-href-en][data-href-zh]").forEach(a => { a.href = a.getAttribute(language === "zh" ? "data-href-zh" : "data-href-en"); });
     document.querySelectorAll("[data-en][data-zh]").forEach(el => {
       el.innerHTML = el.getAttribute(language === "zh" ? "data-zh" : "data-en");
     });
