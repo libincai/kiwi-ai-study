@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<!-- Level 3 category hub — shell from templates/level-3-category.html -->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Basic Geometry Words | KIWI 爱AI Study</title>
+<meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<style>
+.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
+.edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
+.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
+.edu-topic-list{display:grid;gap:12px}
+.edu-topic{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:16px;align-items:center;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff;text-decoration:none;color:inherit}
+.edu-topic-link{transition:transform .16s ease,box-shadow .16s ease}
+.edu-topic-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(24,55,95,.09)}
+.edu-topic-number{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#eaf4ff;color:#1768b2;font-weight:900;font-size:19px}
+.edu-topic h3{margin:0 0 5px;font-size:18px;color:#173e70}
+.edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}
+.edu-topic .edu-link{white-space:nowrap;color:#1768b2;font-weight:800;font-size:14px}
+.edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
+.edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}
+.edu-callout h2{margin:0 0 8px;color:#153d70}
+.edu-callout p{margin:0;color:#526780;line-height:1.7}
+.edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:#fff!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}
+.edu-button:hover{background:#10548f}
+@media(max-width:760px){.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
+  
+/* Math Foundations: source-book content, scoped to this page. */
+.mf-intro{margin:32px 0 22px}.mf-intro h2{color:#153d70;font-size:clamp(22px,2.4vw,29px);margin:0 0 9px}.mf-intro p{color:#526780;line-height:1.7;margin:0}
+.mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
+.mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
+.mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+@media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
+.mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
+</style>
+<style>
+.foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+<style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
+.foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
+.foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+</head>
+<body class="edu-page topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="edu-main">
+<section aria-label="Page introduction" class="nf-hero topic-banner foundation-topic-banner"><p class="topic-banner-kicker" data-en="MATH FOUNDATIONS" data-zh="数学基础">MATH FOUNDATIONS</p><h1 data-en="Geometry &amp; Space" data-zh="几何与空间">Geometry &amp; Space</h1><p class="topic-banner-subtitle" data-en="Explore essential mathematical ideas and examples." data-zh="探索核心数学概念与例题。">Explore essential mathematical ideas and examples.</p></section>
+<!-- LEVEL-3 BODY START -->
+<!-- LEVEL-3 BODY END -->
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a aria-current="page" class="mf-current" href="foundation-basic-geometry-words.html">Basic Geometry Words</a><a href="foundation-rotation-transformation.html">Rotation Transformation</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1>Basic Geometry Words</h1>
+<h3 id="point">Point</h3>
+<p>A point is a specific location in space. It has no size (no length,
+width, or height) and is usually represented by a dot and a capital
+letter.</p>
+<p>Examples:</p>
+<ul>
+<li><p>𝐴
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>o</mi><mi>i</mi><mi>n</mi><mi>t</mi><mspace width="0.222em"></mspace><mi>A</mi></mrow><annotation encoding="application/x-tex">Point\ A</annotation></semantics></math>)</p></li>
+<li><p>A dot on a map marking a city is a good visualization of a
+point.</p></li>
+</ul>
+<h3 id="line">Line</h3>
+<p>A line is a perfectly straight, continuous path that extends
+infinitely in both directions. It has no thickness and is typically
+named by two points on it or a single lowercase letter.</p>
+<p>Example:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo accent="true">↔</mo></mover><annotation encoding="application/x-tex">\overset{\leftrightarrow}{AB}</annotation></semantics></math></p>
+<p>A line may also be named using a lowercase letter, such as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝓁</mi><annotation encoding="application/x-tex">\mathcal{l}</annotation></semantics></math>.</p>
+<p>Example:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Line </mtext><mi>𝓁</mi></mrow><annotation encoding="application/x-tex">\text{Line~}\mathcal{l}</annotation></semantics></math></p>
+<h3 id="line-segment">Line Segment </h3>
+<p>A line segment is a part of a line with two distinct endpoints. It
+has a definite length.</p>
+<p>Examples:</p>
+<ul>
+<li><p>AB (Line segment AB)</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo accent="true">¯</mo></mover><annotation encoding="application/x-tex">\overline{AB}</annotation></semantics></math></p>
+<ul>
+<li><p>A ruler or the edge of a piece of paper are examples of line
+segments.</p></li>
+</ul>
+<h3 id="ray">Ray</h3>
+<p>A ray is a part of a line that has one endpoint and extends
+infinitely in only one direction.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A⟶B (Ray AB, starting at A and going through B)</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo accent="true">→</mo></mover><annotation encoding="application/x-tex">\overset{\rightarrow}{AB}</annotation></semantics></math></p>
+<ul>
+<li><p>A⟵B (Ray BA, starting at B and going through A)</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mrow><mi>B</mi><mi>A</mi></mrow><mo accent="true">→</mo></mover><annotation encoding="application/x-tex">\overset{\rightarrow}{BA}</annotation></semantics></math></p>
+<ul>
+<li><p>A beam of light from a flashlight or the sun’s rays are good
+visualizations of a ray.</p></li>
+</ul>
+<h3 id="angle">Angle</h3>
+<p>An angle is formed when two rays share a common endpoint (the
+vertex). Angles are measured in degrees.</p>
+<p>Examples:</p>
+<ul>
+<li><p><strong>Acute angle:</strong> Measures less than 90°.</p></li>
+<li><p><strong>Right angle:</strong> Measures exactly 90°. It often has
+a small square drawn in the corner to indicate this.</p></li>
+<li><p><strong>Obtuse angle:</strong> Measures greater than 90° but less
+than 180°.</p></li>
+<li><p><strong>Straight angle:</strong> Measures exactly 180°. It forms
+a straight line.</p></li>
+<li><p><strong>Reflex angle:</strong> Measures greater than 180° but
+less than 360°.</p></li>
+</ul>
+<h3 id="parallel-and-perpendicular-lines">Parallel And Perpendicular
+Lines</h3>
+<h4 id="parallel-lines">Parallel lines</h4>
+<p>Parallel lines are two lines in a plane that are always the same
+distance apart and never intersect, no matter how far they are
+extended.</p>
+<p>Notation:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝓁</mi><mo mathvariant="script">∥</mo></mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">\mathcal{l \parallel}m</annotation></semantics></math></p>
+<p>Examples:</p>
+<ul>
+<li><p>Noted using the symbol // (e.g., Line A // Line B).</p></li>
+<li><p>Train tracks</p></li>
+<li><p>Opposite edges of a ruler</p></li>
+</ul>
+<h4 id="perpendicular-lines">Perpendicular lines</h4>
+<p><strong>Perpendicular lines</strong> are two lines that intersect
+(cross) to form a right angle of exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math>.</p>
+<p>Notation:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝓁</mi><mi mathvariant="script">⊥</mi></mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">\mathcal{l\bot}m</annotation></semantics></math></p>
+<p>Examples:</p>
+<ul>
+<li><p>Noted using the symbol ⟂ (e.g., Line C ⟂ Line D).</p></li>
+<li><p>The corners of a room where the wall meets the floor</p></li>
+</ul>
+<h4 id="vertex">Vertex</h4>
+<p>(plural: vertices)</p>
+<p>A vertex is a corner point where two or more lines, rays, or edges
+meet.</p>
+<p>Examples:</p>
+<ul>
+<li><p>The shared endpoint where the two rays of an angle meet is the
+vertex.</p></li>
+<li><p>The corners of a square, triangle, or cube are all
+vertices.</p></li>
+</ul>
+<h3 id="polygons-and-shapes">Polygons and Shapes</h3>
+<h4 id="polygon">Polygon</h4>
+<p>A polygon is a closed, flat (2D) shape made up of three or more
+straight line segments joined end-to-end. The segments only meet at
+their endpoints (vertices).</p>
+<p>Examples:</p>
+<ul>
+<li><p>Triangles, squares, rectangles, hexagons, and octagons are all
+polygons.</p></li>
+<li><p>Circles and shapes with curved sides are <strong>not</strong>
+polygons.</p></li>
+</ul>
+<h4 id="triangle">Triangle </h4>
+<p>A triangle is a polygon with exactly three sides and three angles.
+Triangles are classified by their side lengths and angles:</p>
+<p>Examples:</p>
+<ul>
+<li><p><strong>Equilateral</strong>: All 3 sides are equal in length,
+and all 3 angles are 60°.</p></li>
+<li><p><strong>Isosceles</strong>: Exactly 2 sides are equal in length,
+and the two angles opposite those sides are equal.</p></li>
+<li><p><strong>Scalene</strong>: All 3 sides have different lengths, and
+all 3 angles are different measures.</p></li>
+<li><p><strong>Right triangle</strong>: One of the interior angles
+measures exactly 90°. The side opposite the right angle is called the
+hypotenuse.</p></li>
+</ul>
+<h4 id="quadrilateral">Quadrilateral</h4>
+<p>A quadrilateral is a polygon with exactly four sides and four angles.
+Specific quadrilaterals have special properties:</p>
+<p>Examples:</p>
+<ol type="1">
+<li><p><strong>Square:</strong> 4 equal sides and 4 right
+angles.</p></li>
+</ol>
+<ul>
+<li><p><strong>Rectangle</strong>: 4 right angles and opposite sides are
+equal in length.</p></li>
+<li><p><strong>Parallelogram</strong>: Opposite sides are parallel and
+equal in length.</p></li>
+<li><p><strong>Rhombus</strong>: 4 equal sides (it’s a slanted
+square).</p></li>
+<li><p><strong>Trapezoid</strong>: At least one pair of opposite sides
+are parallel.</p></li>
+</ul>
+<h4 id="regular-polygon">Regular polygon</h4>
+<p>A regular polygon is a polygon that is both
+<strong>equilateral</strong> (all sides have the same length) and
+<strong>equiangular</strong> (all interior angles have the same
+measure).</p>
+<p>Examples:</p>
+<ul>
+<li><p>An equilateral triangle is a regular polygon.</p></li>
+<li><p>A square is a regular polygon.</p></li>
+<li><p>A rhombus is <strong>not</strong> a regular polygon unless it is
+also a square (angles are not always equal).</p></li>
+</ul>
+<h4 id="circle-terms">Circle terms</h4>
+<p>A circle is the set of all points in a plane that are a fixed
+distance (radius) from a central point.</p>
+<p>Examples:</p>
+<ul>
+<li><p><strong>Radius (𝑟)</strong>: The distance from the exact center
+of the circle to any point on its edge.</p></li>
+<li><p><strong>Diameter (𝑑)</strong>: The distance across the circle
+through the center. It is always twice the radius (𝑑=2𝑟).</p></li>
+<li><p><strong>Circumference (𝐶)</strong>: The total distance around the
+outside of the circle (the perimeter).</p></li>
+<li><p><strong>Chord</strong>: A straight line segment whose endpoints
+both lie on the circle. (The diameter is the longest chord).</p></li>
+<li><p><strong>Arc</strong>: A portion or section of the curve that
+makes up the circle’s circumference.</p></li>
+<li><p><strong>Pi (𝑝𝑖)</strong>: A mathematical constant, approximately
+3.14159…, representing the ratio of a circle’s circumference to its
+diameter</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>C</mi><mi>d</mi></mfrac><mo>=</mo><mi>p</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">\frac{C}{d} = pi</annotation></semantics></math></p>
+<h3 id="measurement">Measurement</h3>
+<h4 id="perimeter">Perimeter</h4>
+<p>The perimeter is the total distance around the outside edge of a 2D
+shape. You calculate it by adding up the lengths of all the sides.</p>
+<p>Example:</p>
+<blockquote>
+<p>The perimeter of a rectangle with length 5cm and width 3cm is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>5</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">5 + 3 + 5 + 3 = 16</annotation></semantics></math>
+(cm).</p>
+</blockquote>
+<h4 id="area">Area</h4>
+<p>Area is the measure of the amount of flat space inside a 2D shape,
+measured in square units (e.g.,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cm</mtext><mn>2</mn></msup><annotation encoding="application/x-tex">\text{cm}^{2}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">in</mtext><mn>2</mn></msup><annotation encoding="application/x-tex">\text{in}^{2}</annotation></semantics></math>).</p>
+<p>Examples:</p>
+<ul>
+<li><p>Rectangle:</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>w</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">A = length \times width</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mi>l</mi><mi>w</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(A = lw)</annotation></semantics></math></p>
+<ul>
+<li><p>Triangle:</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mrow><mi>b</mi><mi>a</mi><mi>s</mi><mi>e</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">A = \frac{base \times height}{2}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mfrac><mrow><mi>b</mi><mi>h</mi></mrow><mn>2</mn></mfrac><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">\left( A = \frac{bh}{2} \right)</annotation></semantics></math></p>
+<ul>
+<li><p>Parallelogram:</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>b</mi><mi>a</mi><mi>s</mi><mi>e</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">A = base \times height</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mi>b</mi><mi>h</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(A = bh)</annotation></semantics></math></p>
+<ul>
+<li><p>Trapezoid:</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mrow><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mi>a</mi><mi>s</mi><msub><mi>e</mi><mn>1</mn></msub><mo>+</mo><mi>b</mi><mi>a</mi><mi>s</mi><msub><mi>e</mi><mn>2</mn></msub><mo form="postfix" stretchy="true">)</mo></mrow><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">A = \frac{\left( base_{1} + base_{2} \right) \times height}{2}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mfrac><mrow><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mn>1</mn><mo>+</mo><mi>b</mi><mn>2</mn><mo form="postfix" stretchy="true">)</mo></mrow><mi>h</mi></mrow><mn>2</mn></mfrac><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">\left( A = \frac{(b1 + b2)h}{2} \right)</annotation></semantics></math></p>
+<ul>
+<li><p>Circle:</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>π</mi><mo>×</mo><msup><mrow><mi>r</mi><mi>a</mi><mi>d</mi><mi>i</mi><mi>u</mi><mi>s</mi></mrow><mn>2</mn></msup><mspace width="0.222em"></mspace><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \pi \times {radius}^{2}\ \left( A = \pi r^{2} \right)</annotation></semantics></math></p>
+<h4 id="surface-area">Surface area</h4>
+<p>Surface area is the total area of all the outside surfaces (faces) of
+a 3D object. You imagine unfolding the shape into a flat “net” and
+finding the area of every single piece, then adding them up.</p>
+<p>Examples:</p>
+<ul>
+<li><p><strong>Prisms</strong>:</p></li>
+</ul>
+<p>Find the area of the front, back, top, bottom, left, and right faces,
+then add them all together.</p>
+<ul>
+<li><p><strong>Cylinders</strong>:</p></li>
+</ul>
+<p>The surface area is the area of the top and bottom circles plus the
+area of the rectangular side (when unrolled).</p>
+<h4 id="volume">Volume</h4>
+<p>Volume is the measure of the amount of 3D space that a solid object
+occupies, measured in cubic units (e.g., cm3, ft3).</p>
+<p>Examples:</p>
+<ul>
+<li><p><strong>Cube</strong>:</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi><mo>×</mo><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi><mo>×</mo><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">V = side \times side \times side</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>V</mi><mo>=</mo><msup><mi>s</mi><mn>3</mn></msup><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">\left( V = s^{3} \right)</annotation></semantics></math></p>
+<ul>
+<li><p><strong>Rectangular Prism</strong>:</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>w</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">V = length \times width \times height</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>V</mi><mo>=</mo><mi>l</mi><mi>w</mi><mi>h</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(V = lwh)</annotation></semantics></math></p>
+<ul>
+<li><p><strong>Cylinder</strong>:</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>A</mi><mi>r</mi><mi>e</mi><mi>a</mi><mi>o</mi><mi>f</mi><mi>b</mi><mi>a</mi><mi>s</mi><mi>e</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">V = Areaofbase \times height</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>V</mi><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><mi>h</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">\left( V = \pi r^{2}h \right)</annotation></semantics></math></p>
+<h4 id="net">Net</h4>
+<p>A net is a 2D (flat) shape that can be folded along its edges to form
+a 3D solid figure. It’s like the cardboard layout of a box before it’s
+assembled.</p>
+<p>Example:</p>
+<blockquote>
+<p>A net of a cube consists of six squares connected in a cross
+shape.</p>
+</blockquote>
+<h3 id="d-figures">3D figures</h3>
+<h4 id="prism">Prism</h4>
+<p>A prism is a 3D solid shape with two identical, parallel bases and
+rectangular sides (lateral faces) connecting them. Prisms are named by
+the shape of their base.</p>
+<p>Examples:</p>
+<ul>
+<li><p><strong>Rectangular Prism</strong>: Has rectangular bases (like a
+cereal box). Volume is calculated as:</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>w</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">V = length \times width \times height</annotation></semantics></math></p>
+<ul>
+<li><p><strong>Triangular Prism</strong>: Has triangular bases.</p></li>
+</ul>
+<h4 id="pyramid">Pyramid</h4>
+<p>A pyramid is a 3D shape where the base is a polygon (e.g., square,
+triangle) and all the sides are triangles that meet at a single point at
+the top called the apex.</p>
+<p>Example:</p>
+<blockquote>
+<p>A square pyramid has a square base and four triangular sides.</p>
+</blockquote>
+<h4 id="cylinder">Cylinder</h4>
+<p>A cylinder is a 3D shape with two parallel, congruent circular bases
+and one curved side.</p>
+<p>Example:</p>
+<blockquote>
+<p>A can of soup or a roll of paper towel.</p>
+</blockquote>
+<h4 id="cone">Cone</h4>
+<p>A cone is a 3D shape that has a flat, circular base and one curved
+side that tapers up to a single point (apex).</p>
+<p>Example:</p>
+<blockquote>
+<p>An ice cream cone or a traffic cone.</p>
+</blockquote>
+<h4 id="sphere">Sphere</h4>
+<p>A sphere is a perfectly round 3D object where every point on its
+surface is the same distance from its center. It is like a 3D
+circle.</p>
+<p>Example:</p>
+<blockquote>
+<p>A basketball, a marble, or Earth.</p>
+</blockquote>
+<h4 id="cube">Cube</h4>
+<p>A cube is a special type of rectangular prism where all 6 faces are
+identical squares.</p>
+<p>Example:</p>
+<blockquote>
+<p>A standard die (dice) or a Rubik’s cube.</p>
+</blockquote>
+<h3 id="transformations">Transformations</h3>
+<h4 id="translation">Translation</h4>
+<p>A translation is a transformation that “<strong>slides</strong>” a
+shape from one position to another without changing its size, shape, or
+orientation.</p>
+<p>Example:</p>
+<blockquote>
+<p>If you slide a triangle up 3 units and to the right 2 units, you are
+performing a translation.</p>
+</blockquote>
+<h4 id="reflection">Reflection</h4>
+<p>A reflection is a transformation that “<strong>flips</strong>” a
+shape over a line (the line of reflection), creating a mirror image.</p>
+<p>Example:</p>
+<blockquote>
+<p>If you flip a triangle over the y-axis, its new position is a
+reflection of the original.</p>
+</blockquote>
+<h4 id="rotation">Rotation</h4>
+<p>A rotation is a transformation that “<strong>turns</strong>” a shape
+around a fixed point (the center of rotation). The shape maintains its
+size and form.</p>
+<p>Examples:</p>
+<blockquote>
+<p>A rotation can be clockwise or counter-clockwise, for a specific
+number of degrees.</p>
+</blockquote>
+<h4 id="dilation">Dilation</h4>
+<p>A dilation is a transformation that changes the size of a shape but
+not its form. It either enlarges or shrinks the figure based on a scale
+factor from a central point.</p>
+<p>Example:</p>
+<blockquote>
+<p>If a shape is dilated by a scale factor of 2, its new dimensions will
+be twice as large.</p>
+</blockquote>
+<h4 id="congruent-figures">Congruent figures</h4>
+<p>Congruent figures are shapes that have the exact same size and shape.
+One can be perfectly mapped onto the other using a combination of
+translations, reflections, and rotations.</p>
+<p>Examples:</p>
+<ul>
+<li><p><strong>Squares</strong>: Two squares are congruent if all four
+corresponding sides have the same length and all four corresponding
+angles measure
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math>.</p></li>
+<li><p><strong>Triangles</strong>: Two triangles are congruent if their
+corresponding side lengths and corresponding angle measures are
+equal.</p></li>
+<li><p><strong>Transformations</strong>: A shape and its rotated,
+reflected, or translated image are congruent because these
+transformations preserve size and shape.</p></li>
+</ul>
+<h4 id="similar-figures">Similar figures</h4>
+<p>Similar figures are shapes that have the same form but not
+necessarily the same size. Their corresponding angles are equal, and
+their corresponding sides are proportional.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A small square and a large square are similar figures.</p></li>
+<li><p>A picture and a scaled-down version of it are similar.</p></li>
+</ul>
+<h4 id="line-of-symmetry">Line of symmetry</h4>
+<p>A line of symmetry is a line that divides a figure into two identical
+halves. If you fold the figure along this line, both halves will match
+up perfectly.</p>
+<p>Examples:</p>
+<ul>
+<li><p>An isosceles triangle has one line of symmetry.</p></li>
+<li><p>A square has four lines of symmetry.</p></li>
+</ul>
+<h3 id="position">Position</h3>
+<h4 id="coordinate-plane">Coordinate plane </h4>
+<p>A coordinate plane is a flat, 2D surface formed by two intersecting
+number lines, the x-axis and the y-axis, used to locate points.</p>
+<p>Example:</p>
+<blockquote>
+<p>Also called a Cartesian plane or a coordinate grid.</p>
+</blockquote>
+<h4 id="x-axis-y-axis">X-axis, y-axis</h4>
+<ul>
+<li><p><strong>x-axis</strong>: The horizontal number line on the
+coordinate plane.</p></li>
+<li><p><strong>y-axis</strong>: The vertical number line on the
+coordinate plane.</p></li>
+</ul>
+<p>Example:</p>
+<blockquote>
+<p>The x-axis measures horizontal distance, and the y-axis measures
+vertical distance.</p>
+</blockquote>
+<h4 id="origin">Origin</h4>
+<p>The origin is the point where the x-axis and the y-axis intersect. It
+is located at the coordinates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math>.</p>
+<p>Example:</p>
+<blockquote>
+<p>The starting point for all measurements on the coordinate plane.</p>
+</blockquote>
+<h4 id="ordered-pair">Ordered pair</h4>
+<p>An ordered pair is a set of two numbers, (𝑥,𝑦), that represent a
+single point’s location on the coordinate</p>
+<p>plane. The first number is the x-coordinate, and the second is the
+y-coordinate.</p>
+<p>Example:</p>
+<blockquote>
+<p>To find the point (3, −2), you move 3 units right on the x-axis and 2
+units down on the y-axis.</p>
+</blockquote>
+<h4 id="quadrants">Quadrants</h4>
+<p>The four regions on the coordinate plane created by the intersection
+of the x-axis and the y-axis. They are numbered using Roman numerals,
+starting from the top right and moving counterclockwise.</p>
+<p>Examples:</p>
+<ul>
+<li><p>Quadrant I: Positive x and y coordinates e.g., (3,5).</p></li>
+<li><p>Quadrant II: Negative x and positive y coordinates e.g.,
+(−2,4).</p></li>
+<li><p>Quadrant III: Negative x and y coordinates e.g.,
+(−1,−6).</p></li>
+<li><p>Quadrant IV: Positive x and negative y coordinates e.g.,
+(7,−2).</p></li>
+</ul>
+</article></div></main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+</body>
+</html>

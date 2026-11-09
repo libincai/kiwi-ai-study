@@ -202,7 +202,17 @@
 .kiwi-word-info-panel .kiwi-math-block,.kiwi-insight-panel .kiwi-math-block,.kiwi-curriculum-panel .kiwi-math-block{text-align:center;margin-left:auto;margin-right:auto}
 .kiwi-word-info-panel math[display="block"],.kiwi-insight-panel math[display="block"],.kiwi-curriculum-panel math[display="block"]{display:block;margin-inline:auto}
 @media(max-width:600px){.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{padding:.85rem 1rem}}
-</style></head>
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+</head>
 <body class="topic-page">
 <header class="site-header">
 <div class="brand-lockup">
@@ -274,7 +284,7 @@ The car slows down from 90 km/h to 0 km/h over 5 seconds.</p></li>
 90 &amp; 3 &lt; t \leq 8 \\
 90 - 18(t - 8) &amp; 8 &lt; t \leq 13
 \end{matrix} \right.\ 
-</annotation></semantics></math></div><p><img loading="lazy" src="../assets/math-word/image5.jpg" style="width:408px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><p>Each part describes a different stage of the journey.</p></div></details><details class="lesson-card"><summary>3. Linear, Non-Linear,
+</annotation></semantics></math></div><p><img loading="lazy" src="../assets/math-word/image5.jpg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><p>Each part describes a different stage of the journey.</p></div></details><details class="lesson-card"><summary>3. Linear, Non-Linear,
 and Constant Functions</summary><div class="lesson-card-body"><p>The car’s journey demonstrates three types of functions.</p><h4 id="stage-1-quadratic-function">Stage 1: Quadratic function</h4><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>t</mi><mn>2</mn></msup><mo>,</mo><mspace width="1.0em"></mspace><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">v(t) = 10t^{2},\quad 0 \leq t \leq 3</annotation></semantics></math></div><p>The speed increases from 0 to 90 km/h.</p><p>This is a quadratic function because the input variable (t) is
 squared. Its graph is a curved parabola.</p><h4 id="stage-2-constant-function">Stage 2: Constant function</h4><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>90</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>3</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">v(t) = 90,\quad 3 &lt; t \leq 8</annotation></semantics></math></div><p>The speed remains at 90 km/h.</p><p>This is a constant function, represented by a horizontal line. The
 rate of change of speed is zero during this stage.</p><h4 id="stage-3-linear-function">Stage 3: Linear function</h4><div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>90</mn><mo>−</mo><mn>18</mn><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo>−</mo><mn>8</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mn>8</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">v(t) = 90 - 18(t - 8),\quad 8 &lt; t \leq 13</annotation></semantics></math></div><p>The speed decreases by

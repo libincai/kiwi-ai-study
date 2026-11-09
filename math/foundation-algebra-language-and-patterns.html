@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<!-- Level 3 category hub — shell from templates/level-3-category.html -->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Algebra Language and
+Patterns | KIWI 爱AI Study</title>
+<meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<style>
+.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
+.edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
+.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
+.edu-topic-list{display:grid;gap:12px}
+.edu-topic{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:16px;align-items:center;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff;text-decoration:none;color:inherit}
+.edu-topic-link{transition:transform .16s ease,box-shadow .16s ease}
+.edu-topic-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(24,55,95,.09)}
+.edu-topic-number{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#eaf4ff;color:#1768b2;font-weight:900;font-size:19px}
+.edu-topic h3{margin:0 0 5px;font-size:18px;color:#173e70}
+.edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}
+.edu-topic .edu-link{white-space:nowrap;color:#1768b2;font-weight:800;font-size:14px}
+.edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
+.edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}
+.edu-callout h2{margin:0 0 8px;color:#153d70}
+.edu-callout p{margin:0;color:#526780;line-height:1.7}
+.edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:#fff!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}
+.edu-button:hover{background:#10548f}
+@media(max-width:760px){.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
+  
+/* Math Foundations: source-book content, scoped to this page. */
+.mf-intro{margin:32px 0 22px}.mf-intro h2{color:#153d70;font-size:clamp(22px,2.4vw,29px);margin:0 0 9px}.mf-intro p{color:#526780;line-height:1.7;margin:0}
+.mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
+.mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
+.mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+@media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
+.mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
+</style>
+<style>
+.foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
+</style><style>
+/* Math Foundations Word info and Ontario curriculum panels */
+.kiwi-word-info-panel,.kiwi-curriculum-panel{background:#fff8e9;border:1px solid #f0d58d;border-radius:12px;padding:16px 20px;margin:20px 0;color:#4b3d2b;text-align:left;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere}
+.kiwi-word-info-panel .kiwi-panel-heading{display:flex;align-items:center;gap:9px;color:#895b0e;font-weight:700;margin:0 0 9px}
+.kiwi-word-info-panel .kiwi-panel-icon{color:#c18a19;font-size:18px;line-height:1;flex-shrink:0}
+.kiwi-curriculum-panel .kiwi-panel-heading{font-weight:700;color:#895b0e;margin:0 0 10px}
+.kiwi-word-info-panel p,.kiwi-curriculum-panel p{margin:0 0 10px;text-align:left}
+.kiwi-word-info-panel p:last-child,.kiwi-curriculum-panel p:last-child{margin-bottom:0}
+.kiwi-word-info-panel .MathJax_Display,.kiwi-curriculum-panel .MathJax_Display,.kiwi-word-info-panel math[display=block],.kiwi-curriculum-panel math[display=block]{text-align:center;margin-inline:auto}
+.kiwi-word-info-panel a,.kiwi-curriculum-panel a{text-decoration:underline}
+@media(max-width:640px){.kiwi-word-info-panel,.kiwi-curriculum-panel{padding:13px 14px}}
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+
+<style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
+.foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
+.foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+</head>
+<body class="edu-page topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="edu-main">
+<section aria-label="Page introduction" class="nf-hero topic-banner foundation-topic-banner"><p class="topic-banner-kicker" data-en="MATH FOUNDATIONS" data-zh="数学基础">MATH FOUNDATIONS</p><h1 data-en="Functions &amp; Graphs" data-zh="函数与图像">Functions &amp; Graphs</h1><p class="topic-banner-subtitle" data-en="Explore essential mathematical ideas and examples." data-zh="探索核心数学概念与例题。">Explore essential mathematical ideas and examples.</p></section>
+<!-- LEVEL-3 BODY START -->
+<!-- LEVEL-3 BODY END -->
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a aria-current="page" class="mf-current" href="foundation-algebra-language-and-patterns.html">Algebra Language and
+Patterns</a><a href="foundation-understanding-functions.html">Understanding Functions</a><a href="foundation-understanding-the-placeholder-in-f-x.html">Understanding the
+Placeholder in f(x)</a><a href="foundation-function-notation.html">Function Notation</a><a href="foundation-linear-vs-non-linear-functions.html">Linear vs. Non-linear
+Functions</a><a href="foundation-step-pattern-and-first-differences-y.html">Step Pattern and First
+Differences (Δy)</a><a href="foundation-functions-and-their-inverses.html">Functions and Their Inverses</a><a href="foundation-function-transformations.html">Function Transformations</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1>Algebra Language and
+Patterns</h1>
+<h3 id="term-and-factor">Term and Factor</h3>
+<h4 id="term">Term</h4>
+<p>A term is one part of an expression or equation, separated by + or
+−.</p>
+<p>Example:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">2x + 5 = 9</annotation></semantics></math></p>
+<p>Here, 2𝑥 and 5 are terms.</p>
+<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div>× and ÷ do not separate terms — they stay inside the term.</aside>
+<h4 id="factor">Factor</h4>
+<p>Inside a term, the numbers and letters joined by multiplication or
+division are called factors.</p>
+<p>Example:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>x</mi><mi>y</mi><mo>−</mo><msup><mn>9</mn><mn>2</mn></msup><mo>+</mo><mfrac><mn>3</mn><mn>5</mn></mfrac></mrow><annotation encoding="application/x-tex">4xy - 9^{2} + \frac{3}{5}</annotation></semantics></math></p>
+<ul>
+<li><p>In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">4xy</annotation></semantics></math>,
+the factors are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.</p></li>
+<li><p>In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>9</mn><mn>2</mn></msup><annotation encoding="application/x-tex">9^{2}</annotation></semantics></math>,
+the factor is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>,
+multiplied by itself.</p></li>
+<li><p>In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>3</mn><mn>5</mn></mfrac><annotation encoding="application/x-tex">\frac{3}{5}</annotation></semantics></math>
+, factors are 3 and 5.</p></li>
+</ul>
+<p><strong>NOTE:</strong> If you intended to write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>x</mi><mi>y</mi><mo>−</mo><mn>9</mn><mo>×</mo><mn>2</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">4xy - 9 \times 2\ </annotation></semantics></math>rather
+than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>x</mi><mi>y</mi><mo>−</mo><msup><mn>9</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4xy - 9^{2}</annotation></semantics></math>,
+then the factors in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mo>×</mo><mn>2</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">9 \times 2\ </annotation></semantics></math>are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>.
+The superscript makes a difference!</p>
+<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div>Plus and minus separate terms; multiplication and division connect
+factors.</aside>
+<h3 id="variable-and-coefficient">Variable and Coefficient</h3>
+<h4 id="variable">Variable</h4>
+<p>Variable is a letter that stands for a number we don’t know yet.</p>
+<p>Example:</p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">2x + 5 = 9</annotation></semantics></math></p></li>
+</ul>
+<p>In this equation, 𝑥 is the variable.</p>
+<h4 id="coefficient">Coefficient</h4>
+<p>Coefficient is the number in front of a variable.</p>
+<p>Examples:</p>
+<ul>
+<li><p>in 5𝑥, the coefficient is <strong>5</strong></p></li>
+<li><p>in −3𝑦, the coefficient is <strong>−3</strong></p></li>
+<li><p>in 12𝑥, the coefficient is <strong>1/2</strong></p></li>
+<li><p>in 𝑥 (no number shown), the coefficient is <strong>1</strong>
+(because 𝑥 really means 1𝑥)</p></li>
+</ul>
+<h3 id="like-terms">Like Terms</h3>
+<p>Like terms are terms that have the <strong>exact same
+variables</strong> and the <strong>exact same exponents</strong> for
+those variables. Only the coefficients can be different.</p>
+<p>Examples:</p>
+<ul>
+<li><p>2𝑥 and 7𝑥 are like terms.</p></li>
+<li><p>5<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>y</mi><mn>2</mn></msup><annotation encoding="application/x-tex">y^{2}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>y</mi><mn>2</mn></msup><annotation encoding="application/x-tex">y^{2}</annotation></semantics></math>
+are like terms.</p></li>
+<li><p>3𝑎𝑏 and −2𝑎𝑏 are like terms.</p></li>
+<li><p>4𝑥 and
+4<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mn>2</mn></msup><annotation encoding="application/x-tex">x^{2}</annotation></semantics></math>
+are <strong>not</strong> like terms (different exponents).</p></li>
+<li><p>𝑎 and 𝑏 are <strong>not</strong> like terms (different
+variables).</p></li>
+</ul>
+<h3 id="constant">Constant</h3>
+<p>A constant is a fixed value that does not change in a problem. In an
+expression, any number without a variable is a constant term.</p>
+<p>Examples:</p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">2x + 5</annotation></semantics></math>→
+the constant term is 5</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>−</mo><mn>7</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">y - 7 = 12</annotation></semantics></math>→
+the constants are −7 and 12</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>a</mi><mo>+</mo><mn>4</mn><mi>b</mi><mo>−</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">3a + 4b - 9</annotation></semantics></math>→
+the constant term is −9</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0.5</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">- 0.5x^{2} + 6</annotation></semantics></math>→
+the constant term is 6</p></li>
+</ul>
+<h3 id="expression-equation-and-inequality">Expression, Equation and
+Inequality</h3>
+<h4 id="expression">Expression</h4>
+<p>Expression is a math <strong>phrase</strong> made with numbers or
+variables but <em>without</em> an equal sign.</p>
+<p>Examples:</p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>57</mn></mrow><annotation encoding="application/x-tex">2x + 57</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">y - 3</annotation></semantics></math></p></li>
+</ul>
+<h4 id="equation">Equation</h4>
+<p>Equation is a math <strong>sentence</strong> that shows two sides are
+equal. An equation always includes an <strong>equal sign</strong>.</p>
+<p>Examples:</p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>+</mo><mn>4</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">3 + 4 = 7</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">2x + 5 = 7</annotation></semantics></math></p></li>
+</ul>
+<h4 id="inequality">Inequality</h4>
+<p>Inequality is a math <strong>sentence</strong> that shows two sides
+are <strong>not</strong> equal, using inequality symbols.</p>
+<p>Examples:</p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&gt;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">x &gt; 5</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is greater than 5)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≤</mo><mn>10</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">y \leq 10\ </annotation></semantics></math>(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+is less than or equal to 10)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo>≠</mo><mn>7</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">2a + 1 \neq 7\ </annotation></semantics></math>(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">2a + 1\ </annotation></semantics></math>is
+not equal to 7)</p></li>
+</ul>
+<h3 id="working-with-expressions-and-equations">Working with Expressions
+and Equations</h3>
+<h4 id="evaluate">Evaluate</h4>
+<p>To evaluate an expression means to substitute given numbers for the
+variables (plug them in) and then calculate the result using the order
+of operations (<strong>BEDMAS</strong>).</p>
+<p>Example:</p>
+<blockquote>
+<p>Evaluate</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">2x + 5</annotation></semantics></math></p>
+<p>when 𝑥=3:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>3</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>+</mo><mn>5</mn><mo>=</mo><mn>6</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">2(3) + 5 = 6 + 5 = 11</annotation></semantics></math></p>
+</blockquote>
+<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><p>BEDMAS is an acronym used in mathematics to remember the
+<strong>order of operations</strong>. It provides a set of rules that
+dictate the sequence in which calculations must be performed to ensure a
+consistent and correct result for any given mathematical expression.</p>
+<p>The operations are performed in the following order:</p>
+<ul>
+<li><p><strong>B</strong>rackets / Parentheses</p></li>
+<li><p><strong>E</strong>xponents / Orders (or Indices)</p></li>
+<li><p><strong>D</strong>ivision and <strong>M</strong>ultiplication
+(equal priority, left to right)</p></li>
+<li><p><strong>A</strong>ddition and <strong>S</strong>ubtraction (equal
+priority, left to right)</p></li>
+</ul></aside>
+<h3 id="patterns-and-sequences">Patterns and Sequences</h3>
+<h4 id="patterns">Patterns</h4>
+<p>A pattern is a list of numbers, shapes, or objects that follow a
+rule.</p>
+<p>A pattern usually has three parts:</p>
+<ul>
+<li><p><strong>Term number</strong> — which place it is in the pattern
+(1st, 2nd, 3rd, …).</p></li>
+<li><p><strong>Term value</strong> — the actual number (or shape) at
+that place.</p></li>
+<li><p><strong>Rule / expression</strong> — the math sentence that tells
+how to get the term value from the term number.</p></li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><p>Pattern: 2,4,6,8,…</p></li>
+<li><p>Term number: 1,2,3,4,…</p></li>
+<li><p>Term value: 2,4,6,8,…</p></li>
+<li><p>Rule (expression):</p></li>
+</ul>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">a_{n} = 2n
+</annotation></semantics></math>where 𝑛 is the term number.</p>
+<p>If we know the <strong>rule</strong>, we can find
+<strong>any</strong> term in the pattern — even the 100th one — without
+listing all the numbers.</p>
+<h4 id="sequence">Sequence</h4>
+<p>A sequence is an ordered list of numbers that follows a specific rule
+or pattern. The numbers in the sequence are called
+<strong>terms</strong>.</p>
+<ul>
+<li><p><strong>Arithmetic sequence</strong>: add the same number each
+time.</p></li>
+</ul>
+<blockquote>
+<p>A sequence where the difference between consecutive terms is
+constant. This constant difference is called the common difference.</p>
+<p>Examples:</p>
+</blockquote>
+<ul>
+<li><p>3,5,7,9,11,… (common difference of +2)</p></li>
+<li><p>10,7,4,1,… (common difference of −3)</p></li>
+</ul>
+<ul>
+<li><p><strong>Geometric sequence:</strong> multiply by the same number
+each time.</p></li>
+</ul>
+<blockquote>
+<p>A sequence where the ratio between consecutive terms is constant.
+This constant ratio is called the <strong>common ratio</strong>.</p>
+<p>Example:</p>
+<p>2,4,8,16,32,… (common ratio of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>×</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\times 2</annotation></semantics></math>)</p>
+</blockquote>
+</article></div></main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+</body>
+</html>

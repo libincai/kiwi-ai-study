@@ -1007,3 +1007,76 @@ Applies to `math/gcf.html`, `math/unit-conversions-and-rates.html`, and `math/me
 - Style panels consistently: pale cream `#fff8e9`, subtle gold border `#f0d58d`, rounded corners, left-aligned prose and heading. Standalone display mathematics inside panels remains centered; inline math stays inline.
 - Never center all the text in an imported table or keep empty Word icon columns. Do not convert actual data tables (multi-row numerical tables, comparisons, formula tables) into panels.
 - QA: review panel types and links across every imported Level 4 page, including mobile, while preserving the existing example, math and image readability standards.
+
+
+## Math Foundations Level 3 → Level 4 Navigation
+
+- The six Math Foundations category cards are Level 3 index cards, matching Mathematical Thinking. Clicking one must open an actual Level 4 lesson directly, not a book-wide intermediate page.
+- Each Level 4 lesson has a left sidebar listing the sibling lessons of its category. Number Families is the FIRST item of Number Skills & Operations; do not edit its existing lesson content.
+- The imported Word Heading 2 topics become individual Level 4 lesson pages. Word Worksheet and Answer Key are not published, per prior web conversion rules.
+- Use breadcrumb navigation instead of legacy Back to buttons; preserve existing banner, website header and footer.
+
+
+## Math Foundations Level 4 Banner (2026-11-09)
+- All Math Foundations topic pages use the **Level 4 Topic Banner**, following the existing Number Families leaf-page style (light background), not the blue Level 3 compact banner.
+- Banner heading names the **parent category**, e.g. Number Skills & Operations; the lesson heading in the main content names the specific topic (Number Families, Decimal, etc.).
+- Preserve the six-card Level 3 Math Foundations index and the category-specific Level 4 left sidebar. Avoid duplicate breadcrumbs.
+
+
+## Math Foundations Level 4 Banner Consistency (2026-11-09)
+All imported `math/foundation-*.html` lesson banners must use `class="nf-hero topic-banner foundation-topic-banner"`, matching the existing Number Families reference page. Never use `topic-banner` alone on these pages: its generic 50px title rule causes oversized, vertically clipped text. Keep the Level 4 category heading and separate lesson title in the article. Do not change the Number Families original content.
+
+
+### Math Foundations Level 4 Breadcrumbs
+- Use only the shared `assets/js/drive-breadcrumb.js` breadcrumb, consistent with the existing Number Families page.
+- Do not insert a second hard-coded breadcrumb (`nf-lesson-crumb` or `foundation-crumb`) into lesson HTML.
+- Register every new Level 4 lesson in the shared breadcrumb page registry, parented to `math/math-foundations.html`.
+- Keep the Google Drive-style clickable ancestors and dropdowns; no Back to Math Education button.
+
+
+## Level 4 Breadcrumb category labels (2026-11-09)
+
+For all Level 4 pages under Math Foundations and Mathematical Thinking, the final Breadcrumb item displays the **category shown in the Level 4 topic banner**, not the individual lesson title. Example: `Home › Math Education › Mathematical Thinking › Number Skills & Operations`. The individual lesson name (e.g. Greatest Common Factor (GCF), Decimal, Number Families) appears as the article title and active left-navigation item. Preserve the existing parent path, dropdown behavior, bilingual labels, banner, and lesson content. Maintain the per-page registration in `assets/js/drive-breadcrumb.js` accordingly.
+
+
+### Level 4 page body width consistency (2026-11-09)
+- All Level 4 topic pages must align their breadcrumb, banner, sidebar and main lesson with the Math Foundations Decimal page frame.
+- Desktop outer main: `width:100%; max-width:1240px; margin-inline:auto; padding-inline:34px; box-sizing:border-box` (usable content width 1172px at wide viewports).
+- Mobile <=700px: `width:100%; padding-inline:18px; box-sizing:border-box`.
+- Both `.topic-main` (Number Families and Mathematical Thinking) and `.edu-main` (imported Math Foundations) must use the same effective frame; do not combine `calc(100% - 64px)` with additional horizontal padding.
+- Keep existing Level 4 banner, sidebar, breadcrumb and lesson content intact.
+
+
+### Level 4 full-width alignment (corrected)
+Match the `edu-main` Decimal reference exactly. For `.topic-page .topic-main`, use the same responsive outer width as `.edu-page .edu-main` and **zero horizontal padding**. Do not add 34px gutters inside `topic-main`: this makes Number Families and Mathematical Thinking pages narrower. Desktop width: `min(1240px, calc(100% - 64px))`, between 701px and 1303px: `calc(100% - 48px)`; mobile: `calc(100% - 36px)`.
+
+
+## Math Foundations panel audit (2026-11-09)
+- One-row two-cell Word learning-note tables are semantic warm-cream `aside.kiwi-word-info-panel` with lightbulb; genuine multi-row data tables remain tables.
+- Ontario Curriculum Connection is a warm-cream `aside.kiwi-curriculum-panel` without lightbulb; original curriculum descriptions and links remain.
+- Both panels use left-aligned prose and centered standalone equations.
+
+
+### Level 4 body and banner alignment
+The lesson layout (sidebar plus article) must align exactly with the left and right edges of the Level 4 banner. Never cap `.kiwi-learning-layout` at 1160px inside a 1240px `.topic-main`; override it to `width:100%; max-width:none; margin-inline:0`. Apply the same rule to `.nf-lesson-layout`. The outer `topic-main` controls the shared width and mobile gutters.
+
+
+## Level 4 left navigation — canonical GCF sidebar
+
+All Math Foundations and Mathematical Thinking Level 4 pages must use the **GCF (`math/gcf.html`) sidebar visual style**: pale blue-white `#f7faff` background, `1px #dce7f3` border, 14px rounded corners, 18px/12px padding, 14px navy link text, 12px/13px link padding, 6px vertical spacing, and 9px link radius. The current lesson has a pale blue `#deecff` fill, bold dark blue text and a 3px blue left accent. Hover uses `#e8f2ff`. Keep sidebar topics scoped to their category; preserve lesson links and order. Apply the same CSS to `.kiwi-topic-sidebar`, `.mf-sidebar .mf-side-links`, and `.nf-lesson-sidebar nav`, rather than inventing a different sidebar for imported pages. Sidebar and main content remain in the same Level 4 grid. On narrow screens sidebar becomes non-sticky and full-width.
+
+
+### Level 4 Sidebar Alignment (Math Foundations and Mathematical Thinking)
+Use the GCF / Number Families sidebar as the visual reference. All topic links start at the same left edge. The legacy `.mf-side-links { padding: 5px 0 9px 26px; }` must NOT shift Foundation links to the right. Use `padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px` for the link container, and consistent 12px/13px link padding. The active link uses a light-blue background and a 3px blue left border, compensated in its left padding.
+
+
+## Level 4 sidebar return link
+
+Every Math Foundations Level 4 sidebar must end with a separate, visually divided return link: `← All Math Foundations` (Chinese: `← 返回数学基础目录`) linking to `math-foundations.html`. Match the GCF Mathematical Thinking sidebar return-link spacing, border, font size, and styling. Keep this return link after the topic links and outside the active-topic state.
+
+
+### Math Foundations classification: Trigonometry
+- Trigonometry is an independent Level 3 category, separate from Geometry & Space.
+- Geometry & Space Level 4 sidebars must not contain Trigonometry.
+- Trigonometry Level 4 sidebars contain its own lessons (Understanding Trigonometry, Three Sides, Four Ratios, Special Right Triangles).
+- The Level 3 category card links directly to the first Trigonometry Level 4 lesson.

@@ -4164,3 +4164,83 @@ html body main .nf-hero.topic-banner > p:last-child {
    Applies to both Chinese and English versions. */
 .hometown-photo img[src$="huanggang-mijuan-en.webp"],
 .hometown-photo img[src$="huanggang-mijuan.webp"]{aspect-ratio:auto;object-fit:contain;background:transparent;}
+
+/* 2026-11-09 — Level 4 body width parity with Math Foundations Decimal.
+   The old topic-main calc(100% - 64px) plus inner padding narrowed
+   Number Families and all Mathematical Thinking lessons. */
+@media (min-width: 701px) {
+  html body.topic-page main.topic-main {
+    width: 100% !important;
+    max-width: 1240px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 34px !important;
+    padding-right: 34px !important;
+    box-sizing: border-box !important;
+  }
+}
+@media (max-width: 700px) {
+  html body.topic-page main.topic-main {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
+/* 2026-11-09 FINAL: Level 4 topic-main matches Decimal edu-main exactly.
+   Both use the same outer width, with ZERO extra internal horizontal padding.
+   Prior 34px topic-main padding was the cause of the visible narrowing. */
+@media (min-width: 701px) {
+  html body.topic-page main.topic-main {
+    width: min(1240px, calc(100% - 64px)) !important;
+    max-width: 1240px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+@media (min-width: 701px) and (max-width: 1303px) {
+  html body.topic-page main.topic-main {
+    width: calc(100% - 48px) !important;
+  }
+}
+@media (max-width: 700px) {
+  html body.topic-page main.topic-main {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* 2026-11-09: Level 4 inner layout must align exactly with its topic banner.
+   Mathematical Thinking previously capped its grid at 1160px within a 1240px banner.
+   Number Families and all other topic pages share this full-width rule. */
+@media (min-width: 701px) {
+  html body.topic-page main.topic-main > .kiwi-learning-layout,
+  html body.topic-page main.topic-main > .nf-lesson-layout {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+@media (max-width: 700px) {
+  html body.topic-page main.topic-main > .kiwi-learning-layout,
+  html body.topic-page main.topic-main > .nf-lesson-layout {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}

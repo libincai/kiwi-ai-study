@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<!-- Level 3 category hub — shell from templates/level-3-category.html -->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Special Right Triangles | KIWI 爱AI Study</title>
+<meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<style>
+.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
+.edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
+.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
+.edu-topic-list{display:grid;gap:12px}
+.edu-topic{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:16px;align-items:center;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff;text-decoration:none;color:inherit}
+.edu-topic-link{transition:transform .16s ease,box-shadow .16s ease}
+.edu-topic-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(24,55,95,.09)}
+.edu-topic-number{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#eaf4ff;color:#1768b2;font-weight:900;font-size:19px}
+.edu-topic h3{margin:0 0 5px;font-size:18px;color:#173e70}
+.edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}
+.edu-topic .edu-link{white-space:nowrap;color:#1768b2;font-weight:800;font-size:14px}
+.edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
+.edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}
+.edu-callout h2{margin:0 0 8px;color:#153d70}
+.edu-callout p{margin:0;color:#526780;line-height:1.7}
+.edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:#fff!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}
+.edu-button:hover{background:#10548f}
+@media(max-width:760px){.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
+  
+/* Math Foundations: source-book content, scoped to this page. */
+.mf-intro{margin:32px 0 22px}.mf-intro h2{color:#153d70;font-size:clamp(22px,2.4vw,29px);margin:0 0 9px}.mf-intro p{color:#526780;line-height:1.7;margin:0}
+.mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
+.mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
+.mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+@media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
+.mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
+</style>
+<style>
+.foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+
+<style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
+.foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
+.foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+</head>
+<body class="edu-page topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="edu-main">
+<section aria-label="Page introduction" class="nf-hero topic-banner foundation-topic-banner"><p class="topic-banner-kicker" data-en="MATH FOUNDATIONS" data-zh="数学基础">MATH FOUNDATIONS</p><h1 data-en="Trigonometry" data-zh="三角学">Trigonometry</h1><p class="topic-banner-subtitle" data-en="Explore essential mathematical ideas and examples." data-zh="探索核心数学概念与例题。">Explore essential mathematical ideas and examples.</p></section>
+<!-- LEVEL-3 BODY START -->
+<!-- LEVEL-3 BODY END -->
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a href="foundation-understanding-trigonometry.html">Understanding Trigonometry</a><a href="foundation-the-three-sides-of-a-right-triangle.html">The Three Sides of a Right
+Triangle</a><a href="foundation-the-four-basic-trigonometric-ratios.html">The Four Basic
+Trigonometric Ratios</a><a aria-current="page" class="mf-current" href="foundation-special-right-triangles.html">Special Right Triangles</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1>Special Right Triangles</h1>
+<p>You do not need to memorize every special-angle trigonometric value
+separately. You can derive them from two special right triangles.</p>
+<h3 id="the-306090-triangle">The 30°–60°–90° Triangle</h3>
+<p>Start with an equilateral triangle whose sides are all 2 units
+long.</p>
+<p>Draw an altitude from one vertex to the opposite side. This divides
+the equilateral triangle into two congruent right triangles.</p>
+<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image27.webp" style="width:3.76in;height:1.78527in"/></p>
+<p>The altitude:</p>
+<ul>
+<li><p>Bisects the opposite side into two segments of length 1.</p></li>
+<li><p>Splits the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">60^{\circ}</annotation></semantics></math>
+angle into two
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">30^{\circ}</annotation></semantics></math>
+angles.</p></li>
+<li><p>Creates two right triangles with angles
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">30^{\circ}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">60^{\circ}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math>.</p></li>
+</ul>
+<p>Using the Pythagorean Theorem, the altitude is:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><msup><mi>h</mi><mn>2</mn></msup><mo>+</mo><msup><mn>1</mn><mn>2</mn></msup><mo>=</mo><msup><mn>2</mn><mn>2</mn></msup></mrow><mrow><msup><mi>h</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>3</mn></mrow><mrow><mi>h</mi><mo>=</mo><msqrt><mn>3</mn></msqrt></mrow></mrow><annotation encoding="application/x-tex">{h^{2} + 1^{2} = 2^{2}
+}{h^{2} = 4 - 1 = 3
+}{h = \sqrt{3}
+}</annotation></semantics></math>Therefore, the side lengths are:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mn>1</mn><mo>:</mo><msqrt><mn>3</mn></msqrt><mo>:</mo><mn>2</mn></mrow></menclose><annotation encoding="application/x-tex">\boxed{1:\sqrt{3}:2}</annotation></semantics></math></p>
+<p>For the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">30^{\circ}</annotation></semantics></math>
+angle:</p>
+<ul>
+<li><p>Opposite = 1</p></li>
+<li><p>Adjacent =
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>3</mn></msqrt><annotation encoding="application/x-tex">\sqrt{3}</annotation></semantics></math></p></li>
+<li><p>Hypotenuse = 2</p></li>
+</ul>
+<p>For the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">60^{\circ}</annotation></semantics></math>
+angle, the opposite and adjacent sides switch roles.</p>
+<p><strong>Important relationship:</strong> The side opposite
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">30^{\circ}</annotation></semantics></math>
+is half the hypotenuse, and the side opposite
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">60^{\circ}</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>3</mn></msqrt><annotation encoding="application/x-tex">\sqrt{3}</annotation></semantics></math>
+times the shorter leg.</p>
+<h3 id="the-454590-triangle">The 45°–45°–90° Triangle</h3>
+<p>Start with an isosceles right triangle. Its two legs are equal, so
+its two acute angles are equal.</p>
+<p>Since the angles in a triangle add to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>180</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">180^{\circ}</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msup><mn>180</mn><mo>∘</mo></msup><mo>−</mo><msup><mn>90</mn><mo>∘</mo></msup></mrow><mn>2</mn></mfrac><mo>=</mo><msup><mn>45</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\frac{180^{\circ} - 90^{\circ}}{2} = 45^{\circ}</annotation></semantics></math></p>
+<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image28.webp" style="width:1.44in;height:1.52357in"/>Let each leg have length 1. By
+the Pythagorean Theorem:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>c</mi><mn>2</mn></msup><mo>=</mo><msup><mn>1</mn><mn>2</mn></msup><mo>+</mo><msup><mn>1</mn><mn>2</mn></msup><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">c^{2} = 1^{2} + 1^{2} = 2</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">c = \sqrt{2}</annotation></semantics></math></p>
+<p>Therefore, the side lengths are:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mn>1</mn><mo>:</mo><mn>1</mn><mo>:</mo><msqrt><mn>2</mn></msqrt></mrow></menclose><annotation encoding="application/x-tex">\boxed{1:1:\sqrt{2}}</annotation></semantics></math></p>
+<p>Because the two legs are equal, the sine and cosine of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>45</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">45^{\circ}</annotation></semantics></math>
+are equal.</p>
+<h3 id="finding-a-missing-side">Finding a Missing Side</h3>
+<p>When you know one acute angle and one side of a right triangle, you
+can use a trigonometric ratio to find another side.</p>
+<h4 id="find-the-opposite-side">Find the opposite side</h4>
+<p>A right triangle has a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">30^{\circ}</annotation></semantics></math>angle
+and a hypotenuse of 10 cm. Find the side opposite the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">30^{\circ}</annotation></semantics></math>angle.</p>
+<p><strong>Step 1: Choose the ratio.</strong></p>
+<p>The opposite side and hypotenuse are involved, so use sine.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo>sin</mo><mn>30</mn></mrow><mo>∘</mo></msup><mo>=</mo><mfrac><mi>x</mi><mn>10</mn></mfrac></mrow><annotation encoding="application/x-tex">{\sin 30}^{\circ} = \frac{x}{10}</annotation></semantics></math></p>
+<p><strong>Step 2: Substitute the special-angle value.</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mfrac><mi>x</mi><mn>10</mn></mfrac></mrow><mrow><mi>x</mi><mo>=</mo><mn>10</mn><mo>×</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mn>5</mn></mrow></mrow><annotation encoding="application/x-tex">{\frac{1}{2} = \frac{x}{10}
+}{x = 10 \times \frac{1}{2} = 5}</annotation></semantics></math></p>
+<p><strong>Answer:</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>5</mn><mspace width="0.222em"></mspace><mi>c</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">x = 5\ cm</annotation></semantics></math></p>
+<h4 id="find-the-adjacent-side">Find the adjacent side</h4>
+<p>A right triangle has a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">60^{\circ}</annotation></semantics></math>
+angle and a hypotenuse of 12 m. Find the adjacent side.</p>
+<p>Using cosine:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo>cos</mo><mn>60</mn></mrow><mo>∘</mo></msup><mo>=</mo><mfrac><mi>x</mi><mn>12</mn></mfrac></mrow><annotation encoding="application/x-tex">{\cos 60}^{\circ} = \frac{x}{12}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mfrac><mi>x</mi><mn>12</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{2} = \frac{x}{12}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>12</mn><mo>×</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">x = 12 \times \frac{1}{2} = 6
+</annotation></semantics></math><strong>Answer:</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi>x</mi><mo>=</mo><mn>6</mn><mtext mathvariant="normal"> m</mtext></mrow></menclose><annotation encoding="application/x-tex">\boxed{x = 6\text{~m}}</annotation></semantics></math></p>
+<h4 id="find-the-opposite-side-using-tangent">Find the opposite side
+using tangent</h4>
+<p>A right triangle has a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>45</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">45^{\circ}</annotation></semantics></math>angle
+and an adjacent side of 7 cm. Find the opposite side.</p>
+<p>Using tangent:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><msup><mrow><mo>tan</mo><mn>45</mn></mrow><mo>∘</mo></msup><mo>=</mo><mfrac><mi>x</mi><mn>7</mn></mfrac></mrow><mrow><mn>1</mn><mo>=</mo><mfrac><mi>x</mi><mn>7</mn></mfrac></mrow></mrow><annotation encoding="application/x-tex">{{\tan 45}^{\circ} = \frac{x}{7}
+}{1 = \frac{x}{7}}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">x = 7
+</annotation></semantics></math><strong>Answer:</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi>x</mi><mo>=</mo><mn>7</mn><mtext mathvariant="normal"> cm</mtext></mrow></menclose><annotation encoding="application/x-tex">\boxed{x = 7\text{~cm}}</annotation></semantics></math></p>
+<h3 id="finding-a-missing-angle">Finding a Missing Angle</h3>
+<p>When you know two side lengths of a right triangle, you can find an
+unknown acute angle using an inverse trigonometric function.</p>
+<p>The inverse functions are written as:</p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo>sin</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">\sin^{- 1}\ </annotation></semantics></math>or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>arcsin</mo><annotation encoding="application/x-tex">\arcsin</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mo>cos</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">\cos^{- 1}</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>arccos</mo><annotation encoding="application/x-tex">\arccos</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo>tan</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">\tan^{- 1}\ </annotation></semantics></math>or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>arctan</mo><annotation encoding="application/x-tex">\arctan</annotation></semantics></math></p></li>
+</ul>
+<p><strong>Important:</strong> The notation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo>sin</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">\sin^{- 1}(x)\ </annotation></semantics></math>means
+the inverse sine function, not
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mrow><mo>sin</mo><mi>x</mi></mrow></mfrac><annotation encoding="application/x-tex">\frac{1}{\sin x}</annotation></semantics></math>.</p>
+<h4 id="find-an-angle">Find an angle</h4>
+<p>A right triangle has an opposite side of 3 cm and an adjacent side of
+4 cm. Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.</p>
+<p><strong>Step 1: Choose the ratio.</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>tan</mo><mi>θ</mi><mo>=</mo><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">\tan\theta = \frac{3}{4}
+</annotation></semantics></math><strong>Step 2: Use inverse
+tangent.</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><msup><mo>tan</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mrow><mo form="prefix" stretchy="true">(</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mo form="postfix" stretchy="true">)</mo></mrow><mi>.</mi></mrow></mrow><annotation encoding="application/x-tex">\theta = \tan^{- 1}{\left( \frac{3}{4} \right).}</annotation></semantics></math></p>
+<p><strong>Step 3: Calculate using a calculator.</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi>θ</mi><mo>≈</mo><msup><mn>36.9</mn><mo>∘</mo></msup></mrow></menclose><annotation encoding="application/x-tex">\boxed{\theta \approx {36.9}^{\circ}}</annotation></semantics></math></p>
+<p>Make sure your calculator is set to <strong>degree mode</strong> when
+working with angles measured in degrees.</p>
+<h3 id="applications-of-trigonometry">Applications of Trigonometry</h3>
+<p>Trigonometry can be used to find heights and distances that are
+difficult to measure directly.</p>
+<h4 id="example-finding-the-height-of-a-tree">Example: finding the
+height of a tree</h4>
+<p>A student stands 10 m from the base of a tree. The angle of elevation
+from the ground to the top of the tree is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>45</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">45^{\circ}</annotation></semantics></math>.
+Assume the ground is level and ignore the student's eye height. Find the
+tree's height.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+be the tree's height.</p>
+<p>The horizontal distance is adjacent to the angle, and the tree's
+height is opposite the angle.</p>
+<p>Using tangent:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo>tan</mo><mn>45</mn></mrow><mo>∘</mo></msup><mo>=</mo><mfrac><mi>h</mi><mn>10</mn></mfrac></mrow><annotation encoding="application/x-tex">{\tan 45}^{\circ} = \frac{h}{10}</annotation></semantics></math></p>
+<p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><msup><mrow><mo>tan</mo><mn>45</mn></mrow><mo>∘</mo></msup><mo>=</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">\left( {\tan 45}^{\circ} = 1 \right)</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>=</mo><mfrac><mi>h</mi><mn>10</mn></mfrac></mrow><annotation encoding="application/x-tex">1 = \frac{h}{10}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">h = 10
+</annotation></semantics></math><strong>Answer:</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi>h</mi><mo>=</mo><mn>10</mn><mtext mathvariant="normal"> m</mtext></mrow></menclose><annotation encoding="application/x-tex">\boxed{h = 10\text{~m}}
+</annotation></semantics></math><strong>Important Terms</strong></p>
+<ul>
+<li><p><strong>Angle of elevation:</strong> The angle measured upward
+from a horizontal line of sight.</p></li>
+<li><p><strong>Angle of depression:</strong> The angle measured downward
+from a horizontal line of sight.</p></li>
+</ul>
+<h4 id="a-reliable-strategy">A reliable strategy:</h4>
+<p>When solving application problems, draw a diagram, mark the known
+angle and side, and identify the unknown before choosing a trigonometric
+ratio.</p>
+<ol type="1">
+<li><p>Draw or examine the right triangle.</p></li>
+<li><p>Identify the reference angle.</p></li>
+<li><p>Label the opposite, adjacent, and hypotenuse.</p></li>
+<li><p>Choose the ratio containing the known and unknown sides.</p></li>
+<li><p>Substitute the values and solve.</p></li>
+<li><p>Check that the answer is reasonable and includes the correct
+units.</p></li>
+</ol>
+</article></div></main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+</body>
+</html>
