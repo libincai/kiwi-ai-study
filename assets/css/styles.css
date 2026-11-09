@@ -4138,3 +4138,24 @@ html body main .nf-hero.topic-banner > p:last-child {
   border-radius: 0 14px 14px 0;
   background: #eff6ff;
 }
+
+/* About: hometown story */
+.hometown-section .hometown-list{display:grid;gap:22px;margin-top:24px}
+.hometown-item{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:26px;padding:18px;border:1px solid #e1e9f3;border-radius:18px;background:#fff;box-shadow:0 5px 20px rgba(24,57,92,.045)}
+.hometown-item:nth-child(even) .hometown-photo{order:2}
+.hometown-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;border-radius:12px;background:#f3f7fb}
+.hometown-copy h3{font-size:clamp(1.15rem,2vw,1.5rem);color:#153b69;margin:0 0 12px}
+.hometown-copy p{line-height:1.8;margin:0;color:#35485c}
+.hometown-copy .hometown-note{font-size:.78rem;color:#65758b;margin-top:9px}
+.hometown-source{display:inline-block;margin-top:12px;font-size:.82rem;color:#235e9b;text-decoration:underline;text-underline-offset:3px}
+.hometown-closing{margin:26px auto 0;max-width:850px;line-height:1.8;text-align:center;color:#35485c}
+@media(max-width:760px){.hometown-item{grid-template-columns:1fr;gap:15px;padding:12px}.hometown-item:nth-child(even) .hometown-photo{order:0}.hometown-copy{padding:3px 5px 8px}}
+
+/* Yiai Lake: edge-to-edge photo inside its card, with rounded outer corners. */
+@media(max-width:760px){
+}
+
+/* Yiai photo uses same inset rounded image card as other hometown entries */
+
+/* Yiai Lake: retain independent inset card; fit native 2:1 image without letterboxing. */
+.hometown-photo img[src$="yiai-lake.webp"]{aspect-ratio:2 / 1;object-fit:cover;background:transparent;}
