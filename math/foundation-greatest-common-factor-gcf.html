@@ -7,7 +7,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Greatest Common Factor (GCF) | KIWI 爱AI Study" data-zh="最大公因数（GCF） | KIWI 爱AI Study">Greatest Common Factor (GCF) | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-panel-right-accent" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -33,12 +34,33 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}
+.mf-article ul.kiwi-example-list{list-style:disc outside;padding-left:2.5rem;margin:.5rem 0 1rem;text-align:left}
+.mf-article ul.kiwi-example-list>li{margin:.45rem 0;padding-left:.35rem}
+.mf-article .kiwi-example-standard{margin:.35rem 0 1rem;padding:0}
+.mf-article .kiwi-example-standard>.kiwi-single-example,.mf-article .kiwi-example-standard>.kiwi-example-question{margin:.35rem 0 .4rem 3ch;padding:0;text-align:left;background:transparent;border:0}
+.mf-article .kiwi-example-standard>ol.kiwi-example-steps{margin:.35rem 0 .6rem 6ch!important;padding:0!important;list-style-type:decimal!important;list-style-position:inside!important;text-align:left!important}
+.mf-article .kiwi-example-standard>ol.kiwi-example-steps>li{display:list-item!important;list-style-type:decimal!important;list-style-position:inside!important;margin:.3rem 0!important;padding:0!important;font-weight:400!important;color:#111!important;text-align:left!important}
+.mf-article .kiwi-example-standard>ol.kiwi-example-steps>li::marker{font-weight:400!important;color:#111!important}
+.mf-article .kiwi-example-standard>ol.kiwi-example-steps>li>p{display:inline!important;margin:0!important;padding:0!important}
+.mf-article .kiwi-example-standard>.kiwi-example-explanation{margin:.45rem 0 .45rem 6ch;text-align:left}
+.mf-article .kiwi-example-standard>blockquote.kiwi-example-answer,.mf-article .kiwi-example-standard>p.kiwi-example-answer{display:block;margin:.6rem 0 .6rem 3ch;padding:.15rem 0 .15rem 1rem;border-left:3px solid #cde3fa;background:transparent;text-align:left;font-weight:400}
+.mf-article .kiwi-example-standard>blockquote.kiwi-example-answer p,.mf-article .kiwi-example-standard>blockquote.kiwi-example-answer strong{margin:0;font-weight:400}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
 <style>
 .foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
+</style><style>
+/* Math Foundations Word info and Ontario curriculum panels */
+/* Tip panel chrome: global styles.css (gold 3D left rail) */
+.kiwi-word-info-panel .kiwi-panel-icon{color:#c18a19;font-size:18px;line-height:1;flex-shrink:0}
+.kiwi-curriculum-panel .kiwi-panel-heading{font-weight:700;color:#895b0e;margin:0 0 10px}
+.kiwi-word-info-panel p,.kiwi-curriculum-panel p{margin:0 0 10px;text-align:left}
+.kiwi-word-info-panel p:last-child,.kiwi-curriculum-panel p:last-child{margin-bottom:0}
+.kiwi-word-info-panel .MathJax_Display,.kiwi-curriculum-panel .MathJax_Display,.kiwi-word-info-panel math[display=block],.kiwi-curriculum-panel math[display=block]{text-align:center;margin-inline:auto}
+.kiwi-word-info-panel a,.kiwi-curriculum-panel a{text-decoration:underline}
+@media(max-width:640px){.kiwi-word-info-panel,.kiwi-curriculum-panel{padding:13px 14px}}
 </style><style>
 /* Level 4 sidebar standard — match Mathematical Thinking / GCF */
 .kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
@@ -53,6 +75,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -97,10 +138,10 @@ leaving a remainder&lt;/strong&gt;." data-zh="两个或多个整数的最大公�
 <strong>largest number</strong> that divides all of them <strong>without
 leaving a remainder</strong>.</p>
 <p data-en="Examples:" data-zh="例如：">Examples:</p>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(8,12) = 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(8,12) = 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>C</mi><mi>F</mi><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>,</mo><mn>12</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">GCF(8,12) = 4</annotation></semantics></math></p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;24&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(18,24) = 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;24&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(18,24) = 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>C</mi><mi>F</mi><mrow><mo form="prefix" stretchy="true">(</mo><mn>18</mn><mo>,</mo><mn>24</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">GCF(18,24) = 6</annotation></semantics></math></p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;50&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(20,50) = 10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;50&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(20,50) = 10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>C</mi><mi>F</mi><mrow><mo form="prefix" stretchy="true">(</mo><mn>20</mn><mo>,</mo><mn>50</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">GCF(20,50) = 10</annotation></semantics></math></p></li>
+<ul class="kiwi-example-list">
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(8,12) = 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(8,12) = 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>C</mi><mi>F</mi><mrow><mo form="prefix" stretchy="true">(</mo><mn>8</mn><mo>,</mo><mn>12</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">GCF(8,12) = 4</annotation></semantics></math></li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;24&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(18,24) = 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;24&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(18,24) = 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>C</mi><mi>F</mi><mrow><mo form="prefix" stretchy="true">(</mo><mn>18</mn><mo>,</mo><mn>24</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">GCF(18,24) = 6</annotation></semantics></math></li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;50&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(20,50) = 10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;50&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;GCF(20,50) = 10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>C</mi><mi>F</mi><mrow><mo form="prefix" stretchy="true">(</mo><mn>20</mn><mo>,</mo><mn>50</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">GCF(20,50) = 10</annotation></semantics></math></li>
 </ul>
 <p data-en="In higher mathematics, the same idea is called the &lt;strong&gt;Greatest
 Common Divisor (GCD)&lt;/strong&gt;. Both mean the &lt;strong&gt;exact same
@@ -112,41 +153,35 @@ formula, even though we use &lt;strong&gt;GCF&lt;/strong&gt; in the text for
 learning." data-zh="下文公式里会出现 &lt;strong&gt;GCD&lt;/strong&gt;，正文学习时我们用 &lt;strong&gt;GCF&lt;/strong&gt;。">In the examples below, you will see <strong>GCD</strong> inside math
 formula, even though we use <strong>GCF</strong> in the text for
 learning.</p>
-<h3 id="basic-skills" data-en="Basic Skills" data-zh="基本方法">Basic Skills</h3>
-<p data-en="There are three simple and reliable beginner-friendly ways:" data-zh="有三种简单可靠、适合初学的方法：">There are three simple and reliable beginner-friendly ways:</p>
+<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span></div><p data-en="This lesson stays at &lt;strong&gt;basic&lt;/strong&gt; GCF methods — listing factors, prime factorization, and checking from the smaller number. For optional extended reading on bigger numbers (subtraction method and Euclidean algorithm), see &lt;a href=&quot;gcf.html&quot;&gt;Advanced Skills&lt;/a&gt; in Mathematical Thinking." data-zh="本页只讲 &lt;strong&gt;基本&lt;/strong&gt; GCF 方法 —— 列因数、质因数分解、从较小数检查。若想延伸学习较大数字的更快做法（连减法与欧几里得算法），可阅读数学思维中的 &lt;a href=&quot;gcf.html&quot;&gt;进阶技巧&lt;/a&gt;。">This lesson stays at <strong>basic</strong> GCF methods — listing factors, prime factorization, and checking from the smaller number. For optional extended reading on bigger numbers (subtraction method and Euclidean algorithm), see <a href="gcf.html">Advanced Skills</a> in Mathematical Thinking.</p></aside>
+<details class="lesson-card"><summary id="basic-skills" data-en="Basic Skills" data-zh="基本方法">Basic Skills</summary><div class="lesson-card-content"><p data-en="There are three simple and reliable beginner-friendly ways:" data-zh="有三种简单可靠、适合初学的方法：">There are three simple and reliable beginner-friendly ways:</p>
 <h4 id="list-all-factors" data-en="List all factors" data-zh="列出所有因数">List all factors</h4>
 <p data-en="List all factors of each number and choose the largest one they
 share." data-zh="列出每个数的所有因数，取它们共有的最大因数。">List all factors of each number and choose the largest one they
 share.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Find GCF (15, 25)." data-zh="求 GCF (15, 25)。">Find GCF (15, 25).</p>
-</blockquote>
-<ul>
-<li><p>15 → 1, 3, 5, 15</p></li>
-<li><p>25 → 1, 5, 25</p></li>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Find GCF (15, 25)." data-zh="求 GCF (15, 25)。">Find GCF (15, 25).</p>
+<ul class="kiwi-example-variants">
+<li data-en="15 → 1, 3, 5, 15" data-zh="15 → 1, 3, 5, 15">15 → 1, 3, 5, 15</li>
+<li data-en="25 → 1, 5, 25" data-zh="25 → 1, 5, 25">25 → 1, 5, 25</li>
 </ul>
-<blockquote>
-<p data-en="GCF = &lt;strong&gt;5&lt;/strong&gt;" data-zh="GCF = &lt;strong&gt;5&lt;/strong&gt;">GCF = <strong>5</strong></p>
-</blockquote>
+<blockquote class="kiwi-example-answer"><p data-en="∴ GCF = 5." data-zh="∴ GCF = 5。">∴ GCF = 5.</p></blockquote>
+</div>
 <h4 id="prime-factorization" data-en="Prime factorization" data-zh="质因数分解">Prime factorization</h4>
 <p data-en="Break each number into its prime factors and multiply the primes they
 share." data-zh="把每个数分解为质因数，再乘它们共有的质因数。">Break each number into its prime factors and multiply the primes they
 share.</p>
-<p data-en="Examples:" data-zh="例如：">Examples:</p>
-<blockquote>
-<p data-en="Find GCF (18, 24)." data-zh="求 GCF (18, 24)。">Find GCF (18, 24).</p>
-</blockquote>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;18 = 2 \times 3 \times 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;18 = 2 \times 3 \times 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mo>=</mo><mn>2</mn><mo>×</mo><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">18 = 2 \times 3 \times 3</annotation></semantics></math></p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;24&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;24 = 2 \times 2 \times 2 \times 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;24&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;24 = 2 \times 2 \times 2 \times 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>24</mn><mo>=</mo><mn>2</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">24 = 2 \times 2 \times 2 \times 3</annotation></semantics></math></p></li>
+<p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Find GCF (18, 24)." data-zh="求 GCF (18, 24)。">Find GCF (18, 24).</p>
+<ul class="kiwi-example-variants">
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;18 = 2 \times 3 \times 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;18 = 2 \times 3 \times 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mo>=</mo><mn>2</mn><mo>×</mo><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">18 = 2 \times 3 \times 3</annotation></semantics></math></li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;24&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;24 = 2 \times 2 \times 2 \times 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;24&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;24 = 2 \times 2 \times 2 \times 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>24</mn><mo>=</mo><mn>2</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">24 = 2 \times 2 \times 2 \times 3</annotation></semantics></math></li>
 </ul>
-<blockquote>
-<p data-en="∵ Shared primes → 2 and 3&lt;br/&gt;
-∴ GCF =2×3=6" data-zh="∵ 共有质因数 → 2 和 3&lt;br/&gt;
-∴ GCF =2×3=6">∵ Shared primes → 2 and 3<br/>
-∴ GCF =2×3=6</p>
-</blockquote>
+<p class="kiwi-example-explanation" data-en="∵ Shared primes → 2 and 3" data-zh="∵ 共有质因数 → 2 和 3">∵ Shared primes → 2 and 3</p>
+<blockquote class="kiwi-example-answer"><p data-en="∴ GCF = 2×3 = 6." data-zh="∴ GCF = 2×3 = 6。">∴ GCF = 2×3 = 6.</p></blockquote>
+</div>
 <h4 id="start-from-the-smaller-numbers-factors" data-en="Start from the smaller
 number’s factors" data-zh="从较小数的
 因数入手">Start from the smaller
@@ -154,22 +189,19 @@ number’s factors</h4>
 <p data-en="List the factors of the smaller number and check them from largest to
 smallest." data-zh="列出较小数的因数，从大到小逐个检查。">List the factors of the smaller number and check them from largest to
 smallest.</p>
-<p data-en="Examples:" data-zh="例如：">Examples:</p>
-<p data-en="Find GCF (20, 32)." data-zh="求 GCF (20, 32)。">Find GCF (20, 32).</p>
-<blockquote>
-<p data-en="Factors of 20 → 1, 2, 4, 5, 10, 20" data-zh="20 的因数 → 1, 2, 4, 5, 10, 20">Factors of 20 → 1, 2, 4, 5, 10, 20</p>
-<p data-en="Check from biggest:" data-zh="从最大的开始检查：">Check from biggest:</p>
-</blockquote>
-<ul>
-<li><p data-en="20? no" data-zh="20？不行">20? no</p></li>
-<li><p data-en="10? no" data-zh="10？不行">10? no</p></li>
-<li><p data-en="5? no" data-zh="5？不行">5? no</p></li>
-<li><p data-en="4? yes" data-zh="4？可以">4? yes</p></li>
-</ul>
-<blockquote>
-<p data-en="∴ GCF = &lt;strong&gt;4&lt;/strong&gt;" data-zh="∴ GCF = &lt;strong&gt;4&lt;/strong&gt;">∴ GCF = <strong>4</strong></p>
-</blockquote>
-</article></div></main>
+<p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Find GCF (20, 32)." data-zh="求 GCF (20, 32)。">Find GCF (20, 32).</p>
+<ol class="kiwi-example-steps kiwi-numbered-steps">
+<li data-en="Factors of 20 → 1, 2, 4, 5, 10, 20" data-zh="20 的因数 → 1, 2, 4, 5, 10, 20">Factors of 20 → 1, 2, 4, 5, 10, 20</li>
+<li data-en="Check from biggest:" data-zh="从最大的开始检查：">Check from biggest:</li>
+<li data-en="20? no" data-zh="20？不行">20? no</li>
+<li data-en="10? no" data-zh="10？不行">10? no</li>
+<li data-en="5? no" data-zh="5？不行">5? no</li>
+<li data-en="4? yes" data-zh="4？可以">4? yes</li>
+</ol>
+<blockquote class="kiwi-example-answer"><p data-en="∴ GCF = 4." data-zh="∴ GCF = 4。">∴ GCF = 4.</p></blockquote>
+</div></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -200,6 +232,7 @@ smallest.</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -234,6 +267,39 @@ smallest.</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

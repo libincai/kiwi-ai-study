@@ -9,7 +9,8 @@
 Patterns | KIWI 爱AI Study" data-zh="代数语言与规律 | KIWI 爱AI Study">Algebra Language and
 Patterns | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -35,7 +36,7 @@ Patterns | KIWI 爱AI Study</title>
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -43,8 +44,7 @@ Patterns | KIWI 爱AI Study</title>
 .foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
 </style><style>
 /* Math Foundations Word info and Ontario curriculum panels */
-.kiwi-word-info-panel,.kiwi-curriculum-panel{background:#fff8e9;border:1px solid #f0d58d;border-radius:12px;padding:16px 20px;margin:20px 0;color:#4b3d2b;text-align:left;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere}
-.kiwi-word-info-panel .kiwi-panel-heading{display:flex;align-items:center;gap:9px;color:#895b0e;font-weight:700;margin:0 0 9px}
+/* Tip panel chrome: global styles.css (gold 3D left rail) */
 .kiwi-word-info-panel .kiwi-panel-icon{color:#c18a19;font-size:18px;line-height:1;flex-shrink:0}
 .kiwi-curriculum-panel .kiwi-panel-heading{font-weight:700;color:#895b0e;margin:0 0 10px}
 .kiwi-word-info-panel p,.kiwi-curriculum-panel p{margin:0 0 10px;text-align:left}
@@ -66,6 +66,25 @@ Patterns | KIWI 爱AI Study</title>
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -114,15 +133,14 @@ Differences (Δy)" data-zh="阶差规律与一阶差分 (Δy)">Step Pattern and 
 Differences (Δy)</a><a href="foundation-functions-and-their-inverses.html" data-en="Functions and Their Inverses" data-zh="函数与反函数">Functions and Their Inverses</a><a href="foundation-function-transformations.html" data-en="Function Transformations" data-zh="函数变换">Function Transformations</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Algebra Language and
 Patterns" data-zh="代数语言与规律">Algebra Language and
 Patterns</h1>
-<h3 id="term-and-factor" data-en="Term and Factor" data-zh="项与因式">Term and Factor</h3>
-<h4 id="term" data-en="Term" data-zh="项">Term</h4>
+<details class="lesson-card"><summary id="term-and-factor" data-en="Term and Factor" data-zh="项与因式">Term and Factor</summary><div class="lesson-card-content"><h4 id="term" data-en="Term" data-zh="项">Term</h4>
 <p data-en="A term is one part of an expression or equation, separated by + or
 −." data-zh="项是代数式或方程的一部分，由 + 或 − 分开。">A term is one part of an expression or equation, separated by + or
 −.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">2x + 5 = 9</annotation></semantics></math></p>
 <p data-en="Here, 2𝑥 and 5 are terms." data-zh="这里，2𝑥 和 5 是项。">Here, 2𝑥 and 5 are terms.</p>
-<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div>× and ÷ do not separate terms — they stay inside the term.</aside>
+<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><div class="kiwi-panel-content">× and ÷ do not separate terms — they stay inside the term.</div></aside>
 <h4 id="factor" data-en="Factor" data-zh="因式">Factor</h4>
 <p data-en="Inside a term, the numbers and letters joined by multiplication or
 division are called factors." data-zh="在项内部，由乘法或除法连接在一起的数和字母称为因式。">Inside a term, the numbers and letters joined by multiplication or
@@ -130,7 +148,7 @@ division are called factors.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4xy - 9^{2} + \frac{3}{5}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4xy - 9^{2} + \frac{3}{5}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>x</mi><mi>y</mi><mo>−</mo><msup><mn>9</mn><mn>2</mn></msup><mo>+</mo><mfrac><mn>3</mn><mn>5</mn></mfrac></mrow><annotation encoding="application/x-tex">4xy - 9^{2} + \frac{3}{5}</annotation></semantics></math></p>
 <ul>
-<li><p data-en="In
+<li data-en="In
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4xy&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 the factors are
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
@@ -148,8 +166,8 @@ the factors are
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
 and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.</p></li>
-<li><p data-en="In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.</li>
+<li data-en="In
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;9^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 the factor is
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
@@ -161,76 +179,72 @@ multiplied by itself." data-zh="在
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>9</mn><mn>2</mn></msup><annotation encoding="application/x-tex">9^{2}</annotation></semantics></math>,
 the factor is
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>,
-multiplied by itself.</p></li>
-<li><p data-en="In
+multiplied by itself.</li>
+<li data-en="In
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{3}{5}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 , factors are 3 and 5." data-zh="在
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{3}{5}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 中，因式是 3 和 5。">In
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>3</mn><mn>5</mn></mfrac><annotation encoding="application/x-tex">\frac{3}{5}</annotation></semantics></math>
-, factors are 3 and 5.</p></li>
+, factors are 3 and 5.</li>
 </ul>
 <p data-en="&lt;strong&gt;NOTE:&lt;/strong&gt; If you intended to write
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4xy - 9 \times 2\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;rather
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4xy - 9 \times 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;rather
 than
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4xy - 9^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 then the factors in
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;9 \times 2\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;are
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;9 \times 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;are
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 and
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;.
 The superscript makes a difference!" data-zh="&lt;strong&gt;注意：&lt;/strong&gt;若你本想写
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4xy - 9 \times 2\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4xy - 9 \times 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 而不是
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4xy - 9^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;，
 那么
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;9 \times 2\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;9 \times 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 中的因式是
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 和
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。
 上标会带来差别！"><strong>NOTE:</strong> If you intended to write
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>x</mi><mi>y</mi><mo>−</mo><mn>9</mn><mo>×</mo><mn>2</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">4xy - 9 \times 2\ </annotation></semantics></math>rather
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>x</mi><mi>y</mi><mo>−</mo><mn>9</mn><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">4xy - 9 \times 2</annotation></semantics></math>rather
 than
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>x</mi><mi>y</mi><mo>−</mo><msup><mn>9</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4xy - 9^{2}</annotation></semantics></math>,
 then the factors in
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mo>×</mo><mn>2</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">9 \times 2\ </annotation></semantics></math>are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">9 \times 2</annotation></semantics></math>are
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>.
 The superscript makes a difference!</p>
-<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div>Plus and minus separate terms; multiplication and division connect
-factors.</aside>
-<h3 id="variable-and-coefficient" data-en="Variable and Coefficient" data-zh="变量与系数">Variable and Coefficient</h3>
-<h4 id="variable" data-en="Variable" data-zh="变量">Variable</h4>
+<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><div class="kiwi-panel-content">Plus and minus separate terms; multiplication and division connect
+factors.</div></aside></div></details><details class="lesson-card"><summary id="variable-and-coefficient" data-en="Variable and Coefficient" data-zh="变量与系数">Variable and Coefficient</summary><div class="lesson-card-content"><h4 id="variable" data-en="Variable" data-zh="变量">Variable</h4>
 <p data-en="Variable is a letter that stands for a number we don’t know yet." data-zh="变量是一个字母，表示我们尚不知道的数。">Variable is a letter that stands for a number we don’t know yet.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
 <ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">2x + 5 = 9</annotation></semantics></math></p></li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">2x + 5 = 9</annotation></semantics></math></li>
 </ul>
 <p data-en="In this equation, 𝑥 is the variable." data-zh="在这个方程中，𝑥 是变量。">In this equation, 𝑥 is the variable.</p>
 <h4 id="coefficient" data-en="Coefficient" data-zh="系数">Coefficient</h4>
 <p data-en="Coefficient is the number in front of a variable." data-zh="系数是写在变量前面的数。">Coefficient is the number in front of a variable.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="in 5𝑥, the coefficient is &lt;strong&gt;5&lt;/strong&gt;" data-zh="在 5𝑥 中，系数是 &lt;strong&gt;5&lt;/strong&gt;">in 5𝑥, the coefficient is <strong>5</strong></p></li>
-<li><p data-en="in −3𝑦, the coefficient is &lt;strong&gt;−3&lt;/strong&gt;" data-zh="在 −3𝑦 中，系数是 &lt;strong&gt;−3&lt;/strong&gt;">in −3𝑦, the coefficient is <strong>−3</strong></p></li>
-<li><p data-en="in 12𝑥, the coefficient is &lt;strong&gt;1/2&lt;/strong&gt;" data-zh="在 12𝑥 中，系数是 &lt;strong&gt;1/2&lt;/strong&gt;">in 12𝑥, the coefficient is <strong>1/2</strong></p></li>
-<li><p data-en="in 𝑥 (no number shown), the coefficient is &lt;strong&gt;1&lt;/strong&gt;
+<ul class="kiwi-example-list">
+<li data-en="in 5𝑥, the coefficient is &lt;strong&gt;5&lt;/strong&gt;" data-zh="在 5𝑥 中，系数是 &lt;strong&gt;5&lt;/strong&gt;">in 5𝑥, the coefficient is <strong>5</strong></li>
+<li data-en="in −3𝑦, the coefficient is &lt;strong&gt;−3&lt;/strong&gt;" data-zh="在 −3𝑦 中，系数是 &lt;strong&gt;−3&lt;/strong&gt;">in −3𝑦, the coefficient is <strong>−3</strong></li>
+<li data-en="in 12𝑥, the coefficient is &lt;strong&gt;1/2&lt;/strong&gt;" data-zh="在 12𝑥 中，系数是 &lt;strong&gt;1/2&lt;/strong&gt;">in 12𝑥, the coefficient is <strong>1/2</strong></li>
+<li data-en="in 𝑥 (no number shown), the coefficient is &lt;strong&gt;1&lt;/strong&gt;
 (because 𝑥 really means 1𝑥)" data-zh="在 𝑥（没有写数字）中，系数是 &lt;strong&gt;1&lt;/strong&gt;
 （因为 𝑥 其实就是 1𝑥）">in 𝑥 (no number shown), the coefficient is <strong>1</strong>
-(because 𝑥 really means 1𝑥)</p></li>
-</ul>
-<h3 id="like-terms" data-en="Like Terms" data-zh="同类项">Like Terms</h3>
-<p data-en="Like terms are terms that have the &lt;strong&gt;exact same
+(because 𝑥 really means 1𝑥)</li>
+</ul></div></details><details class="lesson-card"><summary id="like-terms" data-en="Like Terms" data-zh="同类项">Like Terms</summary><div class="lesson-card-content"><p data-en="Like terms are terms that have the &lt;strong&gt;exact same
 variables&lt;/strong&gt; and the &lt;strong&gt;exact same exponents&lt;/strong&gt; for
 those variables. Only the coefficients can be different." data-zh="同类项的&lt;strong&gt;变量完全相同&lt;/strong&gt;，且这些变量的&lt;strong&gt;指数也完全相同&lt;/strong&gt;，只有系数可以不同。">Like terms are terms that have the <strong>exact same
 variables</strong> and the <strong>exact same exponents</strong> for
 those variables. Only the coefficients can be different.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="2𝑥 and 7𝑥 are like terms." data-zh="2𝑥 与 7𝑥 是同类项。">2𝑥 and 7𝑥 are like terms.</p></li>
-<li><p data-en="5&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<ul class="kiwi-example-list">
+<li data-en="2𝑥 and 7𝑥 are like terms." data-zh="2𝑥 与 7𝑥 是同类项。">2𝑥 and 7𝑥 are like terms.</li>
+<li data-en="5&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 and
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 are like terms." data-zh="5&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -239,101 +253,95 @@ are like terms." data-zh="5&lt;math display=&quot;inline&quot; xmlns=&quot;http:
 是同类项。">5<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>y</mi><mn>2</mn></msup><annotation encoding="application/x-tex">y^{2}</annotation></semantics></math>
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>y</mi><mn>2</mn></msup><annotation encoding="application/x-tex">y^{2}</annotation></semantics></math>
-are like terms.</p></li>
-<li><p data-en="3𝑎𝑏 and −2𝑎𝑏 are like terms." data-zh="3𝑎𝑏 与 −2𝑎𝑏 是同类项。">3𝑎𝑏 and −2𝑎𝑏 are like terms.</p></li>
-<li><p data-en="4𝑥 and
+are like terms.</li>
+<li data-en="3𝑎𝑏 and −2𝑎𝑏 are like terms." data-zh="3𝑎𝑏 与 −2𝑎𝑏 是同类项。">3𝑎𝑏 and −2𝑎𝑏 are like terms.</li>
+<li data-en="4𝑥 and
 4&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 are &lt;strong&gt;not&lt;/strong&gt; like terms (different exponents)." data-zh="4𝑥 与
 4&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 &lt;strong&gt;不是&lt;/strong&gt;同类项（指数不同）。">4𝑥 and
 4<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mn>2</mn></msup><annotation encoding="application/x-tex">x^{2}</annotation></semantics></math>
-are <strong>not</strong> like terms (different exponents).</p></li>
-<li><p data-en="𝑎 and 𝑏 are &lt;strong&gt;not&lt;/strong&gt; like terms (different
+are <strong>not</strong> like terms (different exponents).</li>
+<li data-en="𝑎 and 𝑏 are &lt;strong&gt;not&lt;/strong&gt; like terms (different
 variables)." data-zh="𝑎 与 𝑏 &lt;strong&gt;不是&lt;/strong&gt;同类项（变量不同）。">𝑎 and 𝑏 are <strong>not</strong> like terms (different
-variables).</p></li>
-</ul>
-<h3 id="constant" data-en="Constant" data-zh="常数">Constant</h3>
-<p data-en="A constant is a fixed value that does not change in a problem. In an
+variables).</li>
+</ul></div></details><details class="lesson-card"><summary id="constant" data-en="Constant" data-zh="常数">Constant</summary><div class="lesson-card-content"><p data-en="A constant is a fixed value that does not change in a problem. In an
 expression, any number without a variable is a constant term." data-zh="常数是在问题中固定不变的值；在代数式中，不含变量的数都是常数项。">A constant is a fixed value that does not change in a problem. In an
 expression, any number without a variable is a constant term.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
+<ul class="kiwi-example-list">
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
 the constant term is 5" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
 常数项是 5"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">2x + 5</annotation></semantics></math>→
-the constant term is 5</p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y - 7 = 12&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
+the constant term is 5</li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y - 7 = 12&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
 the constants are −7 and 12" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y - 7 = 12&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
 常数是 −7 和 12"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>−</mo><mn>7</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">y - 7 = 12</annotation></semantics></math>→
-the constants are −7 and 12</p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;3a + 4b - 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
+the constants are −7 and 12</li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;3a + 4b - 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
 the constant term is −9" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;3a + 4b - 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
 常数项是 −9"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>a</mi><mo>+</mo><mn>4</mn><mi>b</mi><mo>−</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">3a + 4b - 9</annotation></semantics></math>→
-the constant term is −9</p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;−&lt;/mi&gt;&lt;mn&gt;0.5&lt;/mn&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;- 0.5x^{2} + 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
+the constant term is −9</li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;−&lt;/mi&gt;&lt;mn&gt;0.5&lt;/mn&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;- 0.5x^{2} + 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
 the constant term is 6" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;−&lt;/mi&gt;&lt;mn&gt;0.5&lt;/mn&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;- 0.5x^{2} + 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;→
 常数项是 6"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0.5</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">- 0.5x^{2} + 6</annotation></semantics></math>→
-the constant term is 6</p></li>
-</ul>
-<h3 id="expression-equation-and-inequality" data-en="Expression, Equation and
+the constant term is 6</li>
+</ul></div></details><details class="lesson-card"><summary id="expression-equation-and-inequality" data-en="Expression, Equation and
 Inequality" data-zh="代数式、方程与不等式">Expression, Equation and
-Inequality</h3>
-<h4 id="expression" data-en="Expression" data-zh="代数式">Expression</h4>
+Inequality</summary><div class="lesson-card-content"><h4 id="expression" data-en="Expression" data-zh="代数式">Expression</h4>
 <p data-en="Expression is a math &lt;strong&gt;phrase&lt;/strong&gt; made with numbers or
 variables but &lt;em&gt;without&lt;/em&gt; an equal sign." data-zh="代数式是用数或变量组成的数学&lt;strong&gt;短语&lt;/strong&gt;，&lt;em&gt;没有&lt;/em&gt;等号。">Expression is a math <strong>phrase</strong> made with numbers or
 variables but <em>without</em> an equal sign.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;57&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 57&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;57&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 57&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>57</mn></mrow><annotation encoding="application/x-tex">2x + 57</annotation></semantics></math></p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y - 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y - 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">y - 3</annotation></semantics></math></p></li>
+<ul class="kiwi-example-list">
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;57&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 57&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;57&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 57&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>57</mn></mrow><annotation encoding="application/x-tex">2x + 57</annotation></semantics></math></li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y - 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y - 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">y - 3</annotation></semantics></math></li>
 </ul>
 <h4 id="equation" data-en="Equation" data-zh="方程">Equation</h4>
 <p data-en="Equation is a math &lt;strong&gt;sentence&lt;/strong&gt; that shows two sides are
 equal. An equation always includes an &lt;strong&gt;equal sign&lt;/strong&gt;." data-zh="方程是表示两边相等的数学&lt;strong&gt;句子&lt;/strong&gt;，总包含&lt;strong&gt;等号&lt;/strong&gt;。">Equation is a math <strong>sentence</strong> that shows two sides are
 equal. An equation always includes an <strong>equal sign</strong>.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>+</mo><mn>4</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">3 + 4 = 7</annotation></semantics></math></p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">2x + 5 = 7</annotation></semantics></math></p></li>
+<ul class="kiwi-example-list">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>+</mo><mn>4</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">3 + 4 = 7</annotation></semantics></math></li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5 = 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">2x + 5 = 7</annotation></semantics></math></li>
 </ul>
 <h4 id="inequality" data-en="Inequality" data-zh="不等式">Inequality</h4>
 <p data-en="Inequality is a math &lt;strong&gt;sentence&lt;/strong&gt; that shows two sides
 are &lt;strong&gt;not&lt;/strong&gt; equal, using inequality symbols." data-zh="不等式是用不等号表示两边&lt;strong&gt;不&lt;/strong&gt;相等的数学&lt;strong&gt;句子&lt;/strong&gt;。">Inequality is a math <strong>sentence</strong> that shows two sides
 are <strong>not</strong> equal, using inequality symbols.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x &amp;gt; 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<ul class="kiwi-example-list">
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x &amp;gt; 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 is greater than 5)" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x &amp;gt; 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 （&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 大于 5）"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&gt;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">x &gt; 5</annotation></semantics></math>
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
-is greater than 5)</p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y \leq 10\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;(&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
-is less than or equal to 10)" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y \leq 10\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;(&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
-小于或等于 10)"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≤</mo><mn>10</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">y \leq 10\ </annotation></semantics></math>(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
-is less than or equal to 10)</p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2a + 1 \neq 7\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;(&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2a + 1\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;is
-not equal to 7)" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2a + 1 \neq 7\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;(&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2a + 1\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
-不等于 7)"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo>≠</mo><mn>7</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">2a + 1 \neq 7\ </annotation></semantics></math>(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">2a + 1\ </annotation></semantics></math>is
-not equal to 7)</p></li>
-</ul>
-<h3 id="working-with-expressions-and-equations" data-en="Working with Expressions
+is greater than 5)</li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y \leq 10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt; (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+is less than or equal to 10)" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y \leq 10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt; (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+小于或等于 10)"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≤</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">y \leq 10</annotation></semantics></math> (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+is less than or equal to 10)</li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2a + 1 \neq 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt; (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2a + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt; is
+not equal to 7)" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2a + 1 \neq 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt; (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2a + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+不等于 7)"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo>≠</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">2a + 1 \neq 7</annotation></semantics></math> (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2a + 1</annotation></semantics></math> is
+not equal to 7)</li>
+</ul></div></details><details class="lesson-card"><summary id="working-with-expressions-and-equations" data-en="Working with Expressions
 and Equations" data-zh="代数式与方程的运算">Working with Expressions
-and Equations</h3>
-<h4 id="evaluate" data-en="Evaluate" data-zh="求值">Evaluate</h4>
+and Equations</summary><div class="lesson-card-content"><h4 id="evaluate" data-en="Evaluate" data-zh="求值">Evaluate</h4>
 <p data-en="To evaluate an expression means to substitute given numbers for the
 variables (plug them in) and then calculate the result using the order
 of operations (&lt;strong&gt;BEDMAS&lt;/strong&gt;)." data-zh="对一个代数式求值，就是把已知数代入变量，再按运算顺序（&lt;strong&gt;BEDMAS&lt;/strong&gt;）计算结果。">To evaluate an expression means to substitute given numbers for the
 variables (plug them in) and then calculate the result using the order
 of operations (<strong>BEDMAS</strong>).</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Evaluate" data-zh="求值">Evaluate</p>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">2x + 5</annotation></semantics></math></p>
-<p data-en="when 𝑥=3:" data-zh="当 𝑥=3 时：">when 𝑥=3:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>3</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>+</mo><mn>5</mn><mo>=</mo><mn>6</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">2(3) + 5 = 6 + 5 = 11</annotation></semantics></math></p>
-</blockquote>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Evaluate" data-zh="求值">Evaluate</p>
+<p class="kiwi-example-question-math" data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2x + 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">2x + 5</annotation></semantics></math></p>
+<p class="kiwi-single-example" data-en="when 𝑥=3:" data-zh="当 𝑥=3 时：">when 𝑥=3:</p>
+<div class="kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>3</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>+</mo><mn>5</mn><mo>=</mo><mn>6</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">2(3) + 5 = 6 + 5 = 11</annotation></semantics></math></div>
+</div>
 <aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><p data-en="BEDMAS is an acronym used in mathematics to remember the
 &lt;strong&gt;order of operations&lt;/strong&gt;. It provides a set of rules that
 dictate the sequence in which calculations must be performed to ensure a
@@ -343,43 +351,38 @@ dictate the sequence in which calculations must be performed to ensure a
 consistent and correct result for any given mathematical expression.</p>
 <p data-en="The operations are performed in the following order:" data-zh="运算按下列顺序进行：">The operations are performed in the following order:</p>
 <ul>
-<li><p data-en="&lt;strong&gt;B&lt;/strong&gt;rackets / Parentheses" data-zh="&lt;strong&gt;B&lt;/strong&gt;rackets / 括号"><strong>B</strong>rackets / Parentheses</p></li>
-<li><p data-en="&lt;strong&gt;E&lt;/strong&gt;xponents / Orders (or Indices)" data-zh="&lt;strong&gt;E&lt;/strong&gt;xponents / 指数（或阶）"><strong>E</strong>xponents / Orders (or Indices)</p></li>
-<li><p data-en="&lt;strong&gt;D&lt;/strong&gt;ivision and &lt;strong&gt;M&lt;/strong&gt;ultiplication
+<li data-en="&lt;strong&gt;B&lt;/strong&gt;rackets / Parentheses" data-zh="&lt;strong&gt;B&lt;/strong&gt;rackets / 括号"><strong>B</strong>rackets / Parentheses</li>
+<li data-en="&lt;strong&gt;E&lt;/strong&gt;xponents / Orders (or Indices)" data-zh="&lt;strong&gt;E&lt;/strong&gt;xponents / 指数（或阶）"><strong>E</strong>xponents / Orders (or Indices)</li>
+<li data-en="&lt;strong&gt;D&lt;/strong&gt;ivision and &lt;strong&gt;M&lt;/strong&gt;ultiplication
 (equal priority, left to right)" data-zh="&lt;strong&gt;D&lt;/strong&gt;ivision 与 &lt;strong&gt;M&lt;/strong&gt;ultiplication（优先级相同，从左到右）"><strong>D</strong>ivision and <strong>M</strong>ultiplication
-(equal priority, left to right)</p></li>
-<li><p data-en="&lt;strong&gt;A&lt;/strong&gt;ddition and &lt;strong&gt;S&lt;/strong&gt;ubtraction (equal
+(equal priority, left to right)</li>
+<li data-en="&lt;strong&gt;A&lt;/strong&gt;ddition and &lt;strong&gt;S&lt;/strong&gt;ubtraction (equal
 priority, left to right)" data-zh="&lt;strong&gt;A&lt;/strong&gt;ddition 与 &lt;strong&gt;S&lt;/strong&gt;ubtraction（优先级相同，从左到右）"><strong>A</strong>ddition and <strong>S</strong>ubtraction (equal
-priority, left to right)</p></li>
-</ul></aside>
-<h3 id="patterns-and-sequences" data-en="Patterns and Sequences" data-zh="规律与数列">Patterns and Sequences</h3>
-<h4 id="patterns" data-en="Patterns" data-zh="规律">Patterns</h4>
+priority, left to right)</li>
+</ul></aside></div></details><details class="lesson-card"><summary id="patterns-and-sequences" data-en="Patterns and Sequences" data-zh="规律与数列">Patterns and Sequences</summary><div class="lesson-card-content"><h4 id="patterns" data-en="Patterns" data-zh="规律">Patterns</h4>
 <p data-en="A pattern is a list of numbers, shapes, or objects that follow a
 rule." data-zh="规律是按某一规则排列的数、图形或物体的列表。">A pattern is a list of numbers, shapes, or objects that follow a
 rule.</p>
 <p data-en="A pattern usually has three parts:" data-zh="一个规律通常有三部分：">A pattern usually has three parts:</p>
 <ul>
-<li><p data-en="&lt;strong&gt;Term number&lt;/strong&gt; — which place it is in the pattern
+<li data-en="&lt;strong&gt;Term number&lt;/strong&gt; — which place it is in the pattern
 (1st, 2nd, 3rd, …)." data-zh="&lt;strong&gt;项的序号&lt;/strong&gt; — 它在规律中是第几位（第 1、2、3、… 项）。"><strong>Term number</strong> — which place it is in the pattern
-(1st, 2nd, 3rd, …).</p></li>
-<li><p data-en="&lt;strong&gt;Term value&lt;/strong&gt; — the actual number (or shape) at
+(1st, 2nd, 3rd, …).</li>
+<li data-en="&lt;strong&gt;Term value&lt;/strong&gt; — the actual number (or shape) at
 that place." data-zh="&lt;strong&gt;项的值&lt;/strong&gt; — 该位置上实际的数（或图形）。"><strong>Term value</strong> — the actual number (or shape) at
-that place.</p></li>
-<li><p data-en="&lt;strong&gt;Rule / expression&lt;/strong&gt; — the math sentence that tells
+that place.</li>
+<li data-en="&lt;strong&gt;Rule / expression&lt;/strong&gt; — the math sentence that tells
 how to get the term value from the term number." data-zh="&lt;strong&gt;规律 / 代数式&lt;/strong&gt; — 说明如何由项的序号得到项的值的数学语句。"><strong>Rule / expression</strong> — the math sentence that tells
-how to get the term value from the term number.</p></li>
+how to get the term value from the term number.</li>
 </ul>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="Pattern: 2,4,6,8,…" data-zh="规律：2,4,6,8,…">Pattern: 2,4,6,8,…</p></li>
-<li><p data-en="Term number: 1,2,3,4,…" data-zh="项的序号：1,2,3,4,…">Term number: 1,2,3,4,…</p></li>
-<li><p data-en="Term value: 2,4,6,8,…" data-zh="项的值：2,4,6,8,…">Term value: 2,4,6,8,…</p></li>
-<li><p data-en="Rule (expression):" data-zh="规律（代数式）：">Rule (expression):</p></li>
+<ul class="kiwi-example-list">
+<li data-en="Pattern: 2,4,6,8,…" data-zh="规律：2,4,6,8,…">Pattern: 2,4,6,8,…</li>
+<li data-en="Term number: 1,2,3,4,…" data-zh="项的序号：1,2,3,4,…">Term number: 1,2,3,4,…</li>
+<li data-en="Term value: 2,4,6,8,…" data-zh="项的值：2,4,6,8,…">Term value: 2,4,6,8,…</li>
+<li data-en="Rule (expression):" data-zh="规律（代数式）：">Rule (expression):</li>
 </ul>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a_{n} = 2n
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;where 𝑛 is the term number." data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a_{n} = 2n
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;，其中 𝑛 是项的序号。"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">a_{n} = 2n
-</annotation></semantics></math>where 𝑛 is the term number.</p>
+<div class="kiwi-math-where"><div class="kiwi-math-block"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">a_{n} = 2n</annotation></semantics></math></div><p data-en="where &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt; is the term number." data-zh="其中 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt; 是项的序号。">where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> is the term number.</p></div>
 <p data-en="If we know the &lt;strong&gt;rule&lt;/strong&gt;, we can find
 &lt;strong&gt;any&lt;/strong&gt; term in the pattern — even the 100th one — without
 listing all the numbers." data-zh="若知道&lt;strong&gt;规律&lt;/strong&gt;，就能求规律中&lt;strong&gt;任意&lt;/strong&gt;一项——哪怕是第 100 项——而不必列出所有数。">If we know the <strong>rule</strong>, we can find
@@ -391,37 +394,34 @@ or pattern. The numbers in the sequence are called
 &lt;strong&gt;terms&lt;/strong&gt;." data-zh="数列是按特定规律或模式排列的数的有序列表，其中的数称为&lt;strong&gt;项&lt;/strong&gt;。">A sequence is an ordered list of numbers that follows a specific rule
 or pattern. The numbers in the sequence are called
 <strong>terms</strong>.</p>
-<ul>
-<li><p data-en="&lt;strong&gt;Arithmetic sequence&lt;/strong&gt;: add the same number each
+<ul class="kiwi-sequence-type-list">
+<li><span data-en="&lt;strong&gt;Arithmetic sequence&lt;/strong&gt;: add the same number each
 time." data-zh="&lt;strong&gt;等差数列&lt;/strong&gt;：每次加上相同的数。"><strong>Arithmetic sequence</strong>: add the same number each
-time.</p></li>
-</ul>
-<blockquote>
-<p data-en="A sequence where the difference between consecutive terms is
+time.</span>
+<div class="kiwi-sequence-detail"><p data-en="A sequence where the difference between consecutive terms is
 constant. This constant difference is called the common difference." data-zh="相邻项之差恒定的数列，这个恒定的差称为公差。">A sequence where the difference between consecutive terms is
 constant. This constant difference is called the common difference.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-</blockquote>
-<ul>
-<li><p data-en="3,5,7,9,11,… (common difference of +2)" data-zh="3,5,7,9,11,…（公差为 +2）">3,5,7,9,11,… (common difference of +2)</p></li>
-<li><p data-en="10,7,4,1,… (common difference of −3)" data-zh="10,7,4,1,…（公差为 −3）">10,7,4,1,… (common difference of −3)</p></li>
-</ul>
-<ul>
-<li><p data-en="&lt;strong&gt;Geometric sequence:&lt;/strong&gt; multiply by the same number
+<ul class="kiwi-example-list">
+<li data-en="3,5,7,9,11,… (common difference of +2)" data-zh="3,5,7,9,11,…（公差为 +2）">3,5,7,9,11,… (common difference of +2)</li>
+<li data-en="10,7,4,1,… (common difference of −3)" data-zh="10,7,4,1,…（公差为 −3）">10,7,4,1,… (common difference of −3)</li>
+</ul></div></li>
+<li><span data-en="&lt;strong&gt;Geometric sequence:&lt;/strong&gt; multiply by the same number
 each time." data-zh="&lt;strong&gt;等比数列：&lt;/strong&gt;每次乘以相同的数。"><strong>Geometric sequence:</strong> multiply by the same number
-each time.</p></li>
-</ul>
-<blockquote>
+each time.</span>
+<div class="kiwi-sequence-detail">
 <p data-en="A sequence where the ratio between consecutive terms is constant.
 This constant ratio is called the &lt;strong&gt;common ratio&lt;/strong&gt;." data-zh="相邻项之比恒定的数列，这个恒定的比称为&lt;strong&gt;公比&lt;/strong&gt;。">A sequence where the ratio between consecutive terms is constant.
 This constant ratio is called the <strong>common ratio</strong>.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<p data-en="2,4,8,16,32,… (common ratio of
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;×&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\times 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)" data-zh="2,4,8,16,32,…（公比为
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;×&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\times 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;）">2,4,8,16,32,… (common ratio of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>×</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\times 2</annotation></semantics></math>)</p>
-</blockquote>
-</article></div></main>
+<ul class="kiwi-example-list">
+<li data-en="2,4,8,16,32,… (common ratio of
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\times 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)" data-zh="2,4,8,16,32,…（公比为
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\times 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;）">2,4,8,16,32,… (common ratio of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\times 2</annotation></semantics></math>)</li>
+</ul></div></li>
+</ul>
+</div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -452,6 +452,7 @@ This constant ratio is called the <strong>common ratio</strong>.</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -486,6 +487,39 @@ This constant ratio is called the <strong>common ratio</strong>.</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

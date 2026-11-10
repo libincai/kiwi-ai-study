@@ -22,7 +22,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Why Simplified Calculation | KIWI 爱AI Study" data-zh="为什么要简化计算 | KIWI 爱AI Study">Why Simplified Calculation | KIWI 爱AI Study</title>
 <meta content="Explore Why Simplified Calculation in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -76,7 +77,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -164,7 +164,7 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -239,8 +239,8 @@ addition, subtraction, multiplication, and division, we can
 simpler way. This is called &lt;strong&gt;simplified calculation&lt;/strong&gt;." data-zh="当我们理解加、减、乘、除的 &lt;strong&gt;法则与性质&lt;/strong&gt;，就可以 &lt;strong&gt;重新排列&lt;/strong&gt; 数字，用更简单的方式得到相同答案。这就叫 &lt;strong&gt;简化计算&lt;/strong&gt;。">When we understand the <strong>laws and properties</strong> of
 addition, subtraction, multiplication, and division, we can
 <strong>rearrange</strong> the numbers to get the same answer in a
-simpler way. This is called <strong>simplified calculation</strong>.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Let’s take 25+37+75." data-zh="来看 25+37+75。">Let’s take 25+37+75.</p>
+simpler way. This is called <strong>simplified calculation</strong>.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Let’s take 25+37+75." data-zh="来看 25+37+75。">Let’s take 25+37+75.</p>
 <p data-en="Notice that" data-zh="注意到">Notice that</p>
 <div class="kiwi-math-block"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mo>+</mo><mn>75</mn><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">25 + 75 = 100</annotation></semantics></math></div>
 <p data-en="So, add those first:" data-zh="所以，先把它们相加：">So, add those first:</p>
@@ -248,12 +248,12 @@ simpler way. This is called <strong>simplified calculation</strong>.</p><p data-
 </blockquote><p data-en="This is quicker and clearer than adding strictly from left to
 right." data-zh="这比严格从左到右相加更快、更清楚。">This is quicker and clearer than adding strictly from left to
 right.</p><p data-en="&lt;strong&gt;Why This Works&lt;/strong&gt;" data-zh="&lt;strong&gt;为什么这样做成立&lt;/strong&gt;"><strong>Why This Works</strong></p><ul>
-<li><p data-en="We use the &lt;strong&gt;commutative property&lt;/strong&gt; (change the
+<li data-en="We use the &lt;strong&gt;commutative property&lt;/strong&gt; (change the
 order in addition or multiplication)." data-zh="我们用到 &lt;strong&gt;交换律&lt;/strong&gt;（在加法或乘法中可以调换顺序）。">We use the <strong>commutative property</strong> (change the
-order in addition or multiplication).</p></li>
-<li><p data-en="These rules keep the value the same while letting us choose an
+order in addition or multiplication).</li>
+<li data-en="These rules keep the value the same while letting us choose an
 easier path." data-zh="这些规则在保持数值不变的同时，让我们可以选择更省事的路径。">These rules keep the value the same while letting us choose an
-easier path.</p></li>
+easier path.</li>
 </ul></section></article></div>
 <!-- LEVEL-4 BODY END -->
 </main>
@@ -287,6 +287,7 @@ easier path.</p></li>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -321,6 +322,8 @@ easier path.</p></li>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 </body>
 </html>

@@ -77,7 +77,7 @@ Current site-wide base values found in the stylesheet:
 | `--site-content-width` | `1120px` | Main reading/content column |
 | `--site-banner-width` | `1400px` | Inner-page banner and back-link frame |
 | `--inner-banner-height` | `150px` | Desktop inner-page banner height |
-| `--inner-banner-height-mobile` | `150px` | Mobile inner-page banner height |
+| `--inner-banner-height-mobile` | `150px` | Mobile inner-page banner **minimum** height (banner may grow taller) |
 | `--inner-banner-radius` | `22px` | Desktop inner-page banner corners |
 | `--inner-banner-title-size` | `clamp(24px, 2vw, 28px)` | Inner-page banner title |
 | `--inner-banner-subtitle-size` | `13.5px` | Inner-page banner subtitle |
@@ -152,6 +152,41 @@ Rules:
 - Use one canonical CSS class and one shared height token. Do not give each page a separate banner height.
 - Keep the homepage hero/banner separate; do not change it when editing inner-page banners.
 - Mobile uses the approved mobile artwork and shared mobile geometry. Do not let image aspect ratio silently determine the banner height.
+- **Mobile banner height must fit all visible text.** On viewports `max-width: 760px`, every inner-page banner (Levels 2–4: compact banner, topic banner, `nf-hero.topic-banner`, contact/legal/book banners, etc.) must use `height: auto`, `min-height: var(--inner-banner-height-mobile)` (150px), and `max-height: none`. Do not fix mobile banners to 150px or clip title/subtitle with `overflow: hidden`, single-line `white-space: nowrap`, or `-webkit-line-clamp`. Longer copy (especially Chinese) must wrap and the panel grows vertically. Level 4 topic banners may use content-driven height on desktop as well.
+- Implement this in the shared stylesheet (`assets/css/styles.css`); do not add per-page banner heights on mobile.
+
+### 6.1 Edu panels, formulas, and data tables (mobile)
+
+Applies to `body.edu-page` content (Level 2–3 hubs, real-life lessons such as `math/skateboard-ramp.html`) and similar patterned pages (e.g. `body.car-page` tables).
+
+Rules:
+
+- **Two-column panels** (`.edu-two` / `.edu-panel`): On mobile (`max-width: 760px`), stack to one column. Grid children and panels must use `min-width: 0` and `box-sizing: border-box` so nothing forces horizontal page scroll.
+- **Formula displays**: Use class `.edu-formula`, not fixed inline `font-size` (e.g. `26px`). Size with `clamp()`; padding must scale down on mobile.
+- **Data tables** (`.edu-table`, `.car-table`, etc.): Do **not** set `min-width` above the viewport (legacy `min-width: 520px` is forbidden). Use `width: 100%`, `min-width: 0`, and `table-layout: fixed`. Allow header/cell text to wrap (`word-break` / `overflow-wrap`). On mobile, reduce cell padding and font size (about 12px).
+- **Implementation**: Canonical rules live in `assets/css/styles.css` (`EDU / REAL-LIFE CONTENT`). Page-level `<style>` blocks may add layout-only rules but must not reintroduce fixed table widths or non-scaling formula panels. Reference markup: `math/skateboard-ramp.html`.
+
+### 6.2 Mnemonic rule tables (sign rules, exponent parity, roots, etc.)
+
+Use when a **single table** teaches a **short rule to memorize** plus **one or more category sections** with example rows (legacy Word nested tables must be flattened).
+
+**Markup**
+
+- Wrapper: `<div class="edu-table-wrap">`
+- Table: `<table class="edu-table kiwi-edu-table-with-mnemonic">` with `table-layout: fixed`, full width (`display: table` on `.mf-article` pages — not `display: block` on `<table>`).
+- Row 1 (memorize): `<thead><tr class="kiwi-edu-table-mnemonic"><th colspan="3">…</th></tr></thead>` — one cell, centered rule text (often `<strong>…</strong>`), EN/ZH on `th` via `data-en` / `data-zh`.
+- Categories: in `<tbody>`, each section starts with `<tr><th colspan="3">Category title</th></tr>` followed by normal `<tr><td>…</td>…</tr>` data rows.
+- Do **not** nest `<table>` inside `<th>`. Do **not** use a single-cell outer `width: 100%` colgroup wrapper.
+
+**Visual (canonical CSS in `styles.css`)**
+
+- Mnemonic row: background `#fff8e8`, border `#f0dfad`, top corners `12px` rounded; **memorize text** `#b85f0c`. Tip panel titles (Learning Insight) use the same `#b85f0c` (global CSS in `styles.css`).
+- Category title rows: background `#f1f5fa`, title color `#174a82`, centered.
+- Data rows: default `.mf-article` / `.edu-table` cell borders.
+
+**Reference pages:** `math/foundation-math-operation-signs-and.html`, `math/foundation-result-signs-and.html`, `math/foundation-exponents.html`, `math/foundation-roots.html`.
+
+**Batch tool:** `python tools/apply_mnemonic_table.py` (converts legacy nested mnemonic tables on foundation pages).
 
 ### Banner text
 
@@ -773,6 +808,7 @@ episode navigation intact.
 
 - Use semantic `<ul>` for genuine bullet lists and `<ol>` for sequential methods. Preserve bullets for several distinct examples, but do not insert bullets before a single question.
 - A list is indented **one level (approximately three character spaces)** relative to its introducing text. Avoid literal repeated spaces or tab characters; implement indentation with CSS `margin-inline-start` and `padding-inline-start`.
+- **Vertical spacing between list items:** use a **half-line** gap between siblings (`margin-top: 0.5lh` on `li + li`) in `.mf-article`, `.kiwi-topic-article`, and tip/insight panels. Do not tighten plain instructional bullet lists to a single line height. Numbered **`ol.kiwi-example-steps`** and parallel **`ul.kiwi-example-variants`** inside **`.kiwi-example-standard`** keep their own step spacing.
 - Example hierarchy: `Example:` (base indent) → `Find GCF(84, 30).` (one indent) → `1. 84 ÷ 30 = 2 remainder 24` etc. (a **second** indent). Place the example question **before** its steps.
 - Keep the entire example together: the explanatory sentence **“When the remainder is 0, the last divisor is the GCF.”** follows step 3 **at the same text indent as the numbered calculation**, within the example block. The final result `∴ GCF(84, 30) = 6` belongs to the same example, not an unrelated top-level paragraph.
 - Do not render steps as centered formulas; do not use a layout that puts numbers at the far left and calculations at the far right.
@@ -898,11 +934,20 @@ Example markup:
 
 ### Canonical example layout (approved)
 
+- **Label wording:** Use **`Example:`** (singular) when the block presents **one** worked problem with steps and an answer. Use **`Examples:`** (plural) when listing **multiple separate short items** (typically a bulleted list of facts or mini-results) with no shared step-by-step solution. Match Chinese: **示例：** vs **例如：**.
+- **Worked steps:** Use **`<ol class="kiwi-example-steps">`** (decimal **1., 2., 3.**) only for **sequential solution steps** (calculations or working in order). Use **two or more** `<li>` items when numbering; a single calculation line uses **`kiwi-example-list-step`** or **`.kiwi-math-block`** instead (see below). Do **not** number **parallel alternatives**—equivalent names, wording variants after **also said as:**, or other non-step lists.
+- **Wording variants inside `Example:`:** When one worked example lists **equivalent phrasings** (not steps), use **`<ul class="kiwi-example-variants">`** inside **`.kiwi-example-standard`**, indented at **6ch** like numbered steps. Reference: square/cube root “also said as” lists in `math/foundation-roots.html`.
+- **Separate `Examples:` bullets:** Use **`ul.kiwi-example-list`** only under the plural **`Examples:`** label for multiple independent short items outside a single step-by-step block.
+- **Single step (no `1.`):** When a worked **`Example:`** has only **one** calculation or working line after the question, do **not** use a numbered list. Use an unnumbered step line: **`<p class="kiwi-example-list-part kiwi-example-list-step">`** at **6ch** with **inline** math (reference: `459 ÷ 9` in `math/foundation-division-rules-2-9.html`), **or** **`<div class="kiwi-math-block">`** with **`display="block"`** math when the working line is a **standalone display formula** (centered on its own line). **Display-formula rules override example step alignment** for that line only (reference: apple-rate example in `math/foundation-unit-conversions-and-rates.html`).
+- **Multi-line bullets under `Examples:`:** When one bullet item needs **several stacked lines** (setup → working → conclusion), split each visual line with **`<span class="kiwi-example-list-part">`**: first line = setup (no extra class), middle line(s) = **`.kiwi-example-list-step`** (+3ch inside the bullet), final line = **`.kiwi-example-list-answer`** (pale left rule; aligns with the first line of that bullet, not the bullet marker). Reference: divisible-by-7 list in `math/foundation-division-rules-2-9.html`.
+- **Conclusion inside `Example:` (Since / So / Therefore):** After working lines, the conclusion may use **`<p class="kiwi-example-list-part kiwi-example-list-answer">`** at **3ch** (aligned with **`kiwi-single-example`**) **or** **`blockquote.kiwi-example-answer`** when the page already uses that pattern for **`∴`**. Do not indent the conclusion with the step column at 6ch. Prefer **`kiwi-example-list-answer`** when the conclusion is a full sentence starting with *Since*, *So*, or *Therefore* and must line up with the problem line.
+- Do **not** wrap the problem statement or working steps in generic `<blockquote>` panels (no dark-blue left rule or pale-blue fill on the question). Only the final **`∴` answer** uses the subtle pale-blue left border via `.kiwi-example-answer`.
 - The `Example:` label remains at the normal paragraph left margin.
 - A single problem statement is **not** a bullet. Indent it by **3ch** (approximately three spaces / one tab) relative to the label.
 - Ordered solution steps are indented by one more **3ch** relative to the problem. The list marker is black, normal-weight, not bold. Keep markers adjacent to their step text and left-align the whole list; do not center each step as a display formula.
-- Any concluding explanation belongs to the same example, immediately after the numbered steps, aligned with the step text (not the list number).
-- The final answer uses the therefore symbol `∴` and the site's subtle pale-blue left border, as a distinct answer line. Do not turn the answer into an extra numbered step.
+- Any concluding explanation belongs to the same example, immediately after the numbered steps, aligned with the step text (not the list number). Use **`<p class="kiwi-example-explanation">`** at **6ch** for reasoning lines (including **`∵`** and **`∴`** when they **explain** why the math works, not when they state the final result). **No pale vertical rule** on explanations.
+- The **final answer** (numeric result or explicit “the answer is …”) uses **`∴`** with **`.kiwi-example-list-answer`**, **`.kiwi-example-answer`**, or **`blockquote.kiwi-example-answer`** and the subtle pale-blue left border at **3ch**. Do not use the answer classes for post-formula unit-cancellation prose (reference: apple-rate **`∴`** line in `math/foundation-unit-conversions-and-rates.html`). Do not turn the answer into an extra numbered step.
+- **Answer typography:** The `∴` conclusion line (`.kiwi-example-answer`) is **normal body weight** throughout—do not bold the numeric result or wrap it in `<strong>`. The pale left rule alone marks the answer; emphasis belongs in the problem or explanation, not the solution.
 - Preserve the teaching order: Example → problem → steps → explanation (when needed) → answer.
 - For subtraction and division methods, use the same markup and CSS rather than per-example indentation hacks.
 
@@ -920,7 +965,11 @@ Example markup:
 </div>
 ```
 
-Use the `.kiwi-example-standard` CSS rules in `math/gcf.html` as the reference implementation. On mobile, keep indentation relative and avoid horizontal overflow.
+Global layout CSS lives in **`assets/css/styles.css`** (`.kiwi-example-standard`, `ol.kiwi-example-steps`, `ul.kiwi-example-variants`, `ul.kiwi-example-list`, `.kiwi-example-list-step`, `.kiwi-example-list-answer`). Page-specific overrides in `math/gcf.html` remain the accordion reference for **kiwi-topic-article**; foundation pages use **`.mf-article`** with the same global rules.
+
+**QA tool:** run `python tools/audit_example_layout.py` on `math/*.html` to flag single-item `<ol class="kiwi-example-steps">` lists and multi-line `kiwi-example-list` bullets missing step/answer classes.
+
+On mobile, keep indentation relative and avoid horizontal overflow.
 
 
 ### Example ordered-list alignment correction
@@ -961,11 +1010,24 @@ Applies to `math/gcf.html`, `math/unit-conversions-and-rates.html`, and `math/me
 ### Display Formula Alignment — Sitewide Enforcement
 
 - Only standalone mathematical equations are centered. Inline math remains inline, and numbered calculation steps stay left aligned.
-- Wrap a standalone MathML equation in `.kiwi-math-block` and use `display="block"`; center both wrapper and MathML.
+- Wrap a standalone MathML equation in **`.kiwi-math-block`** with **`display="block"`** on the `<math>` element. Global CSS uses **`display: flex; justify-content: center`** on the wrapper so the formula sits on its **own line** and is **horizontally centered** in the content column, including inside **`.kiwi-example-standard`** (this overrides example step left-align for that line only).
+- **Sitewide renderer:** All teaching HTML with `<math>` loads **KaTeX** + **`assets/js/kiwi-math-katex.js`** (see `tools/inject_math_katex.py`). On load and after language toggle, **`kiwiRenderAllMath()`** renders (1) **`.kiwi-math-latex`** from `data-tex-en` / `data-tex-zh`, and (2) every **`<math>`** that has a **`application/x-tex`** annotation (replaces fragile MathML). **`normalizeTex()`** uses **`\dfrac`**, **`\text{…}`** for common unit abbreviations, and maps **`\boxed{\text{unit}}` → `\cancel{\text{unit}}`**.
+- **Unit cancellation:** Author explicit cancel lines as **`\cancel{\text{lb}}`** in `data-tex-*` or in the tex annotation. Do **not** rely on **`<menclose notation="updiagonalstrike">`** or Word boxed units.
+- **Upright units:** In LaTeX use **`\text{lb}`**, **`\text{km/h}`**, etc.—never bare italic `lb` in math mode.
 - Use horizontal overflow only when an equation cannot fit a narrow viewport; do not allow vertical scrollbars or spinner-like scroll indicators.
 - Keep actual examples and numbered lists left aligned, with normal-weight black numbering and established indentation.
 - Never turn a multi-sentence paragraph or a curriculum panel into a centered math block.
 - Validate the mathematics against the source Word file separately from CSS/layout checks.
+
+### Formula followed by “where …” (variable gloss)
+
+Do **not** put **`display="block"`** math and a **where** clause in the same `<p>` (Word export spreads them across the line: formula left, gloss far right).
+
+- Wrap the rule in **`.kiwi-math-block`** with centered display math.
+- Put the gloss in the **next** left-aligned `<p>` inside **`.kiwi-math-where`**: *where* `<math display="inline">n</math>` *is the term number.* (Chinese: *其中* … with the same inline math for the symbol).
+- After a **`ul.kiwi-example-list`** (e.g. “Rule (expression):”), indent the whole **`.kiwi-math-where`** block **3ch** (`ul.kiwi-example-list + .kiwi-math-where` in global CSS).
+- Use **spaced ` — `** in English and **spaced ` —— `** in Chinese only when the gloss is rhetorical prose in `data-en` / `data-zh`; keep *where* / *其中* as normal sentence openers.
+- Short rules that read as one sentence may stay **fully inline** (inline math only, no `.kiwi-math-block`).
 
 
 ## Level 4 Accordion: Expand All / Collapse All (2026-11-09)
@@ -1004,7 +1066,8 @@ Applies to `math/gcf.html`, `math/unit-conversions-and-rates.html`, and `math/me
 - Convert **Word two-column tables containing a lightbulb icon** into semantic `<aside class="kiwi-word-info-panel" role="note">`, not HTML tables. Preserve all original prose, mathematics, and real lists.
 - Convert **Ontario Curriculum Connection** one-cell Word tables into `<aside class="kiwi-curriculum-panel" role="note">`, with no lightbulb. Preserve curriculum title, grade, citations, source links, and paragraphs in original order.
 - Convert standalone **historical/learning notes** (e.g. A Short History) into the same warm-cream insight panel; include a small lightbulb for insight/history, but not for curriculum panels.
-- Style panels consistently: pale cream `#fff8e9`, subtle gold border `#f0d58d`, rounded corners, left-aligned prose and heading. Standalone display mathematics inside panels remains centered; inline math stays inline.
+- Style panels consistently in `assets/css/styles.css`: pale cream `#fff8e9`, subtle gold frame `#f0d58d`, **3px right accent** `#e4b54e` (canonical reference: original `math/gcf.html` tip panels), 12px radius, left-aligned prose and heading. Do not redefine panel background or outer border in page `<style>` blocks — sitewide chrome only. Standalone display mathematics inside panels remains centered; inline math stays inline.
+- **Tip panel row 1 (global CSS in `assets/css/styles.css`):** The lightbulb sits in column 1, row 1. Column 2, row 1 is either the panel **title** (when a title span is present) or the **first line of body content** when the header is icon-only. All following body blocks stay in column 2 only, left-aligned with that first text column (not with the bulb). Markup: `kiwi-panel-heading` / `kiwi-word-info-header` / `kiwi-insight-header` plus optional `kiwi-word-info-body`, `kiwi-insight-body`, or `kiwi-panel-content` for mixed loose text/math. **Do not** duplicate heading `display:flex` layout in page `<style>` blocks — run `python tools/apply_tip_panel_rules.py` after bulk panel edits.
 - Never center all the text in an imported table or keep empty Word icon columns. Do not convert actual data tables (multi-row numerical tables, comparisons, formula tables) into panels.
 - QA: review panel types and links across every imported Level 4 page, including mobile, while preserving the existing example, math and image readability standards.
 

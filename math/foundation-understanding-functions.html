@@ -7,7 +7,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Understanding Functions | KIWI 爱AI Study" data-zh="认识函数 | KIWI 爱AI Study">Understanding Functions | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-example-list-6ch" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -33,7 +34,7 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -41,8 +42,7 @@
 .foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
 </style><style>
 /* Math Foundations Word info and Ontario curriculum panels */
-.kiwi-word-info-panel,.kiwi-curriculum-panel{background:#fff8e9;border:1px solid #f0d58d;border-radius:12px;padding:16px 20px;margin:20px 0;color:#4b3d2b;text-align:left;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere}
-.kiwi-word-info-panel .kiwi-panel-heading{display:flex;align-items:center;gap:9px;color:#895b0e;font-weight:700;margin:0 0 9px}
+/* Tip panel chrome: global styles.css (gold 3D left rail) */
 .kiwi-word-info-panel .kiwi-panel-icon{color:#c18a19;font-size:18px;line-height:1;flex-shrink:0}
 .kiwi-curriculum-panel .kiwi-panel-heading{font-weight:700;color:#895b0e;margin:0 0 10px}
 .kiwi-word-info-panel p,.kiwi-curriculum-panel p{margin:0 0 10px;text-align:left}
@@ -64,6 +64,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -117,11 +136,10 @@ specific rule, and produces a single output number." data-zh="函数描述输入
 outputs, where <strong>each input has exactly one output</strong>. You
 can think of it as a machine that takes in an input number, applies a
 specific rule, and produces a single output number.</p>
-<h3 id="why-do-we-use-fx-instead-of-y" data-en="Why Do We Use f(x) Instead of
+<details class="lesson-card"><summary id="why-do-we-use-fx-instead-of-y" data-en="Why Do We Use f(x) Instead of
 y?" data-zh="为什么用 f(x) 而不用
 y？">Why Do We Use f(x) Instead of
-y?</h3>
-<p data-en="In earlier math classes, you probably learned to write equations such
+y?</summary><div class="lesson-card-content"><p data-en="In earlier math classes, you probably learned to write equations such
 as" data-zh="在更早的数学课里，你可能学过写这样的方程：">In earlier math classes, you probably learned to write equations such
 as</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 3x - 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 3x - 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">y = 3x - 2</annotation></semantics></math></p>
@@ -252,24 +270,24 @@ factory follows its own process, and something comes out.</p>
 &lt;strong&gt;potato&lt;/strong&gt;." data-zh="例如，想象从同一种输入开始：一颗&lt;strong&gt;土豆&lt;/strong&gt;。">For example, imagine starting with the same input: a
 <strong>potato</strong>.</p>
 <ul>
-<li><p data-en="&lt;strong&gt;McDonald's&lt;/strong&gt; factory: Processes the potato into
+<li data-en="&lt;strong&gt;McDonald's&lt;/strong&gt; factory: Processes the potato into
 French &lt;strong&gt;fries&lt;/strong&gt;." data-zh="&lt;strong&gt;McDonald's&lt;/strong&gt; 工厂：把土豆加工成&lt;strong&gt;薯条&lt;/strong&gt;。"><strong>McDonald's</strong> factory: Processes the potato into
-French <strong>fries</strong>.</p></li>
-<li><p data-en="&lt;strong&gt;Lay's&lt;/strong&gt; factory: Processes the potato into potato
+French <strong>fries</strong>.</li>
+<li data-en="&lt;strong&gt;Lay's&lt;/strong&gt; factory: Processes the potato into potato
 &lt;strong&gt;chips&lt;/strong&gt;." data-zh="&lt;strong&gt;Lay's&lt;/strong&gt; 工厂：把土豆加工成土豆&lt;strong&gt;薯片&lt;/strong&gt;。"><strong>Lay's</strong> factory: Processes the potato into potato
-<strong>chips</strong>.</p></li>
+<strong>chips</strong>.</li>
 </ul>
 <p data-en="The input is the same, but the two factories use different processes
 and produce different outputs." data-zh="输入相同，但两家工厂过程不同，产出也不同。">The input is the same, but the two factories use different processes
 and produce different outputs.</p>
 <p data-en="A mathematical function works in a similar way:" data-zh="数学函数也以类似方式运作：">A mathematical function works in a similar way:</p>
 <ul>
-<li><p data-en="Input: The number you put into the function, usually
+<li data-en="Input: The number you put into the function, usually
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="输入：你放进函数里的数，通常是
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">Input: The number you put into the function, usually
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.</p></li>
-<li><p data-en="Rule: The process the function follows." data-zh="规律：函数所遵循的过程。">Rule: The process the function follows.</p></li>
-<li><p data-en="Output: The result produced by the function, written as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.</li>
+<li data-en="Rule: The process the function follows." data-zh="规律：函数所遵循的过程。">Rule: The process the function follows.</li>
+<li data-en="Output: The result produced by the function, written as
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 or another function notation." data-zh="输出：函数产生的结果，记作
@@ -278,7 +296,7 @@ or another function notation." data-zh="输出：函数产生的结果，记作
 或其他函数记号。">Output: The result produced by the function, written as
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math>,
-or another function notation.</p></li>
+or another function notation.</li>
 </ul>
 <p data-en="Different functions can use the same input but produce different
 outputs because they follow different rules." data-zh="不同函数可使用相同输入，但因规律不同而得到不同输出。">Different functions can use the same input but produce different
@@ -332,55 +350,57 @@ from function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>.</p>
 <p data-en="This is why function notation is useful. It allows us to name
 different functions and clearly identify the output of each one." data-zh="这就是函数记号有用之处：我们能给不同函数命名，并清楚区分各自的输出。">This is why function notation is useful. It allows us to name
-different functions and clearly identify the output of each one.</p>
-<h3 id="input-output-and-rule" data-en="Input, Output and Rule" data-zh="输入、输出与规律">Input, Output and Rule</h3>
-<p data-en="&lt;strong&gt;Input&lt;/strong&gt;: The value you put into the function machine
+different functions and clearly identify the output of each one.</p></div></details><details class="lesson-card"><summary id="input-output-and-rule" data-en="Input, Output and Rule" data-zh="输入、输出与规律">Input, Output and Rule</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Input&lt;/strong&gt;: The value you put into the function machine
 (usually 𝑥)." data-zh="&lt;strong&gt;输入&lt;/strong&gt;：你放进函数机器的值（通常是 𝑥）。"><strong>Input</strong>: The value you put into the function machine
 (usually 𝑥).</p>
 <p data-en="&lt;strong&gt;Output&lt;/strong&gt;: The result or value produced by the function
 machine (usually 𝑦, or 𝑓(𝑥))." data-zh="&lt;strong&gt;输出&lt;/strong&gt;：函数机器产生的结果或值（通常是 𝑦，或 𝑓(𝑥)）。"><strong>Output</strong>: The result or value produced by the function
 machine (usually 𝑦, or 𝑓(𝑥)).</p>
-<p data-en="Examples:" data-zh="示例：">Examples:</p>
-<p data-en="If the rule is
+<p data-en="Examples:" data-zh="例如：">Examples:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="If the rule is
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x) = x + 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:" data-zh="若规律为
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x) = x + 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;：">If the rule is
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi>x</mi><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(x) = x + 3</annotation></semantics></math>:</p>
-<ul>
-<li><p data-en="If the input 𝑥 is 2, the output
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;is
-5." data-zh="若输入 𝑥 为 2，则输出
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<ul class="kiwi-example-list">
+<li data-en="If the input 𝑥 is 2, the output
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(2)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+is 5." data-zh="若输入 𝑥 为 2，则输出
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(2)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 为 5。">If the input 𝑥 is 2, the output
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">f(x)\ </annotation></semantics></math>is
-5.</p></li>
-<li><p data-en="If the input 𝑥 is −1, the output
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mn>2</mn><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(2)</annotation></semantics></math>
+is 5.</li>
+<li data-en="If the input 𝑥 is −1, the output
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;−1&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(-1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 is 2." data-zh="若输入 𝑥 为 −1，则输出
-&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;−1&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(-1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 为 2。">If the input 𝑥 is −1, the output
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
-is 2.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mn>−1</mn><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(-1)</annotation></semantics></math>
+is 2.</li>
 </ul>
+</div>
 <p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The rule (Function Rule) is the mathematical
 expression that tells you exactly what to do to the input value to get
 the output value. It defines the relationship." data-zh="&lt;strong&gt;规律：&lt;/strong&gt;规律（函数规律）是说明如何加工输入以得到输出的数学表达式，它定义了对应关系。"><strong>Rule:</strong> The rule (Function Rule) is the mathematical
 expression that tells you exactly what to do to the input value to get
 the output value. It defines the relationship.</p>
-<p data-en="Examples:" data-zh="示例：">Examples:</p>
-<p data-en="In the equation" data-zh="在方程">In the equation</p>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 3x - 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 3x - 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">y = 3x - 2</annotation></semantics></math></p>
-<p data-en="the rule is “multiply the input by 3, then subtract 2”." data-zh="规律是“把输入乘以 3，再减 2”。">the rule is “multiply the input by 3, then subtract 2”.</p>
-<h3 id="independent-and-dependent-variables" data-en="Independent and Dependent
+<p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="In the equation" data-zh="在方程">In the equation</p>
+<div class="kiwi-math-block"><p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 3x - 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 3x - 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">y = 3x - 2</annotation></semantics></math></p></div>
+<p class="kiwi-example-list-part" data-en="the rule is “multiply the input by 3, then subtract 2”." data-zh="规律是“把输入乘以 3，再减 2”。">the rule is “multiply the input by 3, then subtract 2”.</p>
+</div></div></details><details class="lesson-card"><summary id="independent-and-dependent-variables" data-en="Independent and Dependent
 Variables" data-zh="自变量与因变量">Independent and Dependent
-Variables</h3>
-<h4 id="independent-variable" data-en="Independent variable" data-zh="自变量">Independent variable</h4>
+Variables</summary><div class="lesson-card-content"><h4 id="independent-variable" data-en="Independent variable" data-zh="自变量">Independent variable</h4>
 <p data-en="The independent variable is the input value that you are free to
 choose or that changes independently of other variables." data-zh="自变量是你可自由选择、或相对其他变量独立变化的输入值。">The independent variable is the input value that you are free to
 choose or that changes independently of other variables.</p>
-<p data-en="Examples:" data-zh="示例：">Examples:</p>
-<p data-en="In the function" data-zh="在函数">In the function</p>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 2x + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 2x + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y = 2x + 1</annotation></semantics></math></p>
-<p data-en="the variable 𝑥 is the independent variable." data-zh="变量 𝑥 是自变量。">the variable 𝑥 is the independent variable.</p>
+<p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="In the function" data-zh="在函数">In the function</p>
+<div class="kiwi-math-block"><p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 2x + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 2x + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y = 2x + 1</annotation></semantics></math></p></div>
+<p class="kiwi-example-list-part" data-en="the variable 𝑥 is the independent variable." data-zh="变量 𝑥 是自变量。">the variable 𝑥 is the independent variable.</p>
+</div>
 <h4 id="dependent-variable" data-en="Dependent variable" data-zh="因变量">Dependent variable</h4>
 <p data-en="The dependent variable is the output value. Its value
 &lt;strong&gt;depends&lt;/strong&gt; on whatever the input (independent variable)
@@ -388,13 +408,13 @@ was." data-zh="因变量是输出值，其值&lt;strong&gt;取决于&lt;/strong&
 <strong>depends</strong> on whatever the input (independent variable)
 was.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<p data-en="In the function" data-zh="在函数">In the function</p>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 2x + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 2x + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y = 2x + 1</annotation></semantics></math></p>
-<p data-en="the variable 𝑦 is the dependent variable because its value depends on
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="In the function" data-zh="在函数">In the function</p>
+<div class="kiwi-math-block"><p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 2x + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = 2x + 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y = 2x + 1</annotation></semantics></math></p></div>
+<p class="kiwi-example-list-part" data-en="the variable 𝑦 is the dependent variable because its value depends on
 the value chosen for 𝑥." data-zh="变量 𝑦 是因变量，因为它的值取决于所取的 𝑥 值。">the variable 𝑦 is the dependent variable because its value depends on
 the value chosen for 𝑥.</p>
-<h3 id="domain-and-range" data-en="Domain and Range" data-zh="定义域与值域">Domain and Range</h3>
-<p data-en="&lt;strong&gt;Domain:&lt;/strong&gt; All allowed input values (x)." data-zh="&lt;strong&gt;定义域：&lt;/strong&gt;所有允许的输入值 (x)。"><strong>Domain:</strong> All allowed input values (x).</p>
+</div></div></details><details class="lesson-card"><summary id="domain-and-range" data-en="Domain and Range" data-zh="定义域与值域">Domain and Range</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Domain:&lt;/strong&gt; All allowed input values (x)." data-zh="&lt;strong&gt;定义域：&lt;/strong&gt;所有允许的输入值 (x)。"><strong>Domain:</strong> All allowed input values (x).</p>
 <p data-en="&lt;strong&gt;Range:&lt;/strong&gt; All possible output values (y)." data-zh="&lt;strong&gt;值域：&lt;/strong&gt;所有可能的输出值 (y)。"><strong>Range:</strong> All possible output values (y).</p>
 <p data-en="&lt;strong&gt;How to find them:&lt;/strong&gt;" data-zh="&lt;strong&gt;如何求它们：&lt;/strong&gt;"><strong>How to find them:</strong></p>
 <p data-en="Discrete graphs: List the x-values for the domain and the y-values
@@ -407,12 +427,10 @@ y-axis)." data-zh="连续图像：读图。沿 x 轴从左到右求定义域，�
 y-axis).</p>
 <p data-en="What numbers can go in? What numbers can come out?" data-zh="哪些数可以输入？哪些数可以输出？">What numbers can go in? What numbers can come out?</p>
 <p data-en="&lt;strong&gt;Domain (x). Range (y).&lt;/strong&gt;" data-zh="&lt;strong&gt;定义域 (x)。值域 (y)。&lt;/strong&gt;"><strong>Domain (x). Range (y).</strong></p>
-<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image7.webp" style="width:4.49883in;height:3.19792in"/></p>
-<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image8.webp" style="width:4.5in;height:3.5625in"/></p>
-<h3 id="discrete-vs.-continuous-functions" data-en="Discrete vs. Continuous
+<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image7.webp" style="width:5.84848in;height:4.1573in"/></p>
+<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image8.webp" style="width:5.85in;height:4.63125in"/></p></div></details><details class="lesson-card"><summary id="discrete-vs.-continuous-functions" data-en="Discrete vs. Continuous
 Functions" data-zh="离散函数与连续函数">Discrete vs. Continuous
-Functions</h3>
-<p data-en="&lt;strong&gt;Discrete:&lt;/strong&gt; A discrete function has separate, distinct
+Functions</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Discrete:&lt;/strong&gt; A discrete function has separate, distinct
 input values. Its graph consists of individual points that are not
 connected." data-zh="&lt;strong&gt;离散：&lt;/strong&gt;离散函数的输入值彼此分开；其图像由未连线的点组成。"><strong>Discrete:</strong> A discrete function has separate, distinct
 input values. Its graph consists of individual points that are not
@@ -429,21 +447,18 @@ line or curve with no gaps over that interval.</p>
 brewing time increases." data-zh="例如，煮咖啡时间越长，咖啡量可以连续变化。">For example, the amount of coffee produced can change continuously as
 brewing time increases.</p>
 <aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><ul>
-<li><p data-en="Discrete → Separate points" data-zh="离散 → 彼此分开的点">Discrete → Separate points</p></li>
-<li><p data-en="Continuous → Connected line or curve" data-zh="连续 → 相连的直线或曲线">Continuous → Connected line or curve</p></li>
+<li data-en="Discrete → Separate points" data-zh="离散 → 彼此分开的点">Discrete → Separate points</li>
+<li data-en="Continuous → Connected line or curve" data-zh="连续 → 相连的直线或曲线">Continuous → Connected line or curve</li>
 </ul></aside>
-<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image9.webp" style="width:4.5in;height:6.75in"/></p>
-<h3 id="functions-in-real-life-from-k-cup-to-coffee" data-en="Functions in Real
+<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image9.webp" style="width:5.85in;height:8.775in"/></p></div></details><details class="lesson-card"><summary id="functions-in-real-life-from-k-cup-to-coffee" data-en="Functions in Real
 Life: From K-Cup to Coffee" data-zh="生活中的函数：从 K-Cup 到咖啡">Functions in Real
-Life: From K-Cup to Coffee</h3>
-<p data-en="Input (Domain): K-Cup types — Type A, Type B, Type C, …" data-zh="输入（定义域）：K-Cup 类型 — Type A、Type B、Type C、…">Input (Domain): K-Cup types — Type A, Type B, Type C, …</p>
+Life: From K-Cup to Coffee</summary><div class="lesson-card-content"><p data-en="Input (Domain): K-Cup types — Type A, Type B, Type C, …" data-zh="输入（定义域）：K-Cup 类型 — Type A、Type B、Type C、…">Input (Domain): K-Cup types — Type A, Type B, Type C, …</p>
 <p data-en="Function: Coffee Machine" data-zh="函数：咖啡机">Function: Coffee Machine</p>
-<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image10.webp" style="width:4.16578in;height:1.81482in"/></p>
+<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image10.webp" style="width:6.49861in;height:2.83112in"/></p>
 <p data-en="Output (Range): Coffee flavors — Type A flavor, Type B flavor, Type C
 flavor, …" data-zh="输出（值域）：咖啡口味 — Type A 口味、Type B 口味、Type C 口味、…">Output (Range): Coffee flavors — Type A flavor, Type B flavor, Type C
 flavor, …</p>
-<p data-en="Remember: A function assigns exactly one output to each input." data-zh="请记住：每个输入对应恰好一个输出。">Remember: A function assigns exactly one output to each input.</p>
-</article></div></main>
+<p data-en="Remember: A function assigns exactly one output to each input." data-zh="请记住：每个输入对应恰好一个输出。">Remember: A function assigns exactly one output to each input.</p></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -474,6 +489,7 @@ flavor, …</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -508,6 +524,39 @@ flavor, …</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

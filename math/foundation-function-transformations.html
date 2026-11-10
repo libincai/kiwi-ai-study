@@ -7,7 +7,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Function Transformations | KIWI 爱AI Study" data-zh="函数变换 | KIWI 爱AI Study">Function Transformations | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -33,7 +34,7 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -41,8 +42,7 @@
 .foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
 </style><style>
 /* Math Foundations Word info and Ontario curriculum panels */
-.kiwi-word-info-panel,.kiwi-curriculum-panel{background:#fff8e9;border:1px solid #f0d58d;border-radius:12px;padding:16px 20px;margin:20px 0;color:#4b3d2b;text-align:left;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere}
-.kiwi-word-info-panel .kiwi-panel-heading{display:flex;align-items:center;gap:9px;color:#895b0e;font-weight:700;margin:0 0 9px}
+/* Tip panel chrome: global styles.css (gold 3D left rail) */
 .kiwi-word-info-panel .kiwi-panel-icon{color:#c18a19;font-size:18px;line-height:1;flex-shrink:0}
 .kiwi-curriculum-panel .kiwi-panel-heading{font-weight:700;color:#895b0e;margin:0 0 10px}
 .kiwi-word-info-panel p,.kiwi-curriculum-panel p{margin:0 0 10px;text-align:left}
@@ -64,6 +64,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -124,50 +143,49 @@ up or down, left or right, or change its width and height." data-zh="例如，�
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x) = x^{2}</annotation></semantics></math>,
 which is a parabola. By changing its equation, we can move the parabola
 up or down, left or right, or change its width and height.</p>
-<h3 id="vertical-and-horizontal-transformations" data-en="Vertical and Horizontal
+<details class="lesson-card"><summary id="vertical-and-horizontal-transformations" data-en="Vertical and Horizontal
 Transformations" data-zh="纵向与横向变换">Vertical and Horizontal
-Transformations</h3>
-<h4 id="vertical-transformations" data-en="Vertical transformations" data-zh="纵向变换">Vertical transformations</h4>
+Transformations</summary><div class="lesson-card-content"><h4 id="vertical-transformations" data-en="Vertical transformations" data-zh="纵向变换">Vertical transformations</h4>
 <p data-en="Vertical transformations change the &lt;strong&gt;y-values&lt;/strong&gt; while
 keeping the x-values unchanged." data-zh="纵向变换改变 &lt;strong&gt;y 值&lt;/strong&gt;，而 x 值不变。">Vertical transformations change the <strong>y-values</strong> while
 keeping the x-values unchanged.</p>
 <ul>
-<li><p data-en="&lt;strong&gt;Vertical stretch:&lt;/strong&gt; The graph becomes taller when
+<li data-en="&lt;strong&gt;Vertical stretch:&lt;/strong&gt; The graph becomes taller when
 the y-values are multiplied by a factor greater than 1." data-zh="&lt;strong&gt;纵向伸缩：&lt;/strong&gt;当 y 值乘以大于 1 的系数时，图像变高。"><strong>Vertical stretch:</strong> The graph becomes taller when
-the y-values are multiplied by a factor greater than 1.</p></li>
-<li><p data-en="&lt;strong&gt;Vertical compression:&lt;/strong&gt; The graph becomes shorter
+the y-values are multiplied by a factor greater than 1.</li>
+<li data-en="&lt;strong&gt;Vertical compression:&lt;/strong&gt; The graph becomes shorter
 when the y-values are multiplied by a factor between 0 and 1." data-zh="&lt;strong&gt;纵向压缩：&lt;/strong&gt;当 y 值乘以 0 到 1 之间的系数时，图像变矮。"><strong>Vertical compression:</strong> The graph becomes shorter
-when the y-values are multiplied by a factor between 0 and 1.</p></li>
+when the y-values are multiplied by a factor between 0 and 1.</li>
 </ul>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = 2f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:
+<ul class="kiwi-example-list">
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = 2f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:
 vertical stretch by a factor of 2." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = 2f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;：
 纵向伸缩，系数为 2。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>2</mn><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(x) = 2f(x)</annotation></semantics></math>:
-vertical stretch by a factor of 2.</p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = \frac{1}{2}f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:
+vertical stretch by a factor of 2.</li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = \frac{1}{2}f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:
 vertical compression by a factor of
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{1}{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = \frac{1}{2}f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;：
 纵向压缩，系数为
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{1}{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(x) = \frac{1}{2}f(x)</annotation></semantics></math>:
 vertical compression by a factor of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mn>2</mn></mfrac><annotation encoding="application/x-tex">\frac{1}{2}</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mn>2</mn></mfrac><annotation encoding="application/x-tex">\frac{1}{2}</annotation></semantics></math>.</li>
 </ul>
 <h4 id="horizontal-transformations" data-en="Horizontal transformations" data-zh="横向变换">Horizontal transformations</h4>
 <p data-en="Horizontal transformations change the &lt;strong&gt;x-values&lt;/strong&gt; while
 keeping the y-values unchanged." data-zh="横向变换改变 &lt;strong&gt;x 值&lt;/strong&gt;，而 y 值不变。">Horizontal transformations change the <strong>x-values</strong> while
 keeping the y-values unchanged.</p>
 <ul>
-<li><p data-en="&lt;strong&gt;Horizontal stretch:&lt;/strong&gt; The graph becomes wider when
+<li data-en="&lt;strong&gt;Horizontal stretch:&lt;/strong&gt; The graph becomes wider when
 the horizontal scale factor is greater than 1." data-zh="&lt;strong&gt;横向伸缩：&lt;/strong&gt;当横向伸缩系数大于 1 时，图像变宽。"><strong>Horizontal stretch:</strong> The graph becomes wider when
-the horizontal scale factor is greater than 1.</p></li>
-<li><p data-en="&lt;strong&gt;Horizontal compression:&lt;/strong&gt; The graph becomes
+the horizontal scale factor is greater than 1.</li>
+<li data-en="&lt;strong&gt;Horizontal compression:&lt;/strong&gt; The graph becomes
 narrower when the horizontal scale factor is between 0 and 1." data-zh="&lt;strong&gt;横向压缩：&lt;/strong&gt;当横向伸缩系数在 0 到 1 之间时，图像变窄。"><strong>Horizontal compression:</strong> The graph becomes
-narrower when the horizontal scale factor is between 0 and 1.</p></li>
+narrower when the horizontal scale factor is between 0 and 1.</li>
 </ul>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = f\left( \frac{1}{2}x \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:
+<ul class="kiwi-example-list">
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = f\left( \frac{1}{2}x \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:
 horizontal stretch by a factor of 2. For the same
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;-value,
 the corresponding
@@ -182,8 +200,8 @@ horizontal stretch by a factor of 2. For the same
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-value,
 the corresponding
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-value
-is twice as large.</p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = f(2x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:
+is twice as large.</li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = f(2x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:
 horizontal compression by a factor of
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{1}{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;.
 For the same
@@ -204,7 +222,7 @@ For the same
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-value,
 the corresponding
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-value
-is half as large.</p></li>
+is half as large.</li>
 </ul>
 <h4 id="understanding-scale-factors" data-en="Understanding scale factors" data-zh="理解伸缩系数">Understanding scale factors</h4>
 <p data-en="The &lt;strong&gt;scale factor&lt;/strong&gt; describes how much the graph is
@@ -238,12 +256,12 @@ where
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a \neq 0</annotation></semantics></math>.</p>
 <p data-en="&lt;strong&gt;Remember:&lt;/strong&gt;" data-zh="&lt;strong&gt;请记住：&lt;/strong&gt;"><strong>Remember:</strong></p>
 <ul>
-<li><p data-en="Vertical transformations change the height of the graph." data-zh="纵向变换改变图像的高度。">Vertical transformations change the height of the graph.</p></li>
-<li><p data-en="Horizontal transformations change the width of the
+<li data-en="Vertical transformations change the height of the graph." data-zh="纵向变换改变图像的高度。">Vertical transformations change the height of the graph.</li>
+<li data-en="Horizontal transformations change the width of the
 graph." data-zh="横向变换改变图像的宽度。">Horizontal transformations change the width of the
-graph.</p></li>
-<li><p data-en="A scale factor greater than 1 indicates a stretch." data-zh="伸缩系数大于 1 表示拉伸。">A scale factor greater than 1 indicates a stretch.</p></li>
-<li><p data-en="A scale factor between 0 and 1 indicates a compression." data-zh="伸缩系数在 0 到 1 之间表示压缩。">A scale factor between 0 and 1 indicates a compression.</p></li>
+graph.</li>
+<li data-en="A scale factor greater than 1 indicates a stretch." data-zh="伸缩系数大于 1 表示拉伸。">A scale factor greater than 1 indicates a stretch.</li>
+<li data-en="A scale factor between 0 and 1 indicates a compression." data-zh="伸缩系数在 0 到 1 之间表示压缩。">A scale factor between 0 and 1 indicates a compression.</li>
 </ul>
 <p data-en="A useful way to remember these transformations is to imagine resizing
 a photograph. Stretching it vertically makes it taller, while stretching
@@ -260,11 +278,9 @@ scale factor is the reciprocal of the coefficient multiplying x inside
 the function." data-zh="纵向变换作用于 y 值，横向变换作用于 x 值。横向变换中，伸缩系数是函数内部 x 的系数的倒数。">Vertical transformations affect the y-values, while horizontal
 transformations affect the x-values. For horizontal transformations, the
 scale factor is the reciprocal of the coefficient multiplying x inside
-the function.</p></aside>
-<h3 id="general-equation-of-function-transformations" data-en="General Equation
+the function.</p></aside></div></details><details class="lesson-card"><summary id="general-equation-of-function-transformations" data-en="General Equation
 of Function Transformations" data-zh="函数变换的一般方程">General Equation
-of Function Transformations</h3>
-<p data-en="The general equation for a function transformation is:" data-zh="函数变换的一般方程为：">The general equation for a function transformation is:</p>
+of Function Transformations</summary><div class="lesson-card-content"><p data-en="The general equation for a function transformation is:" data-zh="函数变换的一般方程为：">The general equation for a function transformation is:</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = af\left( b(x - h) \right) + d&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;g(x) = af\left( b(x - h) \right) + d&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi>a</mi><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo>−</mo><mi>h</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo form="postfix" stretchy="true">)</mo></mrow><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">g(x) = af\left( b(x - h) \right) + d</annotation></semantics></math></p>
 <p data-en="This equation combines horizontal and vertical transformations in one
 formula." data-zh="该式在一个公式中同时包含横向与纵向变换。">This equation combines horizontal and vertical transformations in one
@@ -274,45 +290,45 @@ formula.</p>
 Reflection&lt;/strong&gt;" data-zh="&lt;strong&gt;a — 纵向伸缩与反射&lt;/strong&gt;"><strong>a — Vertical Stretch, Compression, and
 Reflection</strong></p>
 <ul>
-<li><p data-en="If |a| &amp;gt; 1, the graph is stretched vertically by a factor of
+<li data-en="If |a| &amp;gt; 1, the graph is stretched vertically by a factor of
 |a|." data-zh="若 |a| &amp;gt; 1，图像沿纵向伸缩，系数为 |a|。">If |a| &gt; 1, the graph is stretched vertically by a factor of
-|a|.</p></li>
-<li><p data-en="If 0 &amp;lt; |a| &amp;lt; 1, the graph is compressed vertically by a
+|a|.</li>
+<li data-en="If 0 &amp;lt; |a| &amp;lt; 1, the graph is compressed vertically by a
 factor of |a|." data-zh="若 0 &amp;lt; |a| &amp;lt; 1，图像沿纵向压缩，系数为 |a|。">If 0 &lt; |a| &lt; 1, the graph is compressed vertically by a
-factor of |a|.</p></li>
-<li><p data-en="If a &amp;lt; 0, the graph is also reflected across the
+factor of |a|.</li>
+<li data-en="If a &amp;lt; 0, the graph is also reflected across the
 x-axis." data-zh="若 a &amp;lt; 0，图像还关于 x 轴反射。">If a &lt; 0, the graph is also reflected across the
-x-axis.</p></li>
+x-axis.</li>
 </ul>
 <p data-en="&lt;strong&gt;b — Horizontal Stretch, Compression, and
 Reflection&lt;/strong&gt;" data-zh="&lt;strong&gt;b — 横向伸缩与反射&lt;/strong&gt;"><strong>b — Horizontal Stretch, Compression, and
 Reflection</strong></p>
 <ul>
-<li><p data-en="If |b| &amp;gt; 1, the graph is compressed horizontally by a factor
+<li data-en="If |b| &amp;gt; 1, the graph is compressed horizontally by a factor
 of
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{1}{|b|}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="若 |b| &amp;gt; 1，图像沿横向压缩，系数为
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{1}{|b|}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">If |b| &gt; 1, the graph is compressed horizontally by a factor
 of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mrow><mo form="prefix" stretchy="true">|</mo><mi>b</mi><mo form="postfix" stretchy="true">|</mo></mrow></mfrac><annotation encoding="application/x-tex">\frac{1}{|b|}</annotation></semantics></math>.</p></li>
-<li><p data-en="If 0 &amp;lt; |b| &amp;lt; 1, the graph is stretched horizontally by a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mrow><mo form="prefix" stretchy="true">|</mo><mi>b</mi><mo form="postfix" stretchy="true">|</mo></mrow></mfrac><annotation encoding="application/x-tex">\frac{1}{|b|}</annotation></semantics></math>.</li>
+<li data-en="If 0 &amp;lt; |b| &amp;lt; 1, the graph is stretched horizontally by a
 factor of
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{1}{|b|}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="若 0 &amp;lt; |b| &amp;lt; 1，图像沿横向伸缩，系数为
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{1}{|b|}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">If 0 &lt; |b| &lt; 1, the graph is stretched horizontally by a
 factor of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mrow><mo form="prefix" stretchy="true">|</mo><mi>b</mi><mo form="postfix" stretchy="true">|</mo></mrow></mfrac><annotation encoding="application/x-tex">\frac{1}{|b|}</annotation></semantics></math>.</p></li>
-<li><p data-en="If b &amp;lt; 0, the graph is also reflected across the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mrow><mo form="prefix" stretchy="true">|</mo><mi>b</mi><mo form="postfix" stretchy="true">|</mo></mrow></mfrac><annotation encoding="application/x-tex">\frac{1}{|b|}</annotation></semantics></math>.</li>
+<li data-en="If b &amp;lt; 0, the graph is also reflected across the
 y-axis." data-zh="若 b &amp;lt; 0，图像还关于 y 轴反射。">If b &lt; 0, the graph is also reflected across the
-y-axis.</p></li>
+y-axis.</li>
 </ul>
 <p data-en="&lt;strong&gt;h — Horizontal Shift&lt;/strong&gt;" data-zh="&lt;strong&gt;h — 横向平移&lt;/strong&gt;"><strong>h — Horizontal Shift</strong></p>
 <ul>
-<li><p data-en="If h &amp;gt; 0, the graph shifts right h units." data-zh="若 h &amp;gt; 0，图像向右平移 h 个单位。">If h &gt; 0, the graph shifts right h units.</p></li>
-<li><p data-en="If h &amp;lt; 0, the graph shifts left |h| units." data-zh="若 h &amp;lt; 0，图像向左平移 |h| 个单位。">If h &lt; 0, the graph shifts left |h| units.</p></li>
+<li data-en="If h &amp;gt; 0, the graph shifts right h units." data-zh="若 h &amp;gt; 0，图像向右平移 h 个单位。">If h &gt; 0, the graph shifts right h units.</li>
+<li data-en="If h &amp;lt; 0, the graph shifts left |h| units." data-zh="若 h &amp;lt; 0，图像向左平移 |h| 个单位。">If h &lt; 0, the graph shifts left |h| units.</li>
 </ul>
 <p data-en="&lt;strong&gt;d — Vertical Shift&lt;/strong&gt;" data-zh="&lt;strong&gt;d — 纵向平移&lt;/strong&gt;"><strong>d — Vertical Shift</strong></p>
 <ul>
-<li><p data-en="If d &amp;gt; 0, the graph shifts up d units." data-zh="若 d &amp;gt; 0，图像向上平移 d 个单位。">If d &gt; 0, the graph shifts up d units.</p></li>
-<li><p data-en="If d &amp;lt; 0, the graph shifts down |d| units." data-zh="若 d &amp;lt; 0，图像向下平移 |d| 个单位。">If d &lt; 0, the graph shifts down |d| units.</p></li>
+<li data-en="If d &amp;gt; 0, the graph shifts up d units." data-zh="若 d &amp;gt; 0，图像向上平移 d 个单位。">If d &gt; 0, the graph shifts up d units.</li>
+<li data-en="If d &amp;lt; 0, the graph shifts down |d| units." data-zh="若 d &amp;lt; 0，图像向下平移 |d| 个单位。">If d &lt; 0, the graph shifts down |d| units.</li>
 </ul>
 <p data-en="&lt;strong&gt;2. Worked Example&lt;/strong&gt;" data-zh="&lt;strong&gt;2. 例题&lt;/strong&gt;"><strong>2. Worked Example</strong></p>
 <p data-en="Start with the parent function:" data-zh="从母函数出发：">Start with the parent function:</p>
@@ -323,18 +339,17 @@ y-axis.</p></li>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;[&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;²&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x) = 2\left\lbrack 3(x - 1) \right\rbrack ² + 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;[&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;²&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x) = 2\left\lbrack 3(x - 1) \right\rbrack ² + 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>2</mn><mrow><mo form="prefix" stretchy="true">[</mo><mn>3</mn><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo form="postfix" stretchy="true">]</mo></mrow><mi>²</mi><mo>+</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">f(x) = 2\left\lbrack 3(x - 1) \right\rbrack ² + 4</annotation></semantics></math></p>
 <p data-en="Identify each transformation:" data-zh="识别各项变换：">Identify each transformation:</p>
 <ul>
-<li><p data-en="a = 2: vertical stretch by a factor of 2." data-zh="a = 2：纵向伸缩，系数为 2。">a = 2: vertical stretch by a factor of 2.</p></li>
-<li><p data-en="b = 3: horizontal compression by a factor of
+<li data-en="a = 2: vertical stretch by a factor of 2." data-zh="a = 2：纵向伸缩，系数为 2。">a = 2: vertical stretch by a factor of 2.</li>
+<li data-en="b = 3: horizontal compression by a factor of
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{1}{3}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="b = 3：横向压缩，系数为
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mfrac&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{1}{3}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">b = 3: horizontal compression by a factor of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mn>3</mn></mfrac><annotation encoding="application/x-tex">\frac{1}{3}</annotation></semantics></math>.</p></li>
-<li><p data-en="h = 1: shift right 1 unit." data-zh="h = 1：向右平移 1 个单位。">h = 1: shift right 1 unit.</p></li>
-<li><p data-en="d = 4: shift up 4 units." data-zh="d = 4：向上平移 4 个单位。">d = 4: shift up 4 units.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mn>3</mn></mfrac><annotation encoding="application/x-tex">\frac{1}{3}</annotation></semantics></math>.</li>
+<li data-en="h = 1: shift right 1 unit." data-zh="h = 1：向右平移 1 个单位。">h = 1: shift right 1 unit.</li>
+<li data-en="d = 4: shift up 4 units." data-zh="d = 4：向上平移 4 个单位。">d = 4: shift up 4 units.</li>
 </ul>
 <p data-en="&lt;strong&gt;Final description:&lt;/strong&gt; The parabola becomes narrower and
 taller, then shifts 1 unit right and 4 units up." data-zh="&lt;strong&gt;最终描述：&lt;/strong&gt;抛物线变窄变高，再向右平移 1 个单位、向上平移 4 个单位。"><strong>Final description:</strong> The parabola becomes narrower and
-taller, then shifts 1 unit right and 4 units up.</p>
-</article></div></main>
+taller, then shifts 1 unit right and 4 units up.</p></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -365,6 +380,7 @@ taller, then shifts 1 unit right and 4 units up.</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -399,6 +415,39 @@ taller, then shifts 1 unit right and 4 units up.</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

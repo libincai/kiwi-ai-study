@@ -22,7 +22,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Special Right Triangles | KIWI 爱AI Study" data-zh="特殊直角三角形 | KIWI 爱AI Study">Special Right Triangles | KIWI 爱AI Study</title>
 <meta content="Explore Special Right Triangles in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -76,7 +77,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -164,7 +164,7 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -244,8 +244,8 @@ long." data-zh="从边长都是 2 的正三角形开始。">Start with an equila
 long.</p><p data-en="Draw an altitude from one vertex to the opposite side. This divides
 the equilateral triangle into two congruent right triangles." data-zh="从一个顶点向对边作高。这会把正三角形分成两个全等的直角三角形。">Draw an altitude from one vertex to the opposite side. This divides
 the equilateral triangle into two congruent right triangles.</p><p><img src="../assets/math-word/image29.jpeg" style="width:740px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p><p data-en="The altitude:" data-zh="这条高：">The altitude:</p><ul>
-<li><p data-en="Bisects the opposite side into two segments of length 1." data-zh="把对边平分成两段，每段长 1。">Bisects the opposite side into two segments of length 1.</p></li>
-<li><p data-en="Splits the
+<li data-en="Bisects the opposite side into two segments of length 1." data-zh="把对边平分成两段，每段长 1。">Bisects the opposite side into two segments of length 1.</li>
+<li data-en="Splits the
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;60&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;60^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 angle into two
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;30&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;30^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -257,8 +257,8 @@ angles." data-zh="把
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">60^{\circ}</annotation></semantics></math>
 angle into two
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">30^{\circ}</annotation></semantics></math>
-angles.</p></li>
-<li><p data-en="Creates two right triangles with angles
+angles.</li>
+<li data-en="Creates two right triangles with angles
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;30&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;30^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;60&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;60^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 and
@@ -271,7 +271,7 @@ and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">30^{\circ}</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">60^{\circ}</annotation></semantics></math>,
 and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math>.</li>
 </ul><p data-en="Using the Pythagorean Theorem, the altitude is:" data-zh="用勾股定理可得高的长度为：">Using the Pythagorean Theorem, the altitude is:</p><p><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msqrt&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msqrt&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;{h^{2} + 1^{2} = 2^{2}
 }{h^{2} = 4 - 1 = 3
 }{h = \sqrt{3}
@@ -288,12 +288,12 @@ angle:" data-zh="对于
 角：">For the
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">30^{\circ}</annotation></semantics></math>
 angle:</p><ul>
-<li><p data-en="Opposite = 1" data-zh="对边 = 1">Opposite = 1</p></li>
-<li><p data-en="Adjacent =
+<li data-en="Opposite = 1" data-zh="对边 = 1">Opposite = 1</li>
+<li data-en="Adjacent =
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msqrt&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msqrt&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\sqrt{3}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="邻边 =
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msqrt&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msqrt&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\sqrt{3}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">Adjacent =
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>3</mn></msqrt><annotation encoding="application/x-tex">\sqrt{3}</annotation></semantics></math></p></li>
-<li><p data-en="Hypotenuse = 2" data-zh="斜边 = 2">Hypotenuse = 2</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>3</mn></msqrt><annotation encoding="application/x-tex">\sqrt{3}</annotation></semantics></math></li>
+<li data-en="Hypotenuse = 2" data-zh="斜边 = 2">Hypotenuse = 2</li>
 </ul><p data-en="For the
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;60&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;60^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 angle, the opposite and adjacent sides switch roles." data-zh="对于
@@ -547,6 +547,7 @@ Cosine at 45° are equal</h4><p data-en="Because the opposite and adjacent sides
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -581,6 +582,8 @@ Cosine at 45° are equal</h4><p data-en="Because the opposite and adjacent sides
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 <script id="kiwi-accordion-controls-script">
 (function(){

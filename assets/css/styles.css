@@ -49,7 +49,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--font-site);font-size:var(--font-size-body);color:var(--color-body);background:var(--color-white)}
 a{color:inherit}
-.site-header{min-height:73px;display:flex;align-items:center;gap:clamp(14px,1.55vw,26px);padding:7px clamp(24px,4.55vw,70px);background:#fff;border-bottom:1px solid #e6eaf2}
+.site-header{min-height:73px;display:flex;align-items:center;flex-wrap:wrap;gap:clamp(14px,1.55vw,26px);row-gap:8px;padding:7px clamp(24px,4.55vw,70px);background:#fff;border-bottom:1px solid #e6eaf2;container-type:inline-size}
 .brand-lockup{display:grid;grid-template-columns:215px 1px 170px;grid-template-rows:auto;column-gap:clamp(14px,1.8vw,28px);row-gap:0;align-items:center;flex:0 0 auto}
 .logo-link{grid-column:1;grid-row:1;justify-self:center;align-self:center;line-height:0}
 .logo{display:block;width:215px;height:38px;object-fit:contain}
@@ -60,7 +60,13 @@ a{color:inherit}
 .author{font:700 34px/1 "Segoe UI",Tahoma,sans-serif;color:#101747;text-decoration:none;white-space:nowrap}
 .author-underline{display:block;width:88%;height:10px;margin:4px 0 0 2px}
 .author-underline svg{width:100%;height:100%;display:block}
-.site-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(7px,1.25vw,22px);margin-left:auto;min-width:0;white-space:nowrap}
+.site-nav{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:clamp(7px,1.25vw,22px);row-gap:6px;margin-left:auto;min-width:0;white-space:normal}
+/* Drop nav to a full-width second row before links collide with the signature */
+@container (max-width: 1280px){
+ .site-header{justify-content:center}
+ .brand-lockup{margin-inline:auto}
+ .site-nav{flex:1 1 100%;width:100%;margin-left:0;justify-content:center}
+}
 .site-nav a{font-size:16px;font-weight:700;text-decoration:none;color:#101747;padding:10px 2px}
 .site-nav a.active{background:#0756df;color:#fff;padding:10px 20px;border-radius:13px}
 .flags{display:flex;align-items:center;gap:8px;margin-left:4px;padding-left:20px;border-left:1.5px solid #2945a1}
@@ -2845,7 +2851,7 @@ html body.in-class-page main {
   box-sizing: border-box;
 }
 
-/* Mobile geometry: every inner-page banner remains the same height as its peers. */
+/* Mobile geometry: min height matches peers; banner grows to fit wrapped title/subtitle. */
 @media (max-width: 700px) {
   html body:not(.home-page) main .compact-page-banner,
   html body:not(.home-page) main .about-compact-banner,
@@ -2853,9 +2859,10 @@ html body.in-class-page main {
   html body:not(.home-page) main .edu-hero,
   html body:not(.home-page) main .ai-hero,
   html body:not(.home-page) main .contact-banner {
-    height: var(--inner-banner-height-mobile) !important;
+    height: auto !important;
     min-height: var(--inner-banner-height-mobile) !important;
-    max-height: var(--inner-banner-height-mobile) !important;
+    max-height: none !important;
+    overflow: visible !important;
     border-radius: 17px !important;
   }
 
@@ -3018,7 +3025,7 @@ html[lang="zh-CN"] body:not(.legal-page) :is(p, li, td, th, dd, dt, blockquote, 
 
 /* ==========================================================================
    SITE-WIDE BANNER HEIGHT — SINGLE STANDARD
-   Inner-page banners use an exact height of 150px.
+   Levels 2–3 inner-page banners use 150px on desktop (min height on mobile; grow with text).
    The homepage hero is intentionally excluded and retains its original
    responsive aspect ratio and artwork proportions.
    ========================================================================== */
@@ -3033,9 +3040,7 @@ html body :is(
   .edu-hero,
   .ai-hero,
   .ai-detail-hero,
-  .car-hero,
-  .nf-hero,
-  .topic-page .topic-banner
+  .car-hero
 ) {
   height: 150px !important;
   min-height: 150px !important;
@@ -3043,6 +3048,8 @@ html body :is(
   aspect-ratio: auto !important;
   box-sizing: border-box !important;
 }
+
+/* Topic / leaf banners (.nf-hero.topic-banner, .topic-banner) use content height — not the 150px cap. */
 
 /* FINAL OVERRIDE: exact 150px height for every inner-page banner.
    This intentionally comes last to defeat older page-level and mobile 175px rules.
@@ -3058,11 +3065,9 @@ html body:not(.home-page) main :is(
   .edu-hero,
   .ai-hero,
   .ai-detail-hero,
-  .car-hero,
-  .nf-hero,
-  .topic-page .topic-banner
+  .car-hero
 ),
-html body.nf-page .nf-main > .nf-hero {
+html body.nf-page .nf-main > .nf-hero:not(.topic-banner) {
   height: 150px !important;
   min-height: 150px !important;
   max-height: 150px !important;
@@ -3083,12 +3088,14 @@ html body.nf-page .nf-main > .nf-hero {
     .ai-detail-hero,
     .car-hero,
     .nf-hero,
+    .topic-banner,
     .topic-page .topic-banner
   ),
   html body.nf-page .nf-main > .nf-hero {
-    height: 150px !important;
-    min-height: 150px !important;
-    max-height: 150px !important;
+    height: auto !important;
+    min-height: var(--inner-banner-height-mobile, 150px) !important;
+    max-height: none !important;
+    overflow: visible !important;
     aspect-ratio: auto !important;
   }
 }
@@ -3632,19 +3639,17 @@ body.ai-page .ai-detail-hero > p:not(.ai-kicker) {
    This overrides the earlier generic topic-banner rules without changing page content. */
 body.ai-page .ai-main > .nf-hero.topic-banner {
   position: relative !important;
-  overflow: hidden !important;
+  overflow: visible !important;
   width: 100% !important;
-  height: 150px !important;
+  height: auto !important;
   min-height: 150px !important;
-  max-height: 150px !important;
+  max-height: none !important;
   padding: 24px 46px !important;
   border: 1px solid #d8e8f8 !important;
   border-radius: 24px !important;
   margin: 14px 0 34px !important;
   box-sizing: border-box !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
+  display: block !important;
   background: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
   background-image: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
 }
@@ -3698,19 +3703,17 @@ body.ai-page .ai-main > .nf-hero.topic-banner > p:last-child {
    ========================================================================== */
 html body main .nf-hero.topic-banner {
   position: relative !important;
-  overflow: hidden !important;
+  overflow: visible !important;
   width: 100% !important;
-  height: 150px !important;
+  height: auto !important;
   min-height: 150px !important;
-  max-height: 150px !important;
+  max-height: none !important;
   padding: 24px 46px !important;
   margin: 14px 0 34px !important;
   border: 1px solid #d8e8f8 !important;
   border-radius: 24px !important;
   box-sizing: border-box !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
+  display: block !important;
   background: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
   background-image: linear-gradient(112deg,#dff3ff,#eaf0ff 58%,#fff1d8) !important;
 }
@@ -4292,7 +4295,7 @@ html body main .nf-hero.topic-banner.foundation-topic-banner {
   display: block !important; position: relative !important;
   box-sizing: border-box !important; width: 100% !important;
   height: auto !important; min-height: 150px !important;
-  max-height: none !important; overflow: hidden !important;
+  max-height: none !important; overflow: visible !important;
   padding: 24px 38px !important;
 }
 html body main .nf-hero.topic-banner > .topic-banner-kicker {
@@ -4321,6 +4324,7 @@ html body main .nf-hero.topic-banner > p:last-child {
   html body main .nf-hero.topic-banner,
   html body main .nf-hero.topic-banner.foundation-topic-banner {
     height: auto !important; min-height: 150px !important;
+    max-height: none !important; overflow: visible !important;
     padding: 22px 22px 25px !important;
   }
   html body main .nf-hero.topic-banner > .topic-banner-kicker {
@@ -4335,4 +4339,709 @@ html body main .nf-hero.topic-banner > p:last-child {
   html body main .nf-hero.topic-banner > p:last-child {
     font-size: 15px !important; line-height: 1.55 !important;
   }
+}
+
+/* Mobile: all inner-page banners grow with title + subtitle (Levels 2–4). */
+@media (max-width: 760px) {
+  html body:not(.home-page) main .compact-page-banner,
+  html body:not(.home-page) main .about-compact-banner,
+  html body:not(.home-page) main .page-banner,
+  html body:not(.home-page) main .contact-banner,
+  html body:not(.home-page) main .legal-banner,
+  html body:not(.home-page) main .book-page-banner,
+  html body:not(.home-page) main .book-compact-banner {
+    display: block !important;
+    height: auto !important;
+    min-height: var(--inner-banner-height-mobile, 150px) !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  html body:not(.home-page) main .about-compact-banner h1,
+  html body:not(.home-page) main .compact-page-banner h1 {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+  html body:not(.home-page) main .about-compact-banner .compact-banner-subtitle,
+  html body:not(.home-page) main .compact-page-banner .compact-banner-subtitle,
+  html body:not(.home-page) main .compact-page-banner .buy-subtitle {
+    display: block !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    max-height: none !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+  }
+}
+
+/* ==========================================================================
+   EDU / REAL-LIFE CONTENT — panels, formulas, tables (mobile-responsive)
+   Canonical: math/skateboard-ramp.html. See DESIGN_STANDARDS.md §6.1.
+   ========================================================================== */
+body.edu-page .edu-two > * {
+  min-width: 0;
+}
+body.edu-page .edu-panel {
+  box-sizing: border-box;
+  min-width: 0;
+}
+body.edu-page .edu-formula {
+  font: clamp(20px, 5.2vw, 26px) Georgia, serif;
+  text-align: center;
+  padding: clamp(12px, 3vw, 18px) clamp(10px, 2.5vw, 16px);
+  background: #f0f6fd;
+  border-radius: 12px;
+  color: #174c83;
+  line-height: 1.35;
+  word-break: break-word;
+}
+body.edu-page .edu-table-wrap,
+.mf-article .edu-table-wrap {
+  max-width: 100%;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.mf-article .edu-table-wrap {
+  margin: 14px 0;
+}
+.mf-article .edu-table-wrap > .edu-table,
+.mf-article .edu-table-wrap > table.edu-table {
+  width: 100% !important;
+  display: table !important;
+  table-layout: fixed;
+  margin: 0;
+}
+body.edu-page .edu-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+  border-collapse: collapse;
+}
+body.edu-page .edu-table th,
+body.edu-page .edu-table td {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+/* Mnemonic rule tables — cream .nf-note header + category bands (DESIGN_STANDARDS §6.2) */
+.mf-article .edu-table.kiwi-edu-table-with-mnemonic,
+.kiwi-topic-article .edu-table.kiwi-edu-table-with-mnemonic {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.mf-article .edu-table thead tr.kiwi-edu-table-mnemonic th,
+.kiwi-topic-article .edu-table thead tr.kiwi-edu-table-mnemonic th {
+  background: #fff8e8 !important;
+  color: #b85f0c !important;
+  text-align: center;
+  vertical-align: middle;
+  font-size: clamp(1rem, 2.4vw, 1.05rem);
+  font-weight: 700;
+  line-height: 1.65;
+  padding: 14px 17px;
+  border: 1px solid #f0dfad !important;
+  border-bottom: 1px solid #dce6f1 !important;
+  border-radius: 12px 12px 0 0;
+}
+.mf-article .edu-table thead tr.kiwi-edu-table-mnemonic th strong,
+.kiwi-topic-article .edu-table thead tr.kiwi-edu-table-mnemonic th strong {
+  font-weight: 700;
+  color: #b85f0c !important;
+}
+.mf-article .edu-table.kiwi-edu-table-with-mnemonic tbody > tr > th[colspan="3"],
+.kiwi-topic-article .edu-table.kiwi-edu-table-with-mnemonic tbody > tr > th[colspan="3"] {
+  background: #f1f5fa !important;
+  color: #174a82;
+  font-weight: 700;
+  text-align: center;
+}
+body.car-page .equation {
+  font-size: clamp(1.05rem, 4.5vw, 1.45rem);
+  padding: 12px 10px;
+}
+body.car-page .car-table-wrap {
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+body.car-page .car-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+}
+body.car-page .car-table th,
+body.car-page .car-table td {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 760px) {
+  body.edu-page .edu-two {
+    gap: 14px;
+  }
+  body.edu-page .edu-panel {
+    padding: 16px 14px;
+  }
+  body.edu-page .edu-panel h3 {
+    font-size: 17px;
+  }
+  body.edu-page .edu-formula {
+    font-size: clamp(18px, 6vw, 22px);
+    padding: 12px 10px;
+  }
+  body.edu-page .edu-table th,
+  body.edu-page .edu-table td {
+    padding: 8px 6px !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+  body.car-page .car-table th,
+  body.car-page .car-table td {
+    padding: 8px 6px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+}
+
+/* Hide TeX annotations when native MathML is shown (until KaTeX replaces <math>) */
+math annotation[encoding="application/x-tex"] {
+  display: none !important;
+}
+
+/* ==========================================================================
+   DISPLAY MATH BLOCKS — horizontal center (DESIGN_STANDARDS.md)
+   Overrides example step left-align when wrapped in .kiwi-math-block.
+   ========================================================================== */
+.mf-article .kiwi-math-block,
+.kiwi-topic-article .kiwi-math-block {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0.85rem auto !important;
+  padding: 0.1rem 0 !important;
+  text-align: center !important;
+  overflow: visible;
+  box-sizing: border-box;
+}
+.mf-article .kiwi-math-block > math,
+.mf-article .kiwi-math-block > p,
+.mf-article .kiwi-math-block > .kiwi-katex-display,
+.kiwi-topic-article .kiwi-math-block > math,
+.kiwi-topic-article .kiwi-math-block > p,
+.kiwi-topic-article .kiwi-math-block > .kiwi-katex-display {
+  display: block !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  max-width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+.mf-article .kiwi-example-standard > .kiwi-math-block,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-math-block {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.mf-article .kiwi-math-latex .katex-display,
+.kiwi-topic-article .kiwi-math-latex .katex-display {
+  margin: 0 auto;
+  text-align: center;
+}
+.mf-article .kiwi-katex-display,
+.kiwi-topic-article .kiwi-katex-display,
+.mf-article .kiwi-math-block .katex-display,
+.kiwi-topic-article .kiwi-math-block .katex-display {
+  margin: 0.85rem auto;
+  text-align: center;
+  max-width: 100%;
+  overflow: visible;
+}
+@media (max-width: 520px) {
+  .mf-article .kiwi-math-block,
+  .kiwi-topic-article .kiwi-math-block {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* Rule + “where …” gloss: centered formula, left-aligned prose on the next line */
+.mf-article .kiwi-math-where,
+.kiwi-topic-article .kiwi-math-where {
+  margin: 0.35rem 0 1rem;
+  text-align: left;
+}
+.mf-article .kiwi-math-where > .kiwi-math-block,
+.kiwi-topic-article .kiwi-math-where > .kiwi-math-block {
+  margin-top: 0.35rem !important;
+  margin-bottom: 0.4rem !important;
+}
+.mf-article .kiwi-math-where > p,
+.kiwi-topic-article .kiwi-math-where > p {
+  margin: 0;
+  text-align: left;
+}
+.mf-article ul.kiwi-example-list + .kiwi-math-where,
+.kiwi-topic-article ul.kiwi-example-list + .kiwi-math-where {
+  margin-inline-start: 3ch;
+}
+.mf-article .kiwi-katex-inline,
+.kiwi-topic-article .kiwi-katex-inline,
+.mf-article .kiwi-single-example .kiwi-katex-inline,
+.mf-article .kiwi-single-example math[display="inline"],
+.kiwi-topic-article .kiwi-single-example .kiwi-katex-inline,
+.kiwi-topic-article .kiwi-single-example math[display="inline"] {
+  display: inline;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.mf-article .kiwi-single-example .kiwi-katex-inline .katex,
+.mf-article .kiwi-single-example math[display="inline"] + span {
+  vertical-align: middle;
+}
+.mf-article .kiwi-single-example > :is(.kiwi-katex-inline, math) {
+  margin-right: 0.35em;
+}
+
+/* ==========================================================================
+   WORKED EXAMPLES — canonical layout (DESIGN_STANDARDS.md)
+   ========================================================================== */
+.mf-article ul.kiwi-example-list {
+  list-style: disc outside;
+  padding-left: 2.5rem;
+  margin: 0.5rem 0 1rem;
+  text-align: left;
+}
+.mf-article blockquote.kiwi-example-answer > ul.kiwi-example-list,
+.kiwi-topic-article blockquote.kiwi-example-answer > ul.kiwi-example-list {
+  margin: 0.35rem 0 0.6rem 3ch;
+}
+.mf-article blockquote.kiwi-example-answer,
+.kiwi-topic-article blockquote.kiwi-example-answer {
+  display: block;
+  margin: 0.35rem 0 1rem;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 3px solid #cde3fa;
+  background: transparent;
+  text-align: left;
+  font-weight: 400;
+}
+.mf-article blockquote.kiwi-example-answer p,
+.kiwi-topic-article blockquote.kiwi-example-answer p {
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+}
+.mf-article blockquote.kiwi-example-answer p:last-child,
+.kiwi-topic-article blockquote.kiwi-example-answer p:last-child {
+  margin-bottom: 0;
+}
+.mf-article ul.kiwi-sequence-type-list,
+.kiwi-topic-article ul.kiwi-sequence-type-list {
+  list-style: disc outside;
+  padding-left: 2.5rem;
+  margin: 0.5rem 0 0.25rem;
+  text-align: left;
+}
+.mf-article ul.kiwi-sequence-type-list > li,
+.kiwi-topic-article ul.kiwi-sequence-type-list > li {
+  margin: 0;
+  padding-left: 0.35rem;
+}
+.mf-article ul.kiwi-sequence-type-list > li > span,
+.kiwi-topic-article ul.kiwi-sequence-type-list > li > span {
+  display: block;
+}
+.mf-article .kiwi-sequence-detail,
+.kiwi-topic-article .kiwi-sequence-detail {
+  margin: 0.35rem 0 0.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+.mf-article ul.kiwi-sequence-type-list > li > .kiwi-sequence-detail > p,
+.kiwi-topic-article ul.kiwi-sequence-type-list > li > .kiwi-sequence-detail > p {
+  margin: 0 0 0.5rem;
+}
+.mf-article ul.kiwi-sequence-type-list .kiwi-sequence-detail > ul.kiwi-example-list,
+.kiwi-topic-article ul.kiwi-sequence-type-list .kiwi-sequence-detail > ul.kiwi-example-list {
+  margin: 0.35rem 0 0.6rem 3ch;
+  padding-left: 1.5rem;
+}
+.mf-article ul.kiwi-sequence-type-list > li + li,
+.kiwi-topic-article ul.kiwi-sequence-type-list > li + li {
+  margin-top: 0.5lh;
+}
+.mf-article ul.kiwi-example-list > li,
+.kiwi-topic-article ul.kiwi-example-list > li {
+  margin: 0;
+  padding-left: 0.35rem;
+}
+/* Prose / example bullet lists: half a text line between items */
+.mf-article ul:not(.kiwi-example-variants) > li + li,
+.kiwi-topic-article ul:not(.kiwi-example-variants) > li + li,
+aside.kiwi-word-info-panel ul > li + li,
+aside.kiwi-insight-panel ul > li + li,
+aside.kiwi-curriculum-panel ul > li + li {
+  margin-top: 0.5lh;
+}
+.mf-article ul.kiwi-example-list > li .kiwi-example-list-part,
+.kiwi-topic-article ul.kiwi-example-list > li .kiwi-example-list-part {
+  display: block;
+  margin-top: 0.42em;
+}
+.mf-article ul.kiwi-example-list > li .kiwi-example-list-part:first-child,
+.kiwi-topic-article ul.kiwi-example-list > li .kiwi-example-list-part:first-child {
+  margin-top: 0;
+}
+.mf-article ul.kiwi-example-list > li .kiwi-example-list-part.kiwi-example-list-step,
+.kiwi-topic-article ul.kiwi-example-list > li .kiwi-example-list-part.kiwi-example-list-step {
+  margin-left: 3ch;
+}
+.mf-article ul.kiwi-example-list > li .kiwi-example-list-part.kiwi-example-list-answer,
+.kiwi-topic-article ul.kiwi-example-list > li .kiwi-example-list-part.kiwi-example-list-answer {
+  margin-left: 0;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 3px solid #cde3fa;
+  font-weight: 400;
+}
+.mf-article .kiwi-example-standard > .kiwi-example-list-part:not(.kiwi-example-list-step):not(.kiwi-example-list-step-nested):not(.kiwi-example-list-answer),
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-list-part:not(.kiwi-example-list-step):not(.kiwi-example-list-step-nested):not(.kiwi-example-list-answer) {
+  margin: 0.35rem 0 0.4rem 3ch;
+  padding: 0;
+  text-align: left;
+  font-weight: 400;
+}
+.mf-article .kiwi-example-standard > .kiwi-example-list-part.kiwi-example-list-step,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-list-part.kiwi-example-list-step {
+  margin: 0.35rem 0 0.45rem 6ch;
+  padding: 0;
+  text-align: left;
+  font-weight: 400;
+}
+.mf-article .kiwi-example-standard > .kiwi-example-list-part.kiwi-example-list-step-nested,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-list-part.kiwi-example-list-step-nested {
+  margin: 0.35rem 0 0.45rem 9ch;
+  padding: 0;
+  text-align: left;
+  font-weight: 400;
+  color: #111;
+}
+.mf-article .kiwi-example-standard > .kiwi-example-list-part.kiwi-example-list-answer,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-list-part.kiwi-example-list-answer {
+  margin: 0.5rem 0 0.6rem 3ch;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 3px solid #cde3fa;
+  font-weight: 400;
+  text-align: left;
+}
+.mf-article .kiwi-example-standard,
+.kiwi-topic-article .kiwi-example-standard {
+  margin: 0.35rem 0 1rem;
+  padding: 0;
+}
+.mf-article .kiwi-example-standard > .kiwi-single-example,
+.mf-article .kiwi-example-standard > .kiwi-example-question,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question,
+.mf-article .kiwi-example-standard > .kiwi-example-question-math,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question-math {
+  margin: 0.35rem 0 0.4rem 3ch;
+  padding: 0;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  font-weight: 400;
+}
+.mf-article .kiwi-example-standard > ol.kiwi-example-steps,
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps {
+  margin: 0.35rem 0 0.6rem 6ch !important;
+  padding: 0 !important;
+  list-style-type: decimal !important;
+  list-style-position: inside !important;
+  text-align: left !important;
+}
+.mf-article .kiwi-example-standard > ol.kiwi-example-steps > li,
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li {
+  display: list-item !important;
+  list-style-type: decimal !important;
+  list-style-position: inside !important;
+  margin: 0.3rem 0 !important;
+  padding: 0 !important;
+  font-weight: 400 !important;
+  color: #111 !important;
+  text-align: left !important;
+}
+.mf-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker,
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {
+  font-weight: 400 !important;
+  color: #111 !important;
+}
+.mf-article .kiwi-example-standard > .kiwi-single-example + ul.kiwi-example-list,
+.mf-article .kiwi-example-standard > .kiwi-example-question + ul.kiwi-example-list,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example + ul.kiwi-example-list,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question + ul.kiwi-example-list {
+  margin: 0.35rem 0 0.6rem 6ch !important;
+  padding: 0 !important;
+  list-style-type: disc !important;
+  list-style-position: inside !important;
+  text-align: left !important;
+}
+.mf-article .kiwi-example-standard > .kiwi-single-example + ul.kiwi-example-list > li,
+.mf-article .kiwi-example-standard > .kiwi-example-question + ul.kiwi-example-list > li,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example + ul.kiwi-example-list > li,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question + ul.kiwi-example-list > li {
+  display: list-item !important;
+  list-style-type: disc !important;
+  list-style-position: inside !important;
+  margin: 0.3rem 0 !important;
+  padding: 0 !important;
+  font-weight: 400 !important;
+  color: #111 !important;
+  text-align: left !important;
+}
+.mf-article .kiwi-example-standard > .kiwi-single-example + ul.kiwi-example-list > li::marker,
+.mf-article .kiwi-example-standard > .kiwi-example-question + ul.kiwi-example-list > li::marker,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example + ul.kiwi-example-list > li::marker,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question + ul.kiwi-example-list > li::marker {
+  font-weight: 400 !important;
+  color: #111 !important;
+}
+.mf-article .kiwi-example-standard > ul.kiwi-example-variants,
+.kiwi-topic-article .kiwi-example-standard > ul.kiwi-example-variants {
+  margin: 0.35rem 0 0.6rem 6ch !important;
+  padding: 0 !important;
+  list-style-type: disc !important;
+  list-style-position: inside !important;
+  text-align: left !important;
+}
+.mf-article .kiwi-example-standard > ul.kiwi-example-variants > li,
+.kiwi-topic-article .kiwi-example-standard > ul.kiwi-example-variants > li {
+  display: list-item !important;
+  list-style-type: disc !important;
+  list-style-position: inside !important;
+  margin: 0.3rem 0 !important;
+  padding: 0 !important;
+  font-weight: 400 !important;
+  color: #111 !important;
+  text-align: left !important;
+}
+.mf-article .kiwi-example-standard > ul.kiwi-example-variants > li::marker,
+.kiwi-topic-article .kiwi-example-standard > ul.kiwi-example-variants > li::marker {
+  font-weight: 400 !important;
+  color: #111 !important;
+}
+.mf-article .kiwi-example-standard > .kiwi-example-explanation,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {
+  margin: 0.45rem 0 0.45rem 6ch;
+  text-align: left;
+  font-weight: 400;
+}
+.mf-article .kiwi-example-standard > blockquote.kiwi-example-answer,
+.mf-article .kiwi-example-standard > p.kiwi-example-answer,
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer,
+.kiwi-topic-article .kiwi-example-standard > p.kiwi-example-answer,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {
+  display: block;
+  margin: 0.6rem 0 0.6rem 3ch !important;
+  padding: 0.15rem 0 0.15rem 1rem !important;
+  border-left: 3px solid #cde3fa !important;
+  background: transparent !important;
+  text-align: left !important;
+  font-weight: 400 !important;
+}
+.mf-article .kiwi-example-standard > blockquote.kiwi-example-answer p,
+.mf-article .kiwi-example-standard > blockquote.kiwi-example-answer strong,
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {
+  margin: 0 !important;
+  font-weight: 400 !important;
+}
+
+/* ==========================================================================
+   LEARNING / WORD INFO PANELS (tip panels)
+   Row 1: lightbulb (col 1) + title OR first line of body text (col 2).
+   Later rows: body only in col 2, left-aligned with row 1 text (not the bulb).
+   Chrome: cream fill, gold frame, 3px gold right accent (#e4b54e).
+   ========================================================================== */
+aside.kiwi-word-info-panel,
+aside.kiwi-insight-panel,
+aside.kiwi-curriculum-panel {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.15rem 0;
+  padding: 1rem 1.2rem;
+  background: #fff8e9;
+  border: 1px solid #f0d58d;
+  border-right: 3px solid #e4b54e;
+  border-radius: 12px;
+  color: #503d24;
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+aside.kiwi-word-info-panel p,
+aside.kiwi-insight-panel p,
+aside.kiwi-curriculum-panel p,
+aside.kiwi-word-info-panel li,
+aside.kiwi-insight-panel li,
+aside.kiwi-curriculum-panel li {
+  margin: 0 0 10px;
+  color: inherit;
+  text-align: left;
+  font-weight: 400;
+}
+aside.kiwi-word-info-panel p:last-child,
+aside.kiwi-insight-panel p:last-child,
+aside.kiwi-curriculum-panel p:last-child,
+aside.kiwi-word-info-panel li:last-child,
+aside.kiwi-insight-panel li:last-child,
+aside.kiwi-curriculum-panel li:last-child {
+  margin-bottom: 0;
+}
+aside.kiwi-word-info-panel strong,
+aside.kiwi-insight-panel strong,
+aside.kiwi-curriculum-panel strong {
+  font-weight: 700;
+}
+aside.kiwi-word-info-panel a,
+aside.kiwi-curriculum-panel a {
+  text-decoration: underline;
+}
+aside.kiwi-word-info-panel ul,
+aside.kiwi-word-info-panel ol,
+aside.kiwi-insight-panel ul,
+aside.kiwi-insight-panel ol {
+  padding-left: 1.5rem;
+  margin-left: 0;
+}
+aside.kiwi-word-info-panel .kiwi-math-block,
+aside.kiwi-insight-panel .kiwi-math-block,
+aside.kiwi-curriculum-panel .kiwi-math-block {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+aside.kiwi-word-info-panel math[display="block"],
+aside.kiwi-insight-panel math[display="block"],
+aside.kiwi-curriculum-panel math[display="block"] {
+  display: block;
+  margin-inline: auto;
+}
+aside.kiwi-curriculum-panel .kiwi-curriculum-heading {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #895b0e;
+  font-weight: 700;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  aside.kiwi-word-info-panel,
+  aside.kiwi-insight-panel,
+  aside.kiwi-curriculum-panel {
+    padding: 0.85rem 1rem;
+  }
+}
+aside.kiwi-word-info-panel,
+aside.kiwi-insight-panel {
+  --kiwi-panel-header-gap: 9px;
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--kiwi-panel-header-gap);
+  row-gap: 9px;
+  align-items: start;
+}
+aside.kiwi-word-info-panel .kiwi-panel-heading,
+aside.kiwi-word-info-panel .kiwi-word-info-header,
+aside.kiwi-insight-panel .kiwi-insight-header {
+  display: contents !important;
+}
+aside.kiwi-word-info-panel :is(.kiwi-panel-icon, .kiwi-word-info-icon),
+aside.kiwi-insight-panel .kiwi-insight-icon {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  align-self: start;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.25;
+  font-size: 1.05rem;
+}
+aside.kiwi-word-info-panel .kiwi-panel-heading > :not(.kiwi-panel-icon),
+aside.kiwi-word-info-panel .kiwi-word-info-title,
+aside.kiwi-insight-panel .kiwi-insight-title,
+aside.kiwi-insight-panel .kiwi-insight-header > :not(.kiwi-insight-icon):not(.kiwi-word-info-icon) {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.25;
+  color: #b85f0c !important;
+  font-weight: 700;
+  text-align: left;
+}
+aside.kiwi-word-info-panel > :not(.kiwi-panel-heading):not(.kiwi-word-info-header),
+aside.kiwi-insight-panel > :not(.kiwi-insight-header):not(.kiwi-word-info-header) {
+  grid-column: 2;
+  margin-inline-start: 0 !important;
+  min-width: 0;
+}
+aside.kiwi-word-info-panel > .kiwi-word-info-body,
+aside.kiwi-insight-panel > .kiwi-insight-body,
+aside.kiwi-word-info-panel > .kiwi-panel-content,
+aside.kiwi-insight-panel > .kiwi-panel-content {
+  grid-column: 2;
+  margin-inline-start: 0 !important;
+  min-width: 0;
+}
+aside.kiwi-word-info-panel:where(
+    :has(.kiwi-word-info-header > :only-child:is(.kiwi-word-info-icon, .kiwi-panel-icon)),
+    :has(.kiwi-panel-heading > :only-child.kiwi-panel-icon),
+    :has(.kiwi-insight-header > :only-child.kiwi-insight-icon)
+  )
+  > .kiwi-panel-content {
+  display: contents !important;
+}
+aside.kiwi-word-info-panel:where(
+    :has(.kiwi-word-info-header > :only-child:is(.kiwi-word-info-icon, .kiwi-panel-icon)),
+    :has(.kiwi-panel-heading > :only-child.kiwi-panel-icon),
+    :has(.kiwi-insight-header > :only-child.kiwi-insight-icon)
+  )
+  .kiwi-panel-content > * {
+  grid-column: 2;
+  min-width: 0;
+}
+/* Icon-only header: first body line shares row 1 with the bulb */
+aside.kiwi-word-info-panel:where(
+    :has(.kiwi-word-info-header > :only-child:is(.kiwi-word-info-icon, .kiwi-panel-icon)),
+    :has(.kiwi-panel-heading > :only-child.kiwi-panel-icon),
+    :has(.kiwi-insight-header > :only-child.kiwi-insight-icon)
+  )
+  > :is(.kiwi-word-info-body, .kiwi-insight-body) {
+  display: contents !important;
+}
+aside.kiwi-word-info-panel:where(
+    :has(.kiwi-word-info-header > :only-child:is(.kiwi-word-info-icon, .kiwi-panel-icon)),
+    :has(.kiwi-panel-heading > :only-child.kiwi-panel-icon),
+    :has(.kiwi-insight-header > :only-child.kiwi-insight-icon)
+  )
+  :is(.kiwi-word-info-body, .kiwi-insight-body) > * {
+  grid-column: 2;
+  min-width: 0;
+}
+aside.kiwi-word-info-panel:where(
+    :has(.kiwi-word-info-header > :only-child:is(.kiwi-word-info-icon, .kiwi-panel-icon)),
+    :has(.kiwi-panel-heading > :only-child.kiwi-panel-icon),
+    :has(.kiwi-insight-header > :only-child.kiwi-insight-icon)
+  )
+  .kiwi-word-info-body > :first-child,
+aside.kiwi-word-info-panel:where(
+    :has(.kiwi-panel-heading > :only-child.kiwi-panel-icon)
+  )
+  > :is(p, ul, ol, blockquote, div):not(.kiwi-panel-heading):not(.kiwi-word-info-header):first-of-type {
+  margin-top: 0;
+}
+aside.kiwi-insight-panel .kiwi-insight-body > :first-child {
+  margin-top: 0;
 }

@@ -8,6 +8,7 @@
 <title data-en="Data and Graphs | KIWI 爱AI Study" data-zh="数据与图表 | KIWI 爱AI Study">Data and Graphs | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
 <link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -33,7 +34,7 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -53,6 +54,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -94,21 +114,17 @@
 <p data-en="Collect information (&lt;strong&gt;data&lt;/strong&gt;) and present it visually
 using charts and graphs." data-zh="收集信息（&lt;strong&gt;数据&lt;/strong&gt;），并用图表直观地展示出来。">Collect information (<strong>data</strong>) and present it visually
 using charts and graphs.</p>
-<h3 id="data" data-en="Data" data-zh="数据">Data</h3>
-<p data-en="Data refers to information, usually numerical, that is collected for
+<details class="lesson-card"><summary id="data" data-en="Data" data-zh="数据">Data</summary><div class="lesson-card-content"><p data-en="Data refers to information, usually numerical, that is collected for
 statistical purposes. It is a set of values or measurements." data-zh="数据指为统计目的而收集的信息，通常是数值。它是一组数值或测量结果。">Data refers to information, usually numerical, that is collected for
 statistical purposes. It is a set of values or measurements.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Data set: {2,5,5,8,11}" data-zh="数据集：{2,5,5,8,11}">Data set: {2,5,5,8,11}</p>
-</blockquote>
-<h3 id="frequency" data-en="Frequency" data-zh="频数">Frequency</h3>
-<p data-en="Frequency is the number of times a specific value or item appears in
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Data set: {2,5,5,8,11}" data-zh="数据集：{2,5,5,8,11}">Data set: {2,5,5,8,11}</p></div></div></details><details class="lesson-card"><summary id="frequency" data-en="Frequency" data-zh="频数">Frequency</summary><div class="lesson-card-content"><p data-en="Frequency is the number of times a specific value or item appears in
 a data set." data-zh="频数是指某个特定数值或项目在数据集中出现的次数。">Frequency is the number of times a specific value or item appears in
 a data set.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="In the data set
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="In the data set
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;{&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;}&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left\{ 2,5,5,8,11 \right\}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 the frequency of the number
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -120,17 +136,14 @@ is 2." data-zh="在数据集
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">{</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>11</mn><mo form="postfix" stretchy="true">}</mo></mrow><annotation encoding="application/x-tex">\left\{ 2,5,5,8,11 \right\}</annotation></semantics></math>,
 the frequency of the number
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math>
-is 2.</p>
-</blockquote>
-<h3 id="range" data-en="Range " data-zh="极差 ">Range </h3>
-<p data-en="The range is a measure of spread within a data set. It is calculated
+is 2.</p></div></div></details><details class="lesson-card"><summary id="range" data-en="Range " data-zh="极差 ">Range</summary><div class="lesson-card-content"><p data-en="The range is a measure of spread within a data set. It is calculated
 by subtracting the smallest value (minimum) from the largest value
 (maximum)." data-zh="极差用来衡量一组数据的离散程度。计算方法是用最大值减去最小值。">The range is a measure of spread within a data set. It is calculated
 by subtracting the smallest value (minimum) from the largest value
 (maximum).</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="In the data set
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="In the data set
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;{&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;}&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left\{ 2,5,5,8,11 \right\}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 the maximum is
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;11&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -146,17 +159,14 @@ the maximum is
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>11</mn><annotation encoding="application/x-tex">11</annotation></semantics></math>
 and the minimum is
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>.</p>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Range&lt;/mtext&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{Range} = 11 - 2 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;极差&lt;/mtext&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{极差} = 11 - 2 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Range</mtext><mo>=</mo><mn>11</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\text{Range} = 11 - 2 = 9</annotation></semantics></math></p>
-</blockquote>
-<h3 id="outlier" data-en="Outlier" data-zh="异常值">Outlier</h3>
-<p data-en="An outlier (or &lt;strong&gt;far away value&lt;/strong&gt;) is a data point that
+<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Range&lt;/mtext&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{Range} = 11 - 2 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;极差&lt;/mtext&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{极差} = 11 - 2 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Range</mtext><mo>=</mo><mn>11</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\text{Range} = 11 - 2 = 9</annotation></semantics></math></p></div></div></details><details class="lesson-card"><summary id="outlier" data-en="Outlier" data-zh="异常值">Outlier</summary><div class="lesson-card-content"><p data-en="An outlier (or &lt;strong&gt;far away value&lt;/strong&gt;) is a data point that
 is significantly distant from the majority of the other data points in a
 set. It is an unusual or abnormal value." data-zh="异常值（也称 &lt;strong&gt;远离值&lt;/strong&gt;）是与数据中大多数点明显远离的一个数据点，属于不寻常或反常的数值。">An outlier (or <strong>far away value</strong>) is a data point that
 is significantly distant from the majority of the other data points in a
 set. It is an unusual or abnormal value.</p>
-<p data-en="Examples:" data-zh="示例：">Examples:</p>
-<blockquote>
-<p data-en="In the data set
+<p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="In the data set
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;{&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;14&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;15&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;45&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;}&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left\{ 10,12,14,15,45 \right\}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 the number
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;45&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;45&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;is
@@ -169,71 +179,57 @@ likely an outlier." data-zh="在数据集
 the number
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>45</mn><annotation encoding="application/x-tex">45</annotation></semantics></math>is
 likely an outlier.</p>
-</blockquote>
-<h3 id="bar-graph" data-en="Bar graph" data-zh="条形图">Bar graph</h3>
-<p data-en="A bar graph uses rectangular bars to show comparisons between
+</div></div></details><details class="lesson-card"><summary id="bar-graph" data-en="Bar graph" data-zh="条形图">Bar graph</summary><div class="lesson-card-content"><p data-en="A bar graph uses rectangular bars to show comparisons between
 different categories of data. The bars can be vertical or
 horizontal." data-zh="条形图用长方形条比较不同类别的数据，条可以竖着画，也可以横着画。">A bar graph uses rectangular bars to show comparisons between
 different categories of data. The bars can be vertical or
 horizontal.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Used to compare favourite colours or numbers of pets owned by
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Used to compare favourite colours or numbers of pets owned by
 students." data-zh="可用来比较同学最喜欢的颜色，或每家养了几只宠物。">Used to compare favourite colours or numbers of pets owned by
 students.</p>
-<p><img alt="Image preview" loading="lazy" src="../assets/math-foundations-import/image29.webp" style="width:3.90361in;height:2.60236in"/></p>
-</blockquote>
-<h3 id="line-graph" data-en="Line graph " data-zh="折线图 ">Line graph </h3>
-<p data-en="A line graph uses points connected by lines to show how data changes
+<p><img alt="Image preview" loading="lazy" src="../assets/math-foundations-import/image29.webp" style="width:3.90361in;height:2.60236in"/></p></div></div></details><details class="lesson-card"><summary id="line-graph" data-en="Line graph " data-zh="折线图 ">Line graph</summary><div class="lesson-card-content"><p data-en="A line graph uses points connected by lines to show how data changes
 over a continuous period of time or another sequence (trends)." data-zh="折线图用点与连线表示数据如何随时间或其他顺序变化（趋势）。">A line graph uses points connected by lines to show how data changes
 over a continuous period of time or another sequence (trends).</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Used to track temperature changes over a week or stock prices over
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Used to track temperature changes over a week or stock prices over
 several months." data-zh="可用来记录一周气温变化，或几个月内的股价走势。">Used to track temperature changes over a week or stock prices over
 several months.</p>
-<p><img alt="Image preview" loading="lazy" src="../assets/math-foundations-import/image30.webp" style="width:3.90361in;height:2.60236in"/></p>
-</blockquote>
-<h3 id="line-plot" data-en="Line plot" data-zh="数轴点图">Line plot</h3>
-<p data-en="A line plot, also called a &lt;strong&gt;dot plot&lt;/strong&gt;, is a simple
+<p><img alt="Image preview" loading="lazy" src="../assets/math-foundations-import/image30.webp" style="width:3.90361in;height:2.60236in"/></p></div></div></details><details class="lesson-card"><summary id="line-plot" data-en="Line plot" data-zh="数轴点图">Line plot</summary><div class="lesson-card-content"><p data-en="A line plot, also called a &lt;strong&gt;dot plot&lt;/strong&gt;, is a simple
 graph that uses dots or Xs above a number line to show the frequency of
 each value in a data set." data-zh="数轴点图也称 &lt;strong&gt;点图&lt;/strong&gt;，是在数轴上方用点或 X 标出各数值出现频数的简易图。">A line plot, also called a <strong>dot plot</strong>, is a simple
 graph that uses dots or Xs above a number line to show the frequency of
 each value in a data set.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Use a line plot to quickly see how many students earned each score on
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Use a line plot to quickly see how many students earned each score on
 a math quiz." data-zh="用数轴点图可以快速看出数学小测中每个分数有多少同学得到。">Use a line plot to quickly see how many students earned each score on
 a math quiz.</p>
-<p><img alt="Image preview" loading="lazy" src="../assets/math-foundations-import/image31.webp" style="width:4.01681in;height:2.67819in"/></p>
-</blockquote>
-<h3 id="histogram" data-en="Histogram" data-zh="直方图">Histogram</h3>
-<p data-en="A histogram is a bar-style graph that displays the frequency of data
+<p><img alt="Image preview" loading="lazy" src="../assets/math-foundations-import/image31.webp" style="width:4.01681in;height:2.67819in"/></p></div></div></details><details class="lesson-card"><summary id="histogram" data-en="Histogram" data-zh="直方图">Histogram</summary><div class="lesson-card-content"><p data-en="A histogram is a bar-style graph that displays the frequency of data
 within specific &lt;strong&gt;intervals&lt;/strong&gt; (ranges of numbers) rather
 than individual categories. The bars touch each other." data-zh="直方图是一种条形风格的图，显示落在各个 &lt;strong&gt;区间&lt;/strong&gt;（数值范围）内的频数，而不是单独类别；相邻的条彼此相连。">A histogram is a bar-style graph that displays the frequency of data
 within specific <strong>intervals</strong> (ranges of numbers) rather
 than individual categories. The bars touch each other.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Used to show how many students scored between 70-79, 80-89, and
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Used to show how many students scored between 70-79, 80-89, and
 90-100 on a test." data-zh="可用来显示测验中得分在 70–79、80–89、90–100 各分数段有多少同学。">Used to show how many students scored between 70-79, 80-89, and
 90-100 on a test.</p>
 </blockquote>
-<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image32.webp" style="width:4.05472in;height:2.70347in"/></p>
-<h3 id="circle-graph" data-en="Circle graph " data-zh="扇形图 ">Circle graph </h3>
-<p data-en="A circle graph (or &lt;strong&gt;pie chart&lt;/strong&gt;) is a circle divided
+<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image32.webp" style="width:4.05472in;height:2.70347in"/></p></div></details><details class="lesson-card"><summary id="circle-graph" data-en="Circle graph " data-zh="扇形图 ">Circle graph</summary><div class="lesson-card-content"><p data-en="A circle graph (or &lt;strong&gt;pie chart&lt;/strong&gt;) is a circle divided
 into sectors (slices) that represent the proportion or percentage of
 each category relative to the whole data set." data-zh="扇形图（&lt;strong&gt;饼图&lt;/strong&gt;）把圆分成若干扇区，表示各类别占全部数据的比例或百分比。">A circle graph (or <strong>pie chart</strong>) is a circle divided
 into sectors (slices) that represent the proportion or percentage of
 each category relative to the whole data set.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Used to show the breakdown of a monthly budget (e.g., rent makes up
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Used to show the breakdown of a monthly budget (e.g., rent makes up
 30% of expenses)." data-zh="可用来展示月度预算的构成（例如房租占支出的 30%）。">Used to show the breakdown of a monthly budget (e.g., rent makes up
 30% of expenses).</p>
 <p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image33.webp" style="width:4.11458in;height:2.74306in"/></p>
-</blockquote>
-</article></div></main>
+</blockquote></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -264,6 +260,7 @@ each category relative to the whole data set.</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -298,6 +295,39 @@ each category relative to the whole data set.</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

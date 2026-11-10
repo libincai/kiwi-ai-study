@@ -8,6 +8,7 @@
 <title data-en="Chance and Probability | KIWI 爱AI Study" data-zh="机会与概率 | KIWI 爱AI Study">Chance and Probability | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
 <link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -33,7 +34,7 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -53,6 +54,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -92,55 +112,45 @@
 <!-- LEVEL-3 BODY END -->
 <div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a href="foundation-data-and-graphs.html" data-en="Data and Graphs" data-zh="数据与图表">Data and Graphs</a><a href="foundation-measures-of-center.html" data-en="Measures of Center" data-zh="集中趋势">Measures of Center</a><a aria-current="page" class="mf-current" href="foundation-chance-and-probability.html" data-en="Chance and Probability" data-zh="机会与概率">Chance and Probability</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Chance and Probability" data-zh="机会与概率">Chance and Probability</h1>
 <p data-en="This covers the mathematics of likelihood and randomness." data-zh="本节介绍有关可能性与随机性的数学知识。">This covers the mathematics of likelihood and randomness.</p>
-<h3 id="outcome" data-en="Outcome" data-zh="结果">Outcome</h3>
-<p data-en="An outcome is a single possible result of an experiment or
+<details class="lesson-card"><summary id="outcome" data-en="Outcome" data-zh="结果">Outcome</summary><div class="lesson-card-content"><p data-en="An outcome is a single possible result of an experiment or
 action." data-zh="结果是一次试验或行动可能出现的单个情形。">An outcome is a single possible result of an experiment or
 action.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="When rolling a standard die, getting a ‘3’ is an
+<ul class="kiwi-example-list">
+<li data-en="When rolling a standard die, getting a ‘3’ is an
 outcome." data-zh="掷一颗标准骰子，得到“3”就是一个结果。">When rolling a standard die, getting a ‘3’ is an
-outcome.</p></li>
-<li><p data-en="When flipping a coin, getting ‘Heads’ is an outcome." data-zh="掷硬币，得到“正面”就是一个结果。">When flipping a coin, getting ‘Heads’ is an outcome.</p></li>
-</ul>
-<h3 id="event" data-en="Event" data-zh="事件">Event</h3>
-<p data-en="An event is one specific result or a collection of specific results
+outcome.</li>
+<li data-en="When flipping a coin, getting ‘Heads’ is an outcome." data-zh="掷硬币，得到“正面”就是一个结果。">When flipping a coin, getting ‘Heads’ is an outcome.</li>
+</ul></div></details><details class="lesson-card"><summary id="event" data-en="Event" data-zh="事件">Event</summary><div class="lesson-card-content"><p data-en="An event is one specific result or a collection of specific results
 that you are interested in. It is a subset of the sample space." data-zh="事件是你关心的一个或一组特定结果，它是样本空间的子集。">An event is one specific result or a collection of specific results
 that you are interested in. It is a subset of the sample space.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="The event “rolling an even number” on a die includes the outcomes
+<ul class="kiwi-example-list">
+<li data-en="The event “rolling an even number” on a die includes the outcomes
 {2,4,6}." data-zh="事件“掷出偶数”包含结果 {2,4,6}。">The event “rolling an even number” on a die includes the outcomes
-{2,4,6}.</p></li>
-<li><p data-en="The event “drawing a red card” from a deck includes all hearts
+{2,4,6}.</li>
+<li data-en="The event “drawing a red card” from a deck includes all hearts
 and diamonds." data-zh="事件“抽到红牌”包含所有红桃和方块。">The event “drawing a red card” from a deck includes all hearts
-and diamonds.</p></li>
-</ul>
-<h3 id="sample-space" data-en="Sample Space" data-zh="样本空间">Sample Space</h3>
-<p data-en="The sample space is the &lt;strong&gt;complete set of all possible
+and diamonds.</li>
+</ul></div></details><details class="lesson-card"><summary id="sample-space" data-en="Sample Space" data-zh="样本空间">Sample Space</summary><div class="lesson-card-content"><p data-en="The sample space is the &lt;strong&gt;complete set of all possible
 outcomes&lt;/strong&gt; for a given experiment or situation." data-zh="样本空间是某次试验或情境下 &lt;strong&gt;所有可能结果的完整集合&lt;/strong&gt;。">The sample space is the <strong>complete set of all possible
 outcomes</strong> for a given experiment or situation.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="The sample space for rolling a standard die is
+<ul class="kiwi-example-list">
+<li data-en="The sample space for rolling a standard die is
 {1,2,3,4,5,6}." data-zh="掷一颗标准骰子的样本空间是 {1,2,3,4,5,6}。">The sample space for rolling a standard die is
-{1,2,3,4,5,6}.</p></li>
-<li><p data-en="The sample space for flipping a coin is {Heads,Tails}." data-zh="掷硬币的样本空间是 {Heads,Tails}。">The sample space for flipping a coin is {Heads,Tails}.</p></li>
-</ul>
-<h3 id="probability" data-en="Probability" data-zh="概率">Probability</h3>
-<p data-en="Probability is a measure of how likely an event is to occur. It is
+{1,2,3,4,5,6}.</li>
+<li data-en="The sample space for flipping a coin is {Heads,Tails}." data-zh="掷硬币的样本空间是 {Heads,Tails}。">The sample space for flipping a coin is {Heads,Tails}.</li>
+</ul></div></details><details class="lesson-card"><summary id="probability" data-en="Probability" data-zh="概率">Probability</summary><div class="lesson-card-content"><p data-en="Probability is a measure of how likely an event is to occur. It is
 expressed as a number between 0 (impossible) and 1 (certain), or as a
 percentage between 0% and 100%." data-zh="概率衡量事件发生的可能性，可用 0（不可能）到 1（必然）之间的数表示，也可用 0% 到 100% 的百分比表示。">Probability is a measure of how likely an event is to occur. It is
 expressed as a number between 0 (impossible) and 1 (certain), or as a
 percentage between 0% and 100%.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="The probability of rolling a ‘4’ on a die is 16 or approximately
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="The probability of rolling a ‘4’ on a die is 16 or approximately
 16.7%." data-zh="掷出“4”点的概率是 16 或约为 16.7%。">The probability of rolling a ‘4’ on a die is 16 or approximately
-16.7%.</p>
-</blockquote>
-<h3 id="theoretical-probability" data-en="Theoretical Probability " data-zh="理论概率 ">Theoretical Probability </h3>
-<p data-en="Theoretical probability (math-based) is the likelihood of an event
+16.7%.</p></div></div></details><details class="lesson-card"><summary id="theoretical-probability" data-en="Theoretical Probability " data-zh="理论概率 ">Theoretical Probability</summary><div class="lesson-card-content"><p data-en="Theoretical probability (math-based) is the likelihood of an event
 happening based on mathematical reasoning and ideal conditions, assuming
 all outcomes are equally likely. It is what &lt;strong&gt;should&lt;/strong&gt;
 happen." data-zh="理论概率（基于数学）在假设各结果等可能、条件理想时，用推理得出事件发生的可能性。它描述 &lt;strong&gt;按理应当&lt;/strong&gt; 怎样。">Theoretical probability (math-based) is the likelihood of an event
@@ -149,70 +159,61 @@ all outcomes are equally likely. It is what <strong>should</strong>
 happen.</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Event&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Number of favorable outcomes&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Total number of outcomes in sample space&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{Event} \right) = \frac{\text{Number~of~favorable~outcomes}}{\text{Total~number~of~outcomes~in~sample~space}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;事件&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;有利结果个数&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;样本空间的结果总数&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{事件} \right) = \frac{\text{有利结果个数}}{\text{样本空间的结果总数}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo form="prefix" stretchy="true">(</mo><mtext mathvariant="normal">Event</mtext><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mtext mathvariant="normal">Number of favorable outcomes</mtext><mtext mathvariant="normal">Total number of outcomes in sample space</mtext></mfrac></mrow><annotation encoding="application/x-tex">P\left( \text{Event} \right) = \frac{\text{Number~of~favorable~outcomes}}{\text{Total~number~of~outcomes~in~sample~space}}</annotation></semantics></math></p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="The theoretical probability of flipping a coin and getting heads is
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="The theoretical probability of flipping a coin and getting heads is
 12 (one favorable outcome out of two total outcomes)." data-zh="掷硬币得正面的理论概率是 12（2 种结果中有 1 种有利）。">The theoretical probability of flipping a coin and getting heads is
-12 (one favorable outcome out of two total outcomes).</p>
-</blockquote>
-<h3 id="experimental-probability" data-en="Experimental Probability" data-zh="实验概率">Experimental Probability</h3>
-<p data-en="Experimental probability (data-based) is the likelihood of an event
+12 (one favorable outcome out of two total outcomes).</p></div></div></details><details class="lesson-card"><summary id="experimental-probability" data-en="Experimental Probability" data-zh="实验概率">Experimental Probability</summary><div class="lesson-card-content"><p data-en="Experimental probability (data-based) is the likelihood of an event
 happening based on actual data collected from performing an experiment
 or test. It is what &lt;strong&gt;actually&lt;/strong&gt; happens in practice." data-zh="实验概率（基于数据）根据试验或测试得到的真实数据估计事件发生的可能性。它反映 &lt;strong&gt;实际中&lt;/strong&gt; 发生的情况。">Experimental probability (data-based) is the likelihood of an event
 happening based on actual data collected from performing an experiment
 or test. It is what <strong>actually</strong> happens in practice.</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Event&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Number of times the event occurred&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Total number of trials in the experiment&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{Event} \right) = \frac{\text{Number~of~times~the~event~occurred}}{\text{Total~number~of~trials~in~the~experiment}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;事件&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;事件发生次数&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;试验总次数&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{事件} \right) = \frac{\text{事件发生次数}}{\text{试验总次数}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo form="prefix" stretchy="true">(</mo><mtext mathvariant="normal">Event</mtext><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mtext mathvariant="normal">Number of times the event occurred</mtext><mtext mathvariant="normal">Total number of trials in the experiment</mtext></mfrac></mrow><annotation encoding="application/x-tex">P\left( \text{Event} \right) = \frac{\text{Number~of~times~the~event~occurred}}{\text{Total~number~of~trials~in~the~experiment}}</annotation></semantics></math></p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="If you flip a coin 100 times and get heads 48 times, the experimental
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="If you flip a coin 100 times and get heads 48 times, the experimental
 probability of heads is 48,100 or 48%." data-zh="若掷硬币 100 次得正面 48 次，正面的实验概率是 48,100 或 48%。">If you flip a coin 100 times and get heads 48 times, the experimental
-probability of heads is 48,100 or 48%.</p>
-</blockquote>
-<h3 id="certain-likely-unlikely-impossible" data-en="Certain, Likely, Unlikely,
+probability of heads is 48,100 or 48%.</p></div></div></details><details class="lesson-card"><summary id="certain-likely-unlikely-impossible" data-en="Certain, Likely, Unlikely,
 Impossible " data-zh="必然、很可能、不太可能、
 不可能 ">Certain, Likely, Unlikely,
-Impossible </h3>
-<p data-en="These are words used to describe probability using a scale of
+Impossible</summary><div class="lesson-card-content"><p data-en="These are words used to describe probability using a scale of
 likelihood:" data-zh="下列词语用可能性大小来描述概率：">These are words used to describe probability using a scale of
 likelihood:</p>
 <ul>
-<li><p data-en="&lt;strong&gt;Impossible&lt;/strong&gt; (Probability = 0): The event will
+<li data-en="&lt;strong&gt;Impossible&lt;/strong&gt; (Probability = 0): The event will
 never happen (e.g., rolling a 7 on a 6-sided die)." data-zh="&lt;strong&gt;不可能&lt;/strong&gt;（概率 = 0）：事件不会发生（例如在六面骰上掷出 7）。"><strong>Impossible</strong> (Probability = 0): The event will
-never happen (e.g., rolling a 7 on a 6-sided die).</p></li>
-<li><p data-en="&lt;strong&gt;Unlikely&lt;/strong&gt; (Probability &amp;lt; 0.5): The event has a
+never happen (e.g., rolling a 7 on a 6-sided die).</li>
+<li data-en="&lt;strong&gt;Unlikely&lt;/strong&gt; (Probability &amp;lt; 0.5): The event has a
 small chance of happening (e.g., winning the lottery)." data-zh="&lt;strong&gt;不太可能&lt;/strong&gt;（概率 &amp;lt; 0.5）：事件发生的机会很小（例如中彩票）。"><strong>Unlikely</strong> (Probability &lt; 0.5): The event has a
-small chance of happening (e.g., winning the lottery).</p></li>
-<li><p data-en="&lt;strong&gt;Likely&lt;/strong&gt; (Probability &amp;gt; 0.5): The event will
+small chance of happening (e.g., winning the lottery).</li>
+<li data-en="&lt;strong&gt;Likely&lt;/strong&gt; (Probability &amp;gt; 0.5): The event will
 probably happen (e.g., the sun rising tomorrow)." data-zh="&lt;strong&gt;很可能&lt;/strong&gt;（概率 &amp;gt; 0.5）：事件很可能会发生（例如明天日出）。"><strong>Likely</strong> (Probability &gt; 0.5): The event will
-probably happen (e.g., the sun rising tomorrow).</p></li>
-<li><p data-en="&lt;strong&gt;Certain&lt;/strong&gt; (Probability = 1): The event will
+probably happen (e.g., the sun rising tomorrow).</li>
+<li data-en="&lt;strong&gt;Certain&lt;/strong&gt; (Probability = 1): The event will
 definitely happen (e.g., rolling a number less than 7 on a 6-sided
 die)." data-zh="&lt;strong&gt;必然&lt;/strong&gt;（概率 = 1）：事件一定会发生（例如在六面骰上掷出小于 7 的数）。"><strong>Certain</strong> (Probability = 1): The event will
 definitely happen (e.g., rolling a number less than 7 on a 6-sided
-die).</p></li>
-</ul>
-<h3 id="independent-and-dependent-events" data-en="Independent and Dependent
+die).</li>
+</ul></div></details><details class="lesson-card"><summary id="independent-and-dependent-events" data-en="Independent and Dependent
 Events" data-zh="独立事件与相依
 事件">Independent and Dependent
-Events</h3>
-<h4 id="independent-events" data-en="Independent events" data-zh="独立事件">Independent events</h4>
+Events</summary><div class="lesson-card-content"><h4 id="independent-events" data-en="Independent events" data-zh="独立事件">Independent events</h4>
 <p data-en="Events where the outcome of the first event does &lt;strong&gt;not&lt;/strong&gt;
 affect the outcome of the second event." data-zh="第一个事件的结果 &lt;strong&gt;不会&lt;/strong&gt; 影响第二个事件结果的事件。">Events where the outcome of the first event does <strong>not</strong>
 affect the outcome of the second event.</p>
-<p data-en="Examples:" data-zh="示例：">Examples:</p>
-<blockquote>
-<p data-en="Rolling a die and then flipping a coin." data-zh="先掷骰子，再掷硬币。">Rolling a die and then flipping a coin.</p>
-</blockquote>
+<p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Rolling a die and then flipping a coin." data-zh="先掷骰子，再掷硬币。">Rolling a die and then flipping a coin.</p>
+</div>
 <h4 id="dependent-events" data-en="Dependent events" data-zh="相依事件">Dependent events</h4>
 <p data-en="Events where the outcome of the first event &lt;strong&gt;does&lt;/strong&gt;
 affect the outcome of the second event." data-zh="第一个事件的结果 &lt;strong&gt;会&lt;/strong&gt; 影响第二个事件结果的事件。">Events where the outcome of the first event <strong>does</strong>
 affect the outcome of the second event.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Drawing two cards from a deck &lt;strong&gt;without&lt;/strong&gt; replacement
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Drawing two cards from a deck &lt;strong&gt;without&lt;/strong&gt; replacement
 (the second draw depends on what was drawn first)." data-zh="从牌堆中抽两张牌且 &lt;strong&gt;不放回&lt;/strong&gt;（第二次抽取取决于第一次抽到什么）。">Drawing two cards from a deck <strong>without</strong> replacement
 (the second draw depends on what was drawn first).</p>
-</blockquote>
-</article></div></main>
+</div></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -243,6 +244,7 @@ affect the outcome of the second event.</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -277,6 +279,39 @@ affect the outcome of the second event.</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

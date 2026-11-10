@@ -22,7 +22,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Measures of Center | KIWI 爱AI Study" data-zh="集中趋势 | KIWI 爱AI Study">Measures of Center | KIWI 爱AI Study</title>
 <meta content="Explore Measures of Center in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -76,7 +77,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -164,7 +164,7 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -231,55 +231,55 @@
 “typical” value of a set of data. The three main measures are mean,
 median, and mode." data-zh="集中趋势是用单个数值来描述一组数据的“中间”或“典型”水平。三种主要的集中趋势量是平均数、中位数和众数。">Measures of center are single values used to describe the “middle” or
 “typical” value of a set of data. The three main measures are mean,
-median, and mode.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)" data-zh="数据集：{2,4,4,5,6,9,10}（为方便起见已排序）">Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)</p>
+median, and mode.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)" data-zh="数据集：{2,4,4,5,6,9,10}（为方便起见已排序）">Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)</p>
 </blockquote><details class="lesson-card" open=""><summary data-en="Mean" data-zh="平均数">Mean</summary><div class="lesson-card-body"><p data-en="The mean, commonly called the &lt;strong&gt;average&lt;/strong&gt;, is calculated
 by adding up all the values in a data set and then dividing the total by
 the number of values in the set." data-zh="平均数（常叫 &lt;strong&gt;算术平均&lt;/strong&gt;）是把数据集中所有数值相加，再除以数据个数得到的。">The mean, commonly called the <strong>average</strong>, is calculated
 by adding up all the values in a data set and then dividing the total by
-the number of values in the set.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Using the data set {2,4,4,5,6,9,10} (7 values total):" data-zh="用数据集 {2,4,4,5,6,9,10}（共 7 个数值）：">Using the data set {2,4,4,5,6,9,10} (7 values total):</p>
-</blockquote><ul>
-<li><p data-en="Sum: 2+4+4+5+6+9+10=40" data-zh="和：2+4+4+5+6+9+10=40">Sum: 2+4+4+5+6+9+10=40</p></li>
-<li><p data-en="Mean: 40÷7≈5.71" data-zh="平均数：40÷7≈5.71">Mean: 40÷7≈5.71</p></li>
+the number of values in the set.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Using the data set {2,4,4,5,6,9,10} (7 values total):" data-zh="用数据集 {2,4,4,5,6,9,10}（共 7 个数值）：">Using the data set {2,4,4,5,6,9,10} (7 values total):</p>
+<ol class="kiwi-example-steps kiwi-numbered-steps">
+<li data-en="Sum: 2+4+4+5+6+9+10=40" data-zh="和：2+4+4+5+6+9+10=40">Sum: 2+4+4+5+6+9+10=40</li>
+<li data-en="Mean: 40÷7≈5.71" data-zh="平均数：40÷7≈5.71">Mean: 40÷7≈5.71</li>
 </ul></div></details><details class="lesson-card"><summary data-en="Median" data-zh="中位数">Median</summary><div class="lesson-card-body"><p data-en="The median is the &lt;strong&gt;middle value&lt;/strong&gt; of a data set that
 has been ordered from least to greatest." data-zh="中位数是把数据集按从小到大排列后，位于 &lt;strong&gt;正中间&lt;/strong&gt; 的那个数值。">The median is the <strong>middle value</strong> of a data set that
 has been ordered from least to greatest.</p><ul>
-<li><p data-en="If there is an odd number of data points, the median is the
+<li data-en="If there is an odd number of data points, the median is the
 single middle number." data-zh="如果数据个数是奇数，中位数就是正中间的那一个数。">If there is an odd number of data points, the median is the
-single middle number.</p></li>
-<li><p data-en="If there is an even number of data points, the median is the
+single middle number.</li>
+<li data-en="If there is an even number of data points, the median is the
 &lt;strong&gt;average (mean) of the two middle numbers&lt;/strong&gt;." data-zh="如果数据个数是偶数，中位数是 &lt;strong&gt;中间两个数的平均数&lt;/strong&gt;。">If there is an even number of data points, the median is the
-<strong>average (mean) of the two middle numbers</strong>.</p></li>
-</ul><p data-en="Examples:" data-zh="示例：">Examples:</p><ul>
-<li><p data-en="For a odd set {2,4,4,5,6,9,10}:" data-zh="奇数个数据 {2,4,4,5,6,9,10}：">For a odd set {2,4,4,5,6,9,10}:</p>
+<strong>average (mean) of the two middle numbers</strong>.</li>
+</ul><p data-en="Examples:" data-zh="示例：">Examples:</p><ul class="kiwi-example-list">
+<li data-en="For a odd set {2,4,4,5,6,9,10}:" data-zh="奇数个数据 {2,4,4,5,6,9,10}：">For a odd set {2,4,4,5,6,9,10}:</p>
 <ul>
-<li><p data-en="the middle number is 5." data-zh="中间的数是 5。">the middle number is 5.</p></li>
-<li><p data-en="the median is 5." data-zh="中位数是 5。">the median is 5.</p></li>
+<li><p data-en="the middle number is 5." data-zh="中间的数是 5。">the middle number is 5.</li>
+<li data-en="the median is 5." data-zh="中位数是 5。">the median is 5.</li>
 </ul></li>
-<li><p data-en="For an even set {1,2,3,6,8,9}:" data-zh="偶数个数据 {1,2,3,6,8,9}：">For an even set {1,2,3,6,8,9}:</p>
+<li data-en="For an even set {1,2,3,6,8,9}:" data-zh="偶数个数据 {1,2,3,6,8,9}：">For an even set {1,2,3,6,8,9}:</p>
 <ul>
-<li><p data-en="the middle two numbers are 3 and 6." data-zh="中间两个数是 3 和 6。">the middle two numbers are 3 and 6.</p></li>
-<li><p data-en="the median is
+<li><p data-en="the middle two numbers are 3 and 6." data-zh="中间两个数是 3 和 6。">the middle two numbers are 3 and 6.</li>
+<li data-en="the median is
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4.5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(3 + 6) \div 2 = 4.5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="中位数是
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4.5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(3 + 6) \div 2 = 4.5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">the median is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo form="prefix" stretchy="true">(</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>÷</mo><mn>2</mn><mo>=</mo><mn>4.5</mn></mrow><annotation encoding="application/x-tex">(3 + 6) \div 2 = 4.5</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo form="prefix" stretchy="true">(</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>÷</mo><mn>2</mn><mo>=</mo><mn>4.5</mn></mrow><annotation encoding="application/x-tex">(3 + 6) \div 2 = 4.5</annotation></semantics></math>.</li>
 </ul></li>
 </ul></div></details><details class="lesson-card"><summary data-en="Mode" data-zh="众数">Mode</summary><div class="lesson-card-body"><p data-en="The mode is the value that appears &lt;strong&gt;most frequently&lt;/strong&gt;
 in a data set. A set can have one mode, more than one mode, or no mode
 at all." data-zh="众数是数据集中 &lt;strong&gt;出现次数最多&lt;/strong&gt; 的数值。一组数据可以有一个众数、多个众数，也可以没有众数。">The mode is the value that appears <strong>most frequently</strong>
 in a data set. A set can have one mode, more than one mode, or no mode
-at all.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul>
-<li><p data-en="Using the data set {2,4,4,5,6,9,10}:" data-zh="用数据集 {2,4,4,5,6,9,10}：">Using the data set {2,4,4,5,6,9,10}:</p>
+at all.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul class="kiwi-example-list">
+<li data-en="Using the data set {2,4,4,5,6,9,10}:" data-zh="用数据集 {2,4,4,5,6,9,10}：">Using the data set {2,4,4,5,6,9,10}:</p>
 <ul>
 <li><p data-en="the number 4 appears twice, which is more than any other
 number." data-zh="数字 4 出现了两次，比任何其他数字都多。">the number 4 appears twice, which is more than any other
-number.</p></li>
-<li><p data-en="the mode is 4." data-zh="众数是 4。">the mode is 4.</p></li>
+number.</li>
+<li data-en="the mode is 4." data-zh="众数是 4。">the mode is 4.</li>
 </ul></li>
-<li><p data-en="For {1,2,3,4}:" data-zh="对于 {1,2,3,4}：">For {1,2,3,4}:</p>
+<li data-en="For {1,2,3,4}:" data-zh="对于 {1,2,3,4}：">For {1,2,3,4}:</p>
 <ul>
-<li><p data-en="there is no mode." data-zh="没有众数。">there is no mode.</p></li>
+<li><p data-en="there is no mode." data-zh="没有众数。">there is no mode.</li>
 </ul></li>
 </ul></div></details></section></article></div>
 <!-- LEVEL-4 BODY END -->
@@ -314,6 +314,7 @@ number.</p></li>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -348,6 +349,8 @@ number.</p></li>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 <script id="kiwi-accordion-controls-script">
 (function(){

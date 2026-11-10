@@ -22,7 +22,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Word Problems | KIWI 爱AI Study" data-zh="应用题 | KIWI 爱AI Study">Word Problems | KIWI 爱AI Study</title>
 <meta content="Explore Word Problems in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -76,7 +77,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -164,7 +164,7 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -281,16 +281,16 @@ to explain why your answer satisfies the given conditions, and
 <strong>therefore</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∴</mo><annotation encoding="application/x-tex">\therefore</annotation></semantics></math>
 to state your conclusion.</p><p data-en="When Should You Use This Framework?" data-zh="什么时候用这个框架？">When Should You Use This Framework?</p><ul>
-<li><p data-en="&lt;strong&gt;Moderate to complex word problems:&lt;/strong&gt; Use all four
+<li data-en="&lt;strong&gt;Moderate to complex word problems:&lt;/strong&gt; Use all four
 steps — Given, Problem, Solution, and Verification — to organize your
 thinking and communicate your reasoning clearly." data-zh="&lt;strong&gt;中等至较复杂的应用题：&lt;/strong&gt;四步——已知、问题、解法、检验——都走一遍，有助于理清思路并清楚表达推理。"><strong>Moderate to complex word problems:</strong> Use all four
 steps — Given, Problem, Solution, and Verification — to organize your
-thinking and communicate your reasoning clearly.</p></li>
-<li><p data-en="&lt;strong&gt;Simple word problems:&lt;/strong&gt; You may go directly to
+thinking and communicate your reasoning clearly.</li>
+<li data-en="&lt;strong&gt;Simple word problems:&lt;/strong&gt; You may go directly to
 Solution and Verification without writing separate Given and Problem
 sections." data-zh="&lt;strong&gt;较简单的应用题：&lt;/strong&gt;可以不单独写“已知”和“问题”，直接做解法和检验。"><strong>Simple word problems:</strong> You may go directly to
 Solution and Verification without writing separate Given and Problem
-sections.</p></li>
+sections.</li>
 </ul><p data-en="&lt;strong&gt;Important:&lt;/strong&gt; Solution and Verification are mandatory
 for every word problem. Always show sufficient working to explain how
 you obtained your answer, and check that your final answer satisfies the
@@ -399,6 +399,7 @@ confidently.</p></div></details></section></article></div>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -433,6 +434,8 @@ confidently.</p></div></details></section></article></div>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 </body>
 </html>

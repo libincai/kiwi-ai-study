@@ -22,7 +22,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Rotation Transformation | KIWI 爱AI Study" data-zh="旋转变换 | KIWI 爱AI Study">Rotation Transformation | KIWI 爱AI Study</title>
 <meta content="Explore Rotation Transformation in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -76,7 +76,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -164,7 +163,7 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -180,8 +179,7 @@
 .kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{box-sizing:border-box;display:block;width:100%;max-width:100%;margin:1.15rem 0;padding:1rem 1.2rem;background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e4b54e;border-radius:12px;color:#503d24;text-align:left;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
 .kiwi-insight-panel p,.kiwi-curriculum-panel p,.kiwi-word-info-panel p,.kiwi-insight-panel li,.kiwi-curriculum-panel li,.kiwi-word-info-panel li{color:inherit;text-align:left;font-weight:400}
 .kiwi-insight-panel strong,.kiwi-curriculum-panel strong,.kiwi-word-info-panel strong{font-weight:700}
-.kiwi-insight-header,.kiwi-word-info-header{display:flex;align-items:center;gap:.65rem;margin:0 0 .55rem;font-weight:700;color:#895b0e;text-align:left}
-.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
+.kiwi-insight-header,.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
 .kiwi-insight-icon,.kiwi-word-info-icon{flex:none;font-size:1.1rem;line-height:1.2}
 .kiwi-insight-body>*:first-child,.kiwi-word-info-body>*:first-child{margin-top:0}
 .kiwi-insight-body>*:last-child,.kiwi-word-info-body>*:last-child{margin-bottom:0}
@@ -248,26 +246,26 @@
 direction of a shape while keeping its basic form the same." data-zh="在几何中，变换是指改变图形的位置、大小或
 方向，同时保持图形的基本形状不变。">In geometry, a transformation means changing the position, size, or
 direction of a shape while keeping its basic form the same.</p><p data-en="There are four main types of transformations:" data-zh="变换主要有四种类型：">There are four main types of transformations:</p><ol type="1">
-<li><p data-en="&lt;strong&gt;Translation&lt;/strong&gt; — slides a shape from one place to
+<li data-en="&lt;strong&gt;Translation&lt;/strong&gt; — slides a shape from one place to
 another without turning it. (Think: move your drawing without lifting or
 spinning it!)" data-zh="&lt;strong&gt;平移&lt;/strong&gt; — 把图形从一个位置滑到另一个位置，不发生旋转。（想想：移动图画时不抬起、也不旋转！）"><strong>Translation</strong> — slides a shape from one place to
 another without turning it. (Think: move your drawing without lifting or
-spinning it!)</p></li>
-<li><p data-en="&lt;strong&gt;Reflection&lt;/strong&gt; — flips a shape over a line to make a
+spinning it!)</li>
+<li data-en="&lt;strong&gt;Reflection&lt;/strong&gt; — flips a shape over a line to make a
 mirror image. (Like seeing your face in a mirror.)" data-zh="&lt;strong&gt;反射&lt;/strong&gt; — 图形关于一条直线翻转，得到镜像。（就像照镜子看到脸一样。）"><strong>Reflection</strong> — flips a shape over a line to make a
-mirror image. (Like seeing your face in a mirror.)</p></li>
-<li><p data-en="&lt;strong&gt;Rotation&lt;/strong&gt; — turns a shape around a point. Turning
+mirror image. (Like seeing your face in a mirror.)</li>
+<li data-en="&lt;strong&gt;Rotation&lt;/strong&gt; — turns a shape around a point. Turning
 0° or 360° means no turn at all, and turning 180° clockwise is the same
 as 180° counterclockwise&lt;strong&gt;.&lt;/strong&gt; (Like the hands of a clock
 turning around the center.)" data-zh="&lt;strong&gt;旋转&lt;/strong&gt; — 图形绕一个点转动。转 0° 或 360° 等于没转；顺时针转 180° 与逆时针转 180° 相同&lt;strong&gt;.&lt;/strong&gt;（就像时钟指针绕中心转动。）"><strong>Rotation</strong> — turns a shape around a point. Turning
 0° or 360° means no turn at all, and turning 180° clockwise is the same
 as 180° counterclockwise<strong>.</strong> (Like the hands of a clock
-turning around the center.)</p></li>
-<li><p data-en="&lt;strong&gt;Dilation&lt;/strong&gt; — makes a shape larger or smaller but
+turning around the center.)</li>
+<li data-en="&lt;strong&gt;Dilation&lt;/strong&gt; — makes a shape larger or smaller but
 keeps its proportions the same. (Like zooming in or out on a
 photo.)" data-zh="&lt;strong&gt;缩放&lt;/strong&gt; — 使图形变大或变小，但比例保持不变。（就像放大或缩小照片。）"><strong>Dilation</strong> — makes a shape larger or smaller but
 keeps its proportions the same. (Like zooming in or out on a
-photo.)</p></li>
+photo.)</li>
 </ol><p data-en="Each transformation changes how the shape looks on the grid, but the
 shape itself stays the same!" data-zh="每种变换都会改变图形在坐标格上的样子，但图形本身不变！">Each transformation changes how the shape looks on the grid, but the
 shape itself stays the same!</p><details class="lesson-card" open=""><summary data-en="Why Rotation is Complex" data-zh="为什么旋转更复杂">Why Rotation is Complex</summary><div class="lesson-card-body"><p data-en="For a rotation transformation, the movement is a turn, not a slide,
@@ -299,14 +297,14 @@ to the right around the origin (0, 0). Think of it like the hands of a
 clock turning." data-zh="当我们把图形顺时针旋转 90°（CW）时，每个点都绕原点 (0, 0) 向右转四分之一圈。可以把它想成时钟指针在转动。">When we rotate a shape 90 degrees CW, each point turns a quarter turn
 to the right around the origin (0, 0). Think of it like the hands of a
 clock turning.</p><p data-en="How to Rotate (90° CW):" data-zh="如何旋转（90° CW）：">How to Rotate (90° CW):</p><ol type="1">
-<li><p data-en="Label points in relation to the origin. Describe each point by
+<li data-en="Label points in relation to the origin. Describe each point by
 how far it is right or left and up or down from (0, 0)." data-zh="根据原点给各点贴方向标签。用“离原点向右或向左、向上或向下多远”来描述每个点与 (0, 0) 的关系。">Label points in relation to the origin. Describe each point by
-how far it is right or left and up or down from (0, 0).</p></li>
-<li><p data-en="Use the rotation direction map. The rotated point will be the
+how far it is right or left and up or down from (0, 0).</li>
+<li data-en="Use the rotation direction map. The rotated point will be the
 same number of units from the origin, but directions change like
 this:" data-zh="使用旋转方向对应图。旋转后的点离原点的单位数不变，但方向会这样变化：">Use the rotation direction map. The rotated point will be the
 same number of units from the origin, but directions change like
-this:</p></li>
+this:</li>
 </ol><table>
 <colgroup>
 <col style="width: 41%"/>
@@ -335,18 +333,18 @@ this:</p></li>
 </tr>
 </tbody>
 </table><ol start="3" type="1">
-<li><p data-en="Keep the same distances, switch the directions, and plot the new
+<li data-en="Keep the same distances, switch the directions, and plot the new
 point." data-zh="保持距离不变，切换方向，再标出新点。">Keep the same distances, switch the directions, and plot the new
-point.</p></li>
+point.</li>
 </ol><p data-en="Example:" data-zh="示例：">Example:</p><p data-en="Let’s &lt;strong&gt;Rotate A(2, 4)&lt;/strong&gt;." data-zh="我们来&lt;strong&gt;旋转 A(2, 4)&lt;/strong&gt;。">Let’s <strong>Rotate A(2, 4)</strong>.</p><ol type="1">
-<li><p data-en="From the origin, A(2, 4) is 2 right and 4 up." data-zh="从原点看，A(2, 4) 在右侧 2 个单位、上方 4 个单位。">From the origin, A(2, 4) is 2 right and 4 up.</p></li>
-<li><p data-en="Apply the map:" data-zh="套用对应图：">Apply the map:</p>
+<li data-en="From the origin, A(2, 4) is 2 right and 4 up." data-zh="从原点看，A(2, 4) 在右侧 2 个单位、上方 4 个单位。">From the origin, A(2, 4) is 2 right and 4 up.</li>
+<li data-en="Apply the map:" data-zh="套用对应图：">Apply the map:</p>
 <ol type="1">
-<li><p data-en="Right → Down: now 2 down" data-zh="右 → 下：现在是向下 2">Right → Down: now 2 down</p></li>
-<li><p data-en="Up → Right: now 4 right" data-zh="上 → 右：现在是向右 4">Up → Right: now 4 right</p></li>
+<li><p data-en="Right → Down: now 2 down" data-zh="右 → 下：现在是向下 2">Right → Down: now 2 down</li>
+<li data-en="Up → Right: now 4 right" data-zh="上 → 右：现在是向右 4">Up → Right: now 4 right</li>
 </ol></li>
-<li><p data-en="From the origin, move 4 right and 2 down → A′(4, −2)." data-zh="从原点出发，向右 4、向下 2 → A′(4, −2)。">From the origin, move 4 right and 2 down → A′(4, −2).</p></li>
-<li><p data-en="See the illustration on the coordinate plane." data-zh="请在坐标平面上查看图示。">See the illustration on the coordinate plane.</p></li>
+<li data-en="From the origin, move 4 right and 2 down → A′(4, −2)." data-zh="从原点出发，向右 4、向下 2 → A′(4, −2)。">From the origin, move 4 right and 2 down → A′(4, −2).</li>
+<li data-en="See the illustration on the coordinate plane." data-zh="请在坐标平面上查看图示。">See the illustration on the coordinate plane.</li>
 </ol><blockquote>
 <p><img loading="lazy" src="../assets/math-word/image13.png" style="width:540px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p>
 </blockquote><h4 id="ccw-rotation" data-en="90° ccw rotation" data-zh="90° 逆时针旋转">90° ccw rotation</h4><p data-en="When we rotate a shape 90 degrees CCW, each point turns a quarter
@@ -354,14 +352,14 @@ turn to the left around the origin (0, 0)." data-zh="当我们把图形逆时针
 turn to the left around the origin (0, 0).</p><p data-en="It’s simply the reverse of the clockwise turn — imagine the clock’s
 hands moving backward." data-zh="它就是顺时针转动的反向——想象时钟指针倒着走。">It’s simply the reverse of the clockwise turn — imagine the clock’s
 hands moving backward.</p><p data-en="How to Rotate (90° CCW):" data-zh="如何旋转（90° CCW）：">How to Rotate (90° CCW):</p><ol type="1">
-<li><p data-en="Label points in relation to the origin. Describe each point by
+<li data-en="Label points in relation to the origin. Describe each point by
 how far it is right or left and up or down from (0, 0)." data-zh="根据原点给各点贴方向标签。用“离原点向右或向左、向上或向下多远”来描述每个点与 (0, 0) 的关系。">Label points in relation to the origin. Describe each point by
-how far it is right or left and up or down from (0, 0).</p></li>
-<li><p data-en="Use the reverse rotation direction map.A 90° counterclockwise
+how far it is right or left and up or down from (0, 0).</li>
+<li data-en="Use the reverse rotation direction map.A 90° counterclockwise
 turn is the opposite of the clockwise one — directions shift the other
 way around:" data-zh="使用反向旋转方向对应图。逆时针转 90° 与顺时针相反——方向按另一套规则变化：">Use the reverse rotation direction map.A 90° counterclockwise
 turn is the opposite of the clockwise one — directions shift the other
-way around:</p></li>
+way around:</li>
 </ol><table>
 <colgroup>
 <col style="width: 40%"/>
@@ -394,20 +392,20 @@ way around:</p></li>
 </tr>
 </tbody>
 </table><ol start="3" type="1">
-<li><p data-en="Keep the same distances, but move each point according to the new
+<li data-en="Keep the same distances, but move each point according to the new
 directions. The figure turns to the left around the origin." data-zh="保持距离不变，但按新方向移动各点。整个图形绕原点向左转动。">Keep the same distances, but move each point according to the new
-directions. The figure turns to the left around the origin.</p></li>
-</ol><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Let’s Rotate A(2, 4)." data-zh="我们来旋转 A(2, 4)。">Let’s Rotate A(2, 4).</p>
+directions. The figure turns to the left around the origin.</li>
+</ol><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Let’s Rotate A(2, 4)." data-zh="我们来旋转 A(2, 4)。">Let’s Rotate A(2, 4).</p>
 </blockquote><ol type="1">
-<li><p data-en="From the origin, A(2, 4) is 2 right and 4 up." data-zh="从原点看，A(2, 4) 在右侧 2 个单位、上方 4 个单位。">From the origin, A(2, 4) is 2 right and 4 up.</p></li>
-<li><p data-en="Apply the map:" data-zh="套用对应图：">Apply the map:</p>
+<li data-en="From the origin, A(2, 4) is 2 right and 4 up." data-zh="从原点看，A(2, 4) 在右侧 2 个单位、上方 4 个单位。">From the origin, A(2, 4) is 2 right and 4 up.</li>
+<li data-en="Apply the map:" data-zh="套用对应图：">Apply the map:</p>
 <ol type="1">
-<li><p data-en="Right → Up: now 2 up" data-zh="右 → 上：现在是向上 2">Right → Up: now 2 up</p></li>
-<li><p data-en="Up → Left: now 4 left" data-zh="上 → 左：现在是向左 4">Up → Left: now 4 left</p></li>
+<li><p data-en="Right → Up: now 2 up" data-zh="右 → 上：现在是向上 2">Right → Up: now 2 up</li>
+<li data-en="Up → Left: now 4 left" data-zh="上 → 左：现在是向左 4">Up → Left: now 4 left</li>
 </ol></li>
-<li><p data-en="From the origin, move 4 left and 2 up → A′ (-4, 2)." data-zh="从原点出发，向左 4、向上 2 → A′ (-4, 2)。">From the origin, move 4 left and 2 up → A′ (-4, 2).</p></li>
-<li><p data-en="See the illustration on the coordinate plane." data-zh="请在坐标平面上查看图示。">See the illustration on the coordinate plane.</p></li>
+<li data-en="From the origin, move 4 left and 2 up → A′ (-4, 2)." data-zh="从原点出发，向左 4、向上 2 → A′ (-4, 2)。">From the origin, move 4 left and 2 up → A′ (-4, 2).</li>
+<li data-en="See the illustration on the coordinate plane." data-zh="请在坐标平面上查看图示。">See the illustration on the coordinate plane.</li>
 </ol><p><img loading="lazy" src="../assets/math-word/image14.png" style="width:540px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><h4 id="summary-of-the-classroom-way" data-en="Summary of the classroom way" data-zh="课堂方法小结">Summary of the classroom way</h4><p data-en="The &lt;strong&gt;classroom way&lt;/strong&gt; teaches us how to rotate points
 step by step — by labeling directions, using the rotation map, and
 switching positions carefully. It helps us understand what really
@@ -431,11 +429,11 @@ switched; then change the sign of the new y-coordinate (the one that
 moved into the vertical position)." data-zh="可以看出，&lt;em&gt;x&lt;/em&gt; 与 &lt;em&gt;y&lt;/em&gt; 坐标互换；然后给新的 y 坐标（换到竖直位置的那个）变号。">As you can see, the <em>x-</em> and <em>y-</em> coordinates are
 switched; then change the sign of the new y-coordinate (the one that
 moved into the vertical position).</p><ol type="1">
-<li><p data-en="Use (2,4) as an example. First, write the coordinates vertically
+<li data-en="Use (2,4) as an example. First, write the coordinates vertically
 (top = original, bottom = switched):" data-zh="以 (2,4) 为例。先把坐标竖着写（上 = 原坐标，下 = 互换后）：">Use (2,4) as an example. First, write the coordinates vertically
-(top = original, bottom = switched):</p></li>
+(top = original, bottom = switched):</li>
 </ol><p><img loading="lazy" src="../assets/math-word/image16.png" style="width:626px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><ol start="2" type="1">
-<li><p data-en="Imagine the clock hand starting at 12 o’clock (position |). A
+<li data-en="Imagine the clock hand starting at 12 o’clock (position |). A
 clockwise turn goes toward the / direction.&lt;br/&gt;
 &lt;br/&gt;
 This shows which part of the switched pair keeps its sign: the number
@@ -447,7 +445,7 @@ clockwise turn goes toward the / direction.<br/>
 <br/>
 This shows which part of the switched pair keeps its sign: the number
 that moves into the x-position keeps its sign; the number that moves
-into the y-position changes the sign.</p></li>
+into the y-position changes the sign.</li>
 </ol><p><img loading="lazy" src="../assets/math-word/image17.png" style="width:612px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><p data-en="You may also use your &lt;strong&gt;right hand&lt;/strong&gt; as the clock hand
 to help you visualize the direction." data-zh="你也可以用 &lt;strong&gt;右手&lt;/strong&gt; 当作时钟指针来帮助想象方向。">You may also use your <strong>right hand</strong> as the clock hand
 to help you visualize the direction.</p><p><img loading="lazy" src="../assets/math-word/image18.png" style="width:614px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><p data-en="Example:" data-zh="示例：">Example:</p><p data-en="Let’s rotate triangle ΔABC 90° CW with the points 𝐴(2,4), 𝐵(1,2), and
@@ -473,15 +471,15 @@ the left</em>. This is simply the reverse of the clockwise rotation you
 just learned. Instead of changing the sign on the new
 <em>y</em>-coordinate, this time we change the sign on the new
 <em>x</em>-coordinate.</p><ol type="1">
-<li><p data-en="Try the same point (2,4) again. Write the coordinates vertically
+<li data-en="Try the same point (2,4) again. Write the coordinates vertically
 as before:" data-zh="再用点 (2,4) 试一次。像刚才一样把坐标竖着写：">Try the same point (2,4) again. Write the coordinates vertically
-as before:</p></li>
+as before:</li>
 </ol><p><img loading="lazy" src="../assets/math-word/image23.png" style="width:614px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p><ol start="2" type="1">
-<li><p data-en="Picture the clock hand moving &lt;em&gt;backward&lt;/em&gt; — from the 12
+<li data-en="Picture the clock hand moving &lt;em&gt;backward&lt;/em&gt; — from the 12
 o’clock position | toward the / direction. This time, the x-position
 flips its sign, while the y-position keeps it." data-zh="想象指针 &lt;em&gt;向后&lt;/em&gt; 走——从 12 点位置 | 朝向 / 方向。这次 x 位置变号，y 位置不变。">Picture the clock hand moving <em>backward</em> — from the 12
 o’clock position | toward the / direction. This time, the x-position
-flips its sign, while the y-position keeps it.</p></li>
+flips its sign, while the y-position keeps it.</li>
 </ol><blockquote>
 <p><img loading="lazy" src="../assets/math-word/image24.png" style="width:613px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;"/></p>
 </blockquote><p data-en="You may also use your &lt;strong&gt;right hand&lt;/strong&gt; as the clock hand

@@ -22,7 +22,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Number Strategies | KIWI 爱AI Study" data-zh="数字策略 | KIWI 爱AI Study">Number Strategies | KIWI 爱AI Study</title>
 <meta content="Explore Number Strategies in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -76,7 +77,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -164,7 +164,7 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -190,8 +190,7 @@
 .kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{box-sizing:border-box;display:block;width:100%;max-width:100%;margin:1.15rem 0;padding:1rem 1.2rem;background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e4b54e;border-radius:12px;color:#503d24;text-align:left;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
 .kiwi-insight-panel p,.kiwi-curriculum-panel p,.kiwi-word-info-panel p,.kiwi-insight-panel li,.kiwi-curriculum-panel li,.kiwi-word-info-panel li{color:inherit;text-align:left;font-weight:400}
 .kiwi-insight-panel strong,.kiwi-curriculum-panel strong,.kiwi-word-info-panel strong{font-weight:700}
-.kiwi-insight-header,.kiwi-word-info-header{display:flex;align-items:center;gap:.65rem;margin:0 0 .55rem;font-weight:700;color:#895b0e;text-align:left}
-.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
+.kiwi-insight-header,.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
 .kiwi-insight-icon,.kiwi-word-info-icon{flex:none;font-size:1.1rem;line-height:1.2}
 .kiwi-insight-body>*:first-child,.kiwi-word-info-body>*:first-child{margin-top:0}
 .kiwi-insight-body>*:last-child,.kiwi-word-info-body>*:last-child{margin-bottom:0}
@@ -291,10 +290,10 @@ mathematics.</p>
 <p data-en="Official source: &lt;a href=&quot;https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1&quot;&gt;https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1&lt;/a&gt;" data-zh="官方来源： &lt;a href=&quot;https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1&quot;&gt;https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1&lt;/a&gt;">Official source: <a href="https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1">https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w/c/c1</a></p></aside><details class="lesson-card" open=""><summary data-en="Factor Grouping — Break and
 Build" data-zh="因数分组 — 拆开
 再组合">Factor Grouping — Break and
-Build</summary><div class="lesson-card-body"><p data-en="Split numbers into factors to create easy combos." data-zh="把数拆成因数，凑成好算的组合。">Split numbers into factors to create easy combos.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul>
-<li><p data-en="&lt;strong&gt;Multiplication:&lt;/strong&gt;" data-zh="&lt;strong&gt;乘法：&lt;/strong&gt;"><strong>Multiplication:</strong></p>
+Build</summary><div class="lesson-card-body"><p data-en="Split numbers into factors to create easy combos." data-zh="把数拆成因数，凑成好算的组合。">Split numbers into factors to create easy combos.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul class="kiwi-example-list">
+<li data-en="&lt;strong&gt;Multiplication:&lt;/strong&gt;" data-zh="&lt;strong&gt;乘法：&lt;/strong&gt;"><strong>Multiplication:</strong></p>
 <ul>
-<li><p data-en="Integers" data-zh="整数">Integers</p></li>
+<li><p data-en="Integers" data-zh="整数">Integers</li>
 </ul></li>
 </ul><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mtable&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;mn&gt;24&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;25&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;25&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;25&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;100&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;600&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\begin{aligned}
 24 \times 25 \\
@@ -315,7 +314,7 @@ Build</summary><div class="lesson-card-body"><p data-en="Split numbers into fact
  &amp; = 6 \times 100 \\
  &amp; = 600
 \end{aligned}</annotation></semantics></math></div><ul>
-<li><p data-en="Decimals" data-zh="小数">Decimals</p></li>
+<li data-en="Decimals" data-zh="小数">Decimals</li>
 </ul><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mtable&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;mn&gt;3.2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;12.5&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;25&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;0.4&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;12.5&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;25&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;12.5&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;0.4&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;25&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;100&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1000&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\begin{aligned}
 3.2 \times 12.5 \times 25 \\
  &amp;amp; = 8 \times 0.4 \times 12.5 \times 25 \\
@@ -335,7 +334,7 @@ Build</summary><div class="lesson-card-body"><p data-en="Split numbers into fact
  &amp; = 100 \times 10 \\
  &amp; = 1000
 \end{aligned}</annotation></semantics></math></div><ul>
-<li><p data-en="&lt;strong&gt;Fraction Reduce:&lt;/strong&gt;" data-zh="&lt;strong&gt;约分：&lt;/strong&gt;"><strong>Fraction Reduce:</strong></p>
+<li data-en="&lt;strong&gt;Fraction Reduce:&lt;/strong&gt;" data-zh="&lt;strong&gt;约分：&lt;/strong&gt;"><strong>Fraction Reduce:</strong></p>
 <ol type="1">
 <li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mtable&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;mfrac&gt;&lt;mn&gt;36&lt;/mn&gt;&lt;mn&gt;48&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/menclose&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/menclose&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\begin{aligned}
 \frac{36}{48} \\
@@ -349,20 +348,20 @@ Build</summary><div class="lesson-card-body"><p data-en="Split numbers into fact
 \frac{36}{48} \\
  &amp; = \frac{\boxed{12} \times 3}{\boxed{12} \times 4} \\
  &amp; = \frac{3}{4}
-\end{aligned}</annotation></semantics></math></p></li>
+\end{aligned}</annotation></semantics></math></li>
 </ol></li>
 </ul></div></details><details class="lesson-card"><summary data-en="Find the Friendly Middle" data-zh="找合适的中间数">Find the Friendly Middle</summary><div class="lesson-card-body"><p data-en="Use a base number (benchmark) to make adding easier." data-zh="用一个基准数让加法更容易。">Use a base number (benchmark) to make adding easier.</p><ol start="2" type="1">
-<li><p data-en="When we have several numbers that are &lt;strong&gt;close to each
+<li data-en="When we have several numbers that are &lt;strong&gt;close to each
 other&lt;/strong&gt;, we can choose one “middle” number — called a
 &lt;strong&gt;base number&lt;/strong&gt; — to represent them." data-zh="当好几个数 &lt;strong&gt;彼此接近&lt;/strong&gt; 时，可以选一个“中间”数——叫做 &lt;strong&gt;基准数&lt;/strong&gt;——来代表它们。">When we have several numbers that are <strong>close to each
 other</strong>, we can choose one “middle” number — called a
-<strong>base number</strong> — to represent them.</p></li>
+<strong>base number</strong> — to represent them.</li>
 </ol><p data-en="This helps make the calculation faster and keeps our work neat and
 simple." data-zh="这样计算更快，书写也更整齐简洁。">This helps make the calculation faster and keeps our work neat and
 simple.</p><p data-en="But remember: the base number should be &lt;strong&gt;close enough&lt;/strong&gt;
 to all the numbers in the group — not too far away!" data-zh="但请记住：基准数应与组内所有数 &lt;strong&gt;足够接近&lt;/strong&gt;，不要差得太远！">But remember: the base number should be <strong>close enough</strong>
 to all the numbers in the group — not too far away!</p><p data-en="Example:" data-zh="示例：">Example:</p><ol start="5" type="1">
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mtable&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;mn&gt;3082&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3063&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3092&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3051&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;21&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;21&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;15&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;360&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;15&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;360&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\begin{aligned}
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mtable&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;mn&gt;3082&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3063&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3092&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3051&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;21&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;3072&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;21&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;15&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;360&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;right&quot; style=&quot;text-align: right&quot;&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;left&quot; style=&quot;text-align: left&quot;&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;15&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;360&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\begin{aligned}
 3082 + 3063 + 3072 + 3092 + 3051 \\
  &amp;amp; = 3072 + 10 + 3072 - 9 + 3072 + 3072 + 20 + 3072 - 21 \\
  &amp;amp; = (3072 \times 5) + (10 - 9 + 20 - 21) \\
@@ -380,7 +379,7 @@ to all the numbers in the group — not too far away!</p><p data-en="Example:" d
  &amp; = (3072 \times 5) + (10 - 9 + 20 - 21) \\
  &amp; = 15,360 + 0 \\
  &amp; = 15,360
-\end{aligned}</annotation></semantics></math></p></li>
+\end{aligned}</annotation></semantics></math></li>
 </ol></div></details><details class="lesson-card"><summary data-en="Compensation — Give and Take" data-zh="补偿法 — 先借后还">Compensation — Give and Take</summary><div class="lesson-card-body"><p data-en="&lt;em&gt;Use a small adjustment to make friendly numbers, then fix the
 change.&lt;/em&gt;" data-zh="&lt;em&gt;先做小调整凑成好算的数，再把改动补回来。&lt;/em&gt;"><em>Use a small adjustment to make friendly numbers, then fix the
 change.</em></p><p data-en="When numbers are very close to an easy or “friendly” number — such as
@@ -474,6 +473,7 @@ correct.</p><h4 id="addition" data-en="Addition" data-zh="加法">Addition</h4><
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -508,6 +508,8 @@ correct.</p><h4 id="addition" data-en="Addition" data-zh="加法">Addition</h4><
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 <script id="kiwi-accordion-controls-script">
 (function(){

@@ -8,6 +8,7 @@
 <title data-en="Basic Geometry Words | KIWI 爱AI Study" data-zh="基本几何用语 | KIWI 爱AI Study">Basic Geometry Words | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
 <link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -33,7 +34,7 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -52,6 +53,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -90,24 +110,21 @@
 <!-- LEVEL-3 BODY START -->
 <!-- LEVEL-3 BODY END -->
 <div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a aria-current="page" class="mf-current" href="foundation-basic-geometry-words.html" data-en="Basic Geometry Words" data-zh="基本几何用语">Basic Geometry Words</a><a href="foundation-rotation-transformation.html" data-en="Rotation Transformation" data-zh="旋转变换">Rotation Transformation</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Basic Geometry Words" data-zh="基本几何用语">Basic Geometry Words</h1>
-<h3 id="point" data-en="Point" data-zh="点">Point</h3>
-<p data-en="A point is a specific location in space. It has no size (no length,
+<details class="lesson-card"><summary id="point" data-en="Point" data-zh="点">Point</summary><div class="lesson-card-content"><p data-en="A point is a specific location in space. It has no size (no length,
 width, or height) and is usually represented by a dot and a capital
 letter." data-zh="点是空间中某一确定位置，没有大小（无长、宽、高），通常用圆点和大写字母表示。">A point is a specific location in space. It has no size (no length,
 width, or height) and is usually represented by a dot and a capital
 letter.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="𝐴
+<ul class="kiwi-example-list">
+<li data-en="𝐴
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;Point\ A&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)" data-zh="𝐴
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;Point\ A&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)">𝐴
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>o</mi><mi>i</mi><mi>n</mi><mi>t</mi><mspace width="0.222em"></mspace><mi>A</mi></mrow><annotation encoding="application/x-tex">Point\ A</annotation></semantics></math>)</p></li>
-<li><p data-en="A dot on a map marking a city is a good visualization of a
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>o</mi><mi>i</mi><mi>n</mi><mi>t</mi><mspace width="0.222em"></mspace><mi>A</mi></mrow><annotation encoding="application/x-tex">Point\ A</annotation></semantics></math>)</li>
+<li data-en="A dot on a map marking a city is a good visualization of a
 point." data-zh="地图上标城市的圆点是理解点的好例子。">A dot on a map marking a city is a good visualization of a
-point.</p></li>
-</ul>
-<h3 id="line" data-en="Line" data-zh="直线">Line</h3>
-<p data-en="A line is a perfectly straight, continuous path that extends
+point.</li>
+</ul></div></details><details class="lesson-card"><summary id="line" data-en="Line" data-zh="直线">Line</summary><div class="lesson-card-content"><p data-en="A line is a perfectly straight, continuous path that extends
 infinitely in both directions. It has no thickness and is typically
 named by two points on it or a single lowercase letter." data-zh="直线是向两端无限延伸的完美笔直路径，没有粗细；通常用其上两点或一个小写字母命名。">A line is a perfectly straight, continuous path that extends
 infinitely in both directions. It has no thickness and is typically
@@ -119,63 +136,55 @@ named by two points on it or a single lowercase letter.</p>
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;𝓁&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathcal{l}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">A line may also be named using a lowercase letter, such as
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝓁</mi><annotation encoding="application/x-tex">\mathcal{l}</annotation></semantics></math>.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Line &lt;/mtext&gt;&lt;mi&gt;𝓁&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{Line~}\mathcal{l}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Line &lt;/mtext&gt;&lt;mi&gt;𝓁&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{直线}\mathcal{l}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Line </mtext><mi>𝓁</mi></mrow><annotation encoding="application/x-tex">\text{Line~}\mathcal{l}</annotation></semantics></math></p>
-<h3 id="line-segment" data-en="Line Segment " data-zh="线段 ">Line Segment </h3>
-<p data-en="A line segment is a part of a line with two distinct endpoints. It
+<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Line &lt;/mtext&gt;&lt;mi&gt;𝓁&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{Line~}\mathcal{l}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Line &lt;/mtext&gt;&lt;mi&gt;𝓁&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{直线}\mathcal{l}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Line </mtext><mi>𝓁</mi></mrow><annotation encoding="application/x-tex">\text{Line~}\mathcal{l}</annotation></semantics></math></p></div></details><details class="lesson-card"><summary id="line-segment" data-en="Line Segment " data-zh="线段 ">Line Segment</summary><div class="lesson-card-content"><p data-en="A line segment is a part of a line with two distinct endpoints. It
 has a definite length." data-zh="线段是直线上具有两个端点的一段，有确定的长度。">A line segment is a part of a line with two distinct endpoints. It
 has a definite length.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="AB (Line segment AB)" data-zh="AB（线段 AB）">AB (Line segment AB)</p></li>
+<ul class="kiwi-example-list">
+<li data-en="AB (Line segment AB)" data-zh="AB（线段 AB）">AB (Line segment AB)</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mover&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;&lt;mo accent=&quot;true&quot;&gt;¯&lt;/mo&gt;&lt;/mover&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\overline{AB}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mover&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;&lt;mo accent=&quot;true&quot;&gt;¯&lt;/mo&gt;&lt;/mover&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\overline{AB}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo accent="true">¯</mo></mover><annotation encoding="application/x-tex">\overline{AB}</annotation></semantics></math></p>
 <ul>
-<li><p data-en="A ruler or the edge of a piece of paper are examples of line
+<li data-en="A ruler or the edge of a piece of paper are examples of line
 segments." data-zh="直尺或纸张的边缘都是线段的例子。">A ruler or the edge of a piece of paper are examples of line
-segments.</p></li>
-</ul>
-<h3 id="ray" data-en="Ray" data-zh="射线">Ray</h3>
-<p data-en="A ray is a part of a line that has one endpoint and extends
+segments.</li>
+</ul></div></details><details class="lesson-card"><summary id="ray" data-en="Ray" data-zh="射线">Ray</summary><div class="lesson-card-content"><p data-en="A ray is a part of a line that has one endpoint and extends
 infinitely in only one direction." data-zh="射线是直线上有一个端点、只向一个方向无限延伸的部分。">A ray is a part of a line that has one endpoint and extends
 infinitely in only one direction.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="A⟶B (Ray AB, starting at A and going through B)" data-zh="A⟶B（射线 AB，从 A 出发经过 B）">A⟶B (Ray AB, starting at A and going through B)</p></li>
+<ul class="kiwi-example-list">
+<li data-en="A⟶B (Ray AB, starting at A and going through B)" data-zh="A⟶B（射线 AB，从 A 出发经过 B）">A⟶B (Ray AB, starting at A and going through B)</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mover&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;&lt;mo accent=&quot;true&quot;&gt;→&lt;/mo&gt;&lt;/mover&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\overset{\rightarrow}{AB}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mover&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/mrow&gt;&lt;mo accent=&quot;true&quot;&gt;→&lt;/mo&gt;&lt;/mover&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\overset{\rightarrow}{AB}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo accent="true">→</mo></mover><annotation encoding="application/x-tex">\overset{\rightarrow}{AB}</annotation></semantics></math></p>
 <ul>
-<li><p data-en="A⟵B (Ray BA, starting at B and going through A)" data-zh="A⟵B（射线 BA，从 B 出发经过 A）">A⟵B (Ray BA, starting at B and going through A)</p></li>
+<li data-en="A⟵B (Ray BA, starting at B and going through A)" data-zh="A⟵B（射线 BA，从 B 出发经过 A）">A⟵B (Ray BA, starting at B and going through A)</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mover&gt;&lt;mrow&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;mo accent=&quot;true&quot;&gt;→&lt;/mo&gt;&lt;/mover&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\overset{\rightarrow}{BA}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mover&gt;&lt;mrow&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;mo accent=&quot;true&quot;&gt;→&lt;/mo&gt;&lt;/mover&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\overset{\rightarrow}{BA}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mrow><mi>B</mi><mi>A</mi></mrow><mo accent="true">→</mo></mover><annotation encoding="application/x-tex">\overset{\rightarrow}{BA}</annotation></semantics></math></p>
 <ul>
-<li><p data-en="A beam of light from a flashlight or the sun’s rays are good
+<li data-en="A beam of light from a flashlight or the sun’s rays are good
 visualizations of a ray." data-zh="手电筒光束或阳光都是理解射线的好例子。">A beam of light from a flashlight or the sun’s rays are good
-visualizations of a ray.</p></li>
-</ul>
-<h3 id="angle" data-en="Angle" data-zh="角">Angle</h3>
-<p data-en="An angle is formed when two rays share a common endpoint (the
+visualizations of a ray.</li>
+</ul></div></details><details class="lesson-card"><summary id="angle" data-en="Angle" data-zh="角">Angle</summary><div class="lesson-card-content"><p data-en="An angle is formed when two rays share a common endpoint (the
 vertex). Angles are measured in degrees." data-zh="当两条射线有公共端点（顶点）时，便形成一个角。角用度来度量。">An angle is formed when two rays share a common endpoint (the
 vertex). Angles are measured in degrees.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;strong&gt;Acute angle:&lt;/strong&gt; Measures less than 90°." data-zh="&lt;strong&gt;锐角：&lt;/strong&gt;小于 90°。"><strong>Acute angle:</strong> Measures less than 90°.</p></li>
-<li><p data-en="&lt;strong&gt;Right angle:&lt;/strong&gt; Measures exactly 90°. It often has
+<ul class="kiwi-example-list">
+<li data-en="&lt;strong&gt;Acute angle:&lt;/strong&gt; Measures less than 90°." data-zh="&lt;strong&gt;锐角：&lt;/strong&gt;小于 90°。"><strong>Acute angle:</strong> Measures less than 90°.</li>
+<li data-en="&lt;strong&gt;Right angle:&lt;/strong&gt; Measures exactly 90°. It often has
 a small square drawn in the corner to indicate this." data-zh="&lt;strong&gt;直角：&lt;/strong&gt;恰好 90°，常在角落画小方块表示。"><strong>Right angle:</strong> Measures exactly 90°. It often has
-a small square drawn in the corner to indicate this.</p></li>
-<li><p data-en="&lt;strong&gt;Obtuse angle:&lt;/strong&gt; Measures greater than 90° but less
+a small square drawn in the corner to indicate this.</li>
+<li data-en="&lt;strong&gt;Obtuse angle:&lt;/strong&gt; Measures greater than 90° but less
 than 180°." data-zh="&lt;strong&gt;钝角：&lt;/strong&gt;大于 90° 且小于 180°。"><strong>Obtuse angle:</strong> Measures greater than 90° but less
-than 180°.</p></li>
-<li><p data-en="&lt;strong&gt;Straight angle:&lt;/strong&gt; Measures exactly 180°. It forms
+than 180°.</li>
+<li data-en="&lt;strong&gt;Straight angle:&lt;/strong&gt; Measures exactly 180°. It forms
 a straight line." data-zh="&lt;strong&gt;平角：&lt;/strong&gt;恰好 180°，形成一条直线。"><strong>Straight angle:</strong> Measures exactly 180°. It forms
-a straight line.</p></li>
-<li><p data-en="&lt;strong&gt;Reflex angle:&lt;/strong&gt; Measures greater than 180° but
+a straight line.</li>
+<li data-en="&lt;strong&gt;Reflex angle:&lt;/strong&gt; Measures greater than 180° but
 less than 360°." data-zh="&lt;strong&gt;优角：&lt;/strong&gt;大于 180° 且小于 360°。"><strong>Reflex angle:</strong> Measures greater than 180° but
-less than 360°.</p></li>
-</ul>
-<h3 id="parallel-and-perpendicular-lines" data-en="Parallel And Perpendicular
+less than 360°.</li>
+</ul></div></details><details class="lesson-card"><summary id="parallel-and-perpendicular-lines" data-en="Parallel And Perpendicular
 Lines" data-zh="平行线与垂直线">Parallel And Perpendicular
-Lines</h3>
-<h4 id="parallel-lines" data-en="Parallel lines" data-zh="平行线">Parallel lines</h4>
+Lines</summary><div class="lesson-card-content"><h4 id="parallel-lines" data-en="Parallel lines" data-zh="平行线">Parallel lines</h4>
 <p data-en="Parallel lines are two lines in a plane that are always the same
 distance apart and never intersect, no matter how far they are
 extended." data-zh="平行线是在同一平面内、始终保持相同距离、无论延长多远都不相交的两条直线。">Parallel lines are two lines in a plane that are always the same
@@ -184,10 +193,10 @@ extended.</p>
 <p data-en="Notation:" data-zh="记号：">Notation:</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;𝓁&lt;/mi&gt;&lt;mo mathvariant=&quot;script&quot;&gt;∥&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathcal{l \parallel}m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;𝓁&lt;/mi&gt;&lt;mo mathvariant=&quot;script&quot;&gt;∥&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathcal{l \parallel}m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝓁</mi><mo mathvariant="script">∥</mo></mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">\mathcal{l \parallel}m</annotation></semantics></math></p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="Noted using the symbol // (e.g., Line A // Line B)." data-zh="用符号 // 表示（例如：直线 A // 直线 B）。">Noted using the symbol // (e.g., Line A // Line B).</p></li>
-<li><p data-en="Train tracks" data-zh="铁轨">Train tracks</p></li>
-<li><p data-en="Opposite edges of a ruler" data-zh="直尺的相对两边">Opposite edges of a ruler</p></li>
+<ul class="kiwi-example-list">
+<li data-en="Noted using the symbol // (e.g., Line A // Line B)." data-zh="用符号 // 表示（例如：直线 A // 直线 B）。">Noted using the symbol // (e.g., Line A // Line B).</li>
+<li data-en="Train tracks" data-zh="铁轨">Train tracks</li>
+<li data-en="Opposite edges of a ruler" data-zh="直尺的相对两边">Opposite edges of a ruler</li>
 </ul>
 <h4 id="perpendicular-lines" data-en="Perpendicular lines" data-zh="垂直线">Perpendicular lines</h4>
 <p data-en="&lt;strong&gt;Perpendicular lines&lt;/strong&gt; are two lines that intersect
@@ -200,9 +209,9 @@ extended.</p>
 <p data-en="Notation:" data-zh="记号：">Notation:</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;𝓁&lt;/mi&gt;&lt;mi mathvariant=&quot;script&quot;&gt;⊥&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathcal{l\bot}m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;𝓁&lt;/mi&gt;&lt;mi mathvariant=&quot;script&quot;&gt;⊥&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathcal{l\bot}m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝓁</mi><mi mathvariant="script">⊥</mi></mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">\mathcal{l\bot}m</annotation></semantics></math></p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="Noted using the symbol ⟂ (e.g., Line C ⟂ Line D)." data-zh="用符号 ⟂ 表示（例如：直线 C ⟂ 直线 D）。">Noted using the symbol ⟂ (e.g., Line C ⟂ Line D).</p></li>
-<li><p data-en="The corners of a room where the wall meets the floor" data-zh="房间里墙与地板相接的角">The corners of a room where the wall meets the floor</p></li>
+<ul class="kiwi-example-list">
+<li data-en="Noted using the symbol ⟂ (e.g., Line C ⟂ Line D)." data-zh="用符号 ⟂ 表示（例如：直线 C ⟂ 直线 D）。">Noted using the symbol ⟂ (e.g., Line C ⟂ Line D).</li>
+<li data-en="The corners of a room where the wall meets the floor" data-zh="房间里墙与地板相接的角">The corners of a room where the wall meets the floor</li>
 </ul>
 <h4 id="vertex" data-en="Vertex" data-zh="顶点">Vertex</h4>
 <p data-en="(plural: vertices)" data-zh="（复数：vertices）">(plural: vertices)</p>
@@ -210,50 +219,48 @@ extended.</p>
 meet." data-zh="顶点是两条或多条直线、射线或棱相交的角点。">A vertex is a corner point where two or more lines, rays, or edges
 meet.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="The shared endpoint where the two rays of an angle meet is the
+<ul class="kiwi-example-list">
+<li data-en="The shared endpoint where the two rays of an angle meet is the
 vertex." data-zh="角的两条射线的公共端点就是顶点。">The shared endpoint where the two rays of an angle meet is the
-vertex.</p></li>
-<li><p data-en="The corners of a square, triangle, or cube are all
+vertex.</li>
+<li data-en="The corners of a square, triangle, or cube are all
 vertices." data-zh="正方形、三角形或正方体的角都是顶点。">The corners of a square, triangle, or cube are all
-vertices.</p></li>
-</ul>
-<h3 id="polygons-and-shapes" data-en="Polygons and Shapes" data-zh="多边形与图形">Polygons and Shapes</h3>
-<h4 id="polygon" data-en="Polygon" data-zh="多边形">Polygon</h4>
+vertices.</li>
+</ul></div></details><details class="lesson-card"><summary id="polygons-and-shapes" data-en="Polygons and Shapes" data-zh="多边形与图形">Polygons and Shapes</summary><div class="lesson-card-content"><h4 id="polygon" data-en="Polygon" data-zh="多边形">Polygon</h4>
 <p data-en="A polygon is a closed, flat (2D) shape made up of three or more
 straight line segments joined end-to-end. The segments only meet at
 their endpoints (vertices)." data-zh="多边形是由三条或更多线段首尾相接构成的封闭平面（二维）图形，线段只在端点（顶点）处相交。">A polygon is a closed, flat (2D) shape made up of three or more
 straight line segments joined end-to-end. The segments only meet at
 their endpoints (vertices).</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="Triangles, squares, rectangles, hexagons, and octagons are all
+<ul class="kiwi-example-list">
+<li data-en="Triangles, squares, rectangles, hexagons, and octagons are all
 polygons." data-zh="三角形、正方形、矩形、六边形和八边形都是多边形。">Triangles, squares, rectangles, hexagons, and octagons are all
-polygons.</p></li>
-<li><p data-en="Circles and shapes with curved sides are &lt;strong&gt;not&lt;/strong&gt;
+polygons.</li>
+<li data-en="Circles and shapes with curved sides are &lt;strong&gt;not&lt;/strong&gt;
 polygons." data-zh="圆及含曲线边的图形&lt;strong&gt;不是&lt;/strong&gt;多边形。">Circles and shapes with curved sides are <strong>not</strong>
-polygons.</p></li>
+polygons.</li>
 </ul>
 <h4 id="triangle" data-en="Triangle " data-zh="三角形 ">Triangle </h4>
 <p data-en="A triangle is a polygon with exactly three sides and three angles.
 Triangles are classified by their side lengths and angles:" data-zh="三角形恰有三条边和三个角，可按边长和角分类：">A triangle is a polygon with exactly three sides and three angles.
 Triangles are classified by their side lengths and angles:</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;strong&gt;Equilateral&lt;/strong&gt;: All 3 sides are equal in length,
+<ul class="kiwi-example-list">
+<li data-en="&lt;strong&gt;Equilateral&lt;/strong&gt;: All 3 sides are equal in length,
 and all 3 angles are 60°." data-zh="&lt;strong&gt;等边三角形&lt;/strong&gt;：三边相等，三角均为 60°。"><strong>Equilateral</strong>: All 3 sides are equal in length,
-and all 3 angles are 60°.</p></li>
-<li><p data-en="&lt;strong&gt;Isosceles&lt;/strong&gt;: Exactly 2 sides are equal in length,
+and all 3 angles are 60°.</li>
+<li data-en="&lt;strong&gt;Isosceles&lt;/strong&gt;: Exactly 2 sides are equal in length,
 and the two angles opposite those sides are equal." data-zh="&lt;strong&gt;等腰三角形&lt;/strong&gt;：恰有两边相等，其对角也相等。"><strong>Isosceles</strong>: Exactly 2 sides are equal in length,
-and the two angles opposite those sides are equal.</p></li>
-<li><p data-en="&lt;strong&gt;Scalene&lt;/strong&gt;: All 3 sides have different lengths, and
+and the two angles opposite those sides are equal.</li>
+<li data-en="&lt;strong&gt;Scalene&lt;/strong&gt;: All 3 sides have different lengths, and
 all 3 angles are different measures." data-zh="&lt;strong&gt;不等边三角形&lt;/strong&gt;：三边长度各不相同，三角也不相等。"><strong>Scalene</strong>: All 3 sides have different lengths, and
-all 3 angles are different measures.</p></li>
-<li><p data-en="&lt;strong&gt;Right triangle&lt;/strong&gt;: One of the interior angles
+all 3 angles are different measures.</li>
+<li data-en="&lt;strong&gt;Right triangle&lt;/strong&gt;: One of the interior angles
 measures exactly 90°. The side opposite the right angle is called the
 hypotenuse." data-zh="&lt;strong&gt;直角三角形&lt;/strong&gt;：有一个内角恰为 90°，其对边称为斜边。"><strong>Right triangle</strong>: One of the interior angles
 measures exactly 90°. The side opposite the right angle is called the
-hypotenuse.</p></li>
+hypotenuse.</li>
 </ul>
 <h4 id="quadrilateral" data-en="Quadrilateral" data-zh="四边形">Quadrilateral</h4>
 <p data-en="A quadrilateral is a polygon with exactly four sides and four angles.
@@ -261,23 +268,23 @@ Specific quadrilaterals have special properties:" data-zh="四边形恰有四条
 Specific quadrilaterals have special properties:</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
 <ol type="1">
-<li><p data-en="&lt;strong&gt;Square:&lt;/strong&gt; 4 equal sides and 4 right
+<li data-en="&lt;strong&gt;Square:&lt;/strong&gt; 4 equal sides and 4 right
 angles." data-zh="&lt;strong&gt;正方形：&lt;/strong&gt;四边相等，四角均为直角。"><strong>Square:</strong> 4 equal sides and 4 right
-angles.</p></li>
+angles.</li>
 </ol>
 <ul>
-<li><p data-en="&lt;strong&gt;Rectangle&lt;/strong&gt;: 4 right angles and opposite sides are
+<li data-en="&lt;strong&gt;Rectangle&lt;/strong&gt;: 4 right angles and opposite sides are
 equal in length." data-zh="&lt;strong&gt;矩形&lt;/strong&gt;：四角为直角，对边相等。"><strong>Rectangle</strong>: 4 right angles and opposite sides are
-equal in length.</p></li>
-<li><p data-en="&lt;strong&gt;Parallelogram&lt;/strong&gt;: Opposite sides are parallel and
+equal in length.</li>
+<li data-en="&lt;strong&gt;Parallelogram&lt;/strong&gt;: Opposite sides are parallel and
 equal in length." data-zh="&lt;strong&gt;平行四边形&lt;/strong&gt;：对边平行且相等。"><strong>Parallelogram</strong>: Opposite sides are parallel and
-equal in length.</p></li>
-<li><p data-en="&lt;strong&gt;Rhombus&lt;/strong&gt;: 4 equal sides (it’s a slanted
+equal in length.</li>
+<li data-en="&lt;strong&gt;Rhombus&lt;/strong&gt;: 4 equal sides (it’s a slanted
 square)." data-zh="&lt;strong&gt;菱形&lt;/strong&gt;：四边相等（像倾斜的正方形）。"><strong>Rhombus</strong>: 4 equal sides (it’s a slanted
-square).</p></li>
-<li><p data-en="&lt;strong&gt;Trapezoid&lt;/strong&gt;: At least one pair of opposite sides
+square).</li>
+<li data-en="&lt;strong&gt;Trapezoid&lt;/strong&gt;: At least one pair of opposite sides
 are parallel." data-zh="&lt;strong&gt;梯形&lt;/strong&gt;：至少有一对对边平行。"><strong>Trapezoid</strong>: At least one pair of opposite sides
-are parallel.</p></li>
+are parallel.</li>
 </ul>
 <h4 id="regular-polygon" data-en="Regular polygon" data-zh="正多边形">Regular polygon</h4>
 <p data-en="A regular polygon is a polygon that is both
@@ -288,56 +295,53 @@ measure)." data-zh="正多边形既&lt;strong&gt;等边&lt;/strong&gt;（各边�
 <strong>equiangular</strong> (all interior angles have the same
 measure).</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="An equilateral triangle is a regular polygon." data-zh="等边三角形是正多边形。">An equilateral triangle is a regular polygon.</p></li>
-<li><p data-en="A square is a regular polygon." data-zh="正方形是正多边形。">A square is a regular polygon.</p></li>
-<li><p data-en="A rhombus is &lt;strong&gt;not&lt;/strong&gt; a regular polygon unless it is
+<ul class="kiwi-example-list">
+<li data-en="An equilateral triangle is a regular polygon." data-zh="等边三角形是正多边形。">An equilateral triangle is a regular polygon.</li>
+<li data-en="A square is a regular polygon." data-zh="正方形是正多边形。">A square is a regular polygon.</li>
+<li data-en="A rhombus is &lt;strong&gt;not&lt;/strong&gt; a regular polygon unless it is
 also a square (angles are not always equal)." data-zh="菱形&lt;strong&gt;不是&lt;/strong&gt;正多边形，除非它也是正方形（角不一定都相等）。">A rhombus is <strong>not</strong> a regular polygon unless it is
-also a square (angles are not always equal).</p></li>
+also a square (angles are not always equal).</li>
 </ul>
 <h4 id="circle-terms" data-en="Circle terms" data-zh="圆的术语">Circle terms</h4>
 <p data-en="A circle is the set of all points in a plane that are a fixed
 distance (radius) from a central point." data-zh="圆是平面上到定点（圆心）距离恒定（半径）的所有点的集合。">A circle is the set of all points in a plane that are a fixed
 distance (radius) from a central point.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;strong&gt;Radius (𝑟)&lt;/strong&gt;: The distance from the exact center
+<ul class="kiwi-example-list">
+<li data-en="&lt;strong&gt;Radius (𝑟)&lt;/strong&gt;: The distance from the exact center
 of the circle to any point on its edge." data-zh="&lt;strong&gt;半径 (𝑟)&lt;/strong&gt;：从圆心到圆上任一点的距离。"><strong>Radius (𝑟)</strong>: The distance from the exact center
-of the circle to any point on its edge.</p></li>
-<li><p data-en="&lt;strong&gt;Diameter (𝑑)&lt;/strong&gt;: The distance across the circle
+of the circle to any point on its edge.</li>
+<li data-en="&lt;strong&gt;Diameter (𝑑)&lt;/strong&gt;: The distance across the circle
 through the center. It is always twice the radius (𝑑=2𝑟)." data-zh="&lt;strong&gt;直径 (𝑑)&lt;/strong&gt;：过圆心的弦长，恒为半径的两倍 (𝑑=2𝑟)。"><strong>Diameter (𝑑)</strong>: The distance across the circle
-through the center. It is always twice the radius (𝑑=2𝑟).</p></li>
-<li><p data-en="&lt;strong&gt;Circumference (𝐶)&lt;/strong&gt;: The total distance around the
+through the center. It is always twice the radius (𝑑=2𝑟).</li>
+<li data-en="&lt;strong&gt;Circumference (𝐶)&lt;/strong&gt;: The total distance around the
 outside of the circle (the perimeter)." data-zh="&lt;strong&gt;周长 (𝐶)&lt;/strong&gt;：圆外缘一周的总长度（即圆周长）。"><strong>Circumference (𝐶)</strong>: The total distance around the
-outside of the circle (the perimeter).</p></li>
-<li><p data-en="&lt;strong&gt;Chord&lt;/strong&gt;: A straight line segment whose endpoints
+outside of the circle (the perimeter).</li>
+<li data-en="&lt;strong&gt;Chord&lt;/strong&gt;: A straight line segment whose endpoints
 both lie on the circle. (The diameter is the longest chord)." data-zh="&lt;strong&gt;弦&lt;/strong&gt;：两端都在圆上的线段（直径是最长弦）。"><strong>Chord</strong>: A straight line segment whose endpoints
-both lie on the circle. (The diameter is the longest chord).</p></li>
-<li><p data-en="&lt;strong&gt;Arc&lt;/strong&gt;: A portion or section of the curve that
+both lie on the circle. (The diameter is the longest chord).</li>
+<li data-en="&lt;strong&gt;Arc&lt;/strong&gt;: A portion or section of the curve that
 makes up the circle’s circumference." data-zh="&lt;strong&gt;弧&lt;/strong&gt;：构成圆周的一段曲线。"><strong>Arc</strong>: A portion or section of the curve that
-makes up the circle’s circumference.</p></li>
-<li><p data-en="&lt;strong&gt;Pi (𝑝𝑖)&lt;/strong&gt;: A mathematical constant, approximately
+makes up the circle’s circumference.</li>
+<li data-en="&lt;strong&gt;Pi (𝑝𝑖)&lt;/strong&gt;: A mathematical constant, approximately
 3.14159…, representing the ratio of a circle’s circumference to its
 diameter" data-zh="&lt;strong&gt;圆周率 (𝑝𝑖)&lt;/strong&gt;：数学常数，约 3.14159…，表示圆周长与直径之比"><strong>Pi (𝑝𝑖)</strong>: A mathematical constant, approximately
 3.14159…, representing the ratio of a circle’s circumference to its
-diameter</p></li>
+diameter</li>
 </ul>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{C}{d} = pi&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{C}{d} = pi&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>C</mi><mi>d</mi></mfrac><mo>=</mo><mi>p</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">\frac{C}{d} = pi</annotation></semantics></math></p>
-<h3 id="measurement" data-en="Measurement" data-zh="测量">Measurement</h3>
-<h4 id="perimeter" data-en="Perimeter" data-zh="周长">Perimeter</h4>
+<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{C}{d} = pi&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{C}{d} = pi&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>C</mi><mi>d</mi></mfrac><mo>=</mo><mi>p</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">\frac{C}{d} = pi</annotation></semantics></math></p></div></details><details class="lesson-card"><summary id="measurement" data-en="Measurement" data-zh="测量">Measurement</summary><div class="lesson-card-content"><h4 id="perimeter" data-en="Perimeter" data-zh="周长">Perimeter</h4>
 <p data-en="The perimeter is the total distance around the outside edge of a 2D
 shape. You calculate it by adding up the lengths of all the sides." data-zh="周长是二维图形外边缘一周的总长度，把所有边长相加即可求得。">The perimeter is the total distance around the outside edge of a 2D
 shape. You calculate it by adding up the lengths of all the sides.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="The perimeter of a rectangle with length 5cm and width 3cm is
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="The perimeter of a rectangle with length 5cm and width 3cm is
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;5 + 3 + 5 + 3 = 16&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 (cm)." data-zh="长 5cm、宽 3cm 的矩形周长为
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;5 + 3 + 5 + 3 = 16&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 （cm）。">The perimeter of a rectangle with length 5cm and width 3cm is
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>5</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">5 + 3 + 5 + 3 = 16</annotation></semantics></math>
-(cm).</p>
-</blockquote>
+(cm).</p></div>
 <h4 id="area" data-en="Area" data-zh="面积">Area</h4>
 <p data-en="Area is the measure of the amount of flat space inside a 2D shape,
 measured in square units (e.g.,
@@ -349,28 +353,28 @@ measured in square units (e.g.,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cm</mtext><mn>2</mn></msup><annotation encoding="application/x-tex">\text{cm}^{2}</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">in</mtext><mn>2</mn></msup><annotation encoding="application/x-tex">\text{in}^{2}</annotation></semantics></math>).</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="Rectangle:" data-zh="矩形：">Rectangle:</p></li>
+<ul class="kiwi-example-list">
+<li data-en="Rectangle:" data-zh="矩形：">Rectangle:</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = length \times width&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mtext&gt;长&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;宽&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = length \times width&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>w</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">A = length \times width</annotation></semantics></math></p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(A = lw)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(A = lw)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mi>l</mi><mi>w</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(A = lw)</annotation></semantics></math></p>
 <ul>
-<li><p data-en="Triangle:" data-zh="三角形：">Triangle:</p></li>
+<li data-en="Triangle:" data-zh="三角形：">Triangle:</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = \frac{base \times height}{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mtext&gt;底&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;高&lt;/mtext&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = \frac{base \times height}{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mrow><mi>b</mi><mi>a</mi><mi>s</mi><mi>e</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">A = \frac{base \times height}{2}</annotation></semantics></math></p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left( A = \frac{bh}{2} \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left( A = \frac{bh}{2} \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mfrac><mrow><mi>b</mi><mi>h</mi></mrow><mn>2</mn></mfrac><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">\left( A = \frac{bh}{2} \right)</annotation></semantics></math></p>
 <ul>
-<li><p data-en="Parallelogram:" data-zh="平行四边形：">Parallelogram:</p></li>
+<li data-en="Parallelogram:" data-zh="平行四边形：">Parallelogram:</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = base \times height&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mtext&gt;底&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;高&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = base \times height&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>b</mi><mi>a</mi><mi>s</mi><mi>e</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">A = base \times height</annotation></semantics></math></p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(A = bh)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(A = bh)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mi>b</mi><mi>h</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(A = bh)</annotation></semantics></math></p>
 <ul>
-<li><p data-en="Trapezoid:" data-zh="梯形：">Trapezoid:</p></li>
+<li data-en="Trapezoid:" data-zh="梯形：">Trapezoid:</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = \frac{\left( base_{1} + base_{2} \right) \times height}{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;高&lt;/mtext&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = \frac{\left( base_{1} + base_{2} \right) \times height}{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac><mrow><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mi>a</mi><mi>s</mi><msub><mi>e</mi><mn>1</mn></msub><mo>+</mo><mi>b</mi><mi>a</mi><mi>s</mi><msub><mi>e</mi><mn>2</mn></msub><mo form="postfix" stretchy="true">)</mo></mrow><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">A = \frac{\left( base_{1} + base_{2} \right) \times height}{2}</annotation></semantics></math></p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left( A = \frac{(b1 + b2)h}{2} \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left( A = \frac{(b1 + b2)h}{2} \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mfrac><mrow><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mn>1</mn><mo>+</mo><mi>b</mi><mn>2</mn><mo form="postfix" stretchy="true">)</mo></mrow><mi>h</mi></mrow><mn>2</mn></mfrac><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">\left( A = \frac{(b1 + b2)h}{2} \right)</annotation></semantics></math></p>
 <ul>
-<li><p data-en="Circle:" data-zh="圆：">Circle:</p></li>
+<li data-en="Circle:" data-zh="圆：">Circle:</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;π&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;msup&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;π&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = \pi \times {radius}^{2}\ \left( A = \pi r^{2} \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;π&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;msup&gt;&lt;mrow&gt;&lt;mtext&gt;半径&lt;/mtext&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;π&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A = \pi \times {radius}^{2}\ \left( A = \pi r^{2} \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>π</mi><mo>×</mo><msup><mrow><mi>r</mi><mi>a</mi><mi>d</mi><mi>i</mi><mi>u</mi><mi>s</mi></mrow><mn>2</mn></msup><mspace width="0.222em"></mspace><mrow><mo form="prefix" stretchy="true">(</mo><mi>A</mi><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \pi \times {radius}^{2}\ \left( A = \pi r^{2} \right)</annotation></semantics></math></p>
 <h4 id="surface-area" data-en="Surface area" data-zh="表面积">Surface area</h4>
@@ -380,14 +384,14 @@ finding the area of every single piece, then adding them up." data-zh="表面积
 a 3D object. You imagine unfolding the shape into a flat “net” and
 finding the area of every single piece, then adding them up.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;strong&gt;Prisms&lt;/strong&gt;:" data-zh="&lt;strong&gt;棱柱&lt;/strong&gt;："><strong>Prisms</strong>:</p></li>
+<ul class="kiwi-example-list">
+<li data-en="&lt;strong&gt;Prisms&lt;/strong&gt;:" data-zh="&lt;strong&gt;棱柱&lt;/strong&gt;："><strong>Prisms</strong>:</li>
 </ul>
 <p data-en="Find the area of the front, back, top, bottom, left, and right faces,
 then add them all together." data-zh="分别求前、后、上、下、左、右各面的面积，再全部相加。">Find the area of the front, back, top, bottom, left, and right faces,
 then add them all together.</p>
 <ul>
-<li><p data-en="&lt;strong&gt;Cylinders&lt;/strong&gt;:" data-zh="&lt;strong&gt;圆柱&lt;/strong&gt;："><strong>Cylinders</strong>:</p></li>
+<li data-en="&lt;strong&gt;Cylinders&lt;/strong&gt;:" data-zh="&lt;strong&gt;圆柱&lt;/strong&gt;："><strong>Cylinders</strong>:</li>
 </ul>
 <p data-en="The surface area is the area of the top and bottom circles plus the
 area of the rectangular side (when unrolled)." data-zh="表面积 = 上下两圆面积 + 侧面展开后的矩形面积。">The surface area is the area of the top and bottom circles plus the
@@ -397,18 +401,18 @@ area of the rectangular side (when unrolled).</p>
 occupies, measured in cubic units (e.g., cm3, ft3)." data-zh="体积是立体所占三维空间的大小，用立方单位度量（例如 cm3、ft3）。">Volume is the measure of the amount of 3D space that a solid object
 occupies, measured in cubic units (e.g., cm3, ft3).</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;strong&gt;Cube&lt;/strong&gt;:" data-zh="&lt;strong&gt;正方体&lt;/strong&gt;："><strong>Cube</strong>:</p></li>
+<ul class="kiwi-example-list">
+<li data-en="&lt;strong&gt;Cube&lt;/strong&gt;:" data-zh="&lt;strong&gt;正方体&lt;/strong&gt;："><strong>Cube</strong>:</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;V = side \times side \times side&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mtext&gt;边长&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;边长&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;边长&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;V = side \times side \times side&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi><mo>×</mo><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi><mo>×</mo><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">V = side \times side \times side</annotation></semantics></math></p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left( V = s^{3} \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left( V = s^{3} \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>V</mi><mo>=</mo><msup><mi>s</mi><mn>3</mn></msup><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">\left( V = s^{3} \right)</annotation></semantics></math></p>
 <ul>
-<li><p data-en="&lt;strong&gt;Rectangular Prism&lt;/strong&gt;:" data-zh="&lt;strong&gt;长方体&lt;/strong&gt;："><strong>Rectangular Prism</strong>:</p></li>
+<li data-en="&lt;strong&gt;Rectangular Prism&lt;/strong&gt;:" data-zh="&lt;strong&gt;长方体&lt;/strong&gt;："><strong>Rectangular Prism</strong>:</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;V = length \times width \times height&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mtext&gt;长&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;宽&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;高&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;V = length \times width \times height&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>w</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">V = length \times width \times height</annotation></semantics></math></p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(V = lwh)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(V = lwh)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>V</mi><mo>=</mo><mi>l</mi><mi>w</mi><mi>h</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(V = lwh)</annotation></semantics></math></p>
 <ul>
-<li><p data-en="&lt;strong&gt;Cylinder&lt;/strong&gt;:" data-zh="&lt;strong&gt;圆柱&lt;/strong&gt;："><strong>Cylinder</strong>:</p></li>
+<li data-en="&lt;strong&gt;Cylinder&lt;/strong&gt;:" data-zh="&lt;strong&gt;圆柱&lt;/strong&gt;："><strong>Cylinder</strong>:</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;V = Areaofbase \times height&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;高&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;V = 底面积 \times height&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>A</mi><mi>r</mi><mi>e</mi><mi>a</mi><mi>o</mi><mi>f</mi><mi>b</mi><mi>a</mi><mi>s</mi><mi>e</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">V = Areaofbase \times height</annotation></semantics></math></p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;π&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left( V = \pi r^{2}h \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;π&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left( V = \pi r^{2}h \right)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mi>V</mi><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><mi>h</mi><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">\left( V = \pi r^{2}h \right)</annotation></semantics></math></p>
@@ -419,27 +423,24 @@ assembled." data-zh="展开图是可沿边折叠成立体图形的平面（二�
 a 3D solid figure. It’s like the cardboard layout of a box before it’s
 assembled.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="A net of a cube consists of six squares connected in a cross
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="A net of a cube consists of six squares connected in a cross
 shape." data-zh="正方体的展开图由六个正方形连成十字形。">A net of a cube consists of six squares connected in a cross
-shape.</p>
-</blockquote>
-<h3 id="d-figures" data-en="3D figures" data-zh="立体图形">3D figures</h3>
-<h4 id="prism" data-en="Prism" data-zh="棱柱">Prism</h4>
+shape.</p></div></div></details><details class="lesson-card"><summary id="d-figures" data-en="3D figures" data-zh="立体图形">3D figures</summary><div class="lesson-card-content"><h4 id="prism" data-en="Prism" data-zh="棱柱">Prism</h4>
 <p data-en="A prism is a 3D solid shape with two identical, parallel bases and
 rectangular sides (lateral faces) connecting them. Prisms are named by
 the shape of their base." data-zh="棱柱有两个全等且平行的底面，侧面为矩形，按底面形状命名。">A prism is a 3D solid shape with two identical, parallel bases and
 rectangular sides (lateral faces) connecting them. Prisms are named by
 the shape of their base.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;strong&gt;Rectangular Prism&lt;/strong&gt;: Has rectangular bases (like a
+<ul class="kiwi-example-list">
+<li data-en="&lt;strong&gt;Rectangular Prism&lt;/strong&gt;: Has rectangular bases (like a
 cereal box). Volume is calculated as:" data-zh="&lt;strong&gt;长方体&lt;/strong&gt;：底面为矩形（像麦片盒）。体积计算公式："><strong>Rectangular Prism</strong>: Has rectangular bases (like a
-cereal box). Volume is calculated as:</p></li>
+cereal box). Volume is calculated as:</li>
 </ul>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;V = length \times width \times height&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mtext&gt;长&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;宽&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;高&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;V = length \times width \times height&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>w</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">V = length \times width \times height</annotation></semantics></math></p>
 <ul>
-<li><p data-en="&lt;strong&gt;Triangular Prism&lt;/strong&gt;: Has triangular bases." data-zh="&lt;strong&gt;三棱柱&lt;/strong&gt;：底面为三角形。"><strong>Triangular Prism</strong>: Has triangular bases.</p></li>
+<li data-en="&lt;strong&gt;Triangular Prism&lt;/strong&gt;: Has triangular bases." data-zh="&lt;strong&gt;三棱柱&lt;/strong&gt;：底面为三角形。"><strong>Triangular Prism</strong>: Has triangular bases.</li>
 </ul>
 <h4 id="pyramid" data-en="Pyramid" data-zh="棱锥">Pyramid</h4>
 <p data-en="A pyramid is a 3D shape where the base is a polygon (e.g., square,
@@ -448,25 +449,22 @@ the top called the apex." data-zh="棱锥的底面是多边形（如正方形、
 triangle) and all the sides are triangles that meet at a single point at
 the top called the apex.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="A square pyramid has a square base and four triangular sides." data-zh="四棱锥有正方形底面和四个三角形侧面。">A square pyramid has a square base and four triangular sides.</p>
-</blockquote>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="A square pyramid has a square base and four triangular sides." data-zh="四棱锥有正方形底面和四个三角形侧面。">A square pyramid has a square base and four triangular sides.</p></div>
 <h4 id="cylinder" data-en="Cylinder" data-zh="圆柱">Cylinder</h4>
 <p data-en="A cylinder is a 3D shape with two parallel, congruent circular bases
 and one curved side." data-zh="圆柱有两个平行且全等的圆底面和一个曲面侧面。">A cylinder is a 3D shape with two parallel, congruent circular bases
 and one curved side.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="A can of soup or a roll of paper towel." data-zh="汤罐头或厨房纸卷。">A can of soup or a roll of paper towel.</p>
-</blockquote>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="A can of soup or a roll of paper towel." data-zh="汤罐头或厨房纸卷。">A can of soup or a roll of paper towel.</p></div>
 <h4 id="cone" data-en="Cone" data-zh="圆锥">Cone</h4>
 <p data-en="A cone is a 3D shape that has a flat, circular base and one curved
 side that tapers up to a single point (apex)." data-zh="圆锥有平坦的圆底面和一个向上收至一点（顶点）的曲面侧面。">A cone is a 3D shape that has a flat, circular base and one curved
 side that tapers up to a single point (apex).</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="An ice cream cone or a traffic cone." data-zh="甜筒冰淇淋或交通锥。">An ice cream cone or a traffic cone.</p>
-</blockquote>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="An ice cream cone or a traffic cone." data-zh="甜筒冰淇淋或交通锥。">An ice cream cone or a traffic cone.</p></div>
 <h4 id="sphere" data-en="Sphere" data-zh="球">Sphere</h4>
 <p data-en="A sphere is a perfectly round 3D object where every point on its
 surface is the same distance from its center. It is like a 3D
@@ -474,52 +472,46 @@ circle." data-zh="球是表面各点到球心距离相等的完美圆体，像�
 surface is the same distance from its center. It is like a 3D
 circle.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="A basketball, a marble, or Earth." data-zh="篮球、弹珠或地球。">A basketball, a marble, or Earth.</p>
-</blockquote>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="A basketball, a marble, or Earth." data-zh="篮球、弹珠或地球。">A basketball, a marble, or Earth.</p></div>
 <h4 id="cube" data-en="Cube" data-zh="正方体">Cube</h4>
 <p data-en="A cube is a special type of rectangular prism where all 6 faces are
 identical squares." data-zh="正方体是六个面均为全等正方形的特殊长方体。">A cube is a special type of rectangular prism where all 6 faces are
 identical squares.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="A standard die (dice) or a Rubik’s cube." data-zh="标准骰子或魔方。">A standard die (dice) or a Rubik’s cube.</p>
-</blockquote>
-<h3 id="transformations" data-en="Transformations" data-zh="变换">Transformations</h3>
-<h4 id="translation" data-en="Translation" data-zh="平移">Translation</h4>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="A standard die (dice) or a Rubik’s cube." data-zh="标准骰子或魔方。">A standard die (dice) or a Rubik’s cube.</p></div></div></details><details class="lesson-card"><summary id="transformations" data-en="Transformations" data-zh="变换">Transformations</summary><div class="lesson-card-content"><h4 id="translation" data-en="Translation" data-zh="平移">Translation</h4>
 <p data-en="A translation is a transformation that “&lt;strong&gt;slides&lt;/strong&gt;” a
 shape from one position to another without changing its size, shape, or
 orientation." data-zh="平移是把图形从一个位置&lt;strong&gt;滑动&lt;/strong&gt;到另一位置，不改变大小、形状或方向。">A translation is a transformation that “<strong>slides</strong>” a
 shape from one position to another without changing its size, shape, or
 orientation.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="If you slide a triangle up 3 units and to the right 2 units, you are
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="If you slide a triangle up 3 units and to the right 2 units, you are
 performing a translation." data-zh="若将三角形向上移 3 个单位、向右移 2 个单位，就是在做平移。">If you slide a triangle up 3 units and to the right 2 units, you are
-performing a translation.</p>
-</blockquote>
+performing a translation.</p></div>
 <h4 id="reflection" data-en="Reflection" data-zh="反射">Reflection</h4>
 <p data-en="A reflection is a transformation that “&lt;strong&gt;flips&lt;/strong&gt;” a
 shape over a line (the line of reflection), creating a mirror image." data-zh="反射是把图形沿一条直线（对称轴）&lt;strong&gt;翻转&lt;/strong&gt;，得到镜像。">A reflection is a transformation that “<strong>flips</strong>” a
 shape over a line (the line of reflection), creating a mirror image.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="If you flip a triangle over the y-axis, its new position is a
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="If you flip a triangle over the y-axis, its new position is a
 reflection of the original." data-zh="若把三角形关于 y 轴翻转，新位置是原图形的反射。">If you flip a triangle over the y-axis, its new position is a
-reflection of the original.</p>
-</blockquote>
+reflection of the original.</p></div>
 <h4 id="rotation" data-en="Rotation" data-zh="旋转">Rotation</h4>
 <p data-en="A rotation is a transformation that “&lt;strong&gt;turns&lt;/strong&gt;” a shape
 around a fixed point (the center of rotation). The shape maintains its
 size and form." data-zh="旋转是把图形绕定点（旋转中心）&lt;strong&gt;转动&lt;/strong&gt;，图形保持大小与形状。">A rotation is a transformation that “<strong>turns</strong>” a shape
 around a fixed point (the center of rotation). The shape maintains its
 size and form.</p>
-<p data-en="Examples:" data-zh="示例：">Examples:</p>
-<blockquote>
-<p data-en="A rotation can be clockwise or counter-clockwise, for a specific
+<p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="A rotation can be clockwise or counter-clockwise, for a specific
 number of degrees." data-zh="旋转可按顺时针或逆时针转动指定度数。">A rotation can be clockwise or counter-clockwise, for a specific
 number of degrees.</p>
-</blockquote>
+</div>
 <h4 id="dilation" data-en="Dilation" data-zh="缩放">Dilation</h4>
 <p data-en="A dilation is a transformation that changes the size of a shape but
 not its form. It either enlarges or shrinks the figure based on a scale
@@ -527,11 +519,10 @@ factor from a central point." data-zh="缩放改变图形大小但不改变形�
 not its form. It either enlarges or shrinks the figure based on a scale
 factor from a central point.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="If a shape is dilated by a scale factor of 2, its new dimensions will
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="If a shape is dilated by a scale factor of 2, its new dimensions will
 be twice as large." data-zh="若按伸缩系数 2 缩放，新尺寸变为原来的两倍。">If a shape is dilated by a scale factor of 2, its new dimensions will
-be twice as large.</p>
-</blockquote>
+be twice as large.</p></div>
 <h4 id="congruent-figures" data-en="Congruent figures" data-zh="全等图形">Congruent figures</h4>
 <p data-en="Congruent figures are shapes that have the exact same size and shape.
 One can be perfectly mapped onto the other using a combination of
@@ -539,8 +530,8 @@ translations, reflections, and rotations." data-zh="全等图形大小和形状�
 One can be perfectly mapped onto the other using a combination of
 translations, reflections, and rotations.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="&lt;strong&gt;Squares&lt;/strong&gt;: Two squares are congruent if all four
+<ul class="kiwi-example-list">
+<li data-en="&lt;strong&gt;Squares&lt;/strong&gt;: Two squares are congruent if all four
 corresponding sides have the same length and all four corresponding
 angles measure
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;90^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;strong&gt;正方形&lt;/strong&gt;：对应四边等长且四角均为
@@ -548,17 +539,17 @@ angles measure
 时两正方形全等。"><strong>Squares</strong>: Two squares are congruent if all four
 corresponding sides have the same length and all four corresponding
 angles measure
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math>.</p></li>
-<li><p data-en="&lt;strong&gt;Triangles&lt;/strong&gt;: Two triangles are congruent if their
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math>.</li>
+<li data-en="&lt;strong&gt;Triangles&lt;/strong&gt;: Two triangles are congruent if their
 corresponding side lengths and corresponding angle measures are
 equal." data-zh="&lt;strong&gt;三角形&lt;/strong&gt;：对应边长与对应角相等时两三角形全等。"><strong>Triangles</strong>: Two triangles are congruent if their
 corresponding side lengths and corresponding angle measures are
-equal.</p></li>
-<li><p data-en="&lt;strong&gt;Transformations&lt;/strong&gt;: A shape and its rotated,
+equal.</li>
+<li data-en="&lt;strong&gt;Transformations&lt;/strong&gt;: A shape and its rotated,
 reflected, or translated image are congruent because these
 transformations preserve size and shape." data-zh="&lt;strong&gt;变换&lt;/strong&gt;：图形经旋转、反射或平移后的像与之全等，因为这些变换保持大小和形状。"><strong>Transformations</strong>: A shape and its rotated,
 reflected, or translated image are congruent because these
-transformations preserve size and shape.</p></li>
+transformations preserve size and shape.</li>
 </ul>
 <h4 id="similar-figures" data-en="Similar figures" data-zh="相似图形">Similar figures</h4>
 <p data-en="Similar figures are shapes that have the same form but not
@@ -567,9 +558,9 @@ their corresponding sides are proportional." data-zh="相似图形形状相同�
 necessarily the same size. Their corresponding angles are equal, and
 their corresponding sides are proportional.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="A small square and a large square are similar figures." data-zh="小正方形与大正方形相似。">A small square and a large square are similar figures.</p></li>
-<li><p data-en="A picture and a scaled-down version of it are similar." data-zh="一张照片与其缩小版相似。">A picture and a scaled-down version of it are similar.</p></li>
+<ul class="kiwi-example-list">
+<li data-en="A small square and a large square are similar figures." data-zh="小正方形与大正方形相似。">A small square and a large square are similar figures.</li>
+<li data-en="A picture and a scaled-down version of it are similar." data-zh="一张照片与其缩小版相似。">A picture and a scaled-down version of it are similar.</li>
 </ul>
 <h4 id="line-of-symmetry" data-en="Line of symmetry" data-zh="对称轴">Line of symmetry</h4>
 <p data-en="A line of symmetry is a line that divides a figure into two identical
@@ -578,34 +569,30 @@ up perfectly." data-zh="对称轴把图形分成完全相同的两半；沿此�
 halves. If you fold the figure along this line, both halves will match
 up perfectly.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="An isosceles triangle has one line of symmetry." data-zh="等腰三角形有一条对称轴。">An isosceles triangle has one line of symmetry.</p></li>
-<li><p data-en="A square has four lines of symmetry." data-zh="正方形有四条对称轴。">A square has four lines of symmetry.</p></li>
-</ul>
-<h3 id="position" data-en="Position" data-zh="位置">Position</h3>
-<h4 id="coordinate-plane" data-en="Coordinate plane " data-zh="坐标平面 ">Coordinate plane </h4>
+<ul class="kiwi-example-list">
+<li data-en="An isosceles triangle has one line of symmetry." data-zh="等腰三角形有一条对称轴。">An isosceles triangle has one line of symmetry.</li>
+<li data-en="A square has four lines of symmetry." data-zh="正方形有四条对称轴。">A square has four lines of symmetry.</li>
+</ul></div></details><details class="lesson-card"><summary id="position" data-en="Position" data-zh="位置">Position</summary><div class="lesson-card-content"><h4 id="coordinate-plane" data-en="Coordinate plane " data-zh="坐标平面 ">Coordinate plane </h4>
 <p data-en="A coordinate plane is a flat, 2D surface formed by two intersecting
 number lines, the x-axis and the y-axis, used to locate points." data-zh="坐标平面由相交的 x 轴与 y 轴两条数轴构成，用来确定点的位置。">A coordinate plane is a flat, 2D surface formed by two intersecting
 number lines, the x-axis and the y-axis, used to locate points.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Also called a Cartesian plane or a coordinate grid." data-zh="也称为笛卡尔平面或坐标格。">Also called a Cartesian plane or a coordinate grid.</p>
-</blockquote>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Also called a Cartesian plane or a coordinate grid." data-zh="也称为笛卡尔平面或坐标格。">Also called a Cartesian plane or a coordinate grid.</p></div>
 <h4 id="x-axis-y-axis" data-en="X-axis, y-axis" data-zh="x 轴、y 轴">X-axis, y-axis</h4>
 <ul>
-<li><p data-en="&lt;strong&gt;x-axis&lt;/strong&gt;: The horizontal number line on the
+<li data-en="&lt;strong&gt;x-axis&lt;/strong&gt;: The horizontal number line on the
 coordinate plane." data-zh="&lt;strong&gt;x 轴&lt;/strong&gt;：坐标平面上的水平数轴。"><strong>x-axis</strong>: The horizontal number line on the
-coordinate plane.</p></li>
-<li><p data-en="&lt;strong&gt;y-axis&lt;/strong&gt;: The vertical number line on the
+coordinate plane.</li>
+<li data-en="&lt;strong&gt;y-axis&lt;/strong&gt;: The vertical number line on the
 coordinate plane." data-zh="&lt;strong&gt;y 轴&lt;/strong&gt;：坐标平面上的竖直数轴。"><strong>y-axis</strong>: The vertical number line on the
-coordinate plane.</p></li>
+coordinate plane.</li>
 </ul>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="The x-axis measures horizontal distance, and the y-axis measures
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="The x-axis measures horizontal distance, and the y-axis measures
 vertical distance." data-zh="x 轴度量水平距离，y 轴度量竖直距离。">The x-axis measures horizontal distance, and the y-axis measures
-vertical distance.</p>
-</blockquote>
+vertical distance.</p></div>
 <h4 id="origin" data-en="Origin" data-zh="原点">Origin</h4>
 <p data-en="The origin is the point where the x-axis and the y-axis intersect. It
 is located at the coordinates
@@ -614,9 +601,8 @@ is located at the coordinates
 is located at the coordinates
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo form="postfix" stretchy="true">)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math>.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="The starting point for all measurements on the coordinate plane." data-zh="坐标平面上一切测量的起点。">The starting point for all measurements on the coordinate plane.</p>
-</blockquote>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="The starting point for all measurements on the coordinate plane." data-zh="坐标平面上一切测量的起点。">The starting point for all measurements on the coordinate plane.</p></div>
 <h4 id="ordered-pair" data-en="Ordered pair" data-zh="有序数对">Ordered pair</h4>
 <p data-en="An ordered pair is a set of two numbers, (𝑥,𝑦), that represent a
 single point’s location on the coordinate" data-zh="有序数对是两个数 (𝑥,𝑦)，表示平面上一个点的位置">An ordered pair is a set of two numbers, (𝑥,𝑦), that represent a
@@ -625,11 +611,10 @@ single point’s location on the coordinate</p>
 y-coordinate." data-zh="。第一个数是 x 坐标，第二个是 y 坐标。">plane. The first number is the x-coordinate, and the second is the
 y-coordinate.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="To find the point (3, −2), you move 3 units right on the x-axis and 2
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="To find the point (3, −2), you move 3 units right on the x-axis and 2
 units down on the y-axis." data-zh="要找点 (3, −2)，在 x 轴右移 3 个单位，在 y 轴下移 2 个单位。">To find the point (3, −2), you move 3 units right on the x-axis and 2
-units down on the y-axis.</p>
-</blockquote>
+units down on the y-axis.</p></div>
 <h4 id="quadrants" data-en="Quadrants" data-zh="象限">Quadrants</h4>
 <p data-en="The four regions on the coordinate plane created by the intersection
 of the x-axis and the y-axis. They are numbered using Roman numerals,
@@ -637,19 +622,18 @@ starting from the top right and moving counterclockwise." data-zh="坐标平面�
 of the x-axis and the y-axis. They are numbered using Roman numerals,
 starting from the top right and moving counterclockwise.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="Quadrant I: Positive x and y coordinates e.g., (3,5)." data-zh="第一象限：x、y 均为正，例如 (3,5)。">Quadrant I: Positive x and y coordinates e.g., (3,5).</p></li>
-<li><p data-en="Quadrant II: Negative x and positive y coordinates e.g.,
+<ul class="kiwi-example-list">
+<li data-en="Quadrant I: Positive x and y coordinates e.g., (3,5)." data-zh="第一象限：x、y 均为正，例如 (3,5)。">Quadrant I: Positive x and y coordinates e.g., (3,5).</li>
+<li data-en="Quadrant II: Negative x and positive y coordinates e.g.,
 (−2,4)." data-zh="第二象限：x 为负、y 为正，例如 (−2,4)。">Quadrant II: Negative x and positive y coordinates e.g.,
-(−2,4).</p></li>
-<li><p data-en="Quadrant III: Negative x and y coordinates e.g.,
+(−2,4).</li>
+<li data-en="Quadrant III: Negative x and y coordinates e.g.,
 (−1,−6)." data-zh="第三象限：x、y 均为负，例如 (−1,−6)。">Quadrant III: Negative x and y coordinates e.g.,
-(−1,−6).</p></li>
-<li><p data-en="Quadrant IV: Positive x and negative y coordinates e.g.,
+(−1,−6).</li>
+<li data-en="Quadrant IV: Positive x and negative y coordinates e.g.,
 (7,−2)." data-zh="第四象限：x 为正、y 为负，例如 (7,−2)。">Quadrant IV: Positive x and negative y coordinates e.g.,
-(7,−2).</p></li>
-</ul>
-</article></div></main>
+(7,−2).</li>
+</ul></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -680,6 +664,7 @@ starting from the top right and moving counterclockwise.</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -714,6 +699,39 @@ starting from the top right and moving counterclockwise.</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

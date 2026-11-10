@@ -22,7 +22,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Chance and Probability | KIWI 爱AI Study" data-zh="机会与概率 | KIWI 爱AI Study">Chance and Probability | KIWI 爱AI Study</title>
 <meta content="Explore Chance and Probability in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -76,7 +77,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -164,7 +164,7 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -239,33 +239,33 @@
 <!-- LEVEL-4 BODY START -->
 <div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a href="data-and-graphs.html" data-en="Data and Graphs" data-zh="数据与图表">Data and Graphs</a><a href="measures-of-center.html" data-en="Measures of Center" data-zh="集中趋势">Measures of Center</a><a class="active" href="chance-and-probability.html" data-en="Chance and Probability" data-zh="机会与概率">Chance and Probability</a><a href="mathematical-thinking.html" data-en="← All Mathematical Thinking" data-zh="← 返回数学思维目录">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Chance and Probability" data-zh="Chance and Probability">Chance and Probability</h2><section class="nf-section word-topic kiwi-generated-content"><p data-en="This covers the mathematics of likelihood and randomness." data-zh="这部分讲的是可能性与随机性的数学。">This covers the mathematics of likelihood and randomness.</p><details class="lesson-card" open=""><summary data-en="Outcome" data-zh="结果">Outcome</summary><div class="lesson-card-body"><p data-en="An outcome is a single possible result of an experiment or
 action." data-zh="结果是一次实验或行动中可能出现的单个情形。">An outcome is a single possible result of an experiment or
-action.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul>
-<li><p data-en="When rolling a standard die, getting a ‘3’ is an
+action.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul class="kiwi-example-list">
+<li data-en="When rolling a standard die, getting a ‘3’ is an
 outcome." data-zh="掷一枚标准骰子，得到‘3’就是一个结果。">When rolling a standard die, getting a ‘3’ is an
-outcome.</p></li>
-<li><p data-en="When flipping a coin, getting ‘Heads’ is an outcome." data-zh="抛一枚硬币，得到‘Heads’就是一个结果。">When flipping a coin, getting ‘Heads’ is an outcome.</p></li>
+outcome.</li>
+<li data-en="When flipping a coin, getting ‘Heads’ is an outcome." data-zh="抛一枚硬币，得到‘Heads’就是一个结果。">When flipping a coin, getting ‘Heads’ is an outcome.</li>
 </ul></div></details><details class="lesson-card"><summary data-en="Event" data-zh="事件">Event</summary><div class="lesson-card-body"><p data-en="An event is one specific result or a collection of specific results
 that you are interested in. It is a subset of the sample space." data-zh="事件是你关心的一种或多种具体结果，它是样本空间的子集。">An event is one specific result or a collection of specific results
-that you are interested in. It is a subset of the sample space.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul>
-<li><p data-en="The event “rolling an even number” on a die includes the outcomes
+that you are interested in. It is a subset of the sample space.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul class="kiwi-example-list">
+<li data-en="The event “rolling an even number” on a die includes the outcomes
 {2,4,6}." data-zh="在骰子上“掷出偶数”这一事件包含结果 {2,4,6}。">The event “rolling an even number” on a die includes the outcomes
-{2,4,6}.</p></li>
-<li><p data-en="The event “drawing a red card” from a deck includes all hearts
+{2,4,6}.</li>
+<li data-en="The event “drawing a red card” from a deck includes all hearts
 and diamonds." data-zh="从一副牌中“抽到红牌”这一事件包含所有红桃和方块。">The event “drawing a red card” from a deck includes all hearts
-and diamonds.</p></li>
+and diamonds.</li>
 </ul></div></details><details class="lesson-card"><summary data-en="Sample Space" data-zh="样本空间">Sample Space</summary><div class="lesson-card-body"><p data-en="The sample space is the &lt;strong&gt;complete set of all possible
 outcomes&lt;/strong&gt; for a given experiment or situation." data-zh="样本空间是给定实验或情况下 &lt;strong&gt;所有可能结果的完整集合&lt;/strong&gt;。">The sample space is the <strong>complete set of all possible
-outcomes</strong> for a given experiment or situation.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul>
-<li><p data-en="The sample space for rolling a standard die is
+outcomes</strong> for a given experiment or situation.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><ul class="kiwi-example-list">
+<li data-en="The sample space for rolling a standard die is
 {1,2,3,4,5,6}." data-zh="掷标准骰子的样本空间是 {1,2,3,4,5,6}。">The sample space for rolling a standard die is
-{1,2,3,4,5,6}.</p></li>
-<li><p data-en="The sample space for flipping a coin is {Heads,Tails}." data-zh="抛硬币的样本空间是 {Heads,Tails}。">The sample space for flipping a coin is {Heads,Tails}.</p></li>
+{1,2,3,4,5,6}.</li>
+<li data-en="The sample space for flipping a coin is {Heads,Tails}." data-zh="抛硬币的样本空间是 {Heads,Tails}。">The sample space for flipping a coin is {Heads,Tails}.</li>
 </ul></div></details><details class="lesson-card"><summary data-en="Probability" data-zh="概率">Probability</summary><div class="lesson-card-body"><p data-en="Probability is a measure of how likely an event is to occur. It is
 expressed as a number between 0 (impossible) and 1 (certain), or as a
 percentage between 0% and 100%." data-zh="概率衡量一个事件发生的可能性有多大。用 0（不可能）到 1（必然）之间的数表示，或用 0% 到 100% 的百分比表示。">Probability is a measure of how likely an event is to occur. It is
 expressed as a number between 0 (impossible) and 1 (certain), or as a
-percentage between 0% and 100%.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="The probability of rolling a ‘4’ on a die is 16 or approximately
+percentage between 0% and 100%.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="The probability of rolling a ‘4’ on a die is 16 or approximately
 16.7%." data-zh="掷骰子得到‘4’的概率是 16，约为 16.7%。">The probability of rolling a ‘4’ on a die is 16 or approximately
 16.7%.</p>
 </blockquote></div></details><details class="lesson-card"><summary data-en="Theoretical Probability" data-zh="理论概率">Theoretical Probability</summary><div class="lesson-card-body"><p data-en="Theoretical probability (math-based) is the likelihood of an event
@@ -274,16 +274,16 @@ all outcomes are equally likely. It is what &lt;strong&gt;should&lt;/strong&gt;
 happen." data-zh="理论概率（基于数学）是在理想条件下、假设各结果等可能时，根据数学推理得出的事件发生可能性。它表示 &lt;strong&gt;应该&lt;/strong&gt; 发生什么。">Theoretical probability (math-based) is the likelihood of an event
 happening based on mathematical reasoning and ideal conditions, assuming
 all outcomes are equally likely. It is what <strong>should</strong>
-happen.</p><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Event&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Number of favorable outcomes&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Total number of outcomes in sample space&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{Event} \right) = \frac{\text{Number~of~favorable~outcomes}}{\text{Total~number~of~outcomes~in~sample~space}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;事件&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;有利结果个数&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;样本空间的结果总数&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{事件} \right) = \frac{\text{有利结果个数}}{\text{样本空间的结果总数}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo form="prefix" stretchy="true">(</mo><mtext mathvariant="normal">Event</mtext><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mtext mathvariant="normal">Number of favorable outcomes</mtext><mtext mathvariant="normal">Total number of outcomes in sample space</mtext></mfrac></mrow><annotation encoding="application/x-tex">P\left( \text{Event} \right) = \frac{\text{Number~of~favorable~outcomes}}{\text{Total~number~of~outcomes~in~sample~space}}</annotation></semantics></math></div><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="The theoretical probability of flipping a coin and getting heads is
+happen.</p><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Event&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Number of favorable outcomes&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Total number of outcomes in sample space&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{Event} \right) = \frac{\text{Number~of~favorable~outcomes}}{\text{Total~number~of~outcomes~in~sample~space}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;事件&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;有利结果个数&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;样本空间的结果总数&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{事件} \right) = \frac{\text{有利结果个数}}{\text{样本空间的结果总数}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo form="prefix" stretchy="true">(</mo><mtext mathvariant="normal">Event</mtext><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mtext mathvariant="normal">Number of favorable outcomes</mtext><mtext mathvariant="normal">Total number of outcomes in sample space</mtext></mfrac></mrow><annotation encoding="application/x-tex">P\left( \text{Event} \right) = \frac{\text{Number~of~favorable~outcomes}}{\text{Total~number~of~outcomes~in~sample~space}}</annotation></semantics></math></div><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="The theoretical probability of flipping a coin and getting heads is
 12 (one favorable outcome out of two total outcomes)." data-zh="抛硬币得到正面的理论概率是 12（2 种结果中有 1 种有利结果）。">The theoretical probability of flipping a coin and getting heads is
 12 (one favorable outcome out of two total outcomes).</p>
 </blockquote></div></details><details class="lesson-card"><summary data-en="Experimental Probability" data-zh="实验概率">Experimental Probability</summary><div class="lesson-card-body"><p data-en="Experimental probability (data-based) is the likelihood of an event
 happening based on actual data collected from performing an experiment
 or test. It is what &lt;strong&gt;actually&lt;/strong&gt; happens in practice." data-zh="实验概率（基于数据）是根据实际做实验或测试所收集的数据得出的事件发生可能性。它表示实践中 &lt;strong&gt;实际&lt;/strong&gt; 发生什么。">Experimental probability (data-based) is the likelihood of an event
 happening based on actual data collected from performing an experiment
-or test. It is what <strong>actually</strong> happens in practice.</p><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Event&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Number of times the event occurred&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Total number of trials in the experiment&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{Event} \right) = \frac{\text{Number~of~times~the~event~occurred}}{\text{Total~number~of~trials~in~the~experiment}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;事件&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;事件发生次数&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;试验总次数&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{事件} \right) = \frac{\text{事件发生次数}}{\text{试验总次数}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo form="prefix" stretchy="true">(</mo><mtext mathvariant="normal">Event</mtext><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mtext mathvariant="normal">Number of times the event occurred</mtext><mtext mathvariant="normal">Total number of trials in the experiment</mtext></mfrac></mrow><annotation encoding="application/x-tex">P\left( \text{Event} \right) = \frac{\text{Number~of~times~the~event~occurred}}{\text{Total~number~of~trials~in~the~experiment}}</annotation></semantics></math></div><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="If you flip a coin 100 times and get heads 48 times, the experimental
+or test. It is what <strong>actually</strong> happens in practice.</p><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Event&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Number of times the event occurred&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Total number of trials in the experiment&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{Event} \right) = \frac{\text{Number~of~times~the~event~occurred}}{\text{Total~number~of~trials~in~the~experiment}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;事件&lt;/mtext&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;事件发生次数&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;试验总次数&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P\left( \text{事件} \right) = \frac{\text{事件发生次数}}{\text{试验总次数}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo form="prefix" stretchy="true">(</mo><mtext mathvariant="normal">Event</mtext><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mtext mathvariant="normal">Number of times the event occurred</mtext><mtext mathvariant="normal">Total number of trials in the experiment</mtext></mfrac></mrow><annotation encoding="application/x-tex">P\left( \text{Event} \right) = \frac{\text{Number~of~times~the~event~occurred}}{\text{Total~number~of~trials~in~the~experiment}}</annotation></semantics></math></div><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="If you flip a coin 100 times and get heads 48 times, the experimental
 probability of heads is 48,100 or 48%." data-zh="如果你抛硬币 100 次，其中 48 次是正面，则正面的实验概率是 48,100 或 48%。">If you flip a coin 100 times and get heads 48 times, the experimental
 probability of heads is 48,100 or 48%.</p>
 </blockquote></div></details><details class="lesson-card"><summary data-en="Certain, Likely, Unlikely,
@@ -292,34 +292,34 @@ Impossible" data-zh="必然、很可能、不太可能、
 Impossible</summary><div class="lesson-card-body"><p data-en="These are words used to describe probability using a scale of
 likelihood:" data-zh="这些词用可能性大小来描述概率：">These are words used to describe probability using a scale of
 likelihood:</p><ul>
-<li><p data-en="&lt;strong&gt;Impossible&lt;/strong&gt; (Probability = 0): The event will
+<li data-en="&lt;strong&gt;Impossible&lt;/strong&gt; (Probability = 0): The event will
 never happen (e.g., rolling a 7 on a 6-sided die)." data-zh="&lt;strong&gt;不可能&lt;/strong&gt;（概率 = 0）：事件永远不会发生（例如在 6 面骰子上掷出 7）。"><strong>Impossible</strong> (Probability = 0): The event will
-never happen (e.g., rolling a 7 on a 6-sided die).</p></li>
-<li><p data-en="&lt;strong&gt;Unlikely&lt;/strong&gt; (Probability &amp;lt; 0.5): The event has a
+never happen (e.g., rolling a 7 on a 6-sided die).</li>
+<li data-en="&lt;strong&gt;Unlikely&lt;/strong&gt; (Probability &amp;lt; 0.5): The event has a
 small chance of happening (e.g., winning the lottery)." data-zh="&lt;strong&gt;不太可能&lt;/strong&gt;（概率 &amp;lt; 0.5）：事件发生的机会很小（例如中彩票）。"><strong>Unlikely</strong> (Probability &lt; 0.5): The event has a
-small chance of happening (e.g., winning the lottery).</p></li>
-<li><p data-en="&lt;strong&gt;Likely&lt;/strong&gt; (Probability &amp;gt; 0.5): The event will
+small chance of happening (e.g., winning the lottery).</li>
+<li data-en="&lt;strong&gt;Likely&lt;/strong&gt; (Probability &amp;gt; 0.5): The event will
 probably happen (e.g., the sun rising tomorrow)." data-zh="&lt;strong&gt;很可能&lt;/strong&gt;（概率 &amp;gt; 0.5）：事件很可能会发生（例如明天太阳升起）。"><strong>Likely</strong> (Probability &gt; 0.5): The event will
-probably happen (e.g., the sun rising tomorrow).</p></li>
-<li><p data-en="&lt;strong&gt;Certain&lt;/strong&gt; (Probability = 1): The event will
+probably happen (e.g., the sun rising tomorrow).</li>
+<li data-en="&lt;strong&gt;Certain&lt;/strong&gt; (Probability = 1): The event will
 definitely happen (e.g., rolling a number less than 7 on a 6-sided
 die)." data-zh="&lt;strong&gt;必然&lt;/strong&gt;（概率 = 1）：事件一定会发生（例如在 6 面骰子上掷出小于 7 的数）。"><strong>Certain</strong> (Probability = 1): The event will
 definitely happen (e.g., rolling a number less than 7 on a 6-sided
-die).</p></li>
+die).</li>
 </ul></div></details><details class="lesson-card"><summary data-en="Independent and Dependent
 Events" data-zh="独立事件与
 相关事件">Independent and Dependent
 Events</summary><div class="lesson-card-body"><h4 id="independent-events" data-en="Independent events" data-zh="独立事件">Independent events</h4><p data-en="Events where the outcome of the first event does &lt;strong&gt;not&lt;/strong&gt;
 affect the outcome of the second event." data-zh="独立事件中，第一个事件的结果 &lt;strong&gt;不会&lt;/strong&gt; 影响第二个事件的结果。">Events where the outcome of the first event does <strong>not</strong>
-affect the outcome of the second event.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><blockquote>
-<p data-en="Rolling a die and then flipping a coin." data-zh="先掷骰子，再抛硬币。">Rolling a die and then flipping a coin.</p>
-</blockquote><h4 id="dependent-events" data-en="Dependent events" data-zh="相关事件">Dependent events</h4><p data-en="Events where the outcome of the first event &lt;strong&gt;does&lt;/strong&gt;
+affect the outcome of the second event.</p><p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p data-en="Rolling a die and then flipping a coin." data-zh="先掷骰子，再抛硬币。">Rolling a die and then flipping a coin.</p></div><h4 id="dependent-events" data-en="Dependent events" data-zh="相关事件">Dependent events</h4><p data-en="Events where the outcome of the first event &lt;strong&gt;does&lt;/strong&gt;
 affect the outcome of the second event." data-zh="相关事件中，第一个事件的结果 &lt;strong&gt;会&lt;/strong&gt; 影响第二个事件的结果。">Events where the outcome of the first event <strong>does</strong>
-affect the outcome of the second event.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Drawing two cards from a deck &lt;strong&gt;without&lt;/strong&gt; replacement
+affect the outcome of the second event.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-single-example kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Drawing two cards from a deck &lt;strong&gt;without&lt;/strong&gt; replacement
 (the second draw depends on what was drawn first)." data-zh="从一副牌中抽两张牌 &lt;strong&gt;不放回&lt;/strong&gt;（第二次抽取取决于第一次抽到什么）。">Drawing two cards from a deck <strong>without</strong> replacement
 (the second draw depends on what was drawn first).</p>
-</blockquote></div></details></section></article></div>
+</div></div></details></section></article></div>
 <!-- LEVEL-4 BODY END -->
 </main>
 <footer class="site-footer">
@@ -352,6 +352,7 @@ affect the outcome of the second event.</p><p data-en="Example:" data-zh="示例
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -386,6 +387,8 @@ affect the outcome of the second event.</p><p data-en="Example:" data-zh="示例
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 <script id="kiwi-accordion-controls-script">
 (function(){

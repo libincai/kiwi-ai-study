@@ -9,7 +9,8 @@
 Functions | KIWI 爱AI Study" data-zh="线性函数与非线性函数 | KIWI 爱AI Study">Linear vs. Non-linear
 Functions | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -35,7 +36,7 @@ Functions | KIWI 爱AI Study</title>
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -43,8 +44,7 @@ Functions | KIWI 爱AI Study</title>
 .foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
 </style><style>
 /* Math Foundations Word info and Ontario curriculum panels */
-.kiwi-word-info-panel,.kiwi-curriculum-panel{background:#fff8e9;border:1px solid #f0d58d;border-radius:12px;padding:16px 20px;margin:20px 0;color:#4b3d2b;text-align:left;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere}
-.kiwi-word-info-panel .kiwi-panel-heading{display:flex;align-items:center;gap:9px;color:#895b0e;font-weight:700;margin:0 0 9px}
+/* Tip panel chrome: global styles.css (gold 3D left rail) */
 .kiwi-word-info-panel .kiwi-panel-icon{color:#c18a19;font-size:18px;line-height:1;flex-shrink:0}
 .kiwi-curriculum-panel .kiwi-panel-heading{font-weight:700;color:#895b0e;margin:0 0 10px}
 .kiwi-word-info-panel p,.kiwi-curriculum-panel p{margin:0 0 10px;text-align:left}
@@ -66,6 +66,25 @@ Functions | KIWI 爱AI Study</title>
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -119,26 +138,23 @@ graph shape. Three useful types to compare are linear, quadratic, and
 constant functions." data-zh="函数可按代数形式、次数和图像形状分类；常比较的三类是线性、二次和常数函数。">Functions can be classified by their algebraic form, degree, and
 graph shape. Three useful types to compare are linear, quadratic, and
 constant functions.</p>
-<h3 id="linear-function" data-en="Linear Function" data-zh="线性函数">Linear Function</h3>
-<p data-en="A linear function has the form" data-zh="线性函数的形式为">A linear function has the form</p>
+<details class="lesson-card"><summary id="linear-function" data-en="Linear Function" data-zh="线性函数">Linear Function</summary><div class="lesson-card-content"><p data-en="A linear function has the form" data-zh="线性函数的形式为">A linear function has the form</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)\  = \ mx\  + \ b,\ \ m\  \neq \ 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)\  = \ mx\  + \ b,\ \ m\  \neq \ 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mi>m</mi><mi>x</mi><mspace width="0.222em"></mspace><mo>+</mo><mspace width="0.222em"></mspace><mi>b</mi><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>m</mi><mspace width="0.222em"></mspace><mo>≠</mo><mspace width="0.222em"></mspace><mn>0</mn></mrow><annotation encoding="application/x-tex">f(x)\  = \ mx\  + \ b,\ \ m\  \neq \ 0</annotation></semantics></math></p>
 <ul>
-<li><p data-en="&lt;strong&gt;Degree:&lt;/strong&gt; 1." data-zh="&lt;strong&gt;次数：&lt;/strong&gt;1。"><strong>Degree:</strong> 1.</p></li>
-<li><p data-en="&lt;strong&gt;Table:&lt;/strong&gt; For equally spaced
+<li data-en="&lt;strong&gt;Degree:&lt;/strong&gt; 1." data-zh="&lt;strong&gt;次数：&lt;/strong&gt;1。"><strong>Degree:</strong> 1.</li>
+<li data-en="&lt;strong&gt;Table:&lt;/strong&gt; For equally spaced
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;-values,
 the first differences are constant." data-zh="&lt;strong&gt;表格：&lt;/strong&gt;当
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 值等距时，一阶差分恒定。"><strong>Table:</strong> For equally spaced
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-values,
-the first differences are constant.</p></li>
-<li><p data-en="&lt;strong&gt;Graph:&lt;/strong&gt; A sloping straight line." data-zh="&lt;strong&gt;图像：&lt;/strong&gt;一条倾斜的直线。"><strong>Graph:</strong> A sloping straight line.</p></li>
-</ul>
-<h3 id="quadratic-function" data-en="Quadratic Function" data-zh="二次函数">Quadratic Function</h3>
-<p data-en="A quadratic function has the form" data-zh="二次函数的形式为">A quadratic function has the form</p>
+the first differences are constant.</li>
+<li data-en="&lt;strong&gt;Graph:&lt;/strong&gt; A sloping straight line." data-zh="&lt;strong&gt;图像：&lt;/strong&gt;一条倾斜的直线。"><strong>Graph:</strong> A sloping straight line.</li>
+</ul></div></details><details class="lesson-card"><summary id="quadratic-function" data-en="Quadratic Function" data-zh="二次函数">Quadratic Function</summary><div class="lesson-card-content"><p data-en="A quadratic function has the form" data-zh="二次函数的形式为">A quadratic function has the form</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x) = \ ax^{2}\  + \ bx\  + \ c,\ \ a\  \neq \ 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x) = \ ax^{2}\  + \ bx\  + \ c,\ \ a\  \neq \ 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mspace width="0.222em"></mspace><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mspace width="0.222em"></mspace><mo>+</mo><mspace width="0.222em"></mspace><mi>b</mi><mi>x</mi><mspace width="0.222em"></mspace><mo>+</mo><mspace width="0.222em"></mspace><mi>c</mi><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>a</mi><mspace width="0.222em"></mspace><mo>≠</mo><mspace width="0.222em"></mspace><mn>0</mn></mrow><annotation encoding="application/x-tex">f(x) = \ ax^{2}\  + \ bx\  + \ c,\ \ a\  \neq \ 0</annotation></semantics></math></p>
 <ul>
-<li><p data-en="&lt;strong&gt;Degree:&lt;/strong&gt; 2." data-zh="&lt;strong&gt;次数：&lt;/strong&gt;2。"><strong>Degree:</strong> 2.</p></li>
-<li><p data-en="&lt;strong&gt;Table:&lt;/strong&gt; For equally spaced
+<li data-en="&lt;strong&gt;Degree:&lt;/strong&gt; 2." data-zh="&lt;strong&gt;次数：&lt;/strong&gt;2。"><strong>Degree:</strong> 2.</li>
+<li data-en="&lt;strong&gt;Table:&lt;/strong&gt; For equally spaced
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;-values,
 the first differences change, but the second differences are constant
 and non-zero." data-zh="&lt;strong&gt;表格：&lt;/strong&gt;当
@@ -146,10 +162,10 @@ and non-zero." data-zh="&lt;strong&gt;表格：&lt;/strong&gt;当
 值等距时，一阶差分会变，但二阶差分恒定且非零。"><strong>Table:</strong> For equally spaced
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-values,
 the first differences change, but the second differences are constant
-and non-zero.</p></li>
-<li><p data-en="&lt;strong&gt;Graph:&lt;/strong&gt; A parabola (U-shape or inverted
+and non-zero.</li>
+<li data-en="&lt;strong&gt;Graph:&lt;/strong&gt; A parabola (U-shape or inverted
 U-shape)." data-zh="&lt;strong&gt;图像：&lt;/strong&gt;抛物线（U 形或倒 U 形）。"><strong>Graph:</strong> A parabola (U-shape or inverted
-U-shape).</p></li>
+U-shape).</li>
 </ul>
 <p data-en="For example, for
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;²&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)\  = \ x²&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
@@ -164,9 +180,7 @@ increases by 1, the second differences are" data-zh="例如，对于
 when
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
 increases by 1, the second differences are</p>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;²&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta ²\ y\  = \ 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;²&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta ²\ y\  = \ 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>²</mi><mspace width="0.222em"></mspace><mi>y</mi><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mn>2</mn></mrow><annotation encoding="application/x-tex">\Delta ²\ y\  = \ 2</annotation></semantics></math></p>
-<h3 id="constant-function" data-en="Constant Function" data-zh="常数函数">Constant Function</h3>
-<p data-en="A constant function has the form" data-zh="常数函数的形式为">A constant function has the form</p>
+<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;²&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta ²\ y\  = \ 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;²&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta ²\ y\  = \ 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>²</mi><mspace width="0.222em"></mspace><mi>y</mi><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mn>2</mn></mrow><annotation encoding="application/x-tex">\Delta ²\ y\  = \ 2</annotation></semantics></math></p></div></details><details class="lesson-card"><summary id="constant-function" data-en="Constant Function" data-zh="常数函数">Constant Function</summary><div class="lesson-card-content"><p data-en="A constant function has the form" data-zh="常数函数的形式为">A constant function has the form</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)\  = \ c&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)\  = \ c&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mi>c</mi></mrow><annotation encoding="application/x-tex">f(x)\  = \ c</annotation></semantics></math></p>
 <p data-en="Its output does not change as
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -176,9 +190,9 @@ changes." data-zh="当
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
 changes.</p>
 <ul>
-<li><p data-en="&lt;strong&gt;Rate of change:&lt;/strong&gt; 0." data-zh="&lt;strong&gt;变化率：&lt;/strong&gt;0。"><strong>Rate of change:</strong> 0.</p></li>
-<li><p data-en="&lt;strong&gt;Graph:&lt;/strong&gt; A horizontal straight line." data-zh="&lt;strong&gt;图像：&lt;/strong&gt;一条水平直线。"><strong>Graph:</strong> A horizontal straight line.</p></li>
-<li><p data-en="&lt;strong&gt;Degree:&lt;/strong&gt; 0 if
+<li data-en="&lt;strong&gt;Rate of change:&lt;/strong&gt; 0." data-zh="&lt;strong&gt;变化率：&lt;/strong&gt;0。"><strong>Rate of change:</strong> 0.</li>
+<li data-en="&lt;strong&gt;Graph:&lt;/strong&gt; A horizontal straight line." data-zh="&lt;strong&gt;图像：&lt;/strong&gt;一条水平直线。"><strong>Graph:</strong> A horizontal straight line.</li>
+<li data-en="&lt;strong&gt;Degree:&lt;/strong&gt; 0 if
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;c\  \neq \ 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;;
 undefined if
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;c\  = \ 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;strong&gt;次数：&lt;/strong&gt;若
@@ -189,7 +203,7 @@ undefined if
 则无定义。"><strong>Degree:</strong> 0 if
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mspace width="0.222em"></mspace><mo>≠</mo><mspace width="0.222em"></mspace><mn>0</mn></mrow><annotation encoding="application/x-tex">c\  \neq \ 0</annotation></semantics></math>;
 undefined if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mn>0</mn></mrow><annotation encoding="application/x-tex">c\  = \ 0</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mn>0</mn></mrow><annotation encoding="application/x-tex">c\  = \ 0</annotation></semantics></math>.</li>
 </ul>
 <aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><p data-en="&lt;strong&gt;The Zero Polynomial&lt;/strong&gt; is" data-zh="&lt;strong&gt;零多项式&lt;/strong&gt;是"><strong>The Zero Polynomial</strong> is</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)\  = \ 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f(x)\  = \ 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mn>0</mn></mrow><annotation encoding="application/x-tex">f(x)\  = \ 0</annotation></semantics></math></p>
@@ -201,9 +215,7 @@ its degree is undefined under the standard convention.</p>
 0.</p>
 <p data-en="Remember: The zero polynomial is still a constant function, even
 though its degree is undefined." data-zh="请记住：零多项式仍是常数函数，即使其次数无定义。">Remember: The zero polynomial is still a constant function, even
-though its degree is undefined.</p></aside>
-<h3 id="comparison-table" data-en="Comparison Table" data-zh="对比表格">Comparison Table</h3>
-<table>
+though its degree is undefined.</p></aside></div></details><details class="lesson-card"><summary id="comparison-table" data-en="Comparison Table" data-zh="对比表格">Comparison Table</summary><div class="lesson-card-content"><table>
 <colgroup>
 <col style="width: 25%"/>
 <col style="width: 23%"/>
@@ -258,26 +270,26 @@ though its degree is undefined.</p></aside>
 </tbody>
 </table>
 <ol type="1">
-<li><p data-en="Linear requires
+<li data-en="Linear requires
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;m \neq 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="线性函数要求
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;m \neq 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">Linear requires
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m \neq 0</annotation></semantics></math>.</p></li>
-<li><p data-en="quadratic requires
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m \neq 0</annotation></semantics></math>.</li>
+<li data-en="quadratic requires
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a \neq 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="二次函数要求
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a \neq 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">quadratic requires
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a \neq 0</annotation></semantics></math>.</p></li>
-<li><p data-en="A non-zero constant has degree 0; the zero polynomial has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a \neq 0</annotation></semantics></math>.</li>
+<li data-en="A non-zero constant has degree 0; the zero polynomial has
 undefined degree." data-zh="非零常数的次数为 0；零多项式的次数无定义。">A non-zero constant has degree 0; the zero polynomial has
-undefined degree.</p></li>
+undefined degree.</li>
 </ol>
 <p data-en="&lt;strong&gt;x¹ → line. x² → curve. y = c → flat.&lt;/strong&gt;" data-zh="&lt;strong&gt;x¹ → 直线。x² → 曲线。y = c → 水平。&lt;/strong&gt;"><strong>x¹ → line. x² → curve. y = c → flat.</strong></p>
 <aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><p data-en="&lt;strong&gt;Quadratic: y = x²&lt;/strong&gt;" data-zh="&lt;strong&gt;二次：y = x²&lt;/strong&gt;"><strong>Quadratic: y = x²</strong></p>
 <p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image12.webp" style="width:2.15in;height:2.79656in"/></p>
-<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div>x²</aside></aside>
+</aside>
+<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><p data-en="x²" data-zh="x²">x²</p></aside>
 <p data-en="Use the figure for a quick check: degree, table pattern, or graph
 shape." data-zh="用图示快速判断：次数、表格规律或图像形状。">Use the figure for a quick check: degree, table pattern, or graph
-shape.</p>
-</article></div></main>
+shape.</p></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -308,6 +320,7 @@ shape.</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -342,6 +355,39 @@ shape.</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

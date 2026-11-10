@@ -8,6 +8,7 @@
 <title data-en="Division Rules (2–9) | KIWI 爱AI Study" data-zh="整除规则（2–9） | KIWI 爱AI Study">Division Rules (2–9) | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
 <link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -33,7 +34,7 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -53,6 +54,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -102,16 +122,13 @@ can be divided evenly by 2–9.</p>
 <p data-en="Each rule includes a simple reason that makes sense using
 &lt;strong&gt;place value&lt;/strong&gt;." data-zh="每条规则都用&lt;strong&gt;位值&lt;/strong&gt;给出简单解释。">Each rule includes a simple reason that makes sense using
 <strong>place value</strong>.</p>
-<h3 id="divisible-by-2" data-en="Divisible by 2" data-zh="能被 2 整除">Divisible by 2</h3>
-<p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The last digit is even (0, 2, 4, 6, 8)." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;末位是偶数（0, 2, 4, 6, 8）。"><strong>Rule:</strong> The last digit is even (0, 2, 4, 6, 8).</p>
+<details class="lesson-card"><summary id="divisible-by-2" data-en="Divisible by 2" data-zh="能被 2 整除">Divisible by 2</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The last digit is even (0, 2, 4, 6, 8)." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;末位是偶数（0, 2, 4, 6, 8）。"><strong>Rule:</strong> The last digit is even (0, 2, 4, 6, 8).</p>
 <p data-en="&lt;strong&gt;Why:&lt;/strong&gt; Every ten is 2 × 5, so tens, hundreds, … are
 all divisible by 2 already. Only the &lt;strong&gt;ones&lt;/strong&gt; digit can
 cause a remainder — if it’s even, no remainder." data-zh="&lt;strong&gt;原理：&lt;/strong&gt;每个十是 2 × 5，所以十位、百位…已能被 2 整除。只有&lt;strong&gt;个位&lt;/strong&gt;可能造成余数 — 若为偶数则无余数。"><strong>Why:</strong> Every ten is 2 × 5, so tens, hundreds, … are
 all divisible by 2 already. Only the <strong>ones</strong> digit can
 cause a remainder — if it’s even, no remainder.</p>
-<p data-en="Examples: 2, 4, 6, 8, 22, 568, 5678" data-zh="例如：2, 4, 6, 8, 22, 568, 5678">Examples: 2, 4, 6, 8, 22, 568, 5678</p>
-<h3 id="divisible-by-3" data-en="Divisible by 3" data-zh="能被 3 整除">Divisible by 3</h3>
-<p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The sum of the digits is divisible by 3." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;各位数字之和能被 3 整除。"><strong>Rule:</strong> The sum of the digits is divisible by 3.</p>
+<p data-en="Examples: 2, 4, 6, 8, 22, 568, 5678" data-zh="例如：2, 4, 6, 8, 22, 568, 5678">Examples: 2, 4, 6, 8, 22, 568, 5678</p></div></details><details class="lesson-card"><summary id="divisible-by-3" data-en="Divisible by 3" data-zh="能被 3 整除">Divisible by 3</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The sum of the digits is divisible by 3." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;各位数字之和能被 3 整除。"><strong>Rule:</strong> The sum of the digits is divisible by 3.</p>
 <p data-en="&lt;strong&gt;Why:&lt;/strong&gt; Multiples of 10 can be written as a multiple of
 9 plus 1:" data-zh="&lt;strong&gt;原理：&lt;/strong&gt;10 的倍数可写成 9 的倍数加 1："><strong>Why:</strong> Multiples of 10 can be written as a multiple of
 9 plus 1:</p>
@@ -143,9 +160,7 @@ the digits is divisible by 3.</p>
 3 plus the digit itself. The multiples of 3 do not affect divisibility
 by 3, so we only need to check the sum of the digits." data-zh="&lt;strong&gt;要点&lt;/strong&gt;：每位贡献「3 的倍数 + 该位数字」。3 的倍数不影响能否被 3 整除，只看数字和。"><strong>Key idea</strong>: Each place value contributes a multiple of
 3 plus the digit itself. The multiples of 3 do not affect divisibility
-by 3, so we only need to check the sum of the digits.</p>
-<h3 id="divisible-by-4" data-en="Divisible by 4" data-zh="能被 4 整除">Divisible by 4</h3>
-<p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The last two digits form a number divisible by
+by 3, so we only need to check the sum of the digits.</p></div></details><details class="lesson-card"><summary id="divisible-by-4" data-en="Divisible by 4" data-zh="能被 4 整除">Divisible by 4</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The last two digits form a number divisible by
 4." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;末两位组成的数能被 4 整除。"><strong>Rule:</strong> The last two digits form a number divisible by
 4.</p>
 <p data-en="&lt;strong&gt;Why:&lt;/strong&gt; 100, 200, 300, and so on are all divisible by
@@ -156,29 +171,23 @@ whole number is divisible by 4." data-zh="&lt;strong&gt;原理：&lt;/strong&gt;
 already divisible by 4. Only the last two digits determine whether the
 whole number is divisible by 4.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;216&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;3,216 \div 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;216&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;3,216 \div 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 is exact because the last two digits are 16, and
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;16 \div 4 = 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;216&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;3,216 \div 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 能整除，因为末两位是 16，且
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;16 \div 4 = 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>,</mo><mn>216</mn><mo>÷</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">3,216 \div 4</annotation></semantics></math>
 is exact because the last two digits are 16, and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn><mo>÷</mo><mn>4</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">16 \div 4 = 4</annotation></semantics></math>.</p>
-</blockquote>
-<h3 id="divisible-by-5" data-en="Divisible by 5" data-zh="能被 5 整除">Divisible by 5</h3>
-<p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The last digit is 0 or 5." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;末位是 0 或 5。"><strong>Rule:</strong> The last digit is 0 or 5.</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn><mo>÷</mo><mn>4</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">16 \div 4 = 4</annotation></semantics></math>.</p></div></div></details><details class="lesson-card"><summary id="divisible-by-5" data-en="Divisible by 5" data-zh="能被 5 整除">Divisible by 5</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The last digit is 0 or 5." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;末位是 0 或 5。"><strong>Rule:</strong> The last digit is 0 or 5.</p>
 <p data-en="&lt;strong&gt;Why:&lt;/strong&gt; Every ten ends with 0 and is 5 × 2. Only a last
 digit of 0 or 5 fits into groups of 5." data-zh="&lt;strong&gt;原理：&lt;/strong&gt;每个十以 0 结尾，是 5 × 2。只有末位 0 或 5 能组成 5 的整组。"><strong>Why:</strong> Every ten ends with 0 and is 5 × 2. Only a last
 digit of 0 or 5 fits into groups of 5.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;975&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;975 \div 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;975&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;975 \div 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 is exact (last digit 5)" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;975&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;975 \div 5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 能整除（末位是 5）"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>975</mn><mo>÷</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">975 \div 5</annotation></semantics></math>
-is exact (last digit 5)</p>
-</blockquote>
-<h3 id="divisible-by-6" data-en="Divisible by 6 " data-zh="能被 6 整除 ">Divisible by 6 </h3>
-<p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; Divisible by &lt;strong&gt;both&lt;/strong&gt; 2 and
+is exact (last digit 5)</p></div></div></details><details class="lesson-card"><summary id="divisible-by-6" data-en="Divisible by 6 " data-zh="能被 6 整除 ">Divisible by 6</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; Divisible by &lt;strong&gt;both&lt;/strong&gt; 2 and
 3." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;同时能被 &lt;strong&gt;2&lt;/strong&gt; 和
 3 整除。"><strong>Rule:</strong> Divisible by <strong>both</strong> 2 and
 3.</p>
@@ -187,16 +196,15 @@ is exact (last digit 5)</p>
 it makes groups of 6 with no remainder." data-zh="&lt;strong&gt;原理：&lt;/strong&gt;6 = 2 × 3。若满足规则 2（偶数组）&lt;strong&gt;且&lt;/strong&gt;数字和是 3 的倍数（规则 3），就能被 6 整除无余数。"><strong>Why:</strong> 6 = 2 × 3. If a number makes even groups (rule
 2) <strong>and</strong> its digit-sum is a multiple of 3 (rule 3), then
 it makes groups of 6 with no remainder.</p>
-<p data-en="Examples:" data-zh="例如：">Examples:</p>
-<blockquote>
-<p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;126&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;126 \div 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<p data-en="Example:" data-zh="例如：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;126&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;126 \div 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 is exact because:" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;126&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;126 \div 6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 能整除，因为："><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>126</mn><mo>÷</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">126 \div 6</annotation></semantics></math>
 is exact because:</p>
-</blockquote>
-<ul>
-<li><p data-en="Rule 2: The last digit is 6, which is even." data-zh="规则 2：末位是 6，为偶数。">Rule 2: The last digit is 6, which is even.</p></li>
-<li><p data-en="Rule 3:
+<ul class="kiwi-example-variants">
+<li data-en="Rule 2: The last digit is 6, which is even." data-zh="规则 2：末位是 6，为偶数。">Rule 2: The last digit is 6, which is even.</li>
+<li data-en="Rule 3:
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1 + 2 + 6 = 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 and
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -208,23 +216,19 @@ is divisible by 3." data-zh="规则 3：
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>6</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">1 + 2 + 6 = 9</annotation></semantics></math>,
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9</mn><annotation encoding="application/x-tex">9</annotation></semantics></math>
-is divisible by 3.</p></li>
-</ul>
-<blockquote>
-<p data-en="Therefore,&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;126&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\ 126&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+is divisible by 3.</li>
+</ol>
+<blockquote class="kiwi-example-answer"><p data-en="Therefore,&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;126&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\ 126&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 is divisible by 6." data-zh="因此&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;126&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\ 126&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 能被 6 整除。">Therefore,<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace width="0.222em"></mspace><mn>126</mn></mrow><annotation encoding="application/x-tex">\ 126</annotation></semantics></math>
-is divisible by 6.</p>
-</blockquote>
-<h3 id="divisible-by-7" data-en="Divisible by 7" data-zh="能被 7 整除">Divisible by 7</h3>
-<p data-en="&lt;strong&gt;Rule (subtract double-the-last-digit):&lt;/strong&gt; Take the last
+is divisible by 6.</p></blockquote></div></div></details><details class="lesson-card"><summary id="divisible-by-7" data-en="Divisible by 7" data-zh="能被 7 整除">Divisible by 7</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Rule (subtract double-the-last-digit):&lt;/strong&gt; Take the last
 digit, double it, and &lt;strong&gt;subtract&lt;/strong&gt; from the other part.
 Repeat if needed. If you reach a small multiple of 7 (… −14, −7, 0, 7,
-14, …), it’s divisible by 7." data-zh="&lt;strong&gt;规则（末位加倍再减）：&lt;/strong&gt;取末位加倍，从其余部分&lt;strong&gt;减去&lt;/strong&gt;；可重复。若得到 7 的小倍数（… −14、−7、0、7、14…），则能整除。"><strong>Rule (subtract double-the-last-digit):</strong> Take the last
-digit, double it, and <strong>subtract</strong> from the other part.
+14, …), it’s divisible by 7." data-zh="&lt;strong&gt;规则（末位加倍再减）：&lt;/strong&gt;取末位加倍，从其余部分&lt;strong&gt;减去&lt;/strong&gt;；可重复。若得到 7 的小倍数（… −14、−7、0、7、14…），则能整除。">Rule (subtract double-the-last-digit): Take the last
+digit, double it, and subtract from the other part.
 Repeat if needed. If you reach a small multiple of 7 (… −14, −7, 0, 7,
 14, …), it’s divisible by 7.</p>
-<p data-en="&lt;strong&gt;Why:&lt;/strong&gt;" data-zh="&lt;strong&gt;原理：&lt;/strong&gt;"><strong>Why:</strong></p>
+<p data-en="&lt;strong&gt;Why:&lt;/strong&gt;" data-zh="&lt;strong&gt;原理：&lt;/strong&gt;">Why:</p>
 <p data-en="&lt;em&gt;Step 1&lt;/em&gt;: Split the number using place value." data-zh="&lt;em&gt;步骤 1&lt;/em&gt;：按位值拆分数字。"><em>Step 1</em>: Split the number using place value.</p>
 <p data-en="Let
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;N\ &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;be
@@ -334,34 +338,18 @@ from the remaining number. If the result is divisible by 7, the original
 number is also divisible by 7." data-zh="简单说：去掉末位、加倍、从余下部分减去。若结果能被 7 整除，原数也能被 7 整除。">In simple words: Remove the last digit, double it, and subtract it
 from the remaining number. If the result is divisible by 7, the original
 number is also divisible by 7.</p>
-<p data-en="Example:" data-zh="示例：">Example:</p>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;301&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;30&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;28&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;301 \rightarrow 30 - 2 \times 1 = 28&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;301&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;30&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;28&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;301 \rightarrow 30 - 2 \times 1 = 28&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>301</mn><mo>→</mo><mn>30</mn><mo>−</mo><mn>2</mn><mo>×</mo><mn>1</mn><mo>=</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">301 \rightarrow 30 - 2 \times 1 = 28</annotation></semantics></math></p></li>
-</ul>
-<blockquote>
-<p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;28&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;28 = 7 \times 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;.
-So, 301 is divisible by 7." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;28&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;28 = 7 \times 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。
-所以 301 能被 7 整除。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>28</mn><mo>=</mo><mn>7</mn><mo>×</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">28 = 7 \times 4</annotation></semantics></math>.
-So, 301 is divisible by 7.</p>
-</blockquote>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;036&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;103&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;91&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1,036 \rightarrow 103 - 2 \times 6 = 91&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;036&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;103&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;91&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1,036 \rightarrow 103 - 2 \times 6 = 91&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>036</mn><mo>→</mo><mn>103</mn><mo>−</mo><mn>2</mn><mo>×</mo><mn>6</mn><mo>=</mo><mn>91</mn></mrow><annotation encoding="application/x-tex">1,036 \rightarrow 103 - 2 \times 6 = 91</annotation></semantics></math></p></li>
-</ul>
-<blockquote>
-<p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;91&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;13&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;91 = 7 \times 13&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;.
-So, 1,036 is divisible by 7." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;91&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;13&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;91 = 7 \times 13&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。
-所以 1,036 能被 7 整除。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>91</mn><mo>=</mo><mn>7</mn><mo>×</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">91 = 7 \times 13</annotation></semantics></math>.
-So, 1,036 is divisible by 7.</p>
-</blockquote>
-<ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;204&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;120&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;112&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1,204 \rightarrow 120 - 2(4) = 112&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;204&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;120&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;112&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1,204 \rightarrow 120 - 2(4) = 112&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>204</mn><mo>→</mo><mn>120</mn><mo>−</mo><mn>2</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>4</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>112</mn></mrow><annotation encoding="application/x-tex">1,204 \rightarrow 120 - 2(4) = 112</annotation></semantics></math></p></li>
-</ul>
-<blockquote>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;112&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;112 \rightarrow 11 - 2(2) = 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;112&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;112 \rightarrow 11 - 2(2) = 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>112</mn><mo>→</mo><mn>11</mn><mo>−</mo><mn>2</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>2</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">112 \rightarrow 11 - 2(2) = 7</annotation></semantics></math></p>
-<p data-en="So, 1,204 is divisible by 7." data-zh="所以 1,204 能被 7 整除。">So, 1,204 is divisible by 7.</p>
-</blockquote>
-<h3 id="divisible-by-8" data-en="Divisible by 8" data-zh="能被 8 整除">Divisible by 8</h3>
-<p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The last three digits form a number divisible
+<p data-en="Examples:" data-zh="例如：">Examples:</p>
+<ul class="kiwi-example-list">
+<li><span class="kiwi-example-list-part" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;301&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;30&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;28&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;301 \rightarrow 30 - 2 \times 1 = 28&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;301&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;30&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;28&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;301 \rightarrow 30 - 2 \times 1 = 28&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>301</mn><mo>→</mo><mn>30</mn><mo>−</mo><mn>2</mn><mo>×</mo><mn>1</mn><mo>=</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">301 \rightarrow 30 - 2 \times 1 = 28</annotation></semantics></math>.</span>
+<span class="kiwi-example-list-part kiwi-example-list-step" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;28&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;28 = 7 \times 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;28&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;28 = 7 \times 4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>28</mn><mo>=</mo><mn>7</mn><mo>×</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">28 = 7 \times 4</annotation></semantics></math>.</span>
+<span class="kiwi-example-list-part kiwi-example-list-answer" data-en="So, 301 is divisible by 7." data-zh="所以 301 能被 7 整除。">So, 301 is divisible by 7.</span></li>
+<li><span class="kiwi-example-list-part" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;036&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;103&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;91&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1,036 \rightarrow 103 - 2 \times 6 = 91&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;036&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;103&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;91&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1,036 \rightarrow 103 - 2 \times 6 = 91&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>036</mn><mo>→</mo><mn>103</mn><mo>−</mo><mn>2</mn><mo>×</mo><mn>6</mn><mo>=</mo><mn>91</mn></mrow><annotation encoding="application/x-tex">1,036 \rightarrow 103 - 2 \times 6 = 91</annotation></semantics></math>.</span>
+<span class="kiwi-example-list-part kiwi-example-list-step" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;91&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;13&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;91 = 7 \times 13&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;91&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;13&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;91 = 7 \times 13&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>91</mn><mo>=</mo><mn>7</mn><mo>×</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">91 = 7 \times 13</annotation></semantics></math>.</span>
+<span class="kiwi-example-list-part kiwi-example-list-answer" data-en="So, 1,036 is divisible by 7." data-zh="所以 1,036 能被 7 整除。">So, 1,036 is divisible by 7.</span></li>
+<li><span class="kiwi-example-list-part" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;204&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;120&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;112&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1,204 \rightarrow 120 - 2(4) = 112&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;204&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;120&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;112&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1,204 \rightarrow 120 - 2(4) = 112&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>204</mn><mo>→</mo><mn>120</mn><mo>−</mo><mn>2</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>4</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>112</mn></mrow><annotation encoding="application/x-tex">1,204 \rightarrow 120 - 2(4) = 112</annotation></semantics></math>.</span>
+<span class="kiwi-example-list-part kiwi-example-list-step" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;112&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;112 \rightarrow 11 - 2(2) = 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;112&lt;/mn&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;112 \rightarrow 11 - 2(2) = 7&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>112</mn><mo>→</mo><mn>11</mn><mo>−</mo><mn>2</mn><mrow><mo form="prefix" stretchy="true">(</mo><mn>2</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">112 \rightarrow 11 - 2(2) = 7</annotation></semantics></math>.</span>
+<span class="kiwi-example-list-part kiwi-example-list-answer" data-en="So, 1,204 is divisible by 7." data-zh="所以 1,204 能被 7 整除。">So, 1,204 is divisible by 7.</span></li>
+</ul></div></details><details class="lesson-card"><summary id="divisible-by-8" data-en="Divisible by 8" data-zh="能被 8 整除">Divisible by 8</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The last three digits form a number divisible
 by 8." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;末三位组成的数能被 8 整除。"><strong>Rule:</strong> The last three digits form a number divisible
 by 8.</p>
 <p data-en="&lt;strong&gt;Why:&lt;/strong&gt; 1000, 2000, … are all multiples of 8 (since
@@ -370,35 +358,30 @@ by 8." data-zh="&lt;strong&gt;原理：&lt;/strong&gt;1000、2000…都是 8 的
 1000 = 8 × 125). So only the last three digits can affect divisibility
 by 8.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;360&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;7,360 \div 8&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;360&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;7,360 \div 8&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 is exact because the last three digits are 360, and
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;360&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;45&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;360 \div 8 = 45&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;360&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;7,360 \div 8&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 能整除，因为末三位是 360，且
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;360&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;45&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;360 \div 8 = 45&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>,</mo><mn>360</mn><mo>÷</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">7,360 \div 8</annotation></semantics></math>
 is exact because the last three digits are 360, and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>360</mn><mo>÷</mo><mn>8</mn><mo>=</mo><mn>45</mn></mrow><annotation encoding="application/x-tex">360 \div 8 = 45</annotation></semantics></math>.</p>
-</blockquote>
-<h3 id="divisible-by-9" data-en="Divisible by 9" data-zh="能被 9 整除">Divisible by 9</h3>
-<p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The sum of the digits is divisible by 9." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;各位数字之和能被 9 整除。"><strong>Rule:</strong> The sum of the digits is divisible by 9.</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>360</mn><mo>÷</mo><mn>8</mn><mo>=</mo><mn>45</mn></mrow><annotation encoding="application/x-tex">360 \div 8 = 45</annotation></semantics></math>.</p></div></div></details><details class="lesson-card"><summary id="divisible-by-9" data-en="Divisible by 9" data-zh="能被 9 整除">Divisible by 9</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;Rule:&lt;/strong&gt; The sum of the digits is divisible by 9." data-zh="&lt;strong&gt;规则：&lt;/strong&gt;各位数字之和能被 9 整除。"><strong>Rule:</strong> The sum of the digits is divisible by 9.</p>
 <p data-en="&lt;strong&gt;Why:&lt;/strong&gt; 10, 100, 1000 … act like 1 for division by 9
 (10 = 9 + 1, 100 = 99 + 1). So, the &lt;strong&gt;digit sum&lt;/strong&gt; tells you
 everything." data-zh="&lt;strong&gt;原理：&lt;/strong&gt;10、100、1000…除以 9 时像 1（10 = 9 + 1，100 = 99 + 1）。所以&lt;strong&gt;数字和&lt;/strong&gt;就够判断。"><strong>Why:</strong> 10, 100, 1000 … act like 1 for division by 9
 (10 = 9 + 1, 100 = 99 + 1). So, the <strong>digit sum</strong> tells you
 everything.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;459&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;459 \div 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;459&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;459 \div 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 is exact because:" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;459&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;459 \div 9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 能整除，因为："><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>459</mn><mo>÷</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">459 \div 9</annotation></semantics></math>
 is exact because:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>+</mo><mn>5</mn><mo>+</mo><mn>9</mn><mo>=</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">4 + 5 + 9 = 18</annotation></semantics></math></p>
-<p data-en="Since&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\ 18 \div 9 = 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
+<p class="kiwi-example-list-part kiwi-example-list-step" data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4 + 5 + 9 = 18&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;4 + 5 + 9 = 18&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>+</mo><mn>5</mn><mo>+</mo><mn>9</mn><mo>=</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">4 + 5 + 9 = 18</annotation></semantics></math></p>
+<p class="kiwi-example-list-part kiwi-example-list-answer" data-en="Since&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\ 18 \div 9 = 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 459 is divisible by 9." data-zh="因为&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\ 18 \div 9 = 2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;，
 459 能被 9 整除。">Since<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace width="0.222em"></mspace><mn>18</mn><mo>÷</mo><mn>9</mn><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\ 18 \div 9 = 2</annotation></semantics></math>,
-459 is divisible by 9.</p>
-</blockquote>
-</article></div></main>
+459 is divisible by 9.</p></div></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -429,6 +412,7 @@ is exact because:</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -463,6 +447,39 @@ is exact because:</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

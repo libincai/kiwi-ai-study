@@ -22,7 +22,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Data and Graphs | KIWI 爱AI Study" data-zh="数据与图表 | KIWI 爱AI Study">Data and Graphs | KIWI 爱AI Study</title>
 <meta content="Explore Data and Graphs in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -76,7 +77,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -164,7 +164,7 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -241,12 +241,12 @@
 using charts and graphs." data-zh="收集信息（&lt;strong&gt;数据&lt;/strong&gt;），并用图表和图形把它直观地展示出来。">Collect information (<strong>data</strong>) and present it visually
 using charts and graphs.</p><details class="lesson-card" open=""><summary data-en="Data" data-zh="数据">Data</summary><div class="lesson-card-body"><p data-en="Data refers to information, usually numerical, that is collected for
 statistical purposes. It is a set of values or measurements." data-zh="数据通常指为统计目的而收集的信息，多为数值。它是一组数值或测量结果。">Data refers to information, usually numerical, that is collected for
-statistical purposes. It is a set of values or measurements.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Data set: {2,5,5,8,11}" data-zh="数据集：{2,5,5,8,11}">Data set: {2,5,5,8,11}</p>
+statistical purposes. It is a set of values or measurements.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Data set: {2,5,5,8,11}" data-zh="数据集：{2,5,5,8,11}">Data set: {2,5,5,8,11}</p>
 </blockquote></div></details><details class="lesson-card"><summary data-en="Frequency" data-zh="频数">Frequency</summary><div class="lesson-card-body"><p data-en="Frequency is the number of times a specific value or item appears in
 a data set." data-zh="频数是指某个特定数值或项目在数据集中出现的次数。">Frequency is the number of times a specific value or item appears in
-a data set.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="In the data set
+a data set.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="In the data set
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;{&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;}&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left\{ 2,5,5,8,11 \right\}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 the frequency of the number
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -263,8 +263,8 @@ is 2.</p>
 by subtracting the smallest value (minimum) from the largest value
 (maximum)." data-zh="极差是衡量数据分散程度的一种指标。用最大值减去最小值即可算出。">The range is a measure of spread within a data set. It is calculated
 by subtracting the smallest value (minimum) from the largest value
-(maximum).</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="In the data set
+(maximum).</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="In the data set
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;{&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;}&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left\{ 2,5,5,8,11 \right\}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 the maximum is
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;11&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -285,8 +285,9 @@ and the minimum is
 is significantly distant from the majority of the other data points in a
 set. It is an unusual or abnormal value." data-zh="离群值（也叫 &lt;strong&gt;远离值&lt;/strong&gt;）是指与数据集中大多数其他数据点明显相距较远的数据点，属于不寻常或异常的值。">An outlier (or <strong>far away value</strong>) is a data point that
 is significantly distant from the majority of the other data points in a
-set. It is an unusual or abnormal value.</p><p data-en="Examples:" data-zh="示例：">Examples:</p><blockquote>
-<p data-en="In the data set
+set. It is an unusual or abnormal value.</p><p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="In the data set
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;{&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;14&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;15&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;45&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;}&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\left\{ 10,12,14,15,45 \right\}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 the number
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mn&gt;45&lt;/mn&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;45&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;is
@@ -298,19 +299,19 @@ likely an outlier." data-zh="在数据集
 the number
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>45</mn><annotation encoding="application/x-tex">45</annotation></semantics></math>is
 likely an outlier.</p>
-</blockquote></div></details><details class="lesson-card"><summary data-en="Bar graph" data-zh="条形图">Bar graph</summary><div class="lesson-card-body"><p data-en="A bar graph uses rectangular bars to show comparisons between
+</div></div></details><details class="lesson-card"><summary data-en="Bar graph" data-zh="条形图">Bar graph</summary><div class="lesson-card-body"><p data-en="A bar graph uses rectangular bars to show comparisons between
 different categories of data. The bars can be vertical or
 horizontal." data-zh="条形图用长方形条来比较不同类别的数据。条可以是竖的，也可以是横的。">A bar graph uses rectangular bars to show comparisons between
 different categories of data. The bars can be vertical or
-horizontal.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Used to compare favourite colours or numbers of pets owned by
+horizontal.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Used to compare favourite colours or numbers of pets owned by
 students." data-zh="可用于比较学生最喜欢的颜色，或每人养的宠物数量。">Used to compare favourite colours or numbers of pets owned by
 students.</p>
 <p><img alt="Image preview" src="../assets/math-word/image31.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
 </blockquote></div></details><details class="lesson-card"><summary data-en="Line graph" data-zh="折线图">Line graph</summary><div class="lesson-card-body"><p data-en="A line graph uses points connected by lines to show how data changes
 over a continuous period of time or another sequence (trends)." data-zh="折线图用点连成线，显示数据在一段时间或其他连续序列中的变化（趋势）。">A line graph uses points connected by lines to show how data changes
-over a continuous period of time or another sequence (trends).</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Used to track temperature changes over a week or stock prices over
+over a continuous period of time or another sequence (trends).</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Used to track temperature changes over a week or stock prices over
 several months." data-zh="可用于记录一周内的气温变化，或几个月内的股价走势。">Used to track temperature changes over a week or stock prices over
 several months.</p>
 <p><img alt="Image preview" src="../assets/math-word/image32.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
@@ -318,8 +319,8 @@ several months.</p>
 graph that uses dots or Xs above a number line to show the frequency of
 each value in a data set." data-zh="点线图也叫 &lt;strong&gt;点图&lt;/strong&gt;，是一种简单图形：在数轴上方用点或 X标出数据集中每个数值出现的频数。">A line plot, also called a <strong>dot plot</strong>, is a simple
 graph that uses dots or Xs above a number line to show the frequency of
-each value in a data set.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Use a line plot to quickly see how many students earned each score on
+each value in a data set.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Use a line plot to quickly see how many students earned each score on
 a math quiz." data-zh="用点线图可以快速看出有多少学生在数学小测验中得到了各个分数。">Use a line plot to quickly see how many students earned each score on
 a math quiz.</p>
 <p><img alt="Image preview" src="../assets/math-word/image33.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
@@ -327,16 +328,16 @@ a math quiz.</p>
 within specific &lt;strong&gt;intervals&lt;/strong&gt; (ranges of numbers) rather
 than individual categories. The bars touch each other." data-zh="直方图是一种条形式图形，显示落在各个 &lt;strong&gt;区间&lt;/strong&gt;（数字范围）内的数据频数，而不是单独的类别。各条彼此相连。">A histogram is a bar-style graph that displays the frequency of data
 within specific <strong>intervals</strong> (ranges of numbers) rather
-than individual categories. The bars touch each other.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Used to show how many students scored between 70-79, 80-89, and
+than individual categories. The bars touch each other.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Used to show how many students scored between 70-79, 80-89, and
 90-100 on a test." data-zh="可用于显示有多少学生在测验中得分落在 70-79、80-89、90-100。">Used to show how many students scored between 70-79, 80-89, and
 90-100 on a test.</p>
 </blockquote><p><img src="../assets/math-word/image34.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p></div></details><details class="lesson-card"><summary data-en="Circle graph" data-zh="扇形图">Circle graph</summary><div class="lesson-card-body"><p data-en="A circle graph (or &lt;strong&gt;pie chart&lt;/strong&gt;) is a circle divided
 into sectors (slices) that represent the proportion or percentage of
 each category relative to the whole data set." data-zh="扇形图（也叫 &lt;strong&gt;饼图&lt;/strong&gt;）把一个圆分成若干扇形（切片），每个扇形表示各类别占整个数据集的比例或百分比。">A circle graph (or <strong>pie chart</strong>) is a circle divided
 into sectors (slices) that represent the proportion or percentage of
-each category relative to the whole data set.</p><p data-en="Example:" data-zh="示例：">Example:</p><blockquote>
-<p data-en="Used to show the breakdown of a monthly budget (e.g., rent makes up
+each category relative to the whole data set.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Used to show the breakdown of a monthly budget (e.g., rent makes up
 30% of expenses)." data-zh="可用于展示每月预算的构成（例如房租占支出的 30%）。">Used to show the breakdown of a monthly budget (e.g., rent makes up
 30% of expenses).</p>
 <p><img src="../assets/math-word/image35.jpeg" style="width:680px !important;max-width:100% !important;height:auto !important;display:block;margin:1rem auto;" loading="lazy"></p>
@@ -373,6 +374,7 @@ each category relative to the whole data set.</p><p data-en="Example:" data-zh="
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -407,6 +409,8 @@ each category relative to the whole data set.</p><p data-en="Example:" data-zh="
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 <script id="kiwi-accordion-controls-script">
 (function(){

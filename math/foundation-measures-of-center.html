@@ -8,6 +8,7 @@
 <title data-en="Measures of Center | KIWI 爱AI Study" data-zh="集中趋势 | KIWI 爱AI Study">Measures of Center | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
 <link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -33,7 +34,7 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -53,6 +54,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -97,72 +117,64 @@ median, and mode." data-zh="集中趋势用单个数值描述数据的“中间�
 “typical” value of a set of data. The three main measures are mean,
 median, and mode.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)" data-zh="数据集：{2,4,4,5,6,9,10}（为便于说明已按从小到大排好）">Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)</p>
-</blockquote>
-<h3 id="mean" data-en="Mean" data-zh="平均数">Mean</h3>
-<p data-en="The mean, commonly called the &lt;strong&gt;average&lt;/strong&gt;, is calculated
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)" data-zh="数据集：{2,4,4,5,6,9,10}（为便于说明已按从小到大排好）">Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)</p></div>
+<details class="lesson-card"><summary id="mean" data-en="Mean" data-zh="平均数">Mean</summary><div class="lesson-card-content"><p data-en="The mean, commonly called the &lt;strong&gt;average&lt;/strong&gt;, is calculated
 by adding up all the values in a data set and then dividing the total by
 the number of values in the set." data-zh="平均数也常称为 &lt;strong&gt;算术平均&lt;/strong&gt;：把数据集中所有数值相加，再除以数值的个数。">The mean, commonly called the <strong>average</strong>, is calculated
 by adding up all the values in a data set and then dividing the total by
 the number of values in the set.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Using the data set {2,4,4,5,6,9,10} (7 values total):" data-zh="用数据集 {2,4,4,5,6,9,10}（共 7 个数）：">Using the data set {2,4,4,5,6,9,10} (7 values total):</p>
-</blockquote>
-<ul>
-<li><p data-en="Sum: 2+4+4+5+6+9+10=40" data-zh="求和：2+4+4+5+6+9+10=40">Sum: 2+4+4+5+6+9+10=40</p></li>
-<li><p data-en="Mean: 40÷7≈5.71" data-zh="平均数：40÷7≈5.71">Mean: 40÷7≈5.71</p></li>
-</ul>
-<h3 id="median" data-en="Median" data-zh="中位数">Median</h3>
-<p data-en="The median is the &lt;strong&gt;middle value&lt;/strong&gt; of a data set that
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Using the data set {2,4,4,5,6,9,10} (7 values total):" data-zh="用数据集 {2,4,4,5,6,9,10}（共 7 个数）：">Using the data set {2,4,4,5,6,9,10} (7 values total):</p>
+<ol class="kiwi-example-steps kiwi-numbered-steps">
+<li data-en="Sum: 2+4+4+5+6+9+10=40" data-zh="求和：2+4+4+5+6+9+10=40">Sum: 2+4+4+5+6+9+10=40</li>
+<li data-en="Mean: 40÷7≈5.71" data-zh="平均数：40÷7≈5.71">Mean: 40÷7≈5.71</li>
+</ul></div></details><details class="lesson-card"><summary id="median" data-en="Median" data-zh="中位数">Median</summary><div class="lesson-card-content"><p data-en="The median is the &lt;strong&gt;middle value&lt;/strong&gt; of a data set that
 has been ordered from least to greatest." data-zh="中位数是数据从小到大排列后的 &lt;strong&gt;中间那个数&lt;/strong&gt;。">The median is the <strong>middle value</strong> of a data set that
 has been ordered from least to greatest.</p>
 <ul>
-<li><p data-en="If there is an odd number of data points, the median is the
+<li data-en="If there is an odd number of data points, the median is the
 single middle number." data-zh="若数据个数为奇数，中位数就是正中间的那个数。">If there is an odd number of data points, the median is the
-single middle number.</p></li>
-<li><p data-en="If there is an even number of data points, the median is the
+single middle number.</li>
+<li data-en="If there is an even number of data points, the median is the
 &lt;strong&gt;average (mean) of the two middle numbers&lt;/strong&gt;." data-zh="若数据个数为偶数，中位数是 &lt;strong&gt;中间两个数的平均数（平均数）&lt;/strong&gt;。">If there is an even number of data points, the median is the
-<strong>average (mean) of the two middle numbers</strong>.</p></li>
+<strong>average (mean) of the two middle numbers</strong>.</li>
 </ul>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
+<ul class="kiwi-example-list">
+<li data-en="For a odd set {2,4,4,5,6,9,10}:" data-zh="奇数个数据的例子 {2,4,4,5,6,9,10}：">For a odd set {2,4,4,5,6,9,10}:</p>
 <ul>
-<li><p data-en="For a odd set {2,4,4,5,6,9,10}:" data-zh="奇数个数据的例子 {2,4,4,5,6,9,10}：">For a odd set {2,4,4,5,6,9,10}:</p>
-<ul>
-<li><p data-en="the middle number is 5." data-zh="中间的数是 5。">the middle number is 5.</p></li>
-<li><p data-en="the median is 5." data-zh="中位数是 5。">the median is 5.</p></li>
+<li><p data-en="the middle number is 5." data-zh="中间的数是 5。">the middle number is 5.</li>
+<li data-en="the median is 5." data-zh="中位数是 5。">the median is 5.</li>
 </ul></li>
-<li><p data-en="For an even set {1,2,3,6,8,9}:" data-zh="偶数个数据的例子 {1,2,3,6,8,9}：">For an even set {1,2,3,6,8,9}:</p>
+<li data-en="For an even set {1,2,3,6,8,9}:" data-zh="偶数个数据的例子 {1,2,3,6,8,9}：">For an even set {1,2,3,6,8,9}:</p>
 <ul>
-<li><p data-en="the middle two numbers are 3 and 6." data-zh="中间两个数是 3 和 6。">the middle two numbers are 3 and 6.</p></li>
-<li><p data-en="the median is
+<li><p data-en="the middle two numbers are 3 and 6." data-zh="中间两个数是 3 和 6。">the middle two numbers are 3 and 6.</li>
+<li data-en="the median is
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4.5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(3 + 6) \div 2 = 4.5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="中位数是
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;÷&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4.5&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;(3 + 6) \div 2 = 4.5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">the median is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo form="prefix" stretchy="true">(</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>÷</mo><mn>2</mn><mo>=</mo><mn>4.5</mn></mrow><annotation encoding="application/x-tex">(3 + 6) \div 2 = 4.5</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo form="prefix" stretchy="true">(</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo form="postfix" stretchy="true">)</mo></mrow><mo>÷</mo><mn>2</mn><mo>=</mo><mn>4.5</mn></mrow><annotation encoding="application/x-tex">(3 + 6) \div 2 = 4.5</annotation></semantics></math>.</li>
 </ul></li>
-</ul>
-<h3 id="mode" data-en="Mode" data-zh="众数">Mode</h3>
-<p data-en="The mode is the value that appears &lt;strong&gt;most frequently&lt;/strong&gt;
+</ul></div></details><details class="lesson-card"><summary id="mode" data-en="Mode" data-zh="众数">Mode</summary><div class="lesson-card-content"><p data-en="The mode is the value that appears &lt;strong&gt;most frequently&lt;/strong&gt;
 in a data set. A set can have one mode, more than one mode, or no mode
 at all." data-zh="众数是数据集中 &lt;strong&gt;出现次数最多&lt;/strong&gt; 的数值。一组数据可以有一个众数、多个众数，也可以没有众数。">The mode is the value that appears <strong>most frequently</strong>
 in a data set. A set can have one mode, more than one mode, or no mode
 at all.</p>
 <p data-en="Examples:" data-zh="示例：">Examples:</p>
-<ul>
-<li><p data-en="Using the data set {2,4,4,5,6,9,10}:" data-zh="用数据集 {2,4,4,5,6,9,10}：">Using the data set {2,4,4,5,6,9,10}:</p>
+<ul class="kiwi-example-list">
+<li data-en="Using the data set {2,4,4,5,6,9,10}:" data-zh="用数据集 {2,4,4,5,6,9,10}：">Using the data set {2,4,4,5,6,9,10}:</p>
 <ul>
 <li><p data-en="the number 4 appears twice, which is more than any other
 number." data-zh="数字 4 出现了两次，比任何其他数都多。">the number 4 appears twice, which is more than any other
-number.</p></li>
-<li><p data-en="the mode is 4." data-zh="众数是 4。">the mode is 4.</p></li>
+number.</li>
+<li data-en="the mode is 4." data-zh="众数是 4。">the mode is 4.</li>
 </ul></li>
-<li><p data-en="For {1,2,3,4}:" data-zh="对于 {1,2,3,4}：">For {1,2,3,4}:</p>
+<li data-en="For {1,2,3,4}:" data-zh="对于 {1,2,3,4}：">For {1,2,3,4}:</p>
 <ul>
-<li><p data-en="there is no mode." data-zh="没有众数。">there is no mode.</p></li>
+<li><p data-en="there is no mode." data-zh="没有众数。">there is no mode.</li>
 </ul></li>
-</ul>
-</article></div></main>
+</ul></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -193,6 +205,7 @@ number.</p></li>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -227,6 +240,39 @@ number.</p></li>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

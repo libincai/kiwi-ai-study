@@ -9,7 +9,8 @@
 Differences (Δy) | KIWI 爱AI Study" data-zh="阶差规律与一阶差分 (Δy) | KIWI 爱AI Study">Step Pattern and First
 Differences (Δy) | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -35,7 +36,7 @@ Differences (Δy) | KIWI 爱AI Study</title>
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -43,8 +44,7 @@ Differences (Δy) | KIWI 爱AI Study</title>
 .foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
 </style><style>
 /* Math Foundations Word info and Ontario curriculum panels */
-.kiwi-word-info-panel,.kiwi-curriculum-panel{background:#fff8e9;border:1px solid #f0d58d;border-radius:12px;padding:16px 20px;margin:20px 0;color:#4b3d2b;text-align:left;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere}
-.kiwi-word-info-panel .kiwi-panel-heading{display:flex;align-items:center;gap:9px;color:#895b0e;font-weight:700;margin:0 0 9px}
+/* Tip panel chrome: global styles.css (gold 3D left rail) */
 .kiwi-word-info-panel .kiwi-panel-icon{color:#c18a19;font-size:18px;line-height:1;flex-shrink:0}
 .kiwi-curriculum-panel .kiwi-panel-heading{font-weight:700;color:#895b0e;margin:0 0 10px}
 .kiwi-word-info-panel p,.kiwi-curriculum-panel p{margin:0 0 10px;text-align:left}
@@ -66,6 +66,25 @@ Differences (Δy) | KIWI 爱AI Study</title>
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -124,8 +143,7 @@ difference: how much <strong>y</strong> changes when
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>
 increases by <strong>1</strong>.</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta y\  = \ f(x\  + \ 1)\  - \ f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta y\  = \ f(x\  + \ 1)\  - \ f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>y</mi><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mspace width="0.222em"></mspace><mo>+</mo><mspace width="0.222em"></mspace><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mspace width="0.222em"></mspace><mo>−</mo><mspace width="0.222em"></mspace><mi>f</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Delta y\  = \ f(x\  + \ 1)\  - \ f(x)</annotation></semantics></math></p>
-<h3 id="linear-functions" data-en="Linear Functions" data-zh="线性函数">Linear Functions</h3>
-<p data-en="&lt;strong&gt;For&lt;/strong&gt;
+<details class="lesson-card"><summary id="linear-functions" data-en="Linear Functions" data-zh="线性函数">Linear Functions</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;For&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y\  = \ x}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 &lt;strong&gt;:&lt;/strong&gt;" data-zh="&lt;strong&gt;对于&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y\  = \ x}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -157,9 +175,7 @@ first difference." data-zh="阶差规律与
 because the constant <strong>b</strong> cancels out when calculating the
 first difference.</p>
 <p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta y\  = \ \lbrack m(x\  + \ 1)\  + \ b\rbrack\  - \ (mx\  + \ b)\  = \ m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta y\  = \ \lbrack m(x\  + \ 1)\  + \ b\rbrack\  - \ (mx\  + \ b)\  = \ m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>y</mi><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mo form="prefix" stretchy="false">[</mo><mi>m</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>x</mi><mspace width="0.222em"></mspace><mo>+</mo><mspace width="0.222em"></mspace><mn>1</mn><mo form="postfix" stretchy="true">)</mo></mrow><mspace width="0.222em"></mspace><mo>+</mo><mspace width="0.222em"></mspace><mi>b</mi><mo form="postfix" stretchy="false">]</mo><mspace width="0.222em"></mspace><mo>−</mo><mspace width="0.222em"></mspace><mrow><mo form="prefix" stretchy="true">(</mo><mi>m</mi><mi>x</mi><mspace width="0.222em"></mspace><mo>+</mo><mspace width="0.222em"></mspace><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><mspace width="0.222em"></mspace><mo>=</mo><mspace width="0.222em"></mspace><mi>m</mi></mrow><annotation encoding="application/x-tex">\Delta y\  = \ \lbrack m(x\  + \ 1)\  + \ b\rbrack\  - \ (mx\  + \ b)\  = \ m</annotation></semantics></math></p>
-<p data-en="Therefore, the first differences remain constant." data-zh="因此，一阶差分保持恒定。">Therefore, the first differences remain constant.</p>
-<h3 id="quadratic-functions" data-en="Quadratic Functions" data-zh="二次函数">Quadratic Functions</h3>
-<p data-en="&lt;strong&gt;For&lt;/strong&gt;
+<p data-en="Therefore, the first differences remain constant." data-zh="因此，一阶差分保持恒定。">Therefore, the first differences remain constant.</p></div></details><details class="lesson-card"><summary id="quadratic-functions" data-en="Quadratic Functions" data-zh="二次函数">Quadratic Functions</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;For&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;²&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y\  = \ x²}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 &lt;strong&gt;:&lt;/strong&gt;" data-zh="&lt;strong&gt;对于&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;²&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y\  = \ x²}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -238,12 +254,10 @@ cancels out." data-zh="
 term adds <strong>b</strong> to each first difference, while the
 constant
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐜</mi><annotation encoding="application/x-tex">\mathbf{c}</annotation></semantics></math>
-cancels out.</p>
-<h3 id="first-differences-vs.-second-differences" data-en="First Differences vs.
+cancels out.</p></div></details><details class="lesson-card"><summary id="first-differences-vs.-second-differences" data-en="First Differences vs.
 Second Differences" data-zh="一阶差分与
 二阶差分">First Differences vs.
-Second Differences</h3>
-<p data-en="&lt;strong&gt;First difference
+Second Differences</summary><div class="lesson-card-content"><p data-en="&lt;strong&gt;First difference
 (&lt;/strong&gt;&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;𝚫&lt;/mi&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{\Delta y}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;strong&gt;):&lt;/strong&gt;
 The step pattern — how much
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -291,37 +305,34 @@ the first differences are
 and the second difference is constant and equals
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>𝟐</mn><mi>𝐚</mi></mrow><annotation encoding="application/x-tex">\mathbf{2}\mathbf{a}</annotation></semantics></math>.</p>
 <aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><ul>
-<li><p data-en="&lt;strong&gt;Linear functions:&lt;/strong&gt; Constant first
+<li data-en="&lt;strong&gt;Linear functions:&lt;/strong&gt; Constant first
 differences." data-zh="&lt;strong&gt;线性函数：&lt;/strong&gt;一阶差分恒定。"><strong>Linear functions:</strong> Constant first
-differences.</p></li>
-<li><p data-en="&lt;strong&gt;Quadratic functions:&lt;/strong&gt; Constant second
+differences.</li>
+<li data-en="&lt;strong&gt;Quadratic functions:&lt;/strong&gt; Constant second
 differences." data-zh="&lt;strong&gt;二次函数：&lt;/strong&gt;二阶差分恒定。"><strong>Quadratic functions:</strong> Constant second
-differences.</p></li>
-<li><p data-en="&lt;strong&gt;For&lt;/strong&gt;
+differences.</li>
+<li data-en="&lt;strong&gt;For&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐦&lt;/mi&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐛&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y\  = \ mx\  + \ b}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;strong&gt;:&lt;/strong&gt;
 The first differences equal &lt;strong&gt;m&lt;/strong&gt;." data-zh="&lt;strong&gt;对于&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐦&lt;/mi&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐛&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y\  = \ mx\  + \ b}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;strong&gt;：&lt;/strong&gt;
 一阶差分等于 &lt;strong&gt;m&lt;/strong&gt;。"><strong>For</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐲</mi><mspace width="0.222em"></mspace><mo mathvariant="bold">=</mo><mspace width="0.222em"></mspace><mi>𝐦</mi><mi>𝐱</mi><mspace width="0.222em"></mspace><mo mathvariant="bold">+</mo><mspace width="0.222em"></mspace><mi>𝐛</mi></mrow><annotation encoding="application/x-tex">\mathbf{y\  = \ mx\  + \ b}</annotation></semantics></math><strong>:</strong>
-The first differences equal <strong>m</strong>.</p></li>
-<li><p data-en="&lt;strong&gt;For&lt;/strong&gt;
+The first differences equal <strong>m</strong>.</li>
+<li data-en="&lt;strong&gt;For&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐚&lt;/mi&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;²&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐛&lt;/mi&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐜&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y\  = \ ax²\  + \ bx\  + \ c}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;strong&gt;:&lt;/strong&gt;
 The second difference equals &lt;strong&gt;2a&lt;/strong&gt;" data-zh="&lt;strong&gt;对于&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐚&lt;/mi&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;²&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐛&lt;/mi&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;𝐜&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y\  = \ ax²\  + \ bx\  + \ c}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;strong&gt;：&lt;/strong&gt;
 二阶差分等于 &lt;strong&gt;2a&lt;/strong&gt;"><strong>For</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐲</mi><mspace width="0.222em"></mspace><mo mathvariant="bold">=</mo><mspace width="0.222em"></mspace><mi>𝐚</mi><mi>𝐱</mi><mi mathvariant="bold">²</mi><mspace width="0.222em"></mspace><mo mathvariant="bold">+</mo><mspace width="0.222em"></mspace><mi>𝐛</mi><mi>𝐱</mi><mspace width="0.222em"></mspace><mo mathvariant="bold">+</mo><mspace width="0.222em"></mspace><mi>𝐜</mi></mrow><annotation encoding="application/x-tex">\mathbf{y\  = \ ax²\  + \ bx\  + \ c}</annotation></semantics></math><strong>:</strong>
-The second difference equals <strong>2a</strong></p></li>
-</ul></aside>
-<h3 id="visual-step-patterns" data-en="Visual Step Patterns" data-zh="阶差规律图示">Visual Step Patterns</h3>
-<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image13.webp" style="width:4.5in;height:2.25in"/></p>
+The second difference equals <strong>2a</strong></li>
+</ul></aside></div></details><details class="lesson-card"><summary id="visual-step-patterns" data-en="Visual Step Patterns" data-zh="阶差规律图示">Visual Step Patterns</summary><div class="lesson-card-content"><p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image13.webp" style="width:4.5in;height:2.25in"/></p>
 <p data-en="&lt;strong&gt;x¹ → line. x² → curve. y = c → flat.&lt;/strong&gt;" data-zh="&lt;strong&gt;x¹ → 直线。x² → 曲线。y = c → 水平。&lt;/strong&gt;"><strong>x¹ → line. x² → curve. y = c → flat.</strong></p>
 <aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><p data-en="&lt;strong&gt;Quadratic: y = x²&lt;/strong&gt;" data-zh="&lt;strong&gt;二次：y = x²&lt;/strong&gt;"><strong>Quadratic: y = x²</strong></p>
 <p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image15.webp" style="width:2.15in;height:2.42212in"/></p>
-<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div>Δ𝑦<sub>1</sub> =1</aside></aside>
-<h3 id="summary-first-differences-step-pattern-and-roc" data-en="Summary: First
+</aside>
+<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><p data-en="Δ𝑦&lt;sub&gt;1&lt;/sub&gt; = 1" data-zh="Δ𝑦&lt;sub&gt;1&lt;/sub&gt; = 1">Δ𝑦<sub>1</sub> = 1</p></aside></div></details><details class="lesson-card"><summary id="summary-first-differences-step-pattern-and-roc" data-en="Summary: First
 Differences, Step Pattern, and ROC" data-zh="小结：一阶差分、阶差规律与变化率">Summary: First
-Differences, Step Pattern, and ROC</h3>
-<p data-en="When
+Differences, Step Pattern, and ROC</summary><div class="lesson-card-content"><p data-en="When
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta\ x = 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 the first differences, step pattern, and rate of change (ROC) have the
 same numerical values." data-zh="当
@@ -343,19 +354,17 @@ increases by 1:" data-zh="当
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
 increases by 1:</p>
 <ul>
-<li><p data-en="First differences:
+<li data-en="First differences:
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;…&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;m,m,m,\ldots&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="一阶差分：
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;…&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;m,m,m,\ldots&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">First differences:
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>,</mo><mi>m</mi><mo>,</mo><mi>m</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">m,m,m,\ldots</annotation></semantics></math></p></li>
-<li><p data-en="Step pattern:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>,</mo><mi>m</mi><mo>,</mo><mi>m</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">m,m,m,\ldots</annotation></semantics></math></li>
+<li data-en="Step pattern:
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;…&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;m,m,m,\ldots&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="阶差规律：
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;…&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;m,m,m,\ldots&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">Step pattern:
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>,</mo><mi>m</mi><mo>,</mo><mi>m</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">m,m,m,\ldots</annotation></semantics></math></p></li>
-<li><p data-en="ROC:" data-zh="ROC：">ROC:</p></li>
-</ul>
-<blockquote>
-<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{\Delta y}{\Delta x} = \Delta y = \frac{m}{1} = m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{\Delta y}{\Delta x} = \Delta y = \frac{m}{1} = m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>Δ</mi><mi>y</mi></mrow><mrow><mi>Δ</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mi>Δ</mi><mi>y</mi><mo>=</mo><mfrac><mi>m</mi><mn>1</mn></mfrac><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\frac{\Delta y}{\Delta x} = \Delta y = \frac{m}{1} = m</annotation></semantics></math></p>
-</blockquote>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>,</mo><mi>m</mi><mo>,</mo><mi>m</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">m,m,m,\ldots</annotation></semantics></math></li>
+<li data-en="ROC:" data-zh="ROC：">ROC:</li>
+</ol>
+<blockquote class="kiwi-example-answer"><p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{\Delta y}{\Delta x} = \Delta y = \frac{m}{1} = m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mfrac&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\frac{\Delta y}{\Delta x} = \Delta y = \frac{m}{1} = m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>Δ</mi><mi>y</mi></mrow><mrow><mi>Δ</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mi>Δ</mi><mi>y</mi><mo>=</mo><mfrac><mi>m</mi><mn>1</mn></mfrac><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\frac{\Delta y}{\Delta x} = \Delta y = \frac{m}{1} = m</annotation></semantics></math></p></blockquote>
 <p data-en="&lt;strong&gt;Example 2: Quadratic Function —&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mi&gt;𝐚&lt;/mi&gt;&lt;/mrow&gt;&lt;msup&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mn&gt;𝟐&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y = a}\mathbf{x}^{\mathbf{2}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;strong&gt;示例 2：二次函数 —&lt;/strong&gt;
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;𝐲&lt;/mi&gt;&lt;mo mathvariant=&quot;bold&quot;&gt;=&lt;/mo&gt;&lt;mi&gt;𝐚&lt;/mi&gt;&lt;/mrow&gt;&lt;msup&gt;&lt;mi&gt;𝐱&lt;/mi&gt;&lt;mn&gt;𝟐&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\mathbf{y = a}\mathbf{x}^{\mathbf{2}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><strong>Example 2: Quadratic Function —</strong>
@@ -368,15 +377,15 @@ increases by 1:" data-zh="当
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
 increases by 1:</p>
 <ul>
-<li><p data-en="First differences:
+<li data-en="First differences:
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;…&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a,3a,5a,7a,\ldots&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="一阶差分：
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;…&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a,3a,5a,7a,\ldots&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">First differences:
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mn>3</mn><mi>a</mi><mo>,</mo><mn>5</mn><mi>a</mi><mo>,</mo><mn>7</mn><mi>a</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">a,3a,5a,7a,\ldots</annotation></semantics></math></p></li>
-<li><p data-en="Step pattern:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mn>3</mn><mi>a</mi><mo>,</mo><mn>5</mn><mi>a</mi><mo>,</mo><mn>7</mn><mi>a</mi><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">a,3a,5a,7a,\ldots</annotation></semantics></math></li>
+<li data-en="Step pattern:
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a,3a,5a,7a,&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="阶差规律：
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a,3a,5a,7a,&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">Step pattern:
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mn>3</mn><mi>a</mi><mo>,</mo><mn>5</mn><mi>a</mi><mo>,</mo><mn>7</mn><mi>a</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">a,3a,5a,7a,</annotation></semantics></math></p></li>
-<li><p data-en="ROC:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mn>3</mn><mi>a</mi><mo>,</mo><mn>5</mn><mi>a</mi><mo>,</mo><mn>7</mn><mi>a</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">a,3a,5a,7a,</annotation></semantics></math></li>
+<li data-en="ROC:
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a,3a,5a,7a,&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 since
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta\ x = 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="ROC：
@@ -385,10 +394,8 @@ since
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;Δ&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\Delta\ x = 1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">ROC:
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mn>3</mn><mi>a</mi><mo>,</mo><mn>5</mn><mi>a</mi><mo>,</mo><mn>7</mn><mi>a</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">a,3a,5a,7a,</annotation></semantics></math>,
 since
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mspace width="0.222em"></mspace><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta\ x = 1</annotation></semantics></math>.</p></li>
-</ul>
-<h3 id="step-pattern-in-action" data-en="Step Pattern in Action" data-zh="阶差规律的应用">Step Pattern in Action</h3>
-<p data-en="A quadratic step pattern can help us design curved structures, such
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mspace width="0.222em"></mspace><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta\ x = 1</annotation></semantics></math>.</li>
+</ul></div></details><details class="lesson-card"><summary id="step-pattern-in-action" data-en="Step Pattern in Action" data-zh="阶差规律的应用">Step Pattern in Action</summary><div class="lesson-card-content"><p data-en="A quadratic step pattern can help us design curved structures, such
 as a wooden skateboard ramp. Using
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = \frac{1}{2}x^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 , we can calculate the height at different positions." data-zh="二次函数的阶差规律可帮助我们设计弧形结构，例如木质滑板坡道。利用
@@ -403,8 +410,7 @@ height by different amounts as we move horizontally.</p>
 <p data-en="Builders use these measurements to position wooden supports and
 create a smooth curved surface." data-zh="施工人员用这些测量数据来安置木支撑，做出光滑的曲面。">Builders use these measurements to position wooden supports and
 create a smooth curved surface.</p>
-<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image16.webp" style="width:5.08069in;height:7.62097in"/></p>
-</article></div></main>
+<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image16.webp" style="width:5.08069in;height:7.62097in"/></p></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -435,6 +441,7 @@ create a smooth curved surface.</p>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -469,6 +476,39 @@ create a smooth curved surface.</p>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

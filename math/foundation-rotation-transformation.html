@@ -7,7 +7,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Rotation Transformation | KIWI 爱AI Study" data-zh="旋转变换 | KIWI 爱AI Study">Rotation Transformation | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
@@ -33,7 +33,7 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -41,8 +41,7 @@
 .foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
 </style><style>
 /* Math Foundations Word info and Ontario curriculum panels */
-.kiwi-word-info-panel,.kiwi-curriculum-panel{background:#fff8e9;border:1px solid #f0d58d;border-radius:12px;padding:16px 20px;margin:20px 0;color:#4b3d2b;text-align:left;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere}
-.kiwi-word-info-panel .kiwi-panel-heading{display:flex;align-items:center;gap:9px;color:#895b0e;font-weight:700;margin:0 0 9px}
+/* Tip panel chrome: global styles.css (gold 3D left rail) */
 .kiwi-word-info-panel .kiwi-panel-icon{color:#c18a19;font-size:18px;line-height:1;flex-shrink:0}
 .kiwi-curriculum-panel .kiwi-panel-heading{font-weight:700;color:#895b0e;margin:0 0 10px}
 .kiwi-word-info-panel p,.kiwi-curriculum-panel p{margin:0 0 10px;text-align:left}
@@ -63,6 +62,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -107,32 +125,31 @@ direction of a shape while keeping its basic form the same." data-zh="在几何�
 direction of a shape while keeping its basic form the same.</p>
 <p data-en="There are four main types of transformations:" data-zh="变换主要有四种类型：">There are four main types of transformations:</p>
 <ol type="1">
-<li><p data-en="&lt;strong&gt;Translation&lt;/strong&gt; — slides a shape from one place to
+<li data-en="&lt;strong&gt;Translation&lt;/strong&gt; — slides a shape from one place to
 another without turning it. (Think: move your drawing without lifting or
 spinning it!)" data-zh="&lt;strong&gt;平移&lt;/strong&gt; — 把图形从一个位置滑到另一个位置，不发生旋转。（想想：移动图画时不抬起、也不旋转！）"><strong>Translation</strong> — slides a shape from one place to
 another without turning it. (Think: move your drawing without lifting or
-spinning it!)</p></li>
-<li><p data-en="&lt;strong&gt;Reflection&lt;/strong&gt; — flips a shape over a line to make a
+spinning it!)</li>
+<li data-en="&lt;strong&gt;Reflection&lt;/strong&gt; — flips a shape over a line to make a
 mirror image. (Like seeing your face in a mirror.)" data-zh="&lt;strong&gt;反射&lt;/strong&gt; — 图形关于一条直线翻转，得到镜像。（就像照镜子看到脸一样。）"><strong>Reflection</strong> — flips a shape over a line to make a
-mirror image. (Like seeing your face in a mirror.)</p></li>
-<li><p data-en="&lt;strong&gt;Rotation&lt;/strong&gt; — turns a shape around a point. Turning
+mirror image. (Like seeing your face in a mirror.)</li>
+<li data-en="&lt;strong&gt;Rotation&lt;/strong&gt; — turns a shape around a point. Turning
 0° or 360° means no turn at all, and turning 180° clockwise is the same
 as 180° counterclockwise&lt;strong&gt;.&lt;/strong&gt; (Like the hands of a clock
 turning around the center.)" data-zh="&lt;strong&gt;旋转&lt;/strong&gt; — 图形绕一个点转动。转 0° 或 360° 等于没转；顺时针转 180° 与逆时针转 180° 相同&lt;strong&gt;.&lt;/strong&gt;（就像时钟指针绕中心转动。）"><strong>Rotation</strong> — turns a shape around a point. Turning
 0° or 360° means no turn at all, and turning 180° clockwise is the same
 as 180° counterclockwise<strong>.</strong> (Like the hands of a clock
-turning around the center.)</p></li>
-<li><p data-en="&lt;strong&gt;Dilation&lt;/strong&gt; — makes a shape larger or smaller but
+turning around the center.)</li>
+<li data-en="&lt;strong&gt;Dilation&lt;/strong&gt; — makes a shape larger or smaller but
 keeps its proportions the same. (Like zooming in or out on a
 photo.)" data-zh="&lt;strong&gt;缩放&lt;/strong&gt; — 使图形变大或变小，但比例保持不变。（就像放大或缩小照片。）"><strong>Dilation</strong> — makes a shape larger or smaller but
 keeps its proportions the same. (Like zooming in or out on a
-photo.)</p></li>
+photo.)</li>
 </ol>
 <p data-en="Each transformation changes how the shape looks on the grid, but the
 shape itself stays the same!" data-zh="每种变换都会改变图形在坐标格上的样子，但图形本身不变！">Each transformation changes how the shape looks on the grid, but the
 shape itself stays the same!</p>
-<h3 id="simple-transformation" data-en="Simple Transformation" data-zh="简单变换">Simple Transformation</h3>
-<p data-en="In Grade 6, we learn these transformations using the origin (0, 0) or
+<details class="lesson-card"><summary id="simple-transformation" data-en="Simple Transformation" data-zh="简单变换">Simple Transformation</summary><div class="lesson-card-content"><p data-en="In Grade 6, we learn these transformations using the origin (0, 0) or
 the x- and y-axes on a coordinate grid." data-zh="在六年级，我们在坐标格上用原点 (0, 0) 或 x、y 轴来学习这些变换。">In Grade 6, we learn these transformations using the origin (0, 0) or
 the x- and y-axes on a coordinate grid.</p>
 <p data-en="For rotation, we only need to learn three key angles — 90°, 180°, and
@@ -142,9 +159,7 @@ the x- and y-axes on a coordinate grid.</p>
 — we can simply count how far the point moves or flips across a
 line." data-zh="平移或反射后的坐标更容易求——我们只需数清楚点移动或翻过直线翻折了多少。">The coordinates after a translation or reflection are easier to find
 — we can simply count how far the point moves or flips across a
-line.</p>
-<h3 id="why-rotation-is-complex" data-en="Why Rotation is Complex" data-zh="为什么旋转更复杂">Why Rotation is Complex</h3>
-<p data-en="For a rotation transformation, the movement is a turn, not a slide,
+line.</p></div></details><details class="lesson-card"><summary id="why-rotation-is-complex" data-en="Why Rotation is Complex" data-zh="为什么旋转更复杂">Why Rotation is Complex</summary><div class="lesson-card-content"><p data-en="For a rotation transformation, the movement is a turn, not a slide,
 so finding the rotated coordinates can be tricky." data-zh="旋转变换的运动是转动而不是滑动，因此求旋转后的坐标可能比较棘手。">For a rotation transformation, the movement is a turn, not a slide,
 so finding the rotated coordinates can be tricky.</p>
 <p data-en="In the classroom way, we must remember the rotation direction mapping
@@ -163,14 +178,12 @@ from 180° to 360° can be converted to the first half." data-zh="我们只需�
 from 180° to 360° can be converted to the first half.</p>
 <p data-en="For example, a 270° clockwise rotation is the same as a 90°
 counterclockwise rotation, and vice versa!" data-zh="例如，顺时针转 270° 等同于逆时针转 90°，反之亦然！">For example, a 270° clockwise rotation is the same as a 90°
-counterclockwise rotation, and vice versa!</p>
-<h3 id="classroom-way" data-en="Classroom Way" data-zh="课堂方法">Classroom Way</h3>
-<p data-en="Now let’s first review how rotation is taught in the classroom. After
+counterclockwise rotation, and vice versa!</p></div></details><details class="lesson-card"><summary id="classroom-way" data-en="Classroom Way" data-zh="课堂方法">Classroom Way</summary><div class="lesson-card-content"><p data-en="Now let’s first review how rotation is taught in the classroom. After
 that, we’ll reveal the magic trick that makes it easier!" data-zh="我们先复习课堂上如何教旋转。之后，再揭示让旋转更简单的窍门！">Now let’s first review how rotation is taught in the classroom. After
 that, we’ll reveal the magic trick that makes it easier!</p>
-<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div>All rotation transformations discussed in this section are about the
+<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><div class="kiwi-panel-content">All rotation transformations discussed in this section are about the
 origin (0, 0). We’ll use CW to represent Clockwise and CCW to represent
-Counterclockwise.</aside>
+Counterclockwise.</div></aside>
 <h4 id="rotation-1" data-en="180° rotation" data-zh="180° 旋转">180° rotation</h4>
 <p data-en="This rotation is simple!" data-zh="这种旋转很简单！">This rotation is simple!</p>
 <p data-en="Both CW and CCW rotations are the same. We only need to change both
@@ -189,14 +202,14 @@ to the right around the origin (0, 0). Think of it like the hands of a
 clock turning.</p>
 <p data-en="How to Rotate (90° CW):" data-zh="如何旋转（90° CW）：">How to Rotate (90° CW):</p>
 <ol type="1">
-<li><p data-en="Label points in relation to the origin. Describe each point by
+<li data-en="Label points in relation to the origin. Describe each point by
 how far it is right or left and up or down from (0, 0)." data-zh="根据原点给各点贴方向标签。用“离原点向右或向左、向上或向下多远”来描述每个点与 (0, 0) 的关系。">Label points in relation to the origin. Describe each point by
-how far it is right or left and up or down from (0, 0).</p></li>
-<li><p data-en="Use the rotation direction map. The rotated point will be the
+how far it is right or left and up or down from (0, 0).</li>
+<li data-en="Use the rotation direction map. The rotated point will be the
 same number of units from the origin, but directions change like
 this:" data-zh="使用旋转方向对应图。旋转后的点离原点的单位数不变，但方向会这样变化：">Use the rotation direction map. The rotated point will be the
 same number of units from the origin, but directions change like
-this:</p></li>
+this:</li>
 </ol>
 <table>
 <colgroup>
@@ -227,21 +240,21 @@ this:</p></li>
 </tbody>
 </table>
 <ol start="3" type="1">
-<li><p data-en="Keep the same distances, switch the directions, and plot the new
+<li data-en="Keep the same distances, switch the directions, and plot the new
 point." data-zh="保持距离不变，切换方向，再标出新点。">Keep the same distances, switch the directions, and plot the new
-point.</p></li>
+point.</li>
 </ol>
 <p data-en="Example:" data-zh="示例：">Example:</p>
 <p data-en="Let’s &lt;strong&gt;Rotate A(2, 4)&lt;/strong&gt;." data-zh="我们来&lt;strong&gt;旋转 A(2, 4)&lt;/strong&gt;。">Let’s <strong>Rotate A(2, 4)</strong>.</p>
 <ol type="1">
-<li><p data-en="From the origin, A(2, 4) is 2 right and 4 up." data-zh="从原点看，A(2, 4) 在右侧 2 个单位、上方 4 个单位。">From the origin, A(2, 4) is 2 right and 4 up.</p></li>
-<li><p data-en="Apply the map:" data-zh="套用对应图：">Apply the map:</p>
+<li data-en="From the origin, A(2, 4) is 2 right and 4 up." data-zh="从原点看，A(2, 4) 在右侧 2 个单位、上方 4 个单位。">From the origin, A(2, 4) is 2 right and 4 up.</li>
+<li data-en="Apply the map:" data-zh="套用对应图：">Apply the map:</p>
 <ol type="1">
-<li><p data-en="Right → Down: now 2 down" data-zh="右 → 下：现在是向下 2">Right → Down: now 2 down</p></li>
-<li><p data-en="Up → Right: now 4 right" data-zh="上 → 右：现在是向右 4">Up → Right: now 4 right</p></li>
+<li><p data-en="Right → Down: now 2 down" data-zh="右 → 下：现在是向下 2">Right → Down: now 2 down</li>
+<li data-en="Up → Right: now 4 right" data-zh="上 → 右：现在是向右 4">Up → Right: now 4 right</li>
 </ol></li>
-<li><p data-en="From the origin, move 4 right and 2 down → A′(4, −2)." data-zh="从原点出发，向右 4、向下 2 → A′(4, −2)。">From the origin, move 4 right and 2 down → A′(4, −2).</p></li>
-<li><p data-en="See the illustration on the coordinate plane." data-zh="请在坐标平面上查看图示。">See the illustration on the coordinate plane.</p></li>
+<li data-en="From the origin, move 4 right and 2 down → A′(4, −2)." data-zh="从原点出发，向右 4、向下 2 → A′(4, −2)。">From the origin, move 4 right and 2 down → A′(4, −2).</li>
+<li data-en="See the illustration on the coordinate plane." data-zh="请在坐标平面上查看图示。">See the illustration on the coordinate plane.</li>
 </ol>
 <blockquote>
 <p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image23.webp" style="width:2.7725in;height:2.80236in"/></p>
@@ -255,14 +268,14 @@ hands moving backward." data-zh="它就是顺时针转动的反向——想象�
 hands moving backward.</p>
 <p data-en="How to Rotate (90° CCW):" data-zh="如何旋转（90° CCW）：">How to Rotate (90° CCW):</p>
 <ol type="1">
-<li><p data-en="Label points in relation to the origin. Describe each point by
+<li data-en="Label points in relation to the origin. Describe each point by
 how far it is right or left and up or down from (0, 0)." data-zh="根据原点给各点贴方向标签。用“离原点向右或向左、向上或向下多远”来描述每个点与 (0, 0) 的关系。">Label points in relation to the origin. Describe each point by
-how far it is right or left and up or down from (0, 0).</p></li>
-<li><p data-en="Use the reverse rotation direction map.A 90° counterclockwise
+how far it is right or left and up or down from (0, 0).</li>
+<li data-en="Use the reverse rotation direction map.A 90° counterclockwise
 turn is the opposite of the clockwise one — directions shift the other
 way around:" data-zh="使用反向旋转方向对应图。逆时针转 90° 与顺时针相反——方向按另一套规则变化：">Use the reverse rotation direction map.A 90° counterclockwise
 turn is the opposite of the clockwise one — directions shift the other
-way around:</p></li>
+way around:</li>
 </ol>
 <table>
 <colgroup>
@@ -297,23 +310,23 @@ way around:</p></li>
 </tbody>
 </table>
 <ol start="3" type="1">
-<li><p data-en="Keep the same distances, but move each point according to the new
+<li data-en="Keep the same distances, but move each point according to the new
 directions. The figure turns to the left around the origin." data-zh="保持距离不变，但按新方向移动各点。整个图形绕原点向左转动。">Keep the same distances, but move each point according to the new
-directions. The figure turns to the left around the origin.</p></li>
+directions. The figure turns to the left around the origin.</li>
 </ol>
 <p data-en="Example:" data-zh="示例：">Example:</p>
-<blockquote>
-<p data-en="Let’s Rotate A(2, 4)." data-zh="我们来旋转 A(2, 4)。">Let’s Rotate A(2, 4).</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Let’s Rotate A(2, 4)." data-zh="我们来旋转 A(2, 4)。">Let’s Rotate A(2, 4).</p>
 </blockquote>
 <ol type="1">
-<li><p data-en="From the origin, A(2, 4) is 2 right and 4 up." data-zh="从原点看，A(2, 4) 在右侧 2 个单位、上方 4 个单位。">From the origin, A(2, 4) is 2 right and 4 up.</p></li>
-<li><p data-en="Apply the map:" data-zh="套用对应图：">Apply the map:</p>
+<li data-en="From the origin, A(2, 4) is 2 right and 4 up." data-zh="从原点看，A(2, 4) 在右侧 2 个单位、上方 4 个单位。">From the origin, A(2, 4) is 2 right and 4 up.</li>
+<li data-en="Apply the map:" data-zh="套用对应图：">Apply the map:</p>
 <ol type="1">
-<li><p data-en="Right → Up: now 2 up" data-zh="右 → 上：现在是向上 2">Right → Up: now 2 up</p></li>
-<li><p data-en="Up → Left: now 4 left" data-zh="上 → 左：现在是向左 4">Up → Left: now 4 left</p></li>
+<li><p data-en="Right → Up: now 2 up" data-zh="右 → 上：现在是向上 2">Right → Up: now 2 up</li>
+<li data-en="Up → Left: now 4 left" data-zh="上 → 左：现在是向左 4">Up → Left: now 4 left</li>
 </ol></li>
-<li><p data-en="From the origin, move 4 left and 2 up → A′ (-4, 2)." data-zh="从原点出发，向左 4、向上 2 → A′ (-4, 2)。">From the origin, move 4 left and 2 up → A′ (-4, 2).</p></li>
-<li><p data-en="See the illustration on the coordinate plane." data-zh="请在坐标平面上查看图示。">See the illustration on the coordinate plane.</p></li>
+<li data-en="From the origin, move 4 left and 2 up → A′ (-4, 2)." data-zh="从原点出发，向左 4、向上 2 → A′ (-4, 2)。">From the origin, move 4 left and 2 up → A′ (-4, 2).</li>
+<li data-en="See the illustration on the coordinate plane." data-zh="请在坐标平面上查看图示。">See the illustration on the coordinate plane.</li>
 </ol>
 <p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image24.webp" style="width:3.08597in;height:3.1in"/></p>
 <h4 id="summary-of-the-classroom-way" data-en="Summary of the classroom way" data-zh="课堂方法小结">Summary of the classroom way</h4>
@@ -335,8 +348,7 @@ four directions and their opposites can be confusing and easy to mix
 up!</p>
 <p data-en="That’s why we need a Trick Way — a faster and easier method to find
 the rotated coordinates without memorizing all those directions." data-zh="所以我们还需要窍门法——更快、更轻松地求旋转后的坐标，而不用背全部方向变化。">That’s why we need a Trick Way — a faster and easier method to find
-the rotated coordinates without memorizing all those directions.</p>
-</article></div></main>
+the rotated coordinates without memorizing all those directions.</p></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -402,5 +414,36 @@ the rotated coordinates without memorizing all those directions.</p>
 })();
   </script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

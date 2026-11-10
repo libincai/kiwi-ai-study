@@ -22,7 +22,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Greatest Common Factor (GCF) | Kiwi 爱AI Study" data-zh="最大公因数（GCF） | Kiwi 爱AI Study">Greatest Common Factor (GCF) | Kiwi 爱AI Study</title>
 <meta content="Learn Greatest Common Factor (GCF) in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-panel-right-accent" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -46,7 +47,7 @@
 @media(max-width:600px){.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:3.8rem!important}}
 
 </style>
-<style>.chapter-topic-nav{margin:24px 0;padding:16px 18px;border:1px solid #dce6f1;border-radius:14px;background:#f8fbff}.chapter-topic-nav p{margin:0 0 10px;font-weight:800;color:#153d70}.chapter-topic-links{display:flex;flex-wrap:wrap;gap:9px}.chapter-topic-links a{padding:9px 12px;border:1px solid #d3e2f4;border-radius:9px;color:#1768b2;text-decoration:none;font-size:14px;font-weight:700;background:#fff}.chapter-topic-links a[aria-current="page"]{background:#1768b2;color:#fff;border-color:#1768b2}</style><style>
+<style>
 /* KIWI Level 4: category in banner, document-style topic navigation */
 .kiwi-learning-layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,1fr);gap:30px;align-items:start;max-width:1160px;margin:28px auto 50px}
 .kiwi-topic-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px}
@@ -76,7 +77,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -163,8 +163,8 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {font-weight:400!important;color:#111!important;}
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
-.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;font-weight:400!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -184,22 +184,11 @@
 @media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 <style>
-/* Word-to-Web: consistent educational information panels */
-.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{box-sizing:border-box;display:block;width:100%;max-width:100%;margin:1.15rem 0;padding:1rem 1.2rem;background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e4b54e;border-radius:12px;color:#503d24;text-align:left;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
-.kiwi-insight-panel p,.kiwi-curriculum-panel p,.kiwi-word-info-panel p,.kiwi-insight-panel li,.kiwi-curriculum-panel li,.kiwi-word-info-panel li{color:inherit;text-align:left;font-weight:400}
-.kiwi-insight-panel strong,.kiwi-curriculum-panel strong,.kiwi-word-info-panel strong{font-weight:700}
-.kiwi-insight-header,.kiwi-word-info-header{display:flex;align-items:center;gap:.65rem;margin:0 0 .55rem;font-weight:700;color:#895b0e;text-align:left}
-.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
+/* Tip panel chrome: global assets/css/styles.css (gold 3D left rail) */
+.kiwi-insight-header,.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
 .kiwi-insight-icon,.kiwi-word-info-icon{flex:none;font-size:1.1rem;line-height:1.2}
 .kiwi-insight-body>*:first-child,.kiwi-word-info-body>*:first-child{margin-top:0}
 .kiwi-insight-body>*:last-child,.kiwi-word-info-body>*:last-child{margin-bottom:0}
-.kiwi-curriculum-panel{border-left-color:#e4b54e}
-.kiwi-curriculum-panel .kiwi-curriculum-heading{display:block;margin-bottom:.5rem;color:#895b0e;font-weight:700;text-align:left}
-.kiwi-curriculum-panel p:first-child{margin-top:0}
-.kiwi-word-info-panel ul,.kiwi-word-info-panel ol{padding-left:1.5rem;margin-left:0}
-.kiwi-word-info-panel .kiwi-math-block,.kiwi-insight-panel .kiwi-math-block,.kiwi-curriculum-panel .kiwi-math-block{text-align:center;margin-left:auto;margin-right:auto}
-.kiwi-word-info-panel math[display="block"],.kiwi-insight-panel math[display="block"],.kiwi-curriculum-panel math[display="block"]{display:block;margin-inline:auto}
-@media(max-width:600px){.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{padding:.85rem 1rem}}
 </style><style>
 /* Level 4 sidebar standard — match Mathematical Thinking / GCF */
 .kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
@@ -264,18 +253,18 @@ thing</strong>.</p><p data-en="In the examples below, you will see &lt;strong&gt
 formula, even though we use &lt;strong&gt;GCF&lt;/strong&gt; in the text for
 learning." data-zh="下文公式里会出现 &lt;strong&gt;GCD&lt;/strong&gt;，正文学习时我们用 &lt;strong&gt;GCF&lt;/strong&gt;。">In the examples below, you will see <strong>GCD</strong> inside math
 formula, even though we use <strong>GCF</strong> in the text for
-learning.</p></div><div class="kiwi-advanced-intro"><h3 data-en="Advanced Skills" data-zh="进阶技巧">Advanced Skills</h3><p data-en="The basic methods work well for small numbers, but they become slow
+learning.</p></div><aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span></div><p data-en="This lesson focuses on &lt;strong&gt;advanced&lt;/strong&gt; GCF methods — the subtraction method and Euclidean algorithm. For beginner-friendly methods — listing factors, prime factorization, and checking from the smaller number — see &lt;a href=&quot;foundation-greatest-common-factor-gcf.html&quot;&gt;Basic Skills&lt;/a&gt; in Math Foundations." data-zh="本页讲 &lt;strong&gt;进阶&lt;/strong&gt; GCF 方法 —— 连减法与欧几里得算法。入门方法（列因数、质因数分解、从较小数检查）见数学基础中的 &lt;a href=&quot;foundation-greatest-common-factor-gcf.html&quot;&gt;基本方法&lt;/a&gt;。">This lesson focuses on <strong>advanced</strong> GCF methods — the subtraction method and Euclidean algorithm. For beginner-friendly methods — listing factors, prime factorization, and checking from the smaller number — see <a href="foundation-greatest-common-factor-gcf.html">Basic Skills</a> in Math Foundations.</p></aside><div class="kiwi-advanced-intro"><h3 data-en="Advanced Skills" data-zh="进阶技巧">Advanced Skills</h3><p data-en="The basic methods work well for small numbers, but they become slow
 or impractical when the numbers get large." data-zh="基本方法适合较小的数，但当数变大时会变慢，甚至难以实用。">The basic methods work well for small numbers, but they become slow
-or impractical when the numbers get large.</p><p data-en="Examples:" data-zh="例如：">Examples:</p><ul>
-<li><p data-en="Listing all factors of numbers like 840 and 1260 would take a
+or impractical when the numbers get large.</p><p data-en="Examples:" data-zh="例如：">Examples:</p><ul class="kiwi-example-list">
+<li data-en="Listing all factors of numbers like 840 and 1260 would take a
 long time." data-zh="像 840 和 1260 这样列出全部因数会花很长时间。">Listing all factors of numbers like 840 and 1260 would take a
-long time.</p></li>
-<li><p data-en="Prime factorization becomes difficult when numbers are big or
+long time.</li>
+<li data-en="Prime factorization becomes difficult when numbers are big or
 have many factors." data-zh="数很大或因数很多时，质因数分解也会变得困难。">Prime factorization becomes difficult when numbers are big or
-have many factors.</p></li>
-<li><p data-en="Checking factors one by one is not efficient for larger
+have many factors.</li>
+<li data-en="Checking factors one by one is not efficient for larger
 values." data-zh="对大数逐个检查因数效率不高。">Checking factors one by one is not efficient for larger
-values.</p></li>
+values.</li>
 </ul><p data-en="To handle bigger numbers quickly, mathematicians use faster and more
 powerful methods such as the &lt;strong&gt;Subtraction Method&lt;/strong&gt; and the
 &lt;strong&gt;Division Method (Euclidean Algorithm)&lt;/strong&gt;. These advanced
@@ -292,16 +281,14 @@ is GCF):" data-zh="这一方法基于如下想法
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">gcd</mi><annotation encoding="application/x-tex">\gcd</annotation></semantics></math>
 is GCF):</p><div class="kiwi-formula-row kiwi-math-block kiwi-gcd-display kiwi-centered-math" data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;gcd&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;gcd&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;gcd&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;gcd&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="normal">gcd</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>=</mo><mi mathvariant="normal">gcd</mi><mo>(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow></math></div><p data-en="Keep subtracting the smaller number from the larger one until both
 numbers match." data-zh="用较大的数反复减去较小的数，直到两个数相同。">Keep subtracting the smaller number from the larger one until both
-numbers match.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard"><p class="kiwi-single-example" data-en="Find GCF(48, 18)." data-zh="求 GCF(48, 18)。">Find GCF(48, 18).</p><ol class="kiwi-numbered-steps kiwi-example-steps"><li><p class="kiwi-step-text">48−18=30 → (30, 18)</p></li><li><p class="kiwi-step-text">30−18=12 → (18, 12)</p></li><li><p class="kiwi-step-text">18−12=6 → (12, 6)</p></li><li><p class="kiwi-step-text" data-en="12−6=6 → both numbers match" data-zh="12−6=6 → 两数相同">12−6=6 → both numbers match</p></li></ol><blockquote class="kiwi-example-answer">
-<p data-en="∴ GCF(48, 18) = 6." data-zh="∴ GCF(48, 18) = 6。">∴ GCF(48, 18) = 6.</p>
-</blockquote></div><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-insight-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-insight-title&quot;&gt;History of the Subtraction Method&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-insight-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-insight-title&quot;&gt;连减法的历史&lt;/span&gt;"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">History of the Subtraction Method</span></div><div class="kiwi-insight-body">
+numbers match.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard"><p class="kiwi-single-example" data-en="Find GCF(48, 18)." data-zh="求 GCF(48, 18)。">Find GCF(48, 18).</p><ol class="kiwi-numbered-steps kiwi-example-steps"><li class="kiwi-step-text">48−18=30 → (30, 18)</li><li class="kiwi-step-text">30−18=12 → (18, 12)</li><li class="kiwi-step-text">18−12=6 → (12, 6)</li><li class="kiwi-step-text" data-en="12−6=6 → both numbers match" data-zh="12−6=6 → 两数相同">12−6=6 → both numbers match</li></ol><blockquote class="kiwi-example-answer"><p data-en="∴ GCF(48, 18) = 6." data-zh="∴ GCF(48, 18) = 6。">∴ GCF(48, 18) = 6.</p></blockquote></div><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-insight-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-insight-title&quot;&gt;History of the Subtraction Method&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-insight-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-insight-title&quot;&gt;连减法的历史&lt;/span&gt;"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">History of the Subtraction Method</span></div><div class="kiwi-insight-body">
 <p data-en="The subtraction method for finding the GCF is actually &lt;strong&gt;very
 old&lt;/strong&gt; — it appeared in both &lt;strong&gt;ancient China&lt;/strong&gt; and
 &lt;strong&gt;ancient Greece&lt;/strong&gt;, developed independently." data-zh="用来求 GCF 的连减法其实 &lt;strong&gt;非常古老&lt;/strong&gt;——它曾在 &lt;strong&gt;古代中国&lt;/strong&gt; 与 &lt;strong&gt;古代希腊&lt;/strong&gt; 各自独立地出现。">The subtraction method for finding the GCF is actually <strong>very
 old</strong> — it appeared in both <strong>ancient China</strong> and
 <strong>ancient Greece</strong>, developed independently.</p>
 <ul>
-<li><p data-en="In &lt;strong&gt;ancient China&lt;/strong&gt;, the idea shows up in the
+<li data-en="In &lt;strong&gt;ancient China&lt;/strong&gt;, the idea shows up in the
 classic math text 《九章算术》 (The Nine Chapters on the Mathematical
 Art), written around 200 BCE to 100 CE. Chinese mathematicians used
 repeated subtraction to simplify ratios and find common measures —
@@ -314,8 +301,8 @@ classic math text 《九章算术》 (The Nine Chapters on the Mathematical
 Art), written around 200 BCE to 100 CE. Chinese mathematicians used
 repeated subtraction to simplify ratios and find common measures —
 exactly the same idea as
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gcd(a,b) = gcd(a - b,b)</annotation></semantics></math>.</p></li>
-<li><p data-en="In &lt;strong&gt;ancient Greece&lt;/strong&gt;, around the same time (300
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gcd(a,b) = gcd(a - b,b)</annotation></semantics></math>.</li>
+<li data-en="In &lt;strong&gt;ancient Greece&lt;/strong&gt;, around the same time (300
 BCE), the mathematician &lt;strong&gt;Euclid&lt;/strong&gt; described the same
 method in &lt;strong&gt;Elements&lt;/strong&gt;, Book VII. Because division was
 difficult back then, repeated subtraction was the easiest way to find
@@ -323,13 +310,13 @@ the greatest common measure." data-zh="在 &lt;strong&gt;古希腊&lt;/strong&gt
 BCE), the mathematician <strong>Euclid</strong> described the same
 method in <strong>Elements</strong>, Book VII. Because division was
 difficult back then, repeated subtraction was the easiest way to find
-the greatest common measure.</p></li>
+the greatest common measure.</li>
 </ul>
 <p data-en="So, the simple subtraction method has a long history — used by early
 mathematicians in both China and Greece more than &lt;strong&gt;2,000 years
 ago&lt;/strong&gt;!" data-zh="因此，这种简单的连减法历史悠久——早在 &lt;strong&gt;2000 多年前&lt;/strong&gt;，中国和希腊的早期数学家就已在运用！">So, the simple subtraction method has a long history — used by early
 mathematicians in both China and Greece more than <strong>2,000 years
-ago</strong>!</p></div></aside></div></details><details class="lesson-card kiwi-method-card"><summary data-en="Division Method (Euclidean Algorithm)" data-zh="轮转相除法（欧几里得算法）">Division Method (Euclidean Algorithm)</summary><div class="lesson-card-content"><p data-en="This method is also called &lt;em&gt;Euclidean Algorithm&lt;/em&gt;. It is the
+ago</strong>!</p></blockquote></div></aside></div></details><details class="lesson-card kiwi-method-card"><summary data-en="Division Method (Euclidean Algorithm)" data-zh="轮转相除法（欧几里得算法）">Division Method (Euclidean Algorithm)</summary><div class="lesson-card-content"><p data-en="This method is also called &lt;em&gt;Euclidean Algorithm&lt;/em&gt;. It is the
 fastest method for large numbers." data-zh="这一方法也叫 &lt;em&gt;欧几里得算法&lt;/em&gt;，是求大数 GCF 最快的方法。">This method is also called <em>Euclidean Algorithm</em>. It is the
 fastest method for large numbers.</p><p data-en="The Subtraction Method works, but it becomes slow when the numbers
 are far apart." data-zh="连减法有效，但当两个数相差很大时会很慢。">The Subtraction Method works, but it becomes slow when the numbers
@@ -356,12 +343,12 @@ is GCF." data-zh="其中 &lt;strong&gt;r&lt;/strong&gt; 是 &lt;strong&gt;a&lt;/
 divided by <strong>b</strong>. Repeat this process until the remainder
 becomes 0.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">gcd</mi><annotation encoding="application/x-tex">\gcd</annotation></semantics></math>
-is GCF.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard"><p class="kiwi-example-question" data-en="Find &lt;span class=&quot;kiwi-inline-math&quot;&gt;GCF(84, 30)&lt;/span&gt;." data-zh="求 &lt;span class=&quot;kiwi-inline-math&quot;&gt;GCF(84, 30)&lt;/span&gt;。">Find <span class="kiwi-inline-math">GCF(84, 30)</span>.</p><ol class="kiwi-example-steps"><li data-en="84 ÷ 30 = 2 remainder 24" data-zh="84 ÷ 30 = 2 余数 24">84 ÷ 30 = 2 remainder 24</li><li data-en="30 ÷ 24 = 1 remainder 6" data-zh="30 ÷ 24 = 1 余数 6">30 ÷ 24 = 1 remainder 6</li><li data-en="24 ÷ 6 = 4 remainder 0" data-zh="24 ÷ 6 = 4 余数 0">24 ÷ 6 = 4 remainder 0</li></ol><p class="kiwi-example-explanation" data-en="When the remainder is 0, the last divisor is the GCF." data-zh="当余数为 0 时，最后一个除数就是 GCF。">When the remainder is 0, the last divisor is the GCF.</p><p class="kiwi-example-answer" data-en="∴ GCF(84, 30) = 6." data-zh="∴ GCF(84, 30) = 6。">∴ GCF(84, 30) = 6.</p></div><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-insight-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-insight-title&quot;&gt;History of the Division Method&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-insight-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-insight-title&quot;&gt;轮转相除法的历史&lt;/span&gt;"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">History of the Division Method</span></div><div class="kiwi-insight-body">
+is GCF.</p><p data-en="Example:" data-zh="示例：">Example:</p><div class="kiwi-example-block kiwi-example-standard"><p class="kiwi-example-question" data-en="Find &lt;span class=&quot;kiwi-inline-math&quot;&gt;GCF(84, 30)&lt;/span&gt;." data-zh="求 &lt;span class=&quot;kiwi-inline-math&quot;&gt;GCF(84, 30)&lt;/span&gt;。">Find <span class="kiwi-inline-math">GCF(84, 30)</span>.</p><ol class="kiwi-example-steps"><li data-en="84 ÷ 30 = 2 remainder 24" data-zh="84 ÷ 30 = 2 余数 24">84 ÷ 30 = 2 remainder 24</li><li data-en="30 ÷ 24 = 1 remainder 6" data-zh="30 ÷ 24 = 1 余数 6">30 ÷ 24 = 1 remainder 6</li><li data-en="24 ÷ 6 = 4 remainder 0" data-zh="24 ÷ 6 = 4 余数 0">24 ÷ 6 = 4 remainder 0</li></ol><p class="kiwi-example-explanation" data-en="When the remainder is 0, the last divisor is the GCF." data-zh="当余数为 0 时，最后一个除数就是 GCF。">When the remainder is 0, the last divisor is the GCF.</p><p class="kiwi-example-answer" data-en="∴ GCF(84, 30) = 6." data-zh="∴ GCF(84, 30) = 6。">∴ GCF(84, 30) = 6.</p></blockquote></div><aside class="kiwi-insight-panel" role="note"><div class="kiwi-insight-header" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-insight-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-insight-title&quot;&gt;History of the Division Method&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-insight-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-insight-title&quot;&gt;轮转相除法的历史&lt;/span&gt;"><span aria-hidden="true" class="kiwi-insight-icon">💡</span><span class="kiwi-insight-title">History of the Division Method</span></div><div class="kiwi-insight-body">
 <p data-en="The division method for finding the GCF is a faster version of the
 ancient subtraction method ." data-zh="求 GCF 的轮转相除法是古代连减法的更快版本。">The division method for finding the GCF is a faster version of the
 ancient subtraction method .</p>
 <ul>
-<li><p data-en="Around &lt;strong&gt;300 BCE&lt;/strong&gt;, the Greek mathematician
+<li data-en="Around &lt;strong&gt;300 BCE&lt;/strong&gt;, the Greek mathematician
 &lt;strong&gt;Euclid&lt;/strong&gt; discovered that you could jump straight to the
 answer by using division. He wrote this idea in
 &lt;strong&gt;Elements&lt;/strong&gt;, Book VII:
@@ -370,19 +357,19 @@ answer by using division. He wrote this idea in
 <strong>Euclid</strong> discovered that you could jump straight to the
 answer by using division. He wrote this idea in
 <strong>Elements</strong>, Book VII:
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mo>,</mo><mo>;</mo><mi>a</mi><mi>b</mi><mspace width="0.222em"></mspace><mi>m</mi><mi>o</mi><mi>d</mi><mspace width="0.222em"></mspace><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gcd(a,b) = gcd(b,;ab\ mod\ b)</annotation></semantics></math>.</p></li>
-<li><p data-en="In &lt;strong&gt;ancient China&lt;/strong&gt;, mathematicians also used
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mi mathvariant="normal">gcd</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>b</mi><mo>,</mo><mo>;</mo><mi>a</mi><mi>b</mi><mspace width="0.222em"></mspace><mi>m</mi><mi>o</mi><mi>d</mi><mspace width="0.222em"></mspace><mi>b</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gcd(a,b) = gcd(b,;ab\ mod\ b)</annotation></semantics></math>.</li>
+<li data-en="In &lt;strong&gt;ancient China&lt;/strong&gt;, mathematicians also used
 division to simplify ratios and fractions, especially in 《九章算术》.
 The logic behind it is the same idea of reducing numbers using
 division." data-zh="在 &lt;strong&gt;中国古代&lt;/strong&gt;，数学家也用除法来化简比与分数，尤其在《九章算术》中。其背后的逻辑都是用除法来化简数，思想相同。">In <strong>ancient China</strong>, mathematicians also used
 division to simplify ratios and fractions, especially in 《九章算术》.
 The logic behind it is the same idea of reducing numbers using
-division.</p></li>
-<li><p data-en="Over time, Euclid’s division method became known as the
+division.</li>
+<li data-en="Over time, Euclid’s division method became known as the
 &lt;strong&gt;Euclidean Algorithm&lt;/strong&gt;. Modern computers still use it
 today because it is extremely fast and efficient." data-zh="后来，欧几里得的除法方法被称为 &lt;strong&gt;欧几里得算法&lt;/strong&gt;。现代计算机仍在使用它，因为它极快且高效。">Over time, Euclid’s division method became known as the
 <strong>Euclidean Algorithm</strong>. Modern computers still use it
-today because it is extremely fast and efficient.</p></li>
+today because it is extremely fast and efficient.</li>
 </ul>
 <p data-en="So, the division method you learn in class is not new — it is a
 powerful idea that has been used for more than &lt;strong&gt;2,000
@@ -514,6 +501,7 @@ remainder is the GCF.</p></div></details></section></article></div>
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -548,6 +536,8 @@ remainder is the GCF.</p></div></details></section></article></div>
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 <script id="kiwi-accordion-controls-script">
 (function(){

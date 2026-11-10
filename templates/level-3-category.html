@@ -42,7 +42,8 @@
 .edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}
 .edu-topic .edu-link{white-space:nowrap;color:#1768b2;font-weight:800;font-size:14px}
 .edu-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
-.edu-panel{padding:22px;border:1px solid var(--line);border-radius:17px;background:#fff}
+.edu-two>*{min-width:0}
+.edu-panel{padding:22px;border:1px solid var(--line);border-radius:17px;background:#fff;box-sizing:border-box;min-width:0}
 .edu-panel h3{margin:0 0 9px;color:#173e70;font-size:19px}
 .edu-panel p,.edu-panel li{color:#5a6d85;line-height:1.65;font-size:14px}
 .edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
@@ -53,7 +54,7 @@
 .edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:#fff!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}
 .edu-button:hover{background:#10548f}
 .edu-figure{width:100%;height:auto;border:1px solid var(--line);border-radius:16px}
-@media(max-width:760px){.edu-grid,.edu-two{grid-template-columns:1fr}.edu-feature{grid-template-columns:1fr}.edu-feature img{height:220px}.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
+@media(max-width:760px){.edu-grid,.edu-two{grid-template-columns:1fr;gap:14px}.edu-panel{padding:16px 14px}.edu-panel h3{font-size:17px}.edu-feature{grid-template-columns:1fr}.edu-feature img{height:220px}.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
   </style>
 </head>
 <body class="edu-page">

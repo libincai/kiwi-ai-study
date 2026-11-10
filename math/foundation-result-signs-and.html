@@ -33,7 +33,7 @@
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote{border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article .edu-table-wrap{max-width:100%;overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:table;table-layout:fixed}.mf-article .edu-table-wrap table{margin:0}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -53,6 +53,25 @@
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body class="edu-page topic-page">
@@ -93,93 +112,78 @@
 <div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a data-en="Number Families" data-zh="数的家族" href="number-families.html">Number Families</a><a href="foundation-decimal.html" data-en="Decimal" data-zh="小数">Decimal</a><a href="foundation-decimal-to-fraction.html" data-en="Decimal to Fraction" data-zh="小数化为分数">Decimal to Fraction</a><a href="foundation-division-rules-2-9.html" data-en="Division Rules (2–9)" data-zh="整除规则（2–9）">Division Rules (2–9)</a><a href="foundation-greatest-common-factor-gcf.html" data-en="Greatest Common Factor (GCF)" data-zh="最大公因数（GCF）">Greatest Common Factor (GCF)</a><a href="foundation-math-operation-signs-and.html" data-en="Math Operation Signs (+ and −)" data-zh="运算符号（加与减）">Math Operation Signs (+ and −)</a><a aria-current="page" class="mf-current" href="foundation-result-signs-and.html" data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</a><a href="foundation-unit-conversions-and-rates.html" data-en="Unit Conversions and Rates" data-zh="单位换算与比率">Unit Conversions and Rates</a><a href="foundation-exponents.html" data-en="Exponents" data-zh="指数">Exponents</a><a href="foundation-roots.html" data-en="Roots" data-zh="根式">Roots</a><a href="foundation-rational-exponents.html" data-en="Rational Exponents" data-zh="有理指数">Rational Exponents</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</h1>
 <p data-en="When multiplying or dividing:" data-zh="做乘法或除法时：">When multiplying or dividing:</p>
 <ul>
-<li><p data-en="Same signs → Positive (+)" data-zh="同号 → 正（+）">Same signs → Positive (+)</p></li>
-<li><p data-en="Different signs → Negative (−)" data-zh="异号 → 负（−）">Different signs → Negative (−)</p></li>
+<li data-en="Same signs → Positive (+)" data-zh="同号 → 正（+）">Same signs → Positive (+)</li>
+<li data-en="Different signs → Negative (−)" data-zh="异号 → 负（−）">Different signs → Negative (−)</li>
 </ul>
 <p data-en="The rule determines the sign of the answer." data-zh="该规则决定答案的符号。">The rule determines the sign of the answer.</p>
-<table>
-<colgroup>
-<col style="width: 100%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th><p data-en="&lt;strong&gt;Same signs → positive. Different signs →
-negative.&lt;/strong&gt;" data-zh="&lt;strong&gt;同号 → 正。异号 →
-负。&lt;/strong&gt;"><strong>Same signs → positive. Different signs →
-negative.</strong></p>
-<table>
+<div class="edu-table-wrap">
+<table class="edu-table kiwi-edu-table-with-mnemonic">
 <colgroup>
 <col style="width: 24%"/>
 <col style="width: 56%"/>
 <col style="width: 19%"/>
 </colgroup>
 <thead>
-<tr class="header">
-<th colspan="3" data-en="&lt;strong&gt;Multiplication (×)&lt;/strong&gt;" data-zh="&lt;strong&gt;乘法（×）&lt;/strong&gt;"><strong>Multiplication (×)</strong></th>
+<tr class="kiwi-edu-table-mnemonic">
+<th colspan="3" data-en="&lt;strong&gt;Same signs → positive. Different signs →
+negative.&lt;/strong&gt;" data-zh="&lt;strong&gt;同号 → 正。异号 →
+负。&lt;/strong&gt;"><strong>Same signs → positive. Different signs →
+negative.</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
+<th colspan="3" data-en="&lt;strong&gt;Multiplication (×)&lt;/strong&gt;" data-zh="&lt;strong&gt;乘法（×）&lt;/strong&gt;"><strong>Multiplication (×)</strong></th>
+</tr>
+
+<tr>
 <td>6 × (+3)</td>
 <td data-en="Same signs (+ and +)" data-zh="同号（+ 和 +）">Same signs (+ and +)</td>
 <td>18</td>
 </tr>
-<tr class="even">
+<tr>
 <td>6 × (−3)</td>
 <td data-en="Different signs (+ and −)" data-zh="异号（+ 和 −）">Different signs (+ and −)</td>
 <td>−18</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>(−6) × (+3)</td>
 <td data-en="Different signs (− and +)" data-zh="异号（− 和 +）">Different signs (− and +)</td>
 <td>−18</td>
 </tr>
-<tr class="even">
+<tr>
 <td>(−6) × (−3)</td>
 <td data-en="Same signs (− and −)" data-zh="同号（− 和 −）">Same signs (− and −)</td>
 <td>18</td>
 </tr>
-</tbody>
-</table>
-<table>
-<colgroup>
-<col style="width: 24%"/>
-<col style="width: 56%"/>
-<col style="width: 19%"/>
-</colgroup>
-<thead>
-<tr class="header">
+
+<tr>
 <th colspan="3" data-en="&lt;strong&gt;Division (÷)&lt;/strong&gt;" data-zh="&lt;strong&gt;除法（÷）&lt;/strong&gt;"><strong>Division (÷)</strong></th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
+
+<tr>
 <td>6 ÷ (+3)</td>
 <td data-en="Same signs (+ and +)" data-zh="同号（+ 和 +）">Same signs (+ and +)</td>
 <td>2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>6 ÷ (−3)</td>
 <td data-en="Different signs (+ and −)" data-zh="异号（+ 和 −）">Different signs (+ and −)</td>
 <td>−2</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>(−6) ÷ (+3)</td>
 <td data-en="Different signs (− and +)" data-zh="异号（− 和 +）">Different signs (− and +)</td>
 <td>−2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>(−6) ÷ (−3)</td>
 <td data-en="Same signs (− and −)" data-zh="同号（− 和 −）">Same signs (− and −)</td>
 <td>2</td>
 </tr>
 </tbody>
-</table></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
 </table>
+</div>
 </article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
@@ -246,5 +250,36 @@ negative.</strong></p>
 })();
   </script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

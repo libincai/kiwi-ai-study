@@ -22,7 +22,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-en="Function in Real Life: A Car’s Journey | KIWI 爱AI Study" data-zh="生活中的函数：汽车行程 | KIWI 爱AI Study">Function in Real Life: A Car’s Journey | KIWI 爱AI Study</title>
 <meta content="Explore Function in Real Life: A Car’s Journey in the KIWI 爱AI Study mathematical thinking library." name="description"/>
-<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
 <style>
 /* Example topic content tokens (Number Families pattern) — trim or extend per page */
@@ -76,7 +77,6 @@
 </style><style>
 /* Word-to-web math and insight panel cleanup */
 .kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
-.kiwi-topic-article .kiwi-insight-header{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#865915;font-weight:700;font-size:1.04rem;text-align:left}
 .kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
 .kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
 .kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
@@ -164,7 +164,7 @@
 .kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
 .kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
-.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p {margin:0!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
 .kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
 .kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
 </style><style>
@@ -190,8 +190,7 @@
 .kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{box-sizing:border-box;display:block;width:100%;max-width:100%;margin:1.15rem 0;padding:1rem 1.2rem;background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e4b54e;border-radius:12px;color:#503d24;text-align:left;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
 .kiwi-insight-panel p,.kiwi-curriculum-panel p,.kiwi-word-info-panel p,.kiwi-insight-panel li,.kiwi-curriculum-panel li,.kiwi-word-info-panel li{color:inherit;text-align:left;font-weight:400}
 .kiwi-insight-panel strong,.kiwi-curriculum-panel strong,.kiwi-word-info-panel strong{font-weight:700}
-.kiwi-insight-header,.kiwi-word-info-header{display:flex;align-items:center;gap:.65rem;margin:0 0 .55rem;font-weight:700;color:#895b0e;text-align:left}
-.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
+.kiwi-insight-header,.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
 .kiwi-insight-icon,.kiwi-word-info-icon{flex:none;font-size:1.1rem;line-height:1.2}
 .kiwi-insight-body>*:first-child,.kiwi-word-info-body>*:first-child{margin-top:0}
 .kiwi-insight-body>*:last-child,.kiwi-word-info-body>*:last-child{margin-bottom:0}
@@ -266,41 +265,41 @@ Mathematical Ideas</summary><div class="lesson-card-body"><p data-en="We can use
 including:" data-zh="我们可以用这次行程来探索几种数学概念，
 包括：">We can use this journey to explore several mathematical concepts,
 including:</p><ul>
-<li><p data-en="Functions, domain and range" data-zh="函数、定义域与值域">Functions, domain and range</p></li>
-<li><p data-en="Linear, quadratic, and constant functions" data-zh="一次、二次与常数函数">Linear, quadratic, and constant functions</p></li>
-<li><p data-en="Step patterns and rate of change" data-zh="阶差规律与变化率">Step patterns and rate of change</p></li>
-<li><p data-en="How the coefficient affects step patterns" data-zh="系数如何影响阶差规律">How the coefficient affects step patterns</p></li>
-<li><p data-en="Inverse functions" data-zh="反函数">Inverse functions</p></li>
+<li data-en="Functions, domain and range" data-zh="函数、定义域与值域">Functions, domain and range</li>
+<li data-en="Linear, quadratic, and constant functions" data-zh="一次、二次与常数函数">Linear, quadratic, and constant functions</li>
+<li data-en="Step patterns and rate of change" data-zh="阶差规律与变化率">Step patterns and rate of change</li>
+<li data-en="How the coefficient affects step patterns" data-zh="系数如何影响阶差规律">How the coefficient affects step patterns</li>
+<li data-en="Inverse functions" data-zh="反函数">Inverse functions</li>
 </ul><p data-en="For this example, we will use simplified mathematical models to
 describe the car’s speed over time." data-zh="在本例中，我们将用简化的数学模型来描述汽车速度随时间的变化。">For this example, we will use simplified mathematical models to
 describe the car’s speed over time.</p><ul>
-<li><p data-en="Stage 1: Accelerating (0–3 seconds)&lt;br/&gt;
+<li data-en="Stage 1: Accelerating (0–3 seconds)&lt;br/&gt;
 The car starts at 0 km/h and reaches 90 km/h after 3 seconds." data-zh="阶段 1：加速（0–3 秒）&lt;br/&gt;
 汽车从 0 km/h 出发，3 秒后达到 90 km/h。">Stage 1: Accelerating (0–3 seconds)<br/>
-The car starts at 0 km/h and reaches 90 km/h after 3 seconds.</p></li>
-<li><p data-en="Stage 2: Constant Speed (3–8 seconds)&lt;br/&gt;
+The car starts at 0 km/h and reaches 90 km/h after 3 seconds.</li>
+<li data-en="Stage 2: Constant Speed (3–8 seconds)&lt;br/&gt;
 The car maintains a constant speed of 90 km/h for 5 seconds." data-zh="阶段 2：匀速（3–8 秒）&lt;br/&gt;
 汽车在 5 秒内保持 90 km/h 的恒定速度。">Stage 2: Constant Speed (3–8 seconds)<br/>
-The car maintains a constant speed of 90 km/h for 5 seconds.</p></li>
-<li><p data-en="Stage 3: Decelerating (8–13 seconds)&lt;br/&gt;
+The car maintains a constant speed of 90 km/h for 5 seconds.</li>
+<li data-en="Stage 3: Decelerating (8–13 seconds)&lt;br/&gt;
 The car slows down from 90 km/h to 0 km/h over 5 seconds." data-zh="阶段 3：减速（8–13 秒）&lt;br/&gt;
 汽车在 5 秒内从 90 km/h 减速到 0 km/h。">Stage 3: Decelerating (8–13 seconds)<br/>
-The car slows down from 90 km/h to 0 km/h over 5 seconds.</p></li>
+The car slows down from 90 km/h to 0 km/h over 5 seconds.</li>
 </ul></div></details><details class="lesson-card"><summary data-en="2. The Speed–Time Function" data-zh="2. 速度–时间函数">2. The Speed–Time Function</summary><div class="lesson-card-body"><p data-en="Let:" data-zh="设：">Let:</p><ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;t&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;t&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 = time in seconds
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;s&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;t&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 = 时间，单位为秒
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;s&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
 = time in seconds
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>)</p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v(t)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>)</li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v(t)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 = speed in kilometres per hour
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;/&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;km/h&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v(t)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 = 速度，单位为千米每小时
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;/&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;km/h&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">v(t)</annotation></semantics></math>
 = speed in kilometres per hour
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">km/h</annotation></semantics></math>)</p></li>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">km/h</annotation></semantics></math>)</li>
 </ul><p data-en="The complete journey can be represented by a piecewise function:" data-zh="整段行程可以用一个分段函数来表示：">The complete journey can be represented by a piecewise function:</p><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;{&lt;/mo&gt;&lt;mtable&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;center&quot; style=&quot;text-align: center&quot;&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;msup&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;center&quot; style=&quot;text-align: center&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;center&quot; style=&quot;text-align: center&quot;&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;center&quot; style=&quot;text-align: center&quot;&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd columnalign=&quot;center&quot; style=&quot;text-align: center&quot;&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mtd&gt;&lt;mtd columnalign=&quot;center&quot; style=&quot;text-align: center&quot;&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;13&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;/mrow&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v(t) = \left\{ \begin{matrix}
 10t^{2} &amp;amp; 0 \leq t \leq 3 \\
 90 &amp;amp; 3 &amp;lt; t \leq 8 \\
@@ -339,14 +338,14 @@ model for studying functions and patterns. It does not represent
 constant physical acceleration.</em></p></div></details><details class="lesson-card"><summary data-en="4. Domain and Range" data-zh="4. 定义域与值域">4. Domain and Range</summary><div class="lesson-card-body"><p data-en="The domain is the set of allowed input values. The range is the set
 of possible output values." data-zh="定义域是允许的输入值的集合。值域是可能的输出值的集合。">The domain is the set of allowed input values. The range is the set
 of possible output values.</p><p data-en="In this example:" data-zh="在本例中：">In this example:</p><ul>
-<li><p data-en="Input
+<li data-en="Input
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;):
 Time, measured in seconds." data-zh="输入
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)：
 时间，以秒为单位。">Input
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>):
-Time, measured in seconds.</p></li>
-<li><p data-en="Output
+Time, measured in seconds.</li>
+<li data-en="Output
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;):
 Speed, measured in
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;/&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;km/h&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="输出
@@ -356,7 +355,7 @@ Speed, measured in
 为单位。">Output
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>):
 Speed, measured in
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">km/h</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">km/h</annotation></semantics></math>.</li>
 </ul><p data-en="For the complete journey:" data-zh="对于整段行程：">For the complete journey:</p><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Domain&lt;/mtext&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;13&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{Domain}:\ 0 \leq t \leq 13&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;定义域&lt;/mtext&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;13&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{定义域}:\ 0 \leq t \leq 13&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Domain</mtext><mo>:</mo><mspace width="0.222em"></mspace><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">\text{Domain}:\ 0 \leq t \leq 13</annotation></semantics></math></div><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Range: &lt;/mtext&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{Range:~}0 \leq v \leq 90&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;值域： &lt;/mtext&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{值域：~}0 \leq v \leq 90&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Range: </mtext><mn>0</mn><mo>≤</mo><mi>v</mi><mo>≤</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">\text{Range:~}0 \leq v \leq 90</annotation></semantics></math></div><p data-en="The domain tells us when the journey is being modelled. The range
 tells us which speeds occur during the journey." data-zh="定义域告诉我们何时在建模这段行程。值域告诉我们行程中会出现哪些速度。">The domain tells us when the journey is being modelled. The range
 tells us which speeds occur during the journey.</p><p data-en="Each stage also has its own domain and range:" data-zh="每个阶段也有自己的定义域和值域：">Each stage also has its own domain and range:</p><table>
@@ -398,15 +397,15 @@ excludes it." data-zh="在每个分界点上，一个阶段包含端点，下一
 excludes it.</p>
 <p data-en="For example:" data-zh="例如：">For example:</p>
 <ul>
-<li><p data-en="Stage 1:
+<li data-en="Stage 1:
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;0 \leq t \leq 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="阶段 1：
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;0 \leq t \leq 3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">Stage 1:
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">0 \leq t \leq 3</annotation></semantics></math></p></li>
-<li><p data-en="Stage 2:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">0 \leq t \leq 3</annotation></semantics></math></li>
+<li data-en="Stage 2:
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;3 &amp;lt; t \leq 8&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="阶段 2：
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;3 &amp;lt; t \leq 8&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">Stage 2:
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">3 &lt; t \leq 8</annotation></semantics></math></p></li>
-<li><p data-en="Stage 3:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">3 &lt; t \leq 8</annotation></semantics></math></li>
+<li data-en="Stage 3:
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;13&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;8 &amp;lt; t \leq 13&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="阶段 3：
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;13&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;8 &amp;lt; t \leq 13&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">Stage 3:
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>13</mn></mrow><annotation encoding="application/x-tex">8 &lt; t \leq 13</annotation></semantics></math></p>
@@ -426,7 +425,7 @@ belongs only to Stage 2.</p>
 <p data-en="&lt;strong&gt;Remember:&lt;/strong&gt; Every input must belong to exactly one
 stage!" data-zh="&lt;strong&gt;记住：&lt;/strong&gt; 每个输入必须恰好属于一个
 阶段！"><strong>Remember:</strong> Every input must belong to exactly one
-stage!</p></li>
+stage!</li>
 </ul></div></aside></div></details><details class="lesson-card"><summary data-en="5. Discrete vs. Continuous
 Functions" data-zh="5. 离散函数与连续
 函数">5. Discrete vs. Continuous
@@ -555,13 +554,13 @@ differences:</p><div class="kiwi-math-block"><math class="math-display" display=
 </annotation></semantics></math></div>Therefore:</p><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Second differences: &lt;/mtext&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{Second~differences:~} + 20,\  + 20&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;二阶差分： &lt;/mtext&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\text{二阶差分：~} + 20,\  + 20&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Second differences: </mtext><mo>+</mo><mn>20</mn><mo>,</mo><mspace width="0.222em"></mspace><mo>+</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">\text{Second~differences:~} + 20,\  + 20</annotation></semantics></math></div><p data-en="The second differences are constant, which is a characteristic of a
 quadratic pattern." data-zh="二阶差分保持不变，这是二次规律的特征。">The second differences are constant, which is a characteristic of a
 quadratic pattern.</p><p data-en="&lt;strong&gt;Remember:&lt;/strong&gt;" data-zh="&lt;strong&gt;记住：&lt;/strong&gt;"><strong>Remember:</strong></p><ul>
-<li><p data-en="First differences describe how much the output changes." data-zh="一阶差分描述输出变化了多少。">First differences describe how much the output changes.</p></li>
-<li><p data-en="Second differences describe how much the first differences
+<li data-en="First differences describe how much the output changes." data-zh="一阶差分描述输出变化了多少。">First differences describe how much the output changes.</li>
+<li data-en="Second differences describe how much the first differences
 change." data-zh="二阶差分描述一阶差分变化了多少。">Second differences describe how much the first differences
-change.</p></li>
-<li><p data-en="Constant second differences indicate a quadratic pattern when the
+change.</li>
+<li data-en="Constant second differences indicate a quadratic pattern when the
 input intervals are equal." data-zh="当输入间隔相等时，二阶差分不变表明这是二次规律。">Constant second differences indicate a quadratic pattern when the
-input intervals are equal.</p></li>
+input intervals are equal.</li>
 </ul><h4 id="a-connection-to-physics" data-en="A connection to physics" data-zh="与物理学的联系">A connection to physics</h4><p data-en="In a speed–timetable, first differences show how much the speed
 changes over equal time intervals. Second differences show how those
 speed increments change." data-zh="在速度–时间表中，一阶差分表示在相等时间间隔内速度变化了多少。二阶差分表示这些速度增量如何变化。">In a speed–timetable, first differences show how much the speed
@@ -623,35 +622,35 @@ Inverses" data-zh="8. 函数与
 Inverses</summary><div class="lesson-card-body"><p data-en="A function maps each input to exactly one output. An inverse reverses
 the input–output relationship." data-zh="函数把每个输入对应到唯一的一个输出。反函数则颠倒输入与输出的关系。">A function maps each input to exactly one output. An inverse reverses
 the input–output relationship.</p><p data-en="In our original function:" data-zh="在原来的函数中：">In our original function:</p><ul>
-<li><p data-en="Input
+<li data-en="Input
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;):
 Time (seconds)" data-zh="输入
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)：
 时间（秒）">Input
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>):
-Time (seconds)</p></li>
-<li><p data-en="Output
+Time (seconds)</li>
+<li data-en="Output
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;):
 Speed (km/h)" data-zh="输出
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)：
 速度 (km/h)">Output
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>):
-Speed (km/h)</p></li>
+Speed (km/h)</li>
 </ul><p data-en="In the inverse relationship:" data-zh="在反函数关系中：">In the inverse relationship:</p><ul>
-<li><p data-en="Input
+<li data-en="Input
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;):
 Speed (km/h)" data-zh="输入
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)：
 速度 (km/h)">Input
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>):
-Speed (km/h)</p></li>
-<li><p data-en="Output
+Speed (km/h)</li>
+<li data-en="Output
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;):
 Time (seconds)" data-zh="输出
 (&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;)：
 时间（秒）">Output
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>):
-Time (seconds)</p></li>
+Time (seconds)</li>
 </ul><p data-en="To find an inverse, we exchange
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 and
@@ -717,15 +716,15 @@ time.</p><p data-en="Starting with:" data-zh="从下列式子出发：">Starting
 the original time." data-zh="反函数的输入是原来的速度，输出是原来的时间。">The inverse input is the original speed, and the inverse output is
 the original time.</p><aside class="kiwi-word-info-panel" role="note"><div class="kiwi-word-info-header" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-word-info-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-word-info-title&quot;&gt;&lt;strong&gt;Understanding Function Notation&lt;/strong&gt;&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-word-info-icon&quot;&gt;💡&lt;/span&gt;&lt;span class=&quot;kiwi-word-info-title&quot;&gt;&lt;strong&gt;理解函数记号&lt;/strong&gt;&lt;/span&gt;"><span aria-hidden="true" class="kiwi-word-info-icon">💡</span><span class="kiwi-word-info-title"><strong>Understanding Function Notation</strong></span></div><div class="kiwi-word-info-body">
 <ul>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;−&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;mrow&gt;&lt;mspace width=&quot;0.333em&quot;&gt;&lt;/mspace&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt; &lt;/mtext&gt;&lt;mspace width=&quot;0.333em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f^{- 1}\text{ }&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;represents
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;−&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;mrow&gt;&lt;mspace width=&quot;0.333em&quot;&gt;&lt;/mspace&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt; &lt;/mtext&gt;&lt;mspace width=&quot;0.333em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f^{- 1}\text{ }&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;represents
 the &lt;strong&gt;inverse function&lt;/strong&gt;, not the reciprocal of
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;−&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;mrow&gt;&lt;mspace width=&quot;0.333em&quot;&gt;&lt;/mspace&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt; &lt;/mtext&gt;&lt;mspace width=&quot;0.333em&quot;&gt;&lt;/mspace&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f^{- 1}\text{ }&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;表示
 &lt;strong&gt;反函数&lt;/strong&gt;，而不是
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;f&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 的倒数。"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow></mrow><annotation encoding="application/x-tex">f^{- 1}\text{ }</annotation></semantics></math>represents
 the <strong>inverse function</strong>, not the reciprocal of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</p></li>
-<li><p data-en="In
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</li>
+<li data-en="In
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v = f(t)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;t&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 represents time and
@@ -741,8 +740,8 @@ represents speed. Their meanings are fixed." data-zh="在
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
 represents time and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
-represents speed. Their meanings are fixed.</p></li>
-<li><p data-en="Unlike generic variables
+represents speed. Their meanings are fixed.</li>
+<li data-en="Unlike generic variables
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 and
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
@@ -769,7 +768,7 @@ and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
 represent specific quantities. Instead of simply swapping their letters,
 solve for time in terms of speed:
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>v</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">t = f^{- 1}(v)</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo form="prefix" stretchy="true">(</mo><mi>v</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">t = f^{- 1}(v)</annotation></semantics></math>.</li>
 </ul></div></aside><p data-en="&lt;strong&gt;Remember:&lt;/strong&gt; In
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y = f(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -811,12 +810,12 @@ but the inverse relation is not always a function.</p>
 <p data-en="Consider the constant-speed function:" data-zh="考虑匀速函数：">Consider the constant-speed function:</p>
 <div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;1.0em&quot;&gt;&lt;/mspace&gt;&lt;mspace width=&quot;1.0em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v(t) = 90,\quad\quad 3 \leq t \leq 8&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;1.0em&quot;&gt;&lt;/mspace&gt;&lt;mspace width=&quot;1.0em&quot;&gt;&lt;/mspace&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v(t) = 90,\quad\quad 3 \leq t \leq 8&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math class="math-display" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo form="prefix" stretchy="true">(</mo><mi>t</mi><mo form="postfix" stretchy="true">)</mo></mrow><mo>=</mo><mn>90</mn><mo>,</mo><mspace width="1.0em"></mspace><mspace width="1.0em"></mspace><mn>3</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">v(t) = 90,\quad\quad 3 \leq t \leq 8</annotation></semantics></math></div>
 <ul>
-<li><p data-en="&lt;strong&gt;Original function:&lt;/strong&gt; A horizontal line at
+<li data-en="&lt;strong&gt;Original function:&lt;/strong&gt; A horizontal line at
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v = 90&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;strong&gt;原函数：&lt;/strong&gt; 在
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v = 90&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 处的一条水平线。"><strong>Original function:</strong> A horizontal line at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">v = 90</annotation></semantics></math>.</p></li>
-<li><p data-en="&lt;strong&gt;Inverse relation:&lt;/strong&gt; Swapping the input and output
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">v = 90</annotation></semantics></math>.</li>
+<li data-en="&lt;strong&gt;Inverse relation:&lt;/strong&gt; Swapping the input and output
 gives a vertical line at
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v = 90&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
 from
@@ -834,8 +833,8 @@ gives a vertical line at
 from
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">t = 3</annotation></semantics></math>
 to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">t = 8</annotation></semantics></math>.</p></li>
-<li><p data-en="&lt;strong&gt;Why is it not an inverse function?&lt;/strong&gt; The same
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">t = 8</annotation></semantics></math>.</li>
+<li data-en="&lt;strong&gt;Why is it not an inverse function?&lt;/strong&gt; The same
 speed of
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;/&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;90km/h&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 corresponds to many different times. Therefore, the inverse relation
@@ -855,7 +854,7 @@ one-to-one." data-zh="&lt;strong&gt;记住：&lt;/strong&gt; 图像关于
 但由于原函数不是一一对应的，反关系不是函数。"><strong>Remember:</strong> The graphs are symmetric about
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y = x</annotation></semantics></math>,
 but the inverse is not a function because the original function is not
-one-to-one.</p></li>
+one-to-one.</li>
 </ul></div></aside><h5 id="stage-3-linear-function-1" data-en="Stage 3: Linear function" data-zh="阶段 3：一次函数">Stage 3: Linear function</h5><p data-en="The deceleration function is one-to-one. Each speed corresponds to
 exactly one time during this stage." data-zh="减速阶段的函数是一一对应的。在这一阶段，每个速度都对应唯一的时间。">The deceleration function is one-to-one. Each speed corresponds to
 exactly one time during this stage.</p><p data-en="Starting with:" data-zh="从下列式子出发：">Starting with:</p><p><div class="kiwi-math-block" data-en="&lt;math class=&quot;math-display&quot; display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v = 90 - 18(t - 8)
@@ -1027,72 +1026,72 @@ Journey, Many Connections" data-zh="10. 总复习：一次行程，
 Journey, Many Connections</summary><div class="lesson-card-body"><p data-en="This car journey connects the key ideas from the Functions and Graphs
 chapter." data-zh="这次汽车行程把《函数与图像》一章中的核心观念串联起来。">This car journey connects the key ideas from the Functions and Graphs
 chapter.</p><ul>
-<li><p data-en="&lt;strong&gt;Domain and Range:&lt;/strong&gt; Identify the allowed input and
+<li data-en="&lt;strong&gt;Domain and Range:&lt;/strong&gt; Identify the allowed input and
 output values." data-zh="&lt;strong&gt;定义域与值域：&lt;/strong&gt; 找出允许的输入与输出。"><strong>Domain and Range:</strong> Identify the allowed input and
-output values.</p></li>
-<li><p data-en="&lt;strong&gt;Linear, Non-Linear, and Constant Functions:&lt;/strong&gt;
+output values.</li>
+<li data-en="&lt;strong&gt;Linear, Non-Linear, and Constant Functions:&lt;/strong&gt;
 Recognize different function types from their equations and
 graphs." data-zh="&lt;strong&gt;一次、非线性与常数函数：&lt;/strong&gt;
 根据方程与图像辨认不同的函数类型。"><strong>Linear, Non-Linear, and Constant Functions:</strong>
 Recognize different function types from their equations and
-graphs.</p></li>
-<li><p data-en="&lt;strong&gt;Discrete vs. Continuous:&lt;/strong&gt; Distinguish separate
+graphs.</li>
+<li data-en="&lt;strong&gt;Discrete vs. Continuous:&lt;/strong&gt; Distinguish separate
 data points from a continuous relationship." data-zh="&lt;strong&gt;离散与连续：&lt;/strong&gt; 区分离散数据点与连续关系。"><strong>Discrete vs. Continuous:</strong> Distinguish separate
-data points from a continuous relationship.</p></li>
-<li><p data-en="&lt;strong&gt;Step Patterns:&lt;/strong&gt; Identify how outputs change over
+data points from a continuous relationship.</li>
+<li data-en="&lt;strong&gt;Step Patterns:&lt;/strong&gt; Identify how outputs change over
 equal input intervals." data-zh="&lt;strong&gt;阶差规律：&lt;/strong&gt; 看出在相等输入间隔下输出如何变化。"><strong>Step Patterns:</strong> Identify how outputs change over
-equal input intervals.</p></li>
-<li><p data-en="&lt;strong&gt;First and Second Differences:&lt;/strong&gt; Recognize linear
+equal input intervals.</li>
+<li data-en="&lt;strong&gt;First and Second Differences:&lt;/strong&gt; Recognize linear
 and quadratic patterns." data-zh="&lt;strong&gt;一阶差分与二阶差分：&lt;/strong&gt; 识别一次与二次规律。"><strong>First and Second Differences:</strong> Recognize linear
-and quadratic patterns.</p></li>
-<li><p data-en="&lt;strong&gt;Rate of Change:&lt;/strong&gt; Describe how speed changes over
+and quadratic patterns.</li>
+<li data-en="&lt;strong&gt;Rate of Change:&lt;/strong&gt; Describe how speed changes over
 time." data-zh="&lt;strong&gt;变化率：&lt;/strong&gt; 描述速度如何随时间变化。"><strong>Rate of Change:</strong> Describe how speed changes over
-time.</p></li>
-<li><p data-en="&lt;strong&gt;Inverse Functions:&lt;/strong&gt; Reverse the input and output
+time.</li>
+<li data-en="&lt;strong&gt;Inverse Functions:&lt;/strong&gt; Reverse the input and output
 and determine whether the inverse is a function." data-zh="&lt;strong&gt;反函数：&lt;/strong&gt; 颠倒输入与输出，并判断反关系是否为函数。"><strong>Inverse Functions:</strong> Reverse the input and output
-and determine whether the inverse is a function.</p></li>
-<li><p data-en="&lt;strong&gt;The Coefficient (a):&lt;/strong&gt; Understand how it affects
+and determine whether the inverse is a function.</li>
+<li data-en="&lt;strong&gt;The Coefficient (a):&lt;/strong&gt; Understand how it affects
 the step pattern and shape of a quadratic graph." data-zh="&lt;strong&gt;系数 (a)：&lt;/strong&gt; 理解它如何影响阶差规律与二次图像的形状。"><strong>The Coefficient (a):</strong> Understand how it affects
-the step pattern and shape of a quadratic graph.</p></li>
+the step pattern and shape of a quadratic graph.</li>
 </ul><h4 id="think-about-it" data-en="Think about it" data-zh="想一想">Think about it</h4><ol type="1">
-<li><p data-en="Why is the constant-speed stage represented by a horizontal
+<li data-en="Why is the constant-speed stage represented by a horizontal
 line?" data-zh="为什么匀速阶段在图像上是一条水平线？">Why is the constant-speed stage represented by a horizontal
-line?</p></li>
-<li><p data-en="Why are the first differences constant during the linear
+line?</li>
+<li data-en="Why are the first differences constant during the linear
 deceleration stage?" data-zh="为什么在直线减速阶段，一阶差分保持不变？">Why are the first differences constant during the linear
-deceleration stage?</p></li>
-<li><p data-en="What do constant second differences tell us about a quadratic
+deceleration stage?</li>
+<li data-en="What do constant second differences tell us about a quadratic
 pattern?" data-zh="恒定的二阶差分告诉我们二次规律的什么性质？">What do constant second differences tell us about a quadratic
-pattern?</p></li>
-<li><p data-en="Why does the constant function not have an inverse that is also a
+pattern?</li>
+<li data-en="Why does the constant function not have an inverse that is also a
 function?" data-zh="为什么常数函数的反关系不能是函数？">Why does the constant function not have an inverse that is also a
-function?</p></li>
-<li><p data-en="Why does the coefficient (a) affect the width of a
+function?</li>
+<li data-en="Why does the coefficient (a) affect the width of a
 parabola?" data-zh="为什么系数 (a) 会影响抛物线的宽窄？">Why does the coefficient (a) affect the width of a
-parabola?</p></li>
+parabola?</li>
 </ol><h4 id="answer-key-1" data-en="Answer key" data-zh="参考答案">Answer key</h4><ol type="1">
-<li><p data-en="Because the speed remains the same over time, the graph has a
+<li data-en="Because the speed remains the same over time, the graph has a
 constant
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;-value." data-zh="因为速度随时间不变，图像的
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;y&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 值保持恒定。">Because the speed remains the same over time, the graph has a
 constant
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-value.</p></li>
-<li><p data-en="The first differences are constant because the speed decreases by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-value.</li>
+<li data-en="The first differences are constant because the speed decreases by
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;/&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;18\ km/h&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 every second." data-zh="一阶差分恒定，是因为速度每秒减少
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;18&lt;/mn&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;/&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;18\ km/h&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">The first differences are constant because the speed decreases by
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mspace width="0.222em"></mspace><mi>k</mi><mi>m</mi><mi>/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">18\ km/h</annotation></semantics></math>
-every second.</p></li>
-<li><p data-en="They tell us that the pattern is quadratic. For equally spaced
+every second.</li>
+<li data-en="They tell us that the pattern is quadratic. For equally spaced
 inputs, the second differences are constant." data-zh="它们表明这是二次规律。在等距输入下，二阶差分保持不变。">They tell us that the pattern is quadratic. For equally spaced
-inputs, the second differences are constant.</p></li>
-<li><p data-en="Because many different input values correspond to the same output
+inputs, the second differences are constant.</li>
+<li data-en="Because many different input values correspond to the same output
 value. Reversing the inputs and outputs would assign multiple outputs to
 one input, so the inverse relation is not a function." data-zh="因为许多不同的输入对应同一个输出。交换输入与输出后，一个输入会对应多个输出，所以反关系不是函数。">Because many different input values correspond to the same output
 value. Reversing the inputs and outputs would assign multiple outputs to
-one input, so the inverse relation is not a function.</p></li>
-<li><p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+one input, so the inverse relation is not a function.</li>
+<li data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 multiplies the basic quadratic pattern. A larger
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo form=&quot;prefix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo form=&quot;postfix&quot; stretchy=&quot;true&quot;&gt;|&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;|a|&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 makes the parabola narrower, while a smaller positive
@@ -1113,7 +1112,7 @@ makes the parabola narrower, while a smaller positive
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="true">|</mo><mi>a</mi><mo form="postfix" stretchy="true">|</mo></mrow><annotation encoding="application/x-tex">|a|</annotation></semantics></math>
 makes it wider. If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
-is negative, the parabola opens downward.</p></li>
+is negative, the parabola opens downward.</li>
 </ol><h4 id="the-big-idea" data-en="The big idea" data-zh="核心思想">The big idea</h4><p data-en="Functions are not just equations. They describe relationships between
 quantities, and their graphs, differences, and inverses help us
 understand how those relationships behave." data-zh="函数不只是公式。它们描述量与量之间的关系；图像、差分和反函数帮助我们理解这些关系如何变化。">Functions are not just equations. They describe relationships between
@@ -1151,6 +1150,7 @@ understand how those relationships behave.</p></div></details></section></articl
     document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
     try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
   }
   btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
   let saved = 'en';
@@ -1185,6 +1185,8 @@ understand how those relationships behave.</p></div></details></section></articl
   });
 })();
   </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
 <script id="kiwi-accordion-controls-script">
 (function(){
