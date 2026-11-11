@@ -45,7 +45,6 @@
     'math/foundation-math-operation-signs-and.html': { en:'Number Skills & Operations', zh:'数的技能与运算', parent:"math/math-foundations.html" },
     'math/foundation-result-signs-and.html': { en:'Number Skills & Operations', zh:'数的技能与运算', parent:"math/math-foundations.html" },
     'math/foundation-special-right-triangles.html': { en:'Trigonometry', zh:'三角学', parent:"math/math-foundations.html" },
-    'math/foundation-function-notation.html': { en:'Functions & Graphs', zh:'函数与图像', parent:"math/math-foundations.html" },
     'math/foundation-chance-and-probability.html': { en:'Data & Chance', zh:'数据与概率', parent:"math/math-foundations.html" },
     'math/foundation-linear-vs-non-linear-functions.html': { en:'Functions & Graphs', zh:'函数与图像', parent:"math/math-foundations.html" },
     'math/foundation-data-and-graphs.html': { en:'Data & Chance', zh:'数据与概率', parent:"math/math-foundations.html" },

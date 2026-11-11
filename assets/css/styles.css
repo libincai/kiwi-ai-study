@@ -4411,6 +4411,31 @@ body.edu-page .edu-table-wrap,
   table-layout: fixed;
   margin: 0;
 }
+.mf-article .edu-table:not(.kiwi-edu-table-with-mnemonic) :is(thead th, tbody td, tbody th),
+.kiwi-topic-article .edu-table:not(.kiwi-edu-table-with-mnemonic) :is(thead th, tbody td, tbody th) {
+  text-align: left !important;
+}
+.mf-article .edu-table thead th,
+.kiwi-topic-article .edu-table thead th {
+  font-weight: 700 !important;
+}
+/* Row-column header tables — DESIGN_STANDARDS §6.3 */
+.mf-article .edu-table.kiwi-edu-table-row-column-header thead th,
+.kiwi-topic-article .edu-table.kiwi-edu-table-row-column-header thead th,
+.mf-article .edu-table.kiwi-edu-table-row-column-header tbody > tr > :first-child,
+.kiwi-topic-article .edu-table.kiwi-edu-table-row-column-header tbody > tr > :first-child {
+  font-weight: 700 !important;
+  background: #f3f8fe !important;
+}
+.mf-article .edu-table.kiwi-edu-table-row-column-header :is(thead th, tbody td, tbody th),
+.kiwi-topic-article .edu-table.kiwi-edu-table-row-column-header :is(thead th, tbody td, tbody th) {
+  text-align: left !important;
+}
+body.car-page .car-table.kiwi-edu-table-row-column-header thead th,
+body.car-page .car-table.kiwi-edu-table-row-column-header tbody > tr > :first-child {
+  font-weight: 700 !important;
+  background: #f3f8fe !important;
+}
 body.edu-page .edu-table {
   width: 100% !important;
   max-width: 100% !important;
@@ -4454,6 +4479,93 @@ body.edu-page .edu-table td {
   color: #174a82;
   font-weight: 700;
   text-align: center;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare tbody > tr.kiwi-edu-table-visual-titles > th,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare tbody > tr.kiwi-edu-table-visual-titles > th {
+  background: #f3f8fe !important;
+  color: #172846;
+  font-weight: 700 !important;
+  text-align: left !important;
+  vertical-align: top;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare tbody > tr.kiwi-edu-table-visual-graphs > td,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare tbody > tr.kiwi-edu-table-visual-graphs > td {
+  text-align: center;
+  vertical-align: top;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare tbody > tr.kiwi-edu-table-visual-graphs img,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare tbody > tr.kiwi-edu-table-visual-graphs img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare .kiwi-edu-table-visual-flat-cell,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare .kiwi-edu-table-visual-flat-cell {
+  font-weight: 400;
+  text-align: center;
+  color: #526780;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 14px;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain th,
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain td,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain th,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain td {
+  border: 1px solid #dce6f1;
+  padding: 8px 10px;
+  vertical-align: top;
+  text-align: left !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain th,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain th {
+  width: 38%;
+  background: #f3f8fe;
+  font-weight: 700 !important;
+}
+/* Step-pattern explain grids (y interval → Δy₁…) under visual compare graphs */
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 14px;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps td,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps td {
+  border: 1px solid #dce6f1;
+  padding: 8px 10px;
+  vertical-align: middle;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps td:first-child,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps td:first-child {
+  width: 52%;
+  font-weight: 700 !important;
+  background: #f3f8fe !important;
+  text-align: left !important;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps td:last-child,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps td:last-child {
+  text-align: center !important;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps tbody tr:nth-child(even) td,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps tbody tr:nth-child(even) td {
+  background: #eef5fc !important;
+}
+.mf-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps tbody tr:nth-child(even) td:first-child,
+.kiwi-topic-article .edu-table.kiwi-edu-table-visual-compare table.kiwi-edu-table-explain-steps tbody tr:nth-child(even) td:first-child {
+  background: #e5f0fa !important;
 }
 body.car-page .equation {
   font-size: clamp(1.05rem, 4.5vw, 1.45rem);

@@ -188,6 +188,27 @@ Use when a **single table** teaches a **short rule to memorize** plus **one or m
 
 **Batch tool:** `python tools/apply_mnemonic_table.py` (converts legacy nested mnemonic tables on foundation pages).
 
+### 6.3 Row-column header tables (property × category comparisons)
+
+Use when the **first column lists row properties** (Form, Degree, Δy, …) and the **header row names categories** (Linear, Quadratic, Constant). This is not a mnemonic rule table (§6.2).
+
+**Markup**
+
+- Wrapper: `<div class="edu-table-wrap">`
+- Table: `<table class="edu-table kiwi-edu-table-row-column-header">` — add `table-layout: fixed` and `<colgroup>` as needed.
+- `<thead>`: one row of column titles; first cell is the corner label (e.g. Property).
+- `<tbody>`: first cell in each row is the row label (`<td>` or `<th scope="row">`); remaining cells are values.
+
+**Visual (canonical CSS in `styles.css`)**
+
+- Header row **and** first column (including corner): background `#f3f8fe`, **bold** (`700`).
+- Body value cells: default white background, normal weight.
+- All cells: **left-aligned** (same as default data tables on `.mf-article`).
+
+**Reference pages:** `math/foundation-linear-vs-non-linear-functions.html` (Comparison Table), `math/foundation-rational-exponents.html` (Laws of Exponents), `math/car-journey.html` (model comparison uses `car-table` + same class).
+
+**Batch tool:** `python tools/apply_row_column_header_table.py` (adds the class to non–data-grid tables with `<thead>`; skips mnemonic tables and numeric first-column grids such as `t (s)` / `x` value tables).
+
 ### Banner text
 
 - Title typography must be identical across pages and languages at equivalent responsive breakpoints.

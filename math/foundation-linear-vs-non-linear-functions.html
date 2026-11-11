@@ -9,7 +9,7 @@
 Functions | KIWI 爱AI Study" data-zh="线性函数与非线性函数 | KIWI 爱AI Study">Linear vs. Non-linear
 Functions | KIWI 爱AI Study</title>
 <meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
-<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261110-row-column-header-table" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
@@ -36,7 +36,7 @@ Functions | KIWI 爱AI Study</title>
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
-.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article .edu-table-wrap{max-width:100%;overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:table;table-layout:fixed}.mf-article .edu-table-wrap table{margin:0}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top;word-break:break-word;overflow-wrap:anywhere}.mf-article th{background:#f3f8fe}.mf-article .edu-table:not(.kiwi-edu-table-with-mnemonic) :is(thead th,tbody td){text-align:left!important}.mf-article .edu-table thead th{font-weight:700!important}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -126,7 +126,7 @@ Functions | KIWI 爱AI Study</title>
 Patterns" data-zh="代数语言与规律">Algebra Language and
 Patterns</a><a href="foundation-understanding-functions.html" data-en="Understanding Functions" data-zh="认识函数">Understanding Functions</a><a href="foundation-understanding-the-placeholder-in-f-x.html" data-en="Understanding the
 Placeholder in f(x)" data-zh="理解 f(x) 中的占位符">Understanding the
-Placeholder in f(x)</a><a href="foundation-function-notation.html" data-en="Function Notation" data-zh="函数记号">Function Notation</a><a aria-current="page" class="mf-current" href="foundation-linear-vs-non-linear-functions.html" data-en="Linear vs. Non-linear
+Placeholder in f(x)</a><a aria-current="page" class="mf-current" href="foundation-linear-vs-non-linear-functions.html" data-en="Linear vs. Non-linear
 Functions" data-zh="线性函数与非线性函数">Linear vs. Non-linear
 Functions</a><a href="foundation-step-pattern-and-first-differences-y.html" data-en="Step Pattern and First
 Differences (Δy)" data-zh="阶差规律与一阶差分 (Δy)">Step Pattern and First
@@ -215,7 +215,7 @@ its degree is undefined under the standard convention.</p>
 0.</p>
 <p data-en="Remember: The zero polynomial is still a constant function, even
 though its degree is undefined." data-zh="请记住：零多项式仍是常数函数，即使其次数无定义。">Remember: The zero polynomial is still a constant function, even
-though its degree is undefined.</p></aside></div></details><details class="lesson-card"><summary id="comparison-table" data-en="Comparison Table" data-zh="对比表格">Comparison Table</summary><div class="lesson-card-content"><table>
+though its degree is undefined.</p></aside></div></details><details class="lesson-card"><summary id="comparison-table" data-en="Comparison Table" data-zh="对比表格">Comparison Table</summary><div class="lesson-card-content"><div class="edu-table-wrap"><table class="edu-table kiwi-edu-table-row-column-header">
 <colgroup>
 <col style="width: 25%"/>
 <col style="width: 23%"/>
@@ -223,15 +223,15 @@ though its degree is undefined.</p></aside></div></details><details class="lesso
 <col style="width: 18%"/>
 </colgroup>
 <thead>
-<tr class="header">
-<th data-en="Property" data-zh="性质">Property</th>
-<th data-en="Linear" data-zh="线性">Linear</th>
-<th data-en="Quadratic" data-zh="二次">Quadratic</th>
-<th data-en="Constant" data-zh="常数">Constant</th>
+<tr>
+<th scope="col" data-en="Property" data-zh="性质">Property</th>
+<th scope="col" data-en="Linear" data-zh="线性">Linear</th>
+<th scope="col" data-en="Quadratic" data-zh="二次">Quadratic</th>
+<th scope="col" data-en="Constant" data-zh="常数">Constant</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td data-en="Form" data-zh="形式">Form</td>
 <td data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;mx\  + \ b&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 &lt;sup&gt;(1)&lt;/sup&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mspace width=&quot;0.222em&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;mx\  + \ b&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
@@ -243,32 +243,32 @@ though its degree is undefined.</p></aside></div></details><details class="lesso
 <sup>(2)</sup></td>
 <td data-en="c" data-zh="c">c</td>
 </tr>
-<tr class="even">
+<tr>
 <td data-en="Degree" data-zh="次数">Degree</td>
 <td>1</td>
 <td>2</td>
 <td>0 <sup>(3)</sup></td>
 </tr>
-<tr class="odd">
+<tr>
 <td data-en="Δy" data-zh="Δy">Δy</td>
 <td data-en="Constant" data-zh="常数">Constant</td>
 <td data-en="Change" data-zh="变化">Change</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td data-en="Δ²y" data-zh="Δ²y">Δ²y</td>
 <td>0</td>
 <td data-en="2a" data-zh="2a">2a</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td data-en="Graph" data-zh="图像">Graph</td>
 <td data-en="Sloping line" data-zh="斜直线">Sloping line</td>
 <td data-en="Parabola" data-zh="抛物线">Parabola</td>
 <td data-en="Flat line" data-zh="水平直线">Flat line</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <ol type="1">
 <li data-en="Linear requires
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;≠&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;m \neq 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="线性函数要求
@@ -282,11 +282,56 @@ though its degree is undefined.</p></aside></div></details><details class="lesso
 undefined degree." data-zh="非零常数的次数为 0；零多项式的次数无定义。">A non-zero constant has degree 0; the zero polynomial has
 undefined degree.</li>
 </ol>
-<p data-en="&lt;strong&gt;x¹ → line. x² → curve. y = c → flat.&lt;/strong&gt;" data-zh="&lt;strong&gt;x¹ → 直线。x² → 曲线。y = c → 水平。&lt;/strong&gt;"><strong>x¹ → line. x² → curve. y = c → flat.</strong></p>
-<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><p data-en="&lt;strong&gt;Quadratic: y = x²&lt;/strong&gt;" data-zh="&lt;strong&gt;二次：y = x²&lt;/strong&gt;"><strong>Quadratic: y = x²</strong></p>
-<p><img alt="Mathematics diagram" loading="lazy" src="../assets/math-foundations-import/image12.webp" style="width:2.15in;height:2.79656in"/></p>
-</aside>
-<aside class="kiwi-word-info-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;Learning Insight&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;💡&lt;/span&gt;&lt;span&gt;学习要点&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">💡</span><span>Learning Insight</span></div><p data-en="x²" data-zh="x²">x²</p></aside>
+<div class="edu-table-wrap"><table class="edu-table kiwi-edu-table-with-mnemonic kiwi-edu-table-visual-compare">
+<colgroup>
+<col style="width: 33.33%"/>
+<col style="width: 33.33%"/>
+<col style="width: 33.34%"/>
+</colgroup>
+<thead>
+<tr class="kiwi-edu-table-mnemonic">
+<th colspan="3" data-en="&lt;strong&gt;x¹ → line. x² → curve. y = c → flat.&lt;/strong&gt;" data-zh="&lt;strong&gt;x¹ → 直线。x² → 曲线。y = c → 水平。&lt;/strong&gt;"><strong>x¹ → line. x² → curve. y = c → flat.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="kiwi-edu-table-visual-titles">
+<th scope="col" data-en="&lt;strong&gt;Linear: y = 2x&lt;/strong&gt;" data-zh="&lt;strong&gt;线性：y = 2x&lt;/strong&gt;"><strong>Linear: y = 2x</strong></th>
+<th scope="col" data-en="&lt;strong&gt;Quadratic: y = x²&lt;/strong&gt;" data-zh="&lt;strong&gt;二次：y = x²&lt;/strong&gt;"><strong>Quadratic: y = x²</strong></th>
+<th scope="col" data-en="&lt;strong&gt;Constant: y = 3&lt;/strong&gt;" data-zh="&lt;strong&gt;常数：y = 3&lt;/strong&gt;"><strong>Constant: y = 3</strong></th>
+</tr>
+<tr class="kiwi-edu-table-visual-graphs">
+<td><img alt="Linear function y = 2x" loading="lazy" src="../assets/math-foundations-import/image11.webp" style="width:2.15in;height:2.79656in"/></td>
+<td><img alt="Quadratic function y = x²" loading="lazy" src="../assets/math-foundations-import/image12.webp" style="width:2.15in;height:2.79656in"/></td>
+<td class="kiwi-edu-table-visual-flat-cell" data-en="Horizontal line (y = 3)" data-zh="水平直线 (y = 3)">Horizontal line (y = 3)</td>
+</tr>
+<tr class="kiwi-edu-table-visual-explains">
+<td><table class="kiwi-edu-table-explain">
+<tbody>
+<tr><th scope="row" data-en="Degree" data-zh="次数">Degree</th><td>x¹</td></tr>
+<tr><th scope="row" data-en="Table" data-zh="表格">Table</th><td data-en="x: 0, 1, 2, 3" data-zh="x：0, 1, 2, 3">x: 0, 1, 2, 3</td></tr>
+<tr><th scope="row" data-en="Rate" data-zh="变化率">Rate</th><td data-en="Δy = 2, 2, 2" data-zh="Δy = 2, 2, 2">Δy = 2, 2, 2</td></tr>
+<tr><th scope="row" data-en="2nd Δ" data-zh="二阶 Δ">2nd Δ</th><td>0</td></tr>
+</tbody>
+</table></td>
+<td><table class="kiwi-edu-table-explain">
+<tbody>
+<tr><th scope="row" data-en="Degree" data-zh="次数">Degree</th><td>x²</td></tr>
+<tr><th scope="row" data-en="Table" data-zh="表格">Table</th><td data-en="x: 0, 1, 2, 3" data-zh="x：0, 1, 2, 3">x: 0, 1, 2, 3</td></tr>
+<tr><th scope="row" data-en="Rate" data-zh="变化率">Rate</th><td data-en="Δy = 1, 3, 5" data-zh="Δy = 1, 3, 5">Δy = 1, 3, 5</td></tr>
+<tr><th scope="row" data-en="2nd Δ" data-zh="二阶 Δ">2nd Δ</th><td>2</td></tr>
+</tbody>
+</table></td>
+<td><table class="kiwi-edu-table-explain">
+<tbody>
+<tr><th scope="row" data-en="Degree" data-zh="次数">Degree</th><td>0</td></tr>
+<tr><th scope="row" data-en="Table" data-zh="表格">Table</th><td data-en="x: 0, 1, 2, 3 → y = 3" data-zh="x：0, 1, 2, 3 → y = 3">x: 0, 1, 2, 3 → y = 3</td></tr>
+<tr><th scope="row" data-en="Rate" data-zh="变化率">Rate</th><td data-en="Δy = 0, 0, 0" data-zh="Δy = 0, 0, 0">Δy = 0, 0, 0</td></tr>
+<tr><th scope="row" data-en="2nd Δ" data-zh="二阶 Δ">2nd Δ</th><td>0</td></tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table></div>
 <p data-en="Use the figure for a quick check: degree, table pattern, or graph
 shape." data-zh="用图示快速判断：次数、表格规律或图像形状。">Use the figure for a quick check: degree, table pattern, or graph
 shape.</p></div></details></article></div></main>
