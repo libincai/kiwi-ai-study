@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<!-- Level 3 category hub — shell from templates/level-3-category.html -->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Law of Cosines | KIWI 爱AI Study" data-zh="余弦定理 | KIWI 爱AI Study">Law of Cosines | KIWI 爱AI Study</title>
+<meta content="Understand, remember, and apply the Law of Cosines through association, logic, and the Pythagorean theorem." name="description"/>
+<link href="../assets/css/styles.css?v=20261110-law-cosines" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
+<style>
+.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
+.edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
+.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
+.edu-topic-list{display:grid;gap:12px}
+.edu-topic{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:16px;align-items:center;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff;text-decoration:none;color:inherit}
+.edu-topic-link{transition:transform .16s ease,box-shadow .16s ease}
+.edu-topic-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(24,55,95,.09)}
+.edu-topic-number{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#eaf4ff;color:#1768b2;font-weight:900;font-size:19px}
+.edu-topic h3{margin:0 0 5px;font-size:18px;color:#173e70}
+.edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}
+.edu-topic .edu-link{white-space:nowrap;color:#1768b2;font-weight:800;font-size:14px}
+.edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
+.edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}
+.edu-callout h2{margin:0 0 8px;color:#153d70}
+.edu-callout p{margin:0;color:#526780;line-height:1.7}
+.edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:#fff!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}
+.edu-button:hover{background:#10548f}
+@media(max-width:760px){.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
+  
+/* Math Foundations: source-book content, scoped to this page. */
+.mf-intro{margin:32px 0 22px}.mf-intro h2{color:#153d70;font-size:clamp(22px,2.4vw,29px);margin:0 0 9px}.mf-intro p{color:#526780;line-height:1.7;margin:0}
+.mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
+.mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
+.mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+@media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
+.mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
+</style>
+<style>
+.foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+
+<style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
+.foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
+.foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+</head>
+<body class="edu-page topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="edu-main">
+<section aria-label="Page introduction" class="nf-hero topic-banner foundation-topic-banner"><p class="topic-banner-kicker" data-en="MATH FOUNDATIONS" data-zh="数学基础">MATH FOUNDATIONS</p><h1 data-en="Trigonometry" data-zh="三角学">Trigonometry</h1><p class="topic-banner-subtitle" data-en="Explore essential mathematical ideas and examples." data-zh="探索核心数学概念与例题。">Explore essential mathematical ideas and examples.</p></section>
+<!-- LEVEL-3 BODY START -->
+<!-- LEVEL-3 BODY END -->
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a href="foundation-understanding-trigonometry.html" data-en="Understanding Trigonometry" data-zh="认识三角函数">Understanding Trigonometry</a><a href="foundation-the-three-sides-of-a-right-triangle.html" data-en="The Three Sides of a Right
+Triangle" data-zh="直角三角形的三条边">The Three Sides of a Right
+Triangle</a><a href="foundation-the-four-basic-trigonometric-ratios.html" data-en="The Four Basic
+Trigonometric Ratios" data-zh="四个基本三角比">The Four Basic
+Trigonometric Ratios</a><a href="foundation-special-right-triangles.html" data-en="Special Right Triangles" data-zh="特殊直角三角形">Special Right Triangles</a><a aria-current="page" class="mf-current" href="foundation-law-of-cosines.html" data-en="Law of Cosines" data-zh="余弦定理">Law of Cosines</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Law of Cosines" data-zh="余弦定理">Law of Cosines</h1>
+<p class="edu-lead" data-en="Understanding and Remembering the Formula" data-zh="如何理解、记忆和应用公式">Understanding and Remembering the Formula</p>
+<p data-en="Use association, logical checks, and links to the Pythagorean theorem so the formula makes sense—not just for memorization on a test." data-zh="用知识联想、逻辑检查和与勾股定理的联系来理解公式，而不只是为考试死记硬背。">Use association, logical checks, and links to the Pythagorean theorem so the formula makes sense—not just for memorization on a test.</p>
+<p data-en="&lt;img alt=&quot;Law of Cosines summary — formula, association, Pythagorean connection, four quantities, and example&quot; loading=&quot;lazy&quot; src=&quot;../assets/math/law-of-cosines-infographic-en.webp&quot; style=&quot;width:100%;max-width:656px;height:auto;display:block;margin:12px auto;border:1px solid #dce6f1;border-radius:16px&quot;/&gt;" data-zh="&lt;img alt=&quot;余弦定理图示 — 公式、联想、勾股联系、四量求一与例题&quot; loading=&quot;lazy&quot; src=&quot;../assets/math/law-of-cosines-infographic-zh.webp&quot; style=&quot;width:100%;max-width:656px;height:auto;display:block;margin:12px auto;border:1px solid #dce6f1;border-radius:16px&quot;/&gt;"><img alt="Law of Cosines summary — formula, association, Pythagorean connection, four quantities, and example" loading="lazy" src="../assets/math/law-of-cosines-infographic-en.webp" style="width:100%;max-width:656px;height:auto;display:block;margin:12px auto;border:1px solid #dce6f1;border-radius:16px"/></p>
+<details class="lesson-card"><summary id="what-is-law-of-cosines" data-en="What Is the Law of Cosines?" data-zh="什么是余弦定理？">What Is the Law of Cosines?</summary><div class="lesson-card-content">
+<p data-en="The Law of Cosines helps solve general triangle problems, including:" data-zh="余弦定理可以帮助我们解决一般三角形的问题，包括：">The Law of Cosines helps solve general triangle problems, including:</p>
+<ul>
+<li data-en="Given two sides and the included angle, find the third side." data-zh="已知两条边及其夹角，求第三条边。">Given two sides and the included angle, find the third side.</li>
+<li data-en="Given three sides, find one of the angles." data-zh="已知三条边，求其中一个角度。">Given three sides, find one of the angles.</li>
+</ul>
+<p data-en="It applies to every non-degenerate triangle, not only right triangles." data-zh="余弦定理适用于所有非退化三角形，不仅仅是直角三角形。">It applies to every non-degenerate triangle, not only right triangles.</p>
+<p data-en="Let the sides be &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;, and &lt;em&gt;c&lt;/em&gt;, where angle &lt;em&gt;C&lt;/em&gt; is opposite side &lt;em&gt;c&lt;/em&gt;." data-zh="设三角形的三条边分别为 &lt;em&gt;a&lt;/em&gt;、&lt;em&gt;b&lt;/em&gt;、&lt;em&gt;c&lt;/em&gt;，角 &lt;em&gt;C&lt;/em&gt; 是边 &lt;em&gt;c&lt;/em&gt; 的对角。">Let the sides be <em>a</em>, <em>b</em>, and <em>c</em>, where angle <em>C</em> is opposite side <em>c</em>.</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\boxed{c^2=a^2+b^2-2ab\cos C}" data-tex-zh="\boxed{c^2=a^2+b^2-2ab\cos C}"></div>
+</div></details>
+<details class="lesson-card"><summary id="four-quantities" data-en="Four Quantities — Know Three, Find One" data-zh="四个量：知道三个，求出一个">Four Quantities — Know Three, Find One</summary><div class="lesson-card-content">
+<p data-en="Before memorizing, notice four quantities in the law:" data-zh="我们先不要急着背公式。观察余弦定理，它涉及四个量：">Before memorizing, notice four quantities in the law:</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="a,\quad b,\quad c,\quad C" data-tex-zh="a,\quad b,\quad c,\quad C"></div>
+<p data-en="Three are side lengths and one is an angle. In standard uses, knowing three suitable values lets you find the fourth." data-zh="其中三个是边长，一个是角度。在余弦定理的常见应用中，只要知道其中三个合适的量，就可以计算第四个。">Three are side lengths and one is an angle. In standard uses, knowing three suitable values lets you find the fourth.</p>
+<h4 id="case-find-side" data-en="Case 1: Find a Side" data-zh="情况 1：求边长">Case 1: Find a Side</h4>
+<p data-en="Given &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;, and &lt;em&gt;C&lt;/em&gt;, find &lt;em&gt;c&lt;/em&gt; by substituting directly into the law." data-zh="已知 &lt;em&gt;a&lt;/em&gt;、&lt;em&gt;b&lt;/em&gt;、&lt;em&gt;C&lt;/em&gt;，求 &lt;em&gt;c&lt;/em&gt;：直接代入余弦定理。">Given <em>a</em>, <em>b</em>, and <em>C</em>, find <em>c</em> by substituting directly into the law.</p>
+<h4 id="case-find-angle" data-en="Case 2: Find an Angle" data-zh="情况 2：求角度">Case 2: Find an Angle</h4>
+<p data-en="Given &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;, and &lt;em&gt;c&lt;/em&gt;, rearrange:" data-zh="已知 &lt;em&gt;a&lt;/em&gt;、&lt;em&gt;b&lt;/em&gt;、&lt;em&gt;c&lt;/em&gt;，将公式变形：">Given <em>a</em>, <em>b</em>, and <em>c</em>, rearrange:</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos C=\frac{a^2+b^2-c^2}{2ab}" data-tex-zh="\cos C=\frac{a^2+b^2-c^2}{2ab}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\boxed{C=\cos^{-1}\left(\frac{a^2+b^2-c^2}{2ab}\right)}" data-tex-zh="\boxed{C=\cos^{-1}\left(\frac{a^2+b^2-c^2}{2ab}\right)}"></div>
+<div class="edu-note" data-en="&lt;strong&gt;Learning strategy:&lt;/strong&gt; Decide what is known and unknown first, then pick the form of the formula—not the other way around. The “three find one” idea applies to these two standard setups; not every triple of values uniquely determines the fourth." data-zh="&lt;strong&gt;学习策略：&lt;/strong&gt;先确定已知什么、未知什么，再选择公式，而不是一看到题目就急着计算。这里的“三个求一个”是针对余弦定理的这两种标准应用；并不是任意三个量都一定能唯一确定第四个量。"><strong>Learning strategy:</strong> Decide what is known and unknown first, then pick the form of the formula—not the other way around. The “three find one” idea applies to these two standard setups; not every triple of values uniquely determines the fourth.</div>
+</div></details>
+<details class="lesson-card"><summary id="association" data-en="Remember Through Association" data-zh="利用已有知识建立联想">Remember Through Association</summary><div class="lesson-card-content">
+<p data-en="Many students forget the &lt;em&gt;−2ab cos C&lt;/em&gt; term or swap it for &lt;em&gt;−2ac cos C&lt;/em&gt; or &lt;em&gt;−2bc cos C&lt;/em&gt;." data-zh="许多学生容易忘记余弦定理，特别是其中的 &lt;em&gt;−2ab cos C&lt;/em&gt;，有时会错误地写成 &lt;em&gt;−2ac cos C&lt;/em&gt; 或 &lt;em&gt;−2bc cos C&lt;/em&gt;。">Many students forget the <em>−2ab cos C</em> term or swap it for <em>−2ac cos C</em> or <em>−2bc cos C</em>.</p>
+<p data-en="Link the law to the square-of-a-difference identity:" data-zh="把余弦定理与以前学过的代数公式联系起来。回忆平方差形式的完全平方公式：">Link the law to the square-of-a-difference identity:</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\boxed{(a-b)^2=a^2+b^2-2ab}" data-tex-zh="\boxed{(a-b)^2=a^2+b^2-2ab}"></div>
+<p data-en="The right side &lt;em&gt;a² + b² − 2ab&lt;/em&gt; matches the law except the last factor gains &lt;em&gt;cos C&lt;/em&gt;: &lt;em&gt;c² = a² + b² − 2ab cos C&lt;/em&gt;." data-zh="观察右边 &lt;em&gt;a² + b² − 2ab&lt;/em&gt;，它与余弦定理非常相似。余弦定理只是在最后的 &lt;em&gt;2ab&lt;/em&gt; 后面增加了一个 &lt;em&gt;cos C&lt;/em&gt;。">The right side <em>a² + b² − 2ab</em> matches the law except the last factor gains <em>cos C</em>: <em>c² = a² + b² − 2ab cos C</em>.</p>
+<p data-en="&lt;strong&gt;Start with the square of a difference, then add the cosine factor to the last term.&lt;/strong&gt; That is &lt;em&gt;association&lt;/em&gt;: connect a new formula to knowledge you already trust." data-zh="&lt;strong&gt;从已经熟悉的完全平方公式出发，再给最后一项加上 &lt;em&gt;cos C&lt;/em&gt;。&lt;/strong&gt;这就是 Association（知识联想）——把陌生公式连接到已经掌握的知识上，减少机械记忆。"><strong>Start with the square of a difference, then add the cosine factor to the last term.</strong> That is <em>association</em>: connect a new formula to knowledge you already trust.</p>
+</div></details>
+<details class="lesson-card"><summary id="why-2ab" data-en="Why 2ab, Not 2ac or 2bc?" data-zh="为什么是 2ab，而不是 2ac 或 2bc？">Why 2ab, Not 2ac or 2bc?</summary><div class="lesson-card-content">
+<p data-en="Suppose &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;, and &lt;em&gt;C&lt;/em&gt; are known and you need side &lt;em&gt;c&lt;/em&gt;. If you wrongly write &lt;em&gt;c² = a² + b² − 2ac cos C&lt;/em&gt;, the right side still contains &lt;em&gt;c&lt;/em&gt;, so you cannot substitute numbers directly." data-zh="假设已知 &lt;em&gt;a&lt;/em&gt;、&lt;em&gt;b&lt;/em&gt;、&lt;em&gt;C&lt;/em&gt;，要求边 &lt;em&gt;c&lt;/em&gt;。若错误写成 &lt;em&gt;c² = a² + b² − 2ac cos C&lt;/em&gt;，右边又出现未知数 &lt;em&gt;c&lt;/em&gt;，不能直接代入已知数值求出 &lt;em&gt;c&lt;/em&gt;。">Suppose <em>a</em>, <em>b</em>, and <em>C</em> are known and you need side <em>c</em>. If you wrongly write <em>c² = a² + b² − 2ac cos C</em>, the right side still contains <em>c</em>, so you cannot substitute numbers directly.</p>
+<p data-en="The correct form uses the other two sides: &lt;em&gt;2ab cos C&lt;/em&gt;, with only &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;, and &lt;em&gt;C&lt;/em&gt; on the right." data-zh="正确的公式 &lt;em&gt;c² = a² + b² − 2ab cos C&lt;/em&gt; 右边只包含已知量 &lt;em&gt;a&lt;/em&gt;、&lt;em&gt;b&lt;/em&gt;、&lt;em&gt;C&lt;/em&gt;，所以能够直接计算 &lt;em&gt;c&lt;/em&gt;。">The correct form uses the other two sides: <em>2ab cos C</em>, with only <em>a</em>, <em>b</em>, and <em>C</em> on the right.</p>
+<div class="edu-note" data-en="&lt;strong&gt;Learning strategy:&lt;/strong&gt; When finding side &lt;em&gt;c&lt;/em&gt;, the cosine term should use the other two sides, &lt;em&gt;2ab cos C&lt;/em&gt;. Unknowns on both sides do not always mean the equation is wrong—but here, using &lt;em&gt;a&lt;/em&gt; and &lt;em&gt;b&lt;/em&gt; is a reliable check." data-zh="&lt;strong&gt;学习策略：&lt;/strong&gt;求边 &lt;em&gt;c&lt;/em&gt; 时，最后一项应使用另外两条边 &lt;em&gt;2ab cos C&lt;/em&gt;。未知数在等式两边同时出现，并不一定代表方程错误；但在这个标准公式中，使用另外两条边能帮助我们检查是否记错。"><strong>Learning strategy:</strong> When finding side <em>c</em>, the cosine term should use the other two sides, <em>2ab cos C</em>. Unknowns on both sides do not always mean the equation is wrong—but here, using <em>a</em> and <em>b</em> is a reliable check.</div>
+</div></details>
+<details class="lesson-card"><summary id="pythagorean-connection" data-en="Connect to the Pythagorean Theorem" data-zh="与勾股定理的联系">Connect to the Pythagorean Theorem</summary><div class="lesson-card-content">
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\boxed{c^2=a^2+b^2}" data-tex-zh="\boxed{c^2=a^2+b^2}"></div>
+<p data-en="For a right triangle with hypotenuse &lt;em&gt;c&lt;/em&gt;, the Pythagorean theorem is familiar. The law of cosines is" data-zh="勾股定理适用于直角三角形，其中 &lt;em&gt;c&lt;/em&gt; 是斜边。余弦定理是">For a right triangle with hypotenuse <em>c</em>, the Pythagorean theorem is familiar. The law of cosines is</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="c^2=a^2+b^2-2ab\cos C" data-tex-zh="c^2=a^2+b^2-2ab\cos C"></div>
+<p data-en="If &lt;em&gt;C = 90°&lt;/em&gt;, then &lt;em&gt;cos 90° = 0&lt;/em&gt;:" data-zh="若角 &lt;em&gt;C&lt;/em&gt; 为直角，&lt;em&gt;C = 90°&lt;/em&gt;，因为 &lt;em&gt;cos 90° = 0&lt;/em&gt;：">If <em>C = 90°</em>, then <em>cos 90° = 0</em>:</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="c^2=a^2+b^2-2ab(0)\quad\Rightarrow\quad \boxed{c^2=a^2+b^2}" data-tex-zh="c^2=a^2+b^2-2ab(0)\quad\Rightarrow\quad \boxed{c^2=a^2+b^2}"></div>
+<p data-en="The Pythagorean theorem is the law of cosines when &lt;em&gt;C = 90°&lt;/em&gt;. The law applies to all triangles, including right triangles—it generalizes what you already know." data-zh="勾股定理实际上是余弦定理在 &lt;em&gt;C = 90°&lt;/em&gt; 时的特殊情况。余弦定理适用于一般三角形（包括直角三角形），可理解为勾股定理的一种推广。">The Pythagorean theorem is the law of cosines when <em>C = 90°</em>. The law applies to all triangles, including right triangles—it generalizes what you already know.</p>
+</div></details>
+<details class="lesson-card"><summary id="example-find-angle" data-en="Example — Find an Angle" data-zh="例题：求角度">Example — Find an Angle</summary><div class="lesson-card-content">
+<p data-en="A triangle has &lt;em&gt;a = 5&lt;/em&gt;, &lt;em&gt;b = 7&lt;/em&gt;, and &lt;em&gt;c = 8&lt;/em&gt;. Find angle &lt;em&gt;C&lt;/em&gt;." data-zh="已知三角形的三条边 &lt;em&gt;a = 5&lt;/em&gt;、&lt;em&gt;b = 7&lt;/em&gt;、&lt;em&gt;c = 8&lt;/em&gt;，求角 &lt;em&gt;C&lt;/em&gt;。">A triangle has <em>a = 5</em>, <em>b = 7</em>, and <em>c = 8</em>. Find angle <em>C</em>.</p>
+<p data-en="&lt;strong&gt;Step 1:&lt;/strong&gt; Start from &lt;em&gt;c² = a² + b² − 2ab cos C&lt;/em&gt;." data-zh="&lt;strong&gt;第 1 步：&lt;/strong&gt; 写出公式 &lt;em&gt;c² = a² + b² − 2ab cos C&lt;/em&gt;。"><strong>Step 1:</strong> Start from <em>c² = a² + b² − 2ab cos C</em>.</p>
+<p data-en="&lt;strong&gt;Step 2:&lt;/strong&gt; Solve for &lt;em&gt;cos C&lt;/em&gt;." data-zh="&lt;strong&gt;第 2 步：&lt;/strong&gt; 变形求 &lt;em&gt;cos C&lt;/em&gt;。"><strong>Step 2:</strong> Solve for <em>cos C</em>.</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos C=\frac{a^2+b^2-c^2}{2ab}" data-tex-zh="\cos C=\frac{a^2+b^2-c^2}{2ab}"></div>
+<p data-en="&lt;strong&gt;Step 3:&lt;/strong&gt; Substitute." data-zh="&lt;strong&gt;第 3 步：&lt;/strong&gt; 代入。"><strong>Step 3:</strong> Substitute.</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos C=\frac{5^2+7^2-8^2}{2(5)(7)}=\frac{25+49-64}{70}=\frac{10}{70}=\frac{1}{7}" data-tex-zh="\cos C=\frac{5^2+7^2-8^2}{2(5)(7)}=\frac{25+49-64}{70}=\frac{10}{70}=\frac{1}{7}"></div>
+<p data-en="&lt;strong&gt;Step 4:&lt;/strong&gt; Use the inverse cosine (set the calculator to degree mode)." data-zh="&lt;strong&gt;第 4 步：&lt;/strong&gt; 求角度（计算器设为角度模式）。"><strong>Step 4:</strong> Use the inverse cosine (set the calculator to degree mode).</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\boxed{C=\cos^{-1}\left(\frac{1}{7}\right)\approx 81.79^\circ}" data-tex-zh="\boxed{C=\cos^{-1}\left(\frac{1}{7}\right)\approx 81.79^\circ}"></div>
+</div></details>
+<details class="lesson-card"><summary id="learning-strategies" data-en="A Better Way to Learn Mathematics" data-zh="更好的数学学习方式">A Better Way to Learn Mathematics</summary><div class="lesson-card-content">
+<p data-en="Learning the law of cosines is a chance to practice three habits:" data-zh="学习余弦定理时，可以运用三个策略：">Learning the law of cosines is a chance to practice three habits:</p>
+<ul>
+<li data-en="&lt;strong&gt;Association:&lt;/strong&gt; Link to &lt;em&gt;(a − b)² = a² + b² − 2ab&lt;/em&gt;." data-zh="&lt;strong&gt;知识联想：&lt;/strong&gt; 与完全平方公式 &lt;em&gt;(a − b)² = a² + b² − 2ab&lt;/em&gt; 联系起来。"><strong>Association:</strong> Link to <em>(a − b)² = a² + b² − 2ab</em>.</li>
+<li data-en="&lt;strong&gt;Logical reasoning:&lt;/strong&gt; When finding &lt;em&gt;c&lt;/em&gt;, check that the right side uses only &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;, and &lt;em&gt;C&lt;/em&gt;." data-zh="&lt;strong&gt;逻辑推理：&lt;/strong&gt; 求边 &lt;em&gt;c&lt;/em&gt; 时，检查公式右边是否只含已知的 &lt;em&gt;a&lt;/em&gt;、&lt;em&gt;b&lt;/em&gt;、&lt;em&gt;C&lt;/em&gt;。"><strong>Logical reasoning:</strong> When finding <em>c</em>, check that the right side uses only <em>a</em>, <em>b</em>, and <em>C</em>.</li>
+<li data-en="&lt;strong&gt;Prior knowledge:&lt;/strong&gt; Set &lt;em&gt;C = 90°&lt;/em&gt; to recover the Pythagorean theorem." data-zh="&lt;strong&gt;连接已有知识：&lt;/strong&gt; 令 &lt;em&gt;C = 90°&lt;/em&gt;，余弦定理回到勾股定理。"><strong>Prior knowledge:</strong> Set <em>C = 90°</em> to recover the Pythagorean theorem.</li>
+</ul>
+</div></details>
+<details class="lesson-card"><summary id="final-thought" data-en="Understand, Connect, Remember" data-zh="理解、联系、记忆">Understand, Connect, Remember</summary><div class="lesson-card-content">
+<p data-en="When you meet a new formula, ask:" data-zh="学习新公式时，不妨先问自己：">When you meet a new formula, ask:</p>
+<ul>
+<li data-en="What familiar formula does it resemble?" data-zh="它和我以前学过的哪个公式相似？">What familiar formula does it resemble?</li>
+<li data-en="Can logic tell me if I wrote it correctly?" data-zh="我能不能通过逻辑判断公式是否正确？">Can logic tell me if I wrote it correctly?</li>
+<li data-en="In a special case, does it become something I already know?" data-zh="它在某些特殊条件下，会不会变成一个熟悉的公式？">In a special case, does it become something I already know?</li>
+<li data-en="What information do I need before I can solve the problem?" data-zh="我需要知道哪些条件，才能解决问题？">What information do I need before I can solve the problem?</li>
+</ul>
+<p data-en="&lt;strong&gt;Don't just memorize a formula. Understand it, connect it, and learn how to reconstruct it.&lt;/strong&gt;" data-zh="&lt;strong&gt;不要只是死记硬背公式。理解它，建立联系，并学会在忘记时通过已有知识重新找回它。&lt;/strong&gt;"><strong>Don't just memorize a formula. Understand it, connect it, and learn how to reconstruct it.</strong></p>
+<p data-en="That habit helps far beyond the law of cosines." data-zh="这不仅适用于余弦定理，也适用于整个数学学习过程。">That habit helps far beyond the law of cosines.</p>
+</div></details></article></div></main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=6"></script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+</body>
+</html>
