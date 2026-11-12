@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!-- Level 4 — AI Knowledge Class Episode 11 (magazine layout; why AI fails) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why AI Fails | AI Knowledge Class · Episode 11 | Kiwi 爱AI Study</title>
+  <meta name="description" content="Ten common reasons AI misses the mark — wrong tools, limits, weak context, hallucinations, complexity, and why verification still belongs to you.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-lead{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px}
+.ep-article{width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box}
+.ep-article h2{clear:both;width:100%;text-align:left;margin:32px 0 14px;font-size:clamp(21px,2.15vw,26px);color:#153d70;line-height:1.28;font-weight:700}
+.ep-article h2:first-child{margin-top:0}
+.ep-article p{font-size:15px;line-height:1.85;color:#263f5b;margin:0 0 14px}
+.ep-article p.ep-myth{color:#174a7e;font-weight:800;margin:18px 0 8px;font-size:15px;line-height:1.35}
+.ep-article p.ep-myth strong{font-weight:800}
+.ep-figure{width:min(34%,300px);margin:4px 0 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f4f8fc;box-shadow:0 5px 18px rgba(24,55,95,.07)}
+.ep-figure--right{float:right;margin-left:22px}
+.ep-figure--left{float:left;margin-right:22px}
+.ep-figure img{display:block;width:100%;height:auto}
+.ep-figure figcaption{font-size:11px;line-height:1.4;color:var(--muted);padding:7px 10px 9px;text-align:center;background:#fff}
+.ep-pair{overflow:hidden;margin:22px 0 6px}
+.ep-pair::after{content:"";display:table;clear:both}
+.ep-pair .ep-myth{margin-top:0}
+.ep-pair .ep-figure{margin-top:2px}
+.ep-article::after{content:"";display:table;clear:both}
+.nf-note{margin:18px 0;padding:14px 17px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:14px;line-height:1.65}
+/* Float wrap: sibling <p> in .ep-pair; .ep-flow-col only for lead-in + .nf-note (docs/AI_EPISODE_MAGAZINE.md) */
+.ep-flow-col{overflow:visible;min-width:0}
+.ep-flow-col > p:last-child{margin-bottom:0}
+.ep-flow-col .nf-note{margin:8px 0 0;width:100%;max-width:100%;box-sizing:border-box}
+.ep-abilities{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:4px 0 12px;padding:12px 16px;border-left:4px solid #8eb8dc;border-radius:0 10px 10px 0;background:#f4f9ff;list-style:none}
+.ep-abilities span{padding:0;border:none;background:transparent;font-size:15px;font-weight:700;color:#155a94}
+.ep-abilities span + span::before{content:"·";margin:0 10px;color:#8fa8c2;font-weight:400}
+.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-top:36px;width:100%;max-width:100%}
+@media(max-width:720px){
+  .ep-figure{float:none!important;width:min(72vw,280px);margin:18px auto}
+  .ep-figure img{margin:0 auto}
+}
+.ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
+.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
+
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to AI Education" data-zh="← 返回人工智能教育">← Back to AI Education</a>
+    </div>
+
+    <section class="nf-hero topic-banner" aria-label="Episode introduction">
+      <p class="topic-banner-kicker" data-en="AI EDUCATION · EPISODE 11" data-zh="人工智能教育 · 第 11 集">AI EDUCATION · EPISODE 11</p>
+      <h1 data-en="Why AI Fails" data-zh="人工智能出错">Why AI Fails</h1>
+      <p class="topic-banner-subtitle" data-en="Common AI mistakes — from the wrong tool and thin context to hallucinations, randomness, and skipped verification." data-zh="认识常见错误与原因 —— 从选错工具、背景不足，到幻觉、随机性，以及缺少验证。">Common AI mistakes — from the wrong tool and thin context to hallucinations, randomness, and skipped verification.</p>
+    </section>
+
+    <!-- LEVEL-4 BODY START -->
+    <article class="nf-section ep-article" aria-label="Episode article">
+
+      <div class="ep-pair">
+        <p class="nf-lead" data-en="Welcome back to Kiwi 爱AI Study. Last episode traced how AI generates answers; today we ask why those answers still go wrong." data-zh="欢迎来到 KIWI 爱AI Study！上一集我们学习了 AI 如何生成答案；这一集，我们来了解 AI 为什么仍然会出错。">Welcome back to Kiwi 爱AI Study. Last episode traced how AI generates answers; today we ask why those answers still go wrong.</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-011/magazine/ep11-mag-01.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Ten reasons · one checklist mindset." data-zh="十个原因 · 一份自查心态。">Ten reasons · one checklist mindset.</figcaption>
+        </figure>
+        <p data-en="When AI keeps repeating the same mistake, do not only rewrite the prompt. Pause and ask: wrong tool? weak model for the job? missing background? too many tasks at once? did we actually <em>verify</em> the output?" data-zh="当 AI 连续几次犯同样的错误时，不要只知道反复修改 Prompt。停下来问自己：是不是工具不合适？模型能力不足？缺少必要背景？一次任务太多？或者我们根本没有正确验证结果？">When AI keeps repeating the same mistake, do not only rewrite the prompt. Pause and ask: wrong tool? weak model for the job? missing background? too many tasks at once? did we actually <em>verify</em> the output?</p>
+        <p data-en="Sometimes the fix is not another sentence in the chat — it is changing how we work." data-zh="有时候，真正需要改变的不是 Prompt，而是我们的工作方法。">Sometimes the fix is not another sentence in the chat — it is changing how we work.</p>
+        <p data-en="Below we name <strong>ten common reasons</strong> AI still misses the mark. Treat them as a checklist — not ten excuses to quit, but ten places to look before you send the same prompt again." data-zh="下面我们会列出<strong>十个常见原因</strong>。把它们当成自查清单 —— 不是十个放弃的理由，而是十个在重复发送同样 Prompt 之前值得先看一看的地方。">Below we name <strong>ten common reasons</strong> AI still misses the mark. Treat them as a checklist — not ten excuses to quit, but ten places to look before you send the same prompt again.</p>
+        <p data-en="You do not need to memorize all ten today — notice which two show up most in <em>your</em> projects, and fix those first." data-zh="不必今天背熟十条 —— 先留意<strong>你的</strong>项目里最常出现的两条，从那里改起。">You do not need to memorize all ten today — notice which two show up most in <em>your</em> projects, and fix those first.</p>
+      </div>
+
+      <h2 id="ep11-tooling" data-en="Tools, plans, and model limits" data-zh="工具、套餐与模型能力">Tools, plans, and model limits</h2>
+      <p data-en="The first three reasons live in the toolbox: product fit, account limits, and which brain you invoked." data-zh="前三个原因都在“工具箱”里：产品是否对口、账户有没有额度、你唤起的是哪一颗“大脑”。">The first three reasons live in the toolbox: product fit, account limits, and which brain you invoked.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-011/magazine/ep11-mag-05.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Wrong tool · screwdriver, not drill." data-zh="工具不对 · 拿螺丝刀打洞。">Wrong tool · screwdriver, not drill.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Reason 1 — Wrong tool</strong>" data-zh="<strong>原因一：工具选错了（Wrong Tool）</strong>"><strong>Reason 1 — Wrong tool</strong></p>
+        <p data-en="AI products split by strength: writing, code, images, video. Ask one tool to do another tool’s job — even with a perfect prompt — and results wobble. Need a small edit on one object but only have full-image regeneration? The hammer is wrong, not your words." data-zh="AI 工具有很多种类，各有擅长。比如需要精确修改图片中的某个物体，却使用只能重新生成整张图的工具 —— 即使 Prompt 非常清楚，也可能无法完成。就像要在墙上打洞却拿螺丝刀：不是要求不清楚，而是工具不合适。">AI products split by strength: writing, code, images, video. Ask one tool to do another tool’s job — even with a perfect prompt — and results wobble. Need a small edit on one object but only have full-image regeneration? The hammer is wrong, not your words.</p>
+        <p data-en="When the same error keeps showing up, ask first: <em>wrong tool</em> — before you assume the model “does not understand English.”" data-zh="若同类错误反复出现，先问：<strong>工具</strong>是不是选错了 —— 别急着断定模型“听不懂你的话”。">When the same error keeps showing up, ask first: <em>wrong tool</em> — before you assume the model “does not understand English.”</p>
+        <p data-en="Need surgical edits on one slide title or one code file? A chat that only regenerates whole pages is the wrong workshop — swap tools, then refine the prompt." data-zh="若只想改一张幻灯片标题或一个代码文件，却一直用只能整页重做的聊天工具，就像进错了车间 —— 先换工具，再打磨 Prompt。">Need surgical edits on one slide title or one code file? A chat that only regenerates whole pages is the wrong workshop — swap tools, then refine the prompt.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-011/magazine/ep11-mag-04.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Free · Go · Plus · Pro · not the same caps." data-zh="Free · Go · Plus · Pro · 额度并不相同。">Free · Go · Plus · Pro · not the same caps.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Reason 2 — Plan and limits</strong>" data-zh="<strong>原因二：订阅套餐的限制（Plan &amp; Limits）</strong>"><strong>Reason 2 — Plan and limits</strong></p>
+        <p data-en="Apps like ChatGPT tier Free, Go, Plus, and Pro with different models, caps, and features. Need a long batch of images or a premium reasoning model? Your tier might stop the job before the model gets a fair try." data-zh="以 ChatGPT 为例，Free、Go、Plus、Pro 等套餐对应不同模型、功能与使用额度。若要连续生成大量图片，或使用某些高级功能，当前套餐可能很早就碰到限制。">Apps like ChatGPT tier Free, Go, Plus, and Pro with different models, caps, and features. Need a long batch of images or a premium reasoning model? Your tier might stop the job before the model gets a fair try.</p>
+        <p data-en="Hitting a limit can look like “AI failed” when the account simply cannot run that job today. Upgrading may help — but a pricier plan does not fix a mismatched tool or model." data-zh="遇到使用次数或功能限制，可能表现为“AI 不行”。升级有时有帮助，但更贵的套餐并不保证每个答案都更准确；工具或模型本身不适合时，升级也未必解决问题。">Hitting a limit can look like “AI failed” when the account simply cannot run that job today. Upgrading may help — but a pricier plan does not fix a mismatched tool or model.</p>
+        <p data-en="The crown columns in the art are a reminder: check which models and daily caps your tier actually unlocks before you label the answer “low quality.”" data-zh="画面里的皇冠档位在提醒：先看清当前套餐能开哪些模型、每天多少额度，再断定是“答案差”还是“还没轮到跑”。">The crown columns in the art are a reminder: check which models and daily caps your tier actually unlocks before you label the answer “low quality.”</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-011/magazine/ep11-mag-03.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Model capability · not one-size-fits-all." data-zh="模型能力 · 并非万能。">Model capability · not one-size-fits-all.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Reason 3 — Model capability</strong>" data-zh="<strong>原因三：模型能力有限（Model Capability）</strong>"><strong>Reason 3 — Model capability</strong></p>
+        <p data-en="Companies, models, and consumer apps are not the same thing. Some models answer fast; others lean toward code or long reasoning. Demanding pixel-perfect layouts from a model that cannot hold that reliably? Switch models before you tweak the prompt for the tenth time." data-zh="公司、模型与产品不是同一概念。不同模型能力不同。若要求图片中人物、背景、文字与物体位置都必须完全准确，可能超出当前模型稳定完成的能力 —— 有时需要更换模型，而不是继续改 Prompt。">Companies, models, and consumer apps are not the same thing. Some models answer fast; others lean toward code or long reasoning. Demanding pixel-perfect layouts from a model that cannot hold that reliably? Switch models before you tweak the prompt for the tenth time.</p>
+        <p data-en="Episode 7’s map helps here: the same logo on the box is not the same engine inside — match the <em>model</em> to the job before you blame the chat window." data-zh="第 7 集那张地图在这里很好用：包装盒上的同一个标志，不等于里面同一套引擎 —— 先让<strong>模型</strong> fit 任务，再怪聊天窗口。">Episode 7’s map helps here: the same logo on the box is not the same engine inside — match the <em>model</em> to the job before you blame the chat window.</p>
+        <p data-en="Layout work with fixed title boxes and logo slots? Pick a model and tool pair that accepts tight constraints — or move to template-based editing instead of full regeneration." data-zh="若版式里标题框、Logo 位置都要锁死，就要选能承受细约束的模型与工具 —— 否则应走模板编辑，而不是整页重生。">Layout work with fixed title boxes and logo slots? Pick a model and tool pair that accepts tight constraints — or move to template-based editing instead of full regeneration.</p>
+      </div>
+
+      <h2 id="ep11-context" data-en="Context, length, and hallucination" data-zh="背景、上下文与幻觉">Context, length, and hallucination</h2>
+      <p data-en="Next trio: what you never told it, what fell out of a long chat, and answers that <em>sound</em> researched but are not." data-zh="中间三个：你没说清的部分、长对话里滑落的规则、以及听起来像查过资料其实并没有的内容。">Next trio: what you never told it, what fell out of a long chat, and answers that <em>sound</em> researched but are not.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-011/magazine/ep11-mag-06.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="“Make it prettier” · missing taste." data-zh="“更漂亮一点” · 缺少品味信息。">“Make it prettier” · missing taste.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Reason 4 — Missing context</strong>" data-zh="<strong>原因四：背景信息不足（Missing Context）</strong>"><strong>Reason 4 — Missing context</strong></p>
+        <p data-en="“Make this webpage more beautiful” gives no colours, style, or no-touch zones. AI fills the gaps with its own guess — not because design is impossible for machines, but because your taste never arrived." data-zh="若只说“把这个网页设计得更漂亮一点”，AI 不知道你喜欢什么颜色、整体风格，也不知道哪些部分不能改。它只能按自己的理解重设计 —— 不是因为 AI 完全不懂设计，而是缺少必要背景。">“Make this webpage more beautiful” gives no colours, style, or no-touch zones. AI fills the gaps with its own guess — not because design is impossible for machines, but because your taste never arrived.</p>
+        <p data-en="Give a sample link, hex codes, fonts, or a one-line “do not change English” rule — the same habit as Episodes 8–9, just for design briefs." data-zh="可以给出参考链接、色值、字体，或一行“不要改英文版” —— 与第 8–9 集聚焦式 Prompt 相同，只是换成设计任务。">Give a sample link, hex codes, fonts, or a one-line “do not change English” rule — the same habit as Episodes 8–9, just for design briefs.</p>
+        <p data-en="Design homework is still homework: name audience, mood, and the one thing that must survive every revision." data-zh="设计作业也是作业：写清受众、氛围，以及无论如何改动都必须保留的那一项。">Design homework is still homework: name audience, mood, and the one thing that must survive every revision.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-011/magazine/ep11-mag-07.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Long chat · early rules trimmed." data-zh="长对话 · 早期要求可能被裁掉。">Long chat · early rules trimmed.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Reason 5 — Context limit</strong>" data-zh="<strong>原因五：上下文过长（Context Limit）</strong>"><strong>Reason 5 — Context limit</strong></p>
+        <p data-en="Long chats eat window space. Rules you stated early — “always 16:9 images” — may slip. Re-anchor important constraints or paste a short project-rules file." data-zh="对话很长时，早期信息可能被截断、压缩或不够重视。例如最开始要求所有图片 16:9，多轮后又出现其他比例 —— 此时应重新提供重要要求，或把项目规则整理成简短文件。">Long chats eat window space. Rules you stated early — “always 16:9 images” — may slip. Re-anchor important constraints or paste a short project-rules file.</p>
+        <p data-en="Episode 7 introduced <strong>context</strong> as what the model can still “see.” When threads get long, treat must-keep rules like flight checklist items — paste them again at the top of the next request." data-zh="第 7 集把<strong>上下文（Context）</strong>解释成模型仍能“看见”的信息。对话一长，就把必须遵守的条款当成飞行检查单 —— 下一条消息开头再贴一遍。">Episode 7 introduced <strong>context</strong> as what the model can still “see.” When threads get long, treat must-keep rules like flight checklist items — paste them again at the top of the next request.</p>
+        <p data-en="Starting a fresh chat with a one-screen brief often beats wrestling a tired thread where half your constraints fell off the log." data-zh="有时开新对话并贴上精简项目说明，比在老对话里硬拽回已经滑落的限制更省事。">Starting a fresh chat with a one-screen brief often beats wrestling a tired thread where half your constraints fell off the log.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-011/magazine/ep11-mag-02.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Hallucination · sounds right, isn’t." data-zh="幻觉 · 听起来对，其实不对。">Hallucination · sounds right, isn’t.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Reason 6 — Hallucination</strong>" data-zh="<strong>原因六：AI 幻觉（Hallucination）</strong>"><strong>Reason 6 — Hallucination</strong></p>
+        <p data-en="Sometimes AI serves a smooth sentence with a fake citation or wrong number. Fluent language is not the same as checked facts. Important claims need sources you trust." data-zh="有时 AI 会生成看起来非常合理、实际上却不正确的答案，比如编造参考文献或错误数据。符合语言规律不等于事实正确 —— 重要信息必须检查来源。">Sometimes AI serves a smooth sentence with a fake citation or wrong number. Fluent language is not the same as checked facts. Important claims need sources you trust.</p>
+        <p data-en="Why does it happen? Large language models are trained to keep text sounding plausible — not to stop and fact-check every line before it reaches your screen. Episode 10 showed prediction; hallucination is what prediction looks like when nobody verifies." data-zh="为什么会这样？大语言模型被训练成让文字“读起来顺” —— 而不是在每一句到手之前都先核实事实。第 10 集讲了预测；若没有人验收，幻觉就是预测在事实层面的影子。">Why does it happen? Large language models are trained to keep text sounding plausible — not to stop and fact-check every line before it reaches your screen. Episode 10 showed prediction; hallucination is what prediction looks like when nobody verifies.</p>
+        <p data-en="For reports you will submit, health questions, or “quick facts” in a slide deck, build in a second step: textbook, teacher, or a site you already trust — same pause-and-check habit as Episode 1." data-zh="对要交的报告、健康问题或演示里的“小资料”，请加上第二步：课本、老师或你本来信任的站点 —— 和第 1 集一样的“先停一下再核实”。">For reports you will submit, health questions, or “quick facts” in a slide deck, build in a second step: textbook, teacher, or a site you already trust — same pause-and-check habit as Episode 1.</p>
+      </div>
+
+      <h2 id="ep11-workflow" data-en="Complexity, inputs, and luck" data-zh="复杂度、输入与随机性">Complexity, inputs, and luck</h2>
+      <p data-en="Last four reasons are about how you run the job: bite-sized steps, clean inputs, dice rolls, and proof before you celebrate." data-zh="最后四个原因关乎你怎么跑任务：拆小步、洗输入、接受骰子、庆祝前先验收。">Last four reasons are about how you run the job: bite-sized steps, clean inputs, dice rolls, and proof before you celebrate.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-011/magazine/ep11-mag-09.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Task decomposition · stages, not one gulp." data-zh="任务拆解 · 分阶段完成。">Task decomposition · stages, not one gulp.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Reason 7 — Task complexity</strong>" data-zh="<strong>原因七：任务过于复杂（Task Complexity）</strong>"><strong>Reason 7 — Task complexity</strong></p>
+        <p data-en="“Edit twenty pages, translate everything, resize images, keep English untouched” is many jobs in one breath. Use <strong>task decomposition</strong>: finish one chunk, verify, then continue." data-zh="同时修改二十个网页、翻译、调图且英文版不变，实际包含很多任务。若一步出错，其他部分也会受影响。更好的方法是<strong>任务拆解（Task Decomposition）</strong>：先完成一部分，检查正确，再继续下一部分。">“Edit twenty pages, translate everything, resize images, keep English untouched” is many jobs in one breath. Use <strong>task decomposition</strong>: finish one chunk, verify, then continue.</p>
+        <p data-en="School parallel: do not assign “translate the whole textbook tonight.” Assign “finish Section 2, show me, then we unlock Section 3.” AI projects work the same way." data-zh="学校里的比喻：别说“今晚翻译整本课本”，而是“先做完第 2 节，给我看，再开放第 3 节”。带 AI 做项目也一样。">School parallel: do not assign “translate the whole textbook tonight.” Assign “finish Section 2, show me, then we unlock Section 3.” AI projects work the same way.</p>
+        <p data-en="Each stage should end with evidence you can repeat tomorrow — a screenshot, a diff list, or one page that passes your checklist." data-zh="每一阶段都应收出明天还能复验的证据 —— 截图、改动清单，或一页通过你检查表的页面。">Each stage should end with evidence you can repeat tomorrow — a screenshot, a diff list, or one page that passes your checklist.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-011/magazine/ep11-mag-10.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Blurry in · muddy out." data-zh="输入差 · 输出也糊。">Blurry in · muddy out.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Reason 8 — Input quality</strong>" data-zh="<strong>原因八：输入资料有问题（Input Quality）</strong>"><strong>Reason 8 — Input quality</strong></p>
+        <p data-en="Blurry photos, broken files, or bad source data poison outputs. Fix the inputs before you blame the model — like a math problem with wrong givens." data-zh="若图片模糊、文件不完整或原始数据有误，AI 输出也可能出问题。检查 AI 之前，也要检查自己的输入 —— 就像题目条件给错，过程再顺结果也不对。">Blurry photos, broken files, or bad source data poison outputs. Fix the inputs before you blame the model — like a math problem with wrong givens.</p>
+        <p data-en="OCR on a crooked photo, a ZIP missing half its files, or a spreadsheet with merged cells — garbage in still means garbage out, even with a flashy model name on the box." data-zh="歪着拍的 OCR、缺了一半文件的压缩包、合并单元格乱七八糟的表格 —— 输入脏，输出照样糊，换再贵的模型名也救不了。">OCR on a crooked photo, a ZIP missing half its files, or a spreadsheet with merged cells — garbage in still means garbage out, even with a flashy model name on the box.</p>
+        <p data-en="Quick habit: spend one minute cleaning the source, then send the prompt. You will spend less time arguing with “AI does not listen.”" data-zh="小习惯：先花一分钟整理好素材，再发 Prompt。比起抱怨“AI 不听话”，往往更省时。">Quick habit: spend one minute cleaning the source, then send the prompt. You will spend less time arguing with “AI does not listen.”</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-011/magazine/ep11-mag-08.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="“Done?” · magnifying glass, not mood lighting." data-zh="“完成了？” · 用放大镜，不信气氛灯。">“Done?” · magnifying glass, not mood lighting.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Reason 9 — Variability</strong>" data-zh="<strong>原因九：输出具有随机性（Variability）</strong>"><strong>Reason 9 — Variability</strong></p>
+        <p data-en="Run the same prompt twice and you may get different stories or images. Generative systems often sample probabilistically — sameness is not guaranteed." data-zh="同样一个 Prompt 运行两次，可能得到不同答案，尤其在生成图片、写故事或设计网页时。许多生成式 AI 在过程中包含概率选择，因此不一定每次都完全相同。">Run the same prompt twice and you may get different stories or images. Generative systems often sample probabilistically — sameness is not guaranteed.</p>
+        <p data-en="That is normal for creative drafts — pick the version you like, or set stricter constraints. It is <em>not</em> normal to ship homework or production work without comparing the two runs." data-zh="做创意草稿时这很正常 —— 选更喜欢的一版，或把限制写得更死。若是作业或正式交付，却从不对比两次结果，就不正常了。">That is normal for creative drafts — pick the version you like, or set stricter constraints. It is <em>not</em> normal to ship homework or production work without comparing the two runs.</p>
+        <p class="ep-myth" data-en="<strong>Reason 10 — No verification</strong>" data-zh="<strong>原因十：缺少验证（No Verification）</strong>"><strong>Reason 10 — No verification</strong></p>
+        <p data-en="“Done!” in the chat is not done in real life. Check math, open the site, run tests. <strong>Generating</strong> is not <strong>verifying</strong>." data-zh="AI 说“已经完成”不代表真的没问题。数学可验算，网站可打开测试，程序可跑自动化测试。生成结果，不等于完成验证。">“Done!” in the chat is not done in real life. Check math, open the site, run tests. <strong>Generating</strong> is not <strong>verifying</strong>.</p>
+        <p data-en="Episode 13 will turn this into a full workflow; for now, remember that green checks in the UI are mood lighting — your eyes on the real file are the inspection." data-zh="第 13 集会把这一步展开成完整流程；此刻先记住：界面上的绿勾只是气氛灯 —— 你亲自打开真实文件，才是验收。">Episode 13 will turn this into a full workflow; for now, remember that green checks in the UI are mood lighting — your eyes on the real file are the inspection.</p>
+      </div>
+
+      <h2 id="ep11-close" data-en="Turn reasons into habits" data-zh="把原因变成习惯">Turn reasons into habits</h2>
+
+      <div class="ep-pair">
+        <p data-en="Naming why AI fails is step one toward better workflows. Next episode we practise saying what we want so clearly that fewer of these traps trigger." data-zh="理解错误的原因，是改进 AI 使用方法的第一步。下一集，我们将学习如何清楚地向 AI 表达要求。">Naming why AI fails is step one toward better workflows. Next episode we practise saying what we want so clearly that fewer of these traps trigger.</p>
+        <p data-en="Skim the ten reasons in plain language: tool · plan · model · missing context · long chat · hallucination · big task · bad input · random output · no verify. One line on a sticky note is enough to break a repeat-error loop." data-zh="用大白话过一遍十个原因：工具 · 套餐 · 模型 · 缺背景 · 对话太长 · 幻觉 · 任务太大 · 输入有误 · 输出随机 · 没验证。便签上写一行，就足以打断“同样错误再来一遍”的循环。">Skim the ten reasons in plain language: tool · plan · model · missing context · long chat · hallucination · big task · bad input · random output · no verify. One line on a sticky note is enough to break a repeat-error loop.</p>
+        <div class="ep-abilities" role="list" aria-label="Ten reasons">
+          <span role="listitem" data-en="Tool" data-zh="工具">Tool</span>
+          <span role="listitem" data-en="Plan" data-zh="套餐">Plan</span>
+          <span role="listitem" data-en="Model" data-zh="模型">Model</span>
+          <span role="listitem" data-en="Context" data-zh="背景">Context</span>
+          <span role="listitem" data-en="Length" data-zh="长度">Length</span>
+          <span role="listitem" data-en="Hallucination" data-zh="幻觉">Hallucination</span>
+          <span role="listitem" data-en="Complexity" data-zh="复杂度">Complexity</span>
+          <span role="listitem" data-en="Input" data-zh="输入">Input</span>
+          <span role="listitem" data-en="Variability" data-zh="随机">Variability</span>
+          <span role="listitem" data-en="Verify" data-zh="验证">Verify</span>
+        </div>
+        <div class="ep-flow-col">
+          <p data-en="Keep a personal short list: tool fit, context file, model choice, staged tasks, and verify before you ship." data-zh="可以为自己列一张短清单：工具是否合适、背景是否写清、模型是否匹配、任务是否分阶段、是否在提交前验证。">Keep a personal short list: tool fit, context file, model choice, staged tasks, and verify before you ship.</p>
+          <p class="nf-note" data-en="When errors repeat, change method — not only wording." data-zh="当同样错误反复出现，先改工作方法 —— 不要只改措辞。">When errors repeat, change method — not only wording.</p>
+        </div>
+      </div>
+    </article>
+
+    <nav class="ai-bottom-nav" aria-label="Episode navigation">
+      <a href="episode-10.html" data-en="← Episode 10: How AI Thinks" data-zh="← 第 10 集：人工智能思考">← Episode 10: How AI Thinks</a>
+      <a href="index.html" data-en="All episodes" data-zh="所有课程">All episodes</a>
+      <a href="episode-12.html" data-en="Episode 12: Talk to AI →" data-zh="第 12 集：高效沟通技巧 →">Episode 12: Talk to AI →</a>
+    </nav>
+    <p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+  <script>
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261112-ep11" defer></script>
+</body>
+</html>

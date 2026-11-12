@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- Level 4 — AI Knowledge Class Episode 14 (magazine layout; words, math, code) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Words Math Code | AI Knowledge Class · Episode 14 | Kiwi 爱AI Study</title>
+  <meta name="description" content="Language, math thinking, and software development still matter in the AI age — for clear asks, sound checks, and systems you can trust.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-lead{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px}
+.ep-article{width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box}
+.ep-article h2{clear:both;width:100%;text-align:left;margin:32px 0 14px;font-size:clamp(21px,2.15vw,26px);color:#153d70;line-height:1.28;font-weight:700}
+.ep-article h2:first-child{margin-top:0}
+.ep-article p{font-size:15px;line-height:1.85;color:#263f5b;margin:0 0 14px}
+.ep-article p.ep-myth{color:#174a7e;font-weight:800;margin:18px 0 8px;font-size:15px;line-height:1.35}
+.ep-article p.ep-myth strong{font-weight:800}
+.ep-figure{width:min(34%,300px);margin:4px 0 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f4f8fc;box-shadow:0 5px 18px rgba(24,55,95,.07)}
+.ep-figure--right{float:right;margin-left:22px}
+.ep-figure--left{float:left;margin-right:22px}
+.ep-figure img{display:block;width:100%;height:auto}
+.ep-figure figcaption{font-size:11px;line-height:1.4;color:var(--muted);padding:7px 10px 9px;text-align:center;background:#fff}
+.ep-pair{overflow:hidden;margin:22px 0 6px}
+.ep-pair::after{content:"";display:table;clear:both}
+.ep-pair .ep-myth{margin-top:0}
+.ep-pair .ep-figure{margin-top:2px}
+.ep-article::after{content:"";display:table;clear:both}
+.nf-note{margin:18px 0;padding:14px 17px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:14px;line-height:1.65}
+/* Float wrap: sibling <p> in .ep-pair; .ep-flow-col only for lead-in + .nf-note (docs/AI_EPISODE_MAGAZINE.md) */
+.ep-flow-col{overflow:visible;min-width:0}
+.ep-flow-col > p:last-child{margin-bottom:0}
+.ep-flow-col .nf-note{margin:8px 0 0;width:100%;max-width:100%;box-sizing:border-box}
+.ep-note--row{clear:both;width:100%;max-width:100%;box-sizing:border-box;margin:12px 0 0}
+.ep-abilities{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:4px 0 12px;padding:12px 16px;border-left:4px solid #8eb8dc;border-radius:0 10px 10px 0;background:#f4f9ff;list-style:none}
+.ep-abilities span{padding:0;border:none;background:transparent;font-size:15px;font-weight:700;color:#155a94}
+.ep-abilities span + span::before{content:"·";margin:0 10px;color:#8fa8c2;font-weight:400}
+.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-top:36px;width:100%;max-width:100%}
+@media(max-width:720px){
+  .ep-figure{float:none!important;width:min(72vw,280px);margin:18px auto}
+  .ep-figure img{margin:0 auto}
+}
+.ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
+.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
+
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to AI Education" data-zh="← 返回人工智能教育">← Back to AI Education</a>
+    </div>
+
+    <section class="nf-hero topic-banner" aria-label="Episode introduction">
+      <p class="topic-banner-kicker" data-en="AI EDUCATION · EPISODE 14" data-zh="人工智能教育 · 第 14 集">AI EDUCATION · EPISODE 14</p>
+      <h1 data-en="Words Math Code" data-zh="语言数学编程">Words Math Code</h1>
+      <p class="topic-banner-subtitle" data-en="Skills beyond AI — language for clear goals, math for sharp thinking, and engineering for software you can verify." data-zh="AI 时代三项重要基础能力 —— 语言讲清目标，数学理清问题，工程把方案做对、做可靠。">Skills beyond AI — language for clear goals, math for sharp thinking, and engineering for software you can verify.</p>
+    </section>
+
+    <!-- LEVEL-4 BODY START -->
+    <article class="nf-section ep-article" aria-label="Episode article">
+<div class="ep-pair">
+        <p class="nf-lead" data-en="Welcome to Kiwi 爱AI Study. You can already chat with AI — but should you stop studying language, math, and programming?" data-zh="欢迎来到 KIWI 爱AI Study！学会使用 AI 后，我们还需要思考：在 AI 时代，为什么仍然要认真学习语言、数学和软件开发？">Welcome to Kiwi 爱AI Study. You can already chat with AI — but should you stop studying language, math, and programming?</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-014/magazine/ep14-mag-01.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Three foundations · one AI toolkit." data-zh="三项基础 · 一套 AI 工具。">Three foundations · one AI toolkit.</figcaption>
+        </figure>
+        <p data-en="Three abilities still earn their place: saying what you mean, thinking with structure, and building software with tests and care. AI speeds the hands — it does not replace judgment." data-zh="我认为，AI 时代有三种能力值得我们特别重视：语言表达、数学思维，以及面向软件开发的编程和工程能力。它们的作用不同，但都能帮助我们把 AI 用得更稳、更准。">Three abilities still earn their place: saying what you mean, thinking with structure, and building software with tests and care. AI speeds the hands — it does not replace judgment.</p>
+        <p data-en="Each skill feeds the next: words shape the brief, math sharpens checks, code turns ideas into tools you can test." data-zh="三项能力彼此连接：语言把需求说清楚，数学把推理和验证做扎实，编程把想法变成可以反复测试的软件。">Each skill feeds the next: words shape the brief, math sharpens checks, code turns ideas into tools you can test.</p>
+        <p data-en="Episode 13 showed how to finish tasks reliably; this episode asks what you still study so those habits have something solid underneath." data-zh="第 13 集讲怎样可靠地完成任务；这一集问：我们还要学些什么，才能让那些习惯站在扎实的基础之上。">Episode 13 showed how to finish tasks reliably; this episode asks what you still study so those habits have something solid underneath.</p>
+        <p data-en="They are not rivals — language carries the brief, math stress-tests the logic, and code makes the result repeatable. Weaken one leg and AI still runs, but you lose leverage when answers get fuzzy." data-zh="三者不是互相取代：语言承载需求，数学压测逻辑，编程让结果可重复。少练一条腿，AI 照样能跑，但答案一模糊你就少了一份抓手。">They are not rivals — language carries the brief, math stress-tests the logic, and code makes the result repeatable. Weaken one leg and AI still runs, but you lose leverage when answers get fuzzy.</p>
+      </div>
+
+      <h2 id="ep14-words" data-en="Language: say the target precisely" data-zh="语言：把目标说具体">Language: say the target precisely</h2>
+      <p data-en="First foundation: one language used well beats five used vaguely — for classmates, teachers, and the prompt box." data-zh="第一项基础：一门语言学扎实，往往胜过五门都只沾一点 —— 对同学、老师，以及对 Prompt 框都如此。">First foundation: one language used well beats five used vaguely — for classmates, teachers, and the prompt box.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-014/magazine/ep14-mag-02.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Vague vs specific · same webpage." data-zh="模糊 vs 具体 · 同一网页。">Vague vs specific · same webpage.</figcaption>
+        </figure>
+        <p data-en="You do not need five languages on day one. Master <em>one</em> well enough to state goal, background, limits, and how you will judge success — with people and with AI." data-zh="你不一定要会很多种语言。先把自己最熟悉的一门语言学扎实，能够清楚描述目标、背景、限制和判断标准，就能更有效地与人和 AI 沟通。其他语言可以是额外优势，但不是使用 AI 的必要门槛。">You do not need five languages on day one. Master <em>one</em> well enough to state goal, background, limits, and how you will judge success — with people and with AI.</p>
+        <p data-en="“Make this page nicer” hides the real ask. Try: “Keep desktop unchanged; fix mobile title so it fits two lines without covering the character.” Specific words align everyone on the same finish line." data-zh="例如，与其说“这个网页不好看，改好一点”，不如说“保持桌面版不变，只调整手机版标题，让标题在两行内完整显示，不能遮挡人物”。表达越具体，双方越容易理解同一个目标。">“Make this page nicer” hides the real ask. Try: “Keep desktop unchanged; fix mobile title so it fits two lines without covering the character.” Specific words align everyone on the same finish line.</p>
+        <p data-en="Episode 12’s habits — role, context, acceptance criteria — only work when your words can carry that detail. Language class and AI prompts train the same muscle." data-zh="第 12 集的沟通习惯 —— 角色、背景、验收标准 —— 只有当你能把细节写清楚时才用得起来。语文课和写 Prompt，练的是同一块肌肉。">Episode 12’s habits — role, context, acceptance criteria — only work when your words can carry that detail. Language class and AI prompts train the same muscle.</p>
+        <p data-en="Bilingual sites are a daily test: the same idea must land in two languages without drifting scope. That is language skill on the job — not extra languages for decoration." data-zh="双语网站每天都在考你：同一个意思要用两种语言表达，还不能把范围带偏。这是语言能力的实战，不是「多会一门语言好看」。">Bilingual sites are a daily test: the same idea must land in two languages without drifting scope. That is language skill on the job — not extra languages for decoration.</p>
+      </div>
+
+      <h2 id="ep14-math" data-en="Math: patterns under the hood" data-zh="数学：看见背后的规律">Math: patterns under the hood</h2>
+      <p data-en="Second foundation: you do not need a PhD to use chatbots — but recognizing structure helps you spot nonsense faster." data-zh="第二项基础：用聊天工具不必先读博士 —— 但能看出结构，就更容易及时发现不靠谱的说法。">Second foundation: you do not need a PhD to use chatbots — but recognizing structure helps you spot nonsense faster.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-014/magazine/ep14-mag-03.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Functions · vectors · probability in ML." data-zh="函数 · 向量 · 概率与机器学习。">Functions · vectors · probability in ML.</figcaption>
+        </figure>
+        <p data-en="Modern machine learning leans on functions, vectors, matrices, probability, and optimization. Models adjust numbers to fit patterns; chat tools still run math when they answer." data-zh="现代机器学习和深度学习大量使用函数、向量、矩阵、概率、统计与优化。模型在训练中调整参数以学习数据中的模式；语言模型生成回答时，也依赖数学计算。">Modern machine learning leans on functions, vectors, matrices, probability, and optimization. Models adjust numbers to fit patterns; chat tools still run math when they answer.</p>
+        <p data-en="Math class also trains you to name givens, spot contradictions, compare approaches, and check conclusions. Strong math helps you understand AI ideas — but good AI use still needs domain knowledge and skeptical habits too." data-zh="数学学习还能训练我们定义问题、辨别条件、发现矛盾、比较方案和检查结论。数学基础有助于理解 AI 的技术原理，但不能简单地说“数学好就一定更会使用 AI”。实践经验、领域知识和批判性判断同样重要。">Math class also trains you to name givens, spot contradictions, compare approaches, and check conclusions. Strong math helps you understand AI ideas — but good AI use still needs domain knowledge and skeptical habits too.</p>
+        <p data-en="Logic thinking and careful arithmetic are allies in homework <em>and</em> when you ask AI for a proof sketch — neither replaces the other." data-zh="逻辑推理和认真验算，既帮得住作业，也帮得住你请 AI 草拟证明 —— 彼此不能互相替代。">Logic thinking and careful arithmetic are allies in homework <em>and</em> when you ask AI for a proof sketch — neither replaces the other.</p>
+        <p data-en="When an answer includes numbers, units, or “obvious” steps, math habits ask: are the givens consistent? does the conclusion follow? That quick audit catches many model slips before you ship the work." data-zh="回答里一旦出现数字、单位或「显然」的推理，数学习惯会问：条件一致吗？结论跟得上吗？在交作业或上线之前，这套快审能拦住不少模型失误。">When an answer includes numbers, units, or “obvious” steps, math habits ask: are the givens consistent? does the conclusion follow? That quick audit catches many model slips before you ship the work.</p>
+      </div>
+
+      <h2 id="ep14-code" data-en="Code and software engineering" data-zh="编程与软件工程">Code and software engineering</h2>
+      <p data-en="Third foundation: generated snippets are not a product. Engineering is what turns snippets into something you can maintain." data-zh="第三项基础：生成几段代码不等于做出产品；工程能力才是把片段变成可维护系统的那一层。">Third foundation: generated snippets are not a product. Engineering is what turns snippets into something you can maintain.</p>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-014/magazine/ep14-mag-04.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Generated code · still needs review." data-zh="生成的代码 · 仍需审查。">Generated code · still needs review.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>“AI writes code — so skip learning to program?”</strong>" data-zh="<strong>“AI 已经会写程序了，还要学编程吗？”</strong>"><strong>“AI writes code — so skip learning to program?”</strong></p>
+        <p data-en="Too simple. AI can scaffold pages and scripts fast. That helps beginners experiment. It does not mean requirements, security, or business rules are automatically understood." data-zh="AI 的确能快速生成常见的代码、网页和应用原型。对于简单任务，这能让更多没有编程经验的人尝试制作软件。但能生成代码，并不代表它已经理解了你的全部业务需求，也不代表生成的软件就一定安全、正确、可靠。">Too simple. AI can scaffold pages and scripts fast. That helps beginners experiment. It does not mean requirements, security, or business rules are automatically understood.</p>
+        <p data-en="Ask AI to build a clinic booking app and you may get a pretty form — without role permissions, conflict rules, privacy, or disaster recovery. Those needs come from people who know the work <em>and</em> how systems are built." data-zh="比如，你请 AI 为一家诊所开发预约系统。AI 可能很快写出预约页面，却未必知道真实业务中哪些人员可以查看信息、预约冲突怎样处理、数据怎样保护，以及系统发生故障时怎样恢复。">Ask AI to build a clinic booking app and you may get a pretty form — without role permissions, conflict rules, privacy, or disaster recovery. Those needs come from people who know the work <em>and</em> how systems are built.</p>
+        <p data-en="The more professional and long-lived the system, the more you must test AI output in real scenes — and know what to ask, what to check, and when not to accept the first answer." data-zh="越是专业、复杂、要长期维护的系统，越要把 AI 的建议放到真实场景里验证 —— 并知道该问什么、该查什么、何时不能直接接受它的回答。">The more professional and long-lived the system, the more you must test AI output in real scenes — and know what to ask, what to check, and when not to accept the first answer.</p>
+        <p data-en="Treat generated code like a first draft from a fast intern: useful and readable, but not merged without tests and a human who knows the domain." data-zh="把生成代码当成速度很快的新实习生初稿：有用、能读，但在没有测试、没有懂业务的人看过之前，别直接当定稿合并。">Treat generated code like a first draft from a fast intern: useful and readable, but not merged without tests and a human who knows the domain.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-014/magazine/ep14-mag-05.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Architecture · tests · maintenance." data-zh="架构 · 测试 · 维护。">Architecture · tests · maintenance.</figcaption>
+        </figure>
+        <p data-en="If you study programming, you can read AI output, judge algorithms, and catch edge cases. Software engineering adds requirements, architecture, testing, version control, security, and long-term upkeep." data-zh="如果你学过编程，就更容易读懂 AI 生成的代码，判断算法是否合理，发现边界条件和潜在错误。如果你理解软件工程，还会考虑需求分析、系统架构、测试、版本管理、安全、维护，以及不同模块之间如何协作。">If you study programming, you can read AI output, judge algorithms, and catch edge cases. Software engineering adds requirements, architecture, testing, version control, security, and long-term upkeep.</p>
+        <p data-en="AI can draft blueprints; a trained engineer still asks whether the structure is safe. Same for code: a few lines are not the whole product." data-zh="这就像 AI 可以帮建筑师绘制图纸，但真正懂建筑结构、材料和安全规范的人，才能更有把握地判断图纸是否可行。软件开发也一样：写出几段代码，只是软件工程的一部分。">AI can draft blueprints; a trained engineer still asks whether the structure is safe. Same for code: a few lines are not the whole product.</p>
+        <p data-en="You do not need to be a pro developer to use AI for homework help. But if you want to <em>build</em> software seriously, fundamentals still matter — AI is the power tool, not the architect." data-zh="不是说每个人都必须精通编程才能使用 AI。普通用户可以借助 AI 完成很多事情。但是，如果你希望成为专业的软件开发者，那么扎实的编程基础、软件设计能力、工程方法和业务理解，仍然非常重要。">You do not need to be a pro developer to use AI for homework help. But if you want to <em>build</em> software seriously, fundamentals still matter — AI is the power tool, not the architect.</p>
+        <p data-en="AI speeds typing; expertise still decides <em>what</em> to build, <em>why</em> the design fits, and <em>how</em> to prove it meets the brief." data-zh="AI 可以提高编写代码的效率，但专业知识帮助我们决定应该开发什么、为什么这样设计，以及怎样证明它真正符合要求。">AI speeds typing; expertise still decides <em>what</em> to build, <em>why</em> the design fits, and <em>how</em> to prove it meets the brief.</p>
+        <p data-en="Version control, staging sites, and regression tests feel boring until AI touches a dozen files at once — then they are how you unwind a bad pass safely." data-zh="版本管理、预发布环境和回归测试很枯燥，直到 AI 一次动了十几个文件 —— 那时它们才是你安全撤回烂改动的方式。">Version control, staging sites, and regression tests feel boring until AI touches a dozen files at once — then they are how you unwind a bad pass safely.</p>
+      </div>
+
+      <h2 id="ep14-close" data-en="Three skills, one toolkit" data-zh="三项能力，一套工具">Three skills, one toolkit</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-014/magazine/ep14-mag-06.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Clear · think · build · verify." data-zh="讲清 · 想透 · 做好 · 验过。">Clear · think · build · verify.</figcaption>
+        </figure>
+        <p data-en="Language helps us describe problems clearly. Math helps us think them through. Software development and engineering help us design, implement, and verify solutions. AI helps us do the work faster — not skip the thinking." data-zh="所以，我更愿意说：语言帮助我们把问题讲清楚，数学帮助我们把问题想清楚；软件开发与工程能力帮助我们把解决方案设计好、实现好、验证好。AI 则是帮助我们完成这些工作的工具。">Language helps us describe problems clearly. Math helps us think them through. Software development and engineering help us design, implement, and verify solutions. AI helps us do the work faster — not skip the thinking.</p>
+        <p data-en="Say it once for the hallway poster: clear words, careful reasoning, reliable software — then let AI accelerate each step." data-zh="用一句话挂在走廊海报上：讲清楚、想明白、做可靠 —— 再让 AI 给每一步加速。">Say it once for the hallway poster: clear words, careful reasoning, reliable software — then let AI accelerate each step.</p>
+        <p data-en="Pair this episode with Episode 13: foundations explain <em>why</em> your asks must be precise; habits explain <em>how</em> you verify before you call a task done." data-zh="这一集与第 13 集一对：基础能力回答「为什么要求必须写清」；习惯流程回答「怎样验证才敢喊完成」。">Pair this episode with Episode 13: foundations explain <em>why</em> your asks must be precise; habits explain <em>how</em> you verify before you call a task done.</p>
+        <div class="ep-abilities" role="list" aria-label="Three foundations">
+          <span role="listitem" data-en="Language" data-zh="语言">Language</span>
+          <span role="listitem" data-en="Math" data-zh="数学">Math</span>
+          <span role="listitem" data-en="Software" data-zh="软件工程">Software</span>
+        </div>
+        <p data-en="Next episode hosts an AI job fair — picking models and tools for the task at hand." data-zh="下一集，我们举办一场 AI 人才招聘会，看看怎样选择模型和工具。">Next episode hosts an AI job fair — picking models and tools for the task at hand.</p>
+        <p class="nf-note ep-note--row" data-en="<strong>Takeaway:</strong> AI raises the ceiling on what you can try; language, math, and engineering raise the floor on what you can trust. Study all three so every faster workflow still has someone home who can read the output, test the numbers, and own the system." data-zh="<strong>带走一句：</strong> AI 抬高你能尝试的上限；语言、数学和工程抬高你能信任的下限。三项都要练，这样每次加速之后，仍有人能读懂结果、核验数字、对系统负责。"><strong>Takeaway:</strong> AI raises the ceiling on what you can try; language, math, and engineering raise the floor on what you can trust. Study all three so every faster workflow still has someone home who can read the output, test the numbers, and own the system.</p>
+      </div>
+    </article>
+
+    <nav class="ai-bottom-nav" aria-label="Episode navigation">
+      <a href="episode-13.html" data-en="← Episode 13: Can AI Finish Tasks Reliably?" data-zh="← 第 13 集：如何让 AI 更可靠地完成任务？">← Episode 13: Can AI Finish Tasks Reliably?</a>
+      <a href="index.html" data-en="All episodes" data-zh="所有课程">All episodes</a>
+      <a href="episode-15.html" data-en="Episode 15: AI Job Fair →" data-zh="第 15 集：智能工具招聘 →">Episode 15: AI Job Fair →</a>
+    </nav>
+    <p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+  <script>
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261112-ep14" defer></script>
+</body>
+</html>

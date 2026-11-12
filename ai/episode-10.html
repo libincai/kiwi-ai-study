@@ -1,82 +1,287 @@
-<!DOCTYPE html><html lang="en-CA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>How Does an AI Agent Work? | AI Knowledge Classroom</title><meta name="description" content="An AI agent does more than answer one question. It can work toward a goal by planning steps, using tools and checking progress."><link rel="stylesheet" href="../assets/css/styles.css?v=20261107-tagline1"><style>
-.ai-page{--ai-ink:#14264d;--ai-blue:#1768b2;--ai-purple:#6556b8;--ai-muted:#60728a;--ai-line:#dce6f1;--ai-pale:#f2f7fd;color:var(--ai-ink)}
-.ai-main{max-width:1180px;margin:0 auto;padding:0 26px 76px}
-.ai-back{padding:18px 0 8px}.ai-back a{font-size:13px;color:#1768b2;text-decoration:none;font-weight:800}
-.ai-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:center;min-height:360px;padding:42px 48px;border-radius:26px;margin:14px 0 34px;background:linear-gradient(120deg,#edf5ff 0%,#f2efff 56%,#fff3e8 100%);border:1px solid #dce7f5}
-.ai-kicker{font-size:11px;letter-spacing:.16em;font-weight:900;color:#3878b4;text-transform:uppercase;margin:0 0 12px}
-.ai-hero h1{font-size:clamp(34px,4.3vw,54px);line-height:1.05;letter-spacing:-.04em;color:#153d70;margin:0 0 15px}
-.ai-hero p{font-size:17px;line-height:1.72;color:#4e637e;max-width:650px;margin:0}
-.ai-hero-art{width:100%;max-width:430px;justify-self:center}
-.ai-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
-.ai-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:#1768b2;color:#fff;text-decoration:none;font-size:14px;font-weight:800}
-.ai-btn.secondary{background:#fff;color:#245b91;border:1px solid #cdddf0}
-.ai-section{margin:44px 0}.ai-section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
-.ai-section h2{font-size:clamp(25px,3vw,34px);line-height:1.15;color:#153d70;margin:0 0 8px}
-.ai-section-head p{max-width:760px;margin:0;color:var(--ai-muted);line-height:1.65;font-size:15px}
-.ai-why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.ai-why-card{padding:21px;border:1px solid var(--ai-line);border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(24,55,95,.045)}
-.ai-why-icon{width:48px;height:48px;border-radius:15px;background:#eaf3ff;display:grid;place-items:center;font-size:25px;margin-bottom:14px}
-.ai-why-card h3{font-size:18px;color:#173e70;margin:0 0 7px}.ai-why-card p{font-size:14px;line-height:1.65;color:#60728a;margin:0}
-.ai-path{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.ai-path-item{position:relative;min-height:114px;padding:15px;border:1px solid var(--ai-line);border-radius:16px;background:#fff}
-.ai-path-item b{display:block;font-size:12px;color:#3982bd;letter-spacing:.06em;margin-bottom:7px}
-.ai-path-item strong{display:block;color:#173e70;font-size:16px;margin-bottom:5px}
-.ai-path-item span{display:block;color:#64758b;font-size:12px;line-height:1.45}
-.ai-episodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ai-episode{overflow:hidden;border:1px solid var(--ai-line);border-radius:19px;background:#fff;box-shadow:0 7px 22px rgba(24,55,95,.055);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease}
-.ai-episode:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,55,95,.12)}
-.ai-episode-art{height:150px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#eaf4ff,#f1edff)}
-.ai-episode-art svg{width:100%;height:100%;max-width:300px}
-.ai-episode-body{padding:18px 19px 20px;display:flex;flex:1;flex-direction:column}
-.ai-episode-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
-.ai-episode-number{font-size:11px;font-weight:900;letter-spacing:.1em;color:#3982bd}
-.ai-status{font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;background:#e8f5ed;color:#277348}
-.ai-status.soon{background:#f1f3f7;color:#68778b}
-.ai-episode h3{font-size:19px;line-height:1.25;color:#173e70;margin:0 0 7px}
-.ai-episode p{font-size:13px;line-height:1.6;color:#60728a;margin:0 0 15px}
-.ai-episode .go{margin-top:auto;color:#1768b2;font-size:13px;font-weight:900}
-.ai-special{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px;align-items:center;padding:28px;border-radius:22px;background:linear-gradient(120deg,#173e70,#285f94);color:#fff}
-.ai-special-art{width:100%;max-width:320px;justify-self:center}
-.ai-special h2{color:#fff;margin:0 0 9px}.ai-special p{color:#e2edfa;line-height:1.7;margin:0 0 14px;font-size:14px}
-.ai-special .ai-btn{background:#fff;color:#173e70}
-.ai-note{padding:17px 20px;border:1px solid #f0dfaa;border-radius:15px;background:#fff9e9;color:#67572e;font-size:13px;line-height:1.65;margin-top:18px}
-
-
-
-.ai-content{max-width:900px;margin:0 auto}
-.ai-content h2{font-size:25px;color:#153d70;margin:34px 0 12px}
-.ai-content h3{font-size:18px;color:#1c5487;margin:24px 0 8px}
-.ai-content p,.ai-content li{font-size:15px;line-height:1.8;color:#4f637c}
-.ai-content ul{padding-left:22px}
-.ai-example{padding:21px 23px;background:#f1f7ff;border:1px solid #dbe9f8;border-radius:16px;margin:18px 0}
-.ai-example strong{color:#1d5487}.ai-example p{margin:8px 0 0}
-.ai-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
-.ai-compare>div{padding:18px;border:1px solid var(--ai-line);border-radius:15px;background:#fff}
-.ai-compare h3{margin:0 0 8px}
-.ai-compare p{margin:0;font-size:14px}
-.ai-lesson-art{margin:20px 0;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#edf5ff,#f4f0ff);padding:18px}
-.ai-lesson-art svg{display:block;width:100%;height:auto;max-height:280px}
-.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ai-line);padding-top:22px;margin-top:42px}
+<!DOCTYPE html>
+<!-- Level 4 — AI Knowledge Class Episode 10 (magazine layout; how AI thinks) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How AI Thinks | AI Knowledge Class · Episode 10 | Kiwi 爱AI Study</title>
+  <meta name="description" content="From prompt to answer: tokenization, context, next-token prediction, regeneration vs editing, and when AI checks its own work.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-lead{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px}
+.ep-article{width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box}
+.ep-article h2{clear:both;width:100%;text-align:left;margin:32px 0 14px;font-size:clamp(21px,2.15vw,26px);color:#153d70;line-height:1.28;font-weight:700}
+.ep-article h2:first-child{margin-top:0}
+.ep-article p{font-size:15px;line-height:1.85;color:#263f5b;margin:0 0 14px}
+.ep-article p.ep-myth{color:#174a7e;font-weight:800;margin:18px 0 8px;font-size:15px;line-height:1.35}
+.ep-article p.ep-myth strong{font-weight:800}
+.ep-figure{width:min(34%,300px);margin:4px 0 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f4f8fc;box-shadow:0 5px 18px rgba(24,55,95,.07)}
+.ep-figure--right{float:right;margin-left:22px}
+.ep-figure--left{float:left;margin-right:22px}
+.ep-figure img{display:block;width:100%;height:auto}
+.ep-figure figcaption{font-size:11px;line-height:1.4;color:var(--muted);padding:7px 10px 9px;text-align:center;background:#fff}
+.ep-pair{overflow:hidden;margin:22px 0 6px}
+.ep-pair::after{content:"";display:table;clear:both}
+.ep-pair .ep-myth{margin-top:0}
+.ep-pair .ep-figure{margin-top:2px}
+.ep-article::after{content:"";display:table;clear:both}
+.nf-note{margin:18px 0;padding:14px 17px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:14px;line-height:1.65}
+.ep-flow-col{overflow:visible;min-width:0}
+.ep-flow-col > p:last-child{margin-bottom:0}
+.ep-flow-col .nf-note{margin:8px 0 0;width:100%;max-width:100%;box-sizing:border-box}
+.ep-abilities{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:4px 0 12px;padding:12px 16px;border-left:4px solid #8eb8dc;border-radius:0 10px 10px 0;background:#f4f9ff;list-style:none}
+.ep-abilities span{padding:0;border:none;background:transparent;font-size:15px;font-weight:700;color:#155a94}
+.ep-abilities span + span::before{content:"·";margin:0 10px;color:#8fa8c2;font-weight:400}
+.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-top:36px;width:100%;max-width:100%}
+@media(max-width:720px){
+  .ep-figure{float:none!important;width:min(72vw,280px);margin:18px auto}
+  .ep-figure img{margin:0 auto}
+}
 .ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
-.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:32px}
-.ai-filter{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 20px}
-.ai-filter button{border:1px solid #d7e3f0;border-radius:999px;background:#fff;color:#3f5c7b;padding:8px 13px;font:700 12px "Segoe UI",sans-serif;cursor:pointer}
-.ai-filter button.active{background:#1768b2;border-color:#1768b2;color:#fff}
-@media(max-width:850px){.ai-hero{grid-template-columns:1fr;padding:30px}.ai-hero-art{max-width:310px}.ai-episodes{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-path{grid-template-columns:repeat(2,1fr)}.ai-special{grid-template-columns:1fr}.ai-special-art{max-width:240px}}
-@media(max-width:600px){.ai-main{padding:0 16px 55px}.ai-hero{padding:25px 22px;min-height:0}.ai-hero h1{font-size:35px}.ai-hero p{font-size:15px}.ai-why,.ai-episodes,.ai-compare{grid-template-columns:1fr}.ai-path{grid-template-columns:1fr 1fr}.ai-section-head{display:block}.ai-content p,.ai-content li{font-size:14px}.ai-special{padding:22px}.ai-episode-art{height:135px}}
-</style></head><body class="ai-page"><header class="site-header">
-<div class="brand-lockup"><a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home"><img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo"></a>
+.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
       <span class="divider" aria-hidden="true"></span>
-<div class="author-wrap"><a class="author-image-link" href="../index.html" aria-label="Kiwi 爱AI Study"><img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt=""></a></div></div>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a><a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a><a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a><a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a><a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a><a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a><a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
-<span class="flags" aria-label="Languages"><button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true"><img src="https://flagcdn.com/w160/ca.png" alt="English"></button><button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false"><img src="https://flagcdn.com/w160/cn.png" alt="中文"></button>
-      </span></nav></header><main class="ai-main"><div class="ai-back"><a href="index.html" data-en="← Back to AI Education" data-zh="← 返回 AI 教育">← Back to AI Education</a></div><section class="nf-hero topic-banner" aria-label="Page introduction"><p class="topic-banner-kicker" data-en="AI KNOWLEDGE CLASSROOM · EPISODE 10" data-zh="AI 知识小课堂 · 第 10 集">AI KNOWLEDGE CLASSROOM · EPISODE 10</p><h1 data-en="How Does an AI Agent Work?" data-zh="AI Agent 是怎样工作的？">How Does an AI Agent Work?</h1><p data-en="An AI agent does more than answer one question. It can work toward a goal by planning steps, using tools and checking progress." data-zh="AI Agent 不只是回答一个问题。它可以围绕一个目标安排步骤、使用工具，并检查任务进展。">An AI agent does more than answer one question. It can work toward a goal by planning steps, using tools and checking progress.</p></section><div class="ai-content"><div class="ai-lesson-art"><div><svg viewBox="0 0 400 170" role="img" aria-label="Illustration for AI learning episode"><circle cx="200" cy="85" r="78" fill="#d8e9fb" opacity=".55"/><circle cx="200" cy="85" r="34" fill="#fff" stroke="#6689bb" stroke-width="4"/><g fill="#fff" stroke="#6689bb" stroke-width="3"><rect x="48" y="42" width="82" height="38" rx="10"/><rect x="270" y="42" width="82" height="38" rx="10"/><rect x="48" y="104" width="82" height="38" rx="10"/><rect x="270" y="104" width="82" height="38" rx="10"/></g><g stroke="#6689bb" stroke-width="3"><path d="M130 61l39 14m62-14-39 14M130 123l39-23m62 23-39-23"/></g><text x="200" y="93" font-size="18" text-anchor="middle" fill="#315e9d" font-weight="800">AI</text></svg></div></div><h2 data-en="Start with a goal" data-zh="从一个目标开始">Start with a goal</h2><p data-en="Imagine your teacher asks your group to prepare a short presentation about renewable energy. The goal is clear: create a presentation that explains the topic and gives examples." data-zh="想象老师让你们小组准备一份关于可再生能源的简短演示。目标很清楚：解释主题，并提供一些例子。">Imagine your teacher asks your group to prepare a short presentation about renewable energy. The goal is clear: create a presentation that explains the topic and gives examples.</p><p data-en="An AI agent also starts with a goal. It needs to understand what success should look like before deciding what to do next." data-zh="AI Agent 也从目标开始。它需要先理解怎样才算完成任务，然后才能决定下一步做什么。">An AI agent also starts with a goal. It needs to understand what success should look like before deciding what to do next.</p><h2 data-en="Plan, use tools and work through steps" data-zh="制定计划、使用工具并逐步完成">Plan, use tools and work through steps</h2><p data-en="The agent may break the goal into smaller tasks: find reliable information, organize key points, create an outline, draft slides and review the result. This ordered set of steps is a workflow." data-zh="Agent 可能把目标拆成更小的任务：查找可靠信息、整理重点、制作大纲、起草幻灯片，再检查结果。这些按顺序安排的步骤就是 Workflow。">The agent may break the goal into smaller tasks: find reliable information, organize key points, create an outline, draft slides and review the result. This ordered set of steps is a workflow.</p><p data-en="It may use tools such as search, a calculator, a document reader or a presentation tool. It may also use instructions or skills that describe how to perform a particular kind of task." data-zh="它可能会使用搜索、计算器、文件阅读器或演示文稿工具。它也可能使用说明或 Skills，帮助自己完成某一类任务。">It may use tools such as search, a calculator, a document reader or a presentation tool. It may also use instructions or skills that describe how to perform a particular kind of task.</p><h2 data-en="Where do Context, Knowledge and Memory fit?" data-zh="Context、Knowledge 和 Memory 在哪里发挥作用？">Where do Context, Knowledge and Memory fit?</h2><p data-en="Context provides information about the current task. Knowledge provides information that can help answer it. Memory may provide useful information retained from earlier interactions, when the system supports it." data-zh="Context 提供当前任务的背景信息。Knowledge 提供回答问题所需的信息。若系统支持，Memory 还可能提供以前交流中保存下来、现在仍有帮助的信息。">Context provides information about the current task. Knowledge provides information that can help answer it. Memory may provide useful information retained from earlier interactions, when the system supports it.</p><p data-en="The model processes the information and produces outputs. The agent coordinates the process: deciding which step to take, when to use a tool and whether more work is needed." data-zh="模型负责处理信息并产生结果。Agent 则协调整个过程：决定采取哪一步、什么时候使用工具，以及是否还需要继续完成任务。">The model processes the information and produces outputs. The agent coordinates the process: deciding which step to take, when to use a tool and whether more work is needed.</p><h2 data-en="An agent is not magic — check its work" data-zh="Agent 不是魔法，结果仍然需要检查">An agent is not magic — check its work</h2><p data-en="An agent can make a poor plan, use an unsuitable source or misunderstand the goal. People should set boundaries, review important actions and check the final result." data-zh="Agent 也可能制定不好的计划、使用不合适的资料，或误解目标。人需要设定边界，检查重要操作，并核实最终结果。">An agent can make a poor plan, use an unsuitable source or misunderstand the goal. People should set boundaries, review important actions and check the final result.</p><p data-en="A useful way to remember it: a chatbot usually responds to a message; an agent can organize a sequence of actions toward a goal. The exact abilities vary across products." data-zh="可以这样记：聊天机器人通常针对一条消息作出回应；Agent 则可以围绕一个目标组织一系列行动。不同产品的具体能力会有所不同。">A useful way to remember it: a chatbot usually responds to a message; an agent can organize a sequence of actions toward a goal. The exact abilities vary across products.</p><div class="ai-bottom-nav"><a href="index.html" data-en="← Back to AI Education" data-zh="← 返回 AI 教育">← Back to AI Education</a><a href="index.html" data-en="Back to the learning path →" data-zh="返回学习路线 →">Back to the learning path →</a></div><p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p></div></main><footer class="site-footer"><nav aria-label="Legal"><a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a><a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a><a href="../index.html" data-legal="home">Home</a><a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a></nav><p style="font-size:12px !important; line-height:1.35 !important; font-weight:400 !important;">© 2026 Kiwi 爱AI Study. All rights reserved.</p></footer><script>
-(()=>{const nav={en:['Home','About','Math Education','AI Education','In-Class Learning','My Books','Contact'],zh:['首页','关于我们','数学教育','人工智能教育','课堂学习','我的书籍','联系我们']};const legal={en:['Privacy Policy','Terms of Service','Home'],zh:['隐私政策','服务条款','首页']};const btns=document.querySelectorAll('.flag[data-language]');function setLanguage(lang){const l=lang==='zh'?'zh':'en';document.documentElement.lang=l==='zh'?'zh-CN':'en-CA';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.innerHTML=el.getAttribute(l==='zh'?'data-zh':'data-en'));document.querySelectorAll('.site-nav [data-nav]').forEach((el,i)=>el.textContent=nav[l][i]);document.querySelectorAll('.site-footer [data-legal]').forEach((el,i)=>el.textContent=legal[l][i]);btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===l)));try{localStorage.setItem('kiwi-site-language',l)}catch(e){}}btns.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));let saved='en';try{saved=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(saved);window.addEventListener('pageshow',()=>{let l='en';try{l=localStorage.getItem('kiwi-site-language')||'en'}catch(e){}setLanguage(l)});
-const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(x=>x.classList.toggle('active',x===btn));const f=btn.dataset.aiFilter;document.querySelectorAll('.ai-episode[data-category]').forEach(card=>card.hidden=!(f==='all'||card.dataset.category===f));}));
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
+
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to AI Education" data-zh="← 返回人工智能教育">← Back to AI Education</a>
+    </div>
+
+    <section class="nf-hero topic-banner" aria-label="Episode introduction">
+      <p class="topic-banner-kicker" data-en="AI EDUCATION · EPISODE 10" data-zh="人工智能教育 · 第 10 集">AI EDUCATION · EPISODE 10</p>
+      <h1 data-en="How AI Thinks" data-zh="人工智能思考">How AI Thinks</h1>
+      <p class="topic-banner-subtitle" data-en="From your prompt to the answer on screen — a simplified look at tokenization, context, prediction, and what happens after you press send." data-zh="从输入问题到生成答案 —— 用简化的方式了解 Token 化、上下文、预测，以及按下发送之后背后发生了什么。">From your prompt to the answer on screen — a simplified look at tokenization, context, prediction, and what happens after you press send.</p>
+    </section>
+
+    <!-- LEVEL-4 BODY START -->
+    <article class="nf-section ep-article" aria-label="Episode article">
+
+      <div class="ep-pair">
+        <p class="nf-lead" data-en="Welcome to Episode 10 of Kiwi 爱AI Study’s AI Knowledge Class." data-zh="欢迎来到 KIWI 爱AI Study，AI 知识小课堂第十集！">Welcome to Episode 10 of Kiwi 爱AI Study’s AI Knowledge Class.</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-010/magazine/ep10-mag-01.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Prompt in · answer out." data-zh="问题进 · 答案出。">Prompt in · answer out.</figcaption>
+        </figure>
+        <p data-en="Last time we practised <strong>focused prompts</strong> — clear goals, useful context, and requirements that aim AI at one job." data-zh="上一集，我们学习了如何写好 <strong>Prompt</strong>（提示词）：明确目标、必要背景、清楚的要求，并让力量尽量聚焦。">Last time we practised <strong>focused prompts</strong> — clear goals, useful context, and requirements that aim AI at one job.</p>
+        <p data-en="But once you press send, what actually happens behind the scenes? Why can AI sometimes solve hard puzzles and sometimes trip on easy ones?" data-zh="但是，你有没有想过：当你把 Prompt 发送给 AI 以后，它在背后究竟做了什么？为什么有时候能回答非常复杂的问题，有时候却会犯非常简单的错误？">But once you press send, what actually happens behind the scenes? Why can AI sometimes solve hard puzzles and sometimes trip on easy ones?</p>
+        <p data-en="Today we walk through a simplified version of how large language models produce text — and we separate <em>generating</em> answers from <em>editing</em> or <em>checking</em> them." data-zh="今天，我们一起探索 AI 是怎样生成答案的，并区分<strong>重新生成</strong>、<strong>精确编辑</strong>与<strong>验证结果</strong>。">Today we walk through a simplified version of how large language models produce text — and we separate <em>generating</em> answers from <em>editing</em> or <em>checking</em> them.</p>
+      </div>
+
+      <h2 id="ep10-flow" data-en="The basic flow" data-zh="AI 生成答案的基本流程">The basic flow</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-010/magazine/ep10-mag-02.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Five stages · one path." data-zh="五个阶段 · 一条路径。">Five stages · one path.</figcaption>
+        </figure>
+          <p data-en="A handy chain to remember:" data-zh="可以先记住这样一条简化的流程：">A handy chain to remember:</p>
+          <p data-en="<strong>Prompt</strong> → <strong>Tokenization</strong> → <strong>Parameters + Context</strong> → <strong>Prediction</strong> → <strong>Answer</strong>." data-zh="<strong>输入问题</strong> → <strong>转换成 Token</strong> → <strong>模型计算</strong> → <strong>预测输出</strong> → <strong>生成答案</strong>。"><strong>Prompt</strong> → <strong>Tokenization</strong> → <strong>Parameters + Context</strong> → <strong>Prediction</strong> → <strong>Answer</strong>.</p>
+          <p data-en="In plain words: your question goes in, becomes tokens the model can read, gets combined with what it learned and what the conversation provides, is extended one prediction at a time, and shows up as the reply you see." data-zh="也就是：你的问题进入系统，被切成 Token，与模型参数和当前上下文一起参与计算，逐步预测输出，最后变成你看到的回答。">In plain words: your question goes in, becomes tokens the model can read, gets combined with what it learned and what the conversation provides, is extended one prediction at a time, and shows up as the reply you see.</p>
+          <div class="ep-abilities" role="list" aria-label="Generation stages">
+            <span role="listitem" data-en="Prompt" data-zh="Prompt 输入">Prompt</span>
+            <span role="listitem" data-en="Tokenization" data-zh="Tokenization">Tokenization</span>
+            <span role="listitem" data-en="Context" data-zh="Context 上下文">Context</span>
+            <span role="listitem" data-en="Prediction" data-zh="Prediction 预测">Prediction</span>
+            <span role="listitem" data-en="Answer" data-zh="Answer 答案">Answer</span>
+          </div>
+          <p data-en="<strong>Prompt</strong> — your message leaves the chat box and becomes the job ticket the system must handle." data-zh="<strong>Prompt（输入问题）</strong> —— 你的话离开输入框，成为系统要处理的一张“任务单”。"><strong>Prompt</strong> — your message leaves the chat box and becomes the job ticket the system must handle.</p>
+          <p data-en="<strong>Tokenization</strong> — letters and symbols are chopped into tokens and numbers the network can score." data-zh="<strong>Tokenization（转换成 Token）</strong> —— 文字被切成 Token 并转成模型能计算的数字形式。"><strong>Tokenization</strong> — letters and symbols are chopped into tokens and numbers the network can score.</p>
+          <p data-en="<strong>Parameters + context</strong> — long-term training meets this conversation’s history and rules; the model crunches both together." data-zh="<strong>Parameters + Context（模型计算）</strong> —— 训练得到的参数与当前对话的上下文相遇，一起在模型里运算。"><strong>Parameters + context</strong> — long-term training meets this conversation’s history and rules; the model crunches both together.</p>
+          <p data-en="<strong>Prediction</strong> — the model picks the next token, again and again, following the likeliest path until the draft feels finished." data-zh="<strong>Prediction（预测输出）</strong> —— 模型反复预测下一个 Token，沿较可能的路径一直续写，直到看起来像完整回答。"><strong>Prediction</strong> — the model picks the next token, again and again, following the likeliest path until the draft feels finished.</p>
+          <p data-en="<strong>Answer</strong> — tokens stream back into readable words on your screen; that visible message is what we call the reply." data-zh="<strong>Answer（生成答案）</strong> —— Token 又变回你看得见的文字；屏幕上出现的那段话，就是我们说的“回答”。"><strong>Answer</strong> — tokens stream back into readable words on your screen; that visible message is what we call the reply.</p>
+          <p data-en="Below we unpack the same five beats with the <em>12 × 13</em> example so each stage has a picture to remember." data-zh="接下来，我们用 <em>12 × 13</em> 的例子把五个阶段再展开一遍，方便你对照插图理解。">Below we unpack the same five beats with the <em>12 × 13</em> example so each stage has a picture to remember.</p>
+      </div>
+
+      <h2 id="ep10-steps" data-en="Five steps in the pipeline" data-zh="一步一步看流程">Five steps in the pipeline</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-010/magazine/ep10-mag-03.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Step 1 · your prompt leaves the chat box." data-zh="第一步 · 问题离开输入框。">Step 1 · your prompt leaves the chat box.</figcaption>
+        </figure>
+          <p class="ep-myth" data-en="<strong>Step 1 — Prompt</strong>" data-zh="<strong>第一步：Prompt，输入问题</strong>"><strong>Step 1 — Prompt</strong></p>
+          <p data-en="Imagine a tiny math question: <em>What is 12 × 13?</em> When you send it, that message becomes input for the AI system — not magic yet, just data on its way in." data-zh="假设你问一道很简单的题：<em>What is 12 × 13?</em>（12 乘以 13 等于多少？）按下发送后，你的问题就被送给 AI 系统。">Imagine a tiny math question: <em>What is 12 × 13?</em> When you send it, that message becomes input for the AI system — not magic yet, just data on its way in.</p>
+          <p data-en="Nothing is answered at this moment — the product is only receiving bytes, formatting them, and handing them to the model stack." data-zh="这一步还不会给出答案 —— 应用只是在接收你的文字，整理格式，再转交给模型一侧去处理。">Nothing is answered at this moment — the product is only receiving bytes, formatting them, and handing them to the model stack.</p>
+          <p class="ep-myth" data-en="<strong>Step 2 — Tokenization</strong>" data-zh="<strong>第二步：Tokenization，转换成 Token</strong>"><strong>Step 2 — Tokenization</strong></p>
+          <p data-en="The model does not “read” like a human scanning a page. It first splits text into <strong>tokens</strong> — pieces of words, numbers, or punctuation — then turns them into numeric form the network can process." data-zh="AI 并不是按人类读文章的方式直接处理文字。它先把输入切成一个个 <strong>Token</strong>（可以是单词、单词的一部分、数字片段或标点），再转换成模型能处理的数字表示。">The model does not “read” like a human scanning a page. It first splits text into <strong>tokens</strong> — pieces of words, numbers, or punctuation — then turns them into numeric form the network can process.</p>
+          <p data-en="Even a short sentence becomes a chain of tokens — like breaking “AI can help us learn” into one block at a time before the model starts calculating." data-zh="哪怕一句很短的话，也会先被拆成一串 Token —— 就像把“AI 能帮助我们学习”先分成一小块一小块，模型才开始计算。">Even a short sentence becomes a chain of tokens — like breaking “AI can help us learn” into one block at a time before the model starts calculating.</p>
+          <p data-en="Your <em>12 × 13</em> prompt becomes many small pieces too — digits, operators, and spaces each land in the token stream before math patterns kick in." data-zh="你的 <em>12 × 13</em> 同样会被拆碎 —— 数字、乘号与空格都会先进入 Token 序列，模型才开始用数学规律去处理。">Your <em>12 × 13</em> prompt becomes many small pieces too — digits, operators, and spaces each land in the token stream before math patterns kick in.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-010/magazine/ep10-mag-05.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Input → model → scores · inside the network." data-zh="输入 → 模型 → 计算 · 大脑里发生了什么。">Input → model → scores · inside the network.</figcaption>
+        </figure>
+          <p class="ep-myth" data-en="<strong>Step 3 — Parameters and context</strong>" data-zh="<strong>第三步：Parameters + Context，模型计算</strong>"><strong>Step 3 — Parameters and context</strong></p>
+          <p data-en="<strong>Parameters</strong> are patterns the model stored during training — billions of tuned numbers, not a shelf of textbook answers." data-zh="<strong>Parameters（参数）</strong> 可以理解为 AI 在训练中学到的大量规律，以数字形式保存在模型里。"><strong>Parameters</strong> are patterns the model stored during training — billions of tuned numbers, not a shelf of textbook answers.</p>
+          <p data-en="<strong>Context</strong> is what the model can use right now: your question, earlier turns in the chat, and sometimes system instructions." data-zh="<strong>Context（上下文）</strong> 则是当前能利用的信息：你的问题、对话中的相关内容，以及系统提供的其他信息。"><strong>Context</strong> is what the model can use right now: your question, earlier turns in the chat, and sometimes system instructions.</p>
+          <p data-en="The network combines both and runs heavy math — still no single “look up 156 in a table” step for chat models." data-zh="AI 会利用这些信息进行计算 —— 对大语言模型来说，这还不是去数据库里查标准答案。">The network combines both and runs heavy math — still no single “look up 156 in a table” step for chat models.</p>
+          <p data-en="At this stage the tubes-and-puzzle picture fits: tokens move through the trained network while the chat history whispers, “we are still talking about multiplication.”" data-zh="这时很适合用“管道里拼图块”的想象：Token 经过训练好的网络，而对话上下文也在提醒：“我们还在聊乘法题。”">At this stage the tubes-and-puzzle picture fits: tokens move through the trained network while the chat history whispers, “we are still talking about multiplication.”</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-010/magazine/ep10-mag-04.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="“The sky is ____” · blue, clear, or rainy?" data-zh="“The sky is ____” · 下一个词有多大可能？">“The sky is ____” · blue, clear, or rainy?</figcaption>
+        </figure>
+          <p class="ep-myth" data-en="<strong>Step 4 — Prediction</strong>" data-zh="<strong>第四步：Prediction，预测输出</strong>"><strong>Step 4 — Prediction</strong></p>
+          <p data-en="Many students find this the most interesting step: everything you read in the reply is built here, one token at a time." data-zh="很多同学觉得这是最有意思的一步：你在屏幕上读到的每一个字，几乎都是在这里一个一个“长”出来的。">Many students find this the most interesting step: everything you read in the reply is built here, one token at a time.</p>
+          <p data-en="Here is the core idea: the model <strong>predicts the next token</strong>, again and again. It is advanced guessing — shaped by training and context, not random dice rolls." data-zh="大语言模型生成答案的基本机制，是<strong>预测下一个 Token</strong>。这是一种非常高级的“猜测”，但不是随便乱猜，而是根据学到的规律和当前上下文计算不同输出的可能性。">Here is the core idea: the model <strong>predicts the next token</strong>, again and again. It is advanced guessing — shaped by training and context, not random dice rolls.</p>
+          <p data-en="Think about finishing a sentence in an essay: you do not print every word at once — you pick the next word that fits. The model does that at machine speed, millions of times faster." data-zh="可以想成写作文时接下一句话：你不会一下子把整段说完，而是一个词一个词地选下去。模型做的也是这件事，只是速度快得多。">Think about finishing a sentence in an essay: you do not print every word at once — you pick the next word that fits. The model does that at machine speed, millions of times faster.</p>
+          <p data-en="The percentages beside each word choice are the point: the model scores many continuations, then walks down one branch. <em>Blue (80%)</em> does not mean the sky is always blue — it means that word is the top guess <em>this time</em>." data-zh="每个候选项旁边的百分比就是关键：模型会给很多种续写打分，再沿其中一条走下去。<em>blue（80%）</em> 并不是说天空永远是蓝的 —— 而是指<strong>这一次</strong>最看好这个词。">The percentages beside each word choice are the point: the model scores many continuations, then walks down one branch. <em>Blue (80%)</em> does not mean the sky is always blue — it means that word is the top guess <em>this time</em>.</p>
+          <p data-en="For <em>12 × 13 = ?</em> the same loop runs: it may print <em>12 × 13 =</em> first, then stack digits <em>1 → 5 → 6</em> until the line looks finished. Real models may spit out a whole chunk like <em>156</em> at once, but the idea is unchanged." data-zh="对 <em>12 × 13 = ?</em> 也一样：可能先写出 <em>12 × 13 =</em>，再让数字一个一个出现，组成 1 → 5 → 6。真实模型也可能一次吐出包含 156 的整块 Token，但思路不变。">For <em>12 × 13 = ?</em> the same loop runs: it may print <em>12 × 13 =</em> first, then stack digits <em>1 → 5 → 6</em> until the line looks finished. Real models may spit out a whole chunk like <em>156</em> at once, but the idea is unchanged.</p>
+          <p data-en="If you use “streaming,” you are literally watching step 4 happen — each flash of new text is another prediction landing on the page." data-zh="若你打开“流式输出”，其实正在亲眼看到第四步：屏幕上多出来的每一段字，都是又一次预测的结果。">If you use “streaming,” you are literally watching step 4 happen — each flash of new text is another prediction landing on the page.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-010/magazine/ep10-mag-07.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Math on screen · some paths get an X first." data-zh="屏幕上的算术 · 有时会先走错一步。">Math on screen · some paths get an X first.</figcaption>
+        </figure>
+          <p class="ep-myth" data-en="<strong>Step 5 — Answer</strong>" data-zh="<strong>第五步：Answer，生成答案</strong>"><strong>Step 5 — Answer</strong></p>
+          <p data-en="When enough tokens are chosen, you see the finished line: <em>12 × 13 = 156</em>. The model did not necessarily “remember” 156 from a list — it predicted a likely continuation, step by step." data-zh="预测完成后，你就看到：12 × 13 = 156。它不一定是先在大脑里找到 156 再告诉你 —— 对大语言模型来说，是一步步预测出最可能的续写。">When enough tokens are chosen, you see the finished line: <em>12 × 13 = 156</em>. The model did not necessarily “remember” 156 from a list — it predicted a likely continuation, step by step.</p>
+          <p data-en="Stopping rules matter too: a stop signal, a length limit, or the model deciding the answer “sounds complete” — then step 5 freezes what you see as the final message." data-zh="何时停下也很重要：遇到停止标记、长度上限，或模型觉得“这句话已经说完了” —— 第五步就把你看到的当作最终答案。">Stopping rules matter too: a stop signal, a length limit, or the model deciding the answer “sounds complete” — then step 5 freezes what you see as the final message.</p>
+          <p data-en="Along the way it may try lines that look almost right but fail a quick check — like a wrong apple count before the numbers settle. Training still teaches math patterns, and some setups use tools for exact calculation." data-zh="中途也可能出现“看起来像对、一验就错”的猜测 —— 就像数苹果时先算错一步，再慢慢收束到答案。训练也能学到数学规律，并可通过推理或工具完成精确计算。">Along the way it may try lines that look almost right but fail a quick check — like a wrong apple count before the numbers settle. Training still teaches math patterns, and some setups use tools for exact calculation.</p>
+          <p data-en="You might ask: did it secretly look up 156 in a vault? For chat models, the usual story is prediction — not opening a perfect answer database each time. That is why verification still belongs to you, especially on homework or exams." data-zh="你可能会问：它是不是先在“大脑”里找到了 156 再告诉你？对大语言模型来说，更常见的是预测，而不是每次去标准答案库里翻页。所以做作业、考试时，验收仍然要靠自己。">You might ask: did it secretly look up 156 in a vault? For chat models, the usual story is prediction — not opening a perfect answer database each time. That is why verification still belongs to you, especially on homework or exams.</p>
+          <p data-en="That is also why AI can ace hard-looking problems yet slip on easy ones: the same prediction engine is doing both — confidence on screen is not a certificate of correctness." data-zh="这也解释了为什么它有时能解决很难的题，却在简单题上翻车：用的都是同一套预测机制 —— 界面上的自信并不等于真的正确。">That is also why AI can ace hard-looking problems yet slip on easy ones: the same prediction engine is doing both — confidence on screen is not a certificate of correctness.</p>
+      </div>
+
+      <h2 id="ep10-regen" data-en="Regeneration vs. precise editing" data-zh="重新生成还是精确编辑">Regeneration vs. precise editing</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-010/magazine/ep10-mag-06.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Chat text · usually a new draft." data-zh="聊天文字 · 常常是新版。">Chat text · usually a new draft.</figcaption>
+        </figure>
+          <p data-en="When you ask AI to “fix” something, are you editing the old result or getting a fresh one? That distinction matters for text, images, code, and slides — and it is easy to overlook after Episode 9’s focus on prompts." data-zh="当你让 AI 修改已经完成的作品时，它是在原作品上改，还是重新生成一个新版本？这两件事并不一样 —— 在学过聚焦式 Prompt 之后，这一点尤其容易被忽略。">When you ask AI to “fix” something, are you editing the old result or getting a fresh one? That distinction matters for text, images, code, and slides — and it is easy to overlook after Episode 9’s focus on prompts.</p>
+          <p data-en="In chat, “make that shorter” usually means the model <strong>regenerates</strong> new tokens — it does not surgically cut the message already on screen." data-zh="大语言模型回答问题时，通常是根据当前上下文逐步预测并生成新的 Token。如果说“刚才那段话太长了，请缩短一点”，它往往会生成一段<strong>新文字</strong>，而不是直接修改已经发送的旧消息。">In chat, “make that shorter” usually means the model <strong>regenerates</strong> new tokens — it does not surgically cut the message already on screen.</p>
+          <p data-en="For images, “only shrink the title” might still redraw background, colours, or faces. The prompt can be clear while the tool cannot lock every pixel." data-zh="对图片来说，即使你说“其他地方全部不变，只把标题缩小”，生成式编辑也可能重新计算画面的一部分，背景、人物、颜色都可能变化。">For images, “only shrink the title” might still redraw background, colours, or faces. The prompt can be clear while the tool cannot lock every pixel.</p>
+          <p data-en="Code and documents follow the same split: rewriting the whole page is regeneration; patching named files with an editor is closer to <strong>precise editing</strong>. For Word or slides, true title-only edits need tools that touch text boxes — not a full redesign." data-zh="程序与文档也一样：重写整个网页往往是重新生成；用编辑工具只改指定文件的几行，再运行测试，才更容易控制范围。Word 或演示文稿若只改标题，应使用能直接编辑文字对象的工具，而不是整份重做。">Code and documents follow the same split: rewriting the whole page is regeneration; patching named files with an editor is closer to <strong>precise editing</strong>. For Word or slides, true title-only edits need tools that touch text boxes — not a full redesign.</p>
+          <p data-en="Three ideas to keep straight: <strong>Regeneration</strong> (new creative draft), <strong>Precise editing</strong> (change one object or file), and <strong>Template-based design</strong> (fixed layout, editable labels)." data-zh="请区分三个概念：<strong>Regeneration（重新生成）</strong>、<strong>Precise Editing（精确编辑）</strong> 和 <strong>Template-Based Design（基于模板的设计）</strong>。">Three ideas to keep straight: <strong>Regeneration</strong> (new creative draft), <strong>Precise editing</strong> (change one object or file), and <strong>Template-based design</strong> (fixed layout, editable labels).</p>
+          <p data-en="Series covers for Kiwi 爱AI Study work best when background, logo, and title slots are templates — you replace episode text without regenerating the whole poster each time." data-zh="比如制作系列封面，可先固定背景、人物、Logo、字体与标题位置，把标题和副标题留成可编辑文字，以后只替换每集文字，不必每次重新生成整张图。">Series covers for Kiwi 爱AI Study work best when background, logo, and title slots are templates — you replace episode text without regenerating the whole poster each time.</p>
+          <p data-en="Need a brand-new creative direction? Regeneration is fine. Need one label changed while layout stays identical? Reach for precise editing or templates. A series of similar homework explainers? Build a template once, then swap text." data-zh="需要全新创意时可以重新生成；希望只改一处、版式不动，就应选精确编辑或模板；要做一连串风格统一的讲解页，就先搭好模板，再替换文字。">Need a brand-new creative direction? Regeneration is fine. Need one label changed while layout stays identical? Reach for precise editing or templates. A series of similar homework explainers? Build a template once, then swap text.</p>
+          <p data-en="“Keep everything else unchanged” is a task request, not a promise the tool can honour. Always compare before and after — the magnifying-glass habit beats trusting the green check on first glance." data-zh="“Keep everything else unchanged”（其他内容保持不变）只是任务要求，并不代表工具一定能做到；修改后请对比新旧版本，检查意外变化 —— 养成对照检查的习惯，比第一眼看到绿色勾就放心更重要。">“Keep everything else unchanged” is a task request, not a promise the tool can honour. Always compare before and after — the magnifying-glass habit beats trusting the green check on first glance.</p>
+        <div class="ep-flow-col">
+          <p data-en="Whether a change is precise or sloppy depends on the <em>model</em>, the <em>tool</em>, and the <em>edit mode</em> — not only on how polite your prompt sounds." data-zh="能不能精确修改，取决于<strong>模型</strong>、<strong>工具</strong>和<strong>编辑方式</strong>，而不只是 Prompt 写得够不够客气。">Whether a change is precise or sloppy depends on the <em>model</em>, the <em>tool</em>, and the <em>edit mode</em> — not only on how polite your prompt sounds.</p>
+          <p class="nf-note" data-en="Need a new idea? Regenerate. Need everything else untouched? Pick a tool that edits objects, layers, or source files." data-zh="需要新创意时可重新生成；希望其他内容完全不变时，应尽量使用真正支持对象、图层或源代码编辑的工具。">Need a new idea? Regenerate. Need everything else untouched? Pick a tool that edits objects, layers, or source files.</p>
+        </div>
+      </div>
+
+      <h2 id="ep10-check" data-en="Does AI check its own answer?" data-zh="AI 会不会检查自己的答案">Does AI check its own answer?</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-010/magazine/ep10-mag-08.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Generate → test → revise loop." data-zh="生成 → 测试 → 修改 循环。">Generate → test → revise loop.</figcaption>
+        </figure>
+          <p data-en="If the first answer is wrong, will AI notice and fix it by itself? <strong>Sometimes</strong> — when the setup supports multi-step reasoning or external tools." data-zh="如果 AI 第一次生成的答案是错误的，它会不会自己发现并重新计算？<strong>有时候会</strong> —— 当系统支持多步推理或使用外部工具时。">If the first answer is wrong, will AI notice and fix it by itself? <strong>Sometimes</strong> — when the setup supports multi-step reasoning or external tools.</p>
+          <p data-en="A coding agent might write code, run tests, read errors, patch, and test again: <strong>Generate → Test → Find errors → Revise → Test again</strong>." data-zh="例如完成编程任务时，可能先生成代码，再运行测试；若失败，根据错误信息修改并再次测试：生成 → 测试 → 发现错误 → 修改 → 再次测试。">A coding agent might write code, run tests, read errors, patch, and test again: <strong>Generate → Test → Find errors → Revise → Test again</strong>.</p>
+          <p data-en="That loop needs permission to run programs, read error logs, and try again — a plain chat box often stops after one polished paragraph." data-zh="这种循环需要允许运行程序、读取报错、再次尝试 —— 普通聊天框常常只给你一段看起来很完整的文字就结束。">That loop needs permission to run programs, read error logs, and try again — a plain chat box often stops after one polished paragraph.</p>
+          <p data-en="Not every chat product runs that loop automatically. Even when it does, it may miss mistakes. <em>Generating</em> and <em>verifying</em> are different jobs — yours still matter." data-zh="并不是所有 AI 都会自动执行这样的检查流程；即使检查过，也不代表能发现所有错误。所以，AI 生成答案和 AI 验证答案，是两件不同的事情。">Not every chat product runs that loop automatically. Even when it does, it may miss mistakes. <em>Generating</em> and <em>verifying</em> are different jobs — yours still matter.</p>
+          <p data-en="Think of the coding loop like fixing a robot’s path: a red X means “try another route,” a green flag means “good enough for now” — not “perfect forever.”" data-zh="可以把编程里的循环想成改正路线：红色 X 表示“换一条路试试”，绿色旗子表示“暂时过关” —— 不等于永远正确。">Think of the coding loop like fixing a robot’s path: a red X means “try another route,” a green flag means “good enough for now” — not “perfect forever.”</p>
+          <p data-en="In everyday homework help, <em>you</em> are still the tester: skim facts, redo one calculation, or ask for sources — do not assume a second apology means a second fix." data-zh="在平时的作业辅导里，<em>你</em> 仍是验收者：查事实、重算一遍、或要求给出处 —— 不要默认“再道歉一次就等于改对了”。">In everyday homework help, <em>you</em> are still the tester: skim facts, redo one calculation, or ask for sources — do not assume a second apology means a second fix.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-010/magazine/ep10-mag-09.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Closing · flow on one screen." data-zh="收尾 · 流程一图回顾。">Closing · flow on one screen.</figcaption>
+        </figure>
+          <p data-en="Today you met the chain from prompt to answer, saw prediction at the centre, and compared regeneration, editing, and self-check loops." data-zh="今天，我们认识了 AI 生成答案的基本流程，理解了重新生成、精确编辑与验证结果之间的区别。">Today you met the chain from prompt to answer, saw prediction at the centre, and compared regeneration, editing, and self-check loops.</p>
+          <p data-en="You can now name the five beats: <strong>prompt</strong> in, <strong>tokens</strong> cut, <strong>context</strong> plus parameters crunch, <strong>prediction</strong> repeats, <strong>answer</strong> appears — then you decide whether to trust or test it." data-zh="现在你可以说清五个节拍：<strong>输入问题</strong> → <strong>切成 Token</strong> → <strong>参数与上下文计算</strong> → <strong>反复预测</strong> → <strong>生成答案</strong> —— 然后由你决定是相信还是先验证。">You can now name the five beats: <strong>prompt</strong> in, <strong>tokens</strong> cut, <strong>context</strong> plus parameters crunch, <strong>prediction</strong> repeats, <strong>answer</strong> appears — then you decide whether to trust or test it.</p>
+          <p data-en="Remember the headline: sending a focused prompt is only the start — knowing what happens <em>after</em> send helps you judge the reply calmly." data-zh="记住一句主线：写好聚焦的 Prompt 只是开始 —— 知道按下发送之后发生什么，你才能更冷静地看待每一条回答。">Remember the headline: sending a focused prompt is only the start — knowing what happens <em>after</em> send helps you judge the reply calmly.</p>
+          <p data-en="Next episode: <strong>why AI still fails</strong> — even when the pipeline runs smoothly." data-zh="下一集，我们就来讨论：<strong>AI 为什么仍然会犯错误？</strong>">Next episode: <strong>why AI still fails</strong> — even when the pipeline runs smoothly.</p>
+          <p data-en="See you then — and try naming which step (token, context, or prediction) your last confusing reply might have stumbled on." data-zh="我们下一集再见！不妨想一想：你最近一次觉得“AI 怎么这样？”的回答，可能卡在了 Token、上下文，还是预测哪一环？">See you then — and try naming which step (token, context, or prediction) your last confusing reply might have stumbled on.</p>
+      </div>
+    </article>
+
+    <nav class="ai-bottom-nav" aria-label="Episode navigation">
+      <a href="episode-09.html" data-en="← Episode 9: Focused Prompts" data-zh="← 第 9 集：聚焦式提示词">← Episode 9: Focused Prompts</a>
+      <a href="index.html" data-en="All episodes" data-zh="所有课程">All episodes</a>
+      <a href="episode-11.html" data-en="Episode 11: Why AI Fails →" data-zh="第 11 集：人工智能出错 →">Episode 11: Why AI Fails →</a>
+    </nav>
+    <p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
 })();
-</script>
-<script>
-/* Remove legacy GTranslate cookies left by earlier test versions. */
+  </script>
+  <script>
 (() => {
   const host = location.hostname;
   const domains = ['', host, host ? '.' + host : ''];
@@ -96,5 +301,7 @@ const filters=document.querySelectorAll('[data-ai-filter]');filters.forEach(btn=
     }));
   });
 })();
-</script>
-<script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script></body></html>
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261112-ep10" defer></script>
+</body>
+</html>

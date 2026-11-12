@@ -28,8 +28,8 @@
 .ep-pair .ep-figure{margin-top:2px}
 .ep-article::after{content:"";display:table;clear:both}
 .nf-note{margin:18px 0;padding:14px 17px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:14px;line-height:1.65}
-/* Text column beside a floated figure (paragraph + note share width) */
-.ep-flow-col{overflow:hidden}
+/* Beside a float: only lead-in paragraph + .nf-note — never the whole .ep-pair (see docs/AI_EPISODE_MAGAZINE.md) */
+.ep-flow-col{overflow:visible;min-width:0}
 .ep-flow-col > p:last-child{margin-bottom:0}
 .ep-flow-col .nf-note{margin:8px 0 0}
 /* Keyword list — not clickable pills */

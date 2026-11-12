@@ -13,8 +13,9 @@
 3. **Breadcrumb:** Register in `assets/js/drive-breadcrumb.js` (parent → `ai/index.html`).
 4. **Images:** Put WebP/JPG in `ai/images/episode-NNN/magazine/` as `epNN-mag-01-….webp` (see [Images](#images)).
 5. **Body:** Replace content between `<!-- LEVEL-4 BODY START -->` / `END` using patterns below. **Keep the page `<style>` block** from episode 01 unless adding episode-specific tokens only.
-6. **Balance pass (required):** Walk every `.ep-pair` and apply [Balance & density](#balance--density). Do not skip this step — thin pairs and white gaps beside floats are blocking defects, not polish.
-7. **Checklist:** [Publish checklist](#publish-checklist).
+6. **Wrap pass (required):** Confirm each `.ep-pair` follows [Text wrap around floats](#text-wrap-around-floats-required) (no full-section `.ep-flow-col`).
+7. **Balance pass (required):** Walk every `.ep-pair` and apply [Balance & density](#balance--density). Do not skip this step — thin pairs and white gaps beside floats are blocking defects, not polish.
+8. **Checklist:** [Publish checklist](#publish-checklist).
 
 ---
 
@@ -89,7 +90,7 @@ p.ai-footer-note
 | `.ep-myth` | Mix-up or mistaken belief label (semibold blue) |
 | `.nf-lead` | Opening lead paragraph |
 | `.nf-note` | Orange tip panel (use sparingly, ~1 per page) |
-| `.ep-flow-col` | **Paragraph + `.nf-note` beside same float** — shared width as text column (ep01 “Use your judgment” block) |
+| `.ep-flow-col` | **Narrow use only:** one lead-in `p` + `.nf-note` beside the **same** float (ep01 mix-up 6). **Never** wrap an entire `.ep-pair` body — that blocks float wrap. CSS: `overflow: visible; min-width: 0`. |
 | `.ep-abilities` | **Keyword strip** — not pills/buttons; `识别 · 学习 · …` with left bar |
 | `.ai-bottom-nav` | Episode prev/next; do not duplicate with a second promo banner |
 
@@ -105,6 +106,15 @@ Mobile (`max-width: 720px`): figures unfloat, centered at `width: min(72vw, 280p
 4. Alternate **right / left** floats for rhythm.
 5. See [Balance & density](#balance--density) — expand copy when a float looks taller than its text or leaves visible gaps.
 
+### Text wrap around floats (required)
+
+**Reference:** `ai/episode-06.html` — “Phase 1 complete” `.ep-pair` (figure floats left/right; many sibling `<p>` tags fill the space under and beside the art).
+
+1. **Fill empty space:** Prose must **flow around** the floated `.ep-figure`, not sit in a single column with a white band under the image. If you see more than ~one empty text row beside or below a spot figure, fix layout or add script-backed copy ([Balance & density](#balance--density)).
+2. **DOM:** Inside `.ep-pair`, after the figure, put explaining copy as **direct** `<p>` siblings (and `.ep-abilities` / `.ep-myth` as needed). **Do not** wrap the whole block in `<div class="ep-flow-col">`.
+3. **`.ep-flow-col` exception:** Only when a **`.nf-note`** must match the text-column width beside a float — wrap **at most** the paragraph the note extends **plus** the `.nf-note` (see ep01 mix-up 6). All earlier paragraphs in that pair stay **outside** the wrapper.
+4. **Block widgets:** `.ep-abilities` is full-width in the pair; place it where wrap has already used the gap beside the figure, or after enough wrapped paragraphs that the float is visually balanced.
+
 ### Balance & density
 
 Tall **9:16** spot figures need enough **paired prose** in the same `.ep-pair`. **Do not ship lopsided blocks.**
@@ -118,7 +128,7 @@ Tall **9:16** spot figures need enough **paired prose** in the same `.ep-pair`. 
 ### Orange info panel (`.nf-note`)
 
 - **When:** One actionable habit (e.g. “verify before you trust”).
-- **Width:** If beside a left/right figure, wrap body + note in **`.ep-flow-col`** so the note matches the **same column width** as the paragraph above — **not** full article width unless there is no adjacent float.
+- **Width:** If beside a left/right figure, wrap **only** the single paragraph the note extends **and** the `.nf-note` in **`.ep-flow-col`** — **not** the whole `.ep-pair` and not every paragraph above the note.
 - **Placement:** Directly **under** the paragraph it extends (episode 01: under the “models can be wrong …” paragraph).
 
 ---
@@ -181,7 +191,8 @@ The **Coming soon** placeholder (`.ai-episode--soon`) is excluded from search: i
 - [ ] EN + 中文 in sync on all new/edited nodes.
 - [ ] Em dashes: `data-en` uses spaced ` — `; `data-zh` uses spaced ` —— ` (no tight doubles, no ` —  — `).
 - [ ] `.ep-abilities` (if used) is keyword strip, not button pills.
-- [ ] At most one `.nf-note`; width via `.ep-flow-col` when floated beside art.
+- [ ] Prose **wraps** floats (no full-section `.ep-flow-col`); see [Text wrap around floats](#text-wrap-around-floats-required).
+- [ ] At most one `.nf-note`; width via `.ep-flow-col` when floated beside art (lead-in `p` + note only).
 - [ ] No copied reference assets; WebP in `magazine/` folder.
 - [ ] Script beats preserved; student tone; no giant next-episode graphic (nav link is enough).
 - [ ] Each figure’s paired text is substantial enough to balance the spot; no multi-row gaps; expand from script where copy is thin.

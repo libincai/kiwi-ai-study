@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!-- Level 4 — AI Knowledge Class Episode 15 (magazine layout; AI job fair) -->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Job Fair | AI Knowledge Class · Episode 15 | Kiwi 爱AI Study</title>
+  <meta name="description" content="Model, tool, or agent? Meet the candidates at an AI job fair and learn how to pick the right partner for each task.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261108-level2-width">
+  <style>
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-lead{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px}
+.ep-article{width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box}
+.ep-article h2{clear:both;width:100%;text-align:left;margin:32px 0 14px;font-size:clamp(21px,2.15vw,26px);color:#153d70;line-height:1.28;font-weight:700}
+.ep-article h2:first-child{margin-top:0}
+.ep-article p{font-size:15px;line-height:1.85;color:#263f5b;margin:0 0 14px}
+.ep-article p.ep-myth{color:#174a7e;font-weight:800;margin:18px 0 8px;font-size:15px;line-height:1.35}
+.ep-article p.ep-myth strong{font-weight:800}
+.ep-figure{width:min(34%,300px);margin:4px 0 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f4f8fc;box-shadow:0 5px 18px rgba(24,55,95,.07)}
+.ep-figure--right{float:right;margin-left:22px}
+.ep-figure--left{float:left;margin-right:22px}
+.ep-figure img{display:block;width:100%;height:auto}
+.ep-figure figcaption{font-size:11px;line-height:1.4;color:var(--muted);padding:7px 10px 9px;text-align:center;background:#fff}
+.ep-pair{overflow:hidden;margin:22px 0 6px}
+.ep-pair::after{content:"";display:table;clear:both}
+.ep-pair .ep-myth{margin-top:0}
+.ep-pair .ep-figure{margin-top:2px}
+.ep-article::after{content:"";display:table;clear:both}
+.nf-note{margin:18px 0;padding:14px 17px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:14px;line-height:1.65}
+/* Float wrap: sibling <p> in .ep-pair; .ep-flow-col only for lead-in + .nf-note (docs/AI_EPISODE_MAGAZINE.md) */
+.ep-flow-col{overflow:visible;min-width:0}
+.ep-flow-col > p:last-child{margin-bottom:0}
+.ep-flow-col .nf-note{margin:8px 0 0;width:100%;max-width:100%;box-sizing:border-box}
+.ep-note--row{clear:both;width:100%;max-width:100%;box-sizing:border-box;margin:12px 0 0}
+.ep-abilities{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:4px 0 12px;padding:12px 16px;border-left:4px solid #8eb8dc;border-radius:0 10px 10px 0;background:#f4f9ff;list-style:none}
+.ep-abilities span{padding:0;border:none;background:transparent;font-size:15px;font-weight:700;color:#155a94}
+.ep-abilities span + span::before{content:"·";margin:0 10px;color:#8fa8c2;font-weight:400}
+.ai-bottom-nav{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;margin-top:36px;width:100%;max-width:100%}
+@media(max-width:720px){
+  .ep-figure{float:none!important;width:min(72vw,280px);margin:18px auto}
+  .ep-figure img{margin:0 auto}
+}
+.ai-bottom-nav a{color:#1768b2;font-weight:800;text-decoration:none}
+.ai-footer-note{text-align:center;color:#718098;font-size:12px;margin-top:28px}
+  </style>
+</head>
+<body class="topic-page">
+  <header class="site-header">
+    <div class="brand-lockup">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi 爱AI Study home">
+        <img class="logo" src="../assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+      </a>
+      <span class="divider" aria-hidden="true"></span>
+      <div class="author-wrap">
+        <a class="author-image-link" href="../index.html" aria-label="Sherry Cai">
+          <img class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home" data-en="Home" data-zh="首页">Home</a>
+      <a href="../about/index.html" data-nav="about" data-en="About" data-zh="关于我们">About</a>
+      <a href="../math/index.html" data-nav="math" data-en="Math Education" data-zh="数学教育">Math Education</a>
+      <a href="index.html" data-nav="ai" data-en="AI Education" data-zh="人工智能教育">AI Education</a>
+      <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
+      <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
+      <a href="../contact/index.html" data-nav="contact" data-en="Contact" data-zh="联系我们">Contact</a>
+      <span class="flags" aria-label="Languages">
+        <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
+          <img src="https://flagcdn.com/w160/ca.png" alt="English">
+        </button>
+        <button class="flag" type="button" data-language="zh" title="中文" aria-label="切换到中文" aria-pressed="false">
+          <img src="https://flagcdn.com/w160/cn.png" alt="中文">
+        </button>
+      </span>
+    </nav>
+  </header>
+
+  <main class="topic-main">
+    <div class="page-back-wrap">
+      <a class="page-back-link" href="index.html" data-page-back data-en="← Back to AI Education" data-zh="← 返回人工智能教育">← Back to AI Education</a>
+    </div>
+
+    <section class="nf-hero topic-banner" aria-label="Episode introduction">
+      <p class="topic-banner-kicker" data-en="AI EDUCATION · EPISODE 15" data-zh="人工智能教育 · 第 15 集">AI EDUCATION · EPISODE 15</p>
+      <h1 data-en="AI Job Fair" data-zh="智能工具招聘">AI Job Fair</h1>
+      <p class="topic-banner-subtitle" data-en="Choose your AI team — models, tools, and agents for different jobs, not one “smartest” hire for everything." data-zh="不同模型与工具怎样选择 —— 按任务挑搭档，而不是找一个“最聪明”的包打天下。">Choose your AI team — models, tools, and agents for different jobs, not one “smartest” hire for everything.</p>
+    </section>
+
+    <!-- LEVEL-4 BODY START -->
+    <article class="nf-section ep-article" aria-label="Episode article">
+
+      <div class="ep-pair">
+        <p class="nf-lead" data-en="Welcome to Episode 15! You already know how AI answers, how it errs, and how to plan and verify work. Today: who should you “hire” for the next task?" data-zh="大家好！欢迎来到 KIWI 爱AI Study，AI 知识小课堂第十五集！前面几集，我们认识了 AI 如何生成答案、为什么会出错，以及怎样清楚沟通、管理任务和验证结果。今天，我们来看看如何选择合适的模型与工具。">Welcome to Episode 15! You already know how AI answers, how it errs, and how to plan and verify work. Today: who should you “hire” for the next task?</p>
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-015/magazine/ep15-mag-02.webp" data-en-src="images/episode-015/magazine/ep15-mag-02.webp" data-zh-src="images/episode-015/magazine/ep15-mag-01.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="AI job fair · pick for the task." data-zh="AI 招聘会 · 按任务选人。">AI job fair · pick for the task.</figcaption>
+        </figure>
+        <p data-en="Today we skip the heavy tech lecture and walk a job fair instead — same goal as always: match the task to the right partner, then verify like Episode 13 taught." data-zh="今天不讲深奥技术，我们改成逛招聘会 —— 目标不变：为任务找对搭档，再按第 13 集那样验收。">Today we skip the heavy tech lecture and walk a job fair instead — same goal as always: match the task to the right partner, then verify like Episode 13 taught.</p>
+        <p data-en="Picture a company hiring clever helpers — writers, researchers, designers, coders. They are all AI, but talents differ. We run a job fair, not a beauty contest for one winner." data-zh="想象一下，你开了一家公司，准备招聘几位特别聪明的员工。他们可以帮你写文章、做研究、设计图片、编写程序。不过，这些员工有一个共同特点：他们都是 AI。今天，我们来举办一场特别的招聘会！">Picture a company hiring clever helpers — writers, researchers, designers, coders. They are all AI, but talents differ. We run a job fair, not a beauty contest for one winner.</p>
+        <p data-en="Some chat warmly; some work quietly in your repo. Others love digging through sources or mixing text with images and sound. The question is not “who is smartest?” but “who fits <em>this</em> brief?”" data-zh="有的特别会聊天，有的喜欢埋头写代码，有的擅长查资料，有的还能同时处理文字、图片和声音。你会聘请谁呢？关键不是“谁最聪明”，而是“谁更适合这项任务？”">Some chat warmly; some work quietly in your repo. Others love digging through sources or mixing text with images and sound. The question is not “who is smartest?” but “who fits <em>this</em> brief?”</p>
+        <p data-en="Episode 11 already warned about the <em>wrong tool</em>. This fair turns that habit into a roster: read the booth, don’t marry the hype." data-zh="第 11 集提醒过<em>工具选错</em>。招聘会把这套习惯变成展台清单：看清摊位能力，别被热搜裹挟。">Episode 11 already warned about the <em>wrong tool</em>. This fair turns that habit into a roster: read the booth, don’t marry the hype.</p>
+        <p data-en="Episode 12 sharpened your wording; Episode 13 added scope and checklists. Now you choose where those sentences land — chat window, IDE, or search-plus-cite." data-zh="第 12 集练表达，第 13 集练范围与清单。现在选的是：这些话在聊天框、编辑器，还是「搜索+引用」里执行。">Episode 12 sharpened your wording; Episode 13 added scope and checklists. Now you choose where those sentences land — chat window, IDE, or search-plus-cite.</p>
+      </div>
+
+      <h2 id="ep15-candidates" data-en="Meet the candidates" data-zh="认识应聘者">Meet the candidates</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-015/magazine/ep15-mag-03.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="ChatGPT · warm tone, check the work." data-zh="ChatGPT · 语气热情，更要验收。">ChatGPT · warm tone, check the work.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Candidate 1 — ChatGPT</strong>" data-zh="<strong>第一位应聘者：ChatGPT</strong>"><strong>Candidate 1 — ChatGPT</strong></p>
+        <p data-en="Friendly explainer for mail, lessons, and brainstorming. But ask it to translate a hundred pages and hear “done!” — then find gaps. Sorry and retry is not a substitute for a checklist." data-zh="他一坐下来就热情地说：“你好！很高兴帮助你！”你有问题，他耐心解释。可是，你请他把网站里的一百个网页全部翻译成中文，他说“已经完成了！” —— 你打开网站一检查，却发现还有不少网页没有翻译。">Friendly explainer for mail, lessons, and brainstorming. But ask it to translate a hundred pages and hear “done!” — then find gaps. Sorry and retry is not a substitute for a checklist.</p>
+        <p data-en="You point out missing pages; you may get another cheerful “sorry” and another partial pass. Pleasant tone is not a progress bar — pair it with acceptance criteria from Episode 13." data-zh="你指出遗漏，它可能再次道歉、再改一部分。语气友好不是进度条 —— 要配上第 13 集那套验收标准。">You point out missing pages; you may get another cheerful “sorry” and another partial pass. Pleasant tone is not a progress bar — pair it with acceptance criteria from Episode 13.</p>
+        <p data-en="<strong>Sycophancy</strong> means leaning too hard toward agreement or quick help without naming limits. ChatGPT can still code and analyze — what matters is model, tools, and setup. <strong>Style that pleases is not the same as work that is done.</strong>" data-zh="AI 有时会出现一种现象，叫 Sycophancy，中文可以叫“过度迎合”。真正的能力取决于具体模型、可用工具和工作环境。请先记住：<strong>说话让人满意，不等于任务真正完成。</strong>"><strong>Sycophancy</strong> means leaning too hard toward agreement or quick help without naming limits. ChatGPT can still code and analyze — what matters is model, tools, and setup. <strong>Style that pleases is not the same as work that is done.</strong></p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-015/magazine/ep15-mag-04.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Cursor · opens the hood." data-zh="Cursor · 打开引擎盖干活。">Cursor · opens the hood.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>Candidate 2 — Cursor</strong>" data-zh="<strong>第二位应聘者：Cursor</strong>"><strong>Candidate 2 — Cursor</strong></p>
+        <p data-en="Fewer pleasantries, more file search and edits — sometimes tests. Built around software work: touching real code beats describing engine noise from an office chair." data-zh="你说：“帮我修改网站里的五十个代码文件。”他没有说太多客套话，而是开始查看项目、寻找相关代码、修改文件，并在条件允许时运行检查。Cursor 是围绕软件开发设计的工具。">Fewer pleasantries, more file search and edits — sometimes tests. Built around software work: touching real code beats describing engine noise from an office chair.</p>
+        <p data-en="Car-repair picture: one helper only hears your description from a desk; another opens the hood and uses tools. Same intelligence, different reach." data-zh="修车的比喻：一个人只能坐在办公室听你描述发动机声音；另一个人能打开引擎盖、拿起工具检查零件。同样聪明，能触及的范围不同。">Car-repair picture: one helper only hears your description from a desk; another opens the hood and uses tools. Same intelligence, different reach.</p>
+        <p data-en="Cursor is not infallible. It can misread scope or ship code that runs but misses the goal. Fit comes from the <em>workspace</em>, not only from raw “brain power.”" data-zh="但 Cursor 也不是永远正确。它可能误解要求、改错文件，或者程序能跑却没满足真实需求。做编程更顺手，不一定代表“大脑”更强，也可能是工作环境更对口。">Cursor is not infallible. It can misread scope or ship code that runs but misses the goal. Fit comes from the <em>workspace</em>, not only from raw “brain power.”</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-015/magazine/ep15-mag-05.png" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Claude Code · Gemini · more engineers." data-zh="Claude Code · Gemini · 更多工程师型。">Claude Code · Gemini · more engineers.</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>More applicants</strong>" data-zh="<strong>更多应聘者</strong>"><strong>More applicants</strong></p>
+        <p data-en="<strong>Claude Code</strong> — another project-focused engineer: files, terminal, patches, tests when allowed. <strong>Gemini</strong> — multimodal assistant mixing text, image, and audio in Google’s products. <strong>Perplexity</strong> — researcher vibe with web search and citations — links are hints, not proof." data-zh="<strong>Claude Code</strong> 擅长围绕代码项目工作。 <strong>Gemini</strong> 可以在相应产品中结合文字、图片、声音等不同类型的信息。 <strong>Perplexity</strong> 像一位喜欢翻阅资料的研究员 —— 但千万不要以为只要答案后面有链接，就一定正确。"><strong>Claude Code</strong> — another project-focused engineer: files, terminal, patches, tests when allowed. <strong>Gemini</strong> — multimodal assistant mixing text, image, and audio in Google’s products. <strong>Perplexity</strong> — researcher vibe with web search and citations — links are hints, not proof.</p>
+        <p data-en="<strong>Gemini’s multimodal</strong> angle helps when the brief mixes words, images, or audio — not every chat box handles that equally." data-zh="<strong>Gemini 的多模态</strong>能力在任务同时涉及文字、图片或声音时更有用 —— 不是每个聊天窗口都同样擅长。"><strong>Gemini’s multimodal</strong> angle helps when the brief mixes words, images, or audio — not every chat box handles that equally.</p>
+        <p data-en="Sources can be stale; links can be misread. Treat citations as starting points, then open the page and decide for yourself." data-zh="来源可能过时，链接也可能被误解。把引用当作起点，打开原文再判断是否可信。">Sources can be stale; links can be misread. Treat citations as starting points, then open the page and decide for yourself.</p>
+        <p data-en="Which coding helper wins? Try your repo and compare — UI, workflow, and permissions differ." data-zh="Claude Code 与 Cursor 都能帮开发，但界面、流程和权限不同。究竟哪个更好，要看任务，也要做实际测试。">Which coding helper wins? Try your repo and compare — UI, workflow, and permissions differ.</p>
+      </div>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-015/magazine/ep15-mag-06.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Five candidates · not one “winner.”" data-zh="五位应聘者 · 没有唯一冠军。">Five candidates · not one “winner.”</figcaption>
+        </figure>
+        <p class="ep-myth" data-en="<strong>All five introduced — now what?</strong>" data-zh="<strong>五位都登场了 —— 然后呢？</strong>"><strong>All five introduced — now what?</strong></p>
+        <p data-en="ChatGPT, Cursor, Claude Code, Gemini, Perplexity — different booths, different powers. The reflex is to crown the “smartest” name on the poster." data-zh="ChatGPT、Cursor、Claude Code、Gemini、Perplexity —— 展台不同，本事不同。本能会想给海报上「最聪明」的那个发奖杯。">ChatGPT, Cursor, Claude Code, Gemini, Perplexity — different booths, different powers. The reflex is to crown the “smartest” name on the poster.</p>
+        <p data-en="Hold that hire. These labels are not all the same category — Model, Tool, and Agent sit on different shelves. The fair is about fit, not a single IQ score." data-zh="先别急着录用。这些名字并不在同一货架上 —— Model、Tool、Agent 是不同类别。招聘会要比的是匹配，不是一场智商排名。">Hold that hire. These labels are not all the same category — Model, Tool, and Agent sit on different shelves. The fair is about fit, not a single IQ score.</p>
+        <p data-en="Brand names on the poster change with releases. The categories underneath stay useful: which <em>brain</em>, which <em>workshop</em>, and whether you need someone who keeps looping until checks pass." data-zh="海报上的产品名会随版本变，底下的分类却长期有用：用哪颗<em>大脑</em>、哪间<em>车间</em>，以及要不要能反复执行直到验收通过。">Brand names on the poster change with releases. The categories underneath stay useful: which <em>brain</em>, which <em>workshop</em>, and whether you need someone who keeps looping until checks pass.</p>
+        <p data-en="You might keep two or three booths on speed dial — one for explaining, one for repos, one for fresh sources — and still refuse to crown a permanent “winner.”" data-zh="你可以把两三个展台加入常用清单 —— 讲解、改仓库、查新资料各一位 —— 仍不必册封一个永久「冠军」。">You might keep two or three booths on speed dial — one for explaining, one for repos, one for fresh sources — and still refuse to crown a permanent “winner.”</p>
+        <p data-en="Next: one chart for Model, Tool, and Agent — then three sample tasks and who gets the interview." data-zh="接下来用一张图分清 Model、Tool、Agent —— 再看三个任务该让谁上。">Next: one chart for Model, Tool, and Agent — then three sample tasks and who gets the interview.</p>
+      </div>
+
+      <h2 id="ep15-model-tool" data-en="Model, tool, agent" data-zh="模型、工具、智能体">Model, tool, agent</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--left">
+          <img src="images/episode-015/magazine/ep15-mag-07.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Brain · office · active workflow." data-zh="大脑 · 办公室 · 主动执行。">Brain · office · active workflow.</figcaption>
+        </figure>
+        <p data-en="These names sit in different categories. <strong>Model</strong> ≈ brain (GPT, Claude, Gemini families). <strong>Tool</strong> ≈ office and toolbox (ChatGPT, Cursor) — Cursor can swap underlying models like staff in the same workshop." data-zh="<strong>Model，模型</strong>，可以比作员工的大脑。 <strong>Tool，工具</strong>，可以比作办公室和工具箱。Cursor 可以接入不同的底层模型 —— 这就像同一间工程师办公室，可以换不同的人来工作。">These names sit in different categories. <strong>Model</strong> ≈ brain (GPT, Claude, Gemini families). <strong>Tool</strong> ≈ office and toolbox (ChatGPT, Cursor) — Cursor can swap underlying models like staff in the same workshop.</p>
+        <p data-en="<strong>Agent</strong> emphasizes goal-driven loops: understand aim, split steps, call tools, check, decide next move — with human approval on risky actions." data-zh="<strong>Agent，智能体</strong>，可以理解成一种围绕目标主动执行任务的 AI 系统：理解目标、拆分步骤、调用工具、检查结果，再决定下一步。"><strong>Agent</strong> emphasizes goal-driven loops: understand aim, split steps, call tools, check, decide next move — with human approval on risky actions.</p>
+        <p data-en="Example agent loop: “Find untranslated pages on my site, fix them, run checks, report what changed.” It may call search, edit, and test tools — still wrong until you verify." data-zh="智能体示例：“找出网站未翻译页面，修复并运行检查，汇报改了什么。”它会调用搜索、编辑、测试等工具 —— 仍可能出错，重要操作要你确认。">Example agent loop: “Find untranslated pages on my site, fix them, run checks, report what changed.” It may call search, edit, and test tools — still wrong until you verify.</p>
+        <p data-en="Remember the stack: <strong>Model</strong> = brain; <strong>Tool</strong> = office and toolbox; <strong>Agent</strong> = keep stepping until checks pass. They combine — they are not three rival species." data-zh="记住分层：<strong>Model</strong> 是大脑；<strong>Tool</strong> 是办公室和工具箱；<strong>Agent</strong> 是带着检查一步步推进。三者可组合，不是互斥的三类 AI。">Remember the stack: <strong>Model</strong> = brain; <strong>Tool</strong> = office and toolbox; <strong>Agent</strong> = keep stepping until checks pass. They combine — they are not three rival species.</p>
+        <p data-en="Comparing ChatGPT with Cursor is not a pure IQ duel — product design, permissions, and workflow count too." data-zh="所以，比较 ChatGPT 和 Cursor，不能简单理解成两个大脑的智商比赛。我们比较的还包括产品设计、工具权限和工作流程。">Comparing ChatGPT with Cursor is not a pure IQ duel — product design, permissions, and workflow count too.</p>
+      </div>
+
+      <h2 id="ep15-match" data-en="Match the task, not the hype" data-zh="按任务匹配，不按热闹">Match the task, not the hype</h2>
+
+      <div class="ep-pair">
+        <figure class="ep-figure ep-figure--right">
+          <img src="images/episode-015/magazine/ep15-mag-08.webp" alt="" width="640" height="360" decoding="async" loading="lazy">
+          <figcaption data-en="Three jobs · three partners." data-zh="三个任务 · 三个搭档。">Three jobs · three partners.</figcaption>
+        </figure>
+        <p data-en="Trig functions with patience? A general chat helper may shine. Dozens of code files? Cursor or Claude Code. Fresh tech news with sources? Search-forward tools — then verify." data-zh="第一个，想有人耐心讲解三角函数 —— 通用 AI 助手可能就很合适。第二个，要修改几十个网站代码文件 —— Cursor 或 Claude Code 这样的编程工具可能更方便。第三个，想了解最近的科技新闻并查到原始来源 —— 具有网络搜索和引用功能的工具可能更合适。">Trig functions with patience? A general chat helper may shine. Dozens of code files? Cursor or Claude Code. Fresh tech news with sources? Search-forward tools — then verify.</p>
+        <p data-en="You do not need one forever “smartest” hire — you need the right partner for each errand, then Episode 13-style verification." data-zh="你不必找一个永远“最聪明”的 AI —— 每件活选对搭档，再用第 13 集那套验证。">You do not need one forever “smartest” hire — you need the right partner for each errand, then Episode 13-style verification.</p>
+        <p data-en="In real teams, a great talker is not automatically the best mechanic. The fair uses personality sketches only to make the trade-offs memorable." data-zh="现实团队里，会说话的人未必最会修机器。招聘会上的“人格素描”只是为了帮你记住差别。">In real teams, a great talker is not automatically the best mechanic. The fair uses personality sketches only to make the trade-offs memorable.</p>
+        <p data-en="The “great communicator” and “quiet engineer” portraits are teaching shorthand — AI has no real personality or gender; versions and settings change behaviour." data-zh="“高情商沟通大师”和“埋头干活的理工男”只是拟人化比喻。AI 并不真的具有这些人格，版本和设置也会改变表现。">The “great communicator” and “quiet engineer” portraits are teaching shorthand — AI has no real personality or gender; versions and settings change behaviour.</p>
+      </div>
+
+      <div class="ep-pair">
+        <p data-en="Before you trust the hire, ask: What did AI <em>actually do</em>? Did it check results? What is finished and what is not?" data-zh="最后，我想送给大家三个判断问题。第一，AI 真正做了什么？第二，它有没有检查结果？第三，哪些完成了，哪些还没有完成？">Before you trust the hire, ask: What did AI <em>actually do</em>? Did it check results? What is finished and what is not?</p>
+        <p data-en="If apologies repeat without progress, demand limits, change method, or switch tools — do not loop the same failed prompt forever." data-zh="如果 AI 反复道歉却没有解决问题，不要只让它重复尝试。你可以要求它解释限制、改变方法，或者换一个更合适的工具。">If apologies repeat without progress, demand limits, change method, or switch tools — do not loop the same failed prompt forever.</p>
+        <div class="ep-abilities" role="list" aria-label="Three reminders">
+          <span role="listitem" data-en="Style ≠ skill" data-zh="风格 ≠ 能力">Style ≠ skill</span>
+          <span role="listitem" data-en="Confidence ≠ truth" data-zh="自信 ≠ 正确">Confidence ≠ truth</span>
+          <span role="listitem" data-en="“Done” ≠ verified" data-zh="“完成” ≠ 验收">“Done” ≠ verified</span>
+        </div>
+        <p data-en="Smart AI users keep a shortlist — model, tool, and agent patterns — and inspect the work." data-zh="真正聪明的 AI 用户，不是只会使用一个 AI，而是知道什么时候该选哪个模型、哪个工具，并且能够检查它的工作。">Smart AI users keep a shortlist — model, tool, and agent patterns — and inspect the work.</p>
+        <p data-en="Next time two AIs disagree, we will ask who to believe and how cross-checking helps." data-zh="下一集，我们继续探索：当两个 AI 给出完全不同的答案时，我们应该相信谁？怎样通过查证和交叉验证，找到更可靠的答案？">Next time two AIs disagree, we will ask who to believe and how cross-checking helps.</p>
+        <p class="nf-note ep-note--row" data-en="<strong>Takeaway:</strong> Hire for the task. Model = brain; tool = workshop; agent = keep going until checks pass. Polished chat ≠ finished work; confident tone ≠ correct answers; “done” in chat ≠ verified on your screen." data-zh="<strong>带走一句：</strong> 按任务招聘搭档。Model 是大脑，Tool 是车间，Agent 是带着检查一步步推进。交流风格好不等于活干完；语气自信不等于答案对；“完成了”不等于你已验收。"><strong>Takeaway:</strong> Hire for the task. Model = brain; tool = workshop; agent = keep going until checks pass. Polished chat ≠ finished work; confident tone ≠ correct answers; “done” in chat ≠ verified on your screen.</p>
+      </div>
+    </article>
+
+    <nav class="ai-bottom-nav" aria-label="Episode navigation">
+      <a href="episode-14.html" data-en="← Episode 14: Words Math Code" data-zh="← 第 14 集：语言数学编程">← Episode 14: Words Math Code</a>
+      <a href="index.html" data-en="All episodes" data-zh="所有课程">All episodes</a>
+      <a href="index.html" data-en="More AI lessons →" data-zh="更多 AI 课程 →">More AI lessons →</a>
+    </nav>
+    <p class="ai-footer-note" data-en="Learn together. Ask questions. Check what you discover." data-zh="一起学习，勇于提问，也要学会核实自己发现的内容。">Learn together. Ask questions. Check what you discover.</p>
+    <!-- LEVEL-4 BODY END -->
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Legal">
+      <a href="../legal/privacy.html" data-legal="privacy">Privacy Policy</a>
+      <a href="../legal/terms.html" data-legal="terms">Copyright &amp; Content Usage Policy</a>
+      <a href="../index.html" data-legal="home">Home</a>
+      <a href="../about/index.html#business-collaboration" data-en="Business &amp; Collaboration" data-zh="商业与合作">Business &amp; Collaboration</a>
+    </nav>
+    <p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+  </footer>
+
+  <script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('img[data-en-src][data-zh-src]').forEach(img => {
+      img.src = img.getAttribute(l === 'zh' ? 'data-zh-src' : 'data-en-src');
+    });
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+  <script>
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+  <script src="../assets/js/drive-breadcrumb.js?v=20261112-ep15" defer></script>
+</body>
+</html>

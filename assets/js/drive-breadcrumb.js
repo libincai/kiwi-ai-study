@@ -74,7 +74,12 @@
     "ai/episode-07.html": { en:"Episode 7: The AI Concept Map", zh:"第 7 集：AI 的一张概念地图", parent:"ai/index.html" },
     "ai/episode-08.html": { en:"Episode 8: Prompt", zh:"第 8 集：提示词", parent:"ai/index.html" },
     "ai/episode-09.html": { en:"Episode 9: Focused Prompts", zh:"第 9 集：聚焦式提示词", parent:"ai/index.html" },
-    "ai/episode-10.html": { en:"Episode 10: How Does an AI Agent Work?", zh:"第 10 集：AI Agent 如何工作？", parent:"ai/index.html" },
+    "ai/episode-10.html": { en:"Episode 10: How AI Thinks", zh:"第 10 集：人工智能思考", parent:"ai/index.html" },
+    "ai/episode-11.html": { en:"Episode 11: Why AI Fails", zh:"第 11 集：人工智能出错", parent:"ai/index.html" },
+    "ai/episode-12.html": { en:"Episode 12: Talk to AI", zh:"第 12 集：高效沟通技巧", parent:"ai/index.html" },
+    "ai/episode-13.html": { en:"Episode 13: Can AI Finish Tasks Reliably?", zh:"第 13 集：如何让 AI 更可靠地完成任务？", parent:"ai/index.html" },
+    "ai/episode-14.html": { en:"Episode 14: Words Math Code", zh:"第 14 集：语言数学编程", parent:"ai/index.html" },
+    "ai/episode-15.html": { en:"Episode 15: AI Job Fair", zh:"第 15 集：智能工具招聘", parent:"ai/index.html" },
     "ai/episode-special-learning.html": { en:"Special (Ep 7): AI Is Powerful", zh:"第 7 集特别篇：AI 这么厉害", parent:"ai/index.html" },
 
     "books/index.html": { en:"Books & Learning Resources", zh:"书籍与学习资源", parent:"" },
