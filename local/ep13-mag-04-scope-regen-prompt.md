@@ -15,10 +15,6 @@ Visual theme **scope control** (not math, not neural networks): floating translu
 - EN: Scope control · list files before and after.
 - ZH: 范围控制 · 执行前后列出文件。
 
-## Archive
-
-Wrong art saved as `ai/images/episode-013/magazine/archive/ep13-mag-04-math-mismatch.webp`.
-
 ## Applied (2026-11-12)
 
 User-supplied `KIWI_Scope_Constraints_640x360.webp` → `ai/images/episode-013/magazine/ep13-mag-04.webp` (640×360 WebP).
