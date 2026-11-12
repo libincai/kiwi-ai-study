@@ -196,6 +196,8 @@ Use when the **first column lists row properties** (Form, Degree, Δy, …) and 
 
 - Wrapper: `<div class="edu-table-wrap">`
 - Table: `<table class="edu-table kiwi-edu-table-row-column-header">` — add `table-layout: fixed` and `<colgroup>` as needed.
+- **Width:** `assets/css/styles.css` forces `.mf-article table.edu-table` and `.kiwi-topic-article table.edu-table` to `display: table` and `width: 100%` so they span the body column even when a page’s inline CSS sets generic `table { display: block }` for horizontal scroll.
+- **Row height:** same stylesheet zeros `.kiwi-math-block` margins inside `.edu-table` cells (except `.kiwi-edu-table-visual-compare`) and uses tight cell padding so rows fit their math/text.
 - `<thead>`: one row of column titles; first cell is the corner label (e.g. Property).
 - `<tbody>`: first cell in each row is the row label (`<td>` or `<th scope="row">`); remaining cells are values.
 
@@ -1087,10 +1089,25 @@ Do **not** put **`display="block"`** math and a **where** clause in the same `<p
 - Convert **Word two-column tables containing a lightbulb icon** into semantic `<aside class="kiwi-word-info-panel" role="note">`, not HTML tables. Preserve all original prose, mathematics, and real lists.
 - Convert **Ontario Curriculum Connection** one-cell Word tables into `<aside class="kiwi-curriculum-panel" role="note">`, with no lightbulb. Preserve curriculum title, grade, citations, source links, and paragraphs in original order.
 - Convert standalone **historical/learning notes** (e.g. A Short History) into the same warm-cream insight panel; include a small lightbulb for insight/history, but not for curriculum panels.
-- Style panels consistently in `assets/css/styles.css`: pale cream `#fff8e9`, subtle gold frame `#f0d58d`, **3px right accent** `#e4b54e` (canonical reference: original `math/gcf.html` tip panels), 12px radius, left-aligned prose and heading. Do not redefine panel background or outer border in page `<style>` blocks — sitewide chrome only. Standalone display mathematics inside panels remains centered; inline math stays inline.
+- Style panels consistently in `assets/css/styles.css`: pale cream `#fff8e9`, subtle gold frame `#f0d58d`, **3px left accent** `#e4b54e` (canonical reference: original `math/gcf.html` tip panels), 12px radius, left-aligned prose and heading. Do not redefine panel background or outer border in page `<style>` blocks — sitewide chrome only. Standalone display mathematics inside panels remains centered; inline math stays inline.
 - **Tip panel row 1 (global CSS in `assets/css/styles.css`):** The lightbulb sits in column 1, row 1. Column 2, row 1 is either the panel **title** (when a title span is present) or the **first line of body content** when the header is icon-only. All following body blocks stay in column 2 only, left-aligned with that first text column (not with the bulb). Markup: `kiwi-panel-heading` / `kiwi-word-info-header` / `kiwi-insight-header` plus optional `kiwi-word-info-body`, `kiwi-insight-body`, or `kiwi-panel-content` for mixed loose text/math. **Do not** duplicate heading `display:flex` layout in page `<style>` blocks — run `python tools/apply_tip_panel_rules.py` after bulk panel edits.
 - Never center all the text in an imported table or keep empty Word icon columns. Do not convert actual data tables (multi-row numerical tables, comparisons, formula tables) into panels.
 - QA: review panel types and links across every imported Level 4 page, including mobile, while preserving the existing example, math and image readability standards.
+
+### Basic ↔ Advanced skill cross-links (paired topics)
+
+When the **same topic** is split between Math Foundations (basic) and Mathematical Thinking (advanced), add **two** cross-link callouts on **both** pages. Current paired topics (24 pages): `foundation-greatest-common-factor-gcf.html` ↔ `gcf.html`; `foundation-rotation-transformation.html` ↔ `rotation-transformation.html`; `foundation-unit-conversions-and-rates.html` ↔ `unit-conversions-and-rates.html`; `foundation-special-right-triangles.html` ↔ `special-right-triangles.html`; `foundation-number-strategies.html` ↔ `number-strategies.html`; `foundation-algebraic-strategies.html` ↔ `algebraic-strategies.html`; `foundation-geometric-strategies.html` ↔ `geometric-strategies.html`; `foundation-why-simplified-calculation.html` ↔ `why-simplified-calculation.html`; `foundation-word-problems.html` ↔ `word-problems.html`; `foundation-data-and-graphs.html` ↔ `data-and-graphs.html`; `foundation-chance-and-probability.html` ↔ `chance-and-probability.html`; `foundation-measures-of-center.html` ↔ `measures-of-center.html`. Bulk insert via `tools/apply_skill_crosslinks.py` (skips pages that already have `kiwi-skill-crosslink-panel`). Markup: `<aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note">` with `kiwi-panel-heading` + **link icon** (🔗, not 💡), **two** `<p>` elements with `data-en` / `data-zh`. Chrome is defined in `assets/css/styles.css` (white fill, strong blue frame, 4px blue left accent)—do not duplicate in page styles.
+
+| Page | Placement | Copy pattern |
+|------|-----------|--------------|
+| **Math Foundations** (basic) | After the short topic intro, **before** the first `lesson-card` | **P1:** `Lesson scope:` / `本课范围：` — what this page covers (**Basic** …). **P2:** `Also see:` / `延伸学习：` — link to **Advanced Skills** in Mathematical Thinking (`math/*.html` sibling). |
+| **Mathematical Thinking** (advanced) | Same placement | **P1:** `Lesson scope:` / `本课范围：` — **Advanced** …. **P2:** `Also see:` / `亦可参阅：` — link to **Basic Skills** in Math Foundations (`foundation-*.html` sibling). |
+
+- Put each label in `<strong>` at the start of its paragraph; do not repeat “This lesson stays/focuses…” when the labels are present.
+- Name the hub in the second paragraph (“Mathematical Thinking” / “Math Foundations”) so readers know which library they are entering.
+- Keep scope lists short (methods covered on that page only); do not duplicate the other page’s body.
+- Use relative links in the same directory (`gcf.html`, `foundation-greatest-common-factor-gcf.html`, etc.).
+- Do not add extra panel chrome in page `<style>`—`assets/css/styles.css` only.
 
 
 ## Math Foundations Level 3 → Level 4 Navigation

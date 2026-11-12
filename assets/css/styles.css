@@ -4411,6 +4411,34 @@ body.edu-page .edu-table-wrap,
   table-layout: fixed;
   margin: 0;
 }
+/* Full-width edu tables in lesson body (beats page-local table{display:block} scroll wrappers) */
+.mf-article table.edu-table,
+.kiwi-topic-article table.edu-table {
+  display: table !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+  border-collapse: collapse;
+}
+/* Compact rows — no display-math block margins inside table cells */
+.mf-article .edu-table:not(.kiwi-edu-table-visual-compare) :is(th, td),
+.kiwi-topic-article .edu-table:not(.kiwi-edu-table-visual-compare) :is(th, td) {
+  padding: 5px 8px !important;
+  vertical-align: middle;
+  line-height: 1.3;
+}
+.mf-article .edu-table:not(.kiwi-edu-table-visual-compare) .kiwi-math-block,
+.kiwi-topic-article .edu-table:not(.kiwi-edu-table-visual-compare) .kiwi-math-block {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  min-height: 0;
+}
+.mf-article .edu-table:not(.kiwi-edu-table-visual-compare) :is(math[display="block"], math.math-display, .math-display),
+.kiwi-topic-article .edu-table:not(.kiwi-edu-table-visual-compare) :is(math[display="block"], math.math-display, .math-display) {
+  margin: 0 !important;
+}
 .mf-article .edu-table:not(.kiwi-edu-table-with-mnemonic) :is(thead th, tbody td, tbody th),
 .kiwi-topic-article .edu-table:not(.kiwi-edu-table-with-mnemonic) :is(thead th, tbody td, tbody th) {
   text-align: left !important;
@@ -4418,6 +4446,7 @@ body.edu-page .edu-table-wrap,
 .mf-article .edu-table thead th,
 .kiwi-topic-article .edu-table thead th {
   font-weight: 700 !important;
+  background: #f3f8fe !important;
 }
 /* Row-column header tables — DESIGN_STANDARDS §6.3 */
 .mf-article .edu-table.kiwi-edu-table-row-column-header thead th,
@@ -4973,7 +5002,7 @@ aside.kiwi-curriculum-panel ul > li + li {
    LEARNING / WORD INFO PANELS (tip panels)
    Row 1: lightbulb (col 1) + title OR first line of body text (col 2).
    Later rows: body only in col 2, left-aligned with row 1 text (not the bulb).
-   Chrome: cream fill, gold frame, 3px gold right accent (#e4b54e).
+   Chrome: cream fill, gold frame, 3px gold left accent (#e4b54e).
    ========================================================================== */
 aside.kiwi-word-info-panel,
 aside.kiwi-insight-panel,
@@ -4985,7 +5014,7 @@ aside.kiwi-curriculum-panel {
   padding: 1rem 1.2rem;
   background: #fff8e9;
   border: 1px solid #f0d58d;
-  border-right: 3px solid #e4b54e;
+  border-left: 3px solid #e4b54e;
   border-radius: 12px;
   color: #503d24;
   font-weight: 400;
@@ -5156,4 +5185,20 @@ aside.kiwi-word-info-panel:where(
 }
 aside.kiwi-insight-panel .kiwi-insight-body > :first-child {
   margin-top: 0;
+}
+
+/* Basic ↔ advanced sibling-lesson cross-links (navigation, not in-lesson tips) */
+aside.kiwi-word-info-panel.kiwi-skill-crosslink-panel {
+  background: #fff;
+  border: 1px solid #9ec5e8;
+  border-left: 4px solid #1768b2;
+  color: #1a3352;
+}
+aside.kiwi-word-info-panel.kiwi-skill-crosslink-panel a {
+  color: #0b5cad;
+  font-weight: 700;
+}
+aside.kiwi-word-info-panel.kiwi-skill-crosslink-panel .kiwi-panel-icon {
+  color: #1768b2;
+  font-size: 1.08rem;
 }
