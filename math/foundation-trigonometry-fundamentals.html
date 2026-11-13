@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<!-- Level 3 category hub — shell from templates/level-3-category.html -->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Trigonometry Fundamentals | KIWI 爱AI Study" data-zh="三角学基础 | KIWI 爱AI Study">Trigonometry Fundamentals | KIWI 爱AI Study</title>
+<meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<style>
+.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
+.edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
+.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
+.edu-topic-list{display:grid;gap:12px}
+.edu-topic{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:16px;align-items:center;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff;text-decoration:none;color:inherit}
+.edu-topic-link{transition:transform .16s ease,box-shadow .16s ease}
+.edu-topic-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(24,55,95,.09)}
+.edu-topic-number{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#eaf4ff;color:#1768b2;font-weight:900;font-size:19px}
+.edu-topic h3{margin:0 0 5px;font-size:18px;color:#173e70}
+.edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}
+.edu-topic .edu-link{white-space:nowrap;color:#1768b2;font-weight:800;font-size:14px}
+.edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
+.edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}
+.edu-callout h2{margin:0 0 8px;color:#153d70}
+.edu-callout p{margin:0;color:#526780;line-height:1.7}
+.edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:#fff!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}
+.edu-button:hover{background:#10548f}
+.edu-topic-cta{grid-column:1 / -1;grid-row:2;justify-self:end;align-self:center;white-space:nowrap;max-width:100%;font-size:inherit;font-weight:inherit;color:inherit;text-align:right;line-height:1.4}@media(max-width:760px){.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
+  
+/* Math Foundations: source-book content, scoped to this page. */
+.mf-intro{margin:32px 0 22px}.mf-intro h2{color:#153d70;font-size:clamp(22px,2.4vw,29px);margin:0 0 9px}.mf-intro p{color:#526780;line-height:1.7;margin:0}
+.mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
+.mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
+.mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+@media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
+.mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
+</style>
+<style>
+.foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+
+<style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
+.foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
+.foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+<style id="trig-toc-sidebar">
+.mf-sidebar .mf-trig-toc-title{margin:0 0 10px;padding:4px 8px 10px;font-size:15px;font-weight:800;color:#153d70;border-bottom:1px solid #dce7f3}
+.mf-sidebar .mf-trig-toc-parent{padding:6px 0;border-top:1px solid #e1e9f4}
+.mf-sidebar .mf-trig-toc-parent:first-of-type{border-top:0}
+.mf-sidebar .mf-trig-toc-parent a{display:block;font-size:13px;font-weight:700;color:#173e70;padding:8px 6px;line-height:1.35;border-radius:9px}
+.mf-sidebar .mf-trig-toc-parent a.mf-current{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.mf-sidebar .mf-trig-toc-parent a:hover{background:#e8f2ff;color:#0756ba}
+</style>
+<style id="trig-beyond-90-figures">
+.mf-article .lesson-card-content .trig-beyond-90-figure{margin:14px 0 6px;text-align:center}
+.mf-article .lesson-card-content .trig-beyond-90-figure img{width:100%;height:auto;display:block;margin:0 auto;border:0;border-radius:0;object-fit:contain;box-shadow:none}
+.mf-article .trig-beyond-90-figure img{max-width:min(100%,780px)}
+</style>
+</head>
+<body class="edu-page topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="edu-main">
+<section aria-label="Page introduction" class="nf-hero topic-banner foundation-topic-banner"><p class="topic-banner-kicker" data-en="MATH FOUNDATIONS" data-zh="数学基础">MATH FOUNDATIONS</p><h1 data-en="Trigonometry" data-zh="三角学">Trigonometry</h1><p class="topic-banner-subtitle" data-en="Explore essential mathematical ideas and examples." data-zh="探索核心数学概念与例题。">Explore essential mathematical ideas and examples.</p></section>
+<!-- LEVEL-3 BODY START -->
+<!-- LEVEL-3 BODY END -->
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links mf-trig-toc"><p class="mf-trig-toc-title" data-en="Trigonometry" data-zh="三角学">Trigonometry</p><div class="mf-trig-toc-parent"><a aria-current="page" class="mf-current" href="foundation-trigonometry-fundamentals.html" data-en="Trigonometry Fundamentals" data-zh="三角学基础">Trigonometry Fundamentals</a></div><div class="mf-trig-toc-parent"><a href="foundation-special-right-triangles.html" data-en="Special Right Triangles" data-zh="特殊直角三角形">Special Right Triangles</a></div><div class="mf-trig-toc-parent"><a href="foundation-angles-and-trigonometric-ratios.html" data-en="Angles and Trigonometric Ratios" data-zh="角与三角比">Angles and Trigonometric Ratios</a></div><div class="mf-trig-toc-parent"><a href="foundation-oblique-triangles-and-triangle-laws.html" data-en="Oblique Triangles and Triangle Laws" data-zh="斜三角形与三角形定理">Oblique Triangles and Triangle Laws</a></div><div class="mf-trig-toc-parent"><a href="foundation-trigonometric-identities.html" data-en="Trigonometric Identities" data-zh="三角恒等式">Trigonometric Identities</a></div><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Trigonometry Fundamentals" data-zh="三角学基础">Trigonometry Fundamentals</h1>
+<details class="lesson-card"><summary id="understanding-trigonometry" data-en="Understanding Trigonometry" data-zh="认识三角函数">Understanding Trigonometry</summary><div class="lesson-card-content"><p data-en="Trigonometry is the study of relationships between the angles and
+side lengths of triangles. It helps us find unknown sides and angles
+without measuring them directly." data-zh="三角函数研究三角形中角与边长之间的关系。它帮助我们在不直接测量的情况下求未知边和角。">Trigonometry is the study of relationships between the angles and
+side lengths of triangles. It helps us find unknown sides and angles
+without measuring them directly.</p>
+<p data-en="Trigonometry is useful for calculating heights, distances, slopes,
+and angles in real-life situations." data-zh="三角函数可用于计算现实生活中的高度、距离、斜率和角度。">Trigonometry is useful for calculating heights, distances, slopes,
+and angles in real-life situations.</p>
+<p data-en="In this chapter, you will learn how to:" data-zh="在本章中，你将学会如何：">In this chapter, you will learn how to:</p>
+<ol type="1">
+<li data-en="Identify the sides of a right triangle." data-zh="辨认直角三角形的三条边。">Identify the sides of a right triangle.</li>
+<li data-en="Understand and use the four basic trigonometric ratios." data-zh="理解并使用四个基本三角比。">Understand and use the four basic trigonometric ratios.</li>
+<li data-en="Derive special-angle values instead of memorizing them." data-zh="推导特殊角的三角比值，而不是死背。">Derive special-angle values instead of memorizing them.</li>
+<li data-en="Find missing side lengths and angles." data-zh="求未知的边长和角度。">Find missing side lengths and angles.</li>
+<li data-en="Solve practical problems involving heights and
+distances." data-zh="解决涉及高度和距离的实际问题。">Solve practical problems involving heights and
+distances.</li>
+</ol>
+<figure class="trig-beyond-90-figure"><img alt="Trigonometry applications diagram" loading="lazy" src="../assets/math/trig-image25.webp"/></figure></div></details>
+<h4 id="the-three-sides-of-a-right-triangle" data-en="The Three Sides of a Right Triangle" data-zh="直角三角形的三条边">The Three Sides of a Right Triangle</h4><p data-en="A right triangle has one angle measuring
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;90^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="直角三角形有一个角等于
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;90&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;90^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;。">A right triangle has one angle measuring
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math>.</p>
+<p data-en="The three sides have different names depending on their positions
+relative to the reference angle
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\theta&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="三条边相对于参考角
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\theta&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+的位置不同，名称也不同。">The three sides have different names depending on their positions
+relative to the reference angle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.</p>
+<ul>
+<li data-en="&lt;strong&gt;Hypotenuse:&lt;/strong&gt; The side opposite the right angle.
+It is always the longest side." data-zh="&lt;strong&gt;斜边：&lt;/strong&gt; 对着直角的那条边。
+它总是最长的边。"><strong>Hypotenuse:</strong> The side opposite the right angle.
+It is always the longest side.</li>
+<li data-en="&lt;strong&gt;Opposite side:&lt;/strong&gt; The side directly across from the
+reference angle
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\theta&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;." data-zh="&lt;strong&gt;对边：&lt;/strong&gt; 正对着参考角
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\theta&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+的边。"><strong>Opposite side:</strong> The side directly across from the
+reference angle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.</li>
+<li data-en="&lt;strong&gt;Adjacent side:&lt;/strong&gt; The side next to
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\theta&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
+excluding the hypotenuse." data-zh="&lt;strong&gt;邻边：&lt;/strong&gt; 与
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\theta&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+相邻的边，
+不包括斜边。"><strong>Adjacent side:</strong> The side next to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>,
+excluding the hypotenuse.</li>
+</ul>
+<h4 id="the-pythagorean-theorem" data-en="The Pythagorean Theorem" data-zh="勾股定理">The Pythagorean Theorem</h4><p data-en="For a right triangle with legs
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+and
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;b&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
+and hypotenuse
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;c&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;:" data-zh="设直角三角形两直角边为
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+和
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;b&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;，
+斜边为
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;c&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;：">For a right triangle with legs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+and hypotenuse
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow></mrow><annotation encoding="application/x-tex"></annotation></semantics></math></p>
+<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a^{2} + b^{2} = c^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;a^{2} + b^{2} = c^{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">a^{2} + b^{2} = c^{2}</annotation></semantics></math></p>
+<p data-en="This relationship can help you find a missing side when the other two
+sides are known." data-zh="在已知另外两条边时，这一关系可帮你求出未知边。">This relationship can help you find a missing side when the other two
+sides are known.</p>
+<h4 id="the-four-basic-trigonometric-ratios" data-en="The Four Basic Trigonometric Ratios" data-zh="四个基本三角比">The Four Basic Trigonometric Ratios</h4><p data-en="The four basic trigonometric ratios are sine, cosine, tangent, and
+cotangent." data-zh="四个基本三角比是正弦、余弦、正切和余切。">The four basic trigonometric ratios are sine, cosine, tangent, and
+cotangent.</p>
+<h4 id="sine" data-en="Sine" data-zh="正弦">Sine</h4><p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mrow&gt;&lt;mo&gt;sin&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Opposite&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Hypotenuse&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/menclose&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\boxed{\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mrow&gt;&lt;mo&gt;sin&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;对边&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;斜边&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/menclose&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\boxed{\sin\theta = \frac{\text{对边}}{\text{斜边}}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mo>sin</mo><mi>θ</mi><mo>=</mo><mfrac><mtext mathvariant="normal">Opposite</mtext><mtext mathvariant="normal">Hypotenuse</mtext></mfrac></mrow></menclose><annotation encoding="application/x-tex">\boxed{\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}}}</annotation></semantics></math></p><h4 id="cosine" data-en="Cosine" data-zh="余弦">Cosine</h4><p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mrow&gt;&lt;mo&gt;cos&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Adjacent&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Hypotenuse&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/menclose&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\boxed{\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mrow&gt;&lt;mo&gt;cos&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;邻边&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;斜边&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/menclose&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\boxed{\cos\theta = \frac{\text{邻边}}{\text{斜边}}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mo>cos</mo><mi>θ</mi><mo>=</mo><mfrac><mtext mathvariant="normal">Adjacent</mtext><mtext mathvariant="normal">Hypotenuse</mtext></mfrac></mrow></menclose><annotation encoding="application/x-tex">\boxed{\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}}}</annotation></semantics></math></p><h4 id="tangent" data-en="Tangent" data-zh="正切">Tangent</h4><p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mrow&gt;&lt;mo&gt;tan&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Opposite&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Adjacent&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/menclose&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\boxed{\tan\theta = \frac{\text{Opposite}}{\text{Adjacent}}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mrow&gt;&lt;mo&gt;tan&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;对边&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;邻边&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/menclose&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\boxed{\tan\theta = \frac{\text{对边}}{\text{邻边}}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mo>tan</mo><mi>θ</mi><mo>=</mo><mfrac><mtext mathvariant="normal">Opposite</mtext><mtext mathvariant="normal">Adjacent</mtext></mfrac></mrow></menclose><annotation encoding="application/x-tex">\boxed{\tan\theta = \frac{\text{Opposite}}{\text{Adjacent}}}</annotation></semantics></math></p><h4 id="cotangent" data-en="Cotangent" data-zh="余切">Cotangent</h4><p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mrow&gt;&lt;mo&gt;cot&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Adjacent&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;Opposite&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/menclose&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\boxed{\cot\theta = \frac{\text{Adjacent}}{\text{Opposite}}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;menclose notation=&quot;box&quot;&gt;&lt;mrow&gt;&lt;mo&gt;cot&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;邻边&lt;/mtext&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt;对边&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/menclose&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\boxed{\cot\theta = \frac{\text{邻边}}{\text{对边}}}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mo>cot</mo><mi>θ</mi><mo>=</mo><mfrac><mtext mathvariant="normal">Adjacent</mtext><mtext mathvariant="normal">Opposite</mtext></mfrac></mrow></menclose><annotation encoding="application/x-tex">\boxed{\cot\theta = \frac{\text{Adjacent}}{\text{Opposite}}}</annotation></semantics></math></p><h4 id="the-sohcahtoa-mnemonic" data-en="The SOH–CAH–TOA Mnemonic" data-zh="SOH–CAH–TOA 记忆口诀">The SOH–CAH–TOA Mnemonic</h4><p data-en="Use this familiar mnemonic to remember the three main ratios:" data-zh="用这个熟悉的口诀来记住三个主要三角比：">Use this familiar mnemonic to remember the three main ratios:</p>
+<ul>
+<li data-en="&lt;strong&gt;SOH:&lt;/strong&gt; Sine = Opposite ÷ Hypotenuse" data-zh="&lt;strong&gt;SOH：&lt;/strong&gt; 正弦 = 对边 ÷ 斜边"><strong>SOH:</strong> Sine = Opposite ÷ Hypotenuse</li>
+<li data-en="&lt;strong&gt;CAH:&lt;/strong&gt; Cosine = Adjacent ÷ Hypotenuse" data-zh="&lt;strong&gt;CAH：&lt;/strong&gt; 余弦 = 邻边 ÷ 斜边"><strong>CAH:</strong> Cosine = Adjacent ÷ Hypotenuse</li>
+<li data-en="&lt;strong&gt;TOA:&lt;/strong&gt; Tangent = Opposite ÷ Adjacent" data-zh="&lt;strong&gt;TOA：&lt;/strong&gt; 正切 = 对边 ÷ 邻边"><strong>TOA:</strong> Tangent = Opposite ÷ Adjacent</li>
+</ul>
+<p data-en="Cotangent is the reciprocal of tangent:" data-zh="余切是正切的倒数：">Cotangent is the reciprocal of tangent:</p>
+<p data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;cot&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mo&gt;tan&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\cot\theta = \frac{1}{\tan\theta}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;cot&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mo&gt;tan&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\cot\theta = \frac{1}{\tan\theta}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cot</mo><mi>θ</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mo>tan</mo><mi>θ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\cot\theta = \frac{1}{\tan\theta}</annotation></semantics></math></p>
+<p data-en="when both sides are defined." data-zh="在两边都有定义时成立。">when both sides are defined.</p>
+<p data-en="Example:" data-zh="示例：">Example:</p>
+<div class="kiwi-example-block kiwi-example-standard">
+<p class="kiwi-single-example" data-en="Suppose a right triangle has:" data-zh="设有一个直角三角形：">Suppose a right triangle has:</p>
+<ul class="kiwi-example-variants">
+<li data-en="Opposite side = 3" data-zh="对边 = 3">Opposite side = 3</li>
+<li data-en="Adjacent side = 4" data-zh="邻边 = 4">Adjacent side = 4</li>
+<li data-en="Hypotenuse = 5" data-zh="斜边 = 5">Hypotenuse = 5</li>
+</ul>
+<blockquote class="kiwi-example-answer"><p data-en="Then:" data-zh="则：">Then:</p>
+<p data-en="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;sin&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\sin\theta = \frac{3}{5}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+,
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;cos&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\cos\theta = \frac{4}{5}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;tan&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\tan\theta = \frac{3}{4}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;cot&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\cot\theta = \frac{4}{3}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;sin&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\sin\theta = \frac{3}{5}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
+,
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;cos&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\cos\theta = \frac{4}{5}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;tan&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\tan\theta = \frac{3}{4}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;,
+&lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;cot&lt;/mo&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\cot\theta = \frac{4}{3}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mi>θ</mi><mo>=</mo><mfrac><mn>3</mn><mn>5</mn></mfrac></mrow><annotation encoding="application/x-tex">\sin\theta = \frac{3}{5}</annotation></semantics></math>
+,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cos</mo><mi>θ</mi><mo>=</mo><mfrac><mn>4</mn><mn>5</mn></mfrac></mrow><annotation encoding="application/x-tex">\cos\theta = \frac{4}{5}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>tan</mo><mi>θ</mi><mo>=</mo><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">\tan\theta = \frac{3}{4}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cot</mo><mi>θ</mi><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac></mrow><annotation encoding="application/x-tex">\cot\theta = \frac{4}{3}</annotation></semantics></math></p></blockquote>
+<p data-en="&lt;strong&gt;Key idea:&lt;/strong&gt; Identify the reference angle first. Then
+label the opposite, adjacent, and hypotenuse sides before choosing a
+ratio." data-zh="&lt;strong&gt;要点：&lt;/strong&gt; 先确定参考角。再给对边、邻边和斜边贴标签，然后选择合适的三角比。"><strong>Key idea:</strong> Identify the reference angle first. Then
+label the opposite, adjacent, and hypotenuse sides before choosing a
+ratio.</p>
+</article></div></main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+</body>
+</html>

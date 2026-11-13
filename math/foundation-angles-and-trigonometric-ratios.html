@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<!-- Level 3 category hub — shell from templates/level-3-category.html -->
+<html lang="en-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Angles and Trigonometric Ratios | KIWI 爱AI Study" data-zh="角与三角比 | KIWI 爱AI Study">Angles and Trigonometric Ratios | KIWI 爱AI Study</title>
+<meta content="Explore number skills, functions, geometry, trigonometry, data and mathematical calculation strategies." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
+<style>
+.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
+.edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
+.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
+.edu-topic-list{display:grid;gap:12px}
+.edu-topic{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:16px;align-items:center;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff;text-decoration:none;color:inherit}
+.edu-topic-link{transition:transform .16s ease,box-shadow .16s ease}
+.edu-topic-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(24,55,95,.09)}
+.edu-topic-number{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#eaf4ff;color:#1768b2;font-weight:900;font-size:19px}
+.edu-topic h3{margin:0 0 5px;font-size:18px;color:#173e70}
+.edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}
+.edu-topic .edu-link{white-space:nowrap;color:#1768b2;font-weight:800;font-size:14px}
+.edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
+.edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}
+.edu-callout h2{margin:0 0 8px;color:#153d70}
+.edu-callout p{margin:0;color:#526780;line-height:1.7}
+.edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:#fff!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}
+.edu-button:hover{background:#10548f}
+@media(max-width:760px){.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
+  
+/* Math Foundations: source-book content, scoped to this page. */
+.mf-intro{margin:32px 0 22px}.mf-intro h2{color:#153d70;font-size:clamp(22px,2.4vw,29px);margin:0 0 9px}.mf-intro p{color:#526780;line-height:1.7;margin:0}
+.mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
+.mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
+.mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4,.mf-article h5{font-size:16px;color:#173e70;margin:17px 0 7px}.mf-article p{margin:8px 0 13px}.mf-article .edu-table-wrap{max-width:100%;overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:table;table-layout:fixed}.mf-article .edu-table-wrap table{margin:0}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+@media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
+.mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
+</style>
+<style>
+.foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:700}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+
+<style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
+.foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
+.foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+<style id="trig-toc-sidebar">
+.mf-sidebar .mf-trig-toc-title{margin:0 0 10px;padding:4px 8px 10px;font-size:15px;font-weight:800;color:#153d70;border-bottom:1px solid #dce7f3}
+.mf-sidebar .mf-trig-toc-parent{padding:6px 0;border-top:1px solid #e1e9f4}
+.mf-sidebar .mf-trig-toc-parent:first-of-type{border-top:0}
+.mf-sidebar .mf-trig-toc-parent a{display:block;font-size:13px;font-weight:700;color:#173e70;padding:8px 6px;line-height:1.35;border-radius:9px}
+.mf-sidebar .mf-trig-toc-parent a.mf-current{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.mf-sidebar .mf-trig-toc-parent a:hover{background:#e8f2ff;color:#0756ba}
+</style>
+<style id="trig-beyond-90-figures">
+.mf-article .lesson-card-content .trig-beyond-90-figure{margin:14px 0 6px;text-align:center}
+.mf-article .lesson-card-content img,
+.mf-article .lesson-card-content .trig-beyond-90-figure img{width:100%;height:auto;display:block;margin:12px auto;border:0!important;border-radius:0!important;object-fit:contain;box-shadow:none}
+.mf-article .lesson-card-content img.trig-figure-quadrant-signs{max-width:min(100%,630px)}
+.mf-article .lesson-card-content img.trig-figure-signed-triangle{max-width:min(100%,780px)}
+</style>
+</head>
+<body class="edu-page topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main class="edu-main">
+<section aria-label="Page introduction" class="nf-hero topic-banner foundation-topic-banner"><p class="topic-banner-kicker" data-en="MATH FOUNDATIONS" data-zh="数学基础">MATH FOUNDATIONS</p><h1 data-en="Trigonometry" data-zh="三角学">Trigonometry</h1><p class="topic-banner-subtitle" data-en="Explore essential mathematical ideas and examples." data-zh="探索核心数学概念与例题。">Explore essential mathematical ideas and examples.</p></section>
+<!-- LEVEL-3 BODY START -->
+<!-- LEVEL-3 BODY END -->
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links mf-trig-toc"><p class="mf-trig-toc-title" data-en="Trigonometry" data-zh="三角学">Trigonometry</p><div class="mf-trig-toc-parent"><a href="foundation-trigonometry-fundamentals.html" data-en="Trigonometry Fundamentals" data-zh="三角学基础">Trigonometry Fundamentals</a></div><div class="mf-trig-toc-parent"><a href="foundation-special-right-triangles.html" data-en="Special Right Triangles" data-zh="特殊直角三角形">Special Right Triangles</a></div><div class="mf-trig-toc-parent"><a aria-current="page" class="mf-current" href="foundation-angles-and-trigonometric-ratios.html" data-en="Angles and Trigonometric Ratios" data-zh="角与三角比">Angles and Trigonometric Ratios</a></div><div class="mf-trig-toc-parent"><a href="foundation-oblique-triangles-and-triangle-laws.html" data-en="Oblique Triangles and Triangle Laws" data-zh="斜三角形与三角形定理">Oblique Triangles and Triangle Laws</a></div><div class="mf-trig-toc-parent"><a href="foundation-trigonometric-identities.html" data-en="Trigonometric Identities" data-zh="三角恒等式">Trigonometric Identities</a></div><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Angles and Trigonometric Ratios" data-zh="角与三角比">Angles and Trigonometric Ratios</h1>
+<details class="lesson-card"><summary id="angles-in-standard-position" data-en="Angles in Standard Position" data-zh="标准位置角">Angles in Standard Position</summary><div class="lesson-card-content"><h4 id="initial-terminal-arm" data-en="Initial Arm and Terminal Arm" data-zh="始边与终边">Initial Arm and Terminal Arm</h4>
+<p data-en="An angle is in standard position when its vertex is at the origin and its initial arm lies along the positive x-axis. Its terminal arm is the ray reached after rotating through the angle." data-zh="当角的顶点在原点、始边沿 x 轴正方向时，角处于标准位置；终边是旋转后到达的射线。">An angle is in standard position when its vertex is at the origin and its initial arm lies along the positive x-axis. Its terminal arm is the ray reached after rotating through the angle.</p>
+<p data-en="Counterclockwise rotation gives a positive angle; clockwise gives a negative angle. Angles may be greater than 360° or negative." data-zh="逆时针为正角，顺时针为负角；角的度数可以超过 360° 或为负。">Counterclockwise rotation gives a positive angle; clockwise gives a negative angle. Angles may be greater than 360° or negative.</p>
+
+<h4 id="primary-on-plane" data-en="Primary Trigonometric Ratios on the Coordinate Plane" data-zh="坐标平面上的基本三角比">Primary Trigonometric Ratios on the Coordinate Plane</h4>
+<p data-en="If &lt;em&gt;P(x, y)&lt;/em&gt; lies on the terminal arm and &lt;em&gt;r = √(x² + y²)&lt;/em&gt;, then &lt;em&gt;r&lt;/em&gt; is the distance from the origin to &lt;em&gt;P&lt;/em&gt;." data-zh="若 &lt;em&gt;P(x, y)&lt;/em&gt; 在终边上且 &lt;em&gt;r = √(x² + y²)&lt;/em&gt;，则 &lt;em&gt;r&lt;/em&gt; 为原点到 &lt;em&gt;P&lt;/em&gt; 的距离。">If <em>P(x, y)</em> lies on the terminal arm and <em>r = √(x² + y²)</em>, then <em>r</em> is the distance from the origin to <em>P</em>.</p>
+<p data-en="On the unit circle (&lt;em&gt;r = 1&lt;/em&gt;), the terminal point is &lt;em&gt;P(cos θ, sin θ)&lt;/em&gt;. Ratio signs follow the quadrant of &lt;em&gt;P&lt;/em&gt;." data-zh="单位圆上（&lt;em&gt;r = 1&lt;/em&gt;）终点为 &lt;em&gt;P(cos θ, sin θ)&lt;/em&gt;；符号由 &lt;em&gt;P&lt;/em&gt; 所在象限决定。">On the unit circle (<em>r = 1</em>), the terminal point is <em>P(cos θ, sin θ)</em>. Ratio signs follow the quadrant of <em>P</em>.</p>
+
+<h4 id="signs-four-quadrants" data-en="Signs of Trigonometric Ratios in Four Quadrants" data-zh="四象限三角比的符号">Signs of Trigonometric Ratios in Four Quadrants</h4>
+<p data-en="Quadrant I: sin +, cos +, tan +. Quadrant II: sin +, cos −, tan −. Quadrant III: sin −, cos −, tan +. Quadrant IV: sin −, cos +, tan −." data-zh="I：sin、cos、tan 均为正。II：sin 正，cos、tan 负。III：sin、cos 负，tan 正。IV：sin、tan 负，cos 正。">Quadrant I: sin +, cos +, tan +. Quadrant II: sin +, cos −, tan −. Quadrant III: sin −, cos −, tan +. Quadrant IV: sin −, cos +, tan −.</p>
+</div></details>
+<details class="lesson-card"><summary id="related-and-coterminal-angles" data-en="Related and Coterminal Angles" data-zh="相关角与同界角">Related and Coterminal Angles</summary><div class="lesson-card-content"><h4 id="related-acute-angle" data-en="Related Acute Angle (Reference Angle)" data-zh="相关锐角（参考角）">Related Acute Angle (Reference Angle)</h4>
+<p data-en="A related acute angle is the acute angle between the terminal arm and the x-axis. It is also called the reference angle. Its size is always between 0° and 90° for non-axis angles." data-zh="相关锐角是终边与 x 轴之间的锐角，也称参考角；非坐标轴上的角，其大小总在 0° 与 90° 之间。">A related acute angle is the acute angle between the terminal arm and the x-axis. It is also called the reference angle. Its size is always between 0° and 90° for non-axis angles.</p>
+<p data-en="For angles outside 0°–360°, first find a coterminal angle in that interval." data-zh="若角不在 0°–360° 内，先化为该区间的同界角。">For angles outside 0°–360°, first find a coterminal angle in that interval.</p>
+
+<h4 id="coterminal-angles" data-en="Coterminal Angles" data-zh="同界角">Coterminal Angles</h4>
+<p data-en="Angles that have the same initial arm and terminal arm are coterminal. They differ by whole rotations of 360°." data-zh="始边、终边相同的角互为同界角，相差 360° 的整数倍（整圈旋转）。">Angles that have the same initial arm and terminal arm are coterminal. They differ by whole rotations of 360°.</p>
+<p data-en="Example: 480°, 120°, and −240° are coterminal. All three terminate in Quadrant II." data-zh="例：480°、120°、−240° 同界，终边均在第二象限。">Example: 480°, 120°, and −240° are coterminal. All three terminate in Quadrant II.</p></div></details>
+<details class="lesson-card"><summary id="trigonometric-ratios-beyond-90" data-en="Trigonometric Ratios Beyond 90°" data-zh="超过90°的三角比">Trigonometric Ratios Beyond 90°</summary><div class="lesson-card-content"><p data-en="SOH–CAH–TOA starts with acute angles in a right triangle. To extend trigonometry to angles beyond 90°, use a coordinate plane and signed projections." data-zh="SOH–CAH–TOA 从直角三角形中的锐角开始。要把三角学推广到超过 90° 的角，需使用坐标平面与带符号的投影。">SOH–CAH–TOA starts with acute angles in a right triangle. To extend trigonometry to angles beyond 90°, use a coordinate plane and signed projections.</p>
+<p data-en="For a point &lt;em&gt;P = (x, y)&lt;/em&gt; on the terminal side, &lt;em&gt;r&lt;/em&gt; is the positive distance from the origin." data-zh="若点 &lt;em&gt;P = (x, y)&lt;/em&gt; 在角的终边上，&lt;em&gt;r&lt;/em&gt; 是到原点的正距离。">For a point <em>P = (x, y)</em> on the terminal side, <em>r</em> is the positive distance from the origin.</p>
+<h4 id="four-ratios-coordinate" data-en="The Four Trigonometric Ratios" data-zh="四个三角比">The Four Trigonometric Ratios</h4>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="r=\sqrt{x^2+y^2}>0" data-tex-zh="r=\sqrt{x^2+y^2}>0"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sin\theta=\frac{y}{r}" data-tex-zh="\sin\theta=\frac{y}{r}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos\theta=\frac{x}{r}" data-tex-zh="\cos\theta=\frac{x}{r}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\tan\theta=\frac{y}{x}\quad (x\neq 0)" data-tex-zh="\tan\theta=\frac{y}{x}\quad (x\neq 0)"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cot\theta=\frac{x}{y}\quad (y\neq 0)" data-tex-zh="\cot\theta=\frac{x}{y}\quad (y\neq 0)"></div>
+<p data-en="The horizontal projection &lt;em&gt;x&lt;/em&gt; extends the idea of the adjacent side; the vertical projection &lt;em&gt;y&lt;/em&gt; extends the opposite side. Unlike side lengths in a right triangle, these projections may be negative. The radius &lt;em&gt;r&lt;/em&gt; is always positive." data-zh="水平投影 &lt;em&gt;x&lt;/em&gt; 推广了邻边的概念；竖直投影 &lt;em&gt;y&lt;/em&gt; 推广了对边。与直角三角形边长不同，这些投影可能为负；半径 &lt;em&gt;r&lt;/em&gt; 恒为正。">The horizontal projection <em>x</em> extends the idea of the adjacent side; the vertical projection <em>y</em> extends the opposite side. Unlike side lengths in a right triangle, these projections may be negative. The radius <em>r</em> is always positive.</p>
+
+<h4 id="quadrant-ii-supplementary" data-en="Supplementary-Angle Relationships (Quadrant II)" data-zh="补角关系（第二象限）">Supplementary-Angle Relationships (Quadrant II)</h4>
+<p data-en="For an acute reference angle &lt;em&gt;θ&lt;/em&gt; with &lt;em&gt;0° &lt; θ &lt; 90°&lt;/em&gt;, the angle &lt;em&gt;180° − θ&lt;/em&gt; lies in Quadrant II. Its horizontal projection changes sign, but its vertical projection does not." data-zh="对锐角参考角 &lt;em&gt;θ&lt;/em&gt;（&lt;em&gt;0° &lt; θ &lt; 90°&lt;/em&gt;），角 &lt;em&gt;180° − θ&lt;/em&gt; 在第二象限。水平投影变号，竖直投影不变。">For an acute reference angle <em>θ</em> with <em>0° &lt; θ &lt; 90°</em>, the angle <em>180° − θ</em> lies in Quadrant II. Its horizontal projection changes sign, but its vertical projection does not.</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sin(180^\circ-\theta)=\sin\theta" data-tex-zh="\sin(180^\circ-\theta)=\sin\theta"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos(180^\circ-\theta)=-\cos\theta" data-tex-zh="\cos(180^\circ-\theta)=-\cos\theta"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\tan(180^\circ-\theta)=-\tan\theta" data-tex-zh="\tan(180^\circ-\theta)=-\tan\theta"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cot(180^\circ-\theta)=-\cot\theta" data-tex-zh="\cot(180^\circ-\theta)=-\cot\theta"></div>
+
+<h4 id="example-120" data-en="Example: 120° (Quadrant II)" data-zh="例题：120°（第二象限）">Example: 120° (Quadrant II)</h4>
+<p data-en="The reference angle is 60°, because &lt;em&gt;120° = 180° − 60°&lt;/em&gt;. On the diagram, &lt;em&gt;r = 5&lt;/em&gt;, &lt;em&gt;x = −2.5&lt;/em&gt;, and &lt;em&gt;y ≈ 4.33&lt;/em&gt;." data-zh="参考角为 60°，因为 &lt;em&gt;120° = 180° − 60°&lt;/em&gt;。图中 &lt;em&gt;r = 5&lt;/em&gt;、&lt;em&gt;x = −2.5&lt;/em&gt;、&lt;em&gt;y ≈ 4.33&lt;/em&gt;。">The reference angle is 60°, because <em>120° = 180° − 60°</em>. On the diagram, <em>r = 5</em>, <em>x = −2.5</em>, and <em>y ≈ 4.33</em>.</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sin 120^\circ=\sin 60^\circ=\frac{\sqrt{3}}{2}" data-tex-zh="\sin 120^\circ=\sin 60^\circ=\frac{\sqrt{3}}{2}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos 120^\circ=-\cos 60^\circ=-\frac{1}{2}" data-tex-zh="\cos 120^\circ=-\cos 60^\circ=-\frac{1}{2}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\tan 120^\circ=-\tan 60^\circ=-\sqrt{3}" data-tex-zh="\tan 120^\circ=-\tan 60^\circ=-\sqrt{3}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cot 120^\circ=-\cot 60^\circ=-\frac{\sqrt{3}}{3}" data-tex-zh="\cot 120^\circ=-\cot 60^\circ=-\frac{\sqrt{3}}{3}"></div>
+<p data-en="In Quadrant II, &lt;em&gt;x &lt; 0&lt;/em&gt; and &lt;em&gt;y &gt; 0&lt;/em&gt;. Therefore sine is positive, whereas cosine, tangent, and cotangent are negative." data-zh="第二象限中 &lt;em&gt;x &lt; 0&lt;/em&gt;、&lt;em&gt;y &gt; 0&lt;/em&gt;，故正弦为正，余弦、正切、余切为负。">In Quadrant II, <em>x &lt; 0</em> and <em>y &gt; 0</em>. Therefore sine is positive, whereas cosine, tangent, and cotangent are negative.</p>
+
+<h4 id="signs-by-quadrant" data-en="Signs by Quadrant" data-zh="各象限符号">Signs by Quadrant</h4>
+<p data-en="Quadrant I: all positive. Quadrant II: sine positive. Quadrant III: tangent and cotangent positive. Quadrant IV: cosine positive. Tangent is undefined when &lt;em&gt;x = 0&lt;/em&gt;; cotangent is undefined when &lt;em&gt;y = 0&lt;/em&gt;." data-zh="第一象限：全为正。第二象限：正弦为正。第三象限：正切、余切为正。第四象限：余弦为正。&lt;em&gt;x = 0&lt;/em&gt; 时正切无定义；&lt;em&gt;y = 0&lt;/em&gt; 时余切无定义。">Quadrant I: all positive. Quadrant II: sine positive. Quadrant III: tangent and cotangent positive. Quadrant IV: cosine positive. Tangent is undefined when <em>x = 0</em>; cotangent is undefined when <em>y = 0</em>.</p>
+<p class="trig-beyond-90-figure"><img alt="Trigonometric ratio signs by quadrant" class="trig-figure-quadrant-signs" loading="lazy" src="../assets/math/trig-beyond-90-quadrant-signs.webp"/></p>
+
+<h4 id="reference-angles" data-en="Reference Angles in All Four Quadrants" data-zh="四个象限的参考角">Reference Angles in All Four Quadrants</h4>
+<p data-en="A reference angle is the smallest positive angle between the terminal side and the x-axis (positive or negative). Measure from the nearest x-axis direction, not from the y-axis." data-zh="参考角是终边与 x 轴（正或负方向）之间的最小正角，应从最近的 x 轴方向量取，而不是从 y 轴。">A reference angle is the smallest positive angle between the terminal side and the x-axis (positive or negative). Measure from the nearest x-axis direction, not from the y-axis.</p>
+<ul>
+<li data-en="Quadrant I (&lt;em&gt;0° &lt; θ &lt; 90°&lt;/em&gt;): &lt;em&gt;α = θ&lt;/em&gt;" data-zh="第一象限（&lt;em&gt;0° &lt; θ &lt; 90°&lt;/em&gt;）：&lt;em&gt;α = θ&lt;/em&gt;">Quadrant I (<em>0° &lt; θ &lt; 90°</em>): <em>α = θ</em></li>
+<li data-en="Quadrant II (&lt;em&gt;90° &lt; θ &lt; 180°&lt;/em&gt;): &lt;em&gt;α = 180° − θ&lt;/em&gt;" data-zh="第二象限（&lt;em&gt;90° &lt; θ &lt; 180°&lt;/em&gt;）：&lt;em&gt;α = 180° − θ&lt;/em&gt;">Quadrant II (<em>90° &lt; θ &lt; 180°</em>): <em>α = 180° − θ</em></li>
+<li data-en="Quadrant III (&lt;em&gt;180° &lt; θ &lt; 270°&lt;/em&gt;): &lt;em&gt;α = θ − 180°&lt;/em&gt;" data-zh="第三象限（&lt;em&gt;180° &lt; θ &lt; 270°&lt;/em&gt;）：&lt;em&gt;α = θ − 180°&lt;/em&gt;">Quadrant III (<em>180° &lt; θ &lt; 270°</em>): <em>α = θ − 180°</em></li>
+<li data-en="Quadrant IV (&lt;em&gt;270° &lt; θ &lt; 360°&lt;/em&gt;): &lt;em&gt;α = 360° − θ&lt;/em&gt;" data-zh="第四象限（&lt;em&gt;270° &lt; θ &lt; 360°&lt;/em&gt;）：&lt;em&gt;α = 360° − θ&lt;/em&gt;">Quadrant IV (<em>270° &lt; θ &lt; 360°</em>): <em>α = 360° − θ</em></li>
+</ul>
+<p data-en="Angles on an axis (0°, 90°, 180°, 270°, 360°) are boundary cases. For other angles, first find a coterminal angle between 0° and 360°." data-zh="在坐标轴上的角（0°、90°、180°、270°、360°）是边界情形。其余角先化为 0° 到 360° 之间的同界角。">Angles on an axis (0°, 90°, 180°, 270°, 360°) are boundary cases. For other angles, first find a coterminal angle between 0° and 360°.</p>
+<h4 id="example-210" data-en="Example: 210° (Quadrant III)" data-zh="例题：210°（第三象限）">Example: 210° (Quadrant III)</h4>
+<p data-en="The nearest x-axis direction is 180°, so the reference angle is 30°. Both &lt;em&gt;x&lt;/em&gt; and &lt;em&gt;y&lt;/em&gt; are negative." data-zh="最近的 x 轴方向为 180°，参考角为 30°。&lt;em&gt;x&lt;/em&gt; 与 &lt;em&gt;y&lt;/em&gt; 均为负。">The nearest x-axis direction is 180°, so the reference angle is 30°. Both <em>x</em> and <em>y</em> are negative.</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sin 210^\circ=-\sin 30^\circ=-\frac{1}{2}" data-tex-zh="\sin 210^\circ=-\sin 30^\circ=-\frac{1}{2}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos 210^\circ=-\cos 30^\circ=-\frac{\sqrt{3}}{2}" data-tex-zh="\cos 210^\circ=-\cos 30^\circ=-\frac{\sqrt{3}}{2}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\tan 210^\circ=\tan 30^\circ=\frac{\sqrt{3}}{3}" data-tex-zh="\tan 210^\circ=\tan 30^\circ=\frac{\sqrt{3}}{3}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cot 210^\circ=\cot 30^\circ=\sqrt{3}" data-tex-zh="\cot 210^\circ=\cot 30^\circ=\sqrt{3}"></div>
+<h4 id="example-300" data-en="Example: 300° (Quadrant IV)" data-zh="例题：300°（第四象限）">Example: 300° (Quadrant IV)</h4>
+<p data-en="The nearest x-axis direction is 360°, so the reference angle is 60°. Here &lt;em&gt;x &gt; 0&lt;/em&gt; and &lt;em&gt;y &lt; 0&lt;/em&gt;." data-zh="最近的 x 轴方向为 360°，参考角为 60°。此时 &lt;em&gt;x &gt; 0&lt;/em&gt;、&lt;em&gt;y &lt; 0&lt;/em&gt;。">The nearest x-axis direction is 360°, so the reference angle is 60°. Here <em>x &gt; 0</em> and <em>y &lt; 0</em>.</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sin 300^\circ=-\sin 60^\circ=-\frac{\sqrt{3}}{2}" data-tex-zh="\sin 300^\circ=-\sin 60^\circ=-\frac{\sqrt{3}}{2}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos 300^\circ=\cos 60^\circ=\frac{1}{2}" data-tex-zh="\cos 300^\circ=\cos 60^\circ=\frac{1}{2}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\tan 300^\circ=-\tan 60^\circ=-\sqrt{3}" data-tex-zh="\tan 300^\circ=-\tan 60^\circ=-\sqrt{3}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cot 300^\circ=-\cot 60^\circ=-\frac{\sqrt{3}}{3}" data-tex-zh="\cot 300^\circ=-\cot 60^\circ=-\frac{\sqrt{3}}{3}"></div>
+
+<h4 id="reference-identities" data-en="Reference-Angle Identities by Quadrant" data-zh="各象限参考角恒等式">Reference-Angle Identities by Quadrant</h4>
+<div class="edu-table-wrap"><table class="edu-table">
+<colgroup><col style="width:33%"/><col style="width:34%"/><col style="width:33%"/></colgroup>
+<thead><tr class="header"><th data-en="Quadrant II: 180° − α" data-zh="第二象限：180° − α">Quadrant II: 180° − α</th><th data-en="Quadrant III: 180° + α" data-zh="第三象限：180° + α">Quadrant III: 180° + α</th><th data-en="Quadrant IV: 360° − α" data-zh="第四象限：360° − α">Quadrant IV: 360° − α</th></tr></thead>
+<tbody>
+<tr>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sin(180^\circ-\alpha)=\sin\alpha" data-tex-zh="\sin(180^\circ-\alpha)=\sin\alpha"></div></td>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sin(180^\circ+\alpha)=-\sin\alpha" data-tex-zh="\sin(180^\circ+\alpha)=-\sin\alpha"></div></td>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sin(360^\circ-\alpha)=-\sin\alpha" data-tex-zh="\sin(360^\circ-\alpha)=-\sin\alpha"></div></td>
+</tr>
+<tr>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos(180^\circ-\alpha)=-\cos\alpha" data-tex-zh="\cos(180^\circ-\alpha)=-\cos\alpha"></div></td>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos(180^\circ+\alpha)=-\cos\alpha" data-tex-zh="\cos(180^\circ+\alpha)=-\cos\alpha"></div></td>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cos(360^\circ-\alpha)=\cos\alpha" data-tex-zh="\cos(360^\circ-\alpha)=\cos\alpha"></div></td>
+</tr>
+<tr>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\tan(180^\circ-\alpha)=-\tan\alpha" data-tex-zh="\tan(180^\circ-\alpha)=-\tan\alpha"></div></td>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\tan(180^\circ+\alpha)=\tan\alpha" data-tex-zh="\tan(180^\circ+\alpha)=\tan\alpha"></div></td>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\tan(360^\circ-\alpha)=-\tan\alpha" data-tex-zh="\tan(360^\circ-\alpha)=-\tan\alpha"></div></td>
+</tr>
+<tr>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cot(180^\circ-\alpha)=-\cot\alpha" data-tex-zh="\cot(180^\circ-\alpha)=-\cot\alpha"></div></td>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cot(180^\circ+\alpha)=\cot\alpha" data-tex-zh="\cot(180^\circ+\alpha)=\cot\alpha"></div></td>
+<td><div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cot(360^\circ-\alpha)=-\cot\alpha" data-tex-zh="\cot(360^\circ-\alpha)=-\cot\alpha"></div></td>
+</tr>
+</tbody>
+</table></div>
+<div class="edu-note" data-en="&lt;strong&gt;Key idea:&lt;/strong&gt; Use the reference angle for the numerical value, then use the quadrant to determine the sign. Tangent is undefined when cos θ = 0; cotangent is undefined when sin θ = 0." data-zh="&lt;strong&gt;要点：&lt;/strong&gt; 用参考角求数值，用象限定符号。cos θ = 0 时正切无定义；sin θ = 0 时余切无定义。"><strong>Key idea:</strong> Use the reference angle for the numerical value, then use the quadrant to determine the sign. Tangent is undefined when cos θ = 0; cotangent is undefined when sin θ = 0.</div>
+
+<h4 id="signed-triangle" data-en="How to Remember Signs: Draw the Signed Right Triangle" data-zh="如何记符号：画带符号的直角三角形">How to Remember Signs: Draw the Signed Right Triangle</h4>
+<p data-en="Instead of memorizing quadrant sign rules, draw a right triangle from the terminal side to the x-axis. Treat the legs as signed projections: left is negative &lt;em&gt;x&lt;/em&gt;, right is positive &lt;em&gt;x&lt;/em&gt;; up is positive &lt;em&gt;y&lt;/em&gt;, down is negative &lt;em&gt;y&lt;/em&gt;. The hypotenuse &lt;em&gt;r&lt;/em&gt; is always a positive length." data-zh="不必死背象限符号表：从终边向 x 轴作直角三角形，把两条直角边看作带符号的投影：左为负 &lt;em&gt;x&lt;/em&gt;、右为正 &lt;em&gt;x&lt;/em&gt;；上为正 &lt;em&gt;y&lt;/em&gt;、下为负 &lt;em&gt;y&lt;/em&gt;。斜边 &lt;em&gt;r&lt;/em&gt; 恒为正的长度。">Instead of memorizing quadrant sign rules, draw a right triangle from the terminal side to the x-axis. Treat the legs as signed projections: left is negative <em>x</em>, right is positive <em>x</em>; up is positive <em>y</em>, down is negative <em>y</em>. The hypotenuse <em>r</em> is always a positive length.</p>
+<p class="trig-beyond-90-figure"><img alt="Signed right triangle from terminal side to x-axis" class="trig-figure-signed-triangle" loading="lazy" src="../assets/math/trig-beyond-90-signed-triangle.webp"/></p>
+<ul>
+<li data-en="Quadrant II: &lt;em&gt;x &lt; 0&lt;/em&gt;, &lt;em&gt;y &gt; 0&lt;/em&gt; — sin positive; cos, tan, cot negative." data-zh="第二象限：&lt;em&gt;x &lt; 0&lt;/em&gt;、&lt;em&gt;y &gt; 0&lt;/em&gt; — 正弦为正；余弦、正切、余切为负。">Quadrant II: <em>x &lt; 0</em>, <em>y &gt; 0</em> — sin positive; cos, tan, cot negative.</li>
+<li data-en="Quadrant III: both legs negative — sin and cos negative; tan and cot positive." data-zh="第三象限：两直角边均为负 — 正弦、余弦为负；正切、余切为正。">Quadrant III: both legs negative — sin and cos negative; tan and cot positive.</li>
+<li data-en="Quadrant IV: &lt;em&gt;x &gt; 0&lt;/em&gt;, &lt;em&gt;y &lt; 0&lt;/em&gt; — cos positive; sin, tan, cot negative." data-zh="第四象限：&lt;em&gt;x &gt; 0&lt;/em&gt;、&lt;em&gt;y &lt; 0&lt;/em&gt; — 余弦为正；正弦、正切、余切为负。">Quadrant IV: <em>x &gt; 0</em>, <em>y &lt; 0</em> — cos positive; sin, tan, cot negative.</li>
+</ul>
+<p data-en="Use these ratios wherever the denominator is nonzero:" data-zh="在分母不为零处用：">Use these ratios wherever the denominator is nonzero:</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sin\theta=\frac{y}{r},\quad \cos\theta=\frac{x}{r},\quad \tan\theta=\frac{y}{x}\ (x\neq 0),\quad \cot\theta=\frac{x}{y}\ (y\neq 0)" data-tex-zh="\sin\theta=\frac{y}{r},\quad \cos\theta=\frac{x}{r},\quad \tan\theta=\frac{y}{x}\ (x\neq 0),\quad \cot\theta=\frac{x}{y}\ (y\neq 0)"></div>
+<div class="edu-note" data-en="&lt;strong&gt;Teaching tip:&lt;/strong&gt; Triangle side lengths are never negative. The + and − marks show the direction of signed projections, not negative physical lengths." data-zh="&lt;strong&gt;教学提示：&lt;/strong&gt; 三角形边长本身不为负；± 标记表示带符号投影的方向，而不是“负的长度”。"><strong>Teaching tip:</strong> Triangle side lengths are never negative. The + and − marks show the direction of signed projections, not negative physical lengths.</div>
+</div></details>
+<details class="lesson-card"><summary id="exact-trigonometric-values" data-en="Trigonometric Ratios of Special Angles" data-zh="特殊角的三角比">Trigonometric Ratios of Special Angles</summary><div class="lesson-card-content"><h2 id="exact-from-special" data-en="Exact Values from Special Right Triangles" data-zh="由特殊直角三角形得到的精确值">Exact Values from Special Right Triangles</h2>
+<p data-en="A 45°–45°–90° triangle has side ratio 1 : 1 : √2. A 30°–60°–90° triangle has side ratio 1 : √3 : 2. Use reference angles and quadrant signs to extend their exact values beyond 90°." data-zh="45°–45°–90° 三角形边长比为 1 : 1 : √2；30°–60°–90° 为 1 : √3 : 2。结合参考角与象限符号可将精确值推广到超过 90°。">A 45°–45°–90° triangle has side ratio 1 : 1 : √2. A 30°–60°–90° triangle has side ratio 1 : √3 : 2. Use reference angles and quadrant signs to extend their exact values beyond 90°.</p></div></details>
+<details class="lesson-card"><summary id="reciprocal-trigonometric-ratios" data-en="Reciprocal Trigonometric Ratios" data-zh="倒数三角比">Reciprocal Trigonometric Ratios</summary><div class="lesson-card-content"><p data-en="The reciprocal of sine is cosecant (csc), the reciprocal of cosine is secant (sec), and the reciprocal of tangent is cotangent (cot)." data-zh="正弦的倒数是余割（csc），余弦的倒数是正割（sec），正切的倒数是余切（cot）。">The reciprocal of sine is cosecant (csc), the reciprocal of cosine is secant (sec), and the reciprocal of tangent is cotangent (cot).</p>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\csc\theta=\frac{1}{\sin\theta},\quad \sec\theta=\frac{1}{\cos\theta},\quad \cot\theta=\frac{1}{\tan\theta}" data-tex-zh="\csc\theta=\frac{1}{\sin\theta},\quad \sec\theta=\frac{1}{\cos\theta},\quad \cot\theta=\frac{1}{\tan\theta}"></div>
+<p data-en="These ratios are undefined when their denominators are zero. Do not confuse reciprocal ratios with inverse trigonometric functions (arcsin, arccos, arctan)." data-zh="分母为零时无定义。不要把倒数比与反三角函数（arcsin、arccos、arctan）混淆。">These ratios are undefined when their denominators are zero. Do not confuse reciprocal ratios with inverse trigonometric functions (arcsin, arccos, arctan).</p></div></details></article></div></main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261108-1"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+</body>
+</html>

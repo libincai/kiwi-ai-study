@@ -1,0 +1,402 @@
+
+## Understanding Trigonometry
+
+Trigonometry is the study of relationships between the angles and side lengths of triangles. It helps us find unknown sides and angles without measuring them directly.
+Trigonometry is useful for calculating heights, distances, slopes, and angles in real-life situations.
+In this chapter, you will learn how to:
+Identify the sides of a right triangle.
+Understand and use the four basic trigonometric ratios.
+Derive special-angle values instead of memorizing them.
+Find missing side lengths and angles.
+Solve practical problems involving heights and distances.
+
+## The Three Sides of a Right Triangle
+
+A right triangle has one angle measuring $90∘$.
+The three sides have different names depending on their positions relative to the reference angle $θ$.
+Hypotenuse: The side opposite the right angle. It is always the longest side.
+Opposite side: The side directly across from the reference angle $θ$.
+Adjacent side: The side next to $θ$, excluding the hypotenuse.
+
+## The Pythagorean Theorem
+
+For a right triangle with legs $a$ and $b$, and hypotenuse $c$:
+This relationship can help you find a missing side when the other two sides are known.
+
+## The Four Basic Trigonometric Ratios
+
+The four basic trigonometric ratios are sine, cosine, tangent, and cotangent.
+Sine
+Cosine
+Tangent
+Cotangent
+
+## The SOH–CAH–TOA Mnemonic
+
+Use this familiar mnemonic to remember the three main ratios:
+SOH: Sine = Opposite ÷ Hypotenuse
+CAH: Cosine = Adjacent ÷ Hypotenuse
+TOA: Tangent = Opposite ÷ Adjacent
+Cotangent is the reciprocal of tangent:
+when both sides are defined.
+Example:
+Suppose a right triangle has:
+Opposite side = 3
+Adjacent side = 4
+Hypotenuse = 5
+Then:
+$sinθ=35$ ,  $cosθ=45$,  $tanθ=34$,  $cotθ=43$
+Key idea: Identify the reference angle first. Then label the opposite, adjacent, and hypotenuse sides before choosing a ratio.
+
+## Special Right Triangles
+
+You do not need to memorize every special-angle trigonometric value separately. You can derive them from two special right triangles.
+
+## The 30°–60°–90° Triangle
+
+Start with an equilateral triangle whose sides are all 2 units long.
+Draw an altitude from one vertex to the opposite side. This divides the equilateral triangle into two congruent right triangles.
+The altitude:
+Bisects the opposite side into two segments of length 1.
+Splits the $60∘$ angle into two $30∘$ angles.
+Creates two right triangles with angles $30∘$, $60∘$, and $90∘$.
+Using the Pythagorean Theorem, the altitude is:
+Therefore, the side lengths are:
+For the $30∘$ angle:
+Opposite = 1
+Adjacent = $3$
+Hypotenuse = 2
+For the $60∘$ angle, the opposite and adjacent sides switch roles.
+Important relationship: The side opposite $30∘$ is half the hypotenuse, and the side opposite $60∘$ is $3$ times the shorter leg.
+
+## The 45°–45°–90° Triangle
+
+Start with an isosceles right triangle. Its two legs are equal, so its two acute angles are equal.
+Since the angles in a triangle add to $180∘$:
+Let each leg have length 1. By the Pythagorean Theorem:
+Therefore, the side lengths are:
+Because the two legs are equal, the sine and cosine of $45∘$ are equal.
+
+## Finding a Missing Side
+
+When you know one acute angle and one side of a right triangle, you can use a trigonometric ratio to find another side.
+Find the opposite side
+A right triangle has a $30∘$angle and a hypotenuse of 10 cm. Find the side opposite the $30∘$angle.
+Step 1: Choose the ratio.
+The opposite side and hypotenuse are involved, so use sine.
+Step 2: Substitute the special-angle value.
+Answer:
+Find the adjacent side
+A right triangle has a $60∘$ angle and a hypotenuse of 12 m. Find the adjacent side.
+Using cosine:
+Answer:
+Find the opposite side using tangent
+A right triangle has a $45∘$angle and an adjacent side of 7 cm. Find the opposite side.
+Using tangent:
+Answer:
+
+## Finding a Missing Angle
+
+When you know two side lengths of a right triangle, you can find an unknown acute angle using an inverse trigonometric function.
+The inverse functions are written as:
+$sin-1 $or $arcsin$
+$cos-1$ or $arccos$
+$tan-1 $or $arctan$
+Important: The notation $sin-1x $means the inverse sine function, not $1sinx$.
+Find an angle
+A right triangle has an opposite side of 3 cm and an adjacent side of 4 cm. Find $θ$.
+Step 1: Choose the ratio.
+Step 2: Use inverse tangent.
+Step 3: Calculate using a calculator.
+Make sure your calculator is set to degree mode when working with angles measured in degrees.
+
+## Applications of Trigonometry
+
+Trigonometry can be used to find heights and distances that are difficult to measure directly.
+Example: finding the height of a tree
+A student stands 10 m from the base of a tree. The angle of elevation from the ground to the top of the tree is $45∘$. Assume the ground is level and ignore the student's eye height. Find the tree's height.
+Let $h$ be the tree's height.
+The horizontal distance is adjacent to the angle, and the tree's height is opposite the angle.
+Using tangent:
+Since $tan45∘=1$:
+Answer:
+Important Terms
+Angle of elevation: The angle measured upward from a horizontal line of sight.
+Angle of depression: The angle measured downward from a horizontal line of sight.
+A reliable strategy:
+When solving application problems, draw a diagram, mark the known angle and side, and identify the unknown before choosing a trigonometric ratio.
+Draw or examine the right triangle.
+Identify the reference angle.
+Label the opposite, adjacent, and hypotenuse.
+Choose the ratio containing the known and unknown sides.
+Substitute the values and solve.
+Check that the answer is reasonable and includes the correct units.
+Angles and Trigonometric Ratios
+Angles in Standard Position
+
+## Initial Arm and Terminal Arm
+
+An angle is in standard position when its vertex is at the origin and its initial arm lies along the positive x-axis. Its terminal arm is the ray reached after rotating through the angle.
+Counterclockwise rotation gives a positive angle; clockwise rotation gives a negative angle. Angles may be greater than 360° or negative.
+
+## Primary Trigonometric Ratios on the Coordinate Plane
+
+If P(x, y) lies on the terminal arm and r = √(x² + y²), then r is the distance from the origin to P.
+On the unit circle r = 1, so the point on the terminal arm is P(cos θ, sin θ). The signs of the ratios follow the quadrant of P.
+
+## Signs of Trigonometric Ratios in Four Quadrants
+
+Quadrant I: sin +, cos +, tan +. Quadrant II: sin +, cos −, tan −. Quadrant III: sin −, cos −, tan +. Quadrant IV: sin −, cos +, tan −.
+Related and Coterminal Angles
+
+## Related Acute Angle (Reference Angle)
+
+A related acute angle is the acute angle between the terminal arm and the x-axis. It is also called the reference angle. Its size is always between 0° and 90° for non-axis angles.
+For angles outside 0°–360°, first find a coterminal angle in that interval.
+
+## Coterminal Angles
+
+Angles that have the same initial arm and terminal arm are coterminal. They differ by whole rotations of 360°.
+Example: 480°, 120°, and −240° are coterminal. All three terminate in Quadrant II.
+
+## Trigonometric Ratios Beyond 90°
+
+SOH–CAH–TOA starts with acute angles in a right triangle. To extend trigonometry to angles beyond 90°, use a coordinate plane and signed projections. For a point $P=x,y$ on the terminal side, $r$ is the positive distance from the origin.
+The four trigonometric ratios
+The horizontal projection $x$ extends the idea of the adjacent side; the vertical projection $y$ extends the opposite side. Unlike side lengths in a right triangle, these projections may be negative. The radius $r$ is always positive.
+Supplementary-angle relationships (Quadrant II)
+For an acute reference angle $0∘<θ<90∘$, the angle $180∘-θ$ is in Quadrant II. Its horizontal projection changes sign, but its vertical projection does not.
+Example: 120° (Quadrant II)
+The reference angle is 60°, because $120∘=180∘-60∘$. On the diagram, $r=5$, $x=-2.5$, and $y≈4.33$. Thus:
+Why the signs differ: In Quadrant II, $x<0$ and $y>0$. Therefore sine is positive, whereas cosine, tangent and cotangent are negative.
+Signs by quadrant: I: all positive; II: sine positive; III: tangent and cotangent positive; IV: cosine positive. Tangent is undefined when $x=0$; cotangent is undefined when $y=0$.
+Reference Angles in All Four Quadrants
+A reference angle is the smallest positive angle between the terminal side and the x-axis (positive or negative). Measure it from the nearest x-axis direction, not from the y-axis. For angles between 0° and 360°:
+[TABLE]
+Quadrant I (0° < θ < 90°): | α = θ
+Quadrant II (90° < θ < 180°): | α = 180° - θ
+Quadrant III (180° < θ < 270°): | α = θ - 180°
+Quadrant IV (270° < θ < 360°): | α = 360° - θ
+[/TABLE]
+Angles on an axis (0°, 90°, 180°, 270°, 360°) are boundary cases; their reference angle is 0° or 90°, rather than an acute angle. For other angles, first find a coterminal angle between 0° and 360°.
+Example: 210° (Quadrant III)
+The nearest x-axis direction is 180°, so the reference angle is 210° − 180° = 30°. Both x and y are negative, making sine and cosine negative, but tangent and cotangent positive.
+Example: 300° (Quadrant IV)
+The nearest x-axis direction is 360°, so the reference angle is 360° − 300° = 60°. Here x is positive and y is negative.
+Reference-Angle Identities by Quadrant
+[TABLE]
+Quadrant II180° − α | Quadrant III180° + α | Quadrant IV360° − α
+[/TABLE]
+Key idea: Use the reference angle for the numerical value, then use the quadrant to determine the sign. Tangent is undefined when cos θ = 0; cotangent is undefined when sin θ = 0.
+How to Remember Trigonometric Signs: Draw the Signed Right Triangle
+Instead of memorizing quadrant sign rules, draw a right triangle from the terminal side to the x-axis. Treat the horizontal and vertical legs as signed projections: left is negative x, right is positive x; up is positive y, down is negative y. The hypotenuse r is always a positive length.
+Quadrant II: x < 0, y > 0, r > 0. Mark the horizontal leg negative and the vertical leg positive. Therefore sin is positive; cos, tan and cot are negative.
+Quadrant III: x < 0, y < 0, r > 0. Mark both legs negative. Therefore sin and cos are negative, while tan and cot are positive (negative ÷ negative = positive).
+Quadrant IV: x > 0, y < 0, r > 0. Mark the horizontal leg positive and the vertical leg negative. Therefore cos is positive; sin, tan and cot are negative.
+To determine each sign, use the ratios sin θ = y/r, cos θ = x/r, tan θ = y/x and cot θ = x/y, wherever the denominator is nonzero. The signs follow from the numerator and denominator.
+Teaching tip: The triangle side lengths themselves are never negative. The + and − marks represent the direction of the signed x- and y-projections, not negative physical lengths.
+Trigonometric Ratios of Special Angles
+
+## Exact Values from Special Right Triangles
+
+A 45°–45°–90° triangle has side ratio 1 : 1 : √2. A 30°–60°–90° triangle has side ratio 1 : √3 : 2. Use reference angles and quadrant signs to extend their exact values beyond 90°.
+
+## Common Exact-Value Table
+
+[TABLE]
+θ | sin θ | cos θ | tan θ
+0° | 0 | 1 | 0
+30° | 1/2 | √3/2 | √3/3
+45° | √2/2 | √2/2 | 1
+60° | √3/2 | 1/2 | √3
+90° | 1 | 0 | undefined
+120° | √3/2 | −1/2 | −√3
+135° | √2/2 | −√2/2 | −1
+150° | 1/2 | −√3/2 | −√3/3
+210° | −1/2 | −√3/2 | √3/3
+225° | −√2/2 | −√2/2 | 1
+240° | −√3/2 | −1/2 | √3
+300° | −√3/2 | 1/2 | −√3
+315° | −√2/2 | √2/2 | −1
+330° | −1/2 | √3/2 | −√3/3
+[/TABLE]
+
+## Reciprocal Trigonometric Ratios
+
+The reciprocal of sine is cosecant (csc), the reciprocal of cosine is secant (sec), and the reciprocal of tangent is cotangent (cot).
+The ratios are undefined when their denominators are zero. Do not confuse reciprocal ratios with inverse trigonometric functions (arcsin, arccos, arctan).
+Oblique Triangles and Triangle Laws
+Oblique Triangles and the Sine Law
+
+## Types of Oblique Triangles
+
+An oblique triangle is any triangle that is not a right triangle. An acute triangle has all three angles smaller than 90°. An obtuse triangle has one angle greater than 90°.
+
+## The Sine Law
+
+For triangle ABC, side a is opposite angle A, side b is opposite angle B, and side c is opposite angle C. The Sine Law relates each side to the sine of its opposite angle.
+Use the Sine Law when a known angle–opposite-side pair is available, for example ASA, AAS, or SSA. For SAS or SSS, the Law of Cosines is generally the starting point.
+
+## The SSA Ambiguous Case
+
+When two side lengths and a non-included angle are given (SSA), two distinct oblique triangles may satisfy the same data. This is called the ambiguous case. See the separate SSA Ambiguous Case section below for the full height test and diagram.
+
+## Using the Sine Law in Applications
+
+Sketch the situation, label each angle and its opposite side, check that the calculator is in degree mode, choose the matching side–angle ratio, solve, and check whether a second angle is possible.
+For an angle found from sin B = k, the second candidate is 180° − B. Keep it only if the triangle’s angles still sum to less than 180° before finding the final angle.
+SSA Ambiguous Case (Sine Law)
+
+## Why Two Different Triangles May Be Possible
+
+When two sides and a non-included angle are given (SSA), the same measurements can sometimes produce two distinct triangles. This is called the ambiguous case of the Law of Sines.
+Let A be the known acute angle, a the side opposite A, and b the other known side. The perpendicular height from the end of side b to the base ray is:
+Construct the figure with a compass: draw side b from vertex A, then draw a circle centered at its other endpoint B with radius a. Each intersection of the circle with the forward base ray gives a possible third vertex C.
+
+## The Four Possible Outcomes
+
+$a<h$: No triangle. The side a is too short to reach the base ray.
+$a=h$: Exactly one right triangle. The circle touches the base ray at one point.
+$h<a<b$: Two distinct triangles. The circle crosses the forward base ray twice.
+$a≥b$: Exactly one triangle. The other circle intersection is at A (when a = b) or behind A (when a > b), so it does not make a second non-degenerate triangle.
+Therefore, for an acute given angle A, the condition for two distinct triangles is:
+
+## Worked Example
+
+Important: This two-triangle test assumes A is acute. A right or obtuse given angle does not produce two distinct valid triangles in the SSA case.
+The Cosine Law
+
+## Understanding and Remembering the Formula
+
+Use association, logical checks, and links to the Pythagorean theorem so the formula makes sense—not just for memorization on a test.
+
+## What Is the Law of Cosines?
+
+The Law of Cosines solves general triangles, not only right triangles. Use two sides and the included angle to find the third side, or use three sides to find an angle. Let a, b, and c be the side lengths, with angle C opposite side c.
+Four Quantities — Know Three, Find One
+The four quantities are a, b, c, and C: three sides and one angle. In the standard cases below, three suitable known values determine the fourth.
+Case 1 — Find a Side
+Given a, b, and the included angle C, substitute directly to find c.
+Case 2 — Find an Angle
+Given a, b, and c, rearrange the equation to find C.
+Learning strategy: Identify what is known and unknown before choosing the formula. Not every arbitrary set of three quantities determines a unique fourth value.
+Remember Through Association
+Students sometimes forget the −2ab cos C term, or mistakenly write −2ac cos C or −2bc cos C. Connect the formula to the square of a difference:
+The Law of Cosines has the same pattern, with an extra cos C factor in the final term.
+Why 2ab, Not 2ac or 2bc?
+When finding c from known a, b, and C, the right-hand side must be computable using those known quantities. The cosine term therefore uses the other two sides, 2ab cos C. An unknown on both sides does not always make an equation wrong, but this is a useful check for this formula.
+Connect to the Pythagorean Theorem
+For a right triangle with C = 90°, the cosine term becomes zero:
+Thus the Pythagorean theorem is the 90° special case of the Law of Cosines.
+Example — Find an Angle
+A triangle has a = 5, b = 7, and c = 8. Find angle C.
+Step 1: Start with the Law of Cosines.
+Step 2: Isolate cos C.
+Step 3: Substitute the three side lengths.
+Step 4: Use inverse cosine in degree mode.
+A Better Way to Learn Mathematics
+Association: Link the formula to (a − b)². Logical reasoning: When solving for c, verify that the right-hand side uses only a, b, and C. Prior knowledge: Setting C = 90° recovers the Pythagorean theorem.
+Understand, Connect, Remember
+Ask: What familiar formula does this resemble? Can I check it logically? Does a special case reduce to something I already know? What information is needed to solve the problem? Understanding these connections makes formulas easier to reconstruct and remember.
+Source: KIWI 爱AI Study — Law of Cosines (https://libincai.github.io/kiwi-ai-study/math/foundation-law-of-cosines.html)
+Applications in 3D Settings
+
+## Working with Three Dimensions
+
+Use the SOH–CAH–TOA ratios, the Sine Law, and the Law of Cosines in three-dimensional situations. Identify the horizontal plane, vertical height, and slanted segment before solving.
+Draw a 3D sketch, then isolate a right triangle or an oblique triangle in a plane. Solve one triangle at a time and use its result in the next triangle.
+Typical applications include the height of a regular tetrahedron, the length of a diagonal through a rectangular solid, and a distance involving height and horizontal separation.
+
+## Choosing Between the Sine Law and the Cosine Law
+
+Once you know both laws, identify the information given in the triangle before choosing a formula.
+Reading the abbreviations:  S = Side (a known side length);  A = Angle (a known angle).  The letters describe the order of the given parts around the triangle: ASA = Angle–Side–Angle; AAS = Angle–Angle–Side; SSA = Side–Side–Angle; SAS = Side–Angle–Side; SSS = Side–Side–Side. In SAS, the angle lies between the two known sides; in SSA, the known angle is not between the two known sides.
+Quick Tip: Pair → Sine; Sandwich → Cosine.
+Sine Law: Look for a known angle and its opposite side (a complete opposite pair). This is usually the fastest starting point for ASA, AAS, or SSA. For SSA, check the ambiguous case: there may be zero, one, or two triangles.
+Cosine Law: Use it when you know two sides and their included angle (SAS), or all three sides (SSS). An included angle is the angle between the two known sides.
+The red arc at A meets both sides of angle A. Blue marks the information used to recognize each law.
+Given ASA or AAS → Find the third angle using 180°, then use the Sine Law.
+Given SSA → Start with the Sine Law; check for the ambiguous case.
+Given SAS → Start with the Cosine Law to find the opposite side.
+Given SSS → Start with the Cosine Law to find an angle.
+To finish solving a triangle, you may switch between the two laws. Check that the larger side is opposite the larger angle.
+Trigonometric Identities
+What Is an Identity?
+A trigonometric identity is an equation that is true for every angle for which both sides are defined. Identities can be used to simplify expressions and prove two forms are equivalent.
+Pythagorean Identity
+Quotient Identities
+Reciprocal Identities
+Strategies for Proving Trigonometric Identities
+Begin with the more complicated side. Convert sec, csc, cot, and tan to sine and cosine when useful. Look for common denominators, factoring, expansion, and the Pythagorean identity. Work on one side until it matches the other; do not assume the identity is already true.
+Useful algebra: factor expressions, combine fractions, multiply numerator and denominator by the same nonzero expression, and use conjugates where appropriate. State domain restrictions if a denominator could be zero.
+Quick Checks
+1. Simplify cos(135°) × tan(135°).  2. Show that tan θ × cos θ = sin θ whenever defined.  3. Explain why csc θ is undefined when sin θ = 0.
+Worksheet
+Functions & Graphs
+[TABLE]
+Name: __________________ | Date: ______________ | Score: _____________
+[/TABLE]
+Instructions: Show your thinking. For explanation questions, use complete sentences and mathematical vocabulary.
+A. Special-Angle Values
+Find each exact value without using a calculator.
+[TABLE]
+$sin30∘$= | $cos60∘$=
+$cos30∘$= | $cot0∘$=
+$tan90∘$= | $tan45∘$=
+$cot30∘$= | $sin60∘$=
+$cos45∘$= | $tan60∘$=
+[/TABLE]
+B. Finding Missing Sides
+A right triangle has a $30∘$ angle and a hypotenuse of 14 cm. Find the opposite side.
+A right triangle has a $60∘$ angle and a hypotenuse of 16 m. Find the adjacent side.
+A right triangle has a $45∘$ angle and an adjacent side of 9 cm. Find the opposite side.
+A right triangle has a $30∘$ angle and an adjacent side of $63$ cm. Find the opposite side.
+C. Finding Missing Angles
+The opposite side is 5 cm and the adjacent side is 5 cm. Find the acute angle.
+The opposite side is 3 m and the hypotenuse is 6 m. Find the angle.
+The adjacent side is 4 cm and the hypotenuse is 8 cm. Find the angle.
+D. Applications
+A ladder 5 m long leans against a vertical wall. It makes an angle of $60∘$ with the ground. How high up the wall does it reach?
+A student stands 12 m from a building. The angle of elevation to the top is $30∘$. Assuming level ground and ignoring eye height, find the height of the building above the student's eye level. Give an exact answer.
+Explain why $sin30∘=cos60∘$ without using a calculator.
+E. Pythagorean Theorem and Trigonometric Ratios
+11. A right triangle has legs of 6 cm and 8 cm. Find the hypotenuse.
+12. In a right triangle, the opposite side is 7 and the hypotenuse is 25. Find sin θ.
+13. If tan θ = ¾, identify the ratio of the opposite side to the adjacent side.
+14. Find the exact values of sin 60° and cos 30°.
+15. Explain why tan 90° is undefined.
+16. A right triangle has an angle of 30° and a hypotenuse of 18 cm. Find the opposite side.
+17. A student stands 15 m from a tree. The angle of elevation to the top is 45°. Find the tree’s height above the student’s eye level.
+18. Explain the difference between theoretical probability and experimental probability.
+Answer Key
+Special-Angle Values
+[TABLE]
+$sin30∘$=$12$ | $cos60∘$=$12$
+$cos30∘$=$32$ | $cot0∘$=1
+$tan90∘$=1 | $tan45∘$=1
+$cot30∘$=$3$ | $sin60∘$=$32$
+$cos45∘$=$22$ | $tan60∘$=$3$
+[/TABLE]
+B. Finding Missing Sides
+$14sin30∘=7 cm$
+$16cos60∘=8 m$
+$9tan45∘=9 cm$
+$x=6 cm$, because $tan30∘=x63=13$.
+C. Finding Missing Angles
+$θ=tan-155=45∘$
+$θ=sin-136=30∘$
+$θ=cos-148=60∘$
+D. Applications
+$5sin60∘=532 m$
+$12tan30∘=43 m$
+In a $30∘-60∘-90∘ $triangle, the side opposite $30∘$ is half the hypotenuse. The side adjacent to $60∘$is the same side, so both ratios equal $12$.
+E. Pythagorean Theorem and Trigonometric Ratios
+11. c = √(6² + 8²) = √100 = 10 cm.
+12. sin θ = opposite ÷ hypotenuse = 7/25.
+13. tan θ = opposite ÷ adjacent = 3/4, so opposite : adjacent = 3 : 4.
+14. sin 60° = √3/2 and cos 30° = √3/2.
+15. tan θ = sin θ ÷ cos θ. At 90°, cos 90° = 0, so this would require division by zero, which is undefined.
+16. Opposite = 18 sin 30° = 18 × ½ = 9 cm.
+17. tan 45° = height/15 = 1, so the height is 15 m.
+18. Theoretical probability is calculated from equally likely possible outcomes; experimental probability is calculated from observed results in trials.
+Data & Chance
