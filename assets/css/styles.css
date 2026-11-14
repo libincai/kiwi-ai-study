@@ -5202,3 +5202,207 @@ aside.kiwi-word-info-panel.kiwi-skill-crosslink-panel .kiwi-panel-icon {
   color: #1768b2;
   font-size: 1.08rem;
 }
+
+/* —— Global Pagefind search (header + hub fields) —— */
+.kiwi-search-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #dce6f1;
+  border-radius: 11px;
+  background: #f7faff;
+  color: #174879;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.kiwi-search-open:hover {
+  background: #e8f2ff;
+  color: #0756ba;
+}
+body.kiwi-search-open {
+  overflow: hidden;
+  padding-top: var(--kiwi-header-height, 73px);
+}
+body.kiwi-search-open.home-page {
+  padding-top: 0;
+}
+body.kiwi-search-open > :not(.site-header):not(#kiwi-search-root) {
+  visibility: hidden;
+  pointer-events: none;
+}
+body.kiwi-search-open .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10002;
+  background: #fff;
+  box-shadow: 0 1px 0 #e6eaf2;
+  visibility: visible;
+  pointer-events: auto;
+}
+.kiwi-search-root {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  pointer-events: none;
+}
+.kiwi-search-root:not([hidden]) {
+  pointer-events: auto;
+}
+.kiwi-search-root[hidden] {
+  display: none !important;
+}
+.kiwi-search-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 23, 71, 0.45);
+}
+.kiwi-search-panel {
+  position: absolute;
+  top: calc(var(--kiwi-header-height, 73px) + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: min(640px, calc(100vw - 28px));
+  max-height: calc(100vh - var(--kiwi-header-height, 73px) - 28px);
+  overflow: auto;
+  margin: 0;
+  padding: 20px 22px 18px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #dce6f1;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(16, 23, 71, 0.18);
+}
+.kiwi-search-scope-row[hidden] {
+  display: none !important;
+}
+.kiwi-search-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.kiwi-search-title {
+  margin: 0;
+  font-size: 18px;
+  color: #153d70;
+}
+.kiwi-search-close {
+  border: 0;
+  background: transparent;
+  font-size: 26px;
+  line-height: 1;
+  color: #5e6f88;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.kiwi-search-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e7;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 15px;
+  color: #14264d;
+}
+.kiwi-search-input:focus {
+  outline: none;
+  border-color: #1768b2;
+  box-shadow: 0 0 0 3px rgba(23, 104, 178, 0.12);
+}
+.kiwi-search-hint {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #62738a;
+}
+.kiwi-search-offline {
+  margin: 10px 0 0;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #66542a;
+  background: #fff8e7;
+  border: 1px solid #f0dfaa;
+  border-radius: 10px;
+}
+.site-nav .kiwi-search-open {
+  margin-right: 4px;
+}
+.kiwi-search-scope-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background: #edf5ff;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #173e70;
+}
+.kiwi-search-scope-clear {
+  border: 0;
+  background: transparent;
+  color: #1768b2;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 13px;
+}
+.kiwi-search-results {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  max-height: min(52vh, 420px);
+  overflow-y: auto;
+}
+.kiwi-search-hit a {
+  display: block;
+  padding: 12px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.kiwi-search-hit a:hover {
+  background: #f4f8fe;
+}
+.kiwi-search-hit-title {
+  display: block;
+  font-weight: 700;
+  color: #173e70;
+  font-size: 15px;
+  line-height: 1.35;
+}
+.kiwi-search-hit-crumb {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: #62738a;
+}
+.kiwi-search-hit-excerpt {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #526780;
+  line-height: 1.45;
+}
+.kiwi-search-hit mark,
+.kiwi-search-hit-excerpt mark,
+.kiwi-search-hit-title mark {
+  background: #fff3b8;
+  color: inherit;
+  padding: 0 1px;
+  border-radius: 2px;
+  font-weight: inherit;
+}
+.kiwi-search-empty {
+  padding: 16px 10px;
+  color: #62738a;
+  font-size: 14px;
+}

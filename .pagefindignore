@@ -1,0 +1,9 @@
+local/**
+templates/**
+tools/**
+docs/**
+scripts/**
+.cursor/**
+.github/**
+node_modules/**
+**/__pycache__/**

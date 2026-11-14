@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <!-- Level 2 primary nav — shell from templates/level-2-primary-nav.html (contact-page + contact-main) -->
-<html lang="en-CA">
+<html lang="en-CA" data-pagefind-filter="section:contact" data-pagefind-meta="breadcrumb:Contact Us">
 <head>
+<!-- kiwi-search-prepared -->
+<meta name="pagefind:title_en" content="Contact Us" />
+<meta name="pagefind:section" content="contact" />
+<meta name="pagefind:breadcrumb" content="Contact Us" />
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Kiwi 爱AI Study</title>
@@ -50,7 +55,8 @@
       <a href="../math/in-class-learning.html" data-nav="class" data-en="In-Class Learning" data-zh="课堂学习">In-Class Learning</a>
       <a href="../books/index.html" data-nav="books" data-en="My Books" data-zh="我的书籍">My Books</a>
       <a href="index.html" data-nav="contact" class="active" data-en="Contact" data-zh="联系我们">Contact</a>
-      <span class="flags" aria-label="Languages">
+      <button type="button" class="kiwi-search-open" data-kiwi-search-trigger aria-label="Search site"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+<span class="flags" aria-label="Languages">
         <button class="flag" type="button" data-language="en" title="English" aria-label="Switch to English" aria-pressed="true">
           <img src="https://flagcdn.com/w160/ca.png" alt="English">
         </button>
@@ -61,7 +67,7 @@
     </nav>
   </header>
 
-  <main class="contact-main">
+  <main data-pagefind-body="" data-pagefind-filter="lang:en"  class="contact-main">
     <div class="page-back-wrap">
       <a class="page-back-link" href="../index.html" data-page-back data-en="← Back to Home" data-zh="← 返回首页">← Back to Home</a>
     </div>
@@ -194,5 +200,16 @@
 })();
   </script>
   <script src="../assets/js/drive-breadcrumb.js?v=20261108-1" defer></script>
+
+<link href="../pagefind/pagefind-ui.css" rel="stylesheet"/>
+<script defer src="../assets/js/kiwi-site-search.js?v=20261114-search19"></script>
+
+
+
+
+
+<!-- kiwi-search-zh-index -->
+<div class="kiwi-pagefind-zh" hidden aria-hidden="true" data-pagefind-lang="zh" data-pagefind-body="" data-pagefind-filter="lang:zh"><span hidden data-pagefind-meta="title_zh">联系我们</span><span hidden data-pagefind-meta="breadcrumb_zh">联系我们</span><span hidden data-pagefind-meta="excerpt_zh">联系我们 欢迎与我们联系。 期待与您交流 如果您对数学学习、人工智能教育、我们的书籍或课堂教学有任何问题，欢迎填写右侧表单给我们留言。请填写有效的邮箱地址，方便我们回复您。 您的邮箱地址仅用于回复您的咨询，不会公开显示。 姓名 * 邮箱地址 * 主题 * 请选择主题 数学 人工智能教育 书籍 课堂学习 合作交流 一般咨询 其他 留言内容 * 发送留言 → * 为必填项目。请勿在留言中填写敏感个人或财务信息。</span>← 返回首页 联系我们 欢迎与我们联系。 期待与您交流 如果您对数学学习、人工智能教育、我们的书籍或课堂教学有任何问题，欢迎填写右侧表单给我们留言。请填写有效的邮箱地址，方便我们回复您。 您的邮箱地址仅用于回复您的咨询，不会公开显示。 姓名 * 邮箱地址 * 主题 * 请选择主题 数学 人工智能教育 书籍 课堂学习 合作交流 一般咨询 其他 留言内容 * 发送留言 → * 为必填项目。请勿在留言中填写敏感个人或财务信息。</div>
+<!-- /kiwi-search-zh-index -->
 </body>
 </html>

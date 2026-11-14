@@ -1,0 +1,388 @@
+{
+  "rewrites": [
+    {
+      "source": "/algebraic-strategies",
+      "destination": "/math/algebraic-strategies.html"
+    },
+    {
+      "source": "/car-journey-advanced",
+      "destination": "/math/car-journey-advanced.html"
+    },
+    {
+      "source": "/car-journey",
+      "destination": "/math/car-journey.html"
+    },
+    {
+      "source": "/chance-and-probability",
+      "destination": "/math/chance-and-probability.html"
+    },
+    {
+      "source": "/data-and-graphs",
+      "destination": "/math/data-and-graphs.html"
+    },
+    {
+      "source": "/foundation-algebra-language-and-patterns",
+      "destination": "/math/foundation-algebra-language-and-patterns.html"
+    },
+    {
+      "source": "/foundation-algebraic-strategies",
+      "destination": "/math/foundation-algebraic-strategies.html"
+    },
+    {
+      "source": "/foundation-angles-and-trigonometric-ratios",
+      "destination": "/math/foundation-angles-and-trigonometric-ratios.html"
+    },
+    {
+      "source": "/foundation-angles-in-standard-position",
+      "destination": "/math/foundation-angles-in-standard-position.html"
+    },
+    {
+      "source": "/foundation-basic-geometry-words",
+      "destination": "/math/foundation-basic-geometry-words.html"
+    },
+    {
+      "source": "/foundation-chance-and-probability",
+      "destination": "/math/foundation-chance-and-probability.html"
+    },
+    {
+      "source": "/foundation-choosing-trigonometry-laws",
+      "destination": "/math/foundation-choosing-trigonometry-laws.html"
+    },
+    {
+      "source": "/foundation-data-and-graphs",
+      "destination": "/math/foundation-data-and-graphs.html"
+    },
+    {
+      "source": "/foundation-decimal-to-fraction",
+      "destination": "/math/foundation-decimal-to-fraction.html"
+    },
+    {
+      "source": "/foundation-decimal",
+      "destination": "/math/foundation-decimal.html"
+    },
+    {
+      "source": "/foundation-division-rules-2-9",
+      "destination": "/math/foundation-division-rules-2-9.html"
+    },
+    {
+      "source": "/foundation-exact-trigonometric-values",
+      "destination": "/math/foundation-exact-trigonometric-values.html"
+    },
+    {
+      "source": "/foundation-exponents",
+      "destination": "/math/foundation-exponents.html"
+    },
+    {
+      "source": "/foundation-function-transformations",
+      "destination": "/math/foundation-function-transformations.html"
+    },
+    {
+      "source": "/foundation-functions-and-their-inverses",
+      "destination": "/math/foundation-functions-and-their-inverses.html"
+    },
+    {
+      "source": "/foundation-geometric-strategies",
+      "destination": "/math/foundation-geometric-strategies.html"
+    },
+    {
+      "source": "/foundation-greatest-common-factor-gcf",
+      "destination": "/math/foundation-greatest-common-factor-gcf.html"
+    },
+    {
+      "source": "/foundation-law-of-cosines",
+      "destination": "/math/foundation-law-of-cosines.html"
+    },
+    {
+      "source": "/foundation-linear-vs-non-linear-functions",
+      "destination": "/math/foundation-linear-vs-non-linear-functions.html"
+    },
+    {
+      "source": "/foundation-math-operation-signs-and",
+      "destination": "/math/foundation-math-operation-signs-and.html"
+    },
+    {
+      "source": "/foundation-measures-of-center",
+      "destination": "/math/foundation-measures-of-center.html"
+    },
+    {
+      "source": "/foundation-number-strategies",
+      "destination": "/math/foundation-number-strategies.html"
+    },
+    {
+      "source": "/foundation-oblique-triangles-and-triangle-laws",
+      "destination": "/math/foundation-oblique-triangles-and-triangle-laws.html"
+    },
+    {
+      "source": "/foundation-proving-trigonometric-identities",
+      "destination": "/math/foundation-proving-trigonometric-identities.html"
+    },
+    {
+      "source": "/foundation-pythagorean-identity",
+      "destination": "/math/foundation-pythagorean-identity.html"
+    },
+    {
+      "source": "/foundation-quotient-identities",
+      "destination": "/math/foundation-quotient-identities.html"
+    },
+    {
+      "source": "/foundation-rational-exponents",
+      "destination": "/math/foundation-rational-exponents.html"
+    },
+    {
+      "source": "/foundation-reciprocal-identities",
+      "destination": "/math/foundation-reciprocal-identities.html"
+    },
+    {
+      "source": "/foundation-reciprocal-trigonometric-ratios",
+      "destination": "/math/foundation-reciprocal-trigonometric-ratios.html"
+    },
+    {
+      "source": "/foundation-related-and-coterminal-angles",
+      "destination": "/math/foundation-related-and-coterminal-angles.html"
+    },
+    {
+      "source": "/foundation-result-signs-and",
+      "destination": "/math/foundation-result-signs-and.html"
+    },
+    {
+      "source": "/foundation-roots",
+      "destination": "/math/foundation-roots.html"
+    },
+    {
+      "source": "/foundation-rotation-transformation",
+      "destination": "/math/foundation-rotation-transformation.html"
+    },
+    {
+      "source": "/foundation-sine-law",
+      "destination": "/math/foundation-sine-law.html"
+    },
+    {
+      "source": "/foundation-special-right-triangles",
+      "destination": "/math/foundation-special-right-triangles.html"
+    },
+    {
+      "source": "/foundation-ssa-ambiguous-case",
+      "destination": "/math/foundation-ssa-ambiguous-case.html"
+    },
+    {
+      "source": "/foundation-step-pattern-and-first-differences-y",
+      "destination": "/math/foundation-step-pattern-and-first-differences-y.html"
+    },
+    {
+      "source": "/foundation-the-four-basic-trigonometric-ratios",
+      "destination": "/math/foundation-the-four-basic-trigonometric-ratios.html"
+    },
+    {
+      "source": "/foundation-the-three-sides-of-a-right-triangle",
+      "destination": "/math/foundation-the-three-sides-of-a-right-triangle.html"
+    },
+    {
+      "source": "/foundation-trigonometric-identities-quick-checks",
+      "destination": "/math/foundation-trigonometric-identities-quick-checks.html"
+    },
+    {
+      "source": "/foundation-trigonometric-identities",
+      "destination": "/math/foundation-trigonometric-identities.html"
+    },
+    {
+      "source": "/foundation-trigonometric-ratios-beyond-90",
+      "destination": "/math/foundation-trigonometric-ratios-beyond-90.html"
+    },
+    {
+      "source": "/foundation-trigonometry-3d-applications",
+      "destination": "/math/foundation-trigonometry-3d-applications.html"
+    },
+    {
+      "source": "/foundation-trigonometry-fundamentals",
+      "destination": "/math/foundation-trigonometry-fundamentals.html"
+    },
+    {
+      "source": "/foundation-understanding-functions",
+      "destination": "/math/foundation-understanding-functions.html"
+    },
+    {
+      "source": "/foundation-understanding-the-placeholder-in-f-x",
+      "destination": "/math/foundation-understanding-the-placeholder-in-f-x.html"
+    },
+    {
+      "source": "/foundation-understanding-trigonometry",
+      "destination": "/math/foundation-understanding-trigonometry.html"
+    },
+    {
+      "source": "/foundation-unit-conversions-and-rates",
+      "destination": "/math/foundation-unit-conversions-and-rates.html"
+    },
+    {
+      "source": "/foundation-what-is-trigonometric-identity",
+      "destination": "/math/foundation-what-is-trigonometric-identity.html"
+    },
+    {
+      "source": "/foundation-why-simplified-calculation",
+      "destination": "/math/foundation-why-simplified-calculation.html"
+    },
+    {
+      "source": "/foundation-word-problems",
+      "destination": "/math/foundation-word-problems.html"
+    },
+    {
+      "source": "/gcf",
+      "destination": "/math/gcf.html"
+    },
+    {
+      "source": "/geometric-strategies",
+      "destination": "/math/geometric-strategies.html"
+    },
+    {
+      "source": "/in-class-learning",
+      "destination": "/math/in-class-learning.html"
+    },
+    {
+      "source": "/math",
+      "destination": "/math/index.html"
+    },
+    {
+      "source": "/math-foundations",
+      "destination": "/math/math-foundations.html"
+    },
+    {
+      "source": "/math-real-life",
+      "destination": "/math/math-real-life.html"
+    },
+    {
+      "source": "/mathematical-thinking",
+      "destination": "/math/mathematical-thinking.html"
+    },
+    {
+      "source": "/measures-of-center",
+      "destination": "/math/measures-of-center.html"
+    },
+    {
+      "source": "/mental-squaring-and-square-rooting",
+      "destination": "/math/mental-squaring-and-square-rooting.html"
+    },
+    {
+      "source": "/number-families",
+      "destination": "/math/number-families.html"
+    },
+    {
+      "source": "/number-shape-thinking",
+      "destination": "/math/number-shape-thinking.html"
+    },
+    {
+      "source": "/number-strategies",
+      "destination": "/math/number-strategies.html"
+    },
+    {
+      "source": "/recovering-function-rule",
+      "destination": "/math/recovering-function-rule.html"
+    },
+    {
+      "source": "/rotation-transformation",
+      "destination": "/math/rotation-transformation.html"
+    },
+    {
+      "source": "/skateboard-ramp",
+      "destination": "/math/skateboard-ramp.html"
+    },
+    {
+      "source": "/special-right-triangles",
+      "destination": "/math/special-right-triangles.html"
+    },
+    {
+      "source": "/unit-conversions-and-rates",
+      "destination": "/math/unit-conversions-and-rates.html"
+    },
+    {
+      "source": "/visual-math-patterns",
+      "destination": "/math/visual-math-patterns.html"
+    },
+    {
+      "source": "/why-simplified-calculation",
+      "destination": "/math/why-simplified-calculation.html"
+    },
+    {
+      "source": "/word-problems",
+      "destination": "/math/word-problems.html"
+    },
+    {
+      "source": "/episode-01",
+      "destination": "/ai/episode-01.html"
+    },
+    {
+      "source": "/episode-02",
+      "destination": "/ai/episode-02.html"
+    },
+    {
+      "source": "/episode-03",
+      "destination": "/ai/episode-03.html"
+    },
+    {
+      "source": "/episode-04",
+      "destination": "/ai/episode-04.html"
+    },
+    {
+      "source": "/episode-05",
+      "destination": "/ai/episode-05.html"
+    },
+    {
+      "source": "/episode-06",
+      "destination": "/ai/episode-06.html"
+    },
+    {
+      "source": "/episode-07",
+      "destination": "/ai/episode-07.html"
+    },
+    {
+      "source": "/episode-08",
+      "destination": "/ai/episode-08.html"
+    },
+    {
+      "source": "/episode-09",
+      "destination": "/ai/episode-09.html"
+    },
+    {
+      "source": "/episode-10",
+      "destination": "/ai/episode-10.html"
+    },
+    {
+      "source": "/episode-11",
+      "destination": "/ai/episode-11.html"
+    },
+    {
+      "source": "/episode-12",
+      "destination": "/ai/episode-12.html"
+    },
+    {
+      "source": "/episode-13",
+      "destination": "/ai/episode-13.html"
+    },
+    {
+      "source": "/episode-14",
+      "destination": "/ai/episode-14.html"
+    },
+    {
+      "source": "/episode-15",
+      "destination": "/ai/episode-15.html"
+    },
+    {
+      "source": "/episode-special-learning",
+      "destination": "/ai/episode-special-learning.html"
+    },
+    {
+      "source": "/ai",
+      "destination": "/ai/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/books",
+      "destination": "/books/index.html"
+    }
+  ]
+}

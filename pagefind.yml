@@ -1,0 +1,34 @@
+# Pagefind index config — run from repo root: npx pagefind --site .
+# See docs/SITE_SEARCH.md
+
+site: .
+glob: "**/*.html"
+force_language: null
+keep_index_url: true
+
+exclude_selectors:
+  - header
+  - footer
+  - nav.mf-sidebar
+  - nav.mf-trig-toc
+  - ".flags"
+  - ".kiwi-accordion-controls"
+  - ".kiwi-math-latex"
+  - "script"
+  - "style"
+  - noscript
+
+exclude_tags:
+  - math
+  - style
+  - script
+  - noscript
+
+exclude_patterns:
+  - "local/**/*"
+  - "templates/**/*"
+  - "tools/**/*"
+  - "docs/**/*"
+  - "scripts/**/*"
+  - ".cursor/**/*"
+  - ".github/**/*"
