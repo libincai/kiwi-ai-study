@@ -5,6 +5,10 @@
       "destination": "/math/algebraic-strategies.html"
     },
     {
+      "source": "/by-grade",
+      "destination": "/math/by-grade.html"
+    },
+    {
       "source": "/car-journey-advanced",
       "destination": "/math/car-journey-advanced.html"
     },

@@ -13,8 +13,8 @@ TOC_CSS = """<style id="trig-toc-sidebar">
 .mf-sidebar .mf-trig-toc-title{margin:0 0 10px;padding:4px 8px 10px;font-size:15px;font-weight:800;color:#153d70;border-bottom:1px solid #dce7f3}
 .mf-sidebar .mf-trig-toc-parent{padding:6px 0;border-top:1px solid #e1e9f4}
 .mf-sidebar .mf-trig-toc-parent:first-of-type{border-top:0}
-.mf-sidebar .mf-trig-toc-parent a{display:block;font-size:13px;font-weight:700;color:#173e70;padding:8px 6px;line-height:1.35;border-radius:9px}
-.mf-sidebar .mf-trig-toc-parent a.mf-current{background:#deecff;color:#073e83;font-weight:700;border-left:3px solid #0865c9;padding-left:10px}
+.mf-sidebar .mf-trig-toc-parent a{display:block;font-size:13px;font-weight:400;color:#173e70;padding:8px 6px;line-height:1.35;border-radius:9px}
+.mf-sidebar .mf-trig-toc-parent a.mf-current{background:#deecff;color:#073e83;font-weight:400;border-left:3px solid #0865c9;padding-left:10px}
 .mf-sidebar .mf-trig-toc-parent a:hover{background:#e8f2ff;color:#0756ba}
 </style>"""
 

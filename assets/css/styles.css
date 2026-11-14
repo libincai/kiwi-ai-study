@@ -2161,7 +2161,8 @@ body.home-page #hero-mobile-banner-image {
    The background contains no text; page titles/subtitles stay as live HTML for both languages. */
 @media (max-width: 700px) {
   body:not(.home-page) .compact-page-banner,
-  body:not(.home-page) .page-banner {
+  body:not(.home-page) .page-banner,
+  body:not(.home-page) .about-compact-banner {
     background-image: url("../hero/inner-banner-mobile.webp") !important;
     background-size: cover !important;
     background-position: center center !important;
@@ -2329,7 +2330,8 @@ body.ai-page .ai-main {
    All four primary navigation landing pages use identical width, height, and inner spacing. */
 body.about-page .about-compact-banner,
 body.edu-page .about-compact-banner,
-body.ai-page .about-compact-banner {
+body.ai-page .about-compact-banner,
+body.contact-page .about-compact-banner {
   width: min(1400px, calc(100% - 80px)) !important;
   max-width: 1400px !important;
   height: 175px !important;
@@ -2351,7 +2353,8 @@ body.ai-page .about-compact-banner {
 }
 body.about-page .about-compact-banner h1,
 body.edu-page .about-compact-banner h1,
-body.ai-page .about-compact-banner h1 {
+body.ai-page .about-compact-banner h1,
+body.contact-page .about-compact-banner h1 {
   margin: 0 0 8px !important;
   color: #102d63 !important;
   font-family: "Segoe UI", Tahoma, sans-serif !important;
@@ -2362,7 +2365,8 @@ body.ai-page .about-compact-banner h1 {
 }
 body.about-page .about-compact-banner .compact-banner-subtitle,
 body.edu-page .about-compact-banner .compact-banner-subtitle,
-body.ai-page .about-compact-banner .compact-banner-subtitle {
+body.ai-page .about-compact-banner .compact-banner-subtitle,
+body.contact-page .about-compact-banner .compact-banner-subtitle {
   margin: 0 !important;
   color: #0756df !important;
   font-family: "Segoe UI", Tahoma, sans-serif !important;
@@ -2376,7 +2380,8 @@ body.ai-page .about-compact-banner .compact-banner-subtitle {
 @media (max-width: 700px) {
   body.about-page .about-compact-banner,
   body.edu-page .about-compact-banner,
-  body.ai-page .about-compact-banner {
+  body.ai-page .about-compact-banner,
+  body.contact-page .about-compact-banner {
     width: calc(100% - 36px) !important;
     height: 150px !important;
     min-height: 150px !important;
@@ -2386,12 +2391,14 @@ body.ai-page .about-compact-banner .compact-banner-subtitle {
   }
   body.about-page .about-compact-banner h1,
   body.edu-page .about-compact-banner h1,
-  body.ai-page .about-compact-banner h1 {
+  body.ai-page .about-compact-banner h1,
+  body.contact-page .about-compact-banner h1 {
     font-size: 23px !important;
   }
   body.about-page .about-compact-banner .compact-banner-subtitle,
   body.edu-page .about-compact-banner .compact-banner-subtitle,
-  body.ai-page .about-compact-banner .compact-banner-subtitle {
+  body.ai-page .about-compact-banner .compact-banner-subtitle,
+  body.contact-page .about-compact-banner .compact-banner-subtitle {
     font-size: 13.5px !important;
     letter-spacing: .10em !important;
   }
@@ -2402,7 +2409,8 @@ body.ai-page .about-compact-banner .compact-banner-subtitle {
    Use a one-column grid so inherited flex direction cannot push the title to the top. */
 body.about-page .about-compact-banner,
 body.edu-page .about-compact-banner,
-body.ai-page .about-compact-banner {
+body.ai-page .about-compact-banner,
+body.contact-page .about-compact-banner {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) !important;
   grid-template-rows: 1fr !important;
@@ -2412,7 +2420,8 @@ body.ai-page .about-compact-banner {
 }
 body.about-page .about-compact-banner .compact-banner-copy,
 body.edu-page .about-compact-banner .compact-banner-copy,
-body.ai-page .about-compact-banner .compact-banner-copy {
+body.ai-page .about-compact-banner .compact-banner-copy,
+body.contact-page .about-compact-banner .compact-banner-copy {
   width: 100% !important;
   min-width: 0 !important;
   align-self: center !important;
@@ -2606,6 +2615,60 @@ body.ai-page .ai-main > .ai-actions-after-banner {
 
 
 
+
+
+/* Contact Us: same content frame and mobile gutters as Math Education. */
+body.contact-page .contact-main {
+  width: min(1120px, calc(100% - 48px)) !important;
+  max-width: 1120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 0 44px !important;
+  box-sizing: border-box !important;
+}
+body.contact-page .contact-main > .about-compact-banner,
+body.contact-page .contact-main > .page-back-wrap,
+body.contact-page .contact-main > .contact-layout {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+body.contact-page .contact-main > .about-compact-banner {
+  height: 175px !important;
+  min-height: 175px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+body.contact-page .contact-main > .page-back-wrap {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+@media (max-width: 700px) {
+  body.contact-page .contact-main {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 0 32px !important;
+  }
+  body.contact-page .contact-main > .about-compact-banner {
+    width: 100% !important;
+    height: 150px !important;
+    min-height: 150px !important;
+    padding: 0 20px !important;
+  }
+  body.contact-page .contact-main > .page-back-wrap {
+    width: 100% !important;
+    margin: 18px 0 !important;
+  }
+  html body.contact-page .contact-main > .about-compact-banner,
+  html body.contact-page .contact-main > .page-back-wrap {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
 
 
 /* Exact vertical-spacing rule shared with Math Education:
@@ -4256,35 +4319,42 @@ html body main .nf-hero.topic-banner > p:last-child {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 14px;
+  gap: 8px 12px;
   margin: 0;
   font-size: 13px;
   line-height: 1.45;
+  color: #5e6f88;
 }
 .kiwi-grade-strip--hub {
   margin: 12px 0 0;
 }
+/* Metadata chips — not buttons (border + muted fill, regular weight) */
 .kiwi-grade-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: #e8f2ff;
-  color: #073e83;
-  font-weight: 800;
-  font-size: 12px;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: #f6f9fc;
+  border: 1px solid #d4e0ee;
+  color: #4a627c;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.45;
   letter-spacing: 0.02em;
+  cursor: default;
+  user-select: none;
 }
 .kiwi-grade-pill--course {
-  background: #fff4e0;
-  color: #6b4a12;
-  font-weight: 700;
+  background: #faf7f1;
+  border-color: #e5dcc8;
+  color: #6b5a3a;
+  font-weight: 500;
 }
 .kiwi-grade-hub-link {
   color: #1768b2;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
   font-size: 13px;
+  margin-left: 2px;
 }
 .kiwi-grade-hub-link:hover {
   text-decoration: underline;
@@ -4434,11 +4504,22 @@ html body main .nf-hero.topic-banner > p:last-child {
   html body:not(.home-page) main .legal-banner,
   html body:not(.home-page) main .book-page-banner,
   html body:not(.home-page) main .book-compact-banner {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: minmax(0, 1fr) !important;
+    align-content: center !important;
+    align-items: center !important;
+    justify-items: start !important;
     height: auto !important;
     min-height: var(--inner-banner-height-mobile, 150px) !important;
     max-height: none !important;
     overflow: visible !important;
+  }
+  html body:not(.home-page) main .about-compact-banner .compact-banner-copy {
+    align-self: center !important;
+    justify-self: start !important;
+    width: 100% !important;
+    min-width: 0 !important;
   }
   html body:not(.home-page) main .about-compact-banner h1,
   html body:not(.home-page) main .compact-page-banner h1 {
@@ -5489,4 +5570,186 @@ body.kiwi-search-open .site-header {
   padding: 16px 10px;
   color: #62738a;
   font-size: 14px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.edu-grade-browse-wrap {
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.kiwi-grade-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: min(520px, 100%);
+  margin: 0;
+}
+
+.kiwi-grade-picker-section {
+  margin-top: 28px;
+}
+
+.kiwi-grade-pick {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid #dce6f1;
+  border-radius: 14px;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.kiwi-grade-pick:hover {
+  border-color: #b8d4f0;
+  box-shadow: 0 6px 18px rgba(24, 55, 95, 0.07);
+  transform: translateY(-1px);
+}
+
+.kiwi-grade-pick:focus-visible {
+  outline: 2px solid #1768b2;
+  outline-offset: 2px;
+}
+
+.kiwi-grade-pick-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.kiwi-grade-pick-label {
+  font-size: 17px;
+  font-weight: 600;
+  color: #173e70;
+  line-height: 1.3;
+}
+
+.kiwi-grade-pick-meta {
+  font-size: 12px;
+  font-weight: 500;
+  color: #62738a;
+  line-height: 1.4;
+}
+
+.kiwi-grade-pick-cta {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1768b2;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .kiwi-grade-pick {
+    flex-wrap: wrap;
+    padding: 14px 16px;
+  }
+  .kiwi-grade-pick-cta {
+    width: 100%;
+    padding-top: 2px;
+  }
+}
+
+.kiwi-inclass-site-grade {
+  margin-top: 22px;
+  padding: 20px 22px;
+  max-width: 560px;
+  border: 1px solid #dce7f5;
+  border-radius: 16px;
+  background: linear-gradient(125deg, #f6faff 0%, #faf9ff 55%, #fffaf3 100%);
+}
+
+.kiwi-inclass-site-grade h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #153d70;
+}
+
+.kiwi-inclass-site-grade > p {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5e6f88;
+}
+
+.kiwi-inclass-site-grade .kiwi-grade-picker {
+  max-width: none;
+}
+
+.kiwi-book-toc {
+  max-width: 720px;
+  margin: 0;
+  padding: 0;
+}
+
+.kiwi-book-chapter {
+  margin: 0 0 28px;
+}
+
+.kiwi-book-chapter-title {
+  margin: 0 0 10px;
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.25;
+  color: #153d70;
+  font-weight: 800;
+}
+
+.kiwi-book-topic-list {
+  margin: 0;
+  padding: 0 0 0 1.35rem;
+  list-style: decimal;
+}
+
+.kiwi-book-topic-list li {
+  margin: 0 0 8px;
+  padding-left: 0.25rem;
+  line-height: 1.45;
+}
+
+.kiwi-book-topic-list a {
+  color: #1768b2;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.kiwi-book-topic-list a:hover {
+  text-decoration: underline;
+}
+
+.kiwi-book-toc-section {
+  margin-top: 24px;
+}
+
+/* Lesson sidebars: regular weight; current page uses highlight bar only */
+.mf-sidebar .mf-trig-toc-parent a,
+.mf-sidebar .mf-trig-toc-parent a.mf-current,
+.kiwi-topic-sidebar a,
+.kiwi-topic-sidebar a.active,
+.kiwi-topic-sidebar a[aria-current="page"],
+.mf-sidebar .mf-side-links a.mf-current,
+.mf-sidebar .mf-side-links a[aria-current="page"],
+.nf-lesson-sidebar nav a,
+.nf-lesson-sidebar nav a.active,
+.nf-lesson-sidebar nav a[aria-current="page"],
+.foundation-level4 .mf-side-links a.mf-current {
+  font-weight: 400;
 }

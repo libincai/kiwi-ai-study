@@ -1,10 +1,26 @@
 {
+  "by_grade": {
+    "title_en": "Math by Grade",
+    "title_zh": "按年级浏览",
+    "subtitle_en": "Open your grade to see lesson links from Math Foundations and Mathematical Thinking.",
+    "subtitle_zh": "选择年级，查看「数学基础」与「数学思维」中为你准备的主题链接。",
+    "hub_file": "math/by-grade.html",
+    "hub_slug": "by-grade"
+  },
+  "chapters": {
+    "foundations-trigonometry": {
+      "title_en": "Trigonometry",
+      "title_zh": "三角函数",
+      "hub": "foundations",
+      "order": 40
+    }
+  },
   "grades": {
     "11": {
       "title_en": "Grade 11 Mathematics",
       "title_zh": "十一年级数学",
-      "subtitle_en": "Table of contents — each lesson lives on one page shared with Math Foundations.",
-      "subtitle_zh": "主题目录 —— 每节课对应一个页面，与「数学基础」共用同一套内容。",
+      "subtitle_en": "Topics linked from Math Foundations, gathered for Grade 11 study.",
+      "subtitle_zh": "来自「数学基础」的主题链接，方便按十一年级学习。",
       "courses_en": "MCR3U · Functions",
       "courses_zh": "MCR3U · 函数",
       "hub_file": "math/grade-11.html",
@@ -17,12 +33,9 @@
       "file": "math/foundation-angles-and-trigonometric-ratios.html",
       "title_en": "Angles and Trigonometric Ratios",
       "title_zh": "角与三角比",
-      "desc_en": "Standard position, signs in four quadrants, reference and coterminal angles.",
-      "desc_zh": "标准位置角、四象限符号、参考角与同界角。",
       "grades": [11],
       "courses": ["MCR3U"],
-      "strand_en": "Trigonometry",
-      "strand_zh": "三角学",
+      "chapter_id": "foundations-trigonometry",
       "sort": 10
     },
     {
@@ -30,12 +43,9 @@
       "file": "math/foundation-oblique-triangles-and-triangle-laws.html",
       "title_en": "Oblique Triangles and Triangle Laws",
       "title_zh": "斜三角形与三角形定理",
-      "desc_en": "Sine Law, Cosine Law, ASA/AAS/SAS/SSA/SSS, and the ambiguous case.",
-      "desc_zh": "正弦定理、余弦定理、ASA/AAS/SAS/SSA/SSS 与歧义情形。",
       "grades": [11],
       "courses": ["MCR3U"],
-      "strand_en": "Trigonometry",
-      "strand_zh": "三角学",
+      "chapter_id": "foundations-trigonometry",
       "sort": 20
     },
     {
@@ -43,12 +53,9 @@
       "file": "math/foundation-trigonometric-identities.html",
       "title_en": "Trigonometric Identities",
       "title_zh": "三角恒等式",
-      "desc_en": "Fundamental identities, proofs, and quick checks.",
-      "desc_zh": "基本恒等式、证明与快速检验。",
       "grades": [11],
       "courses": ["MCR3U"],
-      "strand_en": "Trigonometry",
-      "strand_zh": "三角学",
+      "chapter_id": "foundations-trigonometry",
       "sort": 30
     }
   ]

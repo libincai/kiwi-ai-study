@@ -106,7 +106,8 @@
     "books/books-foundations.html": { en:"Math Quick Reference Library", zh:"Math Quick Reference Library", parent:"books/index.html" },
     "books/books-advanced.html": { en:"Math Quick Reference Library – Advanced", zh:"Math Quick Reference Library – Advanced", parent:"books/index.html" },
     "books/speedy-playful-math-magic.html": { en:"Where to Buy", zh:"购买渠道", parent:"books/books-speedy.html" },
-    "math/grade-11.html": { en:"Grade 11 Mathematics", zh:"十一年级数学", parent:"math/in-class-learning.html" },
+    "math/by-grade.html": { en:"Math by Grade", zh:"按年级浏览", parent:"math/index.html" },
+    "math/grade-11.html": { en:"Grade 11 Mathematics", zh:"十一年级数学", parent:"math/by-grade.html" },
   };
 
   function resolvePageKey(pathname) {
