@@ -237,8 +237,40 @@
       "destination": "/math/geometric-strategies.html"
     },
     {
+      "source": "/grade-10",
+      "destination": "/math/grade-10.html"
+    },
+    {
       "source": "/grade-11",
       "destination": "/math/grade-11.html"
+    },
+    {
+      "source": "/grade-3",
+      "destination": "/math/grade-3.html"
+    },
+    {
+      "source": "/grade-4",
+      "destination": "/math/grade-4.html"
+    },
+    {
+      "source": "/grade-5",
+      "destination": "/math/grade-5.html"
+    },
+    {
+      "source": "/grade-6",
+      "destination": "/math/grade-6.html"
+    },
+    {
+      "source": "/grade-7",
+      "destination": "/math/grade-7.html"
+    },
+    {
+      "source": "/grade-8",
+      "destination": "/math/grade-8.html"
+    },
+    {
+      "source": "/grade-9",
+      "destination": "/math/grade-9.html"
     },
     {
       "source": "/in-class-learning",

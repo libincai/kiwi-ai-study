@@ -107,6 +107,14 @@
     "books/books-advanced.html": { en:"Math Quick Reference Library – Advanced", zh:"Math Quick Reference Library – Advanced", parent:"books/index.html" },
     "books/speedy-playful-math-magic.html": { en:"Where to Buy", zh:"购买渠道", parent:"books/books-speedy.html" },
     "math/by-grade.html": { en:"Math by Grade", zh:"按年级浏览", parent:"math/index.html" },
+    "math/grade-3.html": { en:"Grade 3 Mathematics", zh:"三年级数学", parent:"math/by-grade.html" },
+    "math/grade-4.html": { en:"Grade 4 Mathematics", zh:"四年级数学", parent:"math/by-grade.html" },
+    "math/grade-5.html": { en:"Grade 5 Mathematics", zh:"五年级数学", parent:"math/by-grade.html" },
+    "math/grade-6.html": { en:"Grade 6 Mathematics", zh:"六年级数学", parent:"math/by-grade.html" },
+    "math/grade-7.html": { en:"Grade 7 Mathematics", zh:"七年级数学", parent:"math/by-grade.html" },
+    "math/grade-8.html": { en:"Grade 8 Mathematics", zh:"八年级数学", parent:"math/by-grade.html" },
+    "math/grade-9.html": { en:"Grade 9 Mathematics", zh:"九年级数学", parent:"math/by-grade.html" },
+    "math/grade-10.html": { en:"Grade 10 Mathematics", zh:"十年级数学", parent:"math/by-grade.html" },
     "math/grade-11.html": { en:"Grade 11 Mathematics", zh:"十一年级数学", parent:"math/by-grade.html" },
   };
 

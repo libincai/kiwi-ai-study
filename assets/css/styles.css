@@ -5700,16 +5700,113 @@ body.kiwi-search-open .site-header {
   padding: 0;
 }
 
+/* Grade hub (math/grade-N.html): two-column chapter cards on desktop */
+.kiwi-grade-hub .kiwi-grade-hub-main {
+  max-width: 1080px;
+}
+
+.kiwi-grade-hub .kiwi-book-toc-section {
+  margin-top: 32px;
+  margin-bottom: 48px;
+}
+
+.kiwi-grade-hub .kiwi-book-toc {
+  max-width: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .kiwi-grade-hub .kiwi-book-toc {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+  }
+}
+
+.kiwi-grade-hub .kiwi-book-chapter {
+  margin: 0;
+  padding: 18px 20px 16px;
+  border: 1px solid #dce6f1;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(24, 55, 95, 0.05);
+}
+
+.kiwi-grade-hub .kiwi-book-chapter-head {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin: 0 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8eef5;
+}
+
+.kiwi-grade-hub .kiwi-book-chapter-number {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #eaf4ff;
+  color: #1768b2;
+  font-weight: 900;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.kiwi-grade-hub .kiwi-book-chapter-title {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  align-self: center;
+}
+
+.kiwi-grade-hub .kiwi-book-topic-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kiwi-grade-hub .kiwi-book-topic-row {
+  padding: 9px 0;
+  margin: 0;
+  border-bottom: 1px solid #f1f5fa;
+  gap: 8px 12px;
+}
+
+.kiwi-grade-hub .kiwi-book-topic-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.kiwi-grade-hub .kiwi-book-topic-list a {
+  color: #1768b2;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.kiwi-grade-hub .kiwi-book-topic-list a:hover {
+  text-decoration: underline;
+  color: #10548f;
+}
+
 .kiwi-book-chapter {
   margin: 0 0 28px;
 }
 
 .kiwi-book-chapter-title {
-  margin: 0 0 10px;
-  font-size: clamp(20px, 2.2vw, 24px);
-  line-height: 1.25;
-  color: #153d70;
-  font-weight: 800;
+  margin: 0 0 8px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #14264d;
+  font-weight: 400;
+}
+
+.kiwi-book-chapter-title strong {
+  font-weight: 700;
 }
 
 .kiwi-book-topic-list {
@@ -5718,16 +5815,37 @@ body.kiwi-search-open .site-header {
   list-style: decimal;
 }
 
-.kiwi-book-topic-list li {
+.kiwi-book-topic-list li,
+.kiwi-book-topic-list .kiwi-book-topic-row {
   margin: 0 0 8px;
   padding-left: 0.25rem;
   line-height: 1.45;
 }
 
+.kiwi-book-topic-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 10px;
+}
+
+.kiwi-book-topic-courses {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.kiwi-book-topic-courses .kiwi-grade-pill--course {
+  font-size: 11px;
+  vertical-align: baseline;
+}
+
 .kiwi-book-topic-list a {
-  color: #1768b2;
-  font-weight: 700;
-  text-decoration: none;
+  color: #14264d;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 2px;
   font-size: 16px;
 }
 
