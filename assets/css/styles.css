@@ -4248,6 +4248,43 @@ html body main .nf-hero.topic-banner > p:last-child {
   }
 }
 
+/* Math Foundations import pages (foundation-*): match number-families — no card frame on the article column. */
+html body.topic-page main.edu-main > .foundation-level4 .mf-article.mf-chapter {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+@media (min-width: 701px) {
+  html body.edu-page.topic-page main.edu-main {
+    width: min(1240px, calc(100% - 64px)) !important;
+    max-width: 1240px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  html body.edu-page.topic-page main.edu-main > .foundation-level4 {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+@media (min-width: 701px) and (max-width: 1303px) {
+  html body.edu-page.topic-page main.edu-main {
+    width: calc(100% - 48px) !important;
+  }
+}
+@media (max-width: 700px) {
+  html body.edu-page.topic-page main.edu-main {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
 /* Level 4 topic banner: content-driven height on desktop and mobile.
    No clipping, line clamp or fixed height; mobile headings may wrap. */
 html body main .nf-hero.topic-banner,
