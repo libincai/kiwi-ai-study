@@ -4365,6 +4365,23 @@ html body main .nf-hero.topic-banner > p:last-child {
   color: #153d70;
 }
 
+/* Mathematical Thinking (thinking-*): topic title aligns with sidebar like foundation-decimal */
+html body.topic-page .kiwi-learning-layout {
+  align-items: start;
+}
+html body.topic-page .kiwi-topic-article > h1.kiwi-current-topic {
+  font-size: clamp(23px, 2.6vw, 30px);
+  line-height: 1.25;
+  color: #153d70;
+  border-bottom: 2px solid #e5f2ff;
+  padding-bottom: 12px;
+  margin: 0 0 22px;
+}
+html body.topic-page .kiwi-topic-article > .nf-section:first-of-type,
+html body.topic-page .kiwi-topic-article > .word-topic:first-of-type {
+  margin-top: 0;
+}
+
 /* Math Foundations import pages (foundation-*): match number-families — no card frame on the article column. */
 html body.topic-page main.edu-main > .foundation-level4 .mf-article.mf-chapter {
   margin: 0 !important;

@@ -3,10 +3,10 @@
 <!--
   Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
 
-  Visual reference: math/number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+  Visual reference: math/foundation-number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
 
   HOW TO USE
-  1. Copy to target path (e.g. math/number-families.html, math/car-journey.html).
+  1. Copy to target path (e.g. math/foundation-number-families.html, math/car-journey.html).
   2. body.topic-page + main.topic-main — no primary nav item active.
   3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
   4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
@@ -61,7 +61,7 @@
 .kiwi-topic-sidebar a:hover,.kiwi-topic-sidebar a:focus-visible{background:#e8f2fc;outline-offset:2px}
 .kiwi-topic-sidebar a[aria-current=page]{background:#dcecff;color:#103c74;font-weight:750;border-left:3px solid #1768b2}
 .kiwi-topic-sidebar .kiwi-sidebar-back{margin-top:12px;padding-top:16px;border-top:1px solid #dce7f3;font-size:13px}
-.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.5vw,31px);line-height:1.25;color:#153d70;margin:2px 0 20px}
+.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.6vw,30px);line-height:1.25;color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}
 .kiwi-topic-article .word-topic{max-width:100%;margin:0}.kiwi-topic-article .lesson-card{max-width:100%}
 @media(max-width:760px){.kiwi-learning-layout{display:block;margin:20px auto}.kiwi-topic-sidebar{position:static;margin-bottom:24px;padding:12px}.kiwi-topic-sidebar h2{margin:2px 8px 6px}.kiwi-topic-sidebar a{padding:9px 12px}.kiwi-current-topic{margin:0 0 16px}}
 </style><style>
@@ -217,7 +217,7 @@
 <nav aria-label="Primary" class="site-nav">
 <a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
 <a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
-<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="../math/index.html">Math Education</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
 <a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
 <a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
 <a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
@@ -243,7 +243,7 @@
 <p class="topic-banner-subtitle" data-en="Explore mathematical concepts, methods, and worked examples." data-zh="探索数的关系、运算方法与实用计算策略。">Explore mathematical concepts, methods, and worked examples.</p>
 </section>
 <!-- LEVEL-4 BODY START -->
-<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a href="rotation-transformation.html" data-en="Rotation Transformation" data-zh="旋转变换">Rotation Transformation</a><a class="active" href="special-right-triangles.html" data-en="Special Right Triangles" data-zh="特殊直角三角形">Special Right Triangles</a><a href="mathematical-thinking.html" data-en="← All Mathematical Thinking" data-zh="← 返回数学思维目录">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h2 class="kiwi-current-topic" data-en="Special Right Triangles" data-zh="Special Right Triangles">Special Right Triangles</h2><section class="nf-section word-topic kiwi-generated-content"><p data-en="You do not need to memorize every special-angle trigonometric value
+<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a href="thinking-rotation-transformation.html" data-en="Rotation Transformation" data-zh="旋转变换">Rotation Transformation</a><a class="active" href="thinking-special-right-triangles.html" data-en="Special Right Triangles" data-zh="特殊直角三角形">Special Right Triangles</a><a href="mathematical-thinking.html" data-en="← All Mathematical Thinking" data-zh="← 返回数学思维目录">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h1 class="kiwi-current-topic" data-en="Special Right Triangles" data-zh="Special Right Triangles">Special Right Triangles</h1><section class="nf-section word-topic kiwi-generated-content"><p data-en="You do not need to memorize every special-angle trigonometric value
 separately. You can derive them from two special right triangles." data-zh="你不必把每个特殊角的三角函数值单独背下来，可以从两种特殊直角三角形推导出来。">You do not need to memorize every special-angle trigonometric value
 separately. You can derive them from two special right triangles.</p><aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">🔗</span></div><p data-en="&lt;strong&gt;Lesson scope:&lt;/strong&gt; &lt;strong&gt;Advanced&lt;/strong&gt; special angles — derive values instead of memorizing, plus quick pattern methods." data-zh="&lt;strong&gt;本课范围：&lt;/strong&gt;&lt;strong&gt;进阶&lt;/strong&gt; 特殊角——推导而少背，以及快速规律法。"><strong>Lesson scope:</strong> <strong>Advanced</strong> special angles — derive values instead of memorizing, plus quick pattern methods.</p><p data-en="&lt;strong&gt;Also see:&lt;/strong&gt; Core 30°–60°–90° and 45°–45°–90° triangle lessons in &lt;a href=&quot;foundation-special-right-triangles.html&quot;&gt;Basic Skills&lt;/a&gt; (Math Foundations)." data-zh="&lt;strong&gt;亦可参阅：&lt;/strong&gt;30°–60°–90° 与 45°–45°–90° 核心内容见数学基础中的 &lt;a href=&quot;foundation-special-right-triangles.html&quot;&gt;基本方法&lt;/a&gt;。"><strong>Also see:</strong> Core 30°–60°–90° and 45°–45°–90° triangle lessons in <a href="foundation-special-right-triangles.html">Basic Skills</a> (Math Foundations).</p></aside><details class="lesson-card" open=""><summary data-en="The 30°–60°–90° Triangle" data-zh="30°–60°–90° 三角形">The 30°–60°–90° Triangle</summary><div class="lesson-card-body"><p data-en="Start with an equilateral triangle whose sides are all 2 units
 long." data-zh="从边长都是 2 的正三角形开始。">Start with an equilateral triangle whose sides are all 2 units

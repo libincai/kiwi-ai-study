@@ -99,7 +99,7 @@
 <nav aria-label="Primary" class="site-nav">
 <a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
 <a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
-<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
 <a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
 <a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
 <a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
@@ -139,7 +139,7 @@ median, and mode.</p>
 <p data-en="Example:" data-zh="示例：">Example:</p>
 <div class="kiwi-example-block kiwi-example-standard">
 <p class="kiwi-single-example" data-en="Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)" data-zh="数据集：{2,4,4,5,6,9,10}（为便于说明已按从小到大排好）">Data Set: {2,4,4,5,6,9,10} (already ordered for convenience)</p></div>
-<aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">🔗</span></div><p data-en="&lt;strong&gt;Lesson scope:&lt;/strong&gt; &lt;strong&gt;Basic&lt;/strong&gt; measures of center — mean, median, and mode." data-zh="&lt;strong&gt;本课范围：&lt;/strong&gt;&lt;strong&gt;基本&lt;/strong&gt; 集中趋势——平均数、中位数与众数。"><strong>Lesson scope:</strong> <strong>Basic</strong> measures of center — mean, median, and mode.</p><p data-en="&lt;strong&gt;Also see:&lt;/strong&gt; Extended reasoning and examples in &lt;a href=&quot;measures-of-center.html&quot;&gt;Advanced Skills&lt;/a&gt; (Mathematical Thinking)." data-zh="&lt;strong&gt;延伸学习：&lt;/strong&gt;拓展推理与例题见数学思维中的 &lt;a href=&quot;measures-of-center.html&quot;&gt;进阶技巧&lt;/a&gt;。"><strong>Also see:</strong> Extended reasoning and examples in <a href="measures-of-center.html">Advanced Skills</a> (Mathematical Thinking).</p></aside><details class="lesson-card"><summary id="mean" data-en="Mean" data-zh="平均数">Mean</summary><div class="lesson-card-content"><p data-en="The mean, commonly called the &lt;strong&gt;average&lt;/strong&gt;, is calculated
+<aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">🔗</span></div><p data-en="&lt;strong&gt;Lesson scope:&lt;/strong&gt; &lt;strong&gt;Basic&lt;/strong&gt; measures of center — mean, median, and mode." data-zh="&lt;strong&gt;本课范围：&lt;/strong&gt;&lt;strong&gt;基本&lt;/strong&gt; 集中趋势——平均数、中位数与众数。"><strong>Lesson scope:</strong> <strong>Basic</strong> measures of center — mean, median, and mode.</p><p data-en="&lt;strong&gt;Also see:&lt;/strong&gt; Extended reasoning and examples in &lt;a href=&quot;thinking-measures-of-center.html&quot;&gt;Advanced Skills&lt;/a&gt; (Mathematical Thinking)." data-zh="&lt;strong&gt;延伸学习：&lt;/strong&gt;拓展推理与例题见数学思维中的 &lt;a href=&quot;thinking-measures-of-center.html&quot;&gt;进阶技巧&lt;/a&gt;。"><strong>Also see:</strong> Extended reasoning and examples in <a href="thinking-measures-of-center.html">Advanced Skills</a> (Mathematical Thinking).</p></aside><details class="lesson-card"><summary id="mean" data-en="Mean" data-zh="平均数">Mean</summary><div class="lesson-card-content"><p data-en="The mean, commonly called the &lt;strong&gt;average&lt;/strong&gt;, is calculated
 by adding up all the values in a data set and then dividing the total by
 the number of values in the set." data-zh="平均数也常称为 &lt;strong&gt;算术平均&lt;/strong&gt;：把数据集中所有数值相加，再除以数值的个数。">The mean, commonly called the <strong>average</strong>, is calculated
 by adding up all the values in a data set and then dividing the total by
@@ -268,7 +268,9 @@ number.</li>
   function init(){
     document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
       var cards=Array.from(article.querySelectorAll('details.lesson-card'));
-      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      if(!cards.length || article.querySelector('.kiwi-accordion-controls'))return;
+      cards.forEach(function(card,i){card.open=i===0;});
+      if(cards.length<2)return;
       var first=cards[0];
       var controls=document.createElement('div');
       controls.className='kiwi-accordion-controls';
@@ -282,7 +284,6 @@ number.</li>
         var expand=button.getAttribute('data-accordion-action')==='expand';
         cards.forEach(function(card){card.open=expand;});
       });
-      cards.forEach(function(card,i){card.open=i===0;});
       function syncLanguage(){
         var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
         controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});

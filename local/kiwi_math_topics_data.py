@@ -72,7 +72,7 @@ def build_topics() -> list[dict]:
     topics.append(
         {
             "id": "recovering-function-rule",
-            "file": "math/recovering-function-rule.html",
+            "file": "math/thinking-recovering-function-rule.html",
             "title_en": "Recovering a Function Rule from Function Notation",
             "title_zh": "从函数记号还原函数规则",
             "grades": [11],
@@ -83,7 +83,7 @@ def build_topics() -> list[dict]:
             "verified_note": "Page cites MCR3U Functions (Ontario 2007 curriculum)",
         }
     )
-    seen.add("math/recovering-function-rule.html")
+    seen.add("math/thinking-recovering-function-rule.html")
 
     # Introductory right-triangle lessons: MPM2D (G10) through MCR3U (G11).
     intro_trig = {

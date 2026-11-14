@@ -41,7 +41,9 @@ ACCORDION_SCRIPT = """<script id="kiwi-accordion-controls-script">
   function init(){
     document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
       var cards=Array.from(article.querySelectorAll('details.lesson-card'));
-      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      if(!cards.length || article.querySelector('.kiwi-accordion-controls'))return;
+      cards.forEach(function(card,i){card.open=i===0;});
+      if(cards.length<2)return;
       var first=cards[0];
       var controls=document.createElement('div');
       controls.className='kiwi-accordion-controls';
@@ -55,7 +57,6 @@ ACCORDION_SCRIPT = """<script id="kiwi-accordion-controls-script">
         var expand=button.getAttribute('data-accordion-action')==='expand';
         cards.forEach(function(card){card.open=expand;});
       });
-      cards.forEach(function(card,i){card.open=i===0;});
       function syncLanguage(){
         var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
         controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});

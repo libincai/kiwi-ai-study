@@ -112,7 +112,7 @@
 <nav aria-label="Primary" class="site-nav">
 <a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
 <a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
-<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
 <a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
 <a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
 <a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
@@ -228,7 +228,9 @@
   function init(){
     document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
       var cards=Array.from(article.querySelectorAll('details.lesson-card'));
-      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      if(!cards.length || article.querySelector('.kiwi-accordion-controls'))return;
+      cards.forEach(function(card,i){card.open=i===0;});
+      if(cards.length<2)return;
       var first=cards[0];
       var controls=document.createElement('div');
       controls.className='kiwi-accordion-controls';
@@ -242,7 +244,6 @@
         var expand=button.getAttribute('data-accordion-action')==='expand';
         cards.forEach(function(card){card.open=expand;});
       });
-      cards.forEach(function(card,i){card.open=i===0;});
       function syncLanguage(){
         var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
         controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});

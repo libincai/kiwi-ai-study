@@ -38,7 +38,7 @@ def build_panel(p1_en: str, p1_zh: str, p2_en: str, p2_zh: str) -> str:
 PAIRS = [
     {
         "foundation": "foundation-unit-conversions-and-rates.html",
-        "advanced": "unit-conversions-and-rates.html",
+        "advanced": "thinking-unit-conversions-and-rates.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> ratios, rates, unit rates, and introductory unit conversions with conversion factors.",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 比、比率、单位率，以及用换算因数的入门单位换算。",
         "basic_also_en": "<strong>Also see:</strong> Multi-step <strong>dimensional analysis</strong> and advanced conversion chains in <a href=\"unit-conversions-and-rates.html\">Advanced Skills</a> (Mathematical Thinking).",
@@ -50,7 +50,7 @@ PAIRS = [
     },
     {
         "foundation": "foundation-special-right-triangles.html",
-        "advanced": "special-right-triangles.html",
+        "advanced": "thinking-special-right-triangles.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> 30°–60°–90° and 45°–45°–90° triangles, missing sides and angles, and introductory applications.",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 30°–60°–90° 与 45°–45°–90° 三角形、求边求角及入门应用。",
         "basic_also_en": "<strong>Also see:</strong> Deriving special-angle values and quick pattern tricks in <a href=\"special-right-triangles.html\">Advanced Skills</a> (Mathematical Thinking).",
@@ -62,7 +62,7 @@ PAIRS = [
     },
     {
         "foundation": "foundation-number-strategies.html",
-        "advanced": "number-strategies.html",
+        "advanced": "thinking-number-strategies.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> number strategies — properties of operations, factoring, friendly multiples, and pairing tricks.",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 数字策略——运算性质、因式分解、凑整与配对窍门。",
         "basic_also_en": "<strong>Also see:</strong> Factor grouping, friendly-middle, and compensation strategies in <a href=\"number-strategies.html\">Advanced Skills</a> (Mathematical Thinking).",
@@ -74,7 +74,7 @@ PAIRS = [
     },
     {
         "foundation": "foundation-algebraic-strategies.html",
-        "advanced": "algebraic-strategies.html",
+        "advanced": "thinking-algebraic-strategies.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> algebraic strategies — simplifying expressions, substitutions, and factoring identities.",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 代数策略——化简式子、代入与因式分解恒等式。",
         "basic_also_en": "<strong>Also see:</strong> Infinity limits, square-root estimation, and iterative correction in <a href=\"algebraic-strategies.html\">Advanced Skills</a> (Mathematical Thinking).",
@@ -86,7 +86,7 @@ PAIRS = [
     },
     {
         "foundation": "foundation-geometric-strategies.html",
-        "advanced": "geometric-strategies.html",
+        "advanced": "thinking-geometric-strategies.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> geometric thinking — area ideas and visual problem-solving building blocks (Math Foundations track).",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 几何思维——面积观念与数形入门（数学基础路线）。",
         "basic_also_en": "<strong>Also see:</strong> Triangle-counting and polygon-area strategies in <a href=\"geometric-strategies.html\">Advanced Skills</a> (Mathematical Thinking).",
@@ -98,7 +98,7 @@ PAIRS = [
     },
     {
         "foundation": "foundation-why-simplified-calculation.html",
-        "advanced": "why-simplified-calculation.html",
+        "advanced": "thinking-why-simplified-calculation.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> introduction to simplified calculation — reordering numbers using operation properties, with a starter example.",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 简化计算入门——用运算性质重新组合数字，含入门例题。",
         "basic_also_en": "<strong>Also see:</strong> The same conceptual overview with links to strategy lessons in <a href=\"why-simplified-calculation.html\">Advanced Skills</a> (Mathematical Thinking).",
@@ -110,7 +110,7 @@ PAIRS = [
     },
     {
         "foundation": "foundation-word-problems.html",
-        "advanced": "word-problems.html",
+        "advanced": "thinking-word-problems.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> word problems — a structured read–plan–solve–verify approach.",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 应用题——读题、计划、求解、检验的结构化方法。",
         "basic_also_en": "<strong>Also see:</strong> Extended examples and strategy depth in <a href=\"word-problems.html\">Advanced Skills</a> (Mathematical Thinking).",
@@ -122,7 +122,7 @@ PAIRS = [
     },
     {
         "foundation": "foundation-data-and-graphs.html",
-        "advanced": "data-and-graphs.html",
+        "advanced": "thinking-data-and-graphs.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> data and graphs — data, frequency, range, outliers, and bar, line, and histogram graphs.",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 数据与图表——数据、频数、极差、异常值及条形图、折线图、直方图。",
         "basic_also_en": "<strong>Also see:</strong> Mathematical Thinking extensions on the same topic in <a href=\"data-and-graphs.html\">Advanced Skills</a>.",
@@ -134,7 +134,7 @@ PAIRS = [
     },
     {
         "foundation": "foundation-measures-of-center.html",
-        "advanced": "measures-of-center.html",
+        "advanced": "thinking-measures-of-center.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> measures of center — mean, median, and mode.",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 集中趋势——平均数、中位数与众数。",
         "basic_also_en": "<strong>Also see:</strong> Extended reasoning and examples in <a href=\"measures-of-center.html\">Advanced Skills</a> (Mathematical Thinking).",
@@ -146,7 +146,7 @@ PAIRS = [
     },
     {
         "foundation": "foundation-chance-and-probability.html",
-        "advanced": "chance-and-probability.html",
+        "advanced": "thinking-chance-and-probability.html",
         "basic_scope_en": "<strong>Lesson scope:</strong> <strong>Basic</strong> probability — outcomes, events, sample space, theoretical and experimental probability.",
         "basic_scope_zh": "<strong>本课范围：</strong><strong>基本</strong> 概率——结果、事件、样本空间、理论概率与实验概率。",
         "basic_also_en": "<strong>Also see:</strong> Independent and dependent events and extended reasoning in <a href=\"chance-and-probability.html\">Advanced Skills</a> (Mathematical Thinking).",

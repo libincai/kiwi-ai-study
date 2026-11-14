@@ -18,8 +18,11 @@
 <link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
 <style>
 .topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
-.nf-section{margin:30px 0}
-.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-section{margin:0 0 30px}
+.nf-section h2{font-size:22px;color:#174a82;margin:30px 0 12px}
+.mf-article>h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}
+.foundation-level4 .mf-article>.nf-section:first-of-type{margin-top:0}
+.foundation-level4 .mf-article>.nf-section:first-of-type .nf-lead{margin-top:0}
 .nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
 .nf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .nf-card{display:grid;grid-template-columns:minmax(0,1fr) 120px;grid-template-areas:"main img" "history history";gap:12px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 5px 16px rgba(24,55,95,.045);min-width:0}
@@ -39,20 +42,28 @@
 .nf-note{margin-top:16px;padding:13px 16px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:13px;line-height:1.6}
 .nf-footer-note{font-size:12px;color:#718098;margin-top:14px}
 @media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}.nf-card{grid-template-columns:minmax(0,1fr) 96px;padding:13px}.nf-card img{height:108px}}
-  .nf-lesson-sidebar nav a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
+.mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
+.mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
+@media(max-width:850px){.mf-layout{grid-template-columns:1fr}}
 </style>
-<style>.nf-lesson-layout{display:grid;grid-template-columns:255px minmax(0,1fr);gap:24px;align-items:start;margin-top:26px}.nf-lesson-sidebar{position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto;background:#f7faff;border:1px solid #dbe7f5;border-radius:14px;padding:12px}.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:4px}.nf-lesson-sidebar a{font-size:14px;color:#174879;padding:10px 12px;border-radius:8px;text-decoration:none;line-height:1.4}.nf-lesson-sidebar a.active,.nf-lesson-sidebar a:hover{background:#e8f2ff;color:#0756ba;font-weight:700}.nf-lesson-body{min-width:0}.nf-lesson-crumb{font-size:14px;margin:18px 0 12px;color:#536b85}.nf-lesson-crumb a{color:#174879;text-decoration:none}@media(max-width:850px){.nf-lesson-layout{grid-template-columns:1fr}.nf-lesson-sidebar{position:static;max-height:230px}}</style><style>
+<style>
+.foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:400}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
+</style><style>
 /* Level 4 sidebar standard — match Mathematical Thinking / GCF */
-.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
-.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
-.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
-.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
-.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:400;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar,.mf-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:400;border-left:3px solid #0865c9;padding-left:10px}
 .kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
-@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar{position:static;max-height:none;width:100%}}
+</style>
+<style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
+.foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
+.foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
 </style>
 </head>
-<body class="topic-page">
+<body class="edu-page topic-page">
 <header class="site-header">
 <div class="brand-lockup">
 <a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
@@ -68,7 +79,7 @@
 <nav aria-label="Primary" class="site-nav">
 <a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
 <a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
-<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="../math/index.html">Math Education</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
 <a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
 <a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
 <a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
@@ -84,8 +95,8 @@
 </span>
 </nav>
 </header>
-<main data-pagefind-body="" data-pagefind-filter="lang:en"  class="topic-main">
-<section aria-label="Page introduction" class="nf-hero topic-banner">
+<main data-pagefind-body="" data-pagefind-filter="lang:en"  class="edu-main">
+<section aria-label="Page introduction" class="nf-hero topic-banner foundation-topic-banner">
 <p class="topic-banner-kicker" data-en="MATH FOUNDATIONS" data-zh="数学基础">MATH FOUNDATIONS</p>
 <h1 data-en="Number Skills &amp; Operations" data-zh="数的技能与运算">Number Skills &amp; Operations</h1>
 <p class="topic-banner-subtitle" data-en="Explore number families, operations, and essential number skills." data-zh="探索数的分类、运算以及重要的数感与计算技能。">Explore number families, operations, and essential number skills.</p>
@@ -101,11 +112,11 @@
   </p>
 </div>
 <!-- kiwi-math-catalog:end -->
-<div class="nf-lesson-layout"><aside aria-label="Number Skills &amp; Operations topics" class="nf-lesson-sidebar"><nav><a aria-current="page" class="active" href="number-families.html" data-en="Number Families" data-zh="数的家族">Number Families</a><a href="foundation-decimal.html" data-en="Decimal" data-zh="小数">Decimal</a><a href="foundation-decimal-to-fraction.html" data-en="Decimal to Fraction" data-zh="小数化为分数">Decimal to Fraction</a><a href="foundation-division-rules-2-9.html" data-en="Division Rules (2–9)" data-zh="整除规则（2–9）">Division Rules (2–9)</a><a href="foundation-greatest-common-factor-gcf.html" data-en="Greatest Common Factor (GCF)" data-zh="最大公因数（GCF）">Greatest Common Factor (GCF)</a><a href="foundation-math-operation-signs-and.html" data-en="Math Operation Signs (+ and −)" data-zh="运算符号（加与减）">Math Operation Signs (+ and −)</a><a href="foundation-result-signs-and.html" data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</a><a href="foundation-unit-conversions-and-rates.html" data-en="Unit Conversions and Rates" data-zh="单位换算与比率">Unit Conversions and Rates</a><a href="foundation-exponents.html" data-en="Exponents" data-zh="指数">Exponents</a><a href="foundation-roots.html" data-en="Roots" data-zh="根式">Roots</a><a href="foundation-rational-exponents.html" data-en="Rational Exponents" data-zh="有理指数">Rational Exponents</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><div class="nf-lesson-body">
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a aria-current="page" class="mf-current" href="foundation-number-families.html" data-en="Number Families" data-zh="数的家族">Number Families</a><a href="foundation-decimal.html" data-en="Decimal" data-zh="小数">Decimal</a><a href="foundation-decimal-to-fraction.html" data-en="Decimal to Fraction" data-zh="小数化为分数">Decimal to Fraction</a><a href="foundation-division-rules-2-9.html" data-en="Division Rules (2–9)" data-zh="整除规则（2–9）">Division Rules (2–9)</a><a href="foundation-greatest-common-factor-gcf.html" data-en="Greatest Common Factor (GCF)" data-zh="最大公因数（GCF）">Greatest Common Factor (GCF)</a><a href="foundation-math-operation-signs-and.html" data-en="Math Operation Signs (+ and −)" data-zh="运算符号（加与减）">Math Operation Signs (+ and −)</a><a href="foundation-result-signs-and.html" data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</a><a href="foundation-unit-conversions-and-rates.html" data-en="Unit Conversions and Rates" data-zh="单位换算与比率">Unit Conversions and Rates</a><a href="foundation-exponents.html" data-en="Exponents" data-zh="指数">Exponents</a><a href="foundation-roots.html" data-en="Roots" data-zh="根式">Roots</a><a href="foundation-rational-exponents.html" data-en="Rational Exponents" data-zh="有理指数">Rational Exponents</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter">
 <!-- LEVEL-4 BODY START -->
-<section class="nf-section">
-<h2 data-en="Meet the Number Families" data-zh="认识不同的数">Meet the Number Families</h2>
-<p class="nf-lead" data-en="Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line." data-zh="从日常计数的数字开始，再认识表示部分、零以下数值，以及超越普通数轴的数。">Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line.</p>
+<h1 data-en="Number Families" data-zh="数的家族">Number Families</h1>
+<section class="nf-section" aria-labelledby="nf-families-intro">
+<p class="nf-lead" id="nf-families-intro" data-en="Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line." data-zh="从日常计数的数字开始，再认识表示部分、零以下数值，以及超越普通数轴的数。">Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line.</p>
 <div class="nf-grid">
 <article class="nf-card">
 <div class="nf-card-main">
@@ -211,7 +222,7 @@
 <p class="nf-footer-note" data-en="Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses." data-zh="提示：有些教材会把 0 也归入自然数。学习时请以老师或教材采用的定义为准。">Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses.</p>
 </section>
 <!-- LEVEL-4 BODY END -->
-</div></div></main>
+</article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>

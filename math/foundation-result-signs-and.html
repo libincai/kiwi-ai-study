@@ -98,7 +98,7 @@
 <nav aria-label="Primary" class="site-nav">
 <a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
 <a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
-<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
 <a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
 <a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
 <a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
@@ -128,7 +128,7 @@
 <!-- kiwi-math-catalog:end -->
 <!-- LEVEL-3 BODY START -->
 <!-- LEVEL-3 BODY END -->
-<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a data-en="Number Families" data-zh="数的家族" href="number-families.html">Number Families</a><a href="foundation-decimal.html" data-en="Decimal" data-zh="小数">Decimal</a><a href="foundation-decimal-to-fraction.html" data-en="Decimal to Fraction" data-zh="小数化为分数">Decimal to Fraction</a><a href="foundation-division-rules-2-9.html" data-en="Division Rules (2–9)" data-zh="整除规则（2–9）">Division Rules (2–9)</a><a href="foundation-greatest-common-factor-gcf.html" data-en="Greatest Common Factor (GCF)" data-zh="最大公因数（GCF）">Greatest Common Factor (GCF)</a><a href="foundation-math-operation-signs-and.html" data-en="Math Operation Signs (+ and −)" data-zh="运算符号（加与减）">Math Operation Signs (+ and −)</a><a aria-current="page" class="mf-current" href="foundation-result-signs-and.html" data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</a><a href="foundation-unit-conversions-and-rates.html" data-en="Unit Conversions and Rates" data-zh="单位换算与比率">Unit Conversions and Rates</a><a href="foundation-exponents.html" data-en="Exponents" data-zh="指数">Exponents</a><a href="foundation-roots.html" data-en="Roots" data-zh="根式">Roots</a><a href="foundation-rational-exponents.html" data-en="Rational Exponents" data-zh="有理指数">Rational Exponents</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</h1>
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a data-en="Number Families" data-zh="数的家族" href="foundation-number-families.html">Number Families</a><a href="foundation-decimal.html" data-en="Decimal" data-zh="小数">Decimal</a><a href="foundation-decimal-to-fraction.html" data-en="Decimal to Fraction" data-zh="小数化为分数">Decimal to Fraction</a><a href="foundation-division-rules-2-9.html" data-en="Division Rules (2–9)" data-zh="整除规则（2–9）">Division Rules (2–9)</a><a href="foundation-greatest-common-factor-gcf.html" data-en="Greatest Common Factor (GCF)" data-zh="最大公因数（GCF）">Greatest Common Factor (GCF)</a><a href="foundation-math-operation-signs-and.html" data-en="Math Operation Signs (+ and −)" data-zh="运算符号（加与减）">Math Operation Signs (+ and −)</a><a aria-current="page" class="mf-current" href="foundation-result-signs-and.html" data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</a><a href="foundation-unit-conversions-and-rates.html" data-en="Unit Conversions and Rates" data-zh="单位换算与比率">Unit Conversions and Rates</a><a href="foundation-exponents.html" data-en="Exponents" data-zh="指数">Exponents</a><a href="foundation-roots.html" data-en="Roots" data-zh="根式">Roots</a><a href="foundation-rational-exponents.html" data-en="Rational Exponents" data-zh="有理指数">Rational Exponents</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</h1>
 <p data-en="When multiplying or dividing:" data-zh="做乘法或除法时：">When multiplying or dividing:</p>
 <ul>
 <li data-en="Same signs → Positive (+)" data-zh="同号 → 正（+）">Same signs → Positive (+)</li>
@@ -274,7 +274,9 @@ negative.</strong></th>
   function init(){
     document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
       var cards=Array.from(article.querySelectorAll('details.lesson-card'));
-      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      if(!cards.length || article.querySelector('.kiwi-accordion-controls'))return;
+      cards.forEach(function(card,i){card.open=i===0;});
+      if(cards.length<2)return;
       var first=cards[0];
       var controls=document.createElement('div');
       controls.className='kiwi-accordion-controls';
@@ -288,7 +290,6 @@ negative.</strong></th>
         var expand=button.getAttribute('data-accordion-action')==='expand';
         cards.forEach(function(card){card.open=expand;});
       });
-      cards.forEach(function(card,i){card.open=i===0;});
       function syncLanguage(){
         var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
         controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});

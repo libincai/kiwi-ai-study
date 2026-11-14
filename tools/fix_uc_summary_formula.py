@@ -2,7 +2,7 @@
 import re
 from pathlib import Path
 
-p = Path(__file__).resolve().parents[1] / "math" / "unit-conversions-and-rates.html"
+p = Path(__file__).resolve().parents[1] / "math" / "thinking-unit-conversions-and-rates.html"
 t = p.read_text(encoding="utf-8")
 pat = (
     r"</ul><div class=\"kiwi-formula-row kiwi-math-block\" "

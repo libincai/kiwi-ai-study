@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGE = ROOT / "math" / "mental-squaring-and-square-rooting.html"
+PAGE = ROOT / "math" / "thinking-mental-squaring-and-square-rooting.html"
 
 
 def answers_to_follows(html: str) -> str:

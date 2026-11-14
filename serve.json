@@ -1,28 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/algebraic-strategies",
-      "destination": "/math/algebraic-strategies.html"
-    },
-    {
       "source": "/by-grade",
       "destination": "/math/by-grade.html"
     },
     {
-      "source": "/car-journey-advanced",
-      "destination": "/math/car-journey-advanced.html"
-    },
-    {
       "source": "/car-journey",
       "destination": "/math/car-journey.html"
-    },
-    {
-      "source": "/chance-and-probability",
-      "destination": "/math/chance-and-probability.html"
-    },
-    {
-      "source": "/data-and-graphs",
-      "destination": "/math/data-and-graphs.html"
     },
     {
       "source": "/foundation-algebra-language-and-patterns",
@@ -107,6 +91,10 @@
     {
       "source": "/foundation-measures-of-center",
       "destination": "/math/foundation-measures-of-center.html"
+    },
+    {
+      "source": "/foundation-number-families",
+      "destination": "/math/foundation-number-families.html"
     },
     {
       "source": "/foundation-number-strategies",
@@ -229,14 +217,6 @@
       "destination": "/math/foundation-word-problems.html"
     },
     {
-      "source": "/gcf",
-      "destination": "/math/gcf.html"
-    },
-    {
-      "source": "/geometric-strategies",
-      "destination": "/math/geometric-strategies.html"
-    },
-    {
       "source": "/grade-10",
       "destination": "/math/grade-10.html"
     },
@@ -293,56 +273,76 @@
       "destination": "/math/mathematical-thinking.html"
     },
     {
-      "source": "/measures-of-center",
-      "destination": "/math/measures-of-center.html"
-    },
-    {
-      "source": "/mental-squaring-and-square-rooting",
-      "destination": "/math/mental-squaring-and-square-rooting.html"
-    },
-    {
-      "source": "/number-families",
-      "destination": "/math/number-families.html"
-    },
-    {
-      "source": "/number-shape-thinking",
-      "destination": "/math/number-shape-thinking.html"
-    },
-    {
-      "source": "/number-strategies",
-      "destination": "/math/number-strategies.html"
-    },
-    {
-      "source": "/recovering-function-rule",
-      "destination": "/math/recovering-function-rule.html"
-    },
-    {
-      "source": "/rotation-transformation",
-      "destination": "/math/rotation-transformation.html"
-    },
-    {
       "source": "/skateboard-ramp",
       "destination": "/math/skateboard-ramp.html"
     },
     {
-      "source": "/special-right-triangles",
-      "destination": "/math/special-right-triangles.html"
+      "source": "/thinking-algebraic-strategies",
+      "destination": "/math/thinking-algebraic-strategies.html"
     },
     {
-      "source": "/unit-conversions-and-rates",
-      "destination": "/math/unit-conversions-and-rates.html"
+      "source": "/thinking-car-journey-advanced",
+      "destination": "/math/thinking-car-journey-advanced.html"
+    },
+    {
+      "source": "/thinking-chance-and-probability",
+      "destination": "/math/thinking-chance-and-probability.html"
+    },
+    {
+      "source": "/thinking-data-and-graphs",
+      "destination": "/math/thinking-data-and-graphs.html"
+    },
+    {
+      "source": "/thinking-geometric-strategies",
+      "destination": "/math/thinking-geometric-strategies.html"
+    },
+    {
+      "source": "/thinking-greatest-common-factor-gcf",
+      "destination": "/math/thinking-greatest-common-factor-gcf.html"
+    },
+    {
+      "source": "/thinking-measures-of-center",
+      "destination": "/math/thinking-measures-of-center.html"
+    },
+    {
+      "source": "/thinking-mental-squaring-and-square-rooting",
+      "destination": "/math/thinking-mental-squaring-and-square-rooting.html"
+    },
+    {
+      "source": "/thinking-number-shape-thinking",
+      "destination": "/math/thinking-number-shape-thinking.html"
+    },
+    {
+      "source": "/thinking-number-strategies",
+      "destination": "/math/thinking-number-strategies.html"
+    },
+    {
+      "source": "/thinking-recovering-function-rule",
+      "destination": "/math/thinking-recovering-function-rule.html"
+    },
+    {
+      "source": "/thinking-rotation-transformation",
+      "destination": "/math/thinking-rotation-transformation.html"
+    },
+    {
+      "source": "/thinking-special-right-triangles",
+      "destination": "/math/thinking-special-right-triangles.html"
+    },
+    {
+      "source": "/thinking-unit-conversions-and-rates",
+      "destination": "/math/thinking-unit-conversions-and-rates.html"
+    },
+    {
+      "source": "/thinking-why-simplified-calculation",
+      "destination": "/math/thinking-why-simplified-calculation.html"
+    },
+    {
+      "source": "/thinking-word-problems",
+      "destination": "/math/thinking-word-problems.html"
     },
     {
       "source": "/visual-math-patterns",
       "destination": "/math/visual-math-patterns.html"
-    },
-    {
-      "source": "/why-simplified-calculation",
-      "destination": "/math/why-simplified-calculation.html"
-    },
-    {
-      "source": "/word-problems",
-      "destination": "/math/word-problems.html"
     },
     {
       "source": "/episode-01",
@@ -423,6 +423,74 @@
     {
       "source": "/books",
       "destination": "/books/index.html"
+    },
+    {
+      "source": "/number-families",
+      "destination": "/math/foundation-number-families.html"
+    },
+    {
+      "source": "/gcf",
+      "destination": "/math/thinking-greatest-common-factor-gcf.html"
+    },
+    {
+      "source": "/unit-conversions-and-rates",
+      "destination": "/math/thinking-unit-conversions-and-rates.html"
+    },
+    {
+      "source": "/mental-squaring-and-square-rooting",
+      "destination": "/math/thinking-mental-squaring-and-square-rooting.html"
+    },
+    {
+      "source": "/recovering-function-rule",
+      "destination": "/math/thinking-recovering-function-rule.html"
+    },
+    {
+      "source": "/car-journey-advanced",
+      "destination": "/math/thinking-car-journey-advanced.html"
+    },
+    {
+      "source": "/rotation-transformation",
+      "destination": "/math/thinking-rotation-transformation.html"
+    },
+    {
+      "source": "/special-right-triangles",
+      "destination": "/math/thinking-special-right-triangles.html"
+    },
+    {
+      "source": "/data-and-graphs",
+      "destination": "/math/thinking-data-and-graphs.html"
+    },
+    {
+      "source": "/measures-of-center",
+      "destination": "/math/thinking-measures-of-center.html"
+    },
+    {
+      "source": "/chance-and-probability",
+      "destination": "/math/thinking-chance-and-probability.html"
+    },
+    {
+      "source": "/why-simplified-calculation",
+      "destination": "/math/thinking-why-simplified-calculation.html"
+    },
+    {
+      "source": "/number-strategies",
+      "destination": "/math/thinking-number-strategies.html"
+    },
+    {
+      "source": "/algebraic-strategies",
+      "destination": "/math/thinking-algebraic-strategies.html"
+    },
+    {
+      "source": "/geometric-strategies",
+      "destination": "/math/thinking-geometric-strategies.html"
+    },
+    {
+      "source": "/number-shape-thinking",
+      "destination": "/math/thinking-number-shape-thinking.html"
+    },
+    {
+      "source": "/word-problems",
+      "destination": "/math/thinking-word-problems.html"
     }
   ]
 }

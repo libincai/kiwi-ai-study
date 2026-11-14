@@ -9,6 +9,28 @@ OUT = ROOT / "serve.json"
 
 SKIP_MATH = {"math-foundations-content"}
 
+# Old clean URLs that should keep working after a file rename.
+LEGACY_SLUG_ALIASES: dict[str, str] = {
+    "number-families": "foundation-number-families",
+    # Mathematical Thinking track (unprefixed slugs before thinking-* rename)
+    "gcf": "thinking-greatest-common-factor-gcf",
+    "unit-conversions-and-rates": "thinking-unit-conversions-and-rates",
+    "mental-squaring-and-square-rooting": "thinking-mental-squaring-and-square-rooting",
+    "recovering-function-rule": "thinking-recovering-function-rule",
+    "car-journey-advanced": "thinking-car-journey-advanced",
+    "rotation-transformation": "thinking-rotation-transformation",
+    "special-right-triangles": "thinking-special-right-triangles",
+    "data-and-graphs": "thinking-data-and-graphs",
+    "measures-of-center": "thinking-measures-of-center",
+    "chance-and-probability": "thinking-chance-and-probability",
+    "why-simplified-calculation": "thinking-why-simplified-calculation",
+    "number-strategies": "thinking-number-strategies",
+    "algebraic-strategies": "thinking-algebraic-strategies",
+    "geometric-strategies": "thinking-geometric-strategies",
+    "number-shape-thinking": "thinking-number-shape-thinking",
+    "word-problems": "thinking-word-problems",
+}
+
 
 def main() -> None:
     rewrites: list[dict[str, str]] = []
@@ -32,6 +54,16 @@ def main() -> None:
     for section in ("about", "contact", "books"):
         if (ROOT / section / "index.html").is_file():
             rewrites.append({"source": f"/{section}", "destination": f"/{section}/index.html"})
+
+    for legacy_slug, target_slug in LEGACY_SLUG_ALIASES.items():
+        target = ROOT / "math" / f"{target_slug}.html"
+        if target.is_file():
+            rewrites.append(
+                {
+                    "source": f"/{legacy_slug}",
+                    "destination": f"/math/{target.name}",
+                }
+            )
 
     payload = {"rewrites": rewrites}
     OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")

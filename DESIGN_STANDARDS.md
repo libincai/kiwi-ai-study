@@ -278,7 +278,7 @@ Reference implementations: `math/math-foundations.html`, `math/math-real-life.ht
 
 File: `templates/level-4-topic.html`
 
-Reference implementation: **`math/number-families.html`**. Use for topic/detail/leaf pages (Level 4 in §5): gradient topic banner, not the Level 2 blue-gold compact banner.
+Reference implementation: **`math/foundation-number-families.html`**. Use for topic/detail/leaf pages (Level 4 in §5): gradient topic banner, not the Level 2 blue-gold compact banner.
 
 | Shell (fixed in template) | Per page |
 |---|---|
@@ -582,7 +582,7 @@ Learning pages must read like polished textbook/web articles, not line-by-line s
 
 ## Canonical inner leaf-page banner standard — Number Families
 
-The **Number Families** banner (`math/number-families.html`) is the single visual source of truth for every deepest-level / last-page banner across the website. New or revised leaf pages must reuse the shared `.topic-banner` component in `assets/css/styles.css`; do not invent page-specific banner dimensions or typography.
+The **Number Families** banner (`math/foundation-number-families.html`) is the single visual source of truth for every deepest-level / last-page banner across the website. New or revised leaf pages must reuse the shared `.topic-banner` component in `assets/css/styles.css`; do not invent page-specific banner dimensions or typography.
 
 Required shared structure:
 - One text-only banner with a category kicker, one H1 title, and one short subtitle.
@@ -615,7 +615,7 @@ Do not alter page breadcrumbs, article content, images, image positions, bottom 
 
 ## Canonical deepest-level page banner standard
 
-**Source of truth:** `math/number-families.html` — the approved Number Families banner. Every deepest-level/detail page must reuse this exact shared component. Do not create a page-specific variation.
+**Source of truth:** `math/foundation-number-families.html` — the approved Number Families banner. Every deepest-level/detail page must reuse this exact shared component. Do not create a page-specific variation.
 
 ### Required HTML structure
 
@@ -661,7 +661,7 @@ Do not alter page breadcrumbs, article content, images, image positions, bottom 
 2. Reuse the shared `nf-hero topic-banner` markup and the canonical CSS in `assets/css/styles.css`.
 3. Replace only the category kicker, page title and short subtitle.
 4. Keep all existing page content, images, breadcrumbs and navigation intact.
-5. Check desktop and mobile rendering against `math/number-families.html` before publishing.
+5. Check desktop and mobile rendering against `math/foundation-number-families.html` before publishing.
 
 The canonical CSS is maintained once in `assets/css/styles.css`. This Markdown section is the durable project rule for future edits; do not create a separate Word specification.
 
@@ -678,7 +678,7 @@ The canonical CSS is maintained once in `assets/css/styles.css`. This Markdown s
 ## Final canonical leaf-page banner specification — v2
 
 **This is the single source of truth for every deepest-level / last-page banner.**
-The approved visual reference is `math/number-families.html`. Every leaf page must use
+The approved visual reference is `math/foundation-number-families.html`. Every leaf page must use
 `<section class="nf-hero topic-banner">` and the shared CSS block named
 `FINAL CANONICAL LEAF-PAGE BANNER STANDARD — v2` in `assets/css/styles.css`.
 Do not create page-specific banner CSS.
@@ -988,7 +988,7 @@ Example markup:
 </div>
 ```
 
-Global layout CSS lives in **`assets/css/styles.css`** (`.kiwi-example-standard`, `ol.kiwi-example-steps`, `ul.kiwi-example-variants`, `ul.kiwi-example-list`, `.kiwi-example-list-step`, `.kiwi-example-list-answer`). Page-specific overrides in `math/gcf.html` remain the accordion reference for **kiwi-topic-article**; foundation pages use **`.mf-article`** with the same global rules.
+Global layout CSS lives in **`assets/css/styles.css`** (`.kiwi-example-standard`, `ol.kiwi-example-steps`, `ul.kiwi-example-variants`, `ul.kiwi-example-list`, `.kiwi-example-list-step`, `.kiwi-example-list-answer`). Page-specific overrides in `math/thinking-greatest-common-factor-gcf.html` remain the accordion reference for **kiwi-topic-article**; foundation pages use **`.mf-article`** with the same global rules.
 
 **QA tool:** run `python tools/audit_example_layout.py` on `math/*.html` to flag single-item `<ol class="kiwi-example-steps">` lists and multi-line `kiwi-example-list` bullets missing step/answer classes.
 
@@ -1000,7 +1000,7 @@ On mobile, keep indentation relative and avoid horizontal overflow.
 - `Example:` is at the normal text margin.
 - Problem line starts at `3ch` from the example margin.
 - The **visible numbered marker** (1., 2., 3.) must start about another `3ch` to the right of the problem line, never to its left. Account for the browser's list-marker gutter: do not equate `ol` margin with the marker's visible position.
-- In the current `math/gcf.html` reference CSS, use `ol.kiwi-example-steps { margin-left: 9ch; padding-left: 2.1ch; }` with marker outside, and align the subsequent explanation with the step text. Test visually in a browser and adjust the marker gutter if fonts change.
+- In the current `math/thinking-greatest-common-factor-gcf.html` reference CSS, use `ol.kiwi-example-steps { margin-left: 9ch; padding-left: 2.1ch; }` with marker outside, and align the subsequent explanation with the step text. Test visually in a browser and adjust the marker gutter if fonts change.
 - Apply the same alignment to Subtraction Method and Division Method; markers remain normal-weight black.
 
 
@@ -1020,7 +1020,7 @@ The `Example:` label is at the base text margin. The problem begins at `3ch`. Th
 
 ## Shared Mathematics Formula and Example Quality Rules (2026-11-09)
 
-Applies to `math/gcf.html`, `math/unit-conversions-and-rates.html`, and `math/mental-squaring-and-square-rooting.html`.
+Applies to `math/thinking-greatest-common-factor-gcf.html`, `math/thinking-unit-conversions-and-rates.html`, and `math/thinking-mental-squaring-and-square-rooting.html`.
 
 - **Display equations:** one row, horizontally centered; MathML remains structurally intact; do not put a display equation in a scrolling vertical container. Only permit horizontal overflow on narrow screens. Inline math stays inline. Verify rendering in a real browser.
 - **Examples:** `Example:` remains at the body margin; a single problem begins 3ch to the right. An ordered working list begins at 6ch relative to `Example:` (one additional 3ch indent). The *visible number*, not just the text, must align at 6ch. Numbers are black and normal weight. Do not center numbered steps.
@@ -1089,7 +1089,7 @@ Do **not** put **`display="block"`** math and a **where** clause in the same `<p
 - Convert **Word two-column tables containing a lightbulb icon** into semantic `<aside class="kiwi-word-info-panel" role="note">`, not HTML tables. Preserve all original prose, mathematics, and real lists.
 - Convert **Ontario Curriculum Connection** one-cell Word tables into `<aside class="kiwi-curriculum-panel" role="note">`, with no lightbulb. Preserve curriculum title, grade, citations, source links, and paragraphs in original order.
 - Convert standalone **historical/learning notes** (e.g. A Short History) into the same warm-cream insight panel; include a small lightbulb for insight/history, but not for curriculum panels.
-- Style panels consistently in `assets/css/styles.css`: pale cream `#fff8e9`, subtle gold frame `#f0d58d`, **3px left accent** `#e4b54e` (canonical reference: original `math/gcf.html` tip panels), 12px radius, left-aligned prose and heading. Do not redefine panel background or outer border in page `<style>` blocks — sitewide chrome only. Standalone display mathematics inside panels remains centered; inline math stays inline.
+- Style panels consistently in `assets/css/styles.css`: pale cream `#fff8e9`, subtle gold frame `#f0d58d`, **3px left accent** `#e4b54e` (canonical reference: original `math/thinking-greatest-common-factor-gcf.html` tip panels), 12px radius, left-aligned prose and heading. Do not redefine panel background or outer border in page `<style>` blocks — sitewide chrome only. Standalone display mathematics inside panels remains centered; inline math stays inline.
 - **Tip panel row 1 (global CSS in `assets/css/styles.css`):** The lightbulb sits in column 1, row 1. Column 2, row 1 is either the panel **title** (when a title span is present) or the **first line of body content** when the header is icon-only. All following body blocks stay in column 2 only, left-aligned with that first text column (not with the bulb). Markup: `kiwi-panel-heading` / `kiwi-word-info-header` / `kiwi-insight-header` plus optional `kiwi-word-info-body`, `kiwi-insight-body`, or `kiwi-panel-content` for mixed loose text/math. **Do not** duplicate heading `display:flex` layout in page `<style>` blocks — run `python tools/apply_tip_panel_rules.py` after bulk panel edits.
 - Never center all the text in an imported table or keep empty Word icon columns. Do not convert actual data tables (multi-row numerical tables, comparisons, formula tables) into panels.
 - QA: review panel types and links across every imported Level 4 page, including mobile, while preserving the existing example, math and image readability standards.
@@ -1164,7 +1164,7 @@ The lesson layout (sidebar plus article) must align exactly with the left and ri
 
 ## Level 4 left navigation — canonical GCF sidebar
 
-All Math Foundations and Mathematical Thinking Level 4 pages must use the **GCF (`math/gcf.html`) sidebar visual style**: pale blue-white `#f7faff` background, `1px #dce7f3` border, 14px rounded corners, 18px/12px padding, 14px navy link text, 12px/13px link padding, 6px vertical spacing, and 9px link radius. The current lesson has a pale blue `#deecff` fill, bold dark blue text and a 3px blue left accent. Hover uses `#e8f2ff`. Keep sidebar topics scoped to their category; preserve lesson links and order. Apply the same CSS to `.kiwi-topic-sidebar`, `.mf-sidebar .mf-side-links`, and `.nf-lesson-sidebar nav`, rather than inventing a different sidebar for imported pages. Sidebar and main content remain in the same Level 4 grid. On narrow screens sidebar becomes non-sticky and full-width.
+All Math Foundations and Mathematical Thinking Level 4 pages must use the **GCF (`math/thinking-greatest-common-factor-gcf.html`) sidebar visual style**: pale blue-white `#f7faff` background, `1px #dce7f3` border, 14px rounded corners, 18px/12px padding, 14px navy link text, 12px/13px link padding, 6px vertical spacing, and 9px link radius. The current lesson has a pale blue `#deecff` fill, bold dark blue text and a 3px blue left accent. Hover uses `#e8f2ff`. Keep sidebar topics scoped to their category; preserve lesson links and order. Apply the same CSS to `.kiwi-topic-sidebar`, `.mf-sidebar .mf-side-links`, and `.nf-lesson-sidebar nav`, rather than inventing a different sidebar for imported pages. Sidebar and main content remain in the same Level 4 grid. On narrow screens sidebar becomes non-sticky and full-width.
 
 
 ### Level 4 Sidebar Alignment (Math Foundations and Mathematical Thinking)

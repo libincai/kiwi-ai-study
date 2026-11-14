@@ -24,7 +24,7 @@ ONTARIO_MAPPINGS: list[tuple[str, list[int], list[str], str]] = [
     ("foundation-roots.html", [8, 9], ["MTH1W"], "foundations-number"),
     ("foundation-rational-exponents.html", [9, 11], ["MTH1W", "MCR3U"], "foundations-number"),
     ("foundation-greatest-common-factor-gcf.html", [6], [], "foundations-number"),
-    ("number-families.html", [4, 5, 6], [], "foundations-number"),
+    ("foundation-number-families.html", [4, 5, 6], [], "foundations-number"),
     ("foundation-unit-conversions-and-rates.html", [6, 9], ["MTH1W"], "foundations-number"),
     # —— Functions & graphs ——
     ("foundation-algebra-language-and-patterns.html", [4, 5, 6, 9], ["MTH1W"], "foundations-functions-graphs"),

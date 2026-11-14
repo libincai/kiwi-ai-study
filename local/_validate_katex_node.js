@@ -1,6 +1,6 @@
 const katex = require("katex");
 const fs = require("fs");
-const html = fs.readFileSync("../math/mental-squaring-and-square-rooting.html", "utf8");
+const html = fs.readFileSync("../math/thinking-mental-squaring-and-square-rooting.html", "utf8");
 const re = /<annotation encoding="application\/x-tex">([\s\S]*?)<\/annotation>/g;
 let m;
 let fails = 0;

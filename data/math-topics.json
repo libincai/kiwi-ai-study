@@ -525,7 +525,7 @@
     },
     {
       "id": "recovering-function-rule",
-      "file": "math/recovering-function-rule.html",
+      "file": "math/thinking-recovering-function-rule.html",
       "title_en": "Recovering a Function Rule from Function Notation",
       "title_zh": "\u4ece\u51fd\u6570\u8bb0\u53f7\u8fd8\u539f\u51fd\u6570\u89c4\u5219",
       "grades": [
@@ -684,8 +684,8 @@
       "verified_note": "Ontario curriculum expectation alignment (see docs/ONTARIO_GRADE_LABELS.md)"
     },
     {
-      "id": "number-families",
-      "file": "math/number-families.html",
+      "id": "foundation-number-families",
+      "file": "math/foundation-number-families.html",
       "title_en": "Number Families",
       "title_zh": "\u6570\u7684\u5bb6\u65cf",
       "grades": [

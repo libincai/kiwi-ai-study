@@ -107,7 +107,7 @@
 <nav aria-label="Primary" class="site-nav">
 <a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
 <a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
-<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="index.html">Math Education</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
 <a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
 <a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
 <a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
@@ -168,7 +168,7 @@ photo.)</li>
 <p data-en="Each transformation changes how the shape looks on the grid, but the
 shape itself stays the same!" data-zh="每种变换都会改变图形在坐标格上的样子，但图形本身不变！">Each transformation changes how the shape looks on the grid, but the
 shape itself stays the same!</p>
-<aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">🔗</span></div><p data-en="&lt;strong&gt;Lesson scope:&lt;/strong&gt; &lt;strong&gt;Basic&lt;/strong&gt; rotation — transformation types, classroom direction maps, and rotating points about the origin (90°, 180°, and 270°)." data-zh="&lt;strong&gt;本课范围：&lt;/strong&gt;&lt;strong&gt;基本&lt;/strong&gt; 旋转——变换类型、课堂方向对应图，以及绕原点旋转点（90°、180°、270°）。"><strong>Lesson scope:</strong> <strong>Basic</strong> rotation — transformation types, classroom direction maps, and rotating points about the origin (90°, 180°, and 270°).</p><p data-en="&lt;strong&gt;Also see:&lt;/strong&gt; The &lt;strong&gt;Trick Way&lt;/strong&gt; shortcut, triangle examples, and full worked solutions in &lt;a href=&quot;rotation-transformation.html&quot;&gt;Advanced Skills&lt;/a&gt; (Mathematical Thinking)." data-zh="&lt;strong&gt;延伸学习：&lt;/strong&gt;&lt;strong&gt;窍门法&lt;/strong&gt;捷径、三角形例题与完整详解见数学思维中的 &lt;a href=&quot;rotation-transformation.html&quot;&gt;进阶技巧&lt;/a&gt;。"><strong>Also see:</strong> The <strong>Trick Way</strong> shortcut, triangle examples, and full worked solutions in <a href="rotation-transformation.html">Advanced Skills</a> (Mathematical Thinking).</p></aside>
+<aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">🔗</span></div><p data-en="&lt;strong&gt;Lesson scope:&lt;/strong&gt; &lt;strong&gt;Basic&lt;/strong&gt; rotation — transformation types, classroom direction maps, and rotating points about the origin (90°, 180°, and 270°)." data-zh="&lt;strong&gt;本课范围：&lt;/strong&gt;&lt;strong&gt;基本&lt;/strong&gt; 旋转——变换类型、课堂方向对应图，以及绕原点旋转点（90°、180°、270°）。"><strong>Lesson scope:</strong> <strong>Basic</strong> rotation — transformation types, classroom direction maps, and rotating points about the origin (90°, 180°, and 270°).</p><p data-en="&lt;strong&gt;Also see:&lt;/strong&gt; The &lt;strong&gt;Trick Way&lt;/strong&gt; shortcut, triangle examples, and full worked solutions in &lt;a href=&quot;thinking-rotation-transformation.html&quot;&gt;Advanced Skills&lt;/a&gt; (Mathematical Thinking)." data-zh="&lt;strong&gt;延伸学习：&lt;/strong&gt;&lt;strong&gt;窍门法&lt;/strong&gt;捷径、三角形例题与完整详解见数学思维中的 &lt;a href=&quot;thinking-rotation-transformation.html&quot;&gt;进阶技巧&lt;/a&gt;。"><strong>Also see:</strong> The <strong>Trick Way</strong> shortcut, triangle examples, and full worked solutions in <a href="thinking-rotation-transformation.html">Advanced Skills</a> (Mathematical Thinking).</p></aside>
 <details class="lesson-card"><summary id="simple-transformation" data-en="Simple Transformation" data-zh="简单变换">Simple Transformation</summary><div class="lesson-card-content"><p data-en="In Grade 6, we learn these transformations using the origin (0, 0) or
 the x- and y-axes on a coordinate grid." data-zh="在六年级，我们在坐标格上用原点 (0, 0) 或 x、y 轴来学习这些变换。">In Grade 6, we learn these transformations using the origin (0, 0) or
 the x- and y-axes on a coordinate grid.</p>
@@ -439,7 +439,9 @@ the rotated coordinates without memorizing all those directions.</p></div></deta
   function init(){
     document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
       var cards=Array.from(article.querySelectorAll('details.lesson-card'));
-      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      if(!cards.length || article.querySelector('.kiwi-accordion-controls'))return;
+      cards.forEach(function(card,i){card.open=i===0;});
+      if(cards.length<2)return;
       var first=cards[0];
       var controls=document.createElement('div');
       controls.className='kiwi-accordion-controls';
@@ -453,7 +455,6 @@ the rotated coordinates without memorizing all those directions.</p></div></deta
         var expand=button.getAttribute('data-accordion-action')==='expand';
         cards.forEach(function(card){card.open=expand;});
       });
-      cards.forEach(function(card,i){card.open=i===0;});
       function syncLanguage(){
         var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
         controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});

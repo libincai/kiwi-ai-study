@@ -21,7 +21,7 @@ _BASE = {
 # Foundations + Thinking tracks, curriculum-teaching order (Ontario B → …).
 _NUMBER = [
     "foundation-math-operation-signs-and.html",
-    "number-families.html",
+    "foundation-number-families.html",
     "foundation-decimal.html",
     "foundation-decimal-to-fraction.html",
     "foundation-division-rules-2-9.html",
@@ -42,7 +42,7 @@ _FUNCTIONS = [
     "foundation-function-transformations.html",
     "foundation-functions-and-their-inverses.html",
     "foundation-algebraic-strategies.html",
-    "recovering-function-rule.html",
+    "thinking-recovering-function-rule.html",
 ]
 
 _GEOMETRY = [

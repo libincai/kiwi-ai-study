@@ -14,7 +14,7 @@ The folder structure follows the main website navigation. Shared visual assets r
 - `DESIGN_STANDARDS.md`: Project-wide design and implementation rules. Read it before changing pages or adding assets.
 - `templates/level-2-primary-nav.html`: Copy source for primary navigation landing pages (header, breadcrumb script, banner, body placeholder, footer). See DESIGN_STANDARDS.md §7.
 - `templates/level-3-category.html`: Copy source for category hubs under Math/AI (same compact banner as Level 2; short subtitle + `.edu-lead` in body). Reference: `math/math-foundations.html`.
-- `templates/level-4-topic.html`: Copy source for Level 4 topic/detail pages (gradient `nf-hero topic-banner`, breadcrumbs, body placeholder). Reference: `math/number-families.html`.
+- `templates/level-4-topic.html`: Copy source for Level 4 topic/detail pages (gradient `nf-hero topic-banner`, breadcrumbs, body placeholder). Reference: `math/foundation-number-families.html`.
 - **Image rule:** Before adding or replacing any website image, resize and compress it for its actual display size. Prefer WebP, aim for a clear image rather than maximum resolution, review images over 250 KB, and avoid adding images over 400 KB without a specific reason. See `DESIGN_STANDARDS.md` for dimensions, quality guidance, and exceptions.
 
 - **Inner-page banners:** all inner pages must use the same-height, text-only shared banner. No images, icons, emoji, SVGs, or illustrations inside banners. See `DESIGN_STANDARDS.md`.
