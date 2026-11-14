@@ -247,6 +247,22 @@
     return host === "localhost" || host === "127.0.0.1";
   }
 
+  /** GitHub project Pages prefix (e.g. kiwi-ai-study), empty at domain root or localhost. */
+  function sitePathPrefix() {
+    const p = getSiteBaseUrl().pathname.replace(/\/$/, "");
+    if (!p || p === "/") return "";
+    return p.replace(/^\//, "");
+  }
+
+  function stripSitePathPrefix(relPath) {
+    let p = String(relPath || "").replace(/^\/+/, "");
+    const prefix = sitePathPrefix();
+    if (!prefix) return p;
+    if (p === prefix) return "";
+    if (p.startsWith(prefix + "/")) return p.slice(prefix.length + 1);
+    return p;
+  }
+
   function canonicalFilePath(rawPath) {
     let path = String(rawPath || "")
       .trim()
@@ -260,6 +276,7 @@
         /* keep path */
       }
     }
+    path = stripSitePathPrefix(path);
     if (!/\.html?$/i.test(path)) {
       if (!path.includes("/")) {
         if (/^episode-\d+$/i.test(path)) path = "ai/" + path;
@@ -276,7 +293,7 @@
 
   function publicHrefFromFile(filePath) {
     const base = getSiteBaseUrl();
-    const rel = filePath.replace(/^\/+/, "");
+    const rel = stripSitePathPrefix(filePath);
     if (useCleanPublicUrls()) {
       if (rel.startsWith("math/") && rel.endsWith(".html")) {
         const slug = rel.slice(5, -5);

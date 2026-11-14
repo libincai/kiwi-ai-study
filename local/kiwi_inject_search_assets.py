@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_DIRS = {"local", "templates", "tools", "docs", "scripts", ".cursor", ".github", "pagefind", "node_modules"}
 MARKER = "kiwi-site-search.js"
-VERSION = "20261114-search19"
+VERSION = "20261114-search20"
 SEARCH_BTN = (
     '<button type="button" class="kiwi-search-open" data-kiwi-search-trigger '
     'aria-label="Search site">'
