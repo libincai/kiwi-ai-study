@@ -105,12 +105,46 @@
     "books/books-speedy.html": { en:"Speedy & Playful Math Magic", zh:"Speedy & Playful Math Magic", parent:"books/index.html" },
     "books/books-foundations.html": { en:"Math Quick Reference Library", zh:"Math Quick Reference Library", parent:"books/index.html" },
     "books/books-advanced.html": { en:"Math Quick Reference Library – Advanced", zh:"Math Quick Reference Library – Advanced", parent:"books/index.html" },
-    "books/speedy-playful-math-magic.html": { en:"Where to Buy", zh:"购买渠道", parent:"books/books-speedy.html" }
+    "books/speedy-playful-math-magic.html": { en:"Where to Buy", zh:"购买渠道", parent:"books/books-speedy.html" },
+    "math/grade-11.html": { en:"Grade 11 Mathematics", zh:"十一年级数学", parent:"math/in-class-learning.html" },
   };
 
-  const path = location.pathname.replace(/\/+/g, "/").replace(/^\/+|\/+$/g, "");
-  // Support both domain-root hosting and deployments inside a subfolder.
-  const key = Object.keys(pages).find(page => path === page || path.endsWith("/" + page)) || "";
+  function resolvePageKey(pathname) {
+    let path = String(pathname || "")
+      .replace(/\/+/g, "/")
+      .replace(/^\/+|\/+$/g, "");
+    if (!path) path = "index.html";
+
+    const tryKey = (candidate) => (candidate && pages[candidate] ? candidate : "");
+
+    let hit =
+      Object.keys(pages).find(
+        (page) => path === page || path.endsWith("/" + page)
+      ) || "";
+    if (hit) return hit;
+
+    const segments = path.split("/").filter(Boolean);
+    if (segments.length >= 2 && segments[0] === "kiwi-ai-study") {
+      path = segments.slice(1).join("/");
+      hit = tryKey(path) || Object.keys(pages).find((page) => path === page || path.endsWith("/" + page)) || "";
+      if (hit) return hit;
+    }
+
+    const slug = segments.length ? segments[segments.length - 1] : path;
+    if (slug && !slug.includes(".")) {
+      if (/^episode-\d+$/i.test(slug) || slug === "episode-special-learning") {
+        return tryKey(`ai/${slug}.html`);
+      }
+      if (slug === "math") return "math/index.html";
+      if (slug === "ai") return "ai/index.html";
+      if (slug === "index") return "index.html";
+      if (/^(about|contact|books)$/.test(slug)) return `${slug}/index.html`;
+      return tryKey(`math/${slug}.html`);
+    }
+    return "";
+  }
+
+  const key = resolvePageKey(location.pathname);
   const current = pages[key];
   if (!current) return;
 

@@ -233,6 +233,10 @@
       "destination": "/math/geometric-strategies.html"
     },
     {
+      "source": "/grade-11",
+      "destination": "/math/grade-11.html"
+    },
+    {
       "source": "/in-class-learning",
       "destination": "/math/in-class-learning.html"
     },

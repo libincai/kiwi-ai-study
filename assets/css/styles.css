@@ -4248,6 +4248,53 @@ html body main .nf-hero.topic-banner > p:last-child {
   }
 }
 
+/* Grade labels (data/math-topics.json via kiwi_math_catalog.py) */
+.kiwi-grade-strip-wrap {
+  margin: 14px 0 6px;
+}
+.kiwi-grade-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.kiwi-grade-strip--hub {
+  margin: 12px 0 0;
+}
+.kiwi-grade-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #e8f2ff;
+  color: #073e83;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+.kiwi-grade-pill--course {
+  background: #fff4e0;
+  color: #6b4a12;
+  font-weight: 700;
+}
+.kiwi-grade-hub-link {
+  color: #1768b2;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 13px;
+}
+.kiwi-grade-hub-link:hover {
+  text-decoration: underline;
+}
+.kiwi-grade-strand {
+  margin: 28px 0 12px;
+  font-size: 20px;
+  color: #153d70;
+}
+
 /* Math Foundations import pages (foundation-*): match number-families — no card frame on the article column. */
 html body.topic-page main.edu-main > .foundation-level4 .mf-article.mf-chapter {
   margin: 0 !important;

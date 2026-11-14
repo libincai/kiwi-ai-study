@@ -1,0 +1,55 @@
+{
+  "grades": {
+    "11": {
+      "title_en": "Grade 11 Mathematics",
+      "title_zh": "十一年级数学",
+      "subtitle_en": "Table of contents — each lesson lives on one page shared with Math Foundations.",
+      "subtitle_zh": "主题目录 —— 每节课对应一个页面，与「数学基础」共用同一套内容。",
+      "courses_en": "MCR3U · Functions",
+      "courses_zh": "MCR3U · 函数",
+      "hub_file": "math/grade-11.html",
+      "hub_slug": "grade-11"
+    }
+  },
+  "topics": [
+    {
+      "id": "angles-trig-ratios",
+      "file": "math/foundation-angles-and-trigonometric-ratios.html",
+      "title_en": "Angles and Trigonometric Ratios",
+      "title_zh": "角与三角比",
+      "desc_en": "Standard position, signs in four quadrants, reference and coterminal angles.",
+      "desc_zh": "标准位置角、四象限符号、参考角与同界角。",
+      "grades": [11],
+      "courses": ["MCR3U"],
+      "strand_en": "Trigonometry",
+      "strand_zh": "三角学",
+      "sort": 10
+    },
+    {
+      "id": "oblique-triangles-laws",
+      "file": "math/foundation-oblique-triangles-and-triangle-laws.html",
+      "title_en": "Oblique Triangles and Triangle Laws",
+      "title_zh": "斜三角形与三角形定理",
+      "desc_en": "Sine Law, Cosine Law, ASA/AAS/SAS/SSA/SSS, and the ambiguous case.",
+      "desc_zh": "正弦定理、余弦定理、ASA/AAS/SAS/SSA/SSS 与歧义情形。",
+      "grades": [11],
+      "courses": ["MCR3U"],
+      "strand_en": "Trigonometry",
+      "strand_zh": "三角学",
+      "sort": 20
+    },
+    {
+      "id": "trig-identities-hub",
+      "file": "math/foundation-trigonometric-identities.html",
+      "title_en": "Trigonometric Identities",
+      "title_zh": "三角恒等式",
+      "desc_en": "Fundamental identities, proofs, and quick checks.",
+      "desc_zh": "基本恒等式、证明与快速检验。",
+      "grades": [11],
+      "courses": ["MCR3U"],
+      "strand_en": "Trigonometry",
+      "strand_zh": "三角学",
+      "sort": 30
+    }
+  ]
+}
