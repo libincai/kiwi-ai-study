@@ -9,7 +9,7 @@ SKIP_DIRS = {"local", "templates", "tools", "docs", "scripts", ".cursor", ".gith
 MARKER = "kiwi-site-search.js"
 VERSION = "20261114-search20"
 BACK_TO_TOP_MARKER = "kiwi-back-to-top.js"
-BACK_TO_TOP_VERSION = "20261115d"
+BACK_TO_TOP_VERSION = "20261115h"
 SEARCH_BTN = (
     '<button type="button" class="kiwi-search-open" data-kiwi-search-trigger '
     'aria-label="Search site">'

@@ -17,14 +17,15 @@ H3_RE = re.compile(
 LESSON_CARD_CSS = """<style id="foundation-lesson-cards">
 /* Level 4 accordion sections (match unit-conversions-and-rates.html) */
 .mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
-.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:flex-start;align-items:center;gap:.15em;flex-wrap:wrap}
 .mf-article .lesson-card summary::-webkit-details-marker{display:none}
-.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card summary math{display:inline;vertical-align:middle}
+.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:auto}
 .mf-article .lesson-card[open] summary::after{content:'−'}
 .mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
 .mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
 .mf-article .lesson-card-content h4{color:#153d70;font-size:16px;font-weight:750;margin:20px 0 8px}
-.mf-article .lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px 3ch;line-height:1.5}
+.mf-article .lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px;padding-left:3ch;line-height:1.5}.mf-article .lesson-card-content>h5~:where(p,ol,div,aside){margin-left:0;padding-left:3ch;box-sizing:border-box}.mf-article .lesson-card-content>h5~ul.kiwi-example-list{margin:.5rem 0 1rem 3ch;padding-left:3ch;list-style:disc outside}.mf-article .lesson-card-content>h5~p.kiwi-single-example{padding-left:6ch}.mf-article .lesson-card-content>h5~ol.kiwi-example-steps{margin:.35rem 0 .6rem;padding-left:9ch;list-style-type:decimal;list-style-position:inside;text-align:left}.mf-article .lesson-card-content>h5~ul.kiwi-example-list>li>ol.kiwi-example-steps{margin-left:3ch!important;padding-left:0!important}.mf-article .lesson-card-content>h5~ul:not(.kiwi-example-list){margin-left:3ch;padding-left:3ch;list-style:disc outside}.mf-article .lesson-card-content>h5~ul.kiwi-example-list>li>p:first-child{display:inline;margin:0;padding:0}
 .mf-article .lesson-card-content table{margin-top:0}
 .mf-article .lesson-card p{margin:10px 0}
 @media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}

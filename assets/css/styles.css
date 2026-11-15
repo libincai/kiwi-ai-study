@@ -4430,8 +4430,59 @@ html body.topic-page .kiwi-topic-article > .word-topic:first-of-type {
   font-size: 15px;
   font-weight: 650;
   color: #1768b2;
-  margin: 12px 0 6px 3ch;
+  margin: 12px 0 6px;
+  padding-left: 3ch;
   line-height: 1.5;
+}
+/* H5 sub-section: title + following siblings share the same 3ch left edge */
+.mf-article .lesson-card-content > h5 ~ :where(p, ol, div, aside),
+.kiwi-topic-article .lesson-card-content > h5 ~ :where(p, ol, div, aside),
+.kiwi-topic-article .lesson-card-body > h5 ~ :where(p, ol, div, aside) {
+  margin-left: 0;
+  padding-left: 3ch;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* Example(s) ladder under h5: label 3ch → item 6ch → steps 9ch (see Method 2) */
+.mf-article .lesson-card-content > h5 ~ ul.kiwi-example-list,
+.kiwi-topic-article .lesson-card-content > h5 ~ ul.kiwi-example-list {
+  margin: 0.5rem 0 1rem 3ch;
+  padding-left: 3ch;
+  list-style: disc outside;
+  text-align: left;
+}
+.mf-article .lesson-card-content > h5 ~ p.kiwi-single-example,
+.kiwi-topic-article .lesson-card-content > h5 ~ p.kiwi-single-example {
+  padding-left: 6ch;
+}
+.mf-article .lesson-card-content > h5 ~ ol.kiwi-example-steps,
+.kiwi-topic-article .lesson-card-content > h5 ~ ol.kiwi-example-steps {
+  margin: 0.35rem 0 0.6rem;
+  padding-left: 9ch;
+  list-style-type: decimal;
+  list-style-position: inside;
+  text-align: left;
+}
+.mf-article .lesson-card-content > h5 ~ ul.kiwi-example-list > li > ol.kiwi-example-steps,
+.kiwi-topic-article .lesson-card-content > h5 ~ ul.kiwi-example-list > li > ol.kiwi-example-steps {
+  margin: 0.35rem 0 0.6rem 3ch !important;
+  padding-left: 0 !important;
+}
+.mf-article .lesson-card-content > h5 ~ ul:not(.kiwi-example-list),
+.kiwi-topic-article .lesson-card-content > h5 ~ ul:not(.kiwi-example-list) {
+  margin-left: 3ch;
+  padding-left: 3ch;
+  list-style: disc outside;
+}
+.mf-article .lesson-card-content > h5 ~ ul.kiwi-example-list > li > :first-child,
+.kiwi-topic-article .lesson-card-content > h5 ~ ul.kiwi-example-list > li > :first-child {
+  display: inline;
+}
+.mf-article .lesson-card-content > h5 ~ ul.kiwi-example-list > li > p:first-child,
+.kiwi-topic-article .lesson-card-content > h5 ~ ul.kiwi-example-list > li > p:first-child {
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 /* Math Foundations import pages (foundation-*): match number-families — no card frame on the article column. */
@@ -5008,6 +5059,65 @@ math annotation[encoding="application/x-tex"] {
 .mf-article blockquote.kiwi-example-answer p:last-child,
 .kiwi-topic-article blockquote.kiwi-example-answer p:last-child {
   margin-bottom: 0;
+}
+/* Inline list worked examples: math only, no accent bar */
+.mf-article ul.kiwi-example-list > li blockquote.kiwi-example-answer,
+.kiwi-topic-article ul.kiwi-example-list > li blockquote.kiwi-example-answer {
+  border-left: 0;
+  padding-left: 0;
+}
+.mf-article ul.kiwi-example-list > li > ol.kiwi-example-steps,
+.kiwi-topic-article ul.kiwi-example-list > li > ol.kiwi-example-steps {
+  margin: 0.35rem 0 0.6rem 3ch !important;
+  padding: 0 !important;
+  list-style-type: decimal !important;
+  list-style-position: inside !important;
+  text-align: left !important;
+}
+.mf-article ul.kiwi-example-list > li > ol.kiwi-example-steps > li,
+.kiwi-topic-article ul.kiwi-example-list > li > ol.kiwi-example-steps > li {
+  display: list-item !important;
+  margin: 0.35rem 0 !important;
+  padding: 0 !important;
+  font-weight: 400 !important;
+  color: #111 !important;
+}
+.mf-article ul.kiwi-example-list > li > ol.kiwi-example-steps > li > p,
+.kiwi-topic-article ul.kiwi-example-list > li > ol.kiwi-example-steps > li > p {
+  display: block;
+  margin: 0.35rem 0 0;
+  text-align: center;
+}
+.mf-article ul.kiwi-example-list > li > ol.kiwi-example-steps > li > .kiwi-math-block,
+.kiwi-topic-article ul.kiwi-example-list > li > ol.kiwi-example-steps > li > .kiwi-math-block {
+  display: block !important;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0.35rem 0 0.5rem !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+.mf-article
+  ul.kiwi-example-list
+  > li
+  > ol.kiwi-example-steps
+  > li
+  > .kiwi-math-block
+  > :is(math, .kiwi-katex-display),
+.kiwi-topic-article
+  ul.kiwi-example-list
+  > li
+  > ol.kiwi-example-steps
+  > li
+  > .kiwi-math-block
+  > :is(math, .kiwi-katex-display) {
+  margin: 0.25rem 0 0 !important;
+  text-align: left !important;
+}
+.kiwi-back-to-top.kiwi-back-to-top--article {
+  top: auto;
+  bottom: 25vh;
+  transform: none;
 }
 .mf-article ul.kiwi-sequence-type-list,
 .kiwi-topic-article ul.kiwi-sequence-type-list {

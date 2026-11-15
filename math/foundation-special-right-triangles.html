@@ -43,7 +43,7 @@
 .mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
 .mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
 .mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4{font-size:16px;font-weight:750;color:#173e70;margin:20px 0 8px}
-.mf-article h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px 3ch;line-height:1.5}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+.mf-article h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px;padding-left:3ch;line-height:1.5}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 </style>
@@ -67,14 +67,14 @@
 <style id="foundation-lesson-cards">
 /* Level 4 accordion sections (match unit-conversions-and-rates.html) */
 .mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
-.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:flex-start;align-items:center;gap:.15em;flex-wrap:wrap}
 .mf-article .lesson-card summary::-webkit-details-marker{display:none}
-.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.mf-article .lesson-card summary math{display:inline;vertical-align:middle}.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:auto}
 .mf-article .lesson-card[open] summary::after{content:'−'}
 .mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
 .mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
 .mf-article .lesson-card-content h4{color:#153d70;font-size:16px;font-weight:750;margin:20px 0 8px}
-.mf-article .lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px 3ch;line-height:1.5}
+.mf-article .lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px;padding-left:3ch;line-height:1.5}.mf-article .lesson-card-content>h5~:where(p,ol,div,aside){margin-left:0;padding-left:3ch;box-sizing:border-box}.mf-article .lesson-card-content>h5~ul.kiwi-example-list{margin:.5rem 0 1rem 3ch;padding-left:3ch;list-style:disc outside}.mf-article .lesson-card-content>h5~p.kiwi-single-example{padding-left:6ch}.mf-article .lesson-card-content>h5~ol.kiwi-example-steps{margin:.35rem 0 .6rem;padding-left:9ch;list-style-type:decimal;list-style-position:inside;text-align:left}.mf-article .lesson-card-content>h5~ul.kiwi-example-list>li>ol.kiwi-example-steps{margin-left:3ch!important;padding-left:0!important}.mf-article .lesson-card-content>h5~ul:not(.kiwi-example-list){margin-left:3ch;padding-left:3ch;list-style:disc outside}.mf-article .lesson-card-content>h5~ul.kiwi-example-list>li>p:first-child{display:inline;margin:0;padding:0}
 .mf-article .lesson-card-content table{margin-top:0}
 .mf-article .lesson-card p{margin:10px 0}
 @media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
@@ -238,7 +238,7 @@ is half the hypotenuse, and the side opposite
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">60^{\circ}</annotation></semantics></math>
 is
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>3</mn></msqrt><annotation encoding="application/x-tex">\sqrt{3}</annotation></semantics></math>
-times the shorter leg.</p></div></details><h4 id="the-454590-triangle" data-en="The 45°–45°–90° Triangle" data-zh="45°–45°–90° 三角形">The 45°–45°–90° Triangle</h4><p data-en="Start with an isosceles right triangle. Its two legs are equal, so
+times the shorter leg.</p></div></details><details class="lesson-card"><summary id="the-454590-triangle" data-en="The 45°–45°–90° Triangle" data-zh="45°–45°–90° 三角形">The 45°–45°–90° Triangle</summary><div class="lesson-card-content"><p data-en="Start with an isosceles right triangle. Its two legs are equal, so
 its two acute angles are equal." data-zh="从等腰直角三角形开始。两条直角边相等，所以两个锐角也相等。">Start with an isosceles right triangle. Its two legs are equal, so
 its two acute angles are equal.</p>
 <p data-en="Since the angles in a triangle add to
@@ -258,7 +258,7 @@ are equal." data-zh="因为两条直角边相等，
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;45&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;45^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;
 的正弦和余弦相等。">Because the two legs are equal, the sine and cosine of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>45</mn><mo>∘</mo></msup><annotation encoding="application/x-tex">45^{\circ}</annotation></semantics></math>
-are equal.</p><h4 id="finding-a-missing-side" data-en="Finding a Missing Side" data-zh="求未知边">Finding a Missing Side</h4><p data-en="When you know one acute angle and one side of a right triangle, you
+are equal.</p></div></details><details class="lesson-card"><summary id="finding-a-missing-side" data-en="Finding a Missing Side" data-zh="求未知边">Finding a Missing Side</summary><div class="lesson-card-content"><p data-en="When you know one acute angle and one side of a right triangle, you
 can use a trigonometric ratio to find another side." data-zh="若已知直角三角形的一个锐角和一条边，可用三角比求另一条边。">When you know one acute angle and one side of a right triangle, you
 can use a trigonometric ratio to find another side.</p>
 <h5 id="find-the-opposite-side" data-en="Find the opposite side" data-zh="求对边">Find the opposite side</h5>
@@ -319,7 +319,7 @@ and an adjacent side of 7 cm. Find the opposite side.</p>
 &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">x = 7
 </annotation></semantics></math></p>
 <p class="kiwi-example-answer" data-en="Answer: &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt; cm&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x = 7\ \text{cm}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="答案： &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt; cm&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;x = 7\ \text{cm}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">Answer: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>7</mn><mtext mathvariant="normal"> cm</mtext></mrow><annotation encoding="application/x-tex">x = 7\ \text{cm}</annotation></semantics></math></p>
-</div><h4 id="finding-a-missing-angle" data-en="Finding a Missing Angle" data-zh="求未知角">Finding a Missing Angle</h4><p data-en="When you know two side lengths of a right triangle, you can find an
+</div></div></details><details class="lesson-card"><summary id="finding-a-missing-angle" data-en="Finding a Missing Angle" data-zh="求未知角">Finding a Missing Angle</summary><div class="lesson-card-content"><p data-en="When you know two side lengths of a right triangle, you can find an
 unknown acute angle using an inverse trigonometric function." data-zh="若已知直角三角形两条边的长度，可用反三角函数求未知的锐角。">When you know two side lengths of a right triangle, you can find an
 unknown acute angle using an inverse trigonometric function.</p>
 <p data-en="The inverse functions are written as:" data-zh="反函数记作：">The inverse functions are written as:</p>
@@ -367,13 +367,10 @@ the inverse sine function, not
 </div>
 <p data-en="Make sure your calculator is set to &lt;strong&gt;degree mode&lt;/strong&gt; when
 working with angles measured in degrees." data-zh="用角度制时，请把计算器调到 &lt;strong&gt;角度模式&lt;/strong&gt;。">Make sure your calculator is set to <strong>degree mode</strong> when
-working with angles measured in degrees.</p><h4 id="applications-of-trigonometry" data-en="Applications of Trigonometry" data-zh="三角函数的应用">Applications of Trigonometry</h4><p data-en="Trigonometry can be used to find heights and distances that are
+working with angles measured in degrees.</p></div></details><details class="lesson-card"><summary id="applications-of-trigonometry" data-en="Applications of Trigonometry" data-zh="三角函数的应用">Applications of Trigonometry</summary><div class="lesson-card-content"><p data-en="Trigonometry can be used to find heights and distances that are
 difficult to measure directly." data-zh="三角函数可用来求难以直接测量的高度和距离。">Trigonometry can be used to find heights and distances that are
-difficult to measure directly.</p>
-<h4 id="example-finding-the-height-of-a-tree" data-en="Example: finding the
-height of a tree" data-zh="示例：求树的高度">Example: finding the
-height of a tree</h4>
-<div class="kiwi-example-block kiwi-example-standard">
+difficult to measure directly.</p></div></details><details class="lesson-card"><summary id="example-finding-the-height-of-a-tree" data-en="Example: finding the
+height of a tree" data-zh="示例：求树的高度">Example: finding the height of a tree</summary><div class="lesson-card-content"><div class="kiwi-example-block kiwi-example-standard">
 <p class="kiwi-example-question" data-en="A student stands 10 m from the base of a tree. The angle of elevation
 from the ground to the top of the tree is
 &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;msup&gt;&lt;mn&gt;45&lt;/mn&gt;&lt;mo&gt;∘&lt;/mo&gt;&lt;/msup&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;45^{\circ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;.
@@ -404,18 +401,14 @@ height is opposite the angle.</p>
 <p class="kiwi-example-explanation" data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1 = \frac{h}{10}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;1 = \frac{h}{10}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>=</mo><mfrac><mi>h</mi><mn>10</mn></mfrac></mrow><annotation encoding="application/x-tex">1 = \frac{h}{10}</annotation></semantics></math></p>
 <p class="kiwi-example-explanation" data-en="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;h = 10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="&lt;math display=&quot;block&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;h = 10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">h = 10</annotation></semantics></math></p>
 <p class="kiwi-example-answer" data-en="Answer: &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt; m&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;h = 10\ \text{m}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;" data-zh="答案： &lt;math display=&quot;inline&quot; xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;mtext mathvariant=&quot;normal&quot;&gt; m&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;h = 10\ \text{m}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;">Answer: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>10</mn><mtext mathvariant="normal"> m</mtext></mrow><annotation encoding="application/x-tex">h = 10\ \text{m}</annotation></semantics></math></p>
-</div>
-<h4 id="important-terms" data-en="Important Terms" data-zh="重要术语">Important Terms</h4>
-<ul>
+</div></div></details><details class="lesson-card"><summary id="important-terms" data-en="Important Terms" data-zh="重要术语">Important Terms</summary><div class="lesson-card-content"><ul>
 <li data-en="&lt;strong&gt;Angle of elevation:&lt;/strong&gt; The angle measured upward
 from a horizontal line of sight." data-zh="&lt;strong&gt;仰角：&lt;/strong&gt; 从水平视线向上测量的角。"><strong>Angle of elevation:</strong> The angle measured upward
 from a horizontal line of sight.</li>
 <li data-en="&lt;strong&gt;Angle of depression:&lt;/strong&gt; The angle measured downward
 from a horizontal line of sight." data-zh="&lt;strong&gt;俯角：&lt;/strong&gt; 从水平视线向下测量的角。"><strong>Angle of depression:</strong> The angle measured downward
 from a horizontal line of sight.</li>
-</ul>
-<h4 id="a-reliable-strategy" data-en="A reliable strategy:" data-zh="可靠解题策略：">A reliable strategy:</h4>
-<p data-en="When solving application problems, draw a diagram, mark the known
+</ul></div></details><details class="lesson-card"><summary id="a-reliable-strategy" data-en="A reliable strategy:" data-zh="可靠解题策略：">A reliable strategy:</summary><div class="lesson-card-content"><p data-en="When solving application problems, draw a diagram, mark the known
 angle and side, and identify the unknown before choosing a trigonometric
 ratio." data-zh="解应用题时，先画图，标出已知角和边，弄清未知量，再选三角比。">When solving application problems, draw a diagram, mark the known
 angle and side, and identify the unknown before choosing a trigonometric
@@ -429,7 +422,7 @@ ratio.</p>
 <li data-en="Check that the answer is reasonable and includes the correct
 units." data-zh="检验答案是否合理，并写上正确的单位。">Check that the answer is reasonable and includes the correct
 units.</li>
-</ol></article></div></main>
+</ol></div></details></article></div></main>
 <footer class="site-footer">
 <nav aria-label="Legal">
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
@@ -545,6 +538,6 @@ units.</li>
 <!-- kiwi-search-zh-index -->
 <div class="kiwi-pagefind-zh" hidden aria-hidden="true" data-pagefind-lang="zh" data-pagefind-body="" data-pagefind-filter="lang:zh"><span hidden data-pagefind-meta="title_zh">三角学</span><span hidden data-pagefind-meta="breadcrumb_zh">数学 › 数学基础 › 三角学</span><span hidden data-pagefind-meta="excerpt_zh">你不必把每个特殊角的三角函数值单独背下来，可以从两种特殊直角三角形推导出来。 🔗 本课范围： 基本 30°–60°–90° 与 45°–45°–90° 三角形、求边求角及入门应用。 延伸学习： 特殊角的推导与快速规律见数学思维中的 进阶技巧 。 30°–60°–90° 三角形 从边长都是 2 的正三角形开始。 从一个顶点向对边作高。这会把正三角形分成两个全等的直角三角形。 这条高： 把对边平分成两段，每段长 1。 把 角分成两个 角。…</span>数学基础 三角学 探索核心数学概念与例题。 三角学基础 特殊直角三角形 角与三角比 斜三角形与三角形定理 三角恒等式 ← 返回数学基础目录 你不必把每个特殊角的三角函数值单独背下来，可以从两种特殊直角三角形推导出来。 🔗 本课范围： 基本 30°–60°–90° 与 45°–45°–90° 三角形、求边求角及入门应用。 延伸学习： 特殊角的推导与快速规律见数学思维中的 进阶技巧 。 30°–60°–90° 三角形 从边长都是 2 的正三角形开始。 从一个顶点向对边作高。这会把正三角形分成两个全等的直角三角形。 这条高： 把对边平分成两段，每段长 1。 把 角分成两个 角。 得到两个角分别为 、 和 的直角三角形。 用勾股定理可得高的长度为： 因此，三边长为： 对于 角： 对边 = 1 邻边 = 斜边 = 2 对于 角，对边和邻边互换角色。 重要关系： 对着 的边是斜边的一半，对着 的边是较短直角边的 倍。 45°–45°–90° 三角形 从等腰直角三角形开始。两条直角边相等，所以两个锐角也相等。 因为三角形内角和为 ： 设每条直角边长为 1。由勾股定理： 因为两条直角边相等， 的正弦和余弦相等。 求未知边 若已知直角三角形的一个锐角和一条边，可用三角比求另一条边。 求对边 一个直角三角形有一个 角 ，斜边长 10 cm。求对着 角的边。 第 1 步：选择三角比。 涉及对边和斜边，所以用正弦。 第 2 步：代入特殊角的值。 答案： 求邻边 一个直角三角形有一个 角，斜边长 12 m。求邻边。 用余弦： 用正切求对边 一个直角三角形有一个 角 ，邻边长 7 cm。求对边。 用正切： 求未知角 若已知直角三角形两条边的长度，可用反三角函数求未知的锐角。 反函数记作： 或 注意： 记号 表示 反正弦函数，而不是 。 求一个角 一个直角三角形的对边长 3 cm、邻边长 4 cm。求 。 第 2 步：用反正切。 第 3 步：用计算器计算。 用角度制时，请把计算器调到 角度模式 。 三角函数的应用 三角函数可用来求难以直接测量的高度和距离。 示例：求树的高度 一名学生站在距树底 10 m 处。从地面到树顶的仰角为 。 设地面水平，并忽略学生的眼高。求树高。 设 为树高。 水平距离是该角的邻边，树高是该角的对边。 因为 ： 重要术语 仰角： 从水平视线向上测量的角。 俯角： 从水平视线向下测量的角。 可靠解题策略： 解应用题时，先画图，标出已知角和边，弄清未知量，再选三角比。 画出或观察直角三角形。 确定参考角。 标出对边、邻边和斜边。 选择包含已知量和未知量的三角比。 代入数值并求解。 检验答案是否合理，并写上正确的单位。</div>
 <!-- /kiwi-search-zh-index -->
-<script defer src="/assets/js/kiwi-back-to-top.js?v=20261115d"></script>
+<script defer src="/assets/js/kiwi-back-to-top.js?v=20261115h"></script>
 </body>
 </html>

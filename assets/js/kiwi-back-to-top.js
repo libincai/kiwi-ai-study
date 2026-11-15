@@ -28,16 +28,21 @@
   const article =
     document.querySelector(".foundation-level4 .mf-article.mf-chapter") ||
     document.querySelector(".foundation-level4 .mf-article");
-  const cardInset = 20;
+  const gapOutside = 12;
   const minEdge = 16;
   const placeButton = () => {
     if (!article) return;
-    const { right } = article.getBoundingClientRect();
-    const fromViewportRight = Math.max(
-      minEdge,
-      window.innerWidth - right + cardInset,
+    const openCard = document.querySelector(
+      ".foundation-level4 .mf-article details.lesson-card[open]",
     );
-    btn.style.right = `${fromViewportRight}px`;
+    const anchor = openCard || article;
+    const anchorRight = anchor.getBoundingClientRect().right;
+    const width = btn.offsetWidth || 72;
+    let left = anchorRight + gapOutside;
+    const maxLeft = window.innerWidth - width - minEdge;
+    if (left > maxLeft) left = maxLeft;
+    btn.style.left = `${Math.max(minEdge, left)}px`;
+    btn.style.right = "auto";
   };
   placeButton();
   window.addEventListener("resize", placeButton, { passive: true });

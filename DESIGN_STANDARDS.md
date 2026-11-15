@@ -405,10 +405,17 @@ Shared tokens live in **`assets/css/styles.css`** (`.mf-article` and `.kiwi-topi
 | Level | Font size | Weight | Color | Margin (typical) | Indent |
 |-------|-----------|--------|-------|------------------|--------|
 | H4 | 16px | 750 | `#173e70` (card body may use `#153d70`) | `20px 0 8px` | none |
-| H5 | 15px | 650 | `#1768b2` (accent blue) | `12px 0 6px` | `margin-left: 3ch` |
+| H5 | 15px | 650 | `#1768b2` (accent blue) | `12px 0 6px` | `padding-left: 3ch` |
 
 - H5 **`line-height: 1.5`**; keep bilingual `data-en` / `data-zh` on the heading when the page switches language.
 - Mirror the same H4/H5 split under **`.mf-article .lesson-card-content`** (do not merge `h4, h5` there either).
+- **H5 body alignment (inside `.lesson-card-content`):** After an **H5**, all direct sibling content until the next **H4**/card end shares the same **3ch** left edge as the H5 title (`padding-left: 3ch` on the heading and on following `p`, `ol`, `div`, `aside`). Implemented in **`assets/css/styles.css`** as `.lesson-card-content > h5` and `.lesson-card-content > h5 ~ :where(…)`.
+- **Example / Examples ladder under H5** (same visual steps as canonical example layout; reference: `math/foundation-number-strategies.html` Method 1 vs Method 2):
+  - **`Example:`** / intro line at **3ch** (H5 block inset).
+  - **Single problem** (`p.kiwi-single-example`) or **Examples:** bullet label at **3ch**; each **bullet item** or problem line at **6ch** (`6ch` = one more **3ch** step).
+  - **Numbered steps** (`ol.kiwi-example-steps`) at **9ch** when the list is a direct sibling under H5; when steps nest under a bullet in `ul.kiwi-example-list`, use **`margin-left: 3ch`** on the inner `ol` (6ch + 3ch = **9ch** total).
+  - **`Examples:`** lists: `ul.kiwi-example-list` with **`margin-left: 3ch`** and **`padding-left: 3ch`** (not `list-style: inside`); put the question in the `<li>` inline (no block `<p>` wrapping only the label, or the bullet separates from the text). Nested step math uses **`.kiwi-math-block`**; step labels on `<span>` with `data-en`/`data-zh`, not `data-en` on the parent `<li>` (language script would wipe nested math).
+- Global selectors: `.lesson-card-content > h5 ~ ul.kiwi-example-list`, `> h5 ~ p.kiwi-single-example`, `> h5 ~ ol.kiwi-example-steps`, and nested `> h5 ~ ul.kiwi-example-list > li > ol.kiwi-example-steps` in **`assets/css/styles.css`**.
 - Step lines and **Answer:** / **答案：** labels stay **normal weight** (no `<strong>`); the pale left rule on `.kiwi-example-answer` marks the final result.
 
 
