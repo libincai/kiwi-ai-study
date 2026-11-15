@@ -1,500 +1,1135 @@
 {
   "rewrites": [
     {
-      "source": "/by-grade",
+      "source": "/kiwi-ai-study/by-grade",
       "destination": "/math/by-grade.html"
     },
     {
-      "source": "/by-ontario-course",
+      "source": "/kiwi-ai-study/by-ontario-course",
       "destination": "/math/by-ontario-course.html"
     },
     {
-      "source": "/car-journey",
+      "source": "/kiwi-ai-study/car-journey",
       "destination": "/math/car-journey.html"
     },
     {
-      "source": "/foundation-algebra-language-and-patterns",
+      "source": "/kiwi-ai-study/foundation-algebra-language-and-patterns",
       "destination": "/math/foundation-algebra-language-and-patterns.html"
     },
     {
-      "source": "/foundation-algebraic-strategies",
+      "source": "/kiwi-ai-study/foundation-algebraic-strategies",
       "destination": "/math/foundation-algebraic-strategies.html"
     },
     {
-      "source": "/foundation-angles-and-trigonometric-ratios",
+      "source": "/kiwi-ai-study/foundation-angles-and-trigonometric-ratios",
       "destination": "/math/foundation-angles-and-trigonometric-ratios.html"
     },
     {
-      "source": "/foundation-angles-in-standard-position",
+      "source": "/kiwi-ai-study/foundation-angles-in-standard-position",
       "destination": "/math/foundation-angles-in-standard-position.html"
     },
     {
-      "source": "/foundation-basic-geometry-words",
+      "source": "/kiwi-ai-study/foundation-basic-geometry-words",
       "destination": "/math/foundation-basic-geometry-words.html"
     },
     {
-      "source": "/foundation-chance-and-probability",
+      "source": "/kiwi-ai-study/foundation-chance-and-probability",
       "destination": "/math/foundation-chance-and-probability.html"
     },
     {
-      "source": "/foundation-choosing-trigonometry-laws",
+      "source": "/kiwi-ai-study/foundation-choosing-trigonometry-laws",
       "destination": "/math/foundation-choosing-trigonometry-laws.html"
     },
     {
-      "source": "/foundation-data-and-graphs",
+      "source": "/kiwi-ai-study/foundation-data-and-graphs",
       "destination": "/math/foundation-data-and-graphs.html"
     },
     {
-      "source": "/foundation-decimal-to-fraction",
+      "source": "/kiwi-ai-study/foundation-decimal-to-fraction",
       "destination": "/math/foundation-decimal-to-fraction.html"
     },
     {
-      "source": "/foundation-decimal",
+      "source": "/kiwi-ai-study/foundation-decimal",
       "destination": "/math/foundation-decimal.html"
     },
     {
-      "source": "/foundation-division-rules-2-9",
+      "source": "/kiwi-ai-study/foundation-division-rules-2-9",
       "destination": "/math/foundation-division-rules-2-9.html"
     },
     {
-      "source": "/foundation-exact-trigonometric-values",
+      "source": "/kiwi-ai-study/foundation-exact-trigonometric-values",
       "destination": "/math/foundation-exact-trigonometric-values.html"
     },
     {
-      "source": "/foundation-exponents",
+      "source": "/kiwi-ai-study/foundation-exponents",
       "destination": "/math/foundation-exponents.html"
     },
     {
-      "source": "/foundation-function-transformations",
+      "source": "/kiwi-ai-study/foundation-function-transformations",
       "destination": "/math/foundation-function-transformations.html"
     },
     {
-      "source": "/foundation-functions-and-their-inverses",
+      "source": "/kiwi-ai-study/foundation-functions-and-their-inverses",
       "destination": "/math/foundation-functions-and-their-inverses.html"
     },
     {
-      "source": "/foundation-geometric-strategies",
+      "source": "/kiwi-ai-study/foundation-geometric-strategies",
       "destination": "/math/foundation-geometric-strategies.html"
     },
     {
-      "source": "/foundation-greatest-common-factor-gcf",
+      "source": "/kiwi-ai-study/foundation-greatest-common-factor-gcf",
       "destination": "/math/foundation-greatest-common-factor-gcf.html"
     },
     {
-      "source": "/foundation-law-of-cosines",
+      "source": "/kiwi-ai-study/foundation-law-of-cosines",
       "destination": "/math/foundation-law-of-cosines.html"
     },
     {
-      "source": "/foundation-linear-vs-non-linear-functions",
+      "source": "/kiwi-ai-study/foundation-linear-vs-non-linear-functions",
       "destination": "/math/foundation-linear-vs-non-linear-functions.html"
     },
     {
-      "source": "/foundation-math-operation-signs-and",
+      "source": "/kiwi-ai-study/foundation-math-operation-signs-and",
       "destination": "/math/foundation-math-operation-signs-and.html"
     },
     {
-      "source": "/foundation-measures-of-center",
+      "source": "/kiwi-ai-study/foundation-measures-of-center",
       "destination": "/math/foundation-measures-of-center.html"
     },
     {
-      "source": "/foundation-number-families",
+      "source": "/kiwi-ai-study/foundation-number-families",
       "destination": "/math/foundation-number-families.html"
     },
     {
-      "source": "/foundation-number-strategies",
+      "source": "/kiwi-ai-study/foundation-number-strategies",
       "destination": "/math/foundation-number-strategies.html"
     },
     {
-      "source": "/foundation-oblique-triangles-and-triangle-laws",
+      "source": "/kiwi-ai-study/foundation-oblique-triangles-and-triangle-laws",
       "destination": "/math/foundation-oblique-triangles-and-triangle-laws.html"
     },
     {
-      "source": "/foundation-proving-trigonometric-identities",
+      "source": "/kiwi-ai-study/foundation-proving-trigonometric-identities",
       "destination": "/math/foundation-proving-trigonometric-identities.html"
     },
     {
-      "source": "/foundation-pythagorean-identity",
+      "source": "/kiwi-ai-study/foundation-pythagorean-identity",
       "destination": "/math/foundation-pythagorean-identity.html"
     },
     {
-      "source": "/foundation-quotient-identities",
+      "source": "/kiwi-ai-study/foundation-quotient-identities",
       "destination": "/math/foundation-quotient-identities.html"
     },
     {
-      "source": "/foundation-rational-exponents",
+      "source": "/kiwi-ai-study/foundation-rational-exponents",
       "destination": "/math/foundation-rational-exponents.html"
     },
     {
-      "source": "/foundation-reciprocal-identities",
+      "source": "/kiwi-ai-study/foundation-reciprocal-identities",
       "destination": "/math/foundation-reciprocal-identities.html"
     },
     {
-      "source": "/foundation-reciprocal-trigonometric-ratios",
+      "source": "/kiwi-ai-study/foundation-reciprocal-trigonometric-ratios",
       "destination": "/math/foundation-reciprocal-trigonometric-ratios.html"
     },
     {
-      "source": "/foundation-related-and-coterminal-angles",
+      "source": "/kiwi-ai-study/foundation-related-and-coterminal-angles",
       "destination": "/math/foundation-related-and-coterminal-angles.html"
     },
     {
-      "source": "/foundation-result-signs-and",
+      "source": "/kiwi-ai-study/foundation-result-signs-and",
       "destination": "/math/foundation-result-signs-and.html"
     },
     {
-      "source": "/foundation-roots",
+      "source": "/kiwi-ai-study/foundation-roots",
       "destination": "/math/foundation-roots.html"
     },
     {
-      "source": "/foundation-rotation-transformation",
+      "source": "/kiwi-ai-study/foundation-rotation-transformation",
       "destination": "/math/foundation-rotation-transformation.html"
     },
     {
-      "source": "/foundation-sine-law",
+      "source": "/kiwi-ai-study/foundation-sine-law",
       "destination": "/math/foundation-sine-law.html"
     },
     {
-      "source": "/foundation-special-right-triangles",
+      "source": "/kiwi-ai-study/foundation-special-right-triangles",
       "destination": "/math/foundation-special-right-triangles.html"
     },
     {
-      "source": "/foundation-ssa-ambiguous-case",
+      "source": "/kiwi-ai-study/foundation-ssa-ambiguous-case",
       "destination": "/math/foundation-ssa-ambiguous-case.html"
     },
     {
-      "source": "/foundation-step-pattern-and-first-differences-y",
+      "source": "/kiwi-ai-study/foundation-step-pattern-and-first-differences-y",
       "destination": "/math/foundation-step-pattern-and-first-differences-y.html"
     },
     {
-      "source": "/foundation-the-four-basic-trigonometric-ratios",
+      "source": "/kiwi-ai-study/foundation-the-four-basic-trigonometric-ratios",
       "destination": "/math/foundation-the-four-basic-trigonometric-ratios.html"
     },
     {
-      "source": "/foundation-the-three-sides-of-a-right-triangle",
+      "source": "/kiwi-ai-study/foundation-the-three-sides-of-a-right-triangle",
       "destination": "/math/foundation-the-three-sides-of-a-right-triangle.html"
     },
     {
-      "source": "/foundation-trigonometric-identities-quick-checks",
+      "source": "/kiwi-ai-study/foundation-trigonometric-identities-quick-checks",
       "destination": "/math/foundation-trigonometric-identities-quick-checks.html"
     },
     {
-      "source": "/foundation-trigonometric-identities",
+      "source": "/kiwi-ai-study/foundation-trigonometric-identities",
       "destination": "/math/foundation-trigonometric-identities.html"
     },
     {
-      "source": "/foundation-trigonometric-ratios-beyond-90",
+      "source": "/kiwi-ai-study/foundation-trigonometric-ratios-beyond-90",
       "destination": "/math/foundation-trigonometric-ratios-beyond-90.html"
     },
     {
-      "source": "/foundation-trigonometry-3d-applications",
+      "source": "/kiwi-ai-study/foundation-trigonometry-3d-applications",
       "destination": "/math/foundation-trigonometry-3d-applications.html"
     },
     {
-      "source": "/foundation-trigonometry-fundamentals",
+      "source": "/kiwi-ai-study/foundation-trigonometry-fundamentals",
       "destination": "/math/foundation-trigonometry-fundamentals.html"
     },
     {
-      "source": "/foundation-understanding-functions",
+      "source": "/kiwi-ai-study/foundation-understanding-functions",
       "destination": "/math/foundation-understanding-functions.html"
     },
     {
-      "source": "/foundation-understanding-the-placeholder-in-f-x",
+      "source": "/kiwi-ai-study/foundation-understanding-the-placeholder-in-f-x",
       "destination": "/math/foundation-understanding-the-placeholder-in-f-x.html"
     },
     {
-      "source": "/foundation-understanding-trigonometry",
+      "source": "/kiwi-ai-study/foundation-understanding-trigonometry",
       "destination": "/math/foundation-understanding-trigonometry.html"
     },
     {
-      "source": "/foundation-unit-conversions-and-rates",
+      "source": "/kiwi-ai-study/foundation-unit-conversions-and-rates",
       "destination": "/math/foundation-unit-conversions-and-rates.html"
     },
     {
-      "source": "/foundation-what-is-trigonometric-identity",
+      "source": "/kiwi-ai-study/foundation-what-is-trigonometric-identity",
       "destination": "/math/foundation-what-is-trigonometric-identity.html"
     },
     {
-      "source": "/foundation-why-simplified-calculation",
+      "source": "/kiwi-ai-study/foundation-why-simplified-calculation",
       "destination": "/math/foundation-why-simplified-calculation.html"
     },
     {
-      "source": "/foundation-word-problems",
+      "source": "/kiwi-ai-study/foundation-word-problems",
       "destination": "/math/foundation-word-problems.html"
     },
     {
-      "source": "/grade-10",
+      "source": "/kiwi-ai-study/grade-10",
       "destination": "/math/grade-10.html"
     },
     {
-      "source": "/grade-11",
+      "source": "/kiwi-ai-study/grade-11",
       "destination": "/math/grade-11.html"
     },
     {
-      "source": "/grade-3",
+      "source": "/kiwi-ai-study/grade-3",
       "destination": "/math/grade-3.html"
     },
     {
-      "source": "/grade-4",
+      "source": "/kiwi-ai-study/grade-4",
       "destination": "/math/grade-4.html"
     },
     {
-      "source": "/grade-5",
+      "source": "/kiwi-ai-study/grade-5",
       "destination": "/math/grade-5.html"
     },
     {
-      "source": "/grade-6",
+      "source": "/kiwi-ai-study/grade-6",
       "destination": "/math/grade-6.html"
     },
     {
-      "source": "/grade-7",
+      "source": "/kiwi-ai-study/grade-7",
       "destination": "/math/grade-7.html"
     },
     {
-      "source": "/grade-8",
+      "source": "/kiwi-ai-study/grade-8",
       "destination": "/math/grade-8.html"
     },
     {
-      "source": "/grade-9",
+      "source": "/kiwi-ai-study/grade-9",
       "destination": "/math/grade-9.html"
     },
     {
-      "source": "/in-class-learning",
+      "source": "/kiwi-ai-study/in-class-learning",
       "destination": "/math/in-class-learning.html"
     },
     {
-      "source": "/math",
+      "source": "/kiwi-ai-study/math",
       "destination": "/math/index.html"
     },
     {
-      "source": "/math-foundations",
+      "source": "/kiwi-ai-study/math-foundations",
       "destination": "/math/math-foundations.html"
     },
     {
-      "source": "/math-real-life",
+      "source": "/kiwi-ai-study/math-real-life",
       "destination": "/math/math-real-life.html"
     },
     {
-      "source": "/mathematical-thinking",
+      "source": "/kiwi-ai-study/mathematical-thinking",
       "destination": "/math/mathematical-thinking.html"
     },
     {
-      "source": "/skateboard-ramp",
+      "source": "/kiwi-ai-study/skateboard-ramp",
       "destination": "/math/skateboard-ramp.html"
     },
     {
-      "source": "/thinking-algebraic-strategies",
+      "source": "/kiwi-ai-study/thinking-algebraic-strategies",
       "destination": "/math/thinking-algebraic-strategies.html"
     },
     {
-      "source": "/thinking-car-journey-advanced",
+      "source": "/kiwi-ai-study/thinking-car-journey-advanced",
       "destination": "/math/thinking-car-journey-advanced.html"
     },
     {
-      "source": "/thinking-chance-and-probability",
+      "source": "/kiwi-ai-study/thinking-chance-and-probability",
       "destination": "/math/thinking-chance-and-probability.html"
     },
     {
-      "source": "/thinking-data-and-graphs",
+      "source": "/kiwi-ai-study/thinking-data-and-graphs",
       "destination": "/math/thinking-data-and-graphs.html"
     },
     {
-      "source": "/thinking-geometric-strategies",
+      "source": "/kiwi-ai-study/thinking-geometric-strategies",
       "destination": "/math/thinking-geometric-strategies.html"
     },
     {
-      "source": "/thinking-greatest-common-factor-gcf",
+      "source": "/kiwi-ai-study/thinking-greatest-common-factor-gcf",
       "destination": "/math/thinking-greatest-common-factor-gcf.html"
     },
     {
-      "source": "/thinking-measures-of-center",
+      "source": "/kiwi-ai-study/thinking-measures-of-center",
       "destination": "/math/thinking-measures-of-center.html"
     },
     {
-      "source": "/thinking-mental-squaring-and-square-rooting",
+      "source": "/kiwi-ai-study/thinking-mental-squaring-and-square-rooting",
       "destination": "/math/thinking-mental-squaring-and-square-rooting.html"
     },
     {
-      "source": "/thinking-number-shape-thinking",
+      "source": "/kiwi-ai-study/thinking-number-shape-thinking",
       "destination": "/math/thinking-number-shape-thinking.html"
     },
     {
-      "source": "/thinking-number-strategies",
+      "source": "/kiwi-ai-study/thinking-number-strategies",
       "destination": "/math/thinking-number-strategies.html"
     },
     {
-      "source": "/thinking-recovering-function-rule",
+      "source": "/kiwi-ai-study/thinking-recovering-function-rule",
       "destination": "/math/thinking-recovering-function-rule.html"
     },
     {
-      "source": "/thinking-rotation-transformation",
+      "source": "/kiwi-ai-study/thinking-rotation-transformation",
       "destination": "/math/thinking-rotation-transformation.html"
     },
     {
-      "source": "/thinking-special-right-triangles",
+      "source": "/kiwi-ai-study/thinking-special-right-triangles",
       "destination": "/math/thinking-special-right-triangles.html"
     },
     {
-      "source": "/thinking-unit-conversions-and-rates",
+      "source": "/kiwi-ai-study/thinking-unit-conversions-and-rates",
       "destination": "/math/thinking-unit-conversions-and-rates.html"
     },
     {
-      "source": "/thinking-why-simplified-calculation",
+      "source": "/kiwi-ai-study/thinking-why-simplified-calculation",
       "destination": "/math/thinking-why-simplified-calculation.html"
     },
     {
-      "source": "/thinking-word-problems",
+      "source": "/kiwi-ai-study/thinking-word-problems",
       "destination": "/math/thinking-word-problems.html"
     },
     {
-      "source": "/visual-math-patterns",
+      "source": "/kiwi-ai-study/visual-math-patterns",
       "destination": "/math/visual-math-patterns.html"
     },
     {
-      "source": "/episode-01",
+      "source": "/kiwi-ai-study/episode-01",
       "destination": "/ai/episode-01.html"
     },
     {
-      "source": "/episode-02",
+      "source": "/kiwi-ai-study/episode-02",
       "destination": "/ai/episode-02.html"
     },
     {
-      "source": "/episode-03",
+      "source": "/kiwi-ai-study/episode-03",
       "destination": "/ai/episode-03.html"
     },
     {
-      "source": "/episode-04",
+      "source": "/kiwi-ai-study/episode-04",
       "destination": "/ai/episode-04.html"
     },
     {
-      "source": "/episode-05",
+      "source": "/kiwi-ai-study/episode-05",
       "destination": "/ai/episode-05.html"
     },
     {
-      "source": "/episode-06",
+      "source": "/kiwi-ai-study/episode-06",
       "destination": "/ai/episode-06.html"
     },
     {
-      "source": "/episode-07",
+      "source": "/kiwi-ai-study/episode-07",
       "destination": "/ai/episode-07.html"
     },
     {
-      "source": "/episode-08",
+      "source": "/kiwi-ai-study/episode-08",
       "destination": "/ai/episode-08.html"
     },
     {
-      "source": "/episode-09",
+      "source": "/kiwi-ai-study/episode-09",
       "destination": "/ai/episode-09.html"
     },
     {
-      "source": "/episode-10",
+      "source": "/kiwi-ai-study/episode-10",
       "destination": "/ai/episode-10.html"
     },
     {
-      "source": "/episode-11",
+      "source": "/kiwi-ai-study/episode-11",
       "destination": "/ai/episode-11.html"
     },
     {
-      "source": "/episode-12",
+      "source": "/kiwi-ai-study/episode-12",
       "destination": "/ai/episode-12.html"
     },
     {
-      "source": "/episode-13",
+      "source": "/kiwi-ai-study/episode-13",
       "destination": "/ai/episode-13.html"
     },
     {
-      "source": "/episode-14",
+      "source": "/kiwi-ai-study/episode-14",
       "destination": "/ai/episode-14.html"
     },
     {
-      "source": "/episode-15",
+      "source": "/kiwi-ai-study/episode-15",
       "destination": "/ai/episode-15.html"
     },
     {
-      "source": "/episode-special-learning",
+      "source": "/kiwi-ai-study/episode-special-learning",
       "destination": "/ai/episode-special-learning.html"
     },
     {
-      "source": "/ai",
+      "source": "/kiwi-ai-study/ai",
       "destination": "/ai/index.html"
     },
     {
-      "source": "/about",
+      "source": "/kiwi-ai-study/about",
       "destination": "/about/index.html"
     },
     {
-      "source": "/contact",
+      "source": "/kiwi-ai-study/contact",
       "destination": "/contact/index.html"
     },
     {
-      "source": "/books",
+      "source": "/kiwi-ai-study/books",
       "destination": "/books/index.html"
     },
     {
-      "source": "/number-families",
+      "source": "/kiwi-ai-study/number-families",
       "destination": "/math/foundation-number-families.html"
     },
     {
-      "source": "/gcf",
+      "source": "/kiwi-ai-study/gcf",
       "destination": "/math/thinking-greatest-common-factor-gcf.html"
     },
     {
-      "source": "/unit-conversions-and-rates",
+      "source": "/kiwi-ai-study/unit-conversions-and-rates",
       "destination": "/math/thinking-unit-conversions-and-rates.html"
     },
     {
-      "source": "/mental-squaring-and-square-rooting",
+      "source": "/kiwi-ai-study/mental-squaring-and-square-rooting",
       "destination": "/math/thinking-mental-squaring-and-square-rooting.html"
     },
     {
-      "source": "/recovering-function-rule",
+      "source": "/kiwi-ai-study/recovering-function-rule",
       "destination": "/math/thinking-recovering-function-rule.html"
     },
     {
-      "source": "/car-journey-advanced",
+      "source": "/kiwi-ai-study/car-journey-advanced",
       "destination": "/math/thinking-car-journey-advanced.html"
     },
     {
-      "source": "/rotation-transformation",
+      "source": "/kiwi-ai-study/rotation-transformation",
       "destination": "/math/thinking-rotation-transformation.html"
     },
     {
-      "source": "/special-right-triangles",
+      "source": "/kiwi-ai-study/special-right-triangles",
       "destination": "/math/thinking-special-right-triangles.html"
     },
     {
-      "source": "/data-and-graphs",
+      "source": "/kiwi-ai-study/data-and-graphs",
       "destination": "/math/thinking-data-and-graphs.html"
     },
     {
-      "source": "/measures-of-center",
+      "source": "/kiwi-ai-study/measures-of-center",
       "destination": "/math/thinking-measures-of-center.html"
     },
     {
-      "source": "/chance-and-probability",
+      "source": "/kiwi-ai-study/chance-and-probability",
       "destination": "/math/thinking-chance-and-probability.html"
     },
     {
-      "source": "/why-simplified-calculation",
+      "source": "/kiwi-ai-study/why-simplified-calculation",
       "destination": "/math/thinking-why-simplified-calculation.html"
     },
     {
-      "source": "/number-strategies",
+      "source": "/kiwi-ai-study/number-strategies",
       "destination": "/math/thinking-number-strategies.html"
     },
     {
-      "source": "/algebraic-strategies",
+      "source": "/kiwi-ai-study/algebraic-strategies",
       "destination": "/math/thinking-algebraic-strategies.html"
     },
     {
-      "source": "/geometric-strategies",
+      "source": "/kiwi-ai-study/geometric-strategies",
       "destination": "/math/thinking-geometric-strategies.html"
     },
     {
-      "source": "/number-shape-thinking",
+      "source": "/kiwi-ai-study/number-shape-thinking",
       "destination": "/math/thinking-number-shape-thinking.html"
     },
     {
-      "source": "/word-problems",
+      "source": "/kiwi-ai-study/word-problems",
       "destination": "/math/thinking-word-problems.html"
+    },
+    {
+      "source": "/kiwi-ai-study",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/kiwi-ai-study/",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/kiwi-ai-study/",
+      "type": 302
+    },
+    {
+      "source": "/by-grade",
+      "destination": "/kiwi-ai-study/by-grade",
+      "type": 302
+    },
+    {
+      "source": "/by-ontario-course",
+      "destination": "/kiwi-ai-study/by-ontario-course",
+      "type": 302
+    },
+    {
+      "source": "/car-journey",
+      "destination": "/kiwi-ai-study/car-journey",
+      "type": 302
+    },
+    {
+      "source": "/foundation-algebra-language-and-patterns",
+      "destination": "/kiwi-ai-study/foundation-algebra-language-and-patterns",
+      "type": 302
+    },
+    {
+      "source": "/foundation-algebraic-strategies",
+      "destination": "/kiwi-ai-study/foundation-algebraic-strategies",
+      "type": 302
+    },
+    {
+      "source": "/foundation-angles-and-trigonometric-ratios",
+      "destination": "/kiwi-ai-study/foundation-angles-and-trigonometric-ratios",
+      "type": 302
+    },
+    {
+      "source": "/foundation-angles-in-standard-position",
+      "destination": "/kiwi-ai-study/foundation-angles-in-standard-position",
+      "type": 302
+    },
+    {
+      "source": "/foundation-basic-geometry-words",
+      "destination": "/kiwi-ai-study/foundation-basic-geometry-words",
+      "type": 302
+    },
+    {
+      "source": "/foundation-chance-and-probability",
+      "destination": "/kiwi-ai-study/foundation-chance-and-probability",
+      "type": 302
+    },
+    {
+      "source": "/foundation-choosing-trigonometry-laws",
+      "destination": "/kiwi-ai-study/foundation-choosing-trigonometry-laws",
+      "type": 302
+    },
+    {
+      "source": "/foundation-data-and-graphs",
+      "destination": "/kiwi-ai-study/foundation-data-and-graphs",
+      "type": 302
+    },
+    {
+      "source": "/foundation-decimal-to-fraction",
+      "destination": "/kiwi-ai-study/foundation-decimal-to-fraction",
+      "type": 302
+    },
+    {
+      "source": "/foundation-decimal",
+      "destination": "/kiwi-ai-study/foundation-decimal",
+      "type": 302
+    },
+    {
+      "source": "/foundation-division-rules-2-9",
+      "destination": "/kiwi-ai-study/foundation-division-rules-2-9",
+      "type": 302
+    },
+    {
+      "source": "/foundation-exact-trigonometric-values",
+      "destination": "/kiwi-ai-study/foundation-exact-trigonometric-values",
+      "type": 302
+    },
+    {
+      "source": "/foundation-exponents",
+      "destination": "/kiwi-ai-study/foundation-exponents",
+      "type": 302
+    },
+    {
+      "source": "/foundation-function-transformations",
+      "destination": "/kiwi-ai-study/foundation-function-transformations",
+      "type": 302
+    },
+    {
+      "source": "/foundation-functions-and-their-inverses",
+      "destination": "/kiwi-ai-study/foundation-functions-and-their-inverses",
+      "type": 302
+    },
+    {
+      "source": "/foundation-geometric-strategies",
+      "destination": "/kiwi-ai-study/foundation-geometric-strategies",
+      "type": 302
+    },
+    {
+      "source": "/foundation-greatest-common-factor-gcf",
+      "destination": "/kiwi-ai-study/foundation-greatest-common-factor-gcf",
+      "type": 302
+    },
+    {
+      "source": "/foundation-law-of-cosines",
+      "destination": "/kiwi-ai-study/foundation-law-of-cosines",
+      "type": 302
+    },
+    {
+      "source": "/foundation-linear-vs-non-linear-functions",
+      "destination": "/kiwi-ai-study/foundation-linear-vs-non-linear-functions",
+      "type": 302
+    },
+    {
+      "source": "/foundation-math-operation-signs-and",
+      "destination": "/kiwi-ai-study/foundation-math-operation-signs-and",
+      "type": 302
+    },
+    {
+      "source": "/foundation-measures-of-center",
+      "destination": "/kiwi-ai-study/foundation-measures-of-center",
+      "type": 302
+    },
+    {
+      "source": "/foundation-number-families",
+      "destination": "/kiwi-ai-study/foundation-number-families",
+      "type": 302
+    },
+    {
+      "source": "/foundation-number-strategies",
+      "destination": "/kiwi-ai-study/foundation-number-strategies",
+      "type": 302
+    },
+    {
+      "source": "/foundation-oblique-triangles-and-triangle-laws",
+      "destination": "/kiwi-ai-study/foundation-oblique-triangles-and-triangle-laws",
+      "type": 302
+    },
+    {
+      "source": "/foundation-proving-trigonometric-identities",
+      "destination": "/kiwi-ai-study/foundation-proving-trigonometric-identities",
+      "type": 302
+    },
+    {
+      "source": "/foundation-pythagorean-identity",
+      "destination": "/kiwi-ai-study/foundation-pythagorean-identity",
+      "type": 302
+    },
+    {
+      "source": "/foundation-quotient-identities",
+      "destination": "/kiwi-ai-study/foundation-quotient-identities",
+      "type": 302
+    },
+    {
+      "source": "/foundation-rational-exponents",
+      "destination": "/kiwi-ai-study/foundation-rational-exponents",
+      "type": 302
+    },
+    {
+      "source": "/foundation-reciprocal-identities",
+      "destination": "/kiwi-ai-study/foundation-reciprocal-identities",
+      "type": 302
+    },
+    {
+      "source": "/foundation-reciprocal-trigonometric-ratios",
+      "destination": "/kiwi-ai-study/foundation-reciprocal-trigonometric-ratios",
+      "type": 302
+    },
+    {
+      "source": "/foundation-related-and-coterminal-angles",
+      "destination": "/kiwi-ai-study/foundation-related-and-coterminal-angles",
+      "type": 302
+    },
+    {
+      "source": "/foundation-result-signs-and",
+      "destination": "/kiwi-ai-study/foundation-result-signs-and",
+      "type": 302
+    },
+    {
+      "source": "/foundation-roots",
+      "destination": "/kiwi-ai-study/foundation-roots",
+      "type": 302
+    },
+    {
+      "source": "/foundation-rotation-transformation",
+      "destination": "/kiwi-ai-study/foundation-rotation-transformation",
+      "type": 302
+    },
+    {
+      "source": "/foundation-sine-law",
+      "destination": "/kiwi-ai-study/foundation-sine-law",
+      "type": 302
+    },
+    {
+      "source": "/foundation-special-right-triangles",
+      "destination": "/kiwi-ai-study/foundation-special-right-triangles",
+      "type": 302
+    },
+    {
+      "source": "/foundation-ssa-ambiguous-case",
+      "destination": "/kiwi-ai-study/foundation-ssa-ambiguous-case",
+      "type": 302
+    },
+    {
+      "source": "/foundation-step-pattern-and-first-differences-y",
+      "destination": "/kiwi-ai-study/foundation-step-pattern-and-first-differences-y",
+      "type": 302
+    },
+    {
+      "source": "/foundation-the-four-basic-trigonometric-ratios",
+      "destination": "/kiwi-ai-study/foundation-the-four-basic-trigonometric-ratios",
+      "type": 302
+    },
+    {
+      "source": "/foundation-the-three-sides-of-a-right-triangle",
+      "destination": "/kiwi-ai-study/foundation-the-three-sides-of-a-right-triangle",
+      "type": 302
+    },
+    {
+      "source": "/foundation-trigonometric-identities-quick-checks",
+      "destination": "/kiwi-ai-study/foundation-trigonometric-identities-quick-checks",
+      "type": 302
+    },
+    {
+      "source": "/foundation-trigonometric-identities",
+      "destination": "/kiwi-ai-study/foundation-trigonometric-identities",
+      "type": 302
+    },
+    {
+      "source": "/foundation-trigonometric-ratios-beyond-90",
+      "destination": "/kiwi-ai-study/foundation-trigonometric-ratios-beyond-90",
+      "type": 302
+    },
+    {
+      "source": "/foundation-trigonometry-3d-applications",
+      "destination": "/kiwi-ai-study/foundation-trigonometry-3d-applications",
+      "type": 302
+    },
+    {
+      "source": "/foundation-trigonometry-fundamentals",
+      "destination": "/kiwi-ai-study/foundation-trigonometry-fundamentals",
+      "type": 302
+    },
+    {
+      "source": "/foundation-understanding-functions",
+      "destination": "/kiwi-ai-study/foundation-understanding-functions",
+      "type": 302
+    },
+    {
+      "source": "/foundation-understanding-the-placeholder-in-f-x",
+      "destination": "/kiwi-ai-study/foundation-understanding-the-placeholder-in-f-x",
+      "type": 302
+    },
+    {
+      "source": "/foundation-understanding-trigonometry",
+      "destination": "/kiwi-ai-study/foundation-understanding-trigonometry",
+      "type": 302
+    },
+    {
+      "source": "/foundation-unit-conversions-and-rates",
+      "destination": "/kiwi-ai-study/foundation-unit-conversions-and-rates",
+      "type": 302
+    },
+    {
+      "source": "/foundation-what-is-trigonometric-identity",
+      "destination": "/kiwi-ai-study/foundation-what-is-trigonometric-identity",
+      "type": 302
+    },
+    {
+      "source": "/foundation-why-simplified-calculation",
+      "destination": "/kiwi-ai-study/foundation-why-simplified-calculation",
+      "type": 302
+    },
+    {
+      "source": "/foundation-word-problems",
+      "destination": "/kiwi-ai-study/foundation-word-problems",
+      "type": 302
+    },
+    {
+      "source": "/grade-10",
+      "destination": "/kiwi-ai-study/grade-10",
+      "type": 302
+    },
+    {
+      "source": "/grade-11",
+      "destination": "/kiwi-ai-study/grade-11",
+      "type": 302
+    },
+    {
+      "source": "/grade-3",
+      "destination": "/kiwi-ai-study/grade-3",
+      "type": 302
+    },
+    {
+      "source": "/grade-4",
+      "destination": "/kiwi-ai-study/grade-4",
+      "type": 302
+    },
+    {
+      "source": "/grade-5",
+      "destination": "/kiwi-ai-study/grade-5",
+      "type": 302
+    },
+    {
+      "source": "/grade-6",
+      "destination": "/kiwi-ai-study/grade-6",
+      "type": 302
+    },
+    {
+      "source": "/grade-7",
+      "destination": "/kiwi-ai-study/grade-7",
+      "type": 302
+    },
+    {
+      "source": "/grade-8",
+      "destination": "/kiwi-ai-study/grade-8",
+      "type": 302
+    },
+    {
+      "source": "/grade-9",
+      "destination": "/kiwi-ai-study/grade-9",
+      "type": 302
+    },
+    {
+      "source": "/in-class-learning",
+      "destination": "/kiwi-ai-study/in-class-learning",
+      "type": 302
+    },
+    {
+      "source": "/math",
+      "destination": "/kiwi-ai-study/math",
+      "type": 302
+    },
+    {
+      "source": "/math-foundations",
+      "destination": "/kiwi-ai-study/math-foundations",
+      "type": 302
+    },
+    {
+      "source": "/math-real-life",
+      "destination": "/kiwi-ai-study/math-real-life",
+      "type": 302
+    },
+    {
+      "source": "/mathematical-thinking",
+      "destination": "/kiwi-ai-study/mathematical-thinking",
+      "type": 302
+    },
+    {
+      "source": "/skateboard-ramp",
+      "destination": "/kiwi-ai-study/skateboard-ramp",
+      "type": 302
+    },
+    {
+      "source": "/thinking-algebraic-strategies",
+      "destination": "/kiwi-ai-study/thinking-algebraic-strategies",
+      "type": 302
+    },
+    {
+      "source": "/thinking-car-journey-advanced",
+      "destination": "/kiwi-ai-study/thinking-car-journey-advanced",
+      "type": 302
+    },
+    {
+      "source": "/thinking-chance-and-probability",
+      "destination": "/kiwi-ai-study/thinking-chance-and-probability",
+      "type": 302
+    },
+    {
+      "source": "/thinking-data-and-graphs",
+      "destination": "/kiwi-ai-study/thinking-data-and-graphs",
+      "type": 302
+    },
+    {
+      "source": "/thinking-geometric-strategies",
+      "destination": "/kiwi-ai-study/thinking-geometric-strategies",
+      "type": 302
+    },
+    {
+      "source": "/thinking-greatest-common-factor-gcf",
+      "destination": "/kiwi-ai-study/thinking-greatest-common-factor-gcf",
+      "type": 302
+    },
+    {
+      "source": "/thinking-measures-of-center",
+      "destination": "/kiwi-ai-study/thinking-measures-of-center",
+      "type": 302
+    },
+    {
+      "source": "/thinking-mental-squaring-and-square-rooting",
+      "destination": "/kiwi-ai-study/thinking-mental-squaring-and-square-rooting",
+      "type": 302
+    },
+    {
+      "source": "/thinking-number-shape-thinking",
+      "destination": "/kiwi-ai-study/thinking-number-shape-thinking",
+      "type": 302
+    },
+    {
+      "source": "/thinking-number-strategies",
+      "destination": "/kiwi-ai-study/thinking-number-strategies",
+      "type": 302
+    },
+    {
+      "source": "/thinking-recovering-function-rule",
+      "destination": "/kiwi-ai-study/thinking-recovering-function-rule",
+      "type": 302
+    },
+    {
+      "source": "/thinking-rotation-transformation",
+      "destination": "/kiwi-ai-study/thinking-rotation-transformation",
+      "type": 302
+    },
+    {
+      "source": "/thinking-special-right-triangles",
+      "destination": "/kiwi-ai-study/thinking-special-right-triangles",
+      "type": 302
+    },
+    {
+      "source": "/thinking-unit-conversions-and-rates",
+      "destination": "/kiwi-ai-study/thinking-unit-conversions-and-rates",
+      "type": 302
+    },
+    {
+      "source": "/thinking-why-simplified-calculation",
+      "destination": "/kiwi-ai-study/thinking-why-simplified-calculation",
+      "type": 302
+    },
+    {
+      "source": "/thinking-word-problems",
+      "destination": "/kiwi-ai-study/thinking-word-problems",
+      "type": 302
+    },
+    {
+      "source": "/visual-math-patterns",
+      "destination": "/kiwi-ai-study/visual-math-patterns",
+      "type": 302
+    },
+    {
+      "source": "/episode-01",
+      "destination": "/kiwi-ai-study/episode-01",
+      "type": 302
+    },
+    {
+      "source": "/episode-02",
+      "destination": "/kiwi-ai-study/episode-02",
+      "type": 302
+    },
+    {
+      "source": "/episode-03",
+      "destination": "/kiwi-ai-study/episode-03",
+      "type": 302
+    },
+    {
+      "source": "/episode-04",
+      "destination": "/kiwi-ai-study/episode-04",
+      "type": 302
+    },
+    {
+      "source": "/episode-05",
+      "destination": "/kiwi-ai-study/episode-05",
+      "type": 302
+    },
+    {
+      "source": "/episode-06",
+      "destination": "/kiwi-ai-study/episode-06",
+      "type": 302
+    },
+    {
+      "source": "/episode-07",
+      "destination": "/kiwi-ai-study/episode-07",
+      "type": 302
+    },
+    {
+      "source": "/episode-08",
+      "destination": "/kiwi-ai-study/episode-08",
+      "type": 302
+    },
+    {
+      "source": "/episode-09",
+      "destination": "/kiwi-ai-study/episode-09",
+      "type": 302
+    },
+    {
+      "source": "/episode-10",
+      "destination": "/kiwi-ai-study/episode-10",
+      "type": 302
+    },
+    {
+      "source": "/episode-11",
+      "destination": "/kiwi-ai-study/episode-11",
+      "type": 302
+    },
+    {
+      "source": "/episode-12",
+      "destination": "/kiwi-ai-study/episode-12",
+      "type": 302
+    },
+    {
+      "source": "/episode-13",
+      "destination": "/kiwi-ai-study/episode-13",
+      "type": 302
+    },
+    {
+      "source": "/episode-14",
+      "destination": "/kiwi-ai-study/episode-14",
+      "type": 302
+    },
+    {
+      "source": "/episode-15",
+      "destination": "/kiwi-ai-study/episode-15",
+      "type": 302
+    },
+    {
+      "source": "/episode-special-learning",
+      "destination": "/kiwi-ai-study/episode-special-learning",
+      "type": 302
+    },
+    {
+      "source": "/ai",
+      "destination": "/kiwi-ai-study/ai",
+      "type": 302
+    },
+    {
+      "source": "/about",
+      "destination": "/kiwi-ai-study/about",
+      "type": 302
+    },
+    {
+      "source": "/contact",
+      "destination": "/kiwi-ai-study/contact",
+      "type": 302
+    },
+    {
+      "source": "/books",
+      "destination": "/kiwi-ai-study/books",
+      "type": 302
+    },
+    {
+      "source": "/number-families",
+      "destination": "/kiwi-ai-study/number-families",
+      "type": 302
+    },
+    {
+      "source": "/gcf",
+      "destination": "/kiwi-ai-study/gcf",
+      "type": 302
+    },
+    {
+      "source": "/unit-conversions-and-rates",
+      "destination": "/kiwi-ai-study/unit-conversions-and-rates",
+      "type": 302
+    },
+    {
+      "source": "/mental-squaring-and-square-rooting",
+      "destination": "/kiwi-ai-study/mental-squaring-and-square-rooting",
+      "type": 302
+    },
+    {
+      "source": "/recovering-function-rule",
+      "destination": "/kiwi-ai-study/recovering-function-rule",
+      "type": 302
+    },
+    {
+      "source": "/car-journey-advanced",
+      "destination": "/kiwi-ai-study/car-journey-advanced",
+      "type": 302
+    },
+    {
+      "source": "/rotation-transformation",
+      "destination": "/kiwi-ai-study/rotation-transformation",
+      "type": 302
+    },
+    {
+      "source": "/special-right-triangles",
+      "destination": "/kiwi-ai-study/special-right-triangles",
+      "type": 302
+    },
+    {
+      "source": "/data-and-graphs",
+      "destination": "/kiwi-ai-study/data-and-graphs",
+      "type": 302
+    },
+    {
+      "source": "/measures-of-center",
+      "destination": "/kiwi-ai-study/measures-of-center",
+      "type": 302
+    },
+    {
+      "source": "/chance-and-probability",
+      "destination": "/kiwi-ai-study/chance-and-probability",
+      "type": 302
+    },
+    {
+      "source": "/why-simplified-calculation",
+      "destination": "/kiwi-ai-study/why-simplified-calculation",
+      "type": 302
+    },
+    {
+      "source": "/number-strategies",
+      "destination": "/kiwi-ai-study/number-strategies",
+      "type": 302
+    },
+    {
+      "source": "/algebraic-strategies",
+      "destination": "/kiwi-ai-study/algebraic-strategies",
+      "type": 302
+    },
+    {
+      "source": "/geometric-strategies",
+      "destination": "/kiwi-ai-study/geometric-strategies",
+      "type": 302
+    },
+    {
+      "source": "/number-shape-thinking",
+      "destination": "/kiwi-ai-study/number-shape-thinking",
+      "type": 302
+    },
+    {
+      "source": "/word-problems",
+      "destination": "/kiwi-ai-study/word-problems",
+      "type": 302
     }
   ]
 }

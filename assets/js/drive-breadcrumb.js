@@ -161,23 +161,27 @@
   const isZh = () => /^zh/i.test(document.documentElement.lang || "") ||
     document.documentElement.getAttribute("data-language") === "zh";
   const label = item => isZh() ? item.zh : item.en;
+  const rootHref =
+    typeof window.kiwiRootHref === "function"
+      ? window.kiwiRootHref
+      : (h) => h;
   /** Root-absolute hrefs so clean URLs (e.g. /by-ontario-course) do not break ../ math links. */
   const urlFor = itemKey => {
-    if (!itemKey || itemKey === "index.html") return "/";
+    if (!itemKey || itemKey === "index.html") return rootHref("/");
     const slash = itemKey.indexOf("/");
-    if (slash === -1) return "/" + itemKey.replace(/\.html$/i, "");
+    if (slash === -1) return rootHref("/" + itemKey.replace(/\.html$/i, ""));
     const section = itemKey.slice(0, slash);
     const file = itemKey.slice(slash + 1);
     if (section === "math") {
-      if (file === "index.html") return "/math";
-      return "/" + file.replace(/\.html$/i, "");
+      if (file === "index.html") return rootHref("/math");
+      return rootHref("/" + file.replace(/\.html$/i, ""));
     }
     if (section === "ai") {
-      if (file === "index.html") return "/ai";
-      return "/" + file.replace(/\.html$/i, "");
+      if (file === "index.html") return rootHref("/ai");
+      return rootHref("/" + file.replace(/\.html$/i, ""));
     }
-    if (file === "index.html") return "/" + section;
-    return "/" + section + "/" + file.replace(/\.html$/i, "");
+    if (file === "index.html") return rootHref("/" + section);
+    return rootHref("/" + section + "/" + file.replace(/\.html$/i, ""));
   };
 
   const chain = [];

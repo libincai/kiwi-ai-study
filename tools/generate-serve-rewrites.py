@@ -1,4 +1,4 @@
-"""Generate serve.json — map clean local URLs (/math-foundations) to real HTML paths."""
+"""Generate serve.json — local URLs match GitHub project Pages (/kiwi-ai-study/...)."""
 from __future__ import annotations
 
 import json
@@ -6,6 +6,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "serve.json"
+
+# Same segment as GitHub Pages project site and assets/js/kiwi-site-base.js.
+SITE_PREFIX = "kiwi-ai-study"
 
 SKIP_MATH = {"math-foundations-content"}
 
@@ -32,7 +35,7 @@ LEGACY_SLUG_ALIASES: dict[str, str] = {
 }
 
 
-def main() -> None:
+def collect_slug_rewrites() -> list[dict[str, str]]:
     rewrites: list[dict[str, str]] = []
 
     seen_slugs: set[str] = set()
@@ -65,9 +68,51 @@ def main() -> None:
                 }
             )
 
-    payload = {"rewrites": rewrites}
+    return rewrites
+
+
+def main() -> None:
+    slug_rewrites = collect_slug_rewrites()
+    prefix = f"/{SITE_PREFIX}"
+
+    rewrites: list[dict[str, str]] = []
+
+    for rule in slug_rewrites:
+        rewrites.append(
+            {
+                "source": f"{prefix}{rule['source']}",
+                "destination": rule["destination"],
+            }
+        )
+
+    rewrites.append({"source": prefix, "destination": "/index.html"})
+    rewrites.append({"source": f"{prefix}/", "destination": "/index.html"})
+    # Static files (assets/, …) are served by stripping PREFIX in tools/kiwi_dev_server.py.
+
+    redirects: list[dict[str, str | int]] = [
+        {"source": "/", "destination": f"{prefix}/", "type": 302},
+    ]
+    for rule in slug_rewrites:
+        redirects.append(
+            {
+                "source": rule["source"],
+                "destination": f"{prefix}{rule['source']}",
+                "type": 302,
+            }
+        )
+
+    payload = {"rewrites": rewrites, "redirects": redirects}
     OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-    print("wrote", OUT.relative_to(ROOT), "with", len(rewrites), "rewrites")
+    print(
+        "wrote",
+        OUT.relative_to(ROOT),
+        "—",
+        len(rewrites),
+        "rewrites,",
+        len(redirects),
+        "redirects under",
+        prefix,
+    )
 
 
 if __name__ == "__main__":

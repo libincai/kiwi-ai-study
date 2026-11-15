@@ -297,16 +297,16 @@
     if (useCleanPublicUrls()) {
       if (rel.startsWith("math/") && rel.endsWith(".html")) {
         const slug = rel.slice(5, -5);
-        if (slug === "index") return new URL("/math", base).pathname;
-        return new URL("/" + slug, base).pathname;
+        if (slug === "index") return new URL("math", base).pathname;
+        return new URL(slug, base).pathname;
       }
       if (rel.startsWith("ai/episode-") && rel.endsWith(".html")) {
-        return new URL("/" + rel.slice(3, -5), base).pathname;
+        return new URL(rel.slice(3, -5), base).pathname;
       }
-      if (rel === "ai/index.html") return new URL("/ai", base).pathname;
-      if (rel === "index.html") return new URL("/", base).pathname;
+      if (rel === "ai/index.html") return new URL("ai", base).pathname;
+      if (rel === "index.html") return new URL("./", base).pathname;
       const hub = rel.match(/^(about|contact|books)\/index\.html$/);
-      if (hub) return new URL("/" + hub[1], base).pathname;
+      if (hub) return new URL(hub[1], base).pathname;
     }
     try {
       return new URL(rel, base).pathname;

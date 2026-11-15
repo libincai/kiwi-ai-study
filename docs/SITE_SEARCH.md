@@ -13,13 +13,13 @@ npx --yes pagefind --site .
 
 Commit `pagefind/` output with the site. GitHub Pages serves it at `/pagefind/`.
 
-Local dev (clean URLs like `http://localhost:3000/math-foundations`):
+Local dev (same project prefix as GitHub — e.g. `http://localhost:3000/kiwi-ai-study/math/`):
 
 ```powershell
 .\tools\dev-server.ps1
 ```
 
-This runs `tools/generate-serve-rewrites.py` (writes `serve.json`) and `npx serve . -l 3000`. GitHub Pages keeps folder paths (`/math/math-foundations.html`). Search links follow your environment: clean slugs on localhost, `.html` paths on GitHub.
+This runs `tools/generate-serve-rewrites.py` (writes `serve.json`) and `tools/kiwi_dev_server.py` on port 3000. The dev server strips `/kiwi-ai-study/` from URLs like GitHub project Pages. Unprefixed paths like `/math` redirect to `/kiwi-ai-study/math`. Search uses clean slugs under that prefix on localhost; GitHub Pages uses the same prefix with `.html` paths when clean URLs are off.
 
 ## Index contract (every new public page)
 
