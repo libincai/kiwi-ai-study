@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+
+<!-- Level 3 category hub — shell from templates/level-3-category.html -->
+<html lang="en-CA" data-pagefind-filter="section:math" data-pagefind-meta="breadcrumb:Math › Foundations › Trigonometry">
+<head>
+<!-- kiwi-search-prepared -->
+<!-- kiwi-math-catalog-meta -->
+<meta name="pagefind:grades" content="11" />
+<!-- /kiwi-math-catalog-meta -->
+<meta name="pagefind:title_en" content="Trigonometry" />
+<meta name="pagefind:section" content="math" />
+<meta name="pagefind:breadcrumb" content="Math › Foundations › Trigonometry" />
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Six Trigonometric Functions on the Unit Circle | KIWI 爱AI Study" data-zh="单位圆上的六种三角函数 | KIWI 爱AI Study">Six Trigonometric Functions on the Unit Circle | KIWI 爱AI Study</title>
+<meta content="Six trigonometric functions as lengths on the unit circle: sin, cos, tan, cot, sec, and csc." name="description"/>
+<link href="../assets/css/styles.css?v=20261108-level2-width" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
+<style>
+.edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;color:var(--ink)}
+.edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}
+.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
+.edu-topic-list{display:grid;gap:12px}
+.edu-topic{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:16px;align-items:center;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff;text-decoration:none;color:inherit}
+.edu-topic-link{transition:transform .16s ease,box-shadow .16s ease}
+.edu-topic-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(24,55,95,.09)}
+.edu-topic-number{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#eaf4ff;color:#1768b2;font-weight:900;font-size:19px}
+.edu-topic h3{margin:0 0 5px;font-size:18px;color:#173e70}
+.edu-topic p{margin:0;color:#62738a;font-size:13px;line-height:1.5}
+.edu-topic .edu-link{white-space:nowrap;color:#1768b2;font-weight:800;font-size:14px}
+.edu-note{padding:17px 19px;background:#fff8e7;border:1px solid #f0dfaa;border-radius:13px;color:#66542a;line-height:1.65;font-size:14px;margin-top:18px}
+.edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}
+.edu-callout h2{margin:0 0 8px;color:#153d70}
+.edu-callout p{margin:0;color:#526780;line-height:1.7}
+.edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:#fff!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}
+.edu-button:hover{background:#10548f}
+@media(max-width:760px){.edu-topic{grid-template-columns:52px minmax(0,1fr);gap:12px}.edu-topic-number{width:46px;height:46px}.edu-topic .edu-link{grid-column:2}}
+  
+/* Math Foundations: source-book content, scoped to this page. */
+.mf-intro{margin:32px 0 22px}.mf-intro h2{color:#153d70;font-size:clamp(22px,2.4vw,29px);margin:0 0 9px}.mf-intro p{color:#526780;line-height:1.7;margin:0}
+.mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
+.mf-sidebar{position:sticky;top:18px;max-height:calc(100vh - 34px);overflow:auto;border:1px solid #dce6f1;border-radius:15px;background:#f8fbff;padding:14px;font-size:13px}
+.mf-sidebar-title{font-weight:800;color:#153d70;font-size:15px;padding:4px 6px 13px}.mf-sidebar details{border-top:1px solid #e1e9f4;padding:7px 0}.mf-sidebar summary{cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:700;color:#173e70;line-height:1.5;padding:6px 2px}.mf-num{background:#e5f2ff;color:#1768b2;border-radius:7px;padding:4px 6px;font-size:11px}.mf-side-links{padding:5px 0 9px 26px;display:grid;gap:2px}.mf-side-links a{display:block;color:#395675;text-decoration:none;padding:6px 5px;border-radius:6px;line-height:1.4}.mf-side-links a:hover,.mf-side-links a:focus{color:#0756df;background:#eaf4ff}
+.mf-article{min-width:0;color:#172846;font-size:15px;line-height:1.75}.mf-chapter{margin:0 0 35px;padding:24px 26px;background:white;border:1px solid #dce6f1;border-radius:16px;box-shadow:0 3px 13px rgba(16,23,71,.035)}.mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.mf-article h2{font-size:22px;color:#174a82;margin:30px 0 12px}.mf-article h3{font-size:18px;color:#173e70;margin:22px 0 9px}.mf-article h4{font-size:16px;font-weight:750;color:#173e70;margin:20px 0 8px}.mf-article h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px;padding-left:3ch;line-height:1.5}.mf-article p{margin:8px 0 13px}.mf-article img{display:block;max-width:100%;height:auto;object-fit:contain;margin:12px auto}.mf-article table{border-collapse:collapse;width:100%;margin:14px 0;display:block;overflow-x:auto}.mf-article th,.mf-article td{border:1px solid #dce6f1;padding:10px 12px;vertical-align:top}.mf-article th{background:#f3f8fe}.mf-article blockquote:not(.kiwi-example-answer){border-left:4px solid #1768b2;padding:8px 16px;background:#f4f8fe;margin:16px 0}.mf-article math{max-width:100%}.mf-article [id]{scroll-margin-top:22px}.mf-existing{padding:14px 17px;background:#edf5ff;border:1px solid #c9e0fa;border-radius:11px;margin:14px 0}.mf-existing a{color:#0756df;font-weight:800;text-decoration:none}
+@media(max-width:850px){.mf-layout{grid-template-columns:1fr}.mf-sidebar{position:static;max-height:none}.mf-chapter{padding:19px 15px}.mf-article{font-size:14px}}
+.mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
+</style>
+<style>
+.foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:400}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{margin:0 0 22px}.foundation-crumb{margin:18px 0 14px;color:#536b85;font-size:14px}.foundation-crumb a{color:#174879;text-decoration:none}.foundation-crumb a:hover{text-decoration:underline}.foundation-level4 .mf-article img{max-width:100%;height:auto;object-fit:contain}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:400;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="/mathematical-thinking"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+
+<style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
+.foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
+.foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections (match unit-conversions-and-rates.html) */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:flex-start;align-items:center;gap:.15em;flex-wrap:wrap}
+.mf-article .lesson-card summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card summary math{display:inline;vertical-align:middle}.mf-article .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:auto}
+.mf-article .lesson-card[open] summary::after{content:'−'}
+.mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4{color:#153d70;font-size:16px;font-weight:750;margin:20px 0 8px}.mf-article .lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px;padding-left:3ch;line-height:1.5}.mf-article .lesson-card-content>h5~:where(p,ol,div,aside){margin-left:0;padding-left:3ch;box-sizing:border-box}.mf-article .lesson-card-content>h5~ul.kiwi-example-list{margin:.5rem 0 1rem 3ch;padding-left:3ch;list-style:disc outside}.mf-article .lesson-card-content>h5~p.kiwi-single-example{padding-left:6ch}.mf-article .lesson-card-content>h5~ol.kiwi-example-steps{margin:.35rem 0 .6rem;padding-left:9ch;list-style-type:decimal;list-style-position:inside;text-align:left}.mf-article .lesson-card-content>h5~ul.kiwi-example-list>li>ol.kiwi-example-steps{margin-left:3ch!important;padding-left:0!important}.mf-article .lesson-card-content>h5~ul:not(.kiwi-example-list){margin-left:3ch;padding-left:3ch;list-style:disc outside}.mf-article .lesson-card-content>h5~ul.kiwi-example-list>li>p:first-child{display:inline;margin:0;padding:0}
+.mf-article .lesson-card-content table{margin-top:0}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+<style id="trig-toc-sidebar">
+.mf-sidebar .mf-trig-toc-title{margin:0 0 10px;padding:4px 8px 10px;font-size:15px;font-weight:800;color:#153d70;border-bottom:1px solid #dce7f3}
+.mf-sidebar .mf-trig-toc-parent{padding:6px 0;border-top:1px solid #e1e9f4}
+.mf-sidebar .mf-trig-toc-parent:first-of-type{border-top:0}
+.mf-sidebar .mf-trig-toc-parent a{display:block;font-size:13px;font-weight:400;color:#173e70;padding:8px 6px;line-height:1.35;border-radius:9px}
+.mf-sidebar .mf-trig-toc-parent a.mf-current{background:#deecff;color:#073e83;font-weight:400;border-left:3px solid #0865c9;padding-left:10px}
+.mf-sidebar .mf-trig-toc-parent a:hover{background:#e8f2ff;color:#0756ba}
+</style>
+<style id="trig-beyond-90-figures">
+.mf-article .lesson-card-content .trig-beyond-90-figure{margin:14px 0 6px;text-align:center}
+.mf-article .lesson-card-content .trig-beyond-90-figure img{width:100%;height:auto;display:block;margin:0 auto;border:0;border-radius:0;object-fit:contain;box-shadow:none}
+.mf-article .trig-beyond-90-figure img{max-width:min(100%,780px)}
+.mf-article .lesson-card-content .trig-beyond-90-figure--choose img{max-width:min(100%,720px)}
+</style>
+<style id="trig-unit-circle-figure">
+.mf-article .trig-unit-circle-figure{margin:14px 0 12px;text-align:center}
+.mf-article .trig-unit-circle-figure img{width:40%;max-width:min(100%,512px);height:auto;display:block;margin:0 auto;border:0;object-fit:contain}
+@media(max-width:600px){.mf-article .trig-unit-circle-figure img{width:min(100%,512px)}}
+</style>
+<script src="../assets/js/kiwi-site-base.js?v=20261115-coursepill"></script>
+</head>
+<body class="edu-page topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="/in-class-learning">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<button type="button" class="kiwi-search-open" data-kiwi-search-trigger aria-label="Search site"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main data-pagefind-body="" data-pagefind-filter="lang:en"  class="edu-main">
+<section aria-label="Page introduction" class="nf-hero topic-banner foundation-topic-banner"><p class="topic-banner-kicker" data-en="MATH FOUNDATIONS" data-zh="数学基础">MATH FOUNDATIONS</p><h1 data-en="Trigonometry" data-zh="三角学">Trigonometry</h1><p class="topic-banner-subtitle" data-en="Explore essential mathematical ideas and examples." data-zh="探索核心数学概念与例题。">Explore essential mathematical ideas and examples.</p></section>
+<!-- kiwi-math-catalog:start -->
+<div class="kiwi-grade-strip-wrap" data-pagefind-filter="grade:11">
+  <p class="kiwi-grade-strip">
+    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="/grade-11" data-en="Grade 11" data-zh="十一年级">Grade 11</a>
+    <a class="kiwi-grade-pill kiwi-grade-pill--course kiwi-grade-pill--link" href="/by-ontario-course#mcr3u" data-en="MCR3U" data-zh="MCR3U">MCR3U</a> 
+  </p>
+</div>
+<!-- kiwi-math-catalog:end -->
+<!-- LEVEL-3 BODY START -->
+<!-- LEVEL-3 BODY END -->
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links mf-trig-toc"><p class="mf-trig-toc-title" data-en="Trigonometry" data-zh="三角学">Trigonometry</p><div class="mf-trig-toc-parent"><a href="/foundation-trigonometry-fundamentals" data-en="Trigonometry Fundamentals" data-zh="三角学基础">Trigonometry Fundamentals</a></div><div class="mf-trig-toc-parent"><a href="/foundation-special-right-triangles" data-en="Special Right Triangles" data-zh="特殊直角三角形">Special Right Triangles</a></div><div class="mf-trig-toc-parent"><a href="/foundation-angles-and-trigonometric-ratios" data-en="Angles and Trigonometric Ratios" data-zh="角与三角比">Angles and Trigonometric Ratios</a></div><div class="mf-trig-toc-parent"><a aria-current="page" class="mf-current" href="/foundation-six-trigonometric-functions-unit-circle" data-en="Six Trigonometric Functions on the Unit Circle" data-zh="单位圆上的六种三角函数">Six Trigonometric Functions on the Unit Circle</a></div><div class="mf-trig-toc-parent"><a href="/foundation-oblique-triangles-and-triangle-laws" data-en="Oblique Triangles and Triangle Laws" data-zh="斜三角形与三角形定理">Oblique Triangles and Triangle Laws</a></div><div class="mf-trig-toc-parent"><a href="/foundation-trigonometric-identities" data-en="Trigonometric Identities" data-zh="三角恒等式">Trigonometric Identities</a></div><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="/math-foundations">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Six Trigonometric Functions on the Unit Circle" data-zh="单位圆上的六种三角函数">Six Trigonometric Functions on the Unit Circle</h1>
+<p data-en="A unit circle is centered at O and has radius R = 1. Let the point on the circle at angle θ have coordinates (x, y). For the first-quadrant angle shown, each trigonometric function can be represented by a length." data-zh="单位圆以 O 为圆心、半径 R = 1。角 θ 所对圆上点的坐标为 (x, y)。对图中第一象限的角，每个三角函数都可用一个线段长度表示。">A unit circle is centered at O and has radius R = 1. Let the point on the circle at angle θ have coordinates (x, y). For the first-quadrant angle shown, each trigonometric function can be represented by a length.</p>
+<p class="trig-unit-circle-figure"><img alt="Unit circle: six trigonometric functions as segment lengths in the first quadrant" loading="lazy" src="../assets/math/trig-unit-circle-six-functions.webp" width="512" height="492"/></p>
+
+<h4 id="sin-theta" data-en="Sine — sin θ" data-zh="正弦 — sin θ">Sine — sin θ</h4>
+<p data-en="Sine = opposite ÷ hypotenuse. Since the hypotenuse is the unit radius, sin θ = y/R = y/1 = y. Thus sin θ is the y-coordinate." data-zh="正弦 = 对边 ÷ 斜边。斜边为单位半径，故 sin θ = y/R = y/1 = y，即 sin θ 为 y 坐标。">Sine = opposite ÷ hypotenuse. Since the hypotenuse is the unit radius, sin θ = y/R = y/1 = y. Thus sin θ is the y-coordinate.</p>
+
+<h4 id="cos-theta" data-en="Cosine — cos θ" data-zh="余弦 — cos θ">Cosine — cos θ</h4>
+<p data-en="Cosine = adjacent ÷ hypotenuse. Since R = 1, cos θ = x/R = x/1 = x. Thus cos θ is the x-coordinate." data-zh="余弦 = 邻边 ÷ 斜边。R = 1，故 cos θ = x/R = x/1 = x，即 cos θ 为 x 坐标。">Cosine = adjacent ÷ hypotenuse. Since R = 1, cos θ = x/R = x/1 = x. Thus cos θ is the x-coordinate.</p>
+
+<h4 id="tan-theta" data-en="Tangent — tan θ" data-zh="正切 — tan θ">Tangent — tan θ</h4>
+<p data-en="In right triangle OAB, OA = 1. Therefore tan θ = AB/OA = AB/1 = AB." data-zh="直角三角形 OAB 中 OA = 1，故 tan θ = AB/OA = AB/1 = AB。">In right triangle OAB, OA = 1. Therefore tan θ = AB/OA = AB/1 = AB.</p>
+
+<h4 id="cot-theta" data-en="Cotangent — cot θ" data-zh="余切 — cot θ">Cotangent — cot θ</h4>
+<p data-en="FC is parallel to the positive x-axis, so the angle at C equals θ (corresponding angles). In right triangle OFC, OF = 1. Therefore cot θ = FC/OF = FC/1 = FC." data-zh="FC 平行于 x 轴正方向，C 处角等于 θ（同位角）。直角三角形 OFC 中 OF = 1，故 cot θ = FC/OF = FC/1 = FC。">FC is parallel to the positive x-axis, so the angle at C equals θ (corresponding angles). In right triangle OFC, OF = 1. Therefore cot θ = FC/OF = FC/1 = FC.</p>
+
+<h4 id="sec-theta" data-en="Secant — sec θ" data-zh="正割 — sec θ">Secant — sec θ</h4>
+<p data-en="DE is tangent to the circle at the point on the terminal arm, so it is perpendicular to the radius. In the right triangle with hypotenuse OE, cos θ = R/OE = 1/OE. Therefore sec θ = 1/cos θ = OE." data-zh="DE 在终边与圆交点处与圆相切，垂直于半径。以 OE 为斜边的直角三角形中 cos θ = R/OE = 1/OE，故 sec θ = 1/cos θ = OE。">DE is tangent to the circle at the point on the terminal arm, so it is perpendicular to the radius. In the right triangle with hypotenuse OE, cos θ = R/OE = 1/OE. Therefore sec θ = 1/cos θ = OE.</p>
+
+<h4 id="csc-theta" data-en="Cosecant — csc θ" data-zh="余割 — csc θ">Cosecant — csc θ</h4>
+<p data-en="Using the same tangent and radius, the right triangle with hypotenuse OD gives sin θ = R/OD = 1/OD. Therefore csc θ = 1/sin θ = OD." data-zh="在同一切线与半径下，以 OD 为斜边的直角三角形中 sin θ = R/OD = 1/OD，故 csc θ = 1/sin θ = OD。">Using the same tangent and radius, the right triangle with hypotenuse OD gives sin θ = R/OD = 1/OD. Therefore csc θ = 1/sin θ = OD.</p>
+
+<p data-en="Summary: sin θ = y; cos θ = x; tan θ = AB; cot θ = FC; sec θ = OE; csc θ = OD." data-zh="小结：sin θ = y；cos θ = x；tan θ = AB；cot θ = FC；sec θ = OE；csc θ = OD。">Summary: sin θ = y; cos θ = x; tan θ = AB; cot θ = FC; sec θ = OE; csc θ = OD.</p>
+<div class="edu-note" data-en="Note: These positive segment-length interpretations apply to the first quadrant shown. In other quadrants, trigonometric signs must also be considered." data-zh="说明：图中线段长度解释针对第一象限。在其他象限还须考虑三角函数的符号。">Note: These positive segment-length interpretations apply to the first quadrant shown. In other quadrants, trigonometric signs must also be considered.</div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\csc\theta=\frac{1}{\sin\theta}=\frac{r}{y}" data-tex-zh="\csc\theta=\frac{1}{\sin\theta}=\frac{r}{y}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\sec\theta=\frac{1}{\cos\theta}=\frac{r}{x}" data-tex-zh="\sec\theta=\frac{1}{\cos\theta}=\frac{r}{x}"></div>
+<div class="kiwi-math-block kiwi-math-latex" data-tex-en="\cot\theta=\frac{1}{\tan\theta}=\frac{x}{y}" data-tex-zh="\cot\theta=\frac{1}{\tan\theta}=\frac{x}{y}"></div>
+<p data-en="The ratios are undefined when their denominators are zero. Do not confuse reciprocal ratios with inverse trigonometric functions (arcsin, arccos, arctan)." data-zh="分母为零时无定义。不要把倒数比与反三角函数（arcsin、arccos、arctan）混淆。">The ratios are undefined when their denominators are zero. Do not confuse reciprocal ratios with inverse trigonometric functions (arcsin, arccos, arctan).</p>
+</article></div></main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261115-bcrumb4"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(!cards.length || article.querySelector('.kiwi-accordion-controls'))return;
+      cards.forEach(function(card,i){card.open=i===0;});
+      if(cards.length<2)return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
+<link href="../pagefind/pagefind-ui.css" rel="stylesheet"/>
+<script defer src="../assets/js/kiwi-site-search.js?v=20261114-search20"></script>
+
+
+
+
+
+
+
+
+
+
+<script defer src="../assets/js/kiwi-back-to-top.js?v=20261115h"></script>
+
+
+
+
+<!-- kiwi-search-zh-index -->
+<div class="kiwi-pagefind-zh" hidden aria-hidden="true" data-pagefind-lang="zh" data-pagefind-body="" data-pagefind-filter="lang:zh"><span hidden data-pagefind-meta="title_zh">三角学</span><span hidden data-pagefind-meta="breadcrumb_zh">数学 › 三角学 › 三角学</span><span hidden data-pagefind-meta="excerpt_zh">单位圆以 O 为圆心、半径 R = 1。角 θ 所对圆上点的坐标为 (x, y)。对图中第一象限的角，每个三角函数都可用一个线段长度表示。 正弦 — sin θ 正弦 = 对边 ÷ 斜边。斜边为单位半径，故 sin θ = y/R = y/1 = y，即 sin θ 为 y 坐标。 余弦 — cos θ 余弦 = 邻边 ÷ 斜边。R = 1，故 cos θ = x/R = x/1 = x，即 cos θ 为 x 坐标。 正切 — ta…</span>数学基础 三角学 探索核心数学概念与例题。 十一年级 MCR3U 三角学基础 特殊直角三角形 角与三角比 单位圆上的六种三角函数 斜三角形与三角形定理 三角恒等式 ← 返回数学基础目录 单位圆以 O 为圆心、半径 R = 1。角 θ 所对圆上点的坐标为 (x, y)。对图中第一象限的角，每个三角函数都可用一个线段长度表示。 正弦 — sin θ 正弦 = 对边 ÷ 斜边。斜边为单位半径，故 sin θ = y/R = y/1 = y，即 sin θ 为 y 坐标。 余弦 — cos θ 余弦 = 邻边 ÷ 斜边。R = 1，故 cos θ = x/R = x/1 = x，即 cos θ 为 x 坐标。 正切 — tan θ 直角三角形 OAB 中 OA = 1，故 tan θ = AB/OA = AB/1 = AB。 余切 — cot θ FC 平行于 x 轴正方向，C 处角等于 θ（同位角）。直角三角形 OFC 中 OF = 1，故 cot θ = FC/OF = FC/1 = FC。 正割 — sec θ DE 在终边与圆交点处与圆相切，垂直于半径。以 OE 为斜边的直角三角形中 cos θ = R/OE = 1/OE，故 sec θ = 1/cos θ = OE。 余割 — csc θ 在同一切线与半径下，以 OD 为斜边的直角三角形中 sin θ = R/OD = 1/OD，故 csc θ = 1/sin θ = OD。 小结：sin θ = y；cos θ = x；tan θ = AB；cot θ = FC；sec θ = OE；csc θ = OD。 说明：图中线段长度解释针对第一象限。在其他象限还须考虑三角函数的符号。 分母为零时无定义。不要把倒数比与反三角函数（arcsin、arccos、arctan）混淆。</div>
+<!-- /kiwi-search-zh-index -->
+</body>
+</html>

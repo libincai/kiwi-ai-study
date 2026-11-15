@@ -63,6 +63,10 @@ class KiwiDevHandler(SimpleHTTPRequestHandler):
             path = REWRITES[key]
         elif path in REWRITES:
             path = REWRITES[path]
+        elif key.endswith(".html") and key not in ("/index.html",):
+            slug_key = key[: -len(".html")]
+            if slug_key in REWRITES:
+                path = REWRITES[slug_key]
         if path.endswith("/") and path != "/":
             path = path + "index.html"
         if path == "/":

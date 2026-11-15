@@ -20,7 +20,7 @@ TOC_CSS = """<style id="trig-toc-sidebar">
 
 BACK = (
     '<a class="kiwi-sidebar-back" data-en="← All Math Foundations" '
-    'data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a>'
+    'data-zh="← 返回数学基础目录" href="/math-foundations">← All Math Foundations</a>'
 )
 
 

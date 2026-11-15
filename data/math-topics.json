@@ -248,6 +248,21 @@
       "list_on_grade_hub": true
     },
     {
+      "id": "unit-circle-six-trig",
+      "file": "math/foundation-six-trigonometric-functions-unit-circle.html",
+      "title_en": "Six Trigonometric Functions on the Unit Circle",
+      "title_zh": "\u5355\u4f4d\u5706\u4e0a\u7684\u516d\u79cd\u4e09\u89d2\u51fd\u6570",
+      "grades": [
+        11
+      ],
+      "courses": [
+        "MCR3U"
+      ],
+      "chapter_id": "foundations-trigonometry",
+      "sort": 15,
+      "list_on_grade_hub": true
+    },
+    {
       "id": "oblique-triangles-laws",
       "file": "math/foundation-oblique-triangles-and-triangle-laws.html",
       "title_en": "Oblique Triangles and Triangle Laws",
@@ -335,7 +350,7 @@
       "id": "foundation-angles-in-standard-position",
       "file": "math/foundation-angles-in-standard-position.html",
       "title_en": "Angles in Standard Position",
-      "title_zh": "\u6807\u51c6\u4f4d\u7f6e\u89d2",
+      "title_zh": "Angles in Standard Position",
       "grades": [
         11
       ],
@@ -351,7 +366,7 @@
       "id": "foundation-related-and-coterminal-angles",
       "file": "math/foundation-related-and-coterminal-angles.html",
       "title_en": "Related and Coterminal Angles",
-      "title_zh": "\u76f8\u5173\u89d2\u4e0e\u540c\u754c\u89d2",
+      "title_zh": "Related and Coterminal Angles",
       "grades": [
         11
       ],
@@ -367,7 +382,7 @@
       "id": "foundation-trigonometric-ratios-beyond-90",
       "file": "math/foundation-trigonometric-ratios-beyond-90.html",
       "title_en": "Trigonometric Ratios Beyond 90\u00b0",
-      "title_zh": "\u8d85\u8fc790\u00b0\u7684\u4e09\u89d2\u6bd4",
+      "title_zh": "Trigonometric Ratios Beyond 90\u00b0",
       "grades": [
         11
       ],
@@ -383,7 +398,7 @@
       "id": "foundation-exact-trigonometric-values",
       "file": "math/foundation-exact-trigonometric-values.html",
       "title_en": "Trigonometric Ratios of Special Angles",
-      "title_zh": "\u7279\u6b8a\u89d2\u7684\u4e09\u89d2\u6bd4",
+      "title_zh": "Trigonometric Ratios of Special Angles",
       "grades": [
         11
       ],
@@ -399,7 +414,7 @@
       "id": "foundation-reciprocal-trigonometric-ratios",
       "file": "math/foundation-reciprocal-trigonometric-ratios.html",
       "title_en": "Reciprocal Trigonometric Ratios",
-      "title_zh": "\u5012\u6570\u4e09\u89d2\u6bd4",
+      "title_zh": "Reciprocal Trigonometric Ratios",
       "grades": [
         11
       ],
@@ -415,7 +430,7 @@
       "id": "foundation-sine-law",
       "file": "math/foundation-sine-law.html",
       "title_en": "Oblique Triangles and the Sine Law",
-      "title_zh": "\u659c\u4e09\u89d2\u5f62\u4e0e\u6b63\u5f26\u5b9a\u7406",
+      "title_zh": "Oblique Triangles and the Sine Law",
       "grades": [
         11
       ],
@@ -431,7 +446,7 @@
       "id": "foundation-ssa-ambiguous-case",
       "file": "math/foundation-ssa-ambiguous-case.html",
       "title_en": "SSA Ambiguous Case (Sine Law)",
-      "title_zh": "SSA \u6b67\u4e49\u60c5\u5f62\uff08\u6b63\u5f26\u5b9a\u7406\uff09",
+      "title_zh": "SSA Ambiguous Case (Sine Law)",
       "grades": [
         11
       ],
@@ -447,7 +462,7 @@
       "id": "foundation-law-of-cosines",
       "file": "math/foundation-law-of-cosines.html",
       "title_en": "The Cosine Law",
-      "title_zh": "\u4f59\u5f26\u5b9a\u7406",
+      "title_zh": "The Cosine Law",
       "grades": [
         11
       ],
@@ -463,7 +478,7 @@
       "id": "foundation-trigonometry-3d-applications",
       "file": "math/foundation-trigonometry-3d-applications.html",
       "title_en": "Applications in 3D Settings",
-      "title_zh": "\u4e09\u7ef4\u5e94\u7528",
+      "title_zh": "Applications in 3D Settings",
       "grades": [
         11
       ],
@@ -479,7 +494,7 @@
       "id": "foundation-choosing-trigonometry-laws",
       "file": "math/foundation-choosing-trigonometry-laws.html",
       "title_en": "Choosing Between the Sine Law and the Cosine Law",
-      "title_zh": "\u6b63\u5f26\u5b9a\u7406\u4e0e\u4f59\u5f26\u5b9a\u7406\u7684\u9009\u62e9",
+      "title_zh": "Choosing Between the Sine Law and the Cosine Law",
       "grades": [
         11
       ],
@@ -495,7 +510,7 @@
       "id": "foundation-what-is-trigonometric-identity",
       "file": "math/foundation-what-is-trigonometric-identity.html",
       "title_en": "What Is an Identity?",
-      "title_zh": "\u4ec0\u4e48\u662f\u6052\u7b49\u5f0f\uff1f",
+      "title_zh": "What Is an Identity?",
       "grades": [
         11
       ],
@@ -511,7 +526,7 @@
       "id": "foundation-pythagorean-identity",
       "file": "math/foundation-pythagorean-identity.html",
       "title_en": "Pythagorean Identity",
-      "title_zh": "\u52fe\u80a1\u6052\u7b49\u5f0f",
+      "title_zh": "Pythagorean Identity",
       "grades": [
         11
       ],
@@ -527,7 +542,7 @@
       "id": "foundation-quotient-identities",
       "file": "math/foundation-quotient-identities.html",
       "title_en": "Quotient Identities",
-      "title_zh": "\u5546\u6052\u7b49\u5f0f",
+      "title_zh": "Quotient Identities",
       "grades": [
         11
       ],
@@ -543,7 +558,7 @@
       "id": "foundation-reciprocal-identities",
       "file": "math/foundation-reciprocal-identities.html",
       "title_en": "Reciprocal Identities",
-      "title_zh": "\u5012\u6570\u6052\u7b49\u5f0f",
+      "title_zh": "Reciprocal Identities",
       "grades": [
         11
       ],
@@ -559,7 +574,7 @@
       "id": "foundation-proving-trigonometric-identities",
       "file": "math/foundation-proving-trigonometric-identities.html",
       "title_en": "Strategies for Proving Trigonometric Identities",
-      "title_zh": "\u8bc1\u660e\u4e09\u89d2\u6052\u7b49\u5f0f\u7684\u7b56\u7565",
+      "title_zh": "Strategies for Proving Trigonometric Identities",
       "grades": [
         11
       ],
@@ -575,7 +590,7 @@
       "id": "foundation-trigonometric-identities-quick-checks",
       "file": "math/foundation-trigonometric-identities-quick-checks.html",
       "title_en": "Quick Checks",
-      "title_zh": "\u5feb\u901f\u68c0\u9a8c",
+      "title_zh": "Quick Checks",
       "grades": [
         11
       ],
@@ -591,7 +606,7 @@
       "id": "recovering-function-rule",
       "file": "math/thinking-recovering-function-rule.html",
       "title_en": "Recovering a Function Rule from Function Notation",
-      "title_zh": "\u4ece\u51fd\u6570\u8bb0\u53f7\u8fd8\u539f\u51fd\u6570\u89c4\u5219",
+      "title_zh": "Recovering a Function Rule from Function Notation",
       "grades": [
         11
       ],
@@ -750,8 +765,8 @@
     {
       "id": "foundation-number-families",
       "file": "math/foundation-number-families.html",
-      "title_en": "Number Families",
-      "title_zh": "\u6570\u7684\u5bb6\u65cf",
+      "title_en": "Number Skills & Operations",
+      "title_zh": "\u6570\u7684\u6280\u80fd\u4e0e\u8fd0\u7b97",
       "grades": [
         4,
         5,

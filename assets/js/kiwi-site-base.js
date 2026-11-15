@@ -40,19 +40,54 @@
   window.kiwiRootHref = kiwiRootHref;
 
   function patchRootLinks(root) {
-    root.querySelectorAll('a[href^="/"]').forEach(function (a) {
+    root.querySelectorAll("a[href]").forEach(function (a) {
       var h = a.getAttribute("href");
-      if (!h || h.indexOf("//") === 0) return;
-      var fixed = kiwiRootHref(h);
-      if (fixed !== h) a.setAttribute("href", fixed);
+      if (!h || h.indexOf("://") >= 0 || h.indexOf("//") === 0) return;
+      if (h.charAt(0) === "/") {
+        if (/^\/[a-z0-9][\w.-]*\.html$/i.test(h)) {
+          h = h.replace(/\.html$/i, "");
+        }
+        var fixed = kiwiRootHref(h);
+        if (fixed !== a.getAttribute("href")) a.setAttribute("href", fixed);
+        return;
+      }
+      var hashIdx = h.indexOf("#");
+      if (hashIdx > 0) {
+        var pathPart = h.slice(0, hashIdx);
+        var frag = h.slice(hashIdx);
+        if (pathPart.indexOf("/") < 0 && /\.html$/i.test(pathPart)) {
+          a.setAttribute(
+            "href",
+            kiwiRootHref("/" + pathPart.replace(/\.html$/i, "") + frag),
+          );
+          return;
+        }
+      }
+      if (h.indexOf("/") >= 0 || h.indexOf("#") === 0) return;
+      if (/^[a-z0-9][\w.-]*\.html$/i.test(h)) {
+        a.setAttribute("href", kiwiRootHref("/" + h.replace(/\.html$/i, "")));
+        return;
+      }
+      if (h === "index.html") {
+        a.setAttribute("href", kiwiRootHref("/math"));
+      }
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      patchRootLinks(document);
-    });
-  } else {
+  function install() {
     patchRootLinks(document);
   }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", install);
+  } else {
+    install();
+  }
+
+  new MutationObserver(function () {
+    install();
+  }).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["lang", "data-language"],
+  });
 })();

@@ -100,6 +100,36 @@ def main() -> None:
                 "type": 302,
             }
         )
+        src = rule["source"]
+        if src != "/":
+            redirects.append(
+                {
+                    "source": f"{src}.html",
+                    "destination": f"{prefix}{src}",
+                    "type": 302,
+                }
+            )
+            redirects.append(
+                {
+                    "source": f"{prefix}{src}.html",
+                    "destination": f"{prefix}{src}",
+                    "type": 302,
+                }
+            )
+
+    # Legacy nav links use ../math/<slug>.html → /math/<slug> in the browser bar.
+    for path in sorted((ROOT / "math").glob("*.html")):
+        slug = path.stem
+        if slug in SKIP_MATH:
+            continue
+        if slug == "index":
+            canon = f"{prefix}/math"
+            legacy_sources = ("/math/index.html",)
+        else:
+            canon = f"{prefix}/{slug}"
+            legacy_sources = (f"/math/{slug}", f"/math/{path.name}")
+        for legacy in legacy_sources:
+            redirects.append({"source": legacy, "destination": canon, "type": 302})
 
     payload = {"rewrites": rewrites, "redirects": redirects}
     OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")

@@ -4615,6 +4615,29 @@ html body main .nf-hero.topic-banner > p:last-child {
   }
 }
 
+/* Mobile: compact inner banners — match topic-banner frame (main gutter + 22px text inset). */
+@media (max-width: 700px) {
+  html body:not(.home-page) main > :is(.compact-page-banner, .about-compact-banner),
+  html body.edu-page .edu-main > .about-compact-banner,
+  html body.ai-page .ai-main > .about-compact-banner,
+  html body.about-page main > .about-compact-banner,
+  html body.contact-page .contact-main > .about-compact-banner,
+  html body.books-page main > .about-compact-banner,
+  html body.books-page .books-main > .about-compact-banner,
+  html body.in-class-page main > .about-compact-banner,
+  html body:not(.home-page) main > .page-banner,
+  html body:not(.home-page) main > .contact-banner,
+  html body:not(.home-page) main > .legal-banner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: var(--topic-banner-padding-x, 22px) !important;
+    padding-right: var(--topic-banner-padding-x, 22px) !important;
+    box-sizing: border-box !important;
+  }
+}
+
 /* Mobile: all inner-page banners grow with title + subtitle (Levels 2–4). */
 @media (max-width: 760px) {
   html body:not(.home-page) main .compact-page-banner,

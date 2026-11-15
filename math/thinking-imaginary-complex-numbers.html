@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+
+<!--
+  Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
+
+  Visual reference: math/foundation-number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+
+  HOW TO USE
+  1. Copy to target path (e.g. math/foundation-number-families.html, math/car-journey.html).
+  2. body.topic-page + main.topic-main — no primary nav item active.
+  3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
+  4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
+  5. Kicker = section path; subtitle = short intro (≤2 lines); longer copy goes in body .nf-lead / article.
+  6. Fallback .page-back-wrap → parent category; drive-breadcrumb.js replaces it with full trail.
+  7. Paste unique content between LEVEL-4 BODY markers.
+
+  Levels 2–3 use the blue-gold compact banner — not this template.
+-->
+<html lang="en-CA" data-pagefind-filter="section:math" data-pagefind-meta="breadcrumb:Math › Number Skills &amp; Operations">
+<head>
+<!-- kiwi-search-prepared -->
+<meta name="pagefind:title_en" content="Number Skills &amp; Operations" />
+<meta name="pagefind:section" content="math" />
+<meta name="pagefind:breadcrumb" content="Math › Number Skills &amp; Operations" />
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Imaginary &amp; Complex Numbers | Kiwi 爱AI Study" data-zh="虚数与复数 | Kiwi 爱AI Study">Imaginary &amp; Complex Numbers | Kiwi 爱AI Study</title>
+<meta content="Advanced lesson on imaginary numbers, the complex plane, distance, and rotation (Mathematical Thinking)." name="description"/>
+<link href="../assets/css/styles.css?v=20261110-panel-right-accent" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
+<!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
+<style>
+/* Example topic content tokens (Number Families pattern) — trim or extend per page */
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
+@media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}}
+  
+.word-topic{max-width:1040px;margin:28px auto}.topic-intro{line-height:1.8;margin:0 0 20px}.lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}.lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}.lesson-card summary::after{content:'+';font-size:25px;color:#1768b2}.lesson-card[open] summary::after{content:'−'}.lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}.lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}.lesson-card-content h3{color:#153d70;font-size:17px;margin:20px 0 8px}.lesson-card-content h4{color:#153d70;font-size:16px;font-weight:750;margin:20px 0 8px}.lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px;padding-left:3ch;line-height:1.5}.lesson-card-content h4{color:#153d70;font-size:16px;font-weight:750;margin:20px 0 8px}.lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px 3ch;line-height:1.5}.word-figure{display:block;max-width:100%;height:auto;margin:12px auto}.math-expression{font-family:Cambria Math,serif;white-space:pre-wrap}.lesson-card p{margin:10px 0}@media(max-width:600px){.lesson-card summary{padding:15px;font-size:16px}.lesson-card-content{padding:12px 16px}}
+
+/* Advanced GCF methods: explanatory introduction and two independent panels */
+.kiwi-topic-article .kiwi-advanced-intro{margin:24px 0 18px;line-height:1.75}
+.kiwi-topic-article .kiwi-advanced-intro h3{color:#153d70;font-size:20px;margin:0 0 12px}
+.kiwi-topic-article .kiwi-method-card{margin:14px 0}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math{display:flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;width:100%!important;max-width:100%!important;overflow:visible!important;box-sizing:border-box}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math math{display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:4.7rem!important;margin:.35rem 0 1.2rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li{list-style:decimal outside!important;text-align:left!important;padding-left:.35rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li p{display:inline!important;margin:0!important;text-align:left!important;font:inherit!important}
+@media(max-width:600px){.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:3.8rem!important}}
+
+</style>
+<style>
+/* KIWI Level 4: category in banner, document-style topic navigation */
+.kiwi-learning-layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,1fr);gap:30px;align-items:start;max-width:1160px;margin:28px auto 50px}
+.kiwi-topic-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px}
+.kiwi-topic-sidebar h2{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#54708e;margin:0 8px 12px}
+.kiwi-topic-sidebar a{display:block;padding:12px 13px;color:#194a81;text-decoration:none;font-size:14px;line-height:1.5;border-radius:9px;overflow-wrap:break-word}
+.kiwi-topic-sidebar a:hover,.kiwi-topic-sidebar a:focus-visible{background:#e8f2fc;outline-offset:2px}
+.kiwi-topic-sidebar a[aria-current=page]{background:#dcecff;color:#103c74;font-weight:750;border-left:3px solid #1768b2}
+.kiwi-topic-sidebar .kiwi-sidebar-back{margin-top:12px;padding-top:16px;border-top:1px solid #dce7f3;font-size:13px}
+.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.6vw,30px);line-height:1.25;color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}
+.kiwi-topic-article .word-topic{max-width:100%;margin:0}.kiwi-topic-article .lesson-card{max-width:100%}
+@media(max-width:760px){.kiwi-learning-layout{display:block;margin:20px auto}.kiwi-topic-sidebar{position:static;margin-bottom:24px;padding:12px}.kiwi-topic-sidebar h2{margin:2px 8px 6px}.kiwi-topic-sidebar a{padding:9px 12px}.kiwi-current-topic{margin:0 0 16px}}
+</style><style>
+/* Topic navigation and professional mathematics typography */
+.kiwi-topic-sidebar{padding-top:14px}
+.kiwi-topic-article .word-topic{line-height:1.75}
+.kiwi-topic-article .topic-intro{line-height:1.75}
+.kiwi-topic-article .kiwi-formula-row{display:block;text-align:center;margin:18px auto 22px;padding:5px 10px;max-width:100%;overflow-x:auto;font-family:"Cambria Math", "STIX Two Math", serif;font-size:1.12rem;line-height:1.75}
+.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-display-math{display:block;text-align:center;margin:16px auto;max-width:100%;overflow-x:auto;font-size:1.08em}
+.kiwi-topic-article .lesson-card-content p,.kiwi-topic-article .topic-intro p{margin:12px 0}
+.kiwi-topic-article .lesson-card-content ul,.kiwi-topic-article .topic-intro ul{padding-left:25px}
+.kiwi-topic-article .lesson-card-content li,.kiwi-topic-article .topic-intro li{margin:7px 0}
+.kiwi-topic-article .lesson-card-content blockquote{border-left:3px solid #d3e5f6;padding-left:15px;margin:14px 0;color:#334e68}
+.kiwi-topic-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:18px 0}
+.kiwi-topic-article th,.kiwi-topic-article td{border:1px solid #dce7f3;padding:8px 12px}
+.kiwi-topic-article .lesson-card-content img{max-width:100%;height:auto;display:block;margin:15px auto}
+@media(max-width:760px){.kiwi-topic-article .kiwi-formula-row{font-size:1rem}}
+</style><style>
+/* Word-to-web math and insight panel cleanup */
+.kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
+.kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
+.kiwi-topic-article .kiwi-insight-body ul{padding-left:22px;margin:12px 0}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row,.kiwi-topic-article .kiwi-insight-body math[display="block"]{text-align:center}
+.kiwi-topic-article .kiwi-formula-row{list-style:none}
+@media(max-width:600px){.kiwi-topic-article .kiwi-insight-panel{padding:14px 16px}}
+</style><style>
+/* KIWI mathematical equation steps: remove bullet markers without altering genuine teaching lists. */
+.kiwi-topic-article li.kiwi-equation-list-item{list-style-type:none!important;list-style-image:none!important;position:relative}
+.kiwi-topic-article li.kiwi-equation-list-item::marker{content:""!important}
+.kiwi-topic-article li.kiwi-equation-list-item::before{content:none!important}
+.kiwi-topic-article li.kiwi-equation-list-item>p{margin:10px 0;text-align:center}
+.kiwi-topic-article li.kiwi-equation-list-item>p math{margin-left:auto;margin-right:auto}
+.kiwi-topic-article .kiwi-insight-panel{background:#fff9ec!important;border-color:#f2d79c!important;border-left-color:#dfac49!important;color:#6b4b22!important}
+.kiwi-topic-article .kiwi-insight-header{color:#865915!important}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row{text-align:center}
+</style><style id="kiwi-gcf-notation-fix">
+/* Examples are a semantic list, not centered derivation blocks. */
+.kiwi-topic-article .kiwi-gcf-example-list{list-style:disc outside;padding-left:1.7rem;margin:12px 0 24px;}
+.kiwi-topic-article .kiwi-gcf-example-list li{display:list-item;list-style-type:disc;text-align:left;margin:9px 0;padding-left:5px;}
+.kiwi-topic-article .kiwi-gcf-example-list math{display:inline!important;overflow:visible!important;max-width:none!important;vertical-align:middle;}
+/* Remove native MathML vertical scroll controls; formulas remain centered. */
+.kiwi-topic-article math,.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-formula-row{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;scrollbar-width:none;}
+.kiwi-topic-article math::-webkit-scrollbar,.kiwi-topic-article .kiwi-formula-row::-webkit-scrollbar{display:none;}
+.kiwi-topic-article .kiwi-formula-row{text-align:center;}
+.kiwi-topic-article .kiwi-formula-row math[display="block"]{display:block;margin-inline:auto;text-align:center;}
+</style><style>
+/* GCF worked example: clear example indent and numbered procedure */
+.kiwi-example-list{padding-left:2.2rem;margin:0.6rem 0 1rem;list-style:disc outside}
+.kiwi-example-list li{padding-left:.25rem;line-height:1.7}
+.kiwi-numbered-steps{list-style:decimal outside;padding-left:2.4rem;margin:1rem 0 1.25rem}
+.kiwi-numbered-steps>li{padding-left:.3rem;margin:.45rem 0;line-height:1.6}
+.kiwi-numbered-steps>li::marker{font-weight:700;color:#111111}
+.kiwi-numbered-steps .kiwi-formula-row{margin:.15rem 0!important;text-align:center!important}
+.kiwi-numbered-steps math[display="block"]{display:block!important;margin:0 auto!important;text-align:center!important}
+</style><style id="kiwi-gcf-final-layout">
+/* Consistent one-level indentation for bullet and numbered lists. */
+.kiwi-topic-article ul.kiwi-example-list,
+.kiwi-topic-article ul.kiwi-gcf-example-list,
+.kiwi-topic-article ol.kiwi-numbered-steps { margin: .65rem 0 1.2rem 0 !important; padding-left: 2.5rem !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ul.kiwi-example-list > li,
+.kiwi-topic-article ul.kiwi-gcf-example-list > li { padding-left:.4rem !important; margin:.45rem 0 !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li { list-style-type:decimal !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li p.kiwi-step-text { display:inline !important; margin:0 !important; padding:0 !important; text-align:left !important; font:inherit !important; }
+.kiwi-topic-article .kiwi-gcd-display { display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; margin:1rem auto 1.3rem !important; padding:0 !important; border:0 !important; }
+.kiwi-topic-article .kiwi-gcd-display math { display:block !important; width:max-content !important; max-width:100%; margin:0 auto !important; text-align:center !important; overflow:visible !important; }
+</style><style>
+/* Word-to-Web: nested worked examples (GCF Division Method) */
+.kiwi-example-block { margin: .5rem 0 1.2rem 1.5rem; text-align: left; }
+.kiwi-example-question { margin: .35rem 0 .55rem; }
+.kiwi-example-steps { margin: .4rem 0 .45rem 2rem; padding-left: 1.25rem; list-style-type: decimal; }
+.kiwi-example-steps li { padding-left: .25rem; margin: .45rem 0; text-align: left; }
+.kiwi-example-steps li::marker { color: #111111; font-weight: 700; }
+.kiwi-example-explanation, .kiwi-example-answer { margin: .6rem 0 .6rem 2rem; text-align: left; }
+@media (max-width: 600px) { .kiwi-example-block { margin-left: .7rem; } .kiwi-example-steps { margin-left: 1rem; } .kiwi-example-explanation, .kiwi-example-answer { margin-left: 1rem; } }
+</style><style>
+/* KIWI Word-to-Web standards: math lesson lists (2026-11-09) */
+.kiwi-topic-article ol li::marker,
+.kiwi-topic-article .kiwi-numbered-steps > li::marker,
+.kiwi-topic-article .kiwi-example-steps > li::marker,
+.kiwi-topic-article .kiwi-method-card ol li::marker {
+  color: #111 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ol.kiwi-example-steps > li {font-weight:400; text-align:left;}
+/* Avoid centering calculation text within numbered steps. */
+.kiwi-topic-article ol.kiwi-numbered-steps > li > p.kiwi-step-text {font-weight:400!important;text-align:left!important;}
+</style>
+<style id="kiwi-shared-math-example-standards">
+/* KIWI shared Word-to-Web: formulas and worked examples (2026-11-09). */
+.kiwi-topic-article p.kiwi-formula-row {display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;box-sizing:border-box!important;overflow:visible!important;margin:1rem auto!important;padding:.25rem 0!important;}
+.kiwi-topic-article p.kiwi-formula-row > math[display="block"] {display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-scroll {overflow-x:auto!important;overflow-y:hidden!important;max-width:100%;}
+.kiwi-topic-article .kiwi-example-standard {margin:.35rem 0 1rem!important;padding:0!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question {margin:.35rem 0 .4rem 3ch!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps {margin:.35rem 0 .6rem 6ch!important;padding:0!important;list-style:decimal inside!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li {display:list-item!important;list-style:decimal inside!important;margin:.3rem 0!important;padding:0!important;font-weight:400!important;color:#111!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;font-weight:400!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
+.kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
+.kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
+</style><style>
+/* KIWI Word-to-Web: unified display math layout (2026-11) */
+.kiwi-topic-article math[display="block"], .kiwi-topic-article math.math-display, .kiwi-topic-article math.kiwi-display-math {display:block!important;text-align:center!important;margin:0 auto!important;max-width:100%!important;overflow:visible!important;overflow-y:visible!important;}
+.kiwi-topic-article .kiwi-math-block {display:block!important;width:100%!important;max-width:100%!important;text-align:center!important;margin:1.1rem auto!important;padding:.1rem 0!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;}
+.kiwi-topic-article .kiwi-math-block::-webkit-scrollbar {height:0!important;width:0!important;display:none!important;}
+.kiwi-topic-article .kiwi-math-block > math {display:block!important;width:max-content!important;max-width:none!important;margin:0 auto!important;text-align:center!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-block > p {text-align:center!important;margin:0!important;}
+.kiwi-topic-article .kiwi-example-steps, .kiwi-topic-article .kiwi-example-steps li, .kiwi-topic-article .kiwi-example-steps p {text-align:left!important;}
+.kiwi-topic-article .kiwi-example-steps li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-insight-panel p, .kiwi-topic-article .kiwi-curriculum-panel p {text-align:left!important;}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+<style>
+/* Tip panel chrome: global assets/css/styles.css (gold 3D left rail) */
+.kiwi-insight-header,.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
+.kiwi-insight-icon,.kiwi-word-info-icon{flex:none;font-size:1.1rem;line-height:1.2}
+.kiwi-insight-body>*:first-child,.kiwi-word-info-body>*:first-child{margin-top:0}
+.kiwi-insight-body>*:last-child,.kiwi-word-info-body>*:last-child{margin-bottom:0}
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:400;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="/mathematical-thinking"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+<script src="../assets/js/kiwi-site-base.js?v=20261115-coursepill"></script>
+</head>
+<body class="topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="/in-class-learning">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<button type="button" class="kiwi-search-open" data-kiwi-search-trigger aria-label="Search site"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main data-pagefind-body="" data-pagefind-filter="lang:en"  class="topic-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Mathematical Thinking" data-page-back="" data-zh="← 返回数学思维" href="/mathematical-thinking">← Back to Mathematical Thinking</a>
+</div>
+<section aria-label="Page introduction" class="nf-hero topic-banner">
+<p class="topic-banner-kicker" data-en="MATHEMATICAL THINKING" data-zh="数学思维">MATHEMATICAL THINKING</p>
+<h1 data-en="Number Skills &amp; Operations" data-zh="数的技能与运算">Number Skills &amp; Operations</h1>
+<p class="topic-banner-subtitle" data-en="Explore number relationships, operations, and practical calculation strategies." data-zh="探索数的关系、运算方法与实用计算策略。">Explore number relationships, operations, and practical calculation strategies.</p>
+</section>
+<!-- LEVEL-4 BODY START -->
+<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a data-en="Greatest Common Factor (GCF)" data-zh="最大公因数" href="/thinking-greatest-common-factor-gcf">Greatest Common Factor (GCF)</a><a data-en="Unit Conversions and Rates" data-zh="单位换算与比率" href="/thinking-unit-conversions-and-rates">Unit Conversions and Rates</a><a data-en="Mental Squaring and Square Rooting" data-zh="心算平方与平方根" href="/thinking-mental-squaring-and-square-rooting">Mental Squaring and Square Rooting</a><a aria-current="page" data-en="Imaginary &amp; Complex Numbers" data-zh="虚数与复数" href="/thinking-imaginary-complex-numbers">Imaginary &amp; Complex Numbers</a><a class="kiwi-sidebar-back" data-en="← All Mathematical Thinking" data-zh="← 返回数学思维目录" href="/mathematical-thinking">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h1 class="kiwi-current-topic" data-en="Imaginary Numbers &amp; Complex Numbers" data-zh="虚数与复数">Imaginary Numbers &amp; Complex Numbers</h1><section class="nf-section word-topic"><aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">🔗</span></div><p data-en="&lt;strong&gt;Lesson scope:&lt;/strong&gt; &lt;strong&gt;Advanced&lt;/strong&gt; — imaginary unit, complex plane, modulus, distance, and rotation by &lt;em&gt;i&lt;/em&gt;." data-zh="&lt;strong&gt;本课范围：&lt;/strong&gt;&lt;strong&gt;进阶&lt;/strong&gt;——虚数单位、复平面、模、距离与乘以 &lt;em&gt;i&lt;/em&gt; 的旋转。"><strong>Lesson scope:</strong> <strong>Advanced</strong> — imaginary unit, complex plane, modulus, distance, and rotation by <em>i</em>.</p><p data-en="&lt;strong&gt;Also see:&lt;/strong&gt; Number family overview, histories, and number-line pictures in &lt;a href=&quot;/foundation-number-families&quot;&gt;Number Families&lt;/a&gt; (Math Foundations)." data-zh="&lt;strong&gt;亦可参阅：&lt;/strong&gt;数族概览、历史与数轴图示见数学基础中的 &lt;a href=&quot;/foundation-number-families&quot;&gt;数的家族&lt;/a&gt;。"><strong>Also see:</strong> Number family overview, histories, and number-line pictures in <a href="/foundation-number-families">Number Families</a> (Math Foundations).</p></aside><p data-en="Why introduce &lt;em&gt;i&lt;/em&gt;? Consider &lt;em&gt;x&lt;/em&gt;² + 1 = 0. Rearranging gives &lt;em&gt;x&lt;/em&gt;² = −1. No real number has a negative square, so this equation has no real solution. Define the imaginary unit &lt;em&gt;i&lt;/em&gt; by &lt;em&gt;i&lt;/em&gt;² = −1; then the solutions are &lt;em&gt;x&lt;/em&gt; = ±&lt;em&gt;i&lt;/em&gt;." data-zh="为何引入 &lt;em&gt;i&lt;/em&gt;？看方程 &lt;em&gt;x&lt;/em&gt;² + 1 = 0，得 &lt;em&gt;x&lt;/em&gt;² = −1。实数没有负的平方，故无实数解。定义 &lt;em&gt;i&lt;/em&gt;² = −1，则解为 &lt;em&gt;x&lt;/em&gt; = ±&lt;em&gt;i&lt;/em&gt;。">Why introduce <em>i</em>? Consider <em>x</em>² + 1 = 0. Rearranging gives <em>x</em>² = −1. No real number has a negative square, so this equation has no real solution. Define the imaginary unit <em>i</em> by <em>i</em>² = −1; then the solutions are <em>x</em> = ±<em>i</em>.</p>
+<p data-en="Pure imaginary numbers have the form &lt;em&gt;bi&lt;/em&gt;, where &lt;em&gt;b&lt;/em&gt; is a nonzero real number (for example, &lt;em&gt;i&lt;/em&gt;, 2&lt;em&gt;i&lt;/em&gt;, and −3&lt;em&gt;i&lt;/em&gt;). A complex number has the form &lt;em&gt;z = a + bi&lt;/em&gt;, where &lt;em&gt;a&lt;/em&gt; and &lt;em&gt;b&lt;/em&gt; are real numbers. Every real number is also complex: &lt;em&gt;a&lt;/em&gt; = &lt;em&gt;a&lt;/em&gt; + 0&lt;em&gt;i&lt;/em&gt;." data-zh="纯虚数形如 &lt;em&gt;bi&lt;/em&gt;（&lt;em&gt;b&lt;/em&gt; 为非零实数），如 &lt;em&gt;i&lt;/em&gt;、2&lt;em&gt;i&lt;/em&gt;、−3&lt;em&gt;i&lt;/em&gt;。复数 &lt;em&gt;z = a + bi&lt;/em&gt;，&lt;em&gt;a&lt;/em&gt;、&lt;em&gt;b&lt;/em&gt; 为实数。每个实数也是复数：&lt;em&gt;a&lt;/em&gt; = &lt;em&gt;a&lt;/em&gt; + 0&lt;em&gt;i&lt;/em&gt;。">Pure imaginary numbers have the form <em>bi</em>, where <em>b</em> is a nonzero real number (for example, <em>i</em>, 2<em>i</em>, and −3<em>i</em>). A complex number has the form <em>z = a + bi</em>, where <em>a</em> and <em>b</em> are real numbers. Every real number is also complex: <em>a</em> = <em>a</em> + 0<em>i</em>.</p>
+<h4 data-en="The Complex Plane" data-zh="复平面">The Complex Plane</h4>
+<p data-en="A complex number &lt;em&gt;z = a + bi&lt;/em&gt; corresponds to the point (&lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;): the horizontal axis shows the real part &lt;em&gt;a&lt;/em&gt;, and the vertical axis shows the imaginary coefficient &lt;em&gt;b&lt;/em&gt;. For example, 2 + 3&lt;em&gt;i&lt;/em&gt; corresponds to (2, 3)." data-zh="&lt;em&gt;z = a + bi&lt;/em&gt; 对应点 (&lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;)：横轴为实部 &lt;em&gt;a&lt;/em&gt;，纵轴为虚部系数 &lt;em&gt;b&lt;/em&gt;；如 2 + 3&lt;em&gt;i&lt;/em&gt; → (2, 3)。">A complex number <em>z = a + bi</em> corresponds to the point (<em>a</em>, <em>b</em>): the horizontal axis shows the real part <em>a</em>, and the vertical axis shows the imaginary coefficient <em>b</em>. For example, 2 + 3<em>i</em> corresponds to (2, 3).</p>
+<h4 data-en="Distance between two complex numbers" data-zh="两复数之间的距离">Distance between two complex numbers</h4>
+<p data-en="For &lt;em&gt;z&lt;/em&gt;₁ = 2 + 3&lt;em&gt;i&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt;₂ = 4 + 5&lt;em&gt;i&lt;/em&gt;, subtract: &lt;em&gt;z&lt;/em&gt;₂ − &lt;em&gt;z&lt;/em&gt;₁ = 2 + 2&lt;em&gt;i&lt;/em&gt;. The modulus of &lt;em&gt;a + bi&lt;/em&gt; is |&lt;em&gt;a + bi&lt;/em&gt;| = √(a² + b²), so the distance is |&lt;em&gt;z&lt;/em&gt;₂ − &lt;em&gt;z&lt;/em&gt;₁| = √(2² + 2²) = 2√2." data-zh="设 &lt;em&gt;z&lt;/em&gt;₁ = 2 + 3&lt;em&gt;i&lt;/em&gt;，&lt;em&gt;z&lt;/em&gt;₂ = 4 + 5&lt;em&gt;i&lt;/em&gt;，则 &lt;em&gt;z&lt;/em&gt;₂ − &lt;em&gt;z&lt;/em&gt;₁ = 2 + 2&lt;em&gt;i&lt;/em&gt;。模 |&lt;em&gt;a + bi&lt;/em&gt;| = √(a² + b²)，距离 |&lt;em&gt;z&lt;/em&gt;₂ − &lt;em&gt;z&lt;/em&gt;₁| = √(2² + 2²) = 2√2。">For <em>z</em>₁ = 2 + 3<em>i</em> and <em>z</em>₂ = 4 + 5<em>i</em>, subtract: <em>z</em>₂ − <em>z</em>₁ = 2 + 2<em>i</em>. The modulus of <em>a + bi</em> is |<em>a + bi</em>| = √(a² + b²), so the distance is |<em>z</em>₂ − <em>z</em>₁| = √(2² + 2²) = 2√2.</p>
+<h4 data-en="Rotation by 90°" data-zh="旋转 90°">Rotation by 90°</h4>
+<p data-en="Multiplying a complex number by &lt;em&gt;i&lt;/em&gt; rotates its point 90° counterclockwise around the origin. Example: (2 + 3&lt;em&gt;i&lt;/em&gt;)&lt;em&gt;i&lt;/em&gt; = 2&lt;em&gt;i&lt;/em&gt; + 3&lt;em&gt;i&lt;/em&gt;² = −3 + 2&lt;em&gt;i&lt;/em&gt;. Thus (2, 3) becomes (−3, 2)." data-zh="复数乘以 &lt;em&gt;i&lt;/em&gt; 相当于绕原点逆时针转 90°。例：(2 + 3&lt;em&gt;i&lt;/em&gt;)&lt;em&gt;i&lt;/em&gt; = −3 + 2&lt;em&gt;i&lt;/em&gt;，点 (2, 3) 变为 (−3, 2)。">Multiplying a complex number by <em>i</em> rotates its point 90° counterclockwise around the origin. Example: (2 + 3<em>i</em>)<em>i</em> = 2<em>i</em> + 3<em>i</em>² = −3 + 2<em>i</em>. Thus (2, 3) becomes (−3, 2).</p>
+<h4 data-en="Historical note" data-zh="历史注记">Historical note</h4>
+<p data-en="Imaginary numbers developed through the study of algebraic equations, particularly cubic equations in the 16th century. Mathematicians later recognized that complex numbers also provide a powerful language for geometry, rotations, waves, and electrical engineering." data-zh="虚数源于 16 世纪对方程（尤其三次方程）的研究；后来数学家认识到复数也是描述几何、旋转、波动与电气工程的有力语言。">Imaginary numbers developed through the study of algebraic equations, particularly cubic equations in the 16th century. Mathematicians later recognized that complex numbers also provide a powerful language for geometry, rotations, waves, and electrical engineering.</p>
+<p class="nf-note" data-en="Remember: &lt;em&gt;i&lt;/em&gt;² = −1; complex number &lt;em&gt;z = a + bi&lt;/em&gt;; modulus |&lt;em&gt;z&lt;/em&gt;| = √(a² + b²); distance &lt;em&gt;d&lt;/em&gt; = |&lt;em&gt;z&lt;/em&gt;₂ − &lt;em&gt;z&lt;/em&gt;₁|." data-zh="记住：&lt;em&gt;i&lt;/em&gt;² = −1；复数 &lt;em&gt;z = a + bi&lt;/em&gt;；模 |&lt;em&gt;z&lt;/em&gt;| = √(a² + b²)；距离 &lt;em&gt;d&lt;/em&gt; = |&lt;em&gt;z&lt;/em&gt;₂ − &lt;em&gt;z&lt;/em&gt;₁|。">Remember: <em>i</em>² = −1; complex number <em>z = a + bi</em>; modulus |<em>z</em>| = √(a² + b²); distance <em>d</em> = |<em>z</em>₂ − <em>z</em>₁|.</p></section></article></div>
+<!-- LEVEL-4 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261115-bcrumb4"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      // Keep the established default: first section open, remaining sections closed.
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
+<link href="../pagefind/pagefind-ui.css" rel="stylesheet"/>
+<script defer src="../assets/js/kiwi-site-search.js?v=20261114-search20"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- kiwi-search-zh-index -->
+<div class="kiwi-pagefind-zh" hidden aria-hidden="true" data-pagefind-lang="zh" data-pagefind-body="" data-pagefind-filter="lang:zh"><span hidden data-pagefind-meta="title_zh">数的技能与运算</span><span hidden data-pagefind-meta="breadcrumb_zh">数学 › 数的技能与运算</span><span hidden data-pagefind-meta="excerpt_zh">🔗 本课范围： 进阶 ——虚数单位、复平面、模、距离与乘以 i 的旋转。 亦可参阅： 数族概览、历史与数轴图示见数学基础中的 数的家族 。 为何引入 i ？看方程 x ² + 1 = 0，得 x ² = −1。实数没有负的平方，故无实数解。定义 i ² = −1，则解为 x = ± i 。 纯虚数形如 bi （ b 为非零实数），如 i 、2 i 、−3 i 。复数 z = a + bi ， a 、 b 为实数。每个实数也是复数： a…</span>← 返回数学思维 数学思维 数的技能与运算 探索数的关系、运算方法与实用计算策略。 最大公因数 单位换算与比率 心算平方与平方根 虚数与复数 ← 返回数学思维目录 🔗 本课范围： 进阶 ——虚数单位、复平面、模、距离与乘以 i 的旋转。 亦可参阅： 数族概览、历史与数轴图示见数学基础中的 数的家族 。 为何引入 i ？看方程 x ² + 1 = 0，得 x ² = −1。实数没有负的平方，故无实数解。定义 i ² = −1，则解为 x = ± i 。 纯虚数形如 bi （ b 为非零实数），如 i 、2 i 、−3 i 。复数 z = a + bi ， a 、 b 为实数。每个实数也是复数： a = a + 0 i 。 复平面 z = a + bi 对应点 ( a , b )：横轴为实部 a ，纵轴为虚部系数 b ；如 2 + 3 i → (2, 3)。 两复数之间的距离 设 z ₁ = 2 + 3 i ， z ₂ = 4 + 5 i ，则 z ₂ − z ₁ = 2 + 2 i 。模 | a + bi | = √(a² + b²)，距离 | z ₂ − z ₁| = √(2² + 2²) = 2√2。 旋转 90° 复数乘以 i 相当于绕原点逆时针转 90°。例：(2 + 3 i ) i = −3 + 2 i ，点 (2, 3) 变为 (−3, 2)。 历史注记 虚数源于 16 世纪对方程（尤其三次方程）的研究；后来数学家认识到复数也是描述几何、旋转、波动与电气工程的有力语言。 记住： i ² = −1；复数 z = a + bi ；模 | z | = √(a² + b²)；距离 d = | z ₂ − z ₁|。</div>
+<!-- /kiwi-search-zh-index -->
+</body>
+</html>

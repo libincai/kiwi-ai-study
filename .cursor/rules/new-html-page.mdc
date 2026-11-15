@@ -1,0 +1,33 @@
+---
+description: Checklist when adding a new public HTML page (math, ai, etc.) — avoid local 404s
+alwaysApply: true
+---
+
+# New HTML page (kiwi-ai-study)
+
+Local URLs use **`http://localhost:3000/kiwi-ai-study/<slug>`** (no `.html`). Slug must equal the filename stem: `math/foundation-foo.html` → `/foundation-foo`.
+
+## Required steps (do not skip)
+
+1. **Add the file** under the correct section (`math/`, `ai/`, …). Match an existing level-3/4 shell (styles, `mf-chapter`, bilingual `data-en` / `data-zh`).
+2. **Regenerate rewrites:** `python tools/generate-serve-rewrites.py` (updates `serve.json`).
+3. **Restart the dev server** — `serve` only reads `serve.json` at startup. A running server after rewrites alone → **404**.
+   - From repo root: `powershell -File tools/dev-server.ps1` (background is fine).
+   - Do not rely on a stale `npx serve` on port 3000.
+4. **Wire navigation** as the page type requires: topic sidebars, add the topic in **`local/kiwi_math_topics_data.py`** (regenerates `data/math-topics.json` when `dev-server.ps1` runs `kiwi_math_catalog.py`), grade/course hubs, `assets/js/drive-breadcrumb.js`.
+5. **Search:** `python local/kiwi_search_prepare.py`.
+6. **Verify:** HTTP **200** for both:
+   - `/kiwi-ai-study/<slug>`
+   - `/math/<slug>.html` (direct file)
+
+## Common failure
+
+| Symptom | Cause |
+|---------|--------|
+| 404 on `/kiwi-ai-study/...` but direct `/math/<slug>.html` is 200 | **Stale** process on port 3000 (old rewrite table). Run `tools/dev-server.ps1` and wait for `KIWI dev server at http://127.0.0.1:3000/kiwi-ai-study/`. |
+| 404 on both URLs | Missing HTML file, or slug ≠ filename stem, or `serve.json` not regenerated |
+
+## Assets
+
+- Prefer **WebP** under `assets/` (convert JPG/PNG from docx when needed).
+- After content edits, run `kiwi_search_prepare.py` if pagefind metadata/body changed.

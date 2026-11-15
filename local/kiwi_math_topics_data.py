@@ -25,6 +25,17 @@ def build_topics() -> list[dict]:
             "list_on_grade_hub": True,
         },
         {
+            "id": "unit-circle-six-trig",
+            "file": "math/foundation-six-trigonometric-functions-unit-circle.html",
+            "title_en": "Six Trigonometric Functions on the Unit Circle",
+            "title_zh": "单位圆上的六种三角函数",
+            "grades": [11],
+            "courses": ["MCR3U"],
+            "chapter_id": "foundations-trigonometry",
+            "sort": 15,
+            "list_on_grade_hub": True,
+        },
+        {
             "id": "oblique-triangles-laws",
             "file": "math/foundation-oblique-triangles-and-triangle-laws.html",
             "title_en": "Oblique Triangles and Triangle Laws",

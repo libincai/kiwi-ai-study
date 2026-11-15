@@ -23,16 +23,23 @@
 .mf-article>h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}
 .foundation-level4 .mf-article>.nf-section:first-of-type{margin-top:0}
 .foundation-level4 .mf-article>.nf-section:first-of-type .nf-lead{margin-top:0}
+.nf-overview-intro{margin:0 0 8px}
 .nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
 .nf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.nf-card{display:grid;grid-template-columns:minmax(0,1fr) 120px;grid-template-areas:"main img" "history history";gap:12px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 5px 16px rgba(24,55,95,.045);min-width:0}
-.nf-card-main{grid-area:main;min-width:0}
+.nf-card{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:12px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 5px 16px rgba(24,55,95,.045);min-width:0}
+.nf-card-main{grid-column:1;grid-row:1;min-width:0}
 .nf-card h3{font-size:18px;line-height:1.25;color:#173e70;margin:0 0 7px}
 .nf-card p{font-size:13px;line-height:1.55;color:#536981;margin:0 0 8px}
 .nf-card .examples{font-size:12px;font-weight:700;color:#1d5b91;background:#eef6ff;border-radius:8px;padding:7px 9px;display:inline-block;margin:0}
-.nf-card .history{grid-area:history;margin:0;border-top:1px solid #e8eef5;padding-top:10px}
-.nf-card .history strong{color:#1768b2}
-.nf-card img{grid-area:img;width:100%;height:124px;object-fit:contain;object-position:center;border-radius:10px;background:#fff;display:block}
+.nf-card .nf-history-disclosure{grid-column:1/-1;margin:8px 0 0;border-top:1px solid #e8eef5;padding-top:6px}
+.nf-card .nf-history-disclosure>summary{list-style:none;display:flex;align-items:center;gap:8px;padding:8px 2px 10px 0;cursor:pointer;font-size:13px;font-weight:700;color:#1768b2;user-select:none}
+.nf-card .nf-history-disclosure>summary::-webkit-details-marker{display:none}
+.nf-card .nf-history-disclosure>summary::after{content:'';flex-shrink:0;width:7px;height:7px;margin-left:auto;border-right:2px solid #5d8fbe;border-bottom:2px solid #5d8fbe;transform:rotate(45deg);transform-origin:50% 65%;transition:transform .2s ease}
+.nf-card .nf-history-disclosure[open]>summary::after{transform:rotate(-135deg);transform-origin:50% 35%}
+.nf-card .nf-history-body{padding:0 0 6px}
+.nf-card .nf-history-body .history,.nf-card .nf-history-body .nf-history-list{grid-column:1/-1;margin:0}
+.nf-card .nf-history-body .history strong{color:#1768b2}
+.nf-card img{grid-column:2;grid-row:1;align-self:start;width:100%;height:124px;object-fit:contain;object-position:center;border-radius:10px;background:#fff;display:block}
 .nf-basics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .nf-basic{padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(135deg,#f0f7ff,#fff)}
 .nf-basic:nth-child(2){background:linear-gradient(135deg,#fff8e9,#fff)}
@@ -40,11 +47,34 @@
 .nf-basic ul{padding-left:20px;margin:0}
 .nf-basic li{font-size:13px;line-height:1.65;color:#536981;margin:3px 0}
 .nf-note{margin-top:16px;padding:13px 16px;background:#fff8e8;border:1px solid #f0dfad;border-radius:12px;color:#68572e;font-size:13px;line-height:1.6}
+.nf-overview-figure,.nf-figure{margin:0 0 18px;text-align:center}
+.nf-overview-figure img{max-width:min(100%,676px);height:auto;border:0;background:transparent}
+.nf-figure img{max-width:min(100%,520px);height:auto;border-radius:12px;border:1px solid var(--line);background:#fff}
+.nf-card .nf-history-list{margin-top:4px;padding-left:20px;font-size:12px;line-height:1.55;color:#536981}
+.nf-card .nf-history-list li{margin:4px 0}
 .nf-footer-note{font-size:12px;color:#718098;margin-top:14px}
 @media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}.nf-card{grid-template-columns:minmax(0,1fr) 96px;padding:13px}.nf-card img{height:108px}}
 .mf-layout{display:grid;grid-template-columns:minmax(205px,255px) minmax(0,1fr);gap:25px;align-items:start;margin-bottom:52px}
 .mf-sidebar .mf-side-links a.kiwi-sidebar-back{margin-top:14px;padding:16px 12px 8px;border-top:1px solid #dbe5f2;border-radius:0;font-size:13px;font-weight:400;background:transparent;color:#194a81}
 @media(max-width:850px){.mf-layout{grid-template-columns:1fr}}
+</style>
+<style id="foundation-lesson-cards">
+/* Level 4 accordion sections */
+.mf-article .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.mf-article .lesson-card>summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:flex-start;align-items:center;gap:.15em;flex-wrap:wrap}
+.mf-article .lesson-card>summary::-webkit-details-marker{display:none}
+.mf-article .lesson-card>summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:auto}
+.mf-article .lesson-card[open]>summary::after{content:'−'}
+.mf-article .lesson-card[open]>summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.mf-article .lesson-card-content h4{color:#153d70;font-size:16px;font-weight:750;margin:20px 0 8px}
+.mf-article .lesson-card p{margin:10px 0}
+@media(max-width:600px){.mf-article .lesson-card>summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
 </style>
 <style>
 .foundation-level4{margin-top:28px}.foundation-level4 .mf-sidebar{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 36px);overflow:auto}.foundation-level4 .mf-side-links{display:flex;flex-direction:column;gap:3px}.foundation-level4 .mf-side-links a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#174879;font-size:14px;line-height:1.4}.foundation-level4 .mf-side-links a:hover{background:#eaf3ff}.foundation-level4 .mf-side-links a.mf-current{background:#e8f2ff;color:#0756ba;font-weight:400}.foundation-level4 .mf-article{min-width:0}.foundation-level4 .mf-article h1{font-size:clamp(23px,2.6vw,30px);color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}.foundation-level4 .mf-article h4{font-size:16px;font-weight:750;color:#173e70;margin:20px 0 8px}.foundation-level4 .mf-article h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px;padding-left:3ch;line-height:1.5}@media(max-width:850px){.foundation-level4 .mf-sidebar{position:static;max-height:240px}.foundation-level4{display:flex;flex-direction:column}}
@@ -55,14 +85,14 @@
 .kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
 .kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover{background:#e8f2ff;color:#0756ba}
 .kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:400;border-left:3px solid #0865c9;padding-left:10px}
-.kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+.kiwi-topic-sidebar a[href="/mathematical-thinking"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
 @media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar{position:static;max-height:none;width:100%}}
 </style>
 <style id="foundation-sidebar-indent-fix">/* Keep Foundation Level 4 navigation flush with the GCF / Number Families template. */
 .foundation-level4 .mf-sidebar .mf-side-links{padding:0!important;margin:0!important;display:flex!important;flex-direction:column;gap:6px;}
 .foundation-level4 .mf-sidebar .mf-side-links>a{margin:0!important;box-sizing:border-box;width:100%;}
 </style>
-<script src="../assets/js/kiwi-site-base.js?v=20261115-localprefix"></script>
+<script src="../assets/js/kiwi-site-base.js?v=20261115-coursepill"></script>
 </head>
 <body class="edu-page topic-page">
 <header class="site-header">
@@ -82,7 +112,7 @@
 <a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
 <a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
 <a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
-<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="../math/in-class-learning.html">In-Class Learning</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="/in-class-learning">In-Class Learning</a>
 <a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
 <a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
 <button type="button" class="kiwi-search-open" data-kiwi-search-trigger aria-label="Search site"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -105,122 +135,232 @@
 <!-- kiwi-math-catalog:start -->
 <div class="kiwi-grade-strip-wrap" data-pagefind-filter="grade:4 grade:5 grade:6">
   <p class="kiwi-grade-strip">
-    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="grade-4.html" data-en="Grade 4" data-zh="四年级">Grade 4</a>
-    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="grade-5.html" data-en="Grade 5" data-zh="五年级">Grade 5</a>
-    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="grade-6.html" data-en="Grade 6" data-zh="六年级">Grade 6</a>
+    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="/grade-4" data-en="Grade 4" data-zh="四年级">Grade 4</a>
+    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="/grade-5" data-en="Grade 5" data-zh="五年级">Grade 5</a>
+    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="/grade-6" data-en="Grade 6" data-zh="六年级">Grade 6</a>
     
   </p>
 </div>
 <!-- kiwi-math-catalog:end -->
-<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a aria-current="page" class="mf-current" href="foundation-number-families.html" data-en="Number Families" data-zh="数的家族">Number Families</a><a href="foundation-decimal.html" data-en="Decimal" data-zh="小数">Decimal</a><a href="foundation-decimal-to-fraction.html" data-en="Decimal to Fraction" data-zh="小数化为分数">Decimal to Fraction</a><a href="foundation-division-rules-2-9.html" data-en="Division Rules (2–9)" data-zh="整除规则（2–9）">Division Rules (2–9)</a><a href="foundation-greatest-common-factor-gcf.html" data-en="Greatest Common Factor (GCF)" data-zh="最大公因数（GCF）">Greatest Common Factor (GCF)</a><a href="foundation-math-operation-signs-and.html" data-en="Math Operation Signs (+ and −)" data-zh="运算符号（加与减）">Math Operation Signs (+ and −)</a><a href="foundation-result-signs-and.html" data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</a><a href="foundation-unit-conversions-and-rates.html" data-en="Unit Conversions and Rates" data-zh="单位换算与比率">Unit Conversions and Rates</a><a href="foundation-exponents.html" data-en="Exponents" data-zh="指数">Exponents</a><a href="foundation-roots.html" data-en="Roots" data-zh="根式">Roots</a><a href="foundation-rational-exponents.html" data-en="Rational Exponents" data-zh="有理指数">Rational Exponents</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter">
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links"><a aria-current="page" class="mf-current" href="/foundation-number-families" data-en="Number Families" data-zh="数的家族">Number Families</a><a href="/foundation-decimal" data-en="Decimal" data-zh="小数">Decimal</a><a href="/foundation-decimal-to-fraction" data-en="Decimal to Fraction" data-zh="小数化为分数">Decimal to Fraction</a><a href="/foundation-division-rules-2-9" data-en="Division Rules (2–9)" data-zh="整除规则（2–9）">Division Rules (2–9)</a><a href="/foundation-greatest-common-factor-gcf" data-en="Greatest Common Factor (GCF)" data-zh="最大公因数（GCF）">Greatest Common Factor (GCF)</a><a href="/foundation-math-operation-signs-and" data-en="Math Operation Signs (+ and −)" data-zh="运算符号（加与减）">Math Operation Signs (+ and −)</a><a href="/foundation-result-signs-and" data-en="Result Signs (× and ÷)" data-zh="结果的符号（乘与除）">Result Signs (× and ÷)</a><a href="/foundation-unit-conversions-and-rates" data-en="Unit Conversions and Rates" data-zh="单位换算与比率">Unit Conversions and Rates</a><a href="/foundation-exponents" data-en="Exponents" data-zh="指数">Exponents</a><a href="/foundation-roots" data-en="Roots" data-zh="根式">Roots</a><a href="/foundation-rational-exponents" data-en="Rational Exponents" data-zh="有理指数">Rational Exponents</a><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="/math-foundations">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter">
 <!-- LEVEL-4 BODY START -->
 <h1 data-en="Number Families" data-zh="数的家族">Number Families</h1>
-<section class="nf-section" aria-labelledby="nf-families-intro">
-<p class="nf-lead" id="nf-families-intro" data-en="Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line." data-zh="从日常计数的数字开始，再认识表示部分、零以下数值，以及超越普通数轴的数。">Start with the numbers we count with, then explore numbers that describe parts, values below zero, and ideas beyond the ordinary number line.</p>
+<aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note"><div class="kiwi-panel-heading" data-en="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;" data-zh="&lt;span aria-hidden=&quot;true&quot; class=&quot;kiwi-panel-icon&quot;&gt;🔗&lt;/span&gt;"><span aria-hidden="true" class="kiwi-panel-icon">🔗</span></div><p data-en="&lt;strong&gt;Lesson scope:&lt;/strong&gt; &lt;strong&gt;Basic&lt;/strong&gt; number families — definitions, examples, histories, and number-line / complex-plane pictures." data-zh="&lt;strong&gt;本课范围：&lt;/strong&gt;&lt;strong&gt;基本&lt;/strong&gt; 数族——定义、例题、历史，以及数轴与复平面图示。"><strong>Lesson scope:</strong> <strong>Basic</strong> number families — definitions, examples, histories, and number-line / complex-plane pictures.</p><p data-en="&lt;strong&gt;Also see:&lt;/strong&gt; Imaginary unit, complex plane, distance, and rotation in &lt;a href=&quot;/thinking-imaginary-complex-numbers&quot;&gt;Advanced Skills&lt;/a&gt; (Mathematical Thinking)." data-zh="&lt;strong&gt;延伸学习：&lt;/strong&gt;虚数单位、复平面、距离与旋转见数学思维中的 &lt;a href=&quot;/thinking-imaginary-complex-numbers&quot;&gt;进阶技巧&lt;/a&gt;。"><strong>Also see:</strong> Imaginary unit, complex plane, distance, and rotation in <a href="/thinking-imaginary-complex-numbers">Advanced Skills</a> (Mathematical Thinking).</p></aside>
+<div class="nf-overview-intro">
+<p class="nf-lead" data-en="The diagram shows how number families are related. Natural numbers are contained in whole numbers, integers, and rational numbers. Rational and irrational numbers together form the real numbers." data-zh="下图展示各数族之间的关系：自然数包含在非负整数、整数和有理数中；有理数与无理数一起构成实数。">The diagram shows how number families are related. Natural numbers are contained in whole numbers, integers, and rational numbers. Rational and irrational numbers together form the real numbers.</p>
+<figure class="nf-overview-figure">
+<img alt="Diagram showing how number families are nested" src="../assets/number-families-overview.webp" width="676" height="416" loading="lazy"/>
+</figure>
+<div class="nf-note" data-en="Note: Fractions and decimals are ways of representing numbers, not separate nested number families. Terminating and repeating decimals are rational; non-terminating, non-repeating decimals are irrational." data-zh="说明：分数和小数是表示数的方式，并不是彼此嵌套的独立数族。有限小数和循环小数是有理数；无限不循环小数是无理数。">Note: Fractions and decimals are ways of representing numbers, not separate nested number families. Terminating and repeating decimals are rational; non-terminating, non-repeating decimals are irrational.</div>
+</div>
+<details class="lesson-card" open>
+<summary id="nf-meet-heading" data-en="Meet Each Number Family" data-zh="认识各数族">Meet Each Number Family</summary>
+<div class="lesson-card-content">
 <div class="nf-grid">
 <article class="nf-card">
 <div class="nf-card-main">
 <h3 data-en="1. Natural Numbers" data-zh="1. 自然数">1. Natural Numbers</h3>
-<p data-en="The counting numbers we use every day. They start at 1 and continue forever." data-zh="日常生活中用来计数的数，从 1 开始，可以一直数下去。">The counting numbers we use every day. They start at 1 and continue forever.</p>
+<p data-en="These are the counting numbers we use every day: 1, 2, 3, 4, 5, … They start at 1 and go on forever." data-zh="这是我们每天用来计数的数：1、2、3、4、5、…… 从 1 开始，可以一直数下去。">These are the counting numbers we use every day: 1, 2, 3, 4, 5, … They start at 1 and go on forever.</p>
 <p class="examples" data-en="Examples: 1, 2, 3, 4, 5, …" data-zh="例子：1、2、3、4、5、……">Examples: 1, 2, 3, 4, 5, …</p>
 </div>
-<img alt="A child counting pebbles" src="../assets/number-families-natural.jpg"/>
-<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="Long before written symbols, people counted with fingers, pebbles, and tally marks to keep track of animals and food. These counting ideas became the natural numbers." data-zh="很久以前，人们还没有数字符号，就用手指、石子和刻痕来计算动物和食物的数量。这些最早的计数方式逐渐发展成今天的自然数。">Long before written symbols, people counted with fingers, pebbles, and tally marks to keep track of animals and food. These counting ideas became the natural numbers.</span></p>
+<img alt="A child counting pebbles" src="../assets/number-families-natural.webp"/>
+<details class="nf-history-disclosure">
+<summary data-en="History of Natural Numbers" data-zh="自然数的历史">History of Natural Numbers</summary>
+<div class="nf-history-body">
+<p class="history"><span data-en="Long, long ago — before calculators, pencils, or even paper — people counted with their fingers, pebbles, and sticks. They used numbers only for things they could see and count: “How many sheep?” “How many baskets of apples?” These early counting numbers — 1, 2, 3, 4, 5, … — became what we now call the natural numbers. So natural numbers are called natural because they were the first, most natural way humans learned to count things they could hold and see." data-zh="很久很久以前——还没有计算器、铅笔，甚至纸——人们用手指、石子和木棍计数。数字只用于能看见、能数清的东西：“有多少只羊？”“有多少篮苹果？”这些最早的计数数字——1、2、3、4、5、……——就是今天的自然数。之所以叫“自然”，是因为数看得见摸得着的东西，是人类最本能的计数方式。">Long, long ago — before calculators, pencils, or even paper — people counted with their fingers, pebbles, and sticks. They used numbers only for things they could see and count: “How many sheep?” “How many baskets of apples?” These early counting numbers — 1, 2, 3, 4, 5, … — became what we now call the natural numbers. So natural numbers are called natural because they were the first, most natural way humans learned to count things they could hold and see.</span></p>
+</div>
+</details>
 </article>
 <article class="nf-card">
 <div class="nf-card-main">
-<h3 data-en="2. Whole Numbers" data-zh="2. 整数（非负整数）">2. Whole Numbers</h3>
-<p data-en="Whole numbers include zero and all natural numbers." data-zh="整数（这里指非负整数）包括 0 和所有自然数。">Whole numbers include zero and all natural numbers.</p>
+<h3 data-en="2. Whole Numbers" data-zh="2. 非负整数">2. Whole Numbers</h3>
+<p data-en="These include 0 and all the natural numbers. 0, 1, 2, 3, 4, …" data-zh="包括 0 和所有自然数：0、1、2、3、4、……">These include 0 and all the natural numbers. 0, 1, 2, 3, 4, …</p>
 <p class="examples" data-en="Examples: 0, 1, 2, 3, 4, …" data-zh="例子：0、1、2、3、4、……">Examples: 0, 1, 2, 3, 4, …</p>
 </div>
-<img alt="A scholar writing the number zero" src="../assets/number-families-whole.jpg"/>
-<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="Zero developed over time. Indian mathematicians gave zero a clear place in the number system; Brahmagupta described rules for zero around 628 CE. The idea later spread widely." data-zh="零的概念经历了漫长的发展。印度数学家逐渐把零纳入数系；约公元 628 年，数学家婆罗摩笈多系统地描述了零的运算规则。这个概念后来广泛传播。">Zero developed over time. Indian mathematicians gave zero a clear place in the number system; Brahmagupta described rules for zero around 628 CE. The idea later spread widely.</span></p>
+<img alt="A scholar writing the number zero" src="../assets/number-families-whole.webp"/>
+<details class="nf-history-disclosure">
+<summary data-en="History of Whole Numbers" data-zh="非负整数的历史">History of Whole Numbers</summary>
+<div class="nf-history-body">
+<p class="history"><span data-en="At first, zero wasn’t even part of the number story! Ancient civilizations like the Egyptians and Greeks didn’t have a symbol for nothing. It was the Indians, around 500 AD, who first used a small dot to show zero, and later the idea spread through the Arab world to the rest of the world." data-zh="起初，零甚至不在“数的家族”里！古埃及、古希腊等文明都没有表示“无”的符号。大约公元 500 年，印度人先用小点表示零，后来这一思想经阿拉伯世界传到各地。">At first, zero wasn’t even part of the number story! Ancient civilizations like the Egyptians and Greeks didn’t have a symbol for nothing. It was the Indians, around 500 AD, who first used a small dot to show zero, and later the idea spread through the Arab world to the rest of the world.</span></p>
+</div>
+</details>
 </article>
 <article class="nf-card">
 <div class="nf-card-main">
 <h3 data-en="3. Integers" data-zh="3. 整数">3. Integers</h3>
-<p data-en="Integers include zero, positive whole numbers, and negative whole numbers." data-zh="整数包括零、正整数和负整数。">Integers include zero, positive whole numbers, and negative whole numbers.</p>
+<p data-en="Integers are the numbers that include whole numbers and the negatives of natural numbers: …, −3, −2, −1, 0, 1, 2, 3, …" data-zh="整数包括非负整数以及自然数的相反数：……、−3、−2、−1、0、1、2、3、……">Integers are the numbers that include whole numbers and the negatives of natural numbers: …, −3, −2, −1, 0, 1, 2, 3, …</p>
 <p class="examples" data-en="Examples: …, −3, −2, −1, 0, 1, 2, 3, …" data-zh="例子：……、−3、−2、−1、0、1、2、3、……">Examples: …, −3, −2, −1, 0, 1, 2, 3, …</p>
 </div>
-<img alt="A balance scale showing positive and negative values" src="../assets/number-families-integers.jpg"/>
-<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="Negative numbers once seemed strange. In the 7th century, Indian mathematician Brahmagupta described positive amounts as fortunes and negative amounts as debts. The symbol ℤ comes from the German word Zahlen, meaning numbers." data-zh="负数曾经让数学家感到难以接受。公元 7 世纪，印度数学家婆罗摩笈多把正数比作财富，把负数比作债务。整数符号 ℤ 来自德语 Zahlen，意思是“数字”。">Negative numbers once seemed strange. In the 7th century, Indian mathematician Brahmagupta described positive amounts as fortunes and negative amounts as debts. The symbol ℤ comes from the German word Zahlen, meaning numbers.</span></p>
+<img alt="A balance scale showing positive and negative values" src="../assets/number-families-integers.webp"/>
+<details class="nf-history-disclosure">
+<summary data-en="History of Integers" data-zh="整数的历史">History of Integers</summary>
+<div class="nf-history-body">
+<p class="history"><span data-en="The idea of numbers below zero was once strange to mathematicians." data-zh="“比零还小的数”曾经让数学家感到奇怪。">The idea of numbers below zero was once strange to mathematicians.</span></p>
+<ul class="nf-history-list">
+<li data-en="The word &lt;em&gt;integer&lt;/em&gt; comes from Latin &lt;em&gt;integer&lt;/em&gt;, meaning whole or “untouched.”" data-zh="integer 一词来自拉丁语，意为“完整、未切开”。">The word <em>integer</em> comes from Latin <em>integer</em>, meaning whole or “untouched.”</li>
+<li data-en="Around the 7th century CE, the Indian mathematician Brahmagupta described positives as “fortunes” and negatives as “debts.”" data-zh="约公元 7 世纪，印度数学家婆罗摩笈多把正数比作“财富”，负数比作“债务”。">Around the 7th century CE, the Indian mathematician Brahmagupta described positives as “fortunes” and negatives as “debts.”</li>
+<li data-en="In Europe, negative numbers were long rejected as “absurd” or “false roots.”" data-zh="在欧洲，负数长期被视为“荒谬”或“假根”。">In Europe, negative numbers were long rejected as “absurd” or “false roots.”</li>
+<li data-en="By the 19th century, negatives, zero, and positives were joined into one set called integers, written as ℤ (from German &lt;em&gt;Zahlen&lt;/em&gt;, meaning numbers)." data-zh="到 19 世纪，负整数、零与正整数合并为整数集 ℤ（源自德语 Zahlen，“数”）。">By the 19th century, negatives, zero, and positives were joined into one set called integers, written as ℤ (from German <em>Zahlen</em>, meaning numbers).</li>
+</ul>
+<p class="history"><span data-en="The integers we use today took centuries to develop — from counting goods to understanding the full number line …, –2, –1, 0, 1, 2, …" data-zh="今天的整数体系历经数百年：从清点货物到理解整条数轴 ……、−2、−1、0、1、2、……">The integers we use today took centuries to develop — from counting goods to understanding the full number line …, –2, –1, 0, 1, 2, …</span></p>
+</div>
+</details>
 </article>
 <article class="nf-card">
 <div class="nf-card-main">
 <h3 data-en="4. Fractions" data-zh="4. 分数">4. Fractions</h3>
-<p data-en="Fractions show equal parts of a whole. The top number is the numerator; the bottom number is the denominator." data-zh="分数表示一个整体被平均分成若干份后取其中的一部分。上面的数叫分子，下面的数叫分母。">Fractions show equal parts of a whole. The top number is the numerator; the bottom number is the denominator.</p>
+<p data-en="Fractions show parts of a whole." data-zh="分数表示整体的一部分。">Fractions show parts of a whole.</p>
 <p class="examples" data-en="Examples: 1/2, 9/8, 3/8, 1 3/4" data-zh="例子：1/2、9/8、3/8、1 又 3/4">Examples: 1/2, 9/8, 3/8, 1 3/4</p>
 </div>
-<img alt="A fraction diagram and ancient Egyptian setting" src="../assets/number-families-fractions.jpg"/>
-<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="About 4,000 years ago, Egyptians used unit fractions to share food and measure land. Babylonians and Greeks also used fractions in trade and astronomy. Fraction notation gradually developed into the form we use today." data-zh="大约 4,000 年前，古埃及人就用分数来分配食物和测量土地。巴比伦人和古希腊人也在贸易和天文学中使用分数。分数的书写方式经过长期发展，逐渐形成今天熟悉的样子。">About 4,000 years ago, Egyptians used unit fractions to share food and measure land. Babylonians and Greeks also used fractions in trade and astronomy. Fraction notation gradually developed into the form we use today.</span></p>
+<img alt="A fraction diagram and ancient Egyptian setting" src="../assets/number-families-fractions.webp"/>
+<details class="nf-history-disclosure">
+<summary data-en="History of Fractions" data-zh="分数的历史">History of Fractions</summary>
+<div class="nf-history-body">
+<p class="history"><span data-en="Fractions have a long and interesting story!" data-zh="分数的发展史漫长而有趣！">Fractions have a long and interesting story!</span></p>
+<ul class="nf-history-list">
+<li data-en="Around 4,000 years ago, the ancient Egyptians used fractions to measure land and divide food. They wrote most fractions as unit fractions — parts with 1 on top, like ½ or ⅕." data-zh="约 4000 年前，古埃及人用分数测量土地、分配食物，多用分子为 1 的“单位分数”，如 ½、⅕。">Around 4,000 years ago, the ancient Egyptians used fractions to measure land and divide food. They wrote most fractions as unit fractions — parts with 1 on top, like ½ or ⅕.</li>
+<li data-en="The Babylonians and Greeks later used fractions for astronomy and trade, creating their own systems." data-zh="巴比伦人与希腊人后来在天文、贸易中使用分数，形成各自的记法。">The Babylonians and Greeks later used fractions for astronomy and trade, creating their own systems.</li>
+<li data-en="In the Middle Ages, merchants in the Arab world improved fraction notation and spread it to Europe. This is where the fraction bar (the line between numbers) became common." data-zh="中世纪阿拉伯商人改进分数记号并传入欧洲，分数线随之普及。">In the Middle Ages, merchants in the Arab world improved fraction notation and spread it to Europe. This is where the fraction bar (the line between numbers) became common.</li>
+<li data-en="By the Renaissance, fractions were taught in schools as part of arithmetic, written just as we do today — numerator over denominator." data-zh="文艺复兴时期，分数进入学校算术课，写法与今天相同——分子在上、分母在下。">By the Renaissance, fractions were taught in schools as part of arithmetic, written just as we do today — numerator over denominator.</li>
+</ul>
+<p class="history"><span data-en="So, the fractions we use now were built over thousands of years — from ancient farmers sharing bread to scientists measuring stars!" data-zh="今天的分数历经数千年：从分面包到测量星辰！">So, the fractions we use now were built over thousands of years — from ancient farmers sharing bread to scientists measuring stars!</span></p>
+</div>
+</details>
 </article>
 <article class="nf-card">
 <div class="nf-card-main">
 <h3 data-en="5. Decimals" data-zh="5. 小数">5. Decimals</h3>
-<p data-en="Decimals are another way to write parts of a whole, using place value and a decimal point." data-zh="小数是表示整体部分的另一种方式，利用数位和小数点来表达。">Decimals are another way to write parts of a whole, using place value and a decimal point.</p>
+<p data-en="Another way to show parts of a whole." data-zh="表示整体部分的另一种方式。">Another way to show parts of a whole.</p>
 <p class="examples" data-en="Examples: 0.5 = 1/2; 0.25 = 1/4" data-zh="例子：0.5 = 1/2；0.25 = 1/4">Examples: 0.5 = 1/2; 0.25 = 1/4</p>
 </div>
-<img alt="A historical mathematician studying decimal notation" src="../assets/number-families-decimals.jpg"/>
-<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="In 1585, Simon Stevin published a book explaining decimal fractions and how they could make calculations easier. Decimal notation became especially useful for money, measurement, and science." data-zh="1585 年，西蒙·斯蒂文出版了一本介绍十进制小数的书，说明小数如何让计算更方便。后来，小数在货币、测量和科学计算中变得非常重要。">In 1585, Simon Stevin published a book explaining decimal fractions and how they could make calculations easier. Decimal notation became especially useful for money, measurement, and science.</span></p>
+<img alt="A historical mathematician studying decimal notation" src="../assets/number-families-decimals.webp"/>
+<details class="nf-history-disclosure">
+<summary data-en="History of Decimals" data-zh="小数的历史">History of Decimals</summary>
+<div class="nf-history-body">
+<p class="history"><span data-en="Decimals came from the need to write fractions more easily." data-zh="小数源于把分数写得更方便的需求。">Decimals came from the need to write fractions more easily.</span></p>
+<ul class="nf-history-list">
+<li data-en="About 2,000 years ago, the ancient Chinese and Greeks used base-10 ideas for measuring and trading, but they didn’t yet use decimal points." data-zh="约 2000 年前，中国与希腊已有十进思想用于测量和贸易，但尚无小数点。">About 2,000 years ago, the ancient Chinese and Greeks used base-10 ideas for measuring and trading, but they didn’t yet use decimal points.</li>
+<li data-en="Around the 9th century, Arabic mathematicians began using a small mark to separate whole numbers from fractional parts — an early form of the decimal point." data-zh="约 9 世纪，阿拉伯数学家用小标记分隔整数与小数部分，这是小数点的雏形。">Around the 9th century, Arabic mathematicians began using a small mark to separate whole numbers from fractional parts — an early form of the decimal point.</li>
+<li data-en="In the 1500s, the Flemish mathematician Simon Stevin published a book called &lt;em&gt;De Thiende&lt;/em&gt; (“The Tenth”), showing how decimals could replace fractions in daily math. His idea spread quickly because it made money and measurement much simpler." data-zh="16 世纪，佛兰芒数学家斯蒂文出版《十分之一》，说明小数如何简化日常计算；因便于货币与测量而迅速普及。">In the 1500s, the Flemish mathematician Simon Stevin published a book called <em>De Thiende</em> (“The Tenth”), showing how decimals could replace fractions in daily math. His idea spread quickly because it made money and measurement much simpler.</li>
+<li data-en="Later, scientists like Newton and Leibniz used decimals for precise calculations in science and engineering." data-zh="后来牛顿、莱布尼茨等科学家在科学与工程中用小数做精确计算。">Later, scientists like Newton and Leibniz used decimals for precise calculations in science and engineering.</li>
+</ul>
+<p class="history"><span data-en="Today, decimals are everywhere — in prices, measurements, and computers — carrying the same base-10 system that started thousands of years ago!" data-zh="今天小数无处不在——价格、测量、计算机——延续着千年来的十进传统！">Today, decimals are everywhere — in prices, measurements, and computers — carrying the same base-10 system that started thousands of years ago!</span></p>
+</div>
+</details>
 </article>
 <article class="nf-card">
 <div class="nf-card-main">
 <h3 data-en="6. Rational Numbers" data-zh="6. 有理数">6. Rational Numbers</h3>
-<p data-en="A rational number can be written as a fraction of two integers, with a non-zero denominator. Its decimal ends or repeats." data-zh="有理数可以写成两个整数相除的形式，分母不能为零。它的小数形式要么有限，要么无限循环。">A rational number can be written as a fraction of two integers, with a non-zero denominator. Its decimal ends or repeats.</p>
+<p data-en="Numbers that can be written as a fraction of two integers. They include whole numbers, fractions, and decimals that end or repeat." data-zh="能写成两个整数相除形式的数，包括非负整数、分数以及有限或循环小数。">Numbers that can be written as a fraction of two integers. They include whole numbers, fractions, and decimals that end or repeat.</p>
 <p class="examples" data-en="Examples: 1/2, 3/4, 0.5, 0.333…" data-zh="例子：1/2、3/4、0.5、0.333……">Examples: 1/2, 3/4, 0.5, 0.333…</p>
 </div>
-<img alt="An ancient Greek building representing mathematical ratios" src="../assets/number-families-rational.jpg"/>
-<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="People have used ratios for thousands of years to compare lengths, share goods, and study the sky. Greek mathematicians explored ratios deeply, while many cultures developed practical fraction methods." data-zh="几千年来，人们一直用比率比较长度、分配物品和研究天体。古希腊数学家深入研究了比例关系，许多文明也发展出了实用的分数计算方法。">People have used ratios for thousands of years to compare lengths, share goods, and study the sky. Greek mathematicians explored ratios deeply, while many cultures developed practical fraction methods.</span></p>
+<img alt="An ancient Greek building representing mathematical ratios" src="../assets/number-families-rational.webp"/>
+<details class="nf-history-disclosure">
+<summary data-en="History of Rational Numbers" data-zh="有理数的历史">History of Rational Numbers</summary>
+<div class="nf-history-body">
+<p class="history"><span data-en="The idea of numbers as ratios — one number divided by another — goes back thousands of years." data-zh="把数看作比（一个数除以另一个数）的观念已有数千年历史。">The idea of numbers as ratios — one number divided by another — goes back thousands of years.</span></p>
+<ul class="nf-history-list">
+<li data-en="The Egyptians used special fraction notation to divide things like bread and land, showing early rational numbers." data-zh="埃及人用特殊分数记号分面包、量土地，已是有理数的雏形。">The Egyptians used special fraction notation to divide things like bread and land, showing early rational numbers.</li>
+<li data-en="Ancient Greek and Indian mathematicians studied ratios and fractions deeply, giving shape to what we now call rational numbers." data-zh="古希腊与印度数学家深入研究比与分数，塑造了今天的有理数概念。">Ancient Greek and Indian mathematicians studied ratios and fractions deeply, giving shape to what we now call rational numbers.</li>
+<li data-en="In medieval times, the use of rational numbers spread even more, helped by the Hindu–Arabic numeral system and trade across continents." data-zh="中世纪随印度–阿拉伯数字与跨洲贸易，有理数用法更为广泛。">In medieval times, the use of rational numbers spread even more, helped by the Hindu–Arabic numeral system and trade across continents.</li>
+<li data-en="By the 17th and 18th centuries, mathematicians realized that rational numbers (fractions and repeating decimals) are just one part of the full number system — other numbers, like irrational numbers, went beyond them." data-zh="17–18 世纪，数学家认识到有理数只是数系的一部分，无理数等则超出其范围。">By the 17th and 18th centuries, mathematicians realized that rational numbers (fractions and repeating decimals) are just one part of the full number system — other numbers, like irrational numbers, went beyond them.</li>
+</ul>
+<p class="history"><span data-en="So, when you use a rational number like ¾, you are working with a concept that people have developed and refined over many centuries!" data-zh="当你使用 ¾ 这样的有理数时，用的是人类数百年不断完善的成熟概念！">So, when you use a rational number like ¾, you are working with a concept that people have developed and refined over many centuries!</span></p>
+</div>
+</details>
 </article>
 <article class="nf-card">
 <div class="nf-card-main">
 <h3 data-en="7. Irrational Numbers" data-zh="7. 无理数">7. Irrational Numbers</h3>
-<p data-en="Irrational numbers cannot be written as a fraction of two integers. Their decimals never end and never repeat in a pattern." data-zh="无理数不能写成两个整数相除的分数。它们的小数既不会结束，也不会循环重复。">Irrational numbers cannot be written as a fraction of two integers. Their decimals never end and never repeat in a pattern.</p>
+<p data-en="Numbers that can’t be written as a simple fraction — their decimals go on forever without repeating." data-zh="不能写成简单分数的数——其小数无限且不循环。">Numbers that can’t be written as a simple fraction — their decimals go on forever without repeating.</p>
 <p class="examples" data-en="Examples: π = 3.14159…; √2 = 1.41421…" data-zh="例子：π = 3.14159……；√2 = 1.41421……">Examples: π = 3.14159…; √2 = 1.41421…</p>
 </div>
-<img alt="A geometric square-root diagram" src="../assets/number-families-irrational.jpg"/>
-<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="Around 500 BCE, Greek mathematicians discovered that the diagonal of a unit square, √2, cannot be expressed as a ratio of whole numbers. This surprising discovery changed how people thought about numbers." data-zh="大约公元前 500 年，古希腊数学家发现，边长为 1 的正方形对角线 √2 不能表示成两个整数的比。这个发现改变了人们对数字世界的认识。">Around 500 BCE, Greek mathematicians discovered that the diagonal of a unit square, √2, cannot be expressed as a ratio of whole numbers. This surprising discovery changed how people thought about numbers.</span></p>
+<img alt="A geometric square-root diagram" src="../assets/number-families-irrational.webp"/>
+<details class="nf-history-disclosure">
+<summary data-en="History of Irrational Numbers" data-zh="无理数的历史">History of Irrational Numbers</summary>
+<div class="nf-history-body">
+<p class="history"><span data-en="The idea of numbers that can’t be written as a simple fraction surprised the world." data-zh="不能写成简单分数的数曾震撼世人。">The idea of numbers that can’t be written as a simple fraction surprised the world.</span></p>
+<ul class="nf-history-list">
+<li data-en="Around 500 BC, members of the Pythagorean school in ancient Greece discovered that the length of the diagonal of a square (√2) couldn’t be expressed as a ratio of whole numbers." data-zh="约公元前 500 年，古希腊毕达哥拉斯学派发现正方形对角线 √2 不能表成整数比。">Around 500 BC, members of the Pythagorean school in ancient Greece discovered that the length of the diagonal of a square (√2) couldn’t be expressed as a ratio of whole numbers.</li>
+<li data-en="Later mathematicians in India and the Arab world studied these “incommensurable” magnitudes, giving shape to the idea of irrational numbers." data-zh="后来印度与阿拉伯数学家研究这些“不可公度”量，形成无理数观念。">Later mathematicians in India and the Arab world studied these “incommensurable” magnitudes, giving shape to the idea of irrational numbers.</li>
+<li data-en="In the 18th and 19th centuries, mathematicians proved that numbers like π and e are irrational — they go on forever and never repeat as a fraction." data-zh="18–19 世纪，数学家证明 π、e 等为无理数——小数无穷且不循环。">In the 18th and 19th centuries, mathematicians proved that numbers like π and e are irrational — they go on forever and never repeat as a fraction.</li>
+</ul>
+<p class="history"><span data-en="So, when you use a number like √2 or 3.14159…, you’re working with a concept that challenged ancient ideas and took centuries to understand!" data-zh="当你使用 √2 或 3.14159…… 时，面对的是曾挑战古代观念、历经数个世纪才理解的概念！">So, when you use a number like √2 or 3.14159…, you’re working with a concept that challenged ancient ideas and took centuries to understand!</span></p>
+</div>
+</details>
 </article>
 <article class="nf-card">
 <div class="nf-card-main">
 <h3 data-en="8. Imaginary Numbers" data-zh="8. 虚数">8. Imaginary Numbers</h3>
-<p data-en="Imaginary numbers involve the square root of a negative number. The basic imaginary unit is i, where i² = −1." data-zh="虚数涉及负数的平方根。基本虚数单位是 i，其中 i² = −1。">Imaginary numbers involve the square root of a negative number. The basic imaginary unit is i, where i² = −1.</p>
+<p data-en="Imaginary numbers come from taking the square root of a negative number — something we can’t do with regular numbers! The basic imaginary unit is &lt;em&gt;i&lt;/em&gt;, where &lt;em&gt;i&lt;/em&gt;² = −1." data-zh="虚数来自负数的平方根——普通实数无法做到！基本虚数单位是 &lt;em&gt;i&lt;/em&gt;，其中 &lt;em&gt;i&lt;/em&gt;² = −1。">Imaginary numbers come from taking the square root of a negative number — something we can’t do with regular numbers! The basic imaginary unit is <em>i</em>, where <em>i</em>² = −1.</p>
 <p class="examples" data-en="Example: √−1 = i" data-zh="例子：√−1 = i">Example: √−1 = i</p>
 </div>
-<img alt="A complex plane showing the imaginary axis" src="../assets/number-families-imaginary.jpg"/>
-<p class="history"><strong data-en="A little history" data-zh="历史小故事">A little history</strong><br/><span data-en="In the 1500s, mathematicians met square roots of negative numbers while solving equations. Euler later helped establish the symbol i, and Gauss helped develop the theory of complex numbers. These ideas are now useful in physics and engineering." data-zh="16 世纪，数学家在解方程时遇到了负数的平方根。后来，欧拉推动了符号 i 的使用，高斯则发展了复数理论。今天，这些概念在物理和工程领域都很有用。">In the 1500s, mathematicians met square roots of negative numbers while solving equations. Euler later helped establish the symbol i, and Gauss helped develop the theory of complex numbers. These ideas are now useful in physics and engineering.</span></p>
+<img alt="A complex plane showing the imaginary axis" src="../assets/number-families-imaginary.webp"/>
+<details class="nf-history-disclosure">
+<summary data-en="History of Imaginary Numbers" data-zh="虚数的历史">History of Imaginary Numbers</summary>
+<div class="nf-history-body">
+<p class="history"><span data-en="Imaginary numbers were not invented because people were bored — they were invented because equations wouldn’t behave." data-zh="虚数不是为了好玩才发明——而是因为方程“不听话”才不得不引入。">Imaginary numbers were not invented because people were bored — they were invented because equations wouldn’t behave.</span></p>
+<ul class="nf-history-list">
+<li data-en="In the 1500s (16th century), Italian mathematicians were trying to solve hard equations, like cubic and quartic equations, and expressions like √−1 started to appear. At that time, everyone knew: the square of a real number can’t be negative — so this looked like a “made-up number.”" data-zh="16 世纪，意大利数学家解三次、四次方程时出现 √−1；当时人们认为实数的平方不能为负，所以它像“编出来的数”。">In the 1500s (16th century), Italian mathematicians were trying to solve hard equations, like cubic and quartic equations, and expressions like √−1 started to appear. At that time, everyone knew: the square of a real number can’t be negative — so this looked like a “made-up number.”</li>
+<li data-en="To keep the calculations going, they decided to allow this kind of number and give it a symbol. Later, mathematicians used &lt;em&gt;i&lt;/em&gt; to stand for √−1, and they defined it as: &lt;em&gt;i&lt;/em&gt;² = −1." data-zh="为继续计算，他们允许这类数并用符号表示；后来用 &lt;em&gt;i&lt;/em&gt; 表示 √−1，并定义 &lt;em&gt;i&lt;/em&gt;² = −1。">To keep the calculations going, they decided to allow this kind of number and give it a symbol. Later, mathematicians used <em>i</em> to stand for √−1, and they defined it as: <em>i</em>² = −1.</li>
+<li data-en="In the 18th and 19th centuries, mathematicians like Euler and Gauss put real numbers and imaginary numbers together to form complex numbers, and they discovered that this actually made algebra and geometry more powerful." data-zh="18–19 世纪，欧拉、高斯等把实数与虚数合并为复数，使代数与几何更强大。">In the 18th and 19th centuries, mathematicians like Euler and Gauss put real numbers and imaginary numbers together to form complex numbers, and they discovered that this actually made algebra and geometry more powerful.</li>
+<li data-en="Later, scientists and engineers found that imaginary numbers were not “fake” at all — they were perfect for describing rotation, waves, and electricity." data-zh="科学家与工程师发现虚数并不“假”，非常适合描述旋转、波动与电流。">Later, scientists and engineers found that imaginary numbers were not “fake” at all — they were perfect for describing rotation, waves, and electricity.</li>
+</ul>
+<p class="history"><span data-en="So even though they are called imaginary, they are actually very useful numbers — we just can’t place them on the ordinary number line!" data-zh="虽名“虚数”，实则非常有用——只是无法摆在普通数轴上！">So even though they are called imaginary, they are actually very useful numbers — we just can’t place them on the ordinary number line!</span></p>
+</div>
+</details>
 </article>
 </div>
-<div class="nf-note" data-en="A helpful connection: natural numbers are part of the whole numbers, whole numbers are part of the integers, and integers are part of the rational numbers. Irrational numbers are real numbers too, while imaginary numbers help form the larger complex number system." data-zh="知识联系：自然数属于非负整数，非负整数属于整数，整数又属于有理数。无理数也属于实数；虚数则帮助我们建立更大的复数系统。">A helpful connection: natural numbers are part of the whole numbers, whole numbers are part of the integers, and integers are part of the rational numbers. Irrational numbers are real numbers too, while imaginary numbers help form the larger complex number system.</div>
-</section>
-<section class="nf-section">
-<h2 data-en="Number Basics: 0 and 1" data-zh="数字基础：0 和 1">Number Basics: 0 and 1</h2>
-<p class="nf-lead" data-en="These two small numbers have some very special properties." data-zh="这两个看似简单的数字，其实有许多特别的性质。">These two small numbers have some very special properties.</p>
+</div>
+</details>
+<details class="lesson-card">
+<summary id="nf-basics-heading" data-en="Number Basics" data-zh="数字基础：0 和 1">Number Basics</summary>
+<div class="lesson-card-content">
 <div class="nf-basics">
 <article class="nf-basic">
 <h3 data-en="Number 0" data-zh="数字 0">Number 0</h3>
 <ul>
 <li data-en="0 is neither positive nor negative." data-zh="0 既不是正数，也不是负数。">0 is neither positive nor negative.</li>
-<li data-en="In this guide, 0 is not a natural number." data-zh="本指南采用的定义中，0 不属于自然数。">In this guide, 0 is not a natural number.</li>
+<li data-en="0 is not a natural number." data-zh="0 不是自然数。">0 is not a natural number.</li>
 <li data-en="0 is a whole number, an integer, and a rational number." data-zh="0 是非负整数、整数，也是有理数。">0 is a whole number, an integer, and a rational number.</li>
-<li data-en="0 is even because 0 ÷ 2 = 0 with no remainder." data-zh="0 是偶数，因为 0 ÷ 2 = 0，没有余数。">0 is even because 0 ÷ 2 = 0 with no remainder.</li>
-<li data-en="Division by 0 is undefined; 0 cannot be a fraction's denominator." data-zh="除数不能为 0；0 也不能作为分数的分母。">Division by 0 is undefined; 0 cannot be a fraction's denominator.</li>
-<li data-en="0.0 is a decimal representation of zero." data-zh="0.0 是 0 的一种小数表示形式。">0.0 is a decimal representation of zero.</li>
+<li data-en="0 is an even number." data-zh="0 是偶数。">0 is an even number.</li>
+<li data-en="Even numbers are numbers that are divisible by 2." data-zh="偶数是能被 2 整除的数。">Even numbers are numbers that are divisible by 2.</li>
+<li data-en="If you can divide a number by 2 with no remainder, it’s even." data-zh="若除以 2 无余数，则为偶数。">If you can divide a number by 2 with no remainder, it’s even.</li>
+<li data-en="0 ÷ 2 = 0 with no remainder → so 0 is even." data-zh="0 ÷ 2 = 0 无余数 → 故 0 是偶数。">0 ÷ 2 = 0 with no remainder → so 0 is even.</li>
+<li data-en="You can’t divide by 0. &lt;em&gt;a&lt;/em&gt; ÷ 0 is not defined." data-zh="不能除以 0；&lt;em&gt;a&lt;/em&gt; ÷ 0 无定义。">You can’t divide by 0. <em>a</em> ÷ 0 is not defined.</li>
+<li data-en="0 can’t be used as the denominator of a fraction." data-zh="0 不能作为分数的分母。">0 can’t be used as the denominator of a fraction.</li>
+<li data-en="0.0 is a decimal number, even though its value is 0." data-zh="0.0 是小数，值仍为 0。">0.0 is a decimal number, even though its value is 0.</li>
 </ul>
 </article>
 <article class="nf-basic">
 <h3 data-en="Number 1" data-zh="数字 1">Number 1</h3>
 <ul>
-<li data-en="1 raised to any whole-number power is still 1: 1² = 1, 1⁵ = 1, 1¹⁰⁰ = 1." data-zh="1 的任何整数次幂仍然是 1：1² = 1、1⁵ = 1、1¹⁰⁰ = 1。">1 raised to any whole-number power is still 1: 1² = 1, 1⁵ = 1, 1¹⁰⁰ = 1.</li>
+<li data-en="1 to any power is still 1, e.g. 1² = 1, 1⁵ = 1, 1¹⁰⁰ = 1." data-zh="1 的任意次幂仍为 1，如 1² = 1、1⁵ = 1、1¹⁰⁰ = 1。">1 to any power is still 1, e.g. 1² = 1, 1⁵ = 1, 1¹⁰⁰ = 1.</li>
 <li data-en="1 is neither prime nor composite." data-zh="1 既不是质数，也不是合数。">1 is neither prime nor composite.</li>
-<li data-en="A prime number has exactly two positive factors: 1 and itself. For example, 2 has factors 1 and 2." data-zh="质数恰好有两个正因数：1 和它本身。例如，2 的因数是 1 和 2。">A prime number has exactly two positive factors: 1 and itself. For example, 2 has factors 1 and 2.</li>
-<li data-en="A composite number has more than two positive factors. For example, 6 has 1, 2, 3, and 6." data-zh="合数有两个以上的正因数。例如，6 的因数有 1、2、3 和 6。">A composite number has more than two positive factors. For example, 6 has 1, 2, 3, and 6.</li>
-<li data-en="1 has only one positive factor — itself — so it belongs to neither group." data-zh="1 只有一个正因数，就是它本身，因此不属于上述任何一类。">1 has only one positive factor — itself — so it belongs to neither group.</li>
+<li data-en="A prime number has exactly two factors: 1 and itself. Example: 2 → factors are 1 and 2." data-zh="质数恰有两个因数：1 与自身。例：2 的因数为 1 和 2。">A prime number has exactly two factors: 1 and itself. Example: 2 → factors are 1 and 2.</li>
+<li data-en="A composite number has more than two factors. Example: 6 → factors are 1, 2, 3, 6." data-zh="合数有两个以上因数。例：6 的因数为 1、2、3、6。">A composite number has more than two factors. Example: 6 → factors are 1, 2, 3, 6.</li>
 </ul>
+<p data-en="But 1 has only one factor — just 1. So, it doesn’t fit in the prime group or the composite group. We leave 1 by itself so that the rules of math stay nice and tidy." data-zh="但 1 只有一个因数——1 本身，因此既不属于质数也不属于合数。单独列出 1，才能让数的分类规则清晰一致。">But 1 has only one factor — just 1. So, it doesn’t fit in the prime group or the composite group. We leave 1 by itself so that the rules of math stay nice and tidy.</p>
 </article>
 </div>
-<p class="nf-footer-note" data-en="Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses." data-zh="提示：有些教材会把 0 也归入自然数。学习时请以老师或教材采用的定义为准。">Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses.</p>
-</section>
+<p class="nf-footer-note" data-en="Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses." data-zh="提示：有些教材把 0 归入自然数。请以课堂或教材采用的定义为准。">Note: Some textbooks include 0 among the natural numbers. Always check which convention your class or textbook uses.</p>
+</div>
+</details>
+<details class="lesson-card">
+<summary id="nf-represent-heading" data-en="Representing Numbers on a Number Line and a Coordinate Plane" data-zh="数轴与坐标平面上的数">Representing Numbers on a Number Line and a Coordinate Plane</summary>
+<div class="lesson-card-content">
+<h4 data-en="Real Numbers on a Number Line" data-zh="数轴上的实数">Real Numbers on a Number Line</h4>
+<p data-en="Every real number, whether rational or irrational, can be represented by exactly one point on a number line." data-zh="每个实数，无论有理还是无理，都对应数轴上唯一的一点。">Every real number, whether rational or irrational, can be represented by exactly one point on a number line.</p>
+<p data-en="Rational numbers can be written as fractions of two integers (with a nonzero denominator). Terminating and repeating decimals are rational: 0.5 = 1/2 and 0.333… = 1/3. Fractions identify exact positions on the number line." data-zh="有理数可写成两个整数之比（分母非零）。有限小数与循环小数是有理数：0.5 = 1/2，0.333… = 1/3。分数标出数轴上的精确位置。">Rational numbers can be written as fractions of two integers (with a nonzero denominator). Terminating and repeating decimals are rational: 0.5 = 1/2 and 0.333… = 1/3. Fractions identify exact positions on the number line.</p>
+<p data-en="Irrational numbers cannot be written as a ratio of two integers. Their decimal expansions never terminate or repeat, but their positions on the number line are still exact." data-zh="无理数不能写成整数比；小数无穷不循环，但在数轴上的位置仍然确定。">Irrational numbers cannot be written as a ratio of two integers. Their decimal expansions never terminate or repeat, but their positions on the number line are still exact.</p>
+<p data-en="Example — Constructing √2 exactly: Draw a right triangle with perpendicular sides of length 1. By the Pythagorean theorem, its hypotenuse is √(1² + 1²) = √2. Use a compass centered at zero to transfer this hypotenuse length to the positive number line. The intersection is exactly √2, not merely an approximation." data-zh="例——精确作出 √2：画直角边为 1 的直角三角形，斜边为 √(1² + 1²) = √2。以 0 为圆心、斜边为半径转到正半轴，交点即为精确的 √2，而非近似值。">Example — Constructing √2 exactly: Draw a right triangle with perpendicular sides of length 1. By the Pythagorean theorem, its hypotenuse is √(1² + 1²) = √2. Use a compass centered at zero to transfer this hypotenuse length to the positive number line. The intersection is exactly √2, not merely an approximation.</p>
+<figure class="nf-figure"><img alt="Constructing the square root of 2 on a number line" src="../assets/number-families-number-line-sqrt2.webp" width="480" loading="lazy"/></figure>
+<h4 data-en="Complex Numbers on a Coordinate Plane" data-zh="坐标平面上的复数">Complex Numbers on a Coordinate Plane</h4>
+<p data-en="A complex number &lt;em&gt;z = a + bi&lt;/em&gt; (where &lt;em&gt;i&lt;/em&gt;² = −1) corresponds to the point (&lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;) on the complex plane. The horizontal axis represents the real part &lt;em&gt;a&lt;/em&gt;; the vertical axis represents the imaginary coefficient &lt;em&gt;b&lt;/em&gt;. For example, 2 + 3&lt;em&gt;i&lt;/em&gt; corresponds to (2, 3)." data-zh="复数 &lt;em&gt;z = a + bi&lt;/em&gt;（&lt;em&gt;i&lt;/em&gt;² = −1）对应复平面上点 (&lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;)。横轴为实部 &lt;em&gt;a&lt;/em&gt;，纵轴为虚部系数 &lt;em&gt;b&lt;/em&gt;。例如 2 + 3&lt;em&gt;i&lt;/em&gt; 对应 (2, 3)。">A complex number <em>z = a + bi</em> (where <em>i</em>² = −1) corresponds to the point (<em>a</em>, <em>b</em>) on the complex plane. The horizontal axis represents the real part <em>a</em>; the vertical axis represents the imaginary coefficient <em>b</em>. For example, 2 + 3<em>i</em> corresponds to (2, 3).</p>
+<figure class="nf-figure"><img alt="The complex plane with real and imaginary axes" src="../assets/number-families-complex-plane.webp" width="480" loading="lazy"/></figure>
+<p data-en="Key idea: Real numbers occupy a one-dimensional number line; complex numbers can be represented on a two-dimensional plane. This makes geometric operations such as distances and rotations accessible through algebra." data-zh="要点：实数在一维数轴上；复数可用二维平面表示，从而用代数处理距离、旋转等几何问题。">Key idea: Real numbers occupy a one-dimensional number line; complex numbers can be represented on a two-dimensional plane. This makes geometric operations such as distances and rotations accessible through algebra.</p>
+</div>
+</details>
 <!-- LEVEL-4 BODY END -->
 </article></div></main>
 <footer class="site-footer">
@@ -228,9 +368,9 @@
 <a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
 <a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
 <a data-legal="home" href="../index.html">Home</a>
-<a data-en="Business &amp; Collaboration" data-zh="← 返回数学基础0" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
 </nav>
-<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="← 返回数学基础1">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
 </footer>
 <script>
 (() => {
@@ -287,6 +427,39 @@
   });
 })();
   </script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article, .mf-article.mf-chapter').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(!cards.length || article.querySelector('.kiwi-accordion-controls'))return;
+      cards.forEach(function(card,i){card.open=i===0;});
+      if(cards.length<2)return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
 <script defer="" src="../assets/js/drive-breadcrumb.js?v=20261114-bcrumb1"></script>
 
 <link href="../pagefind/pagefind-ui.css" rel="stylesheet"/>
@@ -300,9 +473,15 @@
 
 
 
-<!-- kiwi-search-zh-index -->
-<div class="kiwi-pagefind-zh" hidden aria-hidden="true" data-pagefind-lang="zh" data-pagefind-body="" data-pagefind-filter="lang:zh"><span hidden data-pagefind-meta="title_zh">数的技能与运算</span><span hidden data-pagefind-meta="breadcrumb_zh">数学 › 数的技能与运算</span><span hidden data-pagefind-meta="excerpt_zh">认识不同的数 从日常计数的数字开始，再认识表示部分、零以下数值，以及超越普通数轴的数。 1. 自然数 日常生活中用来计数的数，从 1 开始，可以一直数下去。 例子：1、2、3、4、5、…… 历史小故事 很久以前，人们还没有数字符号，就用手指、石子和刻痕来计算动物和食物的数量。这些最早的计数方式逐渐发展成今天的自然数。 2. 整数（非负整数） 整数（这里指非负整数）包括 0 和所有自然数。 例子：0、1、2、3、4、…… 零的概念经历了…</span>数学基础 数的技能与运算 探索数的分类、运算以及重要的数感与计算技能。 数的家族 小数 小数化为分数 整除规则（2–9） 最大公因数（GCF） 运算符号（加与减） 结果的符号（乘与除） 单位换算与比率 指数 根式 有理指数 ← 返回数学基础目录 认识不同的数 从日常计数的数字开始，再认识表示部分、零以下数值，以及超越普通数轴的数。 1. 自然数 日常生活中用来计数的数，从 1 开始，可以一直数下去。 例子：1、2、3、4、5、…… 历史小故事 很久以前，人们还没有数字符号，就用手指、石子和刻痕来计算动物和食物的数量。这些最早的计数方式逐渐发展成今天的自然数。 2. 整数（非负整数） 整数（这里指非负整数）包括 0 和所有自然数。 例子：0、1、2、3、4、…… 零的概念经历了漫长的发展。印度数学家逐渐把零纳入数系；约公元 628 年，数学家婆罗摩笈多系统地描述了零的运算规则。这个概念后来广泛传播。 3. 整数 整数包括零、正整数和负整数。 例子：……、−3、−2、−1、0、1、2、3、…… 负数曾经让数学家感到难以接受。公元 7 世纪，印度数学家婆罗摩笈多把正数比作财富，把负数比作债务。整数符号 ℤ 来自德语 Zahlen，意思是“数字”。 4. 分数 分数表示一个整体被平均分成若干份后取其中的一部分。上面的数叫分子，下面的数叫分母。 例子：1/2、9/8、3/8、1 又 3/4 大约 4,000 年前，古埃及人就用分数来分配食物和测量土地。巴比伦人和古希腊人也在贸易和天文学中使用分数。分数的书写方式经过长期发展，逐渐形成今天熟悉的样子。 5. 小数 小数是表示整体部分的另一种方式，利用数位和小数点来表达。 例子：0.5 = 1/2；0.25 = 1/4 1585 年，西蒙·斯蒂文出版了一本介绍十进制小数的书，说明小数如何让计算更方便。后来，小数在货币、测量和科学计算中变得非常重要。 6. 有理数 有理数可以写成两个整数相除的形式，分母不能为零。它的小数形式要么有限，要么无限循环。 例子：1/2、3/4、0.5、0.333…… 几千年来，人们一直用比率比较长度、分配物品和研究天体。古希腊数学家深入研究了比例关系，许多文明也发展出了实用的分数计算方法。 7. 无理数 无理数不能写成两个整数相除的分数。它们的小数既不会结束，也不会循环重复。 例子：π = 3.14159……；√2 = 1.41421…… 大约公元前 500 年，古希腊数学家发现，边长为 1 的正方形对角线 √2 不能表示成两个整数的比。这个发现改变了人们对数字世界的认识。 8. 虚数 虚数涉及负数的平方根。基本虚数单位是 i，其中 i² = −1。 例子：√−1 = i 16 世纪，数学家在解方程时遇到了负数的平方根。后来，欧拉推动了符号 i 的使用，高斯则发展了复数理论。今天，这些概念在物理和工程领域都很有用。 知识联系：自然数属于非负整数，非负整数属于整数，整数又属于有理数。无理数也属于实数；虚数则帮助我们建立更大的复数系统。 数字基础：0 和 1 这两个看似简单的数字，其实有许多特别的性质。 数字 0 0 既不是正数，也不是负数。 本指南采用的定义中，0 不属于自然数。 0 是非负整数、整数，也是有理数。 0 是偶数，因为 0 ÷ 2 = 0，没有余数。 除数不能为 0；0 也不能作为分数的分母。 0.0 是 0 的一种小数表示形式。 数字 1 1 的任何整数次幂仍然是 1：1² = 1、1⁵ = 1、1¹⁰⁰ = 1。 1 既不是质数，也不是合数。 质数恰好有两个正因数：1 和它本身。例如，2 的因数是 1 和 2。 合数有两个以上的正因数。例如，6 的因数有 1、2、3 和 6。 1 只有一个正因数，就是它本身，因此不属于上述任何一类。 提示：有些教材会把 0 也归入自然数。学习时请以老师或教材采用的定义为准。</div>
-<!-- /kiwi-search-zh-index -->
+
 <script defer src="../assets/js/kiwi-back-to-top.js?v=20261115h"></script>
+
+
+
+
+
+<!-- kiwi-search-zh-index -->
+<div class="kiwi-pagefind-zh" hidden aria-hidden="true" data-pagefind-lang="zh" data-pagefind-body="" data-pagefind-filter="lang:zh"><span hidden data-pagefind-meta="title_zh">数的技能与运算</span><span hidden data-pagefind-meta="breadcrumb_zh">数学 › 数学基础 › 数的技能与运算</span><span hidden data-pagefind-meta="excerpt_zh">🔗 本课范围： 基本 数族——定义、例题、历史，以及数轴与复平面图示。 延伸学习： 虚数单位、复平面、距离与旋转见数学思维中的 进阶技巧 。 下图展示各数族之间的关系：自然数包含在非负整数、整数和有理数中；有理数与无理数一起构成实数。 说明：分数和小数是表示数的方式，并不是彼此嵌套的独立数族。有限小数和循环小数是有理数；无限不循环小数是无理数。 认识各数族 1. 自然数 这是我们每天用来计数的数：1、2、3、4、5、…… 从 1 开始…</span>数学基础 数的技能与运算 探索数的分类、运算以及重要的数感与计算技能。 四年级 五年级 六年级 数的家族 小数 小数化为分数 整除规则（2–9） 最大公因数（GCF） 运算符号（加与减） 结果的符号（乘与除） 单位换算与比率 指数 根式 有理指数 ← 返回数学基础目录 🔗 本课范围： 基本 数族——定义、例题、历史，以及数轴与复平面图示。 延伸学习： 虚数单位、复平面、距离与旋转见数学思维中的 进阶技巧 。 下图展示各数族之间的关系：自然数包含在非负整数、整数和有理数中；有理数与无理数一起构成实数。 说明：分数和小数是表示数的方式，并不是彼此嵌套的独立数族。有限小数和循环小数是有理数；无限不循环小数是无理数。 认识各数族 1. 自然数 这是我们每天用来计数的数：1、2、3、4、5、…… 从 1 开始，可以一直数下去。 例子：1、2、3、4、5、…… 自然数的历史 很久很久以前——还没有计算器、铅笔，甚至纸——人们用手指、石子和木棍计数。数字只用于能看见、能数清的东西：“有多少只羊？”“有多少篮苹果？”这些最早的计数数字——1、2、3、4、5、……——就是今天的自然数。之所以叫“自然”，是因为数看得见摸得着的东西，是人类最本能的计数方式。 2. 非负整数 包括 0 和所有自然数：0、1、2、3、4、…… 例子：0、1、2、3、4、…… 非负整数的历史 起初，零甚至不在“数的家族”里！古埃及、古希腊等文明都没有表示“无”的符号。大约公元 500 年，印度人先用小点表示零，后来这一思想经阿拉伯世界传到各地。 3. 整数 整数包括非负整数以及自然数的相反数：……、−3、−2、−1、0、1、2、3、…… 例子：……、−3、−2、−1、0、1、2、3、…… 整数的历史 “比零还小的数”曾经让数学家感到奇怪。 integer 一词来自拉丁语，意为“完整、未切开”。 约公元 7 世纪，印度数学家婆罗摩笈多把正数比作“财富”，负数比作“债务”。 在欧洲，负数长期被视为“荒谬”或“假根”。 到 19 世纪，负整数、零与正整数合并为整数集 ℤ（源自德语 Zahlen，“数”）。 今天的整数体系历经数百年：从清点货物到理解整条数轴 ……、−2、−1、0、1、2、…… 4. 分数 分数表示整体的一部分。 例子：1/2、9/8、3/8、1 又 3/4 分数的历史 分数的发展史漫长而有趣！ 约 4000 年前，古埃及人用分数测量土地、分配食物，多用分子为 1 的“单位分数”，如 ½、⅕。 巴比伦人与希腊人后来在天文、贸易中使用分数，形成各自的记法。 中世纪阿拉伯商人改进分数记号并传入欧洲，分数线随之普及。 文艺复兴时期，分数进入学校算术课，写法与今天相同——分子在上、分母在下。 今天的分数历经数千年：从分面包到测量星辰！ 5. 小数 表示整体部分的另一种方式。 例子：0.5 = 1/2；0.25 = 1/4 小数的历史 小数源于把分数写得更方便的需求。 约 2000 年前，中国与希腊已有十进思想用于测量和贸易，但尚无小数点。 约 9 世纪，阿拉伯数学家用小标记分隔整数与小数部分，这是小数点的雏形。 16 世纪，佛兰芒数学家斯蒂文出版《十分之一》，说明小数如何简化日常计算；因便于货币与测量而迅速普及。 后来牛顿、莱布尼茨等科学家在科学与工程中用小数做精确计算。 今天小数无处不在——价格、测量、计算机——延续着千年来的十进传统！ 6. 有理数 能写成两个整数相除形式的数，包括非负整数、分数以及有限或循环小数。 例子：1/2、3/4、0.5、0.333…… 有理数的历史 把数看作比（一个数除以另一个数）的观念已有数千年历史。 埃及人用特殊分数记号分面包、量土地，已是有理数的雏形。 古希腊与印度数学家深入研究比与分数，塑造了今天的有理数概念。 中世纪随印度–阿拉伯数字与跨洲贸易，有理数用法更为广泛。 17–18 世纪，数学家认识到有理数只是数系的一部分，无理数等则超出其范围。 当你使用 ¾ 这样的有理数时，用的是人类数百年不断完善的成熟概念！ 7. 无理数 不能写成简单分数的数——其小数无限且不循环。 例子：π = 3.14159……；√2 = 1.41421…… 无理数的历史 不能写成简单分数的数曾震撼世人。 约公元前 500 年，古希腊毕达哥拉斯学派发现正方形对角线 √2 不能表成整数比。 后来印度与阿拉伯数学家研究这些“不可公度”量，形成无理数观念。 18–19 世纪，数学家证明 π、e 等为无理数——小数无穷且不循环。 当你使用 √2 或 3.14159…… 时，面对的是曾挑战古代观念、历经数个世纪才理解的概念！ 8. 虚数 虚数来自负数的平方根——普通实数无法做到！基本虚数单位是 i ，其中 i ² = −1。 例子：√−1 = i 虚数的历史 虚数不是为了好玩才发明——而是因为方程“不听话”才不得不引入。 16 世纪，意大利数学家解三次、四次方程时出现 √−1；当时人们认为实数的平方不能为负，所以它像“编出来的数”。 为继续计算，他们允许这类数并用符号表示；后来用 i 表示 √−1，并定义 i ² = −1。 18–19 世纪，欧拉、高斯等把实数与虚数合并为复数，使代数与几何更强大。 科学家与工程师发现虚数并不“假”，非常适合描述旋转、波动与电流。 虽名“虚数”，实则非常有用——只是无法摆在普通数轴上！ 数字基础：0 和 1 数字 0 0 既不是正数，也不是负数。 0 不是自然数。 0 是非负整数、整数，也是有理数。 0 是偶数。 偶数是能被 2 整除的数。 若除以 2 无余数，则为偶数。 0 ÷ 2 = 0 无余数 → 故 0 是偶数。 不能除以 0； a ÷ 0 无定义。 0 不能作为分数的分母。 0.0 是小数，值仍为 0。 数字 1 1 的任意次幂仍为 1，如 1² = 1、1⁵ = 1、1¹⁰⁰ = 1。 1 既不是质数，也不是合数。 质数恰有两个因数：1 与自身。例：2 的因数为 1 和 2。 合数有两个以上因数。例：6 的因数为 1、2、3、6。 但 1 只有一个因数——1 本身，因此既不属于质数也不属于合数。单独列出 1，才能让数的分类规则清晰一致。 提示：有些教材把 0 归入自然数。请以课堂或教材采用的定义为准。 数轴与坐标平面上的数 数轴上的实数 每个实数，无论有理还是无理，都对应数轴上唯一的一点。 有理数可写成两个整数之比（分母非零）。有限小数与循环小数是有理数：0.5 = 1/2，0.333… = 1/3。分数标出数轴上的精确位置。 无理数不能写成整数比；小数无穷不循环，但在数轴上的位置仍然确定。 例——精确作出 √2：画直角边为 1 的直角三角形，斜边为 √(1² + 1²) = √2。以 0 为圆心、斜边为半径转到正半轴，交点即为精确的 √2，而非近似值。 坐标平面上的复数 复数 z = a + bi （ i ² = −1）对应复平面上点 ( a , b )。横轴为实部 a ，纵轴为虚部系数 b 。例如 2 + 3 i 对应 (2, 3)。 要点：实数在一维数轴上；复数可用二维平面表示，从而用代数处理距离、旋转等几何问题。</div>
+<!-- /kiwi-search-zh-index -->
 </body>
 </html>

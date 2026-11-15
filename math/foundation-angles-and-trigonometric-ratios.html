@@ -55,7 +55,7 @@
 .kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
 .kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
 .kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:400;border-left:3px solid #0865c9;padding-left:10px}
-.kiwi-topic-sidebar a[href="mathematical-thinking.html"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+.kiwi-topic-sidebar a[href="/mathematical-thinking"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
 @media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
 </style>
 
@@ -94,10 +94,13 @@
 .mf-article .lesson-card-content .trig-beyond-90-figure{margin:14px 0 6px;text-align:center}
 .mf-article .lesson-card-content img,
 .mf-article .lesson-card-content .trig-beyond-90-figure img{width:100%;height:auto;display:block;margin:12px auto;border:0!important;border-radius:0!important;object-fit:contain;box-shadow:none}
+.mf-article .lesson-card-content .trig-beyond-90-figure img.trig-figure-standard-position{width:52%;max-width:min(100%,429px)}
+.mf-article .lesson-card-content .trig-beyond-90-figure img.trig-figure-pos-neg-rotation{width:40%;max-width:min(100%,330px)}
+@media(max-width:600px){.mf-article .lesson-card-content .trig-beyond-90-figure img.trig-figure-standard-position{width:min(100%,429px)}.mf-article .lesson-card-content .trig-beyond-90-figure img.trig-figure-pos-neg-rotation{width:min(100%,330px)}}
 .mf-article .lesson-card-content img.trig-figure-quadrant-signs{max-width:min(100%,630px)}
 .mf-article .lesson-card-content img.trig-figure-signed-triangle{max-width:min(100%,780px)}
 </style>
-<script src="../assets/js/kiwi-site-base.js?v=20261115-localprefix"></script>
+<script src="../assets/js/kiwi-site-base.js?v=20261115-coursepill"></script>
 </head>
 <body class="edu-page topic-page">
 <header class="site-header">
@@ -117,7 +120,7 @@
 <a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
 <a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
 <a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
-<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="/in-class-learning">In-Class Learning</a>
 <a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
 <a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
 <button type="button" class="kiwi-search-open" data-kiwi-search-trigger aria-label="Search site"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -136,17 +139,19 @@
 <!-- kiwi-math-catalog:start -->
 <div class="kiwi-grade-strip-wrap" data-pagefind-filter="grade:11">
   <p class="kiwi-grade-strip">
-    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="grade-11.html" data-en="Grade 11" data-zh="十一年级">Grade 11</a>
-    <a class="kiwi-grade-pill kiwi-grade-pill--course kiwi-grade-pill--link" href="by-ontario-course.html#mcr3u" data-en="MCR3U" data-zh="MCR3U">MCR3U</a> 
+    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="/grade-11" data-en="Grade 11" data-zh="十一年级">Grade 11</a>
+    <a class="kiwi-grade-pill kiwi-grade-pill--course kiwi-grade-pill--link" href="/by-ontario-course#mcr3u" data-en="MCR3U" data-zh="MCR3U">MCR3U</a> 
   </p>
 </div>
 <!-- kiwi-math-catalog:end -->
 <!-- LEVEL-3 BODY START -->
 <!-- LEVEL-3 BODY END -->
-<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links mf-trig-toc"><p class="mf-trig-toc-title" data-en="Trigonometry" data-zh="三角学">Trigonometry</p><div class="mf-trig-toc-parent"><a href="foundation-trigonometry-fundamentals.html" data-en="Trigonometry Fundamentals" data-zh="三角学基础">Trigonometry Fundamentals</a></div><div class="mf-trig-toc-parent"><a href="foundation-special-right-triangles.html" data-en="Special Right Triangles" data-zh="特殊直角三角形">Special Right Triangles</a></div><div class="mf-trig-toc-parent"><a aria-current="page" class="mf-current" href="foundation-angles-and-trigonometric-ratios.html" data-en="Angles and Trigonometric Ratios" data-zh="角与三角比">Angles and Trigonometric Ratios</a></div><div class="mf-trig-toc-parent"><a href="foundation-oblique-triangles-and-triangle-laws.html" data-en="Oblique Triangles and Triangle Laws" data-zh="斜三角形与三角形定理">Oblique Triangles and Triangle Laws</a></div><div class="mf-trig-toc-parent"><a href="foundation-trigonometric-identities.html" data-en="Trigonometric Identities" data-zh="三角恒等式">Trigonometric Identities</a></div><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="math-foundations.html">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Angles and Trigonometric Ratios" data-zh="角与三角比">Angles and Trigonometric Ratios</h1>
+<div class="mf-layout foundation-level4"><aside aria-label="Topic navigation" class="mf-sidebar"><nav class="mf-side-links mf-trig-toc"><p class="mf-trig-toc-title" data-en="Trigonometry" data-zh="三角学">Trigonometry</p><div class="mf-trig-toc-parent"><a href="/foundation-trigonometry-fundamentals" data-en="Trigonometry Fundamentals" data-zh="三角学基础">Trigonometry Fundamentals</a></div><div class="mf-trig-toc-parent"><a href="/foundation-special-right-triangles" data-en="Special Right Triangles" data-zh="特殊直角三角形">Special Right Triangles</a></div><div class="mf-trig-toc-parent"><a aria-current="page" class="mf-current" href="/foundation-angles-and-trigonometric-ratios" data-en="Angles and Trigonometric Ratios" data-zh="角与三角比">Angles and Trigonometric Ratios</a></div><div class="mf-trig-toc-parent"><a href="/foundation-six-trigonometric-functions-unit-circle" data-en="Six Trigonometric Functions on the Unit Circle" data-zh="单位圆上的六种三角函数">Six Trigonometric Functions on the Unit Circle</a></div><div class="mf-trig-toc-parent"><a href="/foundation-oblique-triangles-and-triangle-laws" data-en="Oblique Triangles and Triangle Laws" data-zh="斜三角形与三角形定理">Oblique Triangles and Triangle Laws</a></div><div class="mf-trig-toc-parent"><a href="/foundation-trigonometric-identities" data-en="Trigonometric Identities" data-zh="三角恒等式">Trigonometric Identities</a></div><a class="kiwi-sidebar-back" data-en="← All Math Foundations" data-zh="← 返回数学基础目录" href="/math-foundations">← All Math Foundations</a></nav></aside><article class="mf-article mf-chapter"><h1 data-en="Angles and Trigonometric Ratios" data-zh="角与三角比">Angles and Trigonometric Ratios</h1>
 <details class="lesson-card"><summary id="angles-in-standard-position" data-en="Angles in Standard Position" data-zh="标准位置角">Angles in Standard Position</summary><div class="lesson-card-content"><h4 id="initial-terminal-arm" data-en="Initial Arm and Terminal Arm" data-zh="始边与终边">Initial Arm and Terminal Arm</h4>
 <p data-en="An angle is in standard position when its vertex is at the origin and its initial arm lies along the positive x-axis. Its terminal arm is the ray reached after rotating through the angle." data-zh="当角的顶点在原点、始边沿 x 轴正方向时，角处于标准位置；终边是旋转后到达的射线。">An angle is in standard position when its vertex is at the origin and its initial arm lies along the positive x-axis. Its terminal arm is the ray reached after rotating through the angle.</p>
+<p class="trig-beyond-90-figure"><img alt="Standard position: vertex at the origin, initial arm on the positive x-axis, terminal arm after rotation" class="trig-figure-standard-position" loading="lazy" src="../assets/math/trig-standard-position-arms.webp" width="429" height="229"/></p>
 <p data-en="Counterclockwise rotation gives a positive angle; clockwise gives a negative angle. Angles may be greater than 360° or negative." data-zh="逆时针为正角，顺时针为负角；角的度数可以超过 360° 或为负。">Counterclockwise rotation gives a positive angle; clockwise gives a negative angle. Angles may be greater than 360° or negative.</p>
+<p class="trig-beyond-90-figure"><img alt="Counterclockwise positive angle and clockwise negative angle on the coordinate plane" class="trig-figure-pos-neg-rotation" loading="lazy" src="../assets/math/trig-positive-negative-rotation.webp" width="330" height="220"/></p>
 
 <h4 id="primary-on-plane" data-en="Primary Trigonometric Ratios on the Coordinate Plane" data-zh="坐标平面上的基本三角比">Primary Trigonometric Ratios on the Coordinate Plane</h4>
 <p data-en="If &lt;em&gt;P(x, y)&lt;/em&gt; lies on the terminal arm and &lt;em&gt;r = √(x² + y²)&lt;/em&gt;, then &lt;em&gt;r&lt;/em&gt; is the distance from the origin to &lt;em&gt;P&lt;/em&gt;." data-zh="若 &lt;em&gt;P(x, y)&lt;/em&gt; 在终边上且 &lt;em&gt;r = √(x² + y²)&lt;/em&gt;，则 &lt;em&gt;r&lt;/em&gt; 为原点到 &lt;em&gt;P&lt;/em&gt; 的距离。">If <em>P(x, y)</em> lies on the terminal arm and <em>r = √(x² + y²)</em>, then <em>r</em> is the distance from the origin to <em>P</em>.</p>
@@ -371,9 +376,15 @@
 
 
 
-<!-- kiwi-search-zh-index -->
-<div class="kiwi-pagefind-zh" hidden aria-hidden="true" data-pagefind-lang="zh" data-pagefind-body="" data-pagefind-filter="lang:zh"><span hidden data-pagefind-meta="title_zh">三角学</span><span hidden data-pagefind-meta="breadcrumb_zh">数学 › 三角学 › 三角学</span><span hidden data-pagefind-meta="excerpt_zh">标准位置角 始边与终边 当角的顶点在原点、始边沿 x 轴正方向时，角处于标准位置；终边是旋转后到达的射线。 逆时针为正角，顺时针为负角；角的度数可以超过 360° 或为负。 坐标平面上的基本三角比 若 P(x, y) 在终边上且 r = √(x² + y²) ，则 r 为原点到 P 的距离。 单位圆上（ r = 1 ）终点为 P(cos θ, sin θ) ；符号由 P 所在象限决定。 四象限三角比的符号 I：sin、cos、tan…</span>数学基础 三角学 探索核心数学概念与例题。 十一年级 MCR3U 十一年级全部主题 → 三角学基础 特殊直角三角形 角与三角比 斜三角形与三角形定理 三角恒等式 ← 返回数学基础目录 标准位置角 始边与终边 当角的顶点在原点、始边沿 x 轴正方向时，角处于标准位置；终边是旋转后到达的射线。 逆时针为正角，顺时针为负角；角的度数可以超过 360° 或为负。 坐标平面上的基本三角比 若 P(x, y) 在终边上且 r = √(x² + y²) ，则 r 为原点到 P 的距离。 单位圆上（ r = 1 ）终点为 P(cos θ, sin θ) ；符号由 P 所在象限决定。 四象限三角比的符号 I：sin、cos、tan 均为正。II：sin 正，cos、tan 负。III：sin、cos 负，tan 正。IV：sin、tan 负，cos 正。 相关角与同界角 相关锐角（参考角） 相关锐角是终边与 x 轴之间的锐角，也称参考角；非坐标轴上的角，其大小总在 0° 与 90° 之间。 若角不在 0°–360° 内，先化为该区间的同界角。 同界角 始边、终边相同的角互为同界角，相差 360° 的整数倍（整圈旋转）。 例：480°、120°、−240° 同界，终边均在第二象限。 超过90°的三角比 SOH–CAH–TOA 从直角三角形中的锐角开始。要把三角学推广到超过 90° 的角，需使用坐标平面与带符号的投影。 若点 P = (x, y) 在角的终边上， r 是到原点的正距离。 四个三角比 水平投影 x 推广了邻边的概念；竖直投影 y 推广了对边。与直角三角形边长不同，这些投影可能为负；半径 r 恒为正。 补角关系（第二象限） 对锐角参考角 θ （ 0° ），角 180° − θ 在第二象限。水平投影变号，竖直投影不变。 例题：120°（第二象限） 参考角为 60°，因为 120° = 180° − 60° 。图中 r = 5 、 x = −2.5 、 y ≈ 4.33 。 第二象限中 x 、 y &gt; 0 ，故正弦为正，余弦、正切、余切为负。 各象限符号 第一象限：全为正。第二象限：正弦为正。第三象限：正切、余切为正。第四象限：余弦为正。 x = 0 时正切无定义； y = 0 时余切无定义。 四个象限的参考角 参考角是终边与 x 轴（正或负方向）之间的最小正角，应从最近的 x 轴方向量取，而不是从 y 轴。 第一象限（ 0° ）： α = θ 第二象限（ 90° ）： α = 180° − θ 第三象限（ 180° ）： α = θ − 180° 第四象限（ 270° ）： α = 360° − θ 在坐标轴上的角（0°、90°、180°、270°、360°）是边界情形。其余角先化为 0° 到 360° 之间的同界角。 例题：210°（第三象限） 最近的 x 轴方向为 180°，参考角为 30°。 x 与 y 均为负。 例题：300°（第四象限） 最近的 x 轴方向为 360°，参考角为 60°。此时 x &gt; 0 、 y 。 各象限参考角恒等式 第二象限：180° − α 第三象限：180° + α 第四象限：360° − α 要点： 用参考角求数值，用象限定符号。cos θ = 0 时正切无定义；sin θ = 0 时余切无定义。 如何记符号：画带符号的直角三角形 不必死背象限符号表：从终边向 x 轴作直角三角形，把两条直角边看作带符号的投影：左为负 x 、右为正 x ；上为正 y 、下为负 y 。斜边 r 恒为正的长度。 第二象限： x 、 y &gt; 0 — 正弦为正；余弦、正切、余切为负。 第三象限：两直角边均为负 — 正弦、余弦为负；正切、余切为正。 第四象限： x &gt; 0 、 y — 余弦为正；正弦、正切、余切为负。 在分母不为零处用： 教学提示： 三角形边长本身不为负；± 标记表示带符号投影的方向，而不是“负的长度”。 特殊角的三角比 由特殊直角三角形得到的精确值 45°–45°–90° 三角形边长比为 1 : 1 : √2；30°–60°–90° 为 1 : √3 : 2。结合参考角与象限符号可将精确值推广到超过 90°。 倒数三角比 正弦的倒数是余割（csc），余弦的倒数是正割（sec），正切的倒数是余切（cot）。 分母为零时无定义。不要把倒数比与反三角函数（arcsin、arccos、arctan）混淆。</div>
-<!-- /kiwi-search-zh-index -->
+
 <script defer src="../assets/js/kiwi-back-to-top.js?v=20261115h"></script>
+
+
+
+
+
+<!-- kiwi-search-zh-index -->
+<div class="kiwi-pagefind-zh" hidden aria-hidden="true" data-pagefind-lang="zh" data-pagefind-body="" data-pagefind-filter="lang:zh"><span hidden data-pagefind-meta="title_zh">三角学</span><span hidden data-pagefind-meta="breadcrumb_zh">数学 › 三角学 › 三角学</span><span hidden data-pagefind-meta="excerpt_zh">标准位置角 始边与终边 当角的顶点在原点、始边沿 x 轴正方向时，角处于标准位置；终边是旋转后到达的射线。 逆时针为正角，顺时针为负角；角的度数可以超过 360° 或为负。 坐标平面上的基本三角比 若 P(x, y) 在终边上且 r = √(x² + y²) ，则 r 为原点到 P 的距离。 单位圆上（ r = 1 ）终点为 P(cos θ, sin θ) ；符号由 P 所在象限决定。 四象限三角比的符号 I：sin、cos、tan…</span>数学基础 三角学 探索核心数学概念与例题。 十一年级 MCR3U 三角学基础 特殊直角三角形 角与三角比 单位圆上的六种三角函数 斜三角形与三角形定理 三角恒等式 ← 返回数学基础目录 标准位置角 始边与终边 当角的顶点在原点、始边沿 x 轴正方向时，角处于标准位置；终边是旋转后到达的射线。 逆时针为正角，顺时针为负角；角的度数可以超过 360° 或为负。 坐标平面上的基本三角比 若 P(x, y) 在终边上且 r = √(x² + y²) ，则 r 为原点到 P 的距离。 单位圆上（ r = 1 ）终点为 P(cos θ, sin θ) ；符号由 P 所在象限决定。 四象限三角比的符号 I：sin、cos、tan 均为正。II：sin 正，cos、tan 负。III：sin、cos 负，tan 正。IV：sin、tan 负，cos 正。 相关角与同界角 相关锐角（参考角） 相关锐角是终边与 x 轴之间的锐角，也称参考角；非坐标轴上的角，其大小总在 0° 与 90° 之间。 若角不在 0°–360° 内，先化为该区间的同界角。 同界角 始边、终边相同的角互为同界角，相差 360° 的整数倍（整圈旋转）。 例：480°、120°、−240° 同界，终边均在第二象限。 超过90°的三角比 SOH–CAH–TOA 从直角三角形中的锐角开始。要把三角学推广到超过 90° 的角，需使用坐标平面与带符号的投影。 若点 P = (x, y) 在角的终边上， r 是到原点的正距离。 四个三角比 水平投影 x 推广了邻边的概念；竖直投影 y 推广了对边。与直角三角形边长不同，这些投影可能为负；半径 r 恒为正。 补角关系（第二象限） 对锐角参考角 θ （ 0° ），角 180° − θ 在第二象限。水平投影变号，竖直投影不变。 例题：120°（第二象限） 参考角为 60°，因为 120° = 180° − 60° 。图中 r = 5 、 x = −2.5 、 y ≈ 4.33 。 第二象限中 x 、 y &gt; 0 ，故正弦为正，余弦、正切、余切为负。 各象限符号 第一象限：全为正。第二象限：正弦为正。第三象限：正切、余切为正。第四象限：余弦为正。 x = 0 时正切无定义； y = 0 时余切无定义。 四个象限的参考角 参考角是终边与 x 轴（正或负方向）之间的最小正角，应从最近的 x 轴方向量取，而不是从 y 轴。 第一象限（ 0° ）： α = θ 第二象限（ 90° ）： α = 180° − θ 第三象限（ 180° ）： α = θ − 180° 第四象限（ 270° ）： α = 360° − θ 在坐标轴上的角（0°、90°、180°、270°、360°）是边界情形。其余角先化为 0° 到 360° 之间的同界角。 例题：210°（第三象限） 最近的 x 轴方向为 180°，参考角为 30°。 x 与 y 均为负。 例题：300°（第四象限） 最近的 x 轴方向为 360°，参考角为 60°。此时 x &gt; 0 、 y 。 各象限参考角恒等式 第二象限：180° − α 第三象限：180° + α 第四象限：360° − α 要点： 用参考角求数值，用象限定符号。cos θ = 0 时正切无定义；sin θ = 0 时余切无定义。 如何记符号：画带符号的直角三角形 不必死背象限符号表：从终边向 x 轴作直角三角形，把两条直角边看作带符号的投影：左为负 x 、右为正 x ；上为正 y 、下为负 y 。斜边 r 恒为正的长度。 第二象限： x 、 y &gt; 0 — 正弦为正；余弦、正切、余切为负。 第三象限：两直角边均为负 — 正弦、余弦为负；正切、余切为正。 第四象限： x &gt; 0 、 y — 余弦为正；正弦、正切、余切为负。 在分母不为零处用： 教学提示： 三角形边长本身不为负；± 标记表示带符号投影的方向，而不是“负的长度”。 特殊角的三角比 由特殊直角三角形得到的精确值 45°–45°–90° 三角形边长比为 1 : 1 : √2；30°–60°–90° 为 1 : √3 : 2。结合参考角与象限符号可将精确值推广到超过 90°。 倒数三角比 正弦的倒数是余割（csc），余弦的倒数是正割（sec），正切的倒数是余切（cot）。 分母为零时无定义。不要把倒数比与反三角函数（arcsin、arccos、arctan）混淆。</div>
+<!-- /kiwi-search-zh-index -->
 </body>
 </html>

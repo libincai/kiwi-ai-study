@@ -45,7 +45,7 @@ def course_hub_anchor(code: str) -> str:
 
 
 def course_hub_href(code: str, catalog: dict) -> str:
-    return f"{course_hub_slug(catalog)}.html#{course_hub_anchor(code)}"
+    return f"/{course_hub_slug(catalog)}#{course_hub_anchor(code)}"
 
 
 def grade_pills_block(grades: list[int], courses: list[str], catalog: dict) -> str:
@@ -57,7 +57,7 @@ def grade_pills_block(grades: list[int], courses: list[str], catalog: dict) -> s
         grade_zh = GRADE_ZH.get(g, f"{g} 年级")
         hub = grade_meta.get(str(g), {}).get("hub_slug", f"grade-{g}")
         grade_pill_lines.append(
-            f'    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="{html.escape(hub, quote=True)}.html" '
+            f'    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="/{html.escape(hub, quote=True)}" '
             f'data-en="{html.escape(grade_en)}" data-zh="{html.escape(grade_zh)}">'
             f"{html.escape(grade_en)}</a>"
         )
@@ -127,7 +127,7 @@ def inject_topic(path: Path, topic: dict, catalog: dict) -> bool:
 
 
 def topic_href(slug: str) -> str:
-    return f"{slug}.html"
+    return f"/{slug}"
 
 
 COURSE_PRIMARY_GRADE: dict[str, int] = {
@@ -360,7 +360,7 @@ def math_page_header(
 <a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
 <a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
 <a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
-<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="in-class-learning.html">In-Class Learning</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="/in-class-learning">In-Class Learning</a>
 <a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
 <a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
 <button type="button" class="kiwi-search-open" data-kiwi-search-trigger aria-label="Search site"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -483,7 +483,7 @@ def course_grade_hub_links_html(code: str, catalog: dict) -> str:
         title_en = gm.get("title_en", f"Grade {g} Mathematics")
         title_zh = gm.get("title_zh", GRADE_ZH.get(g, str(g)))
         links.append(
-            f'<a href="{slug}.html" data-en="{html.escape(title_en)}" '
+            f'<a href="/{slug}" data-en="{html.escape(title_en)}" '
             f'data-zh="{html.escape(title_zh)}">{html.escape(title_en)}</a>'
         )
     if not links:
@@ -684,7 +684,7 @@ def render_ontario_course_hub(catalog: dict) -> None:
         + COURSE_HUB_ACCORDION
         + f"""<main data-pagefind-body="" data-pagefind-filter="lang:en" class="edu-main topic-main kiwi-ontario-course-main">
 <div class="page-back-wrap">
-<a class="page-back-link" data-en="← Back to Math Education" data-page-back="" data-zh="← 返回数学教育" href="index.html">← Back to Math Education</a>
+<a class="page-back-link" data-en="← Back to Math Education" data-page-back="" data-zh="← 返回数学教育" href="/math">← Back to Math Education</a>
 </div>
 <section class="nf-hero topic-banner" aria-label="Ontario course codes">
 <p class="topic-banner-kicker" data-en="MATH · ONTARIO" data-zh="数学 · 安省">MATH · ONTARIO</p>
@@ -725,7 +725,7 @@ def render_by_grade(catalog: dict) -> None:
                 f'data-zh="{html.escape(courses_zh)}">{html.escape(courses_en)}</span>'
             )
         picks.append(
-            f'<a class="kiwi-grade-pick" href="{slug}.html">'
+            f'<a class="kiwi-grade-pick" href="/{slug}">'
             f'<span class="kiwi-grade-pick-main">'
             f'<span class="kiwi-grade-pick-label" data-en="Grade {g}" data-zh="{html.escape(gzh)}">'
             f"Grade {g}</span>"
@@ -744,7 +744,7 @@ def render_by_grade(catalog: dict) -> None:
         )
         + f"""<main data-pagefind-body="" data-pagefind-filter="lang:en" class="edu-main topic-main">
 <div class="page-back-wrap">
-<a class="page-back-link" data-en="← Back to Math Education" data-page-back="" data-zh="← 返回数学教育" href="index.html">← Back to Math Education</a>
+<a class="page-back-link" data-en="← Back to Math Education" data-page-back="" data-zh="← 返回数学教育" href="/math">← Back to Math Education</a>
 </div>
 <section class="nf-hero topic-banner" aria-label="Math by grade">
 <p class="topic-banner-kicker" data-en="MATH · BY GRADE" data-zh="数学 · 按年级">MATH · BY GRADE</p>
@@ -785,7 +785,7 @@ def render_grade_hub(grade: int, catalog: dict) -> None:
         )
         + f"""<main data-pagefind-body="" data-pagefind-filter="lang:en" class="edu-main topic-main kiwi-grade-hub-main">
 <div class="page-back-wrap">
-<a class="page-back-link" data-en="← Back to Math by Grade" data-page-back="" data-zh="← 返回按年级浏览" href="by-grade.html">← Back to Math by Grade</a>
+<a class="page-back-link" data-en="← Back to Math by Grade" data-page-back="" data-zh="← 返回按年级浏览" href="/by-grade">← Back to Math by Grade</a>
 </div>
 <section class="nf-hero topic-banner" aria-label="Grade hub">
 <p class="topic-banner-kicker" data-en="ONTARIO · GRADE {grade}" data-zh="安省 · {html.escape(gzh)}">ONTARIO · GRADE {grade}</p>

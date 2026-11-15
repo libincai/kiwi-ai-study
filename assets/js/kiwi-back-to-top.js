@@ -12,7 +12,16 @@
   sentinel.setAttribute("aria-hidden", "true");
   sentinel.style.cssText =
     "width:1px;height:1px;margin:0;padding:0;border:0;pointer-events:none";
-  document.body.insertBefore(sentinel, document.body.firstChild);
+
+  const topChromeEnd =
+    main.querySelector(".kiwi-grade-strip-wrap") ||
+    main.querySelector(".topic-banner, .nf-hero.topic-banner") ||
+    main.querySelector(".foundation-level4");
+  if (topChromeEnd && topChromeEnd.parentNode) {
+    topChromeEnd.parentNode.insertBefore(sentinel, topChromeEnd.nextSibling);
+  } else {
+    document.body.insertBefore(sentinel, document.body.firstChild);
+  }
 
   const btn = document.createElement("button");
   btn.type = "button";
@@ -69,27 +78,82 @@
     document.body.scrollTop ||
     0;
 
-  const showAt = 120;
+  const MIN_VIEWPORTS = 2;
+  const MIN_SCROLL_PX = 320;
+  const SHOW_DELAY_MS = 120;
+
+  const pageIsLong = () => {
+    const docH = Math.max(
+      document.documentElement.scrollHeight,
+      document.body.scrollHeight,
+    );
+    return docH > window.innerHeight * MIN_VIEWPORTS;
+  };
+
   const setVisible = (visible) => {
     btn.hidden = !visible;
   };
 
-  const fallbackCheck = () => setVisible(scrollY() >= showAt);
+  let sentinelInView = true;
+  let showTimer = null;
+
+  const applyShowIntent = (wantShow) => {
+    if (!pageIsLong() || scrollY() < 1) {
+      if (showTimer) clearTimeout(showTimer);
+      showTimer = null;
+      setVisible(false);
+      return;
+    }
+    if (!wantShow) {
+      if (showTimer) clearTimeout(showTimer);
+      showTimer = null;
+      setVisible(false);
+      return;
+    }
+    if (showTimer) return;
+    showTimer = setTimeout(() => {
+      showTimer = null;
+      if (
+        pageIsLong() &&
+        scrollY() >= MIN_SCROLL_PX &&
+        !sentinelInView
+      ) {
+        setVisible(true);
+      }
+    }, SHOW_DELAY_MS);
+  };
+
+  const evaluateVisibility = () => {
+    const wantShow =
+      pageIsLong() && scrollY() >= MIN_SCROLL_PX && !sentinelInView;
+    applyShowIntent(wantShow);
+  };
+
+  const fallbackCheck = () => {
+    const rect = sentinel.getBoundingClientRect();
+    sentinelInView = rect.top > -8;
+    evaluateVisibility();
+  };
 
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
         const e = entries[0];
         if (!e) return;
-        setVisible(!e.isIntersecting || scrollY() >= showAt);
+        sentinelInView = e.isIntersecting;
+        evaluateVisibility();
       },
-      { root: null, rootMargin: "0px 0px 0px 0px", threshold: 0 },
+      { root: null, rootMargin: "-8px 0px 0px 0px", threshold: 0 },
     );
     io.observe(sentinel);
-    window.addEventListener("scroll", fallbackCheck, { passive: true });
-    fallbackCheck();
+    window.addEventListener("scroll", evaluateVisibility, { passive: true });
+    window.addEventListener("resize", () => {
+      evaluateVisibility();
+    }, { passive: true });
+    evaluateVisibility();
   } else {
     window.addEventListener("scroll", fallbackCheck, { passive: true });
+    window.addEventListener("resize", fallbackCheck, { passive: true });
     fallbackCheck();
   }
 

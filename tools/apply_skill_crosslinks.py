@@ -24,7 +24,39 @@ def esc_attr(text: str) -> str:
     )
 
 
+def clean_href(slug: str) -> str:
+    stem = slug[:-5] if slug.endswith(".html") else slug
+    if not stem.startswith(("foundation-", "thinking-")):
+        legacy = {
+            "unit-conversions-and-rates": "thinking-unit-conversions-and-rates",
+            "special-right-triangles": "thinking-special-right-triangles",
+            "number-strategies": "thinking-number-strategies",
+            "algebraic-strategies": "thinking-algebraic-strategies",
+            "geometric-strategies": "thinking-geometric-strategies",
+            "why-simplified-calculation": "thinking-why-simplified-calculation",
+            "word-problems": "thinking-word-problems",
+            "data-and-graphs": "thinking-data-and-graphs",
+            "measures-of-center": "thinking-measures-of-center",
+            "chance-and-probability": "thinking-chance-and-probability",
+        }
+        stem = legacy.get(stem, stem)
+    return f"/{stem}"
+
+
+HREF_IN_TEXT = re.compile(r'href="([a-z0-9][\w-]*)(?:\.html)?"', re.I)
+
+
+def fix_hrefs_in_text(text: str) -> str:
+    return HREF_IN_TEXT.sub(lambda m: f'href="{clean_href(m.group(1) + ".html")}"', text)
+
+
 def build_panel(p1_en: str, p1_zh: str, p2_en: str, p2_zh: str) -> str:
+    p1_en, p1_zh, p2_en, p2_zh = (
+        fix_hrefs_in_text(p1_en),
+        fix_hrefs_in_text(p1_zh),
+        fix_hrefs_in_text(p2_en),
+        fix_hrefs_in_text(p2_zh),
+    )
     return (
         '<aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note">'
         + HEADING
