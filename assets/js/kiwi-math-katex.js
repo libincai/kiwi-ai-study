@@ -20,6 +20,8 @@
   function normalizeTex(tex, displayMode) {
     if (!tex) return tex;
     let t = tex.trim();
+    t = t.replace(/\^\{\s*-\s*1\s*\}/g, "^{-1}");
+    t = t.replace(/\\\s*$/g, "");
     if (displayMode) {
       t = t.replace(/\\frac\b/g, "\\dfrac");
     }

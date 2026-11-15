@@ -23,7 +23,8 @@ LESSON_CARD_CSS = """<style id="foundation-lesson-cards">
 .mf-article .lesson-card[open] summary::after{content:'−'}
 .mf-article .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
 .mf-article .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
-.mf-article .lesson-card-content h4,.mf-article .lesson-card-content h5{color:#153d70;font-size:16px;margin:17px 0 7px}
+.mf-article .lesson-card-content h4{color:#153d70;font-size:16px;font-weight:750;margin:20px 0 8px}
+.mf-article .lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px 3ch;line-height:1.5}
 .mf-article .lesson-card-content table{margin-top:0}
 .mf-article .lesson-card p{margin:10px 0}
 @media(max-width:600px){.mf-article .lesson-card summary{padding:15px;font-size:16px}.mf-article .lesson-card-content{padding:12px 16px}}

@@ -31,7 +31,7 @@ Each topic row points at one chapter via `chapter_id`.
 - **Math Foundations:** The `h1` on the L3 **category hub** page (`foundation-*.html` banner / `pagefind:title_en` when that page is the sidebar “section” entry), or the sidebar’s current section label — **not** the Level 1 card title alone.
 - **Mathematical Thinking:** The sidebar link text on `kiwi-topic-sidebar` / section hub for that track (e.g. *Number Strategies*, *Recovering a Function Rule…*), aligned with the thinking hub card **area** but using the **specific lesson-group title** shown in the sidebar.
 
-**In the catalog:** `topics[].title_en` / `title_zh` — this is what appears in the **numbered list** under each chapter on `grade-N.html`.
+**In the catalog:** `topics[].title_en` / `title_zh` — this is what appears in the **numbered list** under each chapter on `grade-N.html` and in **Ontario course code** cards (`by-ontario-course.html`). Course cards list Level 2 only: `list_on_grade_hub: true` **or** Ontario-import rows (`verified_note` starts with `Ontario curriculum expectation alignment`). Nested pages under a hub (e.g. right-triangle splits inside *Trigonometry Fundamentals*) stay out of both UIs.
 
 **Ontario requirement pills (after the topic link):** When `topics[].courses` is non-empty (e.g. `MTH1W`, `MPM2D`, `MCR3U`), the grade hub shows a **course pill** immediately after the Level 2 link in the same list row (`span.kiwi-book-topic-courses`). Elementary-only topics with no secondary course code omit the pill. Lesson pages still use the full grade strip from the catalog injector when labeled.
 

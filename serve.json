@@ -5,6 +5,10 @@
       "destination": "/math/by-grade.html"
     },
     {
+      "source": "/by-ontario-course",
+      "destination": "/math/by-ontario-course.html"
+    },
+    {
       "source": "/car-journey",
       "destination": "/math/car-journey.html"
     },

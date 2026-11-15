@@ -7,6 +7,70 @@
     "hub_file": "math/by-grade.html",
     "hub_slug": "by-grade"
   },
+  "by_course": {
+    "title_en": "Ontario Course Codes",
+    "title_zh": "\u5b89\u7701\u8bfe\u7a0b\u4ee3\u7801",
+    "subtitle_en": "Codes used on this site: a short Ontario description and links to our lessons for each course. This is not the full ministry curriculum.",
+    "subtitle_zh": "\u672c\u7ad9\u4f7f\u7528\u7684\u8bfe\u7a0b\u4ee3\u7801\uff1a\u5b89\u7701\u8bfe\u7a0b\u7b80\u8981\u8bf4\u660e\uff0c\u4ee5\u53ca\u5404\u4ee3\u7801\u4e0b\u7684\u4e3b\u9898\u94fe\u63a5\u3002\u5e76\u975e\u5b8c\u6574\u7684\u6559\u80b2\u5385\u8bfe\u7a0b\u6587\u4ef6\u3002",
+    "hub_file": "math/by-ontario-course.html",
+    "hub_slug": "by-ontario-course"
+  },
+  "course_codes": {
+    "MTH1W": {
+      "order": 1,
+      "summary_en": "Grade 9 \u00b7 MTH1W \u00b7 Mathematics",
+      "summary_zh": "\u4e5d\u5e74\u7ea7 \u00b7 MTH1W \u00b7 \u6570\u5b66",
+      "course_line_en": "<strong>Grade 9 Mathematics \u2014 MTH1W</strong>",
+      "course_line_zh": "<strong>\u4e5d\u5e74\u7ea7\u6570\u5b66 \u2014 MTH1W</strong>",
+      "leadin_en": "The Ontario curriculum for Grade 9 Mathematics (de-streamed) emphasizes algebraic thinking, relationships among representations, and problem solving across number, algebra, data, geometry, and measurement strands.",
+      "leadin_zh": "\u5b89\u7701\u4e5d\u5e74\u7ea7\u6570\u5b66\uff08\u4e0d\u5206\u6d41\uff09\u8bfe\u7a0b\u5f3a\u8c03\u4ee3\u6570\u601d\u7ef4\u3001\u591a\u79cd\u8868\u5f81\u4e4b\u95f4\u7684\u8054\u7cfb\uff0c\u4ee5\u53ca\u5728\u6570\u3001\u4ee3\u6570\u3001\u6570\u636e\u3001\u51e0\u4f55\u4e0e\u5ea6\u91cf\u5404\u9886\u57df\u7684\u89e3\u9898\u80fd\u529b\u3002",
+      "quote_en": "Students develop algebraic concepts and make connections between number and algebra using different tools and representations.",
+      "quote_zh": "\u5b66\u751f\u53d1\u5c55\u4ee3\u6570\u6982\u5ff5\uff0c\u5e76\u901a\u8fc7\u4e0d\u540c\u5de5\u5177\u4e0e\u8868\u5f81\u7406\u89e3\u6570\u4e0e\u4ee3\u6570\u4e4b\u95f4\u7684\u8054\u7cfb\u3002",
+      "citation_en": "\u2014 Ontario Curriculum: Secondary Mathematics, Grade 9 (MTH1W), Ministry of Education.",
+      "citation_zh": "\u2014\u2014\u300a\u5b89\u7701\u8bfe\u7a0b\uff1a\u4e2d\u5b66\u6570\u5b66\u300b\uff0c\u4e5d\u5e74\u7ea7\uff08MTH1W\uff09\uff0c\u7701\u6559\u80b2\u5385\u3002",
+      "official_url": "https://www.dcp.edu.gov.on.ca/en/curriculum/secondary-mathematics/courses/mth1w",
+      "connect_en": "Topics on this site tagged MTH1W support expressions, equations, linear relations, and foundational function ideas at the Grade 9 level.",
+      "connect_zh": "\u672c\u7ad9\u6807\u6ce8 MTH1W \u7684\u4e3b\u9898\uff0c\u5bf9\u5e94\u4e5d\u5e74\u7ea7\u5c42\u9762\u7684\u5f0f\u5b50\u3001\u65b9\u7a0b\u3001\u7ebf\u6027\u5173\u7cfb\u4e0e\u51fd\u6570\u5165\u95e8\u7b49\u5185\u5bb9\u3002",
+      "code_explainer_en": "<strong>What this code means:</strong> <strong>M</strong> = Mathematics; <strong>TH</strong> = the compulsory Grade 9 course; <strong>1</strong> = Grade 9; <strong>W</strong> = de-streamed (one course for all students, not Applied vs Academic).",
+      "code_explainer_zh": "<strong>\u4ee3\u7801\u542b\u4e49\uff1a</strong><strong>M</strong> = \u6570\u5b66\uff1b<strong>TH</strong> = \u4e5d\u5e74\u7ea7\u5fc5\u4fee\u8bfe\uff1b<strong>1</strong> = \u4e5d\u5e74\u7ea7\uff1b<strong>W</strong> = \u4e0d\u5206\u6d41\uff08\u5168\u4f53\u5b66\u751f\u540c\u4e00\u95e8\u6570\u5b66\u8bfe\uff0c\u800c\u975e\u5e94\u7528/\u5b66\u672f\u5206\u6d41\uff09\u3002"
+    },
+    "MPM2D": {
+      "order": 2,
+      "summary_en": "Grade 10 \u00b7 MPM2D \u00b7 Principles of Mathematics",
+      "summary_zh": "\u5341\u5e74\u7ea7 \u00b7 MPM2D \u00b7 \u6570\u5b66\u539f\u7406",
+      "course_line_en": "<strong>Grade 10 Principles of Mathematics \u2014 MPM2D</strong>",
+      "course_line_zh": "<strong>\u5341\u5e74\u7ea7\u6570\u5b66\u539f\u7406 \u2014 MPM2D</strong>",
+      "leadin_en": "The Ontario Grade 10 Principles course develops reasoning with quadratics, trigonometry, analytic geometry, and linear systems, with emphasis on problem solving and communication.",
+      "leadin_zh": "\u5b89\u7701\u5341\u5e74\u7ea7\u6570\u5b66\u539f\u7406\u8bfe\u7a0b\u53d1\u5c55\u4e8c\u6b21\u5173\u7cfb\u3001\u4e09\u89d2\u5b66\u3001\u89e3\u6790\u51e0\u4f55\u4e0e\u7ebf\u6027\u65b9\u7a0b\u7ec4\u65b9\u9762\u7684\u63a8\u7406\u80fd\u529b\uff0c\u5e76\u5f3a\u8c03\u89e3\u9898\u4e0e\u8868\u8fbe\u3002",
+      "quote_en": "Students continue to build on their understanding of linear relations and extend their thinking to quadratic relations and trigonometry.",
+      "quote_zh": "\u5b66\u751f\u5728\u7ebf\u6027\u5173\u7cfb\u7684\u57fa\u7840\u4e0a\uff0c\u5c06\u601d\u7ef4\u62d3\u5c55\u81f3\u4e8c\u6b21\u5173\u7cfb\u4e0e\u4e09\u89d2\u5b66\u3002",
+      "citation_en": "\u2014 The Ontario Curriculum, Grades 9 and 10: Mathematics, Ontario Ministry of Education, Principles of Mathematics, Grade 10, Academic (MPM2D).",
+      "citation_zh": "\u2014\u2014\u300a\u5b89\u5927\u7565\u8bfe\u7a0b\uff1a9 \u4e0e 10 \u5e74\u7ea7\u6570\u5b66\u300b\uff0c\u5b89\u5927\u7565\u7701\u6559\u80b2\u5385\uff0c\u5341\u5e74\u7ea7\u6570\u5b66\u539f\u7406\u5b66\u672f\u8bfe\u7a0b\uff08MPM2D\uff09\u3002",
+      "official_url": "https://www.edu.gov.on.ca/eng/curriculum/secondary/math910currb.pdf",
+      "connect_en": "Lessons tagged MPM2D on this site include introductory trigonometry, transformations, and quadratic patterns that align with early Principles topics.",
+      "connect_zh": "\u672c\u7ad9\u6807\u6ce8 MPM2D \u7684\u8bfe\u65f6\u5305\u542b\u4e0e\u6570\u5b66\u539f\u7406\u5165\u95e8\u4e3b\u9898\u76f8\u8854\u63a5\u7684\u4e09\u89d2\u5b66\u5165\u95e8\u3001\u53d8\u6362\u4e0e\u4e8c\u6b21\u6a21\u5f0f\u7b49\u5185\u5bb9\u3002",
+      "code_explainer_en": "<strong>What this code means:</strong> <strong>M</strong> = Mathematics; <strong>PM</strong> = <em>Principles of Mathematics</em> (this course line); <strong>2</strong> = Grade 10; <strong>D</strong> = Academic (university-oriented pathway in Grades 9\u201310).",
+      "code_explainer_zh": "<strong>\u4ee3\u7801\u542b\u4e49\uff1a</strong><strong>M</strong> = \u6570\u5b66\uff1b<strong>PM</strong> = <em>\u6570\u5b66\u539f\u7406</em>\uff08Principles of Mathematics\uff09\uff1b<strong>2</strong> = \u5341\u5e74\u7ea7\uff1b<strong>D</strong> = \u5b66\u672f\u7c7b\uff089\u201310 \u5e74\u7ea7\u5927\u5b66\u5bfc\u5411\u8bfe\u7a0b\uff09\u3002"
+    },
+    "MCR3U": {
+      "order": 3,
+      "summary_en": "Grade 11 \u00b7 MCR3U \u00b7 Functions",
+      "summary_zh": "\u5341\u4e00\u5e74\u7ea7 \u00b7 MCR3U \u00b7 \u51fd\u6570",
+      "course_line_en": "<strong>Grade 11 Functions \u2014 MCR3U</strong>",
+      "course_line_zh": "<strong>\u5341\u4e00\u5e74\u7ea7\u51fd\u6570 \u2014 MCR3U</strong>",
+      "leadin_en": "The Ontario Ministry of Education describes the Grade 11 Functions course as follows:",
+      "leadin_zh": "\u5b89\u5927\u7565\u7701\u6559\u80b2\u5385\u5bf9\u5341\u4e00\u5e74\u7ea7\u51fd\u6570\u8bfe\u7a0b\u8bf4\u660e\u5982\u4e0b\uff1a",
+      "quote_en": "Students will reason mathematically and communicate their thinking as they solve multi-step problems.",
+      "quote_zh": "\u5b66\u751f\u5c06\u8fdb\u884c\u6570\u5b66\u63a8\u7406\uff0c\u5e76\u5728\u89e3\u51b3\u591a\u6b65\u9aa4\u95ee\u9898\u65f6\u8868\u8fbe\u81ea\u5df1\u7684\u60f3\u6cd5\u3002",
+      "citation_en": "\u2014 The Ontario Curriculum, Grades 11 and 12: Mathematics, Ontario Ministry of Education, 2007, Functions, Grade 11, University Preparation (MCR3U), page 43.",
+      "citation_zh": "\u2014\u2014\u300a\u5b89\u5927\u7565\u8bfe\u7a0b\uff1a11 \u4e0e 12 \u5e74\u7ea7\u6570\u5b66\u300b\uff0c\u5b89\u5927\u7565\u7701\u6559\u80b2\u5385\uff0c2007\uff0c\u51fd\u6570\uff0c\u5341\u4e00\u5e74\u7ea7\u5927\u5b66\u9884\u5907\uff08MCR3U\uff09\uff0c\u7b2c 43 \u9875\u3002",
+      "official_url": "https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf",
+      "connect_en": "Topics tagged MCR3U extend trigonometry, identities, and function reasoning for university-preparation Functions.",
+      "connect_zh": "\u672c\u7ad9\u6807\u6ce8 MCR3U \u7684\u4e3b\u9898\uff0c\u6db5\u76d6\u5927\u5b66\u9884\u5907\u51fd\u6570\u8bfe\u7a0b\u4e2d\u7684\u4e09\u89d2\u5b66\u3001\u6052\u7b49\u5f0f\u4e0e\u51fd\u6570\u63a8\u7406\u7b49\u5185\u5bb9\u3002",
+      "code_explainer_en": "<strong>What this code means:</strong> <strong>M</strong> = Mathematics; <strong>CR</strong> = <em>Functions</em> (this course); <strong>3</strong> = Grade 11; <strong>U</strong> = University preparation.",
+      "code_explainer_zh": "<strong>\u4ee3\u7801\u542b\u4e49\uff1a</strong><strong>M</strong> = \u6570\u5b66\uff1b<strong>CR</strong> = <em>\u51fd\u6570</em>\uff08Functions\uff09\uff1b<strong>3</strong> = \u5341\u4e00\u5e74\u7ea7\uff1b<strong>U</strong> = \u5927\u5b66\u9884\u5907\u3002"
+    }
+  },
   "chapters": {
     "foundations-number": {
       "title_en": "Number Skills & Operations",

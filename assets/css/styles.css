@@ -4343,11 +4343,29 @@ html body main .nf-hero.topic-banner > p:last-child {
   cursor: default;
   user-select: none;
 }
+a.kiwi-grade-pill--link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+a.kiwi-grade-pill--link:hover,
+a.kiwi-grade-pill--link:focus-visible {
+  background: #eaf3ff;
+  border-color: #b8d4f0;
+  color: #155d9d;
+  outline-offset: 2px;
+}
 .kiwi-grade-pill--course {
   background: #faf7f1;
   border-color: #e5dcc8;
   color: #6b5a3a;
   font-weight: 500;
+}
+a.kiwi-grade-pill--course.kiwi-grade-pill--link:hover,
+a.kiwi-grade-pill--course.kiwi-grade-pill--link:focus-visible {
+  background: #f5ecd8;
+  border-color: #d9c9a8;
+  color: #5c4a28;
 }
 .kiwi-grade-hub-link {
   color: #1768b2;
@@ -4380,6 +4398,40 @@ html body.topic-page .kiwi-topic-article > h1.kiwi-current-topic {
 html body.topic-page .kiwi-topic-article > .nf-section:first-of-type,
 html body.topic-page .kiwi-topic-article > .word-topic:first-of-type {
   margin-top: 0;
+}
+
+/* Math Foundations (mf-article) + Mathematical Thinking (kiwi-topic-article): H4 / H5 hierarchy */
+.mf-article h4,
+.kiwi-topic-article h4 {
+  font-size: 16px;
+  font-weight: 750;
+  color: #173e70;
+  margin: 20px 0 8px;
+}
+.mf-article h5,
+.kiwi-topic-article h5 {
+  font-size: 15px;
+  font-weight: 650;
+  color: #1768b2;
+  margin: 12px 0 6px 3ch;
+  line-height: 1.5;
+}
+.mf-article .lesson-card-content h4,
+.kiwi-topic-article .lesson-card-content h4,
+.kiwi-topic-article .lesson-card-body h4 {
+  color: #153d70;
+  font-size: 16px;
+  font-weight: 750;
+  margin: 20px 0 8px;
+}
+.mf-article .lesson-card-content h5,
+.kiwi-topic-article .lesson-card-content h5,
+.kiwi-topic-article .lesson-card-body h5 {
+  font-size: 15px;
+  font-weight: 650;
+  color: #1768b2;
+  margin: 12px 0 6px 3ch;
+  line-height: 1.5;
 }
 
 /* Math Foundations import pages (foundation-*): match number-families — no card frame on the article column. */
@@ -5252,6 +5304,13 @@ aside.kiwi-curriculum-panel math[display="block"] {
   display: block;
   margin-inline: auto;
 }
+aside.kiwi-curriculum-panel .kiwi-course-code-explainer {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #2a4a68;
+}
+
 aside.kiwi-curriculum-panel .kiwi-curriculum-heading {
   display: block;
   margin-bottom: 0.5rem;
@@ -5602,8 +5661,25 @@ body.kiwi-search-open .site-header {
 }
 
 .edu-grade-browse-wrap {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 14px;
   margin: 0 0 8px;
+}
+
+.edu-grade-browse-wrap .edu-button--secondary {
+  background: #fff;
+  color: #155d9d !important;
+  border: 1px solid #cddff2;
+  box-shadow: none;
+}
+
+.edu-grade-browse-wrap .edu-button--secondary:hover,
+.edu-grade-browse-wrap .edu-button--secondary:focus-visible {
+  background: #eaf3fd;
+  border-color: #b8d4f0;
 }
 
 .kiwi-grade-picker {
@@ -5727,7 +5803,8 @@ body.kiwi-search-open .site-header {
   margin-bottom: 48px;
 }
 
-.kiwi-grade-hub .kiwi-book-toc {
+.kiwi-grade-hub .kiwi-book-toc,
+.kiwi-ontario-course-main .kiwi-book-toc {
   max-width: none;
   display: grid;
   grid-template-columns: 1fr;
@@ -5735,14 +5812,20 @@ body.kiwi-search-open .site-header {
   align-items: start;
 }
 
+.kiwi-ontario-course-main .kiwi-book-toc {
+  margin: 18px 0 6px;
+}
+
 @media (min-width: 768px) {
-  .kiwi-grade-hub .kiwi-book-toc {
+  .kiwi-grade-hub .kiwi-book-toc,
+  .kiwi-ontario-course-main .kiwi-book-toc {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px 24px;
   }
 }
 
-.kiwi-grade-hub .kiwi-book-chapter {
+.kiwi-grade-hub .kiwi-book-chapter,
+.kiwi-ontario-course-main .kiwi-book-chapter {
   margin: 0;
   padding: 18px 20px 16px;
   border: 1px solid #dce6f1;
@@ -5751,7 +5834,8 @@ body.kiwi-search-open .site-header {
   box-shadow: 0 1px 2px rgba(24, 55, 95, 0.05);
 }
 
-.kiwi-grade-hub .kiwi-book-chapter-head {
+.kiwi-grade-hub .kiwi-book-chapter-head,
+.kiwi-ontario-course-main .kiwi-book-chapter-head {
   display: flex;
   gap: 14px;
   align-items: flex-start;
@@ -5760,7 +5844,8 @@ body.kiwi-search-open .site-header {
   border-bottom: 1px solid #e8eef5;
 }
 
-.kiwi-grade-hub .kiwi-book-chapter-number {
+.kiwi-grade-hub .kiwi-book-chapter-number,
+.kiwi-ontario-course-main .kiwi-book-chapter-number {
   flex-shrink: 0;
   width: 46px;
   height: 46px;
@@ -5774,38 +5859,44 @@ body.kiwi-search-open .site-header {
   line-height: 1;
 }
 
-.kiwi-grade-hub .kiwi-book-chapter-title {
+.kiwi-grade-hub .kiwi-book-chapter-title,
+.kiwi-ontario-course-main .kiwi-book-chapter-title {
   margin: 0;
   flex: 1;
   min-width: 0;
   align-self: center;
 }
 
-.kiwi-grade-hub .kiwi-book-topic-list {
+.kiwi-grade-hub .kiwi-book-topic-list,
+.kiwi-ontario-course-main .kiwi-book-topic-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.kiwi-grade-hub .kiwi-book-topic-row {
+.kiwi-grade-hub .kiwi-book-topic-row,
+.kiwi-ontario-course-main .kiwi-book-topic-row {
   padding: 9px 0;
   margin: 0;
   border-bottom: 1px solid #f1f5fa;
   gap: 8px 12px;
 }
 
-.kiwi-grade-hub .kiwi-book-topic-row:last-child {
+.kiwi-grade-hub .kiwi-book-topic-row:last-child,
+.kiwi-ontario-course-main .kiwi-book-topic-row:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-.kiwi-grade-hub .kiwi-book-topic-list a {
+.kiwi-grade-hub .kiwi-book-topic-list a,
+.kiwi-ontario-course-main .kiwi-book-topic-list a {
   color: #1768b2;
   text-decoration: none;
   line-height: 1.5;
 }
 
-.kiwi-grade-hub .kiwi-book-topic-list a:hover {
+.kiwi-grade-hub .kiwi-book-topic-list a:hover,
+.kiwi-ontario-course-main .kiwi-book-topic-list a:hover {
   text-decoration: underline;
   color: #10548f;
 }
@@ -5887,4 +5978,33 @@ body.kiwi-search-open .site-header {
 .nf-lesson-sidebar nav a[aria-current="page"],
 .foundation-level4 .mf-side-links a.mf-current {
   font-weight: 400;
+}
+
+.kiwi-back-to-top {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  z-index: 1200;
+  margin: 0;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #155d9d;
+  background: #fff;
+  border: 1px solid #cddff2;
+  border-radius: 999px;
+  box-shadow: 0 2px 10px rgba(24, 55, 95, 0.12);
+  cursor: pointer;
+}
+
+.kiwi-back-to-top:hover,
+.kiwi-back-to-top:focus-visible {
+  background: #eaf3fd;
+  outline-offset: 2px;
+}
+
+.kiwi-back-to-top[hidden] {
+  display: none;
 }

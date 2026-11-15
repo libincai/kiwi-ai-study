@@ -36,15 +36,30 @@ def strip_catalog_blocks(text: str) -> str:
     return text
 
 
-def grade_pills_block(grades: list[int], courses: list[str], hub_href: str) -> str:
+def course_hub_slug(catalog: dict) -> str:
+    return catalog.get("by_course", {}).get("hub_slug", "by-ontario-course")
+
+
+def course_hub_anchor(code: str) -> str:
+    return code.lower()
+
+
+def course_hub_href(code: str, catalog: dict) -> str:
+    return f"{course_hub_slug(catalog)}.html#{course_hub_anchor(code)}"
+
+
+def grade_pills_block(grades: list[int], courses: list[str], catalog: dict) -> str:
     unique = sorted(set(grades))
+    grade_meta = catalog.get("grades", {})
     grade_pill_lines = []
     for g in unique:
         grade_en = f"Grade {g}"
         grade_zh = GRADE_ZH.get(g, f"{g} 年级")
+        hub = grade_meta.get(str(g), {}).get("hub_slug", f"grade-{g}")
         grade_pill_lines.append(
-            f'    <span class="kiwi-grade-pill" data-en="{html.escape(grade_en)}" '
-            f'data-zh="{html.escape(grade_zh)}">{html.escape(grade_en)}</span>'
+            f'    <a class="kiwi-grade-pill kiwi-grade-pill--link" href="{html.escape(hub, quote=True)}.html" '
+            f'data-en="{html.escape(grade_en)}" data-zh="{html.escape(grade_zh)}">'
+            f"{html.escape(grade_en)}</a>"
         )
     grade_pills_body = "\n".join(grade_pill_lines)
     course_pills = ""
@@ -53,33 +68,12 @@ def grade_pills_block(grades: list[int], courses: list[str], hub_href: str) -> s
         if c in seen_courses:
             continue
         seen_courses.add(c)
+        href = course_hub_href(c, catalog)
         course_pills += (
-            f'<span class="kiwi-grade-pill kiwi-grade-pill--course" '
-            f'data-en="{html.escape(c)}" data-zh="{html.escape(c)}">{html.escape(c)}</span> '
+            f'<a class="kiwi-grade-pill kiwi-grade-pill--course kiwi-grade-pill--link" '
+            f'href="{html.escape(href, quote=True)}" '
+            f'data-en="{html.escape(c)}" data-zh="{html.escape(c)}">{html.escape(c)}</a> '
         )
-    hub_link = ""
-    if hub_href:
-        if hub_href.endswith("grade-11.html") and 11 in unique:
-            gzh = GRADE_ZH[11]
-            hub_link = (
-                f'<a class="kiwi-grade-hub-link" href="{html.escape(hub_href, quote=True)}" '
-                f'data-en="All Grade 11 topics →" data-zh="{html.escape(gzh)}全部主题 →">'
-                f"All Grade 11 topics →</a>"
-            )
-        elif len(unique) == 1:
-            g = unique[0]
-            gzh = GRADE_ZH.get(g, f"{g} 年级")
-            hub_link = (
-                f'<a class="kiwi-grade-hub-link" href="{html.escape(hub_href, quote=True)}" '
-                f'data-en="All Grade {g} topics →" data-zh="{html.escape(gzh)}全部主题 →">'
-                f"All Grade {g} topics →</a>"
-            )
-        else:
-            hub_link = (
-                f'<a class="kiwi-grade-hub-link" href="{html.escape(hub_href, quote=True)}" '
-                f'data-en="Browse by grade →" data-zh="按年级浏览 →">'
-                f"Browse by grade →</a>"
-            )
     filters = " ".join(f"grade:{x}" for x in unique)
     return (
         f"{MARKER_START}\n"
@@ -87,7 +81,6 @@ def grade_pills_block(grades: list[int], courses: list[str], hub_href: str) -> s
         f'  <p class="kiwi-grade-strip">\n'
         f"{grade_pills_body}\n"
         f"    {course_pills}\n"
-        f"    {hub_link}\n"
         f"  </p>\n"
         f"</div>\n"
         f"{MARKER_END}"
@@ -103,13 +96,13 @@ def meta_block(grades: list[int]) -> str:
     )
 
 
-def inject_topic(path: Path, topic: dict, hub_href: str) -> bool:
+def inject_topic(path: Path, topic: dict, catalog: dict) -> bool:
     if not path.is_file():
         print("missing", path.relative_to(ROOT))
         return False
     text = path.read_text(encoding="utf-8")
     text = strip_catalog_blocks(text)
-    block = grade_pills_block(topic.get("grades", []), topic.get("courses", []), hub_href)
+    block = grade_pills_block(topic.get("grades", []), topic.get("courses", []), catalog)
     banner = re.search(
         r'<section[^>]*\b(?:foundation-topic-banner|nf-hero\s+topic-banner)\b[^>]*>.*?</section>',
         text,
@@ -135,6 +128,13 @@ def inject_topic(path: Path, topic: dict, hub_href: str) -> bool:
 
 def topic_href(slug: str) -> str:
     return f"{slug}.html"
+
+
+COURSE_PRIMARY_GRADE: dict[str, int] = {
+    "MTH1W": 9,
+    "MPM2D": 10,
+    "MCR3U": 11,
+}
 
 
 GRADE_ZH = {
@@ -310,7 +310,7 @@ LANG_SCRIPT = r"""
   });
 })();
 </script>
-<script defer src="../assets/js/drive-breadcrumb.js?v=20261114-bcrumb3"></script>
+<script defer src="../assets/js/drive-breadcrumb.js?v=20261115-bcrumb4"></script>
 <link href="../pagefind/pagefind-ui.css" rel="stylesheet"/>
 <script defer src="../assets/js/kiwi-site-search.js?v=20261114-search20"></script>
 """
@@ -324,7 +324,7 @@ def math_page_header(
     pagefind_meta: str,
     pagefind_grades: str | None = None,
     body_class: str = "edu-page topic-page",
-    css_v: str = "20261114-grade-hub-chnums",
+    css_v: str = "20261115-course-hub-toc",
 ) -> str:
     grades_meta = ""
     if pagefind_grades:
@@ -391,6 +391,318 @@ def math_page_footer() -> str:
 </body>
 </html>
 """
+
+
+def courses_used(catalog: dict) -> list[str]:
+    found: set[str] = set()
+    for t in catalog.get("topics", []):
+        for c in t.get("courses") or []:
+            found.add(c)
+    codes = catalog.get("course_codes", {})
+    ordered = sorted(found, key=lambda c: (codes.get(c, {}).get("order", 999), c))
+    return ordered
+
+
+def _level2_for_course_hub(topic: dict) -> bool:
+    """Sidebar / Level 2 links only — not nested lesson pages under a hub."""
+    if topic.get("list_on_grade_hub", True):
+        return True
+    note = topic.get("verified_note") or ""
+    if note.startswith("Ontario curriculum expectation alignment"):
+        return True
+    return False
+
+
+def topics_for_course(code: str, catalog: dict) -> list[dict]:
+    """Level 2 sidebar hubs only (see docs/MATH_NAV_LEVELS.md)."""
+    chapters = catalog.get("chapters", {})
+    items = [
+        t
+        for t in catalog.get("topics", [])
+        if code in (t.get("courses") or []) and _level2_for_course_hub(t)
+    ]
+
+    def sort_key(t: dict) -> tuple:
+        ch = chapters.get(t.get("chapter_id", ""), {})
+        return (ch.get("order", 999), t.get("sort", 0), t.get("title_en", ""))
+
+    items.sort(key=sort_key)
+    return items
+
+
+def grades_for_course(code: str, catalog: dict) -> list[int]:
+    found: set[int] = set()
+    for t in topics_for_course(code, catalog):
+        for g in t.get("grades", []):
+            found.add(int(g))
+    return sorted(found)
+
+
+def chapters_for_course(code: str, catalog: dict) -> list[tuple[dict, list[dict]]]:
+    topics = topics_for_course(code, catalog)
+    if not topics:
+        return []
+    chapters_dict = catalog.get("chapters", {})
+    by_chapter: dict[str, list[dict]] = defaultdict(list)
+    for t in topics:
+        by_chapter[t.get("chapter_id", "misc")].append(t)
+    ordered: list[tuple[int, dict, list[dict]]] = []
+    for cid, items in by_chapter.items():
+        items.sort(key=lambda x: x.get("sort", 0))
+        items = _dedupe_level2_in_chapter(items)
+        ch = chapters_dict.get(
+            cid,
+            {"title_en": cid, "title_zh": cid, "order": 999},
+        )
+        ordered.append((ch.get("order", 999), ch, items))
+    ordered.sort(key=lambda x: (x[0], x[1].get("title_en", "")))
+    return _merge_level1_chapters([(ch, items) for _, ch, items in ordered])
+
+
+def course_grade_hub_links_html(code: str, catalog: dict) -> str:
+    grade_set = set(grades_for_course(code, catalog))
+    if not grade_set:
+        return ""
+    primary = COURSE_PRIMARY_GRADE.get(code)
+    ordered: list[int] = []
+    if primary is not None and primary in grade_set:
+        ordered.append(primary)
+        if code == "MPM2D" and 11 in grade_set:
+            ordered.append(11)
+        elif code == "MCR3U" and 10 in grade_set:
+            ordered.append(10)
+    else:
+        ordered = sorted(grade_set)
+    grade_meta = catalog.get("grades", {})
+    links: list[str] = []
+    for g in ordered:
+        gm = grade_meta.get(str(g))
+        if not gm:
+            continue
+        slug = html.escape(gm.get("hub_slug", f"grade-{g}"), quote=True)
+        title_en = gm.get("title_en", f"Grade {g} Mathematics")
+        title_zh = gm.get("title_zh", GRADE_ZH.get(g, str(g)))
+        links.append(
+            f'<a href="{slug}.html" data-en="{html.escape(title_en)}" '
+            f'data-zh="{html.escape(title_zh)}">{html.escape(title_en)}</a>'
+        )
+    if not links:
+        return ""
+    joined = " · ".join(links)
+    en = f"Browse the same lessons by grade: {joined}"
+    zh = f"按年级浏览相关主题：{joined}"
+    return (
+        f'<p class="kiwi-course-grade-hub-links" data-en="{html.escape(en)}" '
+        f'data-zh="{html.escape(zh)}">{en}</p>'
+    )
+
+
+def _bilingual_p(en: str, zh: str) -> str:
+    return (
+        f'<p data-en="{html.escape(en)}" data-zh="{html.escape(zh)}">{en}</p>'
+    )
+
+
+def curriculum_panel_html(meta: dict, code: str, catalog: dict) -> str:
+    url = html.escape(meta.get("official_url", ""), quote=True)
+    official_en = (
+        f'Official source: <a href="{url}">{html.escape(meta.get("official_url", ""))}</a>'
+    )
+    official_zh = (
+        f'官方来源：<a href="{url}">{html.escape(meta.get("official_url", ""))}</a>'
+    )
+    parts = [
+        '<aside aria-label="Ontario Curriculum Connection" class="kiwi-curriculum-panel">',
+        '<div class="kiwi-curriculum-heading" data-en="Ontario Curriculum Connection" '
+        'data-zh="安大略课程衔接">Ontario Curriculum Connection</div>',
+    ]
+    if meta.get("code_explainer_en"):
+        parts.append(
+            f'<p class="kiwi-course-code-explainer" '
+            f'data-en="{html.escape(meta["code_explainer_en"])}" '
+            f'data-zh="{html.escape(meta.get("code_explainer_zh", meta["code_explainer_en"]))}">'
+            f'{meta["code_explainer_en"]}</p>'
+        )
+    parts.append(_bilingual_p(meta["leadin_en"], meta["leadin_zh"]))
+    if meta.get("quote_en"):
+        q_en = f'“{meta["quote_en"]}”'
+        q_zh = f'“{meta["quote_zh"]}”'
+        parts.append(_bilingual_p(q_en, q_zh))
+    parts.append(_bilingual_p(meta["citation_en"], meta["citation_zh"]))
+    parts.append(
+        f'<p data-en="{html.escape(official_en)}" data-zh="{html.escape(official_zh)}">'
+        f"{official_en}</p>"
+    )
+    parts.append(
+        '<p data-en="<strong>How topics on this site connect</strong>" '
+        'data-zh="<strong>本站主题如何衔接</strong>">'
+        "<strong>How topics on this site connect</strong></p>"
+    )
+    parts.append(_bilingual_p(meta["connect_en"], meta["connect_zh"]))
+    parts.append(course_grade_hub_links_html(code, catalog))
+    parts.append("</aside>")
+    return "\n".join(parts)
+
+
+def course_toc_html(code: str, catalog: dict) -> str:
+    sections = chapters_for_course(code, catalog)
+    if not sections:
+        return (
+            '<p data-en="No lessons are tagged with this course code yet." '
+            'data-zh="尚无标注此课程代码的课时。">'
+            "No lessons are tagged with this course code yet.</p>"
+        )
+    parts = ['<nav class="kiwi-book-toc" aria-label="Lessons for this course">']
+    for seq, (ch, items) in enumerate(sections, start=1):
+        te, tz = ch["title_en"], ch["title_zh"]
+        num = f"{seq:02d}"
+        parts.append('<section class="kiwi-book-chapter">')
+        parts.append('<div class="kiwi-book-chapter-head">')
+        parts.append(
+            f'<span class="kiwi-book-chapter-number" aria-hidden="true">{num}</span>'
+        )
+        parts.append(
+            f'<p class="kiwi-book-chapter-title"><strong data-en="{html.escape(te)}" '
+            f'data-zh="{html.escape(tz)}">{html.escape(te)}</strong></p>'
+        )
+        parts.append("</div>")
+        parts.append('<ol class="kiwi-book-topic-list">')
+        for t in items:
+            slug = Path(t["file"]).stem
+            href = topic_href(slug)
+            parts.append(
+                f'<li class="kiwi-book-topic-row">'
+                f'<a href="{html.escape(href, quote=True)}" '
+                f'data-en="{html.escape(t["title_en"])}" '
+                f'data-zh="{html.escape(t["title_zh"])}">{html.escape(t["title_en"])}</a>'
+                f"</li>"
+            )
+        parts.append("</ol></section>")
+    parts.append("</nav>")
+    return "\n".join(parts)
+
+
+def course_hub_cards_html(catalog: dict) -> str:
+    codes = courses_used(catalog)
+    code_meta = catalog.get("course_codes", {})
+    cards: list[str] = []
+    for i, code in enumerate(codes):
+        meta = code_meta.get(code, {})
+        anchor = course_hub_anchor(code)
+        summary_en = meta.get("summary_en", code)
+        summary_zh = meta.get("summary_zh", code)
+        open_attr = ' open=""' if i == 0 else ""
+        cards.append(
+            f'<details class="lesson-card" id="{html.escape(anchor)}"{open_attr}>'
+            f'<summary data-en="{html.escape(summary_en)}" data-zh="{html.escape(summary_zh)}">'
+            f"{html.escape(summary_en)}</summary>"
+            f'<div class="lesson-card-content">'
+            f"{curriculum_panel_html(meta, code, catalog)}"
+            f"{course_toc_html(code, catalog)}"
+            f"</div></details>"
+        )
+    return "\n".join(cards)
+
+
+COURSE_HUB_ACCORDION = r"""
+<style id="kiwi-ontario-course-hub-style">
+.kiwi-ontario-course-main .lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}
+.kiwi-ontario-course-main .lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.kiwi-ontario-course-main .lesson-card summary::-webkit-details-marker{display:none}
+.kiwi-ontario-course-main .lesson-card summary::after{content:'+';font-size:25px;color:#1768b2;flex-shrink:0;margin-left:12px}
+.kiwi-ontario-course-main .lesson-card[open] summary::after{content:'−'}
+.kiwi-ontario-course-main .lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}
+.kiwi-ontario-course-main .lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}
+.kiwi-ontario-course-main .lesson-card[id]{scroll-margin-top:22px}
+.kiwi-ontario-course-main .kiwi-curriculum-panel .kiwi-course-grade-hub-links{margin-top:10px}
+@media(max-width:600px){.kiwi-ontario-course-main .lesson-card summary{padding:15px;font-size:16px}.kiwi-ontario-course-main .lesson-card-content{padding:12px 16px}}
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+</style>
+<script id="kiwi-ontario-course-accordion">
+(function(){
+  function openFromHash(){
+    var id=location.hash?location.hash.slice(1):'';
+    if(!id)return;
+    var card=document.getElementById(id);
+    if(card&&card.tagName==='DETAILS')card.open=true;
+  }
+  function init(){
+    document.querySelectorAll('.kiwi-ontario-course-main').forEach(function(main){
+      var cards=Array.from(main.querySelectorAll('details.lesson-card'));
+      if(!cards.length)return;
+      openFromHash();
+      if(cards.length<2)return;
+      if(main.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Course sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+    window.addEventListener('hashchange',openFromHash);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+"""
+
+
+def render_ontario_course_hub(catalog: dict) -> None:
+    meta = catalog.get("by_course", {})
+    if not meta or not courses_used(catalog):
+        return
+    title_en = meta["title_en"]
+    title_zh = meta["title_zh"]
+    sub_en = meta["subtitle_en"]
+    sub_zh = meta["subtitle_zh"]
+    cards = course_hub_cards_html(catalog)
+    page = (
+        math_page_header(
+            title_en,
+            title_zh,
+            sub_en,
+            'data-pagefind-filter="section:math"',
+            f'data-pagefind-meta="breadcrumb:Math › {html.escape(title_en, quote=True)}"',
+            body_class="edu-page topic-page kiwi-ontario-course-hub",
+        )
+        + COURSE_HUB_ACCORDION
+        + f"""<main data-pagefind-body="" data-pagefind-filter="lang:en" class="edu-main topic-main kiwi-ontario-course-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Math Education" data-page-back="" data-zh="← 返回数学教育" href="index.html">← Back to Math Education</a>
+</div>
+<section class="nf-hero topic-banner" aria-label="Ontario course codes">
+<p class="topic-banner-kicker" data-en="MATH · ONTARIO" data-zh="数学 · 安省">MATH · ONTARIO</p>
+<h1 data-en="{html.escape(title_en)}" data-zh="{html.escape(title_zh)}">{html.escape(title_en)}</h1>
+<p class="topic-banner-subtitle" data-en="{html.escape(sub_en)}" data-zh="{html.escape(sub_zh)}">{html.escape(sub_en)}</p>
+</section>
+<section class="edu-section" aria-labelledby="course-hub-heading">
+<h2 id="course-hub-heading" class="visually-hidden" data-en="Course codes" data-zh="课程代码">Course codes</h2>
+{cards}
+</section>
+</main>
+"""
+        + math_page_footer()
+    )
+    out = ROOT / meta["hub_file"]
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(page, encoding="utf-8")
+    print("wrote", out.relative_to(ROOT))
 
 
 def render_by_grade(catalog: dict) -> None:
@@ -496,6 +808,7 @@ def render_grade_hub(grade: int, catalog: dict) -> None:
 SKIP_STRIP = frozenset(
     {
         "by-grade.html",
+        "by-ontario-course.html",
         "index.html",
         "in-class-learning.html",
         "math-foundations.html",
@@ -535,11 +848,11 @@ def main() -> None:
             continue
         injected.add(rel)
         path = ROOT / rel
-        hub_href = hub_href_for_topic(topic, catalog)
-        if inject_topic(path, topic, hub_href):
+        if inject_topic(path, topic, catalog):
             print("labeled", path.relative_to(ROOT))
     strip_labels_not_in_catalog(catalog)
     render_by_grade(catalog)
+    render_ontario_course_hub(catalog)
     for g in grades_with_topics(catalog):
         render_grade_hub(g, catalog)
 

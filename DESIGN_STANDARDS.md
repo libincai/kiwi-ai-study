@@ -378,9 +378,38 @@ Use semantic heading levels consistently across inner pages:
 - H2: each major content section in the page body. Multiple sibling H2 headings are appropriate when sections are parallel.
 - H3: subsections or cards grouped under an H2.
 - H4: only when a genuine fourth level of content nesting is needed.
+- H5: only when a genuine fifth level of nesting is needed—a **child topic under H4** (named example, case, variant, short procedure label, or other subsection that belongs inside one H4 block). Common on Math Foundations pages but not limited to examples. Do not use H5 for step labels (`Step 1`), answer lines, list lead-ins, or body emphasis; use example layout classes or normal paragraphs instead.
 - Eyebrow labels, taglines, captions, diagram labels, and flow-step labels are not headings. Use paragraph, span, or strong text instead.
 
 All body H2 headings use the shared deep-blue heading color `#123B73` and the shared H2 size token. Do not create oversized body H1 headings. Preserve established layout and spacing when correcting semantic heading tags.
+
+
+### Math Foundations & Advanced (Mathematical Thinking) — H4 and H5
+
+On `math/foundation-*.html` (`.mf-article`) and `math/thinking-*.html` (`.kiwi-topic-article`) Level 4 lessons, **H4** and **H5** must be styled as **separate selectors**. Do **not** combine them as `h4, h5 { … }` or give them identical size, weight, and color—H5 is a sub-level under H4, not a duplicate H4.
+
+Shared tokens live in **`assets/css/styles.css`** (`.mf-article` and `.kiwi-topic-article`, including `.lesson-card-content` / `.lesson-card-body`). Foundation and thinking pages may repeat the same rules inline for offline parity; keep inline and global tokens in sync.
+
+**Semantic use**
+
+- **H4:** subsection inside the lesson body or inside `.lesson-card-content` (skill area, method, or teaching block—e.g. *Finding a Missing Side*, *Subtraction Method*).
+- **H5:** any **fifth-level child** of that H4—use when the H4 section contains **multiple parallel sub-parts** that need their own titles. Valid uses include:
+  - a **named worked example** (often immediately above `.kiwi-example-standard`);
+  - a **case or scenario** (e.g. *When the triangle is obtuse*);
+  - a **variant, special case, or short labeled procedure** within the same H4 (e.g. *Using the 30°–60°–90° rule*, *Check your units*).
+- Use **one H4** for the parent block; use **H5** for siblings inside it. Do **not** promote every bold line to H5, and do **not** use H5 when a single paragraph or `Example:` label is enough.
+- Reference (examples as H5): `math/foundation-special-right-triangles.html`.
+
+**Approved tokens (article body and inside lesson cards)**
+
+| Level | Font size | Weight | Color | Margin (typical) | Indent |
+|-------|-----------|--------|-------|------------------|--------|
+| H4 | 16px | 750 | `#173e70` (card body may use `#153d70`) | `20px 0 8px` | none |
+| H5 | 15px | 650 | `#1768b2` (accent blue) | `12px 0 6px` | `margin-left: 3ch` |
+
+- H5 **`line-height: 1.5`**; keep bilingual `data-en` / `data-zh` on the heading when the page switches language.
+- Mirror the same H4/H5 split under **`.mf-article .lesson-card-content`** (do not merge `h4, h5` there either).
+- Step lines and **Answer:** / **答案：** labels stay **normal weight** (no `<strong>`); the pale left rule on `.kiwi-example-answer` marks the final result.
 
 
 ### First content heading spacing
@@ -809,7 +838,7 @@ episode navigation intact.
 - Use existing site templates and CSS; do not rebuild global header, footer, breadcrumbs or language switching. Check existing topic URLs before creating new ones.
 - Level 3 **Mathematical Thinking** is a compact, single-column directory of top-level subject categories, not nested topic cards.
 - Level 4 pages use the shared Level 4 banner. Put the **category** (for example, *Number Skills & Operations*) in the banner; the current topic title belongs in the content column. Desktop layout: narrow left navigation listing sibling topics **without** a “TOPICS” heading; main reading column on the right. Long navigation titles wrap naturally. Mobile navigation moves above the content.
-- Heading 2 normally defines a Level 4 topic/page; Heading 3 normally defines a collapsible teaching card; Heading 4 is an internal subheading. **Pedagogical structure overrides mechanical heading mapping**: a section such as “Advanced Skills” may be introductory text outside cards, while its Subtraction Method and Division Method become separate cards.
+- Heading 2 normally defines a Level 4 topic/page; Heading 3 normally defines a collapsible teaching card; Heading 4 is an internal subheading; **Heading 5** is any **fifth-level child** under that subheading (examples, cases, variants, or other parallel sub-parts—see **Math Foundations — H4 and H5** above). **Pedagogical structure overrides mechanical heading mapping**: a section such as “Advanced Skills” may be introductory text outside cards, while its Subtraction Method and Division Method become separate cards.
 
 ### Accordion / teaching cards
 
@@ -950,6 +979,7 @@ Example markup:
 
 - Compare page text and teaching sequence against the source Word document.
 - Check every Heading 3 accordion, including the first-open default, and all Level 4 links.
+- On Math Foundations pages, confirm H4/H5 hierarchy (H4 parent → H5 child sub-parts as needed), separate H4 vs H5 CSS (no shared `h4, h5` rule), and H5 accent color with **3ch** indent.
 - Check ordinary black, nonbold ordered-list markers; single-example indentation; ordered steps and their explanations.
 - Check display-vs-inline math, correct symbols, formula alignment, and no vertical math scroll arrows.
 - Check cream info panels, desktop/mobile layout, language toggle, and preservation of existing site pages.
@@ -957,6 +987,7 @@ Example markup:
 
 ### Canonical example layout (approved)
 
+- **Multiple sub-parts under one H4:** When one H4 section contains several titled sub-parts (worked examples, cases, variants, etc.), use **one H4** for the section and **`<h5>`** for each sub-part title. For worked examples, follow with **`.kiwi-example-standard`** for steps and answer. Do not repeat H4 per sub-part or replace titles with bold paragraphs.
 - **Label wording:** Use **`Example:`** (singular) when the block presents **one** worked problem with steps and an answer. Use **`Examples:`** (plural) when listing **multiple separate short items** (typically a bulleted list of facts or mini-results) with no shared step-by-step solution. Match Chinese: **示例：** vs **例如：**.
 - **Worked steps:** Use **`<ol class="kiwi-example-steps">`** (decimal **1., 2., 3.**) only for **sequential solution steps** (calculations or working in order). Use **two or more** `<li>` items when numbering; a single calculation line uses **`kiwi-example-list-step`** or **`.kiwi-math-block`** instead (see below). Do **not** number **parallel alternatives**—equivalent names, wording variants after **also said as:**, or other non-step lists.
 - **Wording variants inside `Example:`:** When one worked example lists **equivalent phrasings** (not steps), use **`<ul class="kiwi-example-variants">`** inside **`.kiwi-example-standard`**, indented at **6ch** like numbered steps. Reference: square/cube root “also said as” lists in `math/foundation-roots.html`.

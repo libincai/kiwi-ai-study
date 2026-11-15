@@ -12,7 +12,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Math Education | Kiwi 爱AI Study</title>
 <meta content="Explore mathematics foundations, real-life applications, visual patterns, mathematical thinking and in-class learning." name="description"/>
-<link href="../assets/css/styles.css?v=20261107-tagline1" rel="stylesheet"/>
+<link href="../assets/css/styles.css?v=20261115-course-hub" rel="stylesheet"/>
 <style>
 .edu-page{--ink:#14264d;--blue:#1768b2;--muted:#5e6f88;--line:#dce6f1;--pale:#f2f7fd;color:var(--ink)}
 .edu-section{margin:42px 0}.edu-section h2{font-size:clamp(24px,2.7vw,32px);line-height:1.2;color:#153d70;margin:0 0 12px}.edu-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:900px;margin:0 0 22px}
@@ -21,6 +21,10 @@
 .edu-card img{display:block;width:100%;height:auto;aspect-ratio:3 / 1;object-fit:contain;object-position:center;background:#eaf2fb;padding:0;box-sizing:border-box}.edu-card:nth-child(3) img{object-fit:contain;background:#fff}.edu-card-body{padding:20px 21px 22px;display:flex;flex-direction:column;flex:1}.edu-card h3{margin:0 0 8px;color:#173e70;font-size:21px;line-height:1.25}.edu-card p{margin:0 0 16px;color:#5a6d85;line-height:1.6;font-size:14px}.edu-link{margin-top:auto;color:#1768b2;font-weight:800;font-size:14px}.edu-card .edu-tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3982bd;margin-bottom:8px}
 .edu-callout{padding:28px;border-radius:20px;background:linear-gradient(120deg,#edf5ff,#f2f0ff);border:1px solid #dce7f5}.edu-callout h2{margin:0 0 8px;color:#153d70}.edu-callout p{margin:0;color:#526780;line-height:1.7}.edu-pillrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.edu-pill{display:inline-flex;padding:7px 12px;border-radius:999px;background:#eaf3fd;color:#245b91;font-size:12px;font-weight:700}
 .edu-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:#1768b2;color:white!important;text-decoration:none;font-weight:800;font-size:14px;margin-top:8px}.edu-button:hover{background:#10548f}
+.edu-grade-browse-wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin:0 0 8px}
+.edu-grade-browse-wrap .edu-button{margin-top:0}
+.edu-grade-browse-wrap .edu-button--secondary{background:#fff;color:#155d9d!important;border:1px solid #cddff2;box-shadow:none}
+.edu-grade-browse-wrap .edu-button--secondary:hover{background:#eaf3fd;border-color:#b8d4f0;color:#124f84!important}
 @media(max-width:760px){.edu-grid,.edu-grid.four{grid-template-columns:1fr}}
 /* Mobile image fit: preserve the complete artwork on cards 01 and 02. */
 @media (max-width: 760px) {
@@ -97,6 +101,7 @@
 </section>
 <p class="edu-grade-browse-wrap">
 <a class="edu-button" href="by-grade.html" data-en="Browse by Grade" data-zh="按年级浏览">Browse by Grade</a>
+<a class="edu-button edu-button--secondary" href="by-ontario-course.html" data-en="Browse by Course Code" data-zh="按课程代码浏览">Browse by Course Code</a>
 </p>
 <!-- LEVEL-2 BODY START -->
 <section class="edu-section">

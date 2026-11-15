@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SKIP_DIRS = {"local", "templates", "tools", "docs", "scripts", ".cursor", ".github", "pagefind", "node_modules"}
 MARKER = "kiwi-site-search.js"
 VERSION = "20261114-search20"
+BACK_TO_TOP_MARKER = "kiwi-back-to-top.js"
+BACK_TO_TOP_VERSION = "20261115d"
 SEARCH_BTN = (
     '<button type="button" class="kiwi-search-open" data-kiwi-search-trigger '
     'aria-label="Search site">'
@@ -42,6 +44,31 @@ def inject_header_button(text: str) -> str:
     return text
 
 
+def back_to_top_tag(_depth: int) -> str:
+    return (
+        f'<script defer src="/assets/js/{BACK_TO_TOP_MARKER}?v={BACK_TO_TOP_VERSION}"></script>'
+    )
+
+
+def inject_back_to_top(text: str, depth: int) -> tuple[str, bool]:
+    if "foundation-level4" not in text:
+        return text, False
+    tag = back_to_top_tag(depth)
+    if BACK_TO_TOP_MARKER in text:
+        new = text
+        new = re.sub(
+            rf'src="(?:/|(?:\.\./)*)?assets/js/{re.escape(BACK_TO_TOP_MARKER)}\?v=[^"]+"',
+            f'src="/assets/js/{BACK_TO_TOP_MARKER}?v={BACK_TO_TOP_VERSION}"',
+            new,
+            count=1,
+        )
+        return new, new != text
+    if not re.search(r"</body>", text, re.I):
+        return text, False
+    new = re.sub(r"</body>", tag + "\n</body>", text, count=1, flags=re.I)
+    return new, True
+
+
 def inject(path: Path) -> bool:
     rel = path.relative_to(ROOT).as_posix()
     text = path.read_text(encoding="utf-8")
@@ -49,6 +76,9 @@ def inject(path: Path) -> bool:
     new_text = inject_header_button(text)
     if new_text != text:
         text = new_text
+        changed = True
+    text, btt_changed = inject_back_to_top(text, depth(rel))
+    if btt_changed:
         changed = True
     if MARKER in text:
         text = re.sub(
@@ -73,6 +103,7 @@ def inject(path: Path) -> bool:
     if not re.search(r"</body>", text, re.I):
         return False
     text = re.sub(r"</body>", tag + "\n</body>", text, count=1, flags=re.I)
+    text, _ = inject_back_to_top(text, depth(rel))
     path.write_text(text, encoding="utf-8")
     return True
 

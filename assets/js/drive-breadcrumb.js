@@ -107,6 +107,7 @@
     "books/books-advanced.html": { en:"Math Quick Reference Library – Advanced", zh:"Math Quick Reference Library – Advanced", parent:"books/index.html" },
     "books/speedy-playful-math-magic.html": { en:"Where to Buy", zh:"购买渠道", parent:"books/books-speedy.html" },
     "math/by-grade.html": { en:"Math by Grade", zh:"按年级浏览", parent:"math/index.html" },
+    "math/by-ontario-course.html": { en:"Ontario Course Codes", zh:"安省课程代码", parent:"math/index.html" },
     "math/grade-3.html": { en:"Grade 3 Mathematics", zh:"三年级数学", parent:"math/by-grade.html" },
     "math/grade-4.html": { en:"Grade 4 Mathematics", zh:"四年级数学", parent:"math/by-grade.html" },
     "math/grade-5.html": { en:"Grade 5 Mathematics", zh:"五年级数学", parent:"math/by-grade.html" },
@@ -160,12 +161,23 @@
   const isZh = () => /^zh/i.test(document.documentElement.lang || "") ||
     document.documentElement.getAttribute("data-language") === "zh";
   const label = item => isZh() ? item.zh : item.en;
+  /** Root-absolute hrefs so clean URLs (e.g. /by-ontario-course) do not break ../ math links. */
   const urlFor = itemKey => {
-    const from = key.split("/").slice(0, -1);
-    const to = itemKey.split("/");
-    let common = 0;
-    while (common < from.length && common < to.length && from[common] === to[common]) common++;
-    return "../".repeat(from.length - common) + to.slice(common).join("/");
+    if (!itemKey || itemKey === "index.html") return "/";
+    const slash = itemKey.indexOf("/");
+    if (slash === -1) return "/" + itemKey.replace(/\.html$/i, "");
+    const section = itemKey.slice(0, slash);
+    const file = itemKey.slice(slash + 1);
+    if (section === "math") {
+      if (file === "index.html") return "/math";
+      return "/" + file.replace(/\.html$/i, "");
+    }
+    if (section === "ai") {
+      if (file === "index.html") return "/ai";
+      return "/" + file.replace(/\.html$/i, "");
+    }
+    if (file === "index.html") return "/" + section;
+    return "/" + section + "/" + file.replace(/\.html$/i, "");
   };
 
   const chain = [];
