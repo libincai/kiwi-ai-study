@@ -45,12 +45,15 @@ STUB_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>location.replace("{dest_js}");</script>
 <meta http-equiv="refresh" content="0;url={dest}">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
 <title>Redirecting…</title>
+<style>body{{margin:0;background:#fff}}</style>
 </head>
 <body data-pagefind-ignore="all">
-<p><a href="{dest}">Continue</a></p>
+<noscript><p><a href="{dest}">Continue</a></p></noscript>
 </body>
 </html>
 """
@@ -89,8 +92,9 @@ def collect_stub_targets() -> dict[str, str]:
 def write_stub(slug: str, dest: str) -> None:
     folder = ROOT / slug
     folder.mkdir(parents=True, exist_ok=True)
+    dest_js = dest.replace("\\", "\\\\").replace('"', '\\"')
     (folder / "index.html").write_text(
-        STUB_TEMPLATE.format(dest=dest),
+        STUB_TEMPLATE.format(dest=dest, dest_js=dest_js),
         encoding="utf-8",
         newline="\n",
     )
