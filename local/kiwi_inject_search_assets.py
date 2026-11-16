@@ -9,7 +9,7 @@ SKIP_DIRS = {"local", "templates", "tools", "docs", "scripts", ".cursor", ".gith
 MARKER = "kiwi-site-search.js"
 VERSION = "20261114-search20"
 BASE_MARKER = "kiwi-site-base.js"
-BASE_VERSION = "20261115-ghdirect"
+BASE_VERSION = "20261116-customdomain"
 BACK_TO_TOP_MARKER = "kiwi-back-to-top.js"
 BACK_TO_TOP_VERSION = "20261115h"
 SEARCH_BTN = (
@@ -98,12 +98,26 @@ def inject_back_to_top(text: str, depth: int) -> tuple[str, bool]:
     return new, True
 
 
+def is_github_redirect_stub(path: Path, text: str) -> bool:
+    if path.name != "index.html":
+        return False
+    try:
+        rel_parts = path.relative_to(ROOT).parts
+    except ValueError:
+        return False
+    if len(rel_parts) != 2:
+        return False
+    return "data-pagefind-ignore" in text and 'http-equiv="refresh"' in text
+
+
 def inject(path: Path) -> bool:
     rel = path.relative_to(ROOT).as_posix()
     if any(part in SKIP_DIRS for part in path.parts):
         return False
     d = depth(rel)
     text = path.read_text(encoding="utf-8")
+    if is_github_redirect_stub(path, text):
+        return False
     if "<html" not in text.lower():
         return False
     original = text

@@ -48,7 +48,13 @@ STUB_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>location.replace("{dest_js}");</script>
+<script>
+(function(){{
+  var p={dest_json};
+  if((location.hostname||"").toLowerCase().slice(-12)===".github.io") p="/{site_prefix}"+p;
+  location.replace(p);
+}})();
+</script>
 <meta http-equiv="refresh" content="0;url={dest}">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
@@ -73,13 +79,8 @@ def slug_from_source(source: str) -> str | None:
     return m.group(1) if m else None
 
 
-def absolute_dest(destination: str) -> str:
-    """Destination like /math/foo.html -> /kiwi-ai-study/math/foo.html."""
-    return f"/{SITE_PREFIX}{destination}"
-
-
 def collect_stub_targets() -> dict[str, str]:
-    """Map slug -> relative redirect target from slug/index.html."""
+    """Map slug -> repo-root path (e.g. /math/foo.html) for stubs + site-base."""
     out: dict[str, str] = {}
     for rule in collect_slug_rewrites():
         slug = slug_from_source(rule["source"])
@@ -88,7 +89,7 @@ def collect_stub_targets() -> dict[str, str]:
         dest = rule["destination"]
         if not dest.startswith("/"):
             continue
-        out[slug] = absolute_dest(dest)
+        out[slug] = dest
     return out
 
 
@@ -117,9 +118,12 @@ def write_slug_map_into_site_base(targets: dict[str, str]) -> None:
 def write_stub(slug: str, dest: str) -> None:
     folder = ROOT / slug
     folder.mkdir(parents=True, exist_ok=True)
-    dest_js = dest.replace("\\", "\\\\").replace('"', '\\"')
     (folder / "index.html").write_text(
-        STUB_TEMPLATE.format(dest=dest, dest_js=dest_js),
+        STUB_TEMPLATE.format(
+            dest=dest,
+            dest_json=json.dumps(dest),
+            site_prefix=SITE_PREFIX,
+        ),
         encoding="utf-8",
         newline="\n",
     )
