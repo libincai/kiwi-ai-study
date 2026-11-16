@@ -1,0 +1,54 @@
+---
+description: GitHub Pages URL prefix and root-absolute links — avoid libincai.github.io/grade-3 style 404s
+alwaysApply: true
+---
+
+# GitHub Pages links (kiwi-ai-study)
+
+Production is a **GitHub project site**: `https://libincai.github.io/kiwi-ai-study/<slug>`.  
+Local dev simulates this with `serve.json` + `tools/kiwi_dev_server.py` — **do not assume what works on localhost works on GitHub without stubs and site-base.**
+
+## Two different mechanisms
+
+| Environment | Clean URL `/grade-3` served by |
+|-------------|------------------------------|
+| Local (`kiwi_dev_server.py`) | `serve.json` rewrites / redirects |
+| GitHub Pages | `{slug}/index.html` stub at repo root (from `tools/generate_github_pages_stubs.py`) |
+
+After any new public slug: run `python tools/generate-serve-rewrites.py` and **commit the new/updated stub folder**.
+
+## Root-absolute `href` (`/math`, `/grade-9`, `/foundation-foo`)
+
+Pages use clean paths on purpose. On GitHub they must become `/kiwi-ai-study/...` — that is **`assets/js/kiwi-site-base.js`** (sets `KIWI_SITE_BASE`, patches links, exposes `kiwiRootHref`).
+
+**Every public HTML page that has root-absolute links or `drive-breadcrumb.js` must load site-base in `<head>`** (non-defer), before breadcrumb/search scripts:
+
+```html
+<script src="../assets/js/kiwi-site-base.js?v=…"></script>
+```
+
+When editing **generators** (`local/kiwi_math_catalog.py`, `templates/*.html`), add site-base to the shared header — never hand-write hub pages without it.
+
+`drive-breadcrumb.js` builds URLs with `kiwiRootHref`; without site-base, breadcrumbs point at `libincai.github.io/math` (wrong).
+
+## Href conventions
+
+- **Cross-section / grade / course / topic slugs:** `href="/<slug>"` (let site-base prefix on GitHub).
+- **Same-folder assets:** `../assets/...`, `../about/index.html` — relative is fine.
+- Do not add new `href="/math/foo"` patterns without site-base on that page.
+- Register new pages in `assets/js/drive-breadcrumb.js` when breadcrumbs should show.
+
+## Agent checklist (before saying “done”)
+
+1. New slug → rewrites + **GitHub stub** committed.
+2. Page or catalog template includes **`kiwi-site-base.js`** if it uses `/…` links or breadcrumb.
+3. Run **`python tools/check_site_links.py`** (also runs from `tools/dev-server.ps1`) — must exit 0.
+4. Mental check: would `libincai.github.io` + href land **outside** `/kiwi-ai-study/`? If yes, fix.
+
+## Common failure
+
+| Symptom on live site | Cause |
+|----------------------|--------|
+| `libincai.github.io/grade-3` or `/math-foundations` 404 | Missing `/kiwi-ai-study/` — no site-base on page or stub not deployed |
+| `/kiwi-ai-study/<slug>` 404 | Stub folder not generated or not pushed |
+| Breadcrumbs / grade picker broken, direct `.html` under `/math/` works | Hub generated without `kiwi-site-base.js` |

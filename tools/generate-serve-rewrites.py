@@ -58,6 +58,14 @@ def collect_slug_rewrites() -> list[dict[str, str]]:
         if (ROOT / section / "index.html").is_file():
             rewrites.append({"source": f"/{section}", "destination": f"/{section}/index.html"})
 
+    books_seen: set[str] = set()
+    for path in sorted((ROOT / "books").glob("*.html")):
+        slug = path.stem
+        if slug == "index" or slug in books_seen:
+            continue
+        books_seen.add(slug)
+        rewrites.append({"source": f"/{slug}", "destination": f"/books/{path.name}"})
+
     for legacy_slug, target_slug in LEGACY_SLUG_ALIASES.items():
         target = ROOT / "math" / f"{target_slug}.html"
         if target.is_file():

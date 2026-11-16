@@ -19,6 +19,7 @@ Local URLs use **`http://localhost:3000/kiwi-ai-study/<slug>`** (no `.html`). Sl
 6. **Verify:** HTTP **200** for both:
    - `/kiwi-ai-study/<slug>`
    - `/math/<slug>.html` (direct file)
+7. **GitHub Pages:** `<head>` must include `kiwi-site-base.js` if the page uses root-absolute `href="/…"` or breadcrumb (see `.cursor/rules/github-pages-links.mdc`).
 
 ## Common failure
 

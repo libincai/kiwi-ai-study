@@ -19,4 +19,7 @@ if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 python tools/generate_github_pages_stubs.py
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
+python tools/check_site_links.py
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
 python tools/kiwi_dev_server.py

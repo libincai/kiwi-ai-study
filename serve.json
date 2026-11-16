@@ -437,6 +437,22 @@
       "destination": "/books/index.html"
     },
     {
+      "source": "/kiwi-ai-study/books-advanced",
+      "destination": "/books/books-advanced.html"
+    },
+    {
+      "source": "/kiwi-ai-study/books-foundations",
+      "destination": "/books/books-foundations.html"
+    },
+    {
+      "source": "/kiwi-ai-study/books-speedy",
+      "destination": "/books/books-speedy.html"
+    },
+    {
+      "source": "/kiwi-ai-study/speedy-playful-math-magic",
+      "destination": "/books/speedy-playful-math-magic.html"
+    },
+    {
       "source": "/kiwi-ai-study/number-families",
       "destination": "/math/foundation-number-families.html"
     },
@@ -2152,6 +2168,66 @@
     {
       "source": "/kiwi-ai-study/books.html",
       "destination": "/kiwi-ai-study/books",
+      "type": 302
+    },
+    {
+      "source": "/books-advanced",
+      "destination": "/kiwi-ai-study/books-advanced",
+      "type": 302
+    },
+    {
+      "source": "/books-advanced.html",
+      "destination": "/kiwi-ai-study/books-advanced",
+      "type": 302
+    },
+    {
+      "source": "/kiwi-ai-study/books-advanced.html",
+      "destination": "/kiwi-ai-study/books-advanced",
+      "type": 302
+    },
+    {
+      "source": "/books-foundations",
+      "destination": "/kiwi-ai-study/books-foundations",
+      "type": 302
+    },
+    {
+      "source": "/books-foundations.html",
+      "destination": "/kiwi-ai-study/books-foundations",
+      "type": 302
+    },
+    {
+      "source": "/kiwi-ai-study/books-foundations.html",
+      "destination": "/kiwi-ai-study/books-foundations",
+      "type": 302
+    },
+    {
+      "source": "/books-speedy",
+      "destination": "/kiwi-ai-study/books-speedy",
+      "type": 302
+    },
+    {
+      "source": "/books-speedy.html",
+      "destination": "/kiwi-ai-study/books-speedy",
+      "type": 302
+    },
+    {
+      "source": "/kiwi-ai-study/books-speedy.html",
+      "destination": "/kiwi-ai-study/books-speedy",
+      "type": 302
+    },
+    {
+      "source": "/speedy-playful-math-magic",
+      "destination": "/kiwi-ai-study/speedy-playful-math-magic",
+      "type": 302
+    },
+    {
+      "source": "/speedy-playful-math-magic.html",
+      "destination": "/kiwi-ai-study/speedy-playful-math-magic",
+      "type": 302
+    },
+    {
+      "source": "/kiwi-ai-study/speedy-playful-math-magic.html",
+      "destination": "/kiwi-ai-study/speedy-playful-math-magic",
       "type": 302
     },
     {

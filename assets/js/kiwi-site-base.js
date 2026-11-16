@@ -55,10 +55,13 @@
         if (fixed !== a.getAttribute("href")) a.setAttribute("href", fixed);
         return;
       }
-      var hashIdx = h.indexOf("#");
+      var qIdx = h.indexOf("?");
+      var pathOnly = qIdx >= 0 ? h.slice(0, qIdx) : h;
+      var query = qIdx >= 0 ? h.slice(qIdx) : "";
+      var hashIdx = pathOnly.indexOf("#");
       if (hashIdx > 0) {
-        var pathPart = h.slice(0, hashIdx);
-        var frag = h.slice(hashIdx);
+        var pathPart = pathOnly.slice(0, hashIdx);
+        var frag = pathOnly.slice(hashIdx) + query;
         if (pathPart.indexOf("/") < 0 && /\.html$/i.test(pathPart)) {
           a.setAttribute(
             "href",
@@ -67,9 +70,20 @@
           return;
         }
       }
-      if (h.indexOf("/") >= 0 || h.indexOf("#") === 0) return;
-      if (/^[a-z0-9][\w.-]*\.html$/i.test(h)) {
-        a.setAttribute("href", kiwiRootHref("/" + h.replace(/\.html$/i, "")));
+      if (pathOnly.indexOf("/") >= 0 || pathOnly.indexOf("#") === 0) {
+        if (query && pathOnly.indexOf("/") < 0 && /\.html$/i.test(pathOnly)) {
+          a.setAttribute(
+            "href",
+            kiwiRootHref("/" + pathOnly.replace(/\.html$/i, "") + query),
+          );
+        }
+        return;
+      }
+      if (/^[a-z0-9][\w.-]*\.html$/i.test(pathOnly)) {
+        a.setAttribute(
+          "href",
+          kiwiRootHref("/" + pathOnly.replace(/\.html$/i, "") + query),
+        );
         return;
       }
       if (h === "index.html") {
