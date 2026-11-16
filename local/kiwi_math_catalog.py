@@ -341,7 +341,7 @@ def math_page_header(
 <meta name="description" content="{html.escape(description)}"/>
 <title data-en="{html.escape(title_en)} | Kiwi 爱AI Study" data-zh="{html.escape(title_zh)} | Kiwi 爱AI Study">{html.escape(title_en)} | Kiwi 爱AI Study</title>
 <link rel="stylesheet" href="../assets/css/styles.css?v={css_v}"/>
-<script src="../assets/js/kiwi-site-base.js?v=20261115-coursepill"></script>
+<script src="../assets/js/kiwi-site-base.js?v=20261115-ghdirect"></script>
 </head>
 <body class="{body_class}">
 <header class="site-header">

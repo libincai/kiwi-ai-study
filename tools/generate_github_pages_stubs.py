@@ -24,6 +24,9 @@ collect_slug_rewrites = _mod.collect_slug_rewrites
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "tools" / "github-pages-stubs.json"
+SITE_BASE_JS = ROOT / "assets" / "js" / "kiwi-site-base.js"
+DEST_BEGIN = "/* KIWI_GITHUB_SLUG_DEST_BEGIN */"
+DEST_END = "/* KIWI_GITHUB_SLUG_DEST_END */"
 
 SKIP_STUB_DIRS = {
     "math",
@@ -89,6 +92,28 @@ def collect_stub_targets() -> dict[str, str]:
     return out
 
 
+def write_slug_map_into_site_base(targets: dict[str, str]) -> None:
+    """Embed slug -> .html map for in-site links on GitHub Pages (skip stub hop)."""
+    if not SITE_BASE_JS.is_file():
+        return
+    text = SITE_BASE_JS.read_text(encoding="utf-8")
+    payload = "window.KIWI_GITHUB_SLUG_DEST=" + json.dumps(
+        targets, ensure_ascii=True, sort_keys=True
+    ) + ";"
+    block = f"{DEST_BEGIN}\n  {payload}\n  {DEST_END}"
+    if DEST_BEGIN not in text or DEST_END not in text:
+        print("warn: kiwi-site-base.js missing slug dest markers", file=__import__("sys").stderr)
+        return
+    text = re.sub(
+        rf"{re.escape(DEST_BEGIN)}.*?{re.escape(DEST_END)}",
+        block,
+        text,
+        count=1,
+        flags=re.S,
+    )
+    SITE_BASE_JS.write_text(text, encoding="utf-8", newline="\n")
+
+
 def write_stub(slug: str, dest: str) -> None:
     folder = ROOT / slug
     folder.mkdir(parents=True, exist_ok=True)
@@ -123,6 +148,7 @@ def main() -> None:
     targets = collect_stub_targets()
     for slug, dest in sorted(targets.items()):
         write_stub(slug, dest)
+    write_slug_map_into_site_base(targets)
     remove_obsolete_stubs(set(targets))
     MANIFEST.write_text(
         json.dumps(sorted(targets), indent=2) + "\n",
