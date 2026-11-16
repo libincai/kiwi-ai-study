@@ -147,3 +147,16 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    try:
+        import importlib.util
+        from pathlib import Path
+
+        stub_py = Path(__file__).with_name("generate_github_pages_stubs.py")
+        if stub_py.is_file():
+            spec = importlib.util.spec_from_file_location("gh_stubs", stub_py)
+            mod = importlib.util.module_from_spec(spec)
+            assert spec.loader is not None
+            spec.loader.exec_module(mod)
+            mod.main()
+    except Exception as err:
+        print("warn: GitHub Pages stubs not updated:", err, file=__import__("sys").stderr)

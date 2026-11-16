@@ -16,5 +16,7 @@ foreach ($procId in $listeners) {
 python local/kiwi_math_catalog.py
 python tools/generate-serve-rewrites.py
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+python tools/generate_github_pages_stubs.py
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 python tools/kiwi_dev_server.py
