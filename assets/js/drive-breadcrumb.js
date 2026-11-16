@@ -135,10 +135,16 @@
       ) || "";
     if (hit) return hit;
 
-    const segments = path.split("/").filter(Boolean);
+    let segments = path.split("/").filter(Boolean);
     if (segments.length >= 2 && segments[0] === "kiwi-ai-study") {
       path = segments.slice(1).join("/");
+      segments = path.split("/").filter(Boolean);
       hit = tryKey(path) || Object.keys(pages).find((page) => path === page || path.endsWith("/" + page)) || "";
+      if (hit) return hit;
+    }
+
+    if (segments[0] === "books" && segments.length === 2 && !segments[1].includes(".")) {
+      hit = tryKey(`books/${segments[1]}.html`);
       if (hit) return hit;
     }
 
@@ -151,6 +157,8 @@
       if (slug === "ai") return "ai/index.html";
       if (slug === "index") return "index.html";
       if (/^(about|contact|books)$/.test(slug)) return `${slug}/index.html`;
+      if (slug === "speedy-playful-math-magic") return tryKey("books/speedy-playful-math-magic.html");
+      if (/^books-/.test(slug)) return tryKey(`books/${slug}.html`);
       return tryKey(`math/${slug}.html`);
     }
     return "";
@@ -180,6 +188,10 @@
     }
     if (section === "ai") {
       if (file === "index.html") return rootHref("/ai");
+      return rootHref("/" + file.replace(/\.html$/i, ""));
+    }
+    if (section === "books") {
+      if (file === "index.html") return rootHref("/books");
       return rootHref("/" + file.replace(/\.html$/i, ""));
     }
     if (file === "index.html") return rootHref("/" + section);
