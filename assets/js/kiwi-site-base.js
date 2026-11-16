@@ -8,6 +8,10 @@
     if (host === "localhost" || host === "127.0.0.1") {
       return "/" + REPO_PREFIX;
     }
+    /* GitHub project Pages: always /{repo}/… — root-relative /grade-3 must not escape. */
+    if (host.slice(-".github.io".length) === ".github.io") {
+      return "/" + REPO_PREFIX;
+    }
     var path = location.pathname || "";
     if (path === "/" + REPO_PREFIX || path.indexOf("/" + REPO_PREFIX + "/") === 0) {
       return "/" + REPO_PREFIX;

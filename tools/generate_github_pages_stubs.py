@@ -55,6 +55,8 @@ STUB_TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
+SITE_PREFIX = "kiwi-ai-study"
+
 _SLUG_RE = re.compile(r"^/([a-z0-9][\w-]*)$", re.I)
 
 
@@ -65,9 +67,9 @@ def slug_from_source(source: str) -> str | None:
     return m.group(1) if m else None
 
 
-def relative_dest(destination: str) -> str:
-    """Destination like /math/foo.html -> ../math/foo.html from {slug}/index.html."""
-    return ".." + destination
+def absolute_dest(destination: str) -> str:
+    """Destination like /math/foo.html -> /kiwi-ai-study/math/foo.html."""
+    return f"/{SITE_PREFIX}{destination}"
 
 
 def collect_stub_targets() -> dict[str, str]:
@@ -80,7 +82,7 @@ def collect_stub_targets() -> dict[str, str]:
         dest = rule["destination"]
         if not dest.startswith("/"):
             continue
-        out[slug] = relative_dest(dest)
+        out[slug] = absolute_dest(dest)
     return out
 
 
