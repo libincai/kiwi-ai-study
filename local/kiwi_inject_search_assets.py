@@ -12,6 +12,11 @@ BASE_MARKER = "kiwi-site-base.js"
 BASE_VERSION = "20261116-customdomain"
 BACK_TO_TOP_MARKER = "kiwi-back-to-top.js"
 BACK_TO_TOP_VERSION = "20261115h"
+CF_BEACON_MARKER = "static.cloudflareinsights.com/beacon.min.js"
+CLOUDFLARE_ANALYTICS = """<!-- Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1e1bdfca980f4ec293ede3cb0483adfc"}'></script>
+<!-- End Cloudflare Web Analytics -->"""
+
 SEARCH_BTN = (
     '<button type="button" class="kiwi-search-open" data-kiwi-search-trigger '
     'aria-label="Search site">'
@@ -80,6 +85,21 @@ def inject_favicon(text: str, depth: int) -> tuple[str, bool]:
         return text, False
     anchor = m.group(1)
     new = text.replace(anchor, anchor + "\n" + tags, 1)
+    return new, new != text
+
+
+def inject_cloudflare_analytics(text: str) -> tuple[str, bool]:
+    if CF_BEACON_MARKER in text:
+        return text, False
+    if not re.search(r"</head>", text, re.I):
+        return text, False
+    new = re.sub(
+        r"</head>",
+        CLOUDFLARE_ANALYTICS + "\n</head>",
+        text,
+        count=1,
+        flags=re.I,
+    )
     return new, new != text
 
 
@@ -164,6 +184,7 @@ def inject(path: Path) -> bool:
 
     text = inject_header_button(text)
     text, _ = inject_favicon(text, d)
+    text, _ = inject_cloudflare_analytics(text)
     text, _ = inject_site_base(text, d)
     text, _ = inject_back_to_top(text, d)
 
@@ -194,10 +215,32 @@ def inject(path: Path) -> bool:
 
 def main() -> None:
     n = 0
+    cf = 0
+    skip_stub = 0
     for path in ROOT.rglob("*.html"):
+        if any(part in SKIP_DIRS for part in path.parts):
+            continue
+        text = path.read_text(encoding="utf-8")
+        if is_github_redirect_stub(path, text):
+            skip_stub += 1
+            continue
+        if "<html" not in text.lower():
+            continue
+        had_cf = CF_BEACON_MARKER in text
         if inject(path):
             n += 1
-    print("updated", n, "html files (search, site-base, back-to-top)")
+        after = path.read_text(encoding="utf-8")
+        if CF_BEACON_MARKER in after and not had_cf:
+            cf += 1
+    print(
+        "updated",
+        n,
+        "html files; cloudflare analytics added to",
+        cf,
+        "pages;",
+        skip_stub,
+        "redirect stubs skipped",
+    )
 
 
 if __name__ == "__main__":

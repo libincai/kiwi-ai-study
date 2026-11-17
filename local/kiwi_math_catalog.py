@@ -346,6 +346,9 @@ def math_page_header(
 <title data-en="{html.escape(title_en)} | Kiwi 爱AI Study" data-zh="{html.escape(title_zh)} | Kiwi 爱AI Study">{html.escape(title_en)} | Kiwi 爱AI Study</title>
 <link rel="stylesheet" href="../assets/css/styles.css?v={css_v}"/>
 <script src="../assets/js/kiwi-site-base.js?v=20261116-customdomain"></script>
+<!-- Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1e1bdfca980f4ec293ede3cb0483adfc"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </head>
 <body class="{body_class}">
 <header class="site-header">
