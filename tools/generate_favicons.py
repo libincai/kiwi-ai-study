@@ -9,7 +9,7 @@ except ImportError as err:
     raise SystemExit("Pillow required: pip install Pillow") from err
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_SRC = Path(r"D:\YuanSync\Mirror\MyAI\assets\brand\logo\favicon-loveAI-180.png")
+DEFAULT_SRC = Path(r"D:\YuanSync\Mirror\MyAI\assets\brand\logo\favicon-loveAI-180-small.png")
 # Largest heart-only fit in the tab square (no circle, no clipping).
 TAB_INSET_FILL = 0.99
 TAB_PAD_PX = 1
