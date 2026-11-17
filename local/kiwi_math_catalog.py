@@ -337,6 +337,10 @@ def math_page_header(
 <meta name="pagefind:title_en" content="{html.escape(title_en)}" />
 <meta name="pagefind:section" content="math" />
 {grades_meta}<meta charset="utf-8"/>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="{html.escape(description)}"/>
 <title data-en="{html.escape(title_en)} | Kiwi 爱AI Study" data-zh="{html.escape(title_zh)} | Kiwi 爱AI Study">{html.escape(title_en)} | Kiwi 爱AI Study</title>

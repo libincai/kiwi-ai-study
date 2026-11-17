@@ -43,6 +43,46 @@ def base_script_tag(depth: int) -> str:
     return f'<script src="{prefix}assets/js/{BASE_MARKER}?v={BASE_VERSION}"></script>'
 
 
+def favicon_tags(depth: int) -> str:
+    prefix = asset_prefix(depth)
+    return (
+        f'<link rel="icon" href="{prefix}favicon.ico" sizes="any">\n'
+        f'<link rel="icon" type="image/png" sizes="32x32" '
+        f'href="{prefix}favicon-32x32.png">\n'
+        f'<link rel="icon" type="image/png" sizes="16x16" '
+        f'href="{prefix}favicon-16x16.png">\n'
+        f'<link rel="apple-touch-icon" sizes="180x180" '
+        f'href="{prefix}apple-touch-icon.png">'
+    )
+
+
+def inject_favicon(text: str, depth: int) -> tuple[str, bool]:
+    tags = favicon_tags(depth)
+    text = re.sub(
+        r'<link[^>]+\brel=["\'](?:shortcut )?icon["\'][^>]*>\s*',
+        "",
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'<link[^>]+\brel=["\']apple-touch-icon["\'][^>]*>\s*',
+        "",
+        text,
+        flags=re.I,
+    )
+    if "favicon-32x32.png" in text and "apple-touch-icon.png" in text:
+        return text, False
+    quoted = r'(<meta\s+charset\s*=\s*["\'][^"\']+["\']\s*/?>)'
+    m = re.search(quoted, text, re.I)
+    if not m:
+        m = re.search(r"(<meta\s+charset[^>]*>)", text, re.I)
+    if not m:
+        return text, False
+    anchor = m.group(1)
+    new = text.replace(anchor, anchor + "\n" + tags, 1)
+    return new, new != text
+
+
 def inject_header_button(text: str) -> str:
     if "data-kiwi-search-trigger" in text:
         return text
@@ -123,6 +163,7 @@ def inject(path: Path) -> bool:
     original = text
 
     text = inject_header_button(text)
+    text, _ = inject_favicon(text, d)
     text, _ = inject_site_base(text, d)
     text, _ = inject_back_to_top(text, d)
 
