@@ -1,0 +1,31 @@
+---
+description: KaTeX / LaTeX rules for math in HTML lesson pages
+alwaysApply: true
+---
+
+# Math notation (LaTeX / KaTeX)
+
+All **formulas and symbolic math** in teaching HTML (`math/`, `ai/`, etc.) must use **LaTeX** rendered by **KaTeX**, not raw Unicode superscripts, `<em>n</em><sup>2</sup>`, or plain `$$…$$` left unrendered.
+
+## Required on every page with formulas
+
+1. **`<head>`:** `katex.min.css` (cdn jsDelivr 0.16.11).
+2. **Before `</body>` (defer):** `katex.min.js` + `assets/js/kiwi-math-katex.js`.
+3. **Language toggle:** after updating `data-en` / `data-zh` HTML, call `window.kiwiRenderAllMath()` if present.
+
+## How to author math
+
+| Use case | Markup |
+|----------|--------|
+| Display formula | `<div class="kiwi-math-block kiwi-math-latex" data-tex-en="…" data-tex-zh="…"></div>` |
+| Inline symbol | `<span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="…" data-tex-zh="…"></span>` |
+| Legacy / Word export | `<math>…<annotation encoding="application/x-tex">…</annotation></math>` inside `.kiwi-math-block` |
+
+- Put **the same LaTeX** in `data-tex-en` and `data-tex-zh` unless Chinese copy needs different symbols.
+- Use `\dfrac` for stacked fractions in display mode (normalized automatically in display blocks).
+- Units and labels: `\text{km}`, `\text{Opposite}`, etc. — see `DESIGN_STANDARDS.md` display-formula section.
+- Do **not** rely on bare `$$…$$` in paragraph text or in `kiwi-math-block` innerHTML without `data-tex-*`.
+
+## After edits
+
+Run `python local/kiwi_search_prepare.py` if page body or titles changed.

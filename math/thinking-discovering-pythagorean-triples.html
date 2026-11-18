@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+
+<!--
+  Kiwi 爱AI Study — Level 4 (topic / detail / leaf page)
+
+  Visual reference: math/foundation-number-families.html (approved in DESIGN_STANDARDS.md §5, §Canonical deepest-level).
+
+  HOW TO USE
+  1. Copy to target path (e.g. math/foundation-number-families.html, math/car-journey.html).
+  2. body.topic-page + main.topic-main — no primary nav item active.
+  3. Register in assets/js/drive-breadcrumb.js (parent: immediate Level 3 hub, e.g. math/math-foundations.html).
+  4. Banner: <section class="nf-hero topic-banner"> — text only; use global CSS (do NOT add page-specific banner geometry).
+  5. Kicker = section path; subtitle = short intro (≤2 lines); longer copy goes in body .nf-lead / article.
+  6. Fallback .page-back-wrap → parent category; drive-breadcrumb.js replaces it with full trail.
+  7. Paste unique content between LEVEL-4 BODY markers.
+
+  Levels 2–3 use the blue-gold compact banner — not this template.
+-->
+<html lang="en-CA" data-pagefind-filter="section:math" data-pagefind-meta="breadcrumb:Math › Trigonometry">
+<head>
+<!-- kiwi-search-prepared -->
+<meta name="pagefind:title_en" content="Trigonometry" />
+<meta name="pagefind:section" content="math" />
+<meta name="pagefind:breadcrumb" content="Math › Trigonometry" />
+
+<meta charset="utf-8"/>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Discovering Pythagorean Triples | KIWI 爱AI Study" data-zh="发现勾股数 | KIWI 爱AI Study">Discovering Pythagorean Triples | KIWI 爱AI Study</title>
+<meta content="Discover two rules that build Pythagorean triples from a known integer leg and prove why they work." name="description"/>
+<link href="../assets/css/styles.css?v=20261110-tip-panels" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
+<!-- Optional: page-only content styles (cards, grids). Never override .topic-banner / .nf-hero dimensions. -->
+<style>
+/* Example topic content tokens (Number Families pattern) — trim or extend per page */
+.topic-page{--ink:#142b50;--blue:#1768b2;--muted:#5d6f86;--line:#dce7f3;color:var(--ink)}
+.nf-section{margin:30px 0}
+.nf-section h2{font-size:clamp(23px,2.5vw,29px);color:#153d70;margin:0 0 8px}
+.nf-lead{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px}
+@media(max-width:760px){.nf-grid,.nf-basics{grid-template-columns:1fr}}
+  
+.word-topic{max-width:1040px;margin:28px auto}.topic-intro{line-height:1.8;margin:0 0 20px}.lesson-card{background:#fff;border:1px solid #dce7f3;border-radius:14px;margin:12px 0;overflow:hidden}.lesson-card summary{padding:19px 23px;cursor:pointer;font-weight:750;color:#173e70;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center}.lesson-card summary::after{content:'+';font-size:25px;color:#1768b2}.lesson-card[open] summary::after{content:'−'}.lesson-card[open] summary{background:#eef6ff;border-bottom:1px solid #dce7f3}.lesson-card-content{padding:14px 24px 24px;line-height:1.8;overflow-wrap:anywhere}.lesson-card-content h3{color:#153d70;font-size:17px;margin:20px 0 8px}.lesson-card-content h4{color:#153d70;font-size:16px;font-weight:750;margin:20px 0 8px}.lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px;padding-left:3ch;line-height:1.5}.lesson-card-content h4{color:#153d70;font-size:16px;font-weight:750;margin:20px 0 8px}.lesson-card-content h5{font-size:15px;font-weight:650;color:#1768b2;margin:12px 0 6px 3ch;line-height:1.5}.word-figure{display:block;max-width:100%;height:auto;margin:12px auto}.math-expression{font-family:Cambria Math,serif;white-space:pre-wrap}.lesson-card p{margin:10px 0}@media(max-width:600px){.lesson-card summary{padding:15px;font-size:16px}.lesson-card-content{padding:12px 16px}}
+
+/* Advanced GCF methods: explanatory introduction and two independent panels */
+.kiwi-topic-article .kiwi-advanced-intro{margin:24px 0 18px;line-height:1.75}
+.kiwi-topic-article .kiwi-advanced-intro h3{color:#153d70;font-size:20px;margin:0 0 12px}
+.kiwi-topic-article .kiwi-method-card{margin:14px 0}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math{display:flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;width:100%!important;max-width:100%!important;overflow:visible!important;box-sizing:border-box}
+.kiwi-topic-article .kiwi-method-card .kiwi-centered-math math{display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:4.7rem!important;margin:.35rem 0 1.2rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li{list-style:decimal outside!important;text-align:left!important;padding-left:.35rem!important}
+.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps li p{display:inline!important;margin:0!important;text-align:left!important;font:inherit!important}
+@media(max-width:600px){.kiwi-topic-article .kiwi-method-card ol.kiwi-example-steps{padding-left:3.8rem!important}}
+
+</style>
+<style>.chapter-topic-nav{margin:24px 0;padding:16px 18px;border:1px solid #dce6f1;border-radius:14px;background:#f8fbff}.chapter-topic-nav p{margin:0 0 10px;font-weight:800;color:#153d70}.chapter-topic-links{display:flex;flex-wrap:wrap;gap:9px}.chapter-topic-links a{padding:9px 12px;border:1px solid #d3e2f4;border-radius:9px;color:#1768b2;text-decoration:none;font-size:14px;font-weight:700;background:#fff}.chapter-topic-links a[aria-current="page"]{background:#1768b2;color:#fff;border-color:#1768b2}</style><style>
+/* KIWI Level 4: category in banner, document-style topic navigation */
+.kiwi-learning-layout{display:grid;grid-template-columns:minmax(210px,260px) minmax(0,1fr);gap:30px;align-items:start;max-width:1160px;margin:28px auto 50px}
+.kiwi-topic-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px}
+.kiwi-topic-sidebar h2{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#54708e;margin:0 8px 12px}
+.kiwi-topic-sidebar a{display:block;padding:12px 13px;color:#194a81;text-decoration:none;font-size:14px;line-height:1.5;border-radius:9px;overflow-wrap:break-word}
+.kiwi-topic-sidebar a:hover,.kiwi-topic-sidebar a:focus-visible{background:#e8f2fc;outline-offset:2px}
+.kiwi-topic-sidebar a[aria-current=page]{background:#dcecff;color:#103c74;font-weight:750;border-left:3px solid #1768b2}
+.kiwi-topic-sidebar .kiwi-sidebar-back{margin-top:12px;padding-top:16px;border-top:1px solid #dce7f3;font-size:13px}
+.kiwi-topic-article{min-width:0;max-width:850px}.kiwi-current-topic{font-size:clamp(23px,2.6vw,30px);line-height:1.25;color:#153d70;border-bottom:2px solid #e5f2ff;padding-bottom:12px;margin:0 0 22px}
+.kiwi-topic-article .word-topic{max-width:100%;margin:0}.kiwi-topic-article .lesson-card{max-width:100%}
+@media(max-width:760px){.kiwi-learning-layout{display:block;margin:20px auto}.kiwi-topic-sidebar{position:static;margin-bottom:24px;padding:12px}.kiwi-topic-sidebar h2{margin:2px 8px 6px}.kiwi-topic-sidebar a{padding:9px 12px}.kiwi-current-topic{margin:0 0 16px}}
+</style><style>
+/* Topic navigation and professional mathematics typography */
+.kiwi-topic-sidebar{padding-top:14px}
+.kiwi-topic-article .word-topic{line-height:1.75}
+.kiwi-topic-article .topic-intro{line-height:1.75}
+.kiwi-topic-article .kiwi-formula-row{display:block;text-align:center;margin:18px auto 22px;padding:5px 10px;max-width:100%;overflow-x:auto;font-family:"Cambria Math", "STIX Two Math", serif;font-size:1.12rem;line-height:1.75}
+.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-display-math{display:block;text-align:center;margin:16px auto;max-width:100%;overflow-x:auto;font-size:1.08em}
+.kiwi-topic-article .lesson-card-content p,.kiwi-topic-article .topic-intro p{margin:12px 0}
+.kiwi-topic-article .lesson-card-content ul,.kiwi-topic-article .topic-intro ul{padding-left:25px}
+.kiwi-topic-article .lesson-card-content li,.kiwi-topic-article .topic-intro li{margin:7px 0}
+.kiwi-topic-article .lesson-card-content blockquote{border-left:3px solid #d3e5f6;padding-left:15px;margin:14px 0;color:#334e68}
+.kiwi-topic-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:18px 0}
+.kiwi-topic-article th,.kiwi-topic-article td{border:1px solid #dce7f3;padding:8px 12px}
+.kiwi-topic-article .lesson-card-content img{max-width:100%;height:auto;display:block;margin:15px auto}
+@media(max-width:760px){.kiwi-topic-article .kiwi-formula-row{font-size:1rem}}
+</style><style>
+/* Word-to-web math and insight panel cleanup */
+.kiwi-topic-article .kiwi-insight-panel{display:block;max-width:100%;margin:22px 0;padding:18px 22px;background:#fff9ec;border:1px solid #f2d79c;border-left:4px solid #dfac49;border-radius:12px;color:#6b4b22;text-align:left;box-sizing:border-box}
+.kiwi-topic-article .kiwi-insight-icon{flex:none;font-size:1.2rem;line-height:1}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body p{margin:9px 0}
+.kiwi-topic-article .kiwi-insight-body ul{padding-left:22px;margin:12px 0}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row,.kiwi-topic-article .kiwi-insight-body math[display="block"]{text-align:center}
+.kiwi-topic-article .kiwi-formula-row{list-style:none}
+@media(max-width:600px){.kiwi-topic-article .kiwi-insight-panel{padding:14px 16px}}
+</style><style>
+/* KIWI mathematical equation steps: remove bullet markers without altering genuine teaching lists. */
+.kiwi-topic-article li.kiwi-equation-list-item{list-style-type:none!important;list-style-image:none!important;position:relative}
+.kiwi-topic-article li.kiwi-equation-list-item::marker{content:""!important}
+.kiwi-topic-article li.kiwi-equation-list-item::before{content:none!important}
+.kiwi-topic-article li.kiwi-equation-list-item>p{margin:10px 0;text-align:center}
+.kiwi-topic-article li.kiwi-equation-list-item>p math{margin-left:auto;margin-right:auto}
+.kiwi-topic-article .kiwi-insight-panel{background:#fff9ec!important;border-color:#f2d79c!important;border-left-color:#dfac49!important;color:#6b4b22!important}
+.kiwi-topic-article .kiwi-insight-header{color:#865915!important}
+.kiwi-topic-article .kiwi-insight-body,.kiwi-topic-article .kiwi-insight-body p,.kiwi-topic-article .kiwi-insight-body li{text-align:left}
+.kiwi-topic-article .kiwi-insight-body .kiwi-formula-row{text-align:center}
+</style><style id="kiwi-gcf-notation-fix">
+/* Examples are a semantic list, not centered derivation blocks. */
+.kiwi-topic-article .kiwi-gcf-example-list{list-style:disc outside;padding-left:1.7rem;margin:12px 0 24px;}
+.kiwi-topic-article .kiwi-gcf-example-list li{display:list-item;list-style-type:disc;text-align:left;margin:9px 0;padding-left:5px;}
+.kiwi-topic-article .kiwi-gcf-example-list math{display:inline!important;overflow:visible!important;max-width:none!important;vertical-align:middle;}
+/* Remove native MathML vertical scroll controls; formulas remain centered. */
+.kiwi-topic-article math,.kiwi-topic-article math[display="block"],.kiwi-topic-article .kiwi-formula-row{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;scrollbar-width:none;}
+.kiwi-topic-article math::-webkit-scrollbar,.kiwi-topic-article .kiwi-formula-row::-webkit-scrollbar{display:none;}
+.kiwi-topic-article .kiwi-formula-row{text-align:center;}
+.kiwi-topic-article .kiwi-formula-row math[display="block"]{display:block;margin-inline:auto;text-align:center;}
+</style><style>
+/* GCF worked example: clear example indent and numbered procedure */
+.kiwi-example-list{padding-left:2.2rem;margin:0.6rem 0 1rem;list-style:disc outside}
+.kiwi-example-list li{padding-left:.25rem;line-height:1.7}
+.kiwi-numbered-steps{list-style:decimal outside;padding-left:2.4rem;margin:1rem 0 1.25rem}
+.kiwi-numbered-steps>li{padding-left:.3rem;margin:.45rem 0;line-height:1.6}
+.kiwi-numbered-steps>li::marker{font-weight:700;color:#111111}
+.kiwi-numbered-steps .kiwi-formula-row{margin:.15rem 0!important;text-align:center!important}
+.kiwi-numbered-steps math[display="block"]{display:block!important;margin:0 auto!important;text-align:center!important}
+</style><style id="kiwi-gcf-final-layout">
+/* Consistent one-level indentation for bullet and numbered lists. */
+.kiwi-topic-article ul.kiwi-example-list,
+.kiwi-topic-article ul.kiwi-gcf-example-list,
+.kiwi-topic-article ol.kiwi-numbered-steps { margin: .65rem 0 1.2rem 0 !important; padding-left: 2.5rem !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ul.kiwi-example-list > li,
+.kiwi-topic-article ul.kiwi-gcf-example-list > li { padding-left:.4rem !important; margin:.45rem 0 !important; text-align:left !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li { list-style-type:decimal !important; }
+.kiwi-topic-article ol.kiwi-numbered-steps > li p.kiwi-step-text { display:inline !important; margin:0 !important; padding:0 !important; text-align:left !important; font:inherit !important; }
+.kiwi-topic-article .kiwi-gcd-display { display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; margin:1rem auto 1.3rem !important; padding:0 !important; border:0 !important; }
+.kiwi-topic-article .kiwi-gcd-display math { display:block !important; width:max-content !important; max-width:100%; margin:0 auto !important; text-align:center !important; overflow:visible !important; }
+</style><style>
+/* Word-to-Web: nested worked examples (GCF Division Method) */
+.kiwi-example-block { margin: .5rem 0 1.2rem 1.5rem; text-align: left; }
+.kiwi-example-question { margin: .35rem 0 .55rem; }
+.kiwi-example-steps { margin: .4rem 0 .45rem 2rem; padding-left: 1.25rem; list-style-type: decimal; }
+.kiwi-example-steps li { padding-left: .25rem; margin: .45rem 0; text-align: left; }
+.kiwi-example-steps li::marker { color: #111111; font-weight: 700; }
+.kiwi-example-explanation, .kiwi-example-answer { margin: .6rem 0 .6rem 2rem; text-align: left; }
+@media (max-width: 600px) { .kiwi-example-block { margin-left: .7rem; } .kiwi-example-steps { margin-left: 1rem; } .kiwi-example-explanation, .kiwi-example-answer { margin-left: 1rem; } }
+</style><style>
+/* KIWI Word-to-Web standards: math lesson lists (2026-11-09) */
+.kiwi-topic-article ol li::marker,
+.kiwi-topic-article .kiwi-numbered-steps > li::marker,
+.kiwi-topic-article .kiwi-example-steps > li::marker,
+.kiwi-topic-article .kiwi-method-card ol li::marker {
+  color: #111 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+.kiwi-topic-article ol.kiwi-numbered-steps > li,
+.kiwi-topic-article ol.kiwi-example-steps > li {font-weight:400; text-align:left;}
+/* Avoid centering calculation text within numbered steps. */
+.kiwi-topic-article ol.kiwi-numbered-steps > li > p.kiwi-step-text {font-weight:400!important;text-align:left!important;}
+</style>
+<style id="kiwi-shared-math-example-standards">
+/* KIWI shared Word-to-Web: formulas and worked examples (2026-11-09). */
+.kiwi-topic-article p.kiwi-formula-row {display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;box-sizing:border-box!important;overflow:visible!important;margin:1rem auto!important;padding:.25rem 0!important;}
+.kiwi-topic-article p.kiwi-formula-row > math[display="block"] {display:block!important;width:max-content!important;max-width:100%!important;margin:0 auto!important;overflow:visible!important;}
+.kiwi-topic-article .kiwi-math-scroll {overflow-x:auto!important;overflow-y:hidden!important;max-width:100%;}
+.kiwi-topic-article .kiwi-example-standard {margin:.35rem 0 1rem!important;padding:0!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-single-example,
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-question {margin:.35rem 0 .4rem 3ch!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps {margin:.35rem 0 .6rem 6ch!important;padding:0!important;list-style:decimal inside!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li {display:list-item!important;list-style:decimal inside!important;margin:.3rem 0!important;padding:0!important;font-weight:400!important;color:#111!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li::marker {font-weight:400!important;color:#111!important;}
+.kiwi-topic-article .kiwi-example-standard > ol.kiwi-example-steps > li > p {display:inline!important;margin:0!important;padding:0!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-explanation {margin:.45rem 0 .45rem 6ch!important;text-align:left!important;}
+.kiwi-topic-article .kiwi-example-standard > .kiwi-example-answer {display:block!important;margin:.6rem 0 .6rem 3ch!important;padding:.15rem 0 .15rem 1rem!important;border-left:3px solid #cde3fa!important;text-align:left!important;background:transparent!important;}
+.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer p,.kiwi-topic-article .kiwi-example-standard > blockquote.kiwi-example-answer strong {margin:0!important;font-weight:400!important;}
+.kiwi-topic-article .kiwi-standalone-example > .kiwi-example-question {margin-left:3ch!important;}
+.kiwi-topic-article .kiwi-standalone-example > ol.kiwi-example-steps {margin-left:6ch!important;}
+</style><style>
+.kiwi-generated-content{line-height:1.72;color:#182d42}.kiwi-generated-content p{margin:12px 0}.kiwi-generated-content math[display="block"],.kiwi-generated-content .math-display{display:block;text-align:center;margin:18px auto;max-width:100%;overflow-x:auto;overflow-y:visible}.kiwi-generated-content math{font-size:1.04em}.kiwi-generated-content img{display:block;max-width:100%;height:auto;margin:18px auto}.kiwi-generated-content table{max-width:100%;display:block;overflow-x:auto;border-collapse:collapse}.kiwi-generated-content td,.kiwi-generated-content th{padding:7px 10px;border:1px solid #dce7f3}.kiwi-generated-content ul,.kiwi-generated-content ol{padding-left:3em;margin:10px 0}.kiwi-generated-content ol li::marker{color:#111;font-weight:400}.kiwi-generated-content li{padding-left:.2em;margin:6px 0}.kiwi-generated-content .kiwi-insight-panel{background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e6ad35;border-radius:12px;padding:16px 20px;margin:20px 0;text-align:left}.kiwi-generated-content .kiwi-insight-panel p{text-align:left}.kiwi-generated-content .lesson-card{border:1px solid #dce7f3;border-radius:12px;overflow:hidden;margin:12px 0}.kiwi-generated-content .lesson-card>summary{cursor:pointer;padding:16px 20px;background:#eef6ff;color:#143e75;font-weight:650;list-style:none;display:flex;justify-content:space-between}.kiwi-generated-content .lesson-card>summary:after{content:'+'}.kiwi-generated-content .lesson-card[open]>summary:after{content:'−'}.kiwi-generated-content .lesson-card-body{padding:14px 20px 20px}.kiwi-generated-content h3{font-size:1.05em;color:#143e75}.kiwi-generated-content .example-problem{margin-left:3ch}.kiwi-generated-content .example-steps{margin-left:6ch;padding-left:1.4em}.kiwi-generated-content .example-answer{margin-left:3ch;border-left:3px solid #cde3fa;padding:4px 12px}.kiwi-generated-content .math-display::-webkit-scrollbar{height:5px}.kiwi-topic-sidebar a{overflow-wrap:anywhere}
+</style><style id="kiwi-accordion-controls-style">
+.kiwi-accordion-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.kiwi-accordion-controls button{font:inherit;font-size:13px;font-weight:600;color:#155d9d;background:#fff;border:1px solid #cddff2;border-radius:8px;padding:8px 13px;cursor:pointer}
+.kiwi-accordion-controls button:hover,.kiwi-accordion-controls button:focus-visible{background:#eaf3fd;outline-offset:2px}
+@media(max-width:560px){.kiwi-accordion-controls{gap:7px}.kiwi-accordion-controls button{padding:7px 10px;font-size:12px}}
+</style>
+<style>
+/* Word-to-Web: consistent educational information panels */
+.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{box-sizing:border-box;display:block;width:100%;max-width:100%;margin:1.15rem 0;padding:1rem 1.2rem;background:#fff8e9;border:1px solid #f0d58d;border-left:3px solid #e4b54e;border-radius:12px;color:#503d24;text-align:left;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
+.kiwi-insight-panel p,.kiwi-curriculum-panel p,.kiwi-word-info-panel p,.kiwi-insight-panel li,.kiwi-curriculum-panel li,.kiwi-word-info-panel li{color:inherit;text-align:left;font-weight:400}
+.kiwi-insight-panel strong,.kiwi-curriculum-panel strong,.kiwi-word-info-panel strong{font-weight:700}
+.kiwi-insight-header,.kiwi-insight-title,.kiwi-word-info-title{font-weight:700;color:#895b0e}
+.kiwi-insight-icon,.kiwi-word-info-icon{flex:none;font-size:1.1rem;line-height:1.2}
+.kiwi-insight-body>*:first-child,.kiwi-word-info-body>*:first-child{margin-top:0}
+.kiwi-insight-body>*:last-child,.kiwi-word-info-body>*:last-child{margin-bottom:0}
+.kiwi-curriculum-panel{border-left-color:#e4b54e}
+.kiwi-curriculum-panel .kiwi-curriculum-heading{display:block;margin-bottom:.5rem;color:#895b0e;font-weight:700;text-align:left}
+.kiwi-curriculum-panel p:first-child{margin-top:0}
+.kiwi-word-info-panel ul,.kiwi-word-info-panel ol{padding-left:1.5rem;margin-left:0}
+.kiwi-word-info-panel .kiwi-math-block,.kiwi-insight-panel .kiwi-math-block,.kiwi-curriculum-panel .kiwi-math-block{text-align:center;margin-left:auto;margin-right:auto}
+.kiwi-word-info-panel math[display="block"],.kiwi-insight-panel math[display="block"],.kiwi-curriculum-panel math[display="block"]{display:block;margin-inline:auto}
+@media(max-width:600px){.kiwi-insight-panel,.kiwi-curriculum-panel,.kiwi-word-info-panel{padding:.85rem 1rem}}
+</style><style>
+/* Level 4 sidebar standard — match Mathematical Thinking / GCF */
+.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{box-sizing:border-box;position:sticky;top:18px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 36px);overflow-y:auto;overflow-x:hidden;padding:18px 12px;background:#f7faff;border:1px solid #dce7f3;border-radius:14px;font-size:14px}
+.mf-sidebar .mf-side-links,.nf-lesson-sidebar nav{display:flex;flex-direction:column;gap:6px}
+.kiwi-topic-sidebar a,.mf-sidebar .mf-side-links a,.nf-lesson-sidebar nav a{box-sizing:border-box;display:block;padding:12px 13px;margin:0;color:#194a81;text-decoration:none;font-size:14px;font-weight:400;line-height:1.5;border-radius:9px;overflow-wrap:break-word;background:transparent;border-left:0}
+.kiwi-topic-sidebar a:hover,.mf-sidebar .mf-side-links a:hover,.nf-lesson-sidebar nav a:hover{background:#e8f2ff;color:#0756ba}
+.kiwi-topic-sidebar a.active,.kiwi-topic-sidebar a[aria-current="page"],.mf-sidebar .mf-side-links a.mf-current,.mf-sidebar .mf-side-links a[aria-current="page"],.nf-lesson-sidebar nav a.active,.nf-lesson-sidebar nav a[aria-current="page"]{background:#deecff;color:#073e83;font-weight:400;border-left:3px solid #0865c9;padding-left:10px}
+.kiwi-topic-sidebar a[href="/mathematical-thinking"]{margin-top:12px;border-top:1px solid #dce7f3;border-radius:9px 9px 0 0;padding-top:17px;font-size:13px}
+@media(max-width:800px){.kiwi-topic-sidebar,.mf-sidebar,.nf-lesson-sidebar{position:static;max-height:none;width:100%}}
+</style>
+<script src="../assets/js/kiwi-site-base.js?v=20261116-customdomain"></script>
+<!-- Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1e1bdfca980f4ec293ede3cb0483adfc"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</head>
+<body class="topic-page">
+<header class="site-header">
+<div class="brand-lockup">
+<a aria-label="Kiwi 爱AI Study home" class="logo-link" href="../index.html">
+<img alt="Kiwi 爱AI Study logo" class="logo" src="../assets/logo/kiwi-ai-study-logo.webp"/>
+</a>
+<span aria-hidden="true" class="divider"></span>
+<div class="author-wrap">
+<a aria-label="Sherry Cai" class="author-image-link" href="../index.html">
+<img alt="Sherry Cai" class="author-signature-image" src="../assets/logo/sherry-cai-signature.webp"/>
+</a>
+</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a data-en="Home" data-nav="home" data-zh="首页" href="../index.html">Home</a>
+<a data-en="About" data-nav="about" data-zh="关于我们" href="../about/index.html">About</a>
+<a data-en="Math Education" data-nav="math" data-zh="数学教育" href="/math">Math Education</a>
+<a data-en="AI Education" data-nav="ai" data-zh="人工智能教育" href="../ai/index.html">AI Education</a>
+<a data-en="In-Class Learning" data-nav="class" data-zh="课堂学习" href="/in-class-learning">In-Class Learning</a>
+<a data-en="My Books" data-nav="books" data-zh="我的书籍" href="../books/index.html">My Books</a>
+<a data-en="Contact" data-nav="contact" data-zh="联系我们" href="../contact/index.html">Contact</a>
+<button type="button" class="kiwi-search-open" data-kiwi-search-trigger aria-label="Search site"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+<span aria-label="Languages" class="flags">
+<button aria-label="Switch to English" aria-pressed="true" class="flag" data-language="en" title="English" type="button">
+<img alt="English" src="https://flagcdn.com/w160/ca.png"/>
+</button>
+<button aria-label="切换到中文" aria-pressed="false" class="flag" data-language="zh" title="中文" type="button">
+<img alt="中文" src="https://flagcdn.com/w160/cn.png"/>
+</button>
+</span>
+</nav>
+</header>
+<main data-pagefind-body="" data-pagefind-filter="lang:en"  class="topic-main">
+<div class="page-back-wrap">
+<a class="page-back-link" data-en="← Back to Mathematical Thinking" data-page-back="" data-zh="← 返回数学思维" href="/mathematical-thinking">← Back to Mathematical Thinking</a>
+</div>
+<section aria-label="Page introduction" class="nf-hero topic-banner">
+<p class="topic-banner-kicker" data-en="MATHEMATICAL THINKING" data-zh="数学思维">MATHEMATICAL THINKING</p>
+<h1 data-en="Trigonometry" data-zh="三角函数">Trigonometry</h1>
+<p class="topic-banner-subtitle" data-en="Explore mathematical concepts, methods, and worked examples." data-zh="探索数的关系、运算方法与实用计算策略。">Explore mathematical concepts, methods, and worked examples.</p>
+</section>
+<!-- LEVEL-4 BODY START -->
+<div class="kiwi-learning-layout"><aside aria-label="Topic navigation" class="kiwi-topic-sidebar"><a class="active" href="/thinking-discovering-pythagorean-triples" data-en="Discovering Pythagorean Triples" data-zh="发现勾股数">Discovering Pythagorean Triples</a><a href="/mathematical-thinking" data-en="← All Mathematical Thinking" data-zh="← 返回数学思维目录">← All Mathematical Thinking</a></aside><article class="kiwi-topic-article"><h1 class="kiwi-current-topic" data-en="Discovering Pythagorean Triples" data-zh="发现勾股数">Discovering Pythagorean Triples</h1><section class="nf-section word-topic kiwi-generated-content"><p class="topic-intro" data-en="The big question: If we know one integer leg of a right triangle, can we construct two more integer side lengths?" data-zh="核心问题：若已知直角三角形的一条整数直角边，能否构造另外两条整数边长？">The big question: If we know one integer leg of a right triangle, can we construct two more integer side lengths?</p><p data-en="A &lt;strong&gt;Pythagorean triple&lt;/strong&gt; consists of positive integers &lt;em&gt;a&lt;/em&gt;, &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt;, and &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt;, where &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; is the hypotenuse and &lt;em&gt;a&lt;/em&gt;&lt;sup&gt;2&lt;/sup&gt; + &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt; = &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt;." data-zh="&lt;strong&gt;勾股数&lt;/strong&gt; 是由正整数 &lt;em&gt;a&lt;/em&gt;、&lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt;、&lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; 组成，其中 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; 为斜边，且 &lt;em&gt;a&lt;/em&gt;&lt;sup&gt;2&lt;/sup&gt; + &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt; = &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt;。">A <strong>Pythagorean triple</strong> consists of positive integers <em>a</em>, <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b" data-tex-zh="b"></span>, and <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c" data-tex-zh="c"></span>, where <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c" data-tex-zh="c"></span> is the hypotenuse and <em>a</em><sup>2</sup> + <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b" data-tex-zh="b"></span><sup>2</sup> = <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c" data-tex-zh="c"></span><sup>2</sup>.</p><p data-en="We will discover two construction rules—one for an odd leg and one for an even leg—and prove why they work." data-zh="我们将发现两条构造法则——分别对应奇数直角边与偶数直角边——并说明它们为何成立。">We will discover two construction rules—one for an odd leg and one for an even leg—and prove why they work.</p><aside class="kiwi-word-info-panel kiwi-skill-crosslink-panel" role="note"><div class="kiwi-panel-heading"><span aria-hidden="true" class="kiwi-panel-icon">🔗</span></div><p data-en="&lt;strong&gt;Lesson scope:&lt;/strong&gt; &lt;strong&gt;Advanced&lt;/strong&gt; number patterns linked to the Pythagorean theorem — from the Math Quick Reference Library (Advanced)." data-zh="&lt;strong&gt;本课范围：&lt;/strong&gt;&lt;strong&gt;进阶&lt;/strong&gt; 与勾股定理相关的整数构造（来自进阶版数学速查）。"><strong>Lesson scope:</strong> <strong>Advanced</strong> number patterns linked to the Pythagorean theorem — from the Math Quick Reference Library (Advanced).</p></aside><details class="lesson-card" open=""><summary data-en="1. An odd leg: look for consecutive integers" data-zh="1. 奇数直角边：寻找连续整数">1. An odd leg: look for consecutive integers</summary><div class="lesson-card-body"><p data-en="Explore. Suppose the known leg is an odd integer &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt;. Its square is &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt;. Notice that &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt; is the sum of two consecutive integers:" data-zh="探索：设已知直角边为奇整数 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt;，则 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt; 等于两个连续整数之和：">Explore. Suppose the known leg is an odd integer <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="n" data-tex-zh="n"></span>. Its square is <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="n" data-tex-zh="n"></span><sup>2</sup>. Notice that <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="n" data-tex-zh="n"></span><sup>2</sup> is the sum of two consecutive integers:</p><div class="kiwi-math-block kiwi-math-latex" data-tex-en="n^2=\frac{n^2-1}{2}+\frac{n^2+1}{2}" data-tex-zh="n^2=\frac{n^2-1}{2}+\frac{n^2+1}{2}"></div><p data-en="This suggests the triple &lt;span class=&quot;math-inline&quot;&gt;$$\left(n,\ \frac{n^2-1}{2},\ \frac{n^2+1}{2}\right)$$&lt;/span&gt;. Verify with &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt; = 3:" data-zh="由此得到勾股数 &lt;span class=&quot;math-inline&quot;&gt;$$\left(n,\ \frac{n^2-1}{2},\ \frac{n^2+1}{2}\right)$$&lt;/span&gt;。以 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt; = 3 验证：">This suggests the triple <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="\left(n,\ \frac{n^2-1}{2},\ \frac{n^2+1}{2}\right)" data-tex-zh="\left(n,\ \frac{n^2-1}{2},\ \frac{n^2+1}{2}\right)"></span>. Verify with <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="n" data-tex-zh="n"></span> = 3:</p><div class="kiwi-math-block kiwi-math-latex" data-tex-en="3^2+4^2=5^2" data-tex-zh="3^2+4^2=5^2"></div><p data-en="Discover the rule. Let the other leg be &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt; and the hypotenuse be &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt;, with &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; − &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt; = 1. Use the difference-of-squares identity and the Pythagorean theorem:" data-zh="发现法则：设另一条直角边为 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt;、斜边为 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt;，且 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; − &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt; = 1。结合平方差恒等式与勾股定理：">Discover the rule. Let the other leg be <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b" data-tex-zh="b"></span> and the hypotenuse be <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c" data-tex-zh="c"></span>, with <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c" data-tex-zh="c"></span> − <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b" data-tex-zh="b"></span> = 1. Use the difference-of-squares identity and the Pythagorean theorem:</p><div class="kiwi-math-block kiwi-math-latex" data-tex-en="c^2-b^2=(c-b)(c+b)=n^2\quad\text{and}\quad c^2-b^2=c^2-(c-1)^2=2c-1=n^2" data-tex-zh="c^2-b^2=(c-b)(c+b)=n^2\quad\text{and}\quad c^2-b^2=c^2-(c-1)^2=2c-1=n^2"></div><p data-en="So &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; + &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt; = &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt; and &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; − &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt; = 1. Adding and subtracting gives" data-zh="因此 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; + &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt; = &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt;，&lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; − &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt; = 1。相加与相减得">So <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c" data-tex-zh="c"></span> + <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b" data-tex-zh="b"></span> = <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="n" data-tex-zh="n"></span><sup>2</sup> and <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c" data-tex-zh="c"></span> − <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b" data-tex-zh="b"></span> = 1. Adding and subtracting gives</p><div class="kiwi-math-block kiwi-math-latex" data-tex-en="c=\frac{n^2+1}{2},\qquad b=\frac{n^2-1}{2}" data-tex-zh="c=\frac{n^2+1}{2},\qquad b=\frac{n^2-1}{2}"></div><p data-en="When &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt; is odd, &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt; is odd, so both numerators are even. Thus &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt; and &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; are integers. For &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt; = 3, we obtain 4 and 5." data-zh="当 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt; 为奇数时，&lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt; 为奇数，两分子均为偶数，故 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt;、&lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; 为整数。&lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;n&quot; data-tex-zh=&quot;n&quot;&gt;&lt;/span&gt; = 3 时得 4 与 5。">When <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="n" data-tex-zh="n"></span> is odd, <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="n" data-tex-zh="n"></span><sup>2</sup> is odd, so both numerators are even. Thus <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b" data-tex-zh="b"></span> and <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c" data-tex-zh="c"></span> are integers. For <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="n" data-tex-zh="n"></span> = 3, we obtain 4 and 5.</p></div></details><details class="lesson-card"><summary data-en="2. An even leg: look for numbers two apart" data-zh="2. 偶数直角边：寻找相差 2 的数">2. An even leg: look for numbers two apart</summary><div class="lesson-card-body"><p data-en="Explore. Suppose the known leg is an even integer. Half of it is an integer &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;m&quot; data-tex-zh=&quot;m&quot;&gt;&lt;/span&gt;, and the integers one below and one above &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;m&quot; data-tex-zh=&quot;m&quot;&gt;&lt;/span&gt; differ by 2." data-zh="探索：设已知直角边为偶数。它的一半是整数 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;m&quot; data-tex-zh=&quot;m&quot;&gt;&lt;/span&gt;，而比 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;m&quot; data-tex-zh=&quot;m&quot;&gt;&lt;/span&gt; 小 1 与大 1 的两个整数相差 2。">Explore. Suppose the known leg is an even integer. Half of it is an integer <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="m" data-tex-zh="m"></span>, and the integers one below and one above <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="m" data-tex-zh="m"></span> differ by 2.</p><p data-en="Discover the rule. Write the even leg as &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;2m&quot; data-tex-zh=&quot;2m&quot;&gt;&lt;/span&gt;. Choose" data-zh="发现法则：将偶数直角边写为 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;2m&quot; data-tex-zh=&quot;2m&quot;&gt;&lt;/span&gt;，取">Discover the rule. Write the even leg as <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="2m" data-tex-zh="2m"></span>. Choose</p><div class="kiwi-math-block kiwi-math-latex" data-tex-en="b=m^2-1,\qquad c=m^2+1" data-tex-zh="b=m^2-1,\qquad c=m^2+1"></div><p data-en="The two new sides differ by 2. Check the Pythagorean theorem:" data-zh="两条新边相差 2。验证勾股定理：">The two new sides differ by 2. Check the Pythagorean theorem:</p><div class="kiwi-math-block kiwi-math-latex" data-tex-en="(2m)^2+(m^2-1)^2=(m^2+1)^2" data-tex-zh="(2m)^2+(m^2-1)^2=(m^2+1)^2"></div><p data-en="Therefore, for an even leg &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;2m&quot; data-tex-zh=&quot;2m&quot;&gt;&lt;/span&gt;, the triple is &lt;span class=&quot;math-inline&quot;&gt;$$\left(2m,\ m^2-1,\ m^2+1\right)$$&lt;/span&gt;. Example: &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;m&quot; data-tex-zh=&quot;m&quot;&gt;&lt;/span&gt; = 2 gives 3, 4, 5." data-zh="因此偶数直角边 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;2m&quot; data-tex-zh=&quot;2m&quot;&gt;&lt;/span&gt; 对应勾股数为 &lt;span class=&quot;math-inline&quot;&gt;$$\left(2m,\ m^2-1,\ m^2+1\right)$$&lt;/span&gt;。例如 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;m&quot; data-tex-zh=&quot;m&quot;&gt;&lt;/span&gt; = 2 得 3、4、5。">Therefore, for an even leg <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="2m" data-tex-zh="2m"></span>, the triple is <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="\left(2m,\ m^2-1,\ m^2+1\right)" data-tex-zh="\left(2m,\ m^2-1,\ m^2+1\right)"></span>. Example: <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="m" data-tex-zh="m"></span> = 2 gives 3, 4, 5.</p></div></details><details class="lesson-card"><summary data-en="3. Compare the patterns" data-zh="3. 比较两种规律">3. Compare the patterns</summary><div class="lesson-card-body"><table><thead><tr><th scope="col" data-en="Known leg" data-zh="已知直角边">Known leg</th><th scope="col" data-en="Construction" data-zh="构造">Construction</th><th scope="col" data-en="Example" data-zh="例子">Example</th></tr></thead><tbody><tr><td>Odd <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="n" data-tex-zh="n"></span></td><td><span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b=\dfrac{n^2-1}{2},\ c=\dfrac{n^2+1}{2}" data-tex-zh="b=\dfrac{n^2-1}{2},\ c=\dfrac{n^2+1}{2}"></span></td><td>3, 4, 5</td></tr><tr><td>Even <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="2m" data-tex-zh="2m"></span></td><td><span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b=m^2-1,\ c=m^2+1" data-tex-zh="b=m^2-1,\ c=m^2+1"></span></td><td>4, 3, 5</td></tr></tbody></table><p data-en="The key idea: Rather than guessing two missing sides, choose a small difference between them. Then use &lt;span class=&quot;math-inline&quot;&gt;$$c^2-b^2=(c-b)(c+b)$$&lt;/span&gt; to turn the Pythagorean theorem into a simpler problem." data-zh="关键思想：不要盲目猜测两边，先令它们相差一个小的固定值，再用 &lt;span class=&quot;math-inline&quot;&gt;$$c^2-b^2=(c-b)(c+b)$$&lt;/span&gt; 把勾股定理化为更易求解的形式。">The key idea: Rather than guessing two missing sides, choose a small difference between them. Then use <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c^2-b^2=(c-b)(c+b)" data-tex-zh="c^2-b^2=(c-b)(c+b)"></span> to turn the Pythagorean theorem into a simpler problem.</p></div></details><details class="lesson-card"><summary data-en="4. Try it yourself" data-zh="4. 自己试一试">4. Try it yourself</summary><div class="lesson-card-body"><ol class="kiwi-numbered-steps"><li data-en="Use the odd-leg rule to construct a Pythagorean triple containing 5. Check the result." data-zh="用奇数边法则构造含 5 的勾股数，并检验。">Use the odd-leg rule to construct a Pythagorean triple containing 5. Check the result.</li><li data-en="Use the even-leg rule to construct a Pythagorean triple containing 6. Check the result." data-zh="用偶数边法则构造含 6 的勾股数，并检验。">Use the even-leg rule to construct a Pythagorean triple containing 6. Check the result.</li><li data-en="Explain why the odd-leg rule gives a difference of 1 between &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; and &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt;, while the even-leg rule gives a difference of 2." data-zh="说明为何奇数边法则中 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;c&quot; data-tex-zh=&quot;c&quot;&gt;&lt;/span&gt; 与 &lt;span class=&quot;kiwi-math-latex kiwi-katex-inline&quot; data-tex-en=&quot;b&quot; data-tex-zh=&quot;b&quot;&gt;&lt;/span&gt; 相差 1，而偶数边法则相差 2。">Explain why the odd-leg rule gives a difference of 1 between <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="c" data-tex-zh="c"></span> and <span class="kiwi-math-latex kiwi-katex-inline" data-tex-en="b" data-tex-zh="b"></span>, while the even-leg rule gives a difference of 2.</li><li data-en="Stretch: Does the rule always give the smallest possible hypotenuse for a given integer leg? Investigate 12 and 20." data-zh="拓展：给定整数直角边，这些法则是否总给出最小斜边？试考察 12 与 20。">Stretch: Does the rule always give the smallest possible hypotenuse for a given integer leg? Investigate 12 and 20.</li></ol><p data-en="&lt;strong&gt;Important distinction.&lt;/strong&gt; These rules construct &lt;em&gt;one&lt;/em&gt; integer-sided right triangle from a known integer leg; they do not determine the triangle uniquely. They can also produce triples whose three sides share a common factor." data-zh="&lt;strong&gt;重要说明：&lt;/strong&gt;这些法则从已知整数直角边构造 &lt;em&gt;一组&lt;/em&gt; 整数边直角三角形，并不唯一确定三角形；也可能得到三边有公因数的勾股数。"><strong>Important distinction.</strong> These rules construct <em>one</em> integer-sided right triangle from a known integer leg; they do not determine the triangle uniquely. They can also produce triples whose three sides share a common factor.</p><p data-en="&lt;strong&gt;Answers for checking.&lt;/strong&gt; (1) 5, 12, 13. (2) 6, 8, 10. (4) No: 12 appears in 5–12–13 with a smaller hypotenuse than 35–12–37; 20 appears in 21–20–29 with a smaller hypotenuse than 99–20–101." data-zh="&lt;strong&gt;核对答案：&lt;/strong&gt;(1) 5、12、13。(2) 6、8、10。(4) 否：12 在 5–12–13 中斜边更小；20 在 21–20–29 中斜边更小。"><strong>Answers for checking.</strong> (1) 5, 12, 13. (2) 6, 8, 10. (4) No: 12 appears in 5–12–13 with a smaller hypotenuse than 35–12–37; 20 appears in 21–20–29 with a smaller hypotenuse than 99–20–101.</p></div></details></section></article></div>
+<!-- LEVEL-4 BODY END -->
+</main>
+<footer class="site-footer">
+<nav aria-label="Legal">
+<a data-legal="privacy" href="../legal/privacy.html">Privacy Policy</a>
+<a data-legal="terms" href="../legal/terms.html">Copyright &amp; Content Usage Policy</a>
+<a data-legal="home" href="../index.html">Home</a>
+<a data-en="Business &amp; Collaboration" data-zh="商业与合作" href="../about/index.html#business-collaboration">Business &amp; Collaboration</a>
+</nav>
+<p data-en="© 2026 Kiwi 爱AI Study. All rights reserved." data-zh="© 2026 Kiwi 爱AI Study。保留所有权利。">© 2026 Kiwi 爱AI Study. All rights reserved.</p>
+</footer>
+<script>
+(() => {
+  const nav = {
+    en: ['Home', 'About', 'Math Education', 'AI Education', 'In-Class Learning', 'My Books', 'Contact'],
+    zh: ['首页', '关于我们', '数学教育', '人工智能教育', '课堂学习', '我的书籍', '联系我们']
+  };
+  const legal = {
+    en: ['Privacy Policy', 'Terms of Service', 'Home'],
+    zh: ['隐私政策', '服务条款', '首页']
+  };
+  const btns = document.querySelectorAll('.flag[data-language]');
+  function setLanguage(lang) {
+    const l = lang === 'zh' ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en-CA';
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.innerHTML = el.getAttribute(l === 'zh' ? 'data-zh' : 'data-en');
+    });
+    document.querySelectorAll('.site-nav [data-nav]').forEach((el, i) => { el.textContent = nav[l][i]; });
+    document.querySelectorAll('.site-footer [data-legal]').forEach((el, i) => { el.textContent = legal[l][i]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.language === l)));
+    try { localStorage.setItem('kiwi-site-language', l); } catch (e) {}
+    if (window.kiwiRenderAllMath) window.kiwiRenderAllMath();
+  }
+  btns.forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.language)));
+  let saved = 'en';
+  try { saved = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+  setLanguage(saved);
+  window.addEventListener('pageshow', () => {
+    let l = 'en';
+    try { l = localStorage.getItem('kiwi-site-language') || 'en'; } catch (e) {}
+    setLanguage(l);
+  });
+})();
+  </script>
+<script>
+/* Remove legacy GTranslate cookies left by earlier test versions. */
+(() => {
+  const host = location.hostname;
+  const domains = ['', host, host ? '.' + host : ''];
+  const paths = new Set(['/']);
+  const parts = (location.pathname || '/').split('/').filter(Boolean);
+  let prefix = '';
+  parts.forEach(part => {
+    prefix += '/' + part;
+    paths.add(prefix);
+    paths.add(prefix + '/');
+  });
+  ['googtrans', 'googtransopt'].forEach(name => {
+    paths.forEach(path => domains.forEach(domain => {
+      let cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path;
+      if (domain) cookie += '; domain=' + domain;
+      document.cookie = cookie;
+    }));
+  });
+})();
+  </script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="../assets/js/kiwi-math-katex.js?v=4"></script>
+<script defer="" src="../assets/js/drive-breadcrumb.js?v=20261115-bcrumb4"></script>
+<script id="kiwi-accordion-controls-script">
+(function(){
+  function init(){
+    document.querySelectorAll('.kiwi-topic-article').forEach(function(article){
+      var cards=Array.from(article.querySelectorAll('details.lesson-card'));
+      if(cards.length<2 || article.querySelector('.kiwi-accordion-controls'))return;
+      var first=cards[0];
+      var controls=document.createElement('div');
+      controls.className='kiwi-accordion-controls';
+      controls.setAttribute('role','group');
+      controls.setAttribute('aria-label','Lesson sections');
+      controls.innerHTML='<button type="button" data-accordion-action="expand" data-en="Expand All" data-zh="全部展开">Expand All</button><button type="button" data-accordion-action="collapse" data-en="Collapse All" data-zh="全部收起">Collapse All</button>';
+      first.parentNode.insertBefore(controls,first);
+      controls.addEventListener('click',function(event){
+        var button=event.target.closest('button[data-accordion-action]');
+        if(!button)return;
+        var expand=button.getAttribute('data-accordion-action')==='expand';
+        cards.forEach(function(card){card.open=expand;});
+      });
+      // Keep the established default: first section open, remaining sections closed.
+      cards.forEach(function(card,i){card.open=i===0;});
+      function syncLanguage(){
+        var zh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+        controls.querySelectorAll('button').forEach(function(b){b.textContent=b.getAttribute(zh?'data-zh':'data-en');});
+      }
+      syncLanguage();
+      new MutationObserver(syncLanguage).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
+<link href="../pagefind/pagefind-ui.css" rel="stylesheet"/>
+<script defer src="../assets/js/kiwi-site-search.js?v=20261114-search20"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- kiwi-search-zh-index -->
+<div class="kiwi-pagefind-zh" hidden aria-hidden="true" data-pagefind-lang="zh" data-pagefind-body="" data-pagefind-filter="lang:zh"><span hidden data-pagefind-meta="title_zh">三角函数</span><span hidden data-pagefind-meta="breadcrumb_zh">数学 › 三角函数</span><span hidden data-pagefind-meta="excerpt_zh">核心问题：若已知直角三角形的一条整数直角边，能否构造另外两条整数边长？ 勾股数 是由正整数 a 、 、 组成，其中 为斜边，且 a 2 + 2 = 2 。 我们将发现两条构造法则——分别对应奇数直角边与偶数直角边——并说明它们为何成立。 本课范围： 进阶 与勾股定理相关的整数构造（来自进阶版数学速查）。 1. 奇数直角边：寻找连续整数 探索：设已知直角边为奇整数 ，则 2 等于两个连续整数之和： 由此得到勾股数 $$\left(n,\…</span>← 返回数学思维 数学思维 三角函数 探索数的关系、运算方法与实用计算策略。 发现勾股数 ← 返回数学思维目录 核心问题：若已知直角三角形的一条整数直角边，能否构造另外两条整数边长？ 勾股数 是由正整数 a 、 、 组成，其中 为斜边，且 a 2 + 2 = 2 。 我们将发现两条构造法则——分别对应奇数直角边与偶数直角边——并说明它们为何成立。 本课范围： 进阶 与勾股定理相关的整数构造（来自进阶版数学速查）。 1. 奇数直角边：寻找连续整数 探索：设已知直角边为奇整数 ，则 2 等于两个连续整数之和： 由此得到勾股数 $$\left(n,\ \frac{n^2-1}{2},\ \frac{n^2+1}{2}\right)$$ 。以 = 3 验证： 发现法则：设另一条直角边为 、斜边为 ，且 − = 1。结合平方差恒等式与勾股定理： 因此 + = 2 ， − = 1。相加与相减得 当 为奇数时， 2 为奇数，两分子均为偶数，故 、 为整数。 = 3 时得 4 与 5。 2. 偶数直角边：寻找相差 2 的数 探索：设已知直角边为偶数。它的一半是整数 ，而比 小 1 与大 1 的两个整数相差 2。 发现法则：将偶数直角边写为 ，取 两条新边相差 2。验证勾股定理： 因此偶数直角边 对应勾股数为 $$\left(2m,\ m^2-1,\ m^2+1\right)$$ 。例如 = 2 得 3、4、5。 3. 比较两种规律 已知直角边 构造 例子 关键思想：不要盲目猜测两边，先令它们相差一个小的固定值，再用 $$c^2-b^2=(c-b)(c+b)$$ 把勾股定理化为更易求解的形式。 4. 自己试一试 用奇数边法则构造含 5 的勾股数，并检验。 用偶数边法则构造含 6 的勾股数，并检验。 说明为何奇数边法则中 与 相差 1，而偶数边法则相差 2。 拓展：给定整数直角边，这些法则是否总给出最小斜边？试考察 12 与 20。 重要说明： 这些法则从已知整数直角边构造 一组 整数边直角三角形，并不唯一确定三角形；也可能得到三边有公因数的勾股数。 核对答案： (1) 5、12、13。(2) 6、8、10。(4) 否：12 在 5–12–13 中斜边更小；20 在 21–20–29 中斜边更小。</div>
+<!-- /kiwi-search-zh-index -->
+</body>
+</html>

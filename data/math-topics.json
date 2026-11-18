@@ -126,17 +126,23 @@
       "hub": "thinking",
       "order": 30
     },
+    "thinking-trigonometry": {
+      "title_en": "Trigonometry",
+      "title_zh": "\u4e09\u89d2\u51fd\u6570",
+      "hub": "thinking",
+      "order": 40
+    },
     "thinking-data-chance": {
       "title_en": "Data & Chance",
       "title_zh": "\u6570\u636e\u4e0e\u6982\u7387",
       "hub": "thinking",
-      "order": 40
+      "order": 50
     },
     "thinking-strategies": {
       "title_en": "Strategies & Word Problems",
       "title_zh": "\u7b56\u7565\u4e0e\u5e94\u7528\u9898",
       "hub": "thinking",
-      "order": 50
+      "order": 60
     }
   },
   "grades": {
@@ -617,6 +623,24 @@
       "sort": 2080,
       "list_on_grade_hub": true,
       "verified_note": "Page cites MCR3U Functions (Ontario 2007 curriculum)"
+    },
+    {
+      "id": "discovering-pythagorean-triples",
+      "file": "math/thinking-discovering-pythagorean-triples.html",
+      "title_en": "Discovering Pythagorean Triples",
+      "title_zh": "\u53d1\u73b0\u52fe\u80a1\u6570",
+      "grades": [
+        10,
+        11
+      ],
+      "courses": [
+        "MPM2D",
+        "MCR3U"
+      ],
+      "chapter_id": "thinking-trigonometry",
+      "sort": 10,
+      "list_on_grade_hub": false,
+      "verified_note": "Mathematical Thinking \u2014 Pythagorean triple construction (Advanced quick reference)"
     },
     {
       "id": "foundation-decimal",

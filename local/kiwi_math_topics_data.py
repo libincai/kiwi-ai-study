@@ -96,6 +96,22 @@ def build_topics() -> list[dict]:
     )
     seen.add("math/thinking-recovering-function-rule.html")
 
+    topics.append(
+        {
+            "id": "discovering-pythagorean-triples",
+            "file": "math/thinking-discovering-pythagorean-triples.html",
+            "title_en": "Discovering Pythagorean Triples",
+            "title_zh": "发现勾股数",
+            "grades": [10, 11],
+            "courses": ["MPM2D", "MCR3U"],
+            "chapter_id": "thinking-trigonometry",
+            "sort": 10,
+            "list_on_grade_hub": False,
+            "verified_note": "Mathematical Thinking — Pythagorean triple construction (Advanced quick reference)",
+        }
+    )
+    seen.add("math/thinking-discovering-pythagorean-triples.html")
+
     # Introductory right-triangle lessons: MPM2D (G10) through MCR3U (G11).
     intro_trig = {
         "math/foundation-understanding-trigonometry.html",
@@ -339,17 +355,23 @@ def write_catalog() -> None:
                 "hub": "thinking",
                 "order": 30,
             },
+            "thinking-trigonometry": {
+                "title_en": "Trigonometry",
+                "title_zh": "三角函数",
+                "hub": "thinking",
+                "order": 40,
+            },
             "thinking-data-chance": {
                 "title_en": "Data & Chance",
                 "title_zh": "数据与概率",
                 "hub": "thinking",
-                "order": 40,
+                "order": 50,
             },
             "thinking-strategies": {
                 "title_en": "Strategies & Word Problems",
                 "title_zh": "策略与应用题",
                 "hub": "thinking",
-                "order": 50,
+                "order": 60,
             },
         },
         "grades": _grade_hubs(),

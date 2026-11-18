@@ -9,7 +9,7 @@ Local URLs use **`http://localhost:3000/kiwi-ai-study/<slug>`** (no `.html`). Sl
 
 ## Required steps (do not skip)
 
-1. **Add the file** under the correct section (`math/`, `ai/`, …). Match an existing level-3/4 shell (styles, `mf-chapter`, bilingual `data-en` / `data-zh`).
+1. **Add the file** under the correct section (`math/`, `ai/`, …). Match an existing level-3/4 shell (styles, `mf-chapter`, bilingual `data-en` / `data-zh`). **Math formulas:** use LaTeX + KaTeX per `.cursor/rules/math-latex.mdc`.
 2. **Regenerate rewrites + GitHub stubs:** `python tools/generate-serve-rewrites.py` (updates `serve.json` and `{slug}/index.html` stubs for GitHub Pages clean URLs).
 3. **Restart the dev server** — `serve` only reads `serve.json` at startup. A running server after rewrites alone → **404**.
    - From repo root: `powershell -File tools/dev-server.ps1` (background is fine).

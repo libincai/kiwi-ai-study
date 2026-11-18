@@ -301,6 +301,10 @@
       "destination": "/math/thinking-data-and-graphs.html"
     },
     {
+      "source": "/kiwi-ai-study/thinking-discovering-pythagorean-triples",
+      "destination": "/math/thinking-discovering-pythagorean-triples.html"
+    },
+    {
       "source": "/kiwi-ai-study/thinking-geometric-strategies",
       "destination": "/math/thinking-geometric-strategies.html"
     },
@@ -1658,6 +1662,21 @@
     {
       "source": "/kiwi-ai-study/thinking-data-and-graphs.html",
       "destination": "/kiwi-ai-study/thinking-data-and-graphs",
+      "type": 302
+    },
+    {
+      "source": "/thinking-discovering-pythagorean-triples",
+      "destination": "/kiwi-ai-study/thinking-discovering-pythagorean-triples",
+      "type": 302
+    },
+    {
+      "source": "/thinking-discovering-pythagorean-triples.html",
+      "destination": "/kiwi-ai-study/thinking-discovering-pythagorean-triples",
+      "type": 302
+    },
+    {
+      "source": "/kiwi-ai-study/thinking-discovering-pythagorean-triples.html",
+      "destination": "/kiwi-ai-study/thinking-discovering-pythagorean-triples",
       "type": 302
     },
     {
@@ -3228,6 +3247,16 @@
     {
       "source": "/math/thinking-data-and-graphs.html",
       "destination": "/kiwi-ai-study/thinking-data-and-graphs",
+      "type": 302
+    },
+    {
+      "source": "/math/thinking-discovering-pythagorean-triples",
+      "destination": "/kiwi-ai-study/thinking-discovering-pythagorean-triples",
+      "type": 302
+    },
+    {
+      "source": "/math/thinking-discovering-pythagorean-triples.html",
+      "destination": "/kiwi-ai-study/thinking-discovering-pythagorean-triples",
       "type": 302
     },
     {

@@ -9,7 +9,7 @@ Use this naming split everywhere grade hubs, catalogs, and sidebars are maintain
 **Must match:** The **Math Foundations** and **Mathematical Thinking** hub cards on:
 
 - `math/math-foundations.html` (seven foundation areas)
-- `math/mathematical-thinking.html` (six thinking areas)
+- `math/mathematical-thinking.html` (seven thinking areas, aligned with Math Foundations including Trigonometry)
 
 Use the **same English and Chinese strings** as those cards (`data-en` / `data-zh` on each `edu-topic h3`).
 

@@ -18,6 +18,7 @@
     "math/thinking-car-journey-advanced.html": { en:"Functions & Graphs", zh:"函数与图像", parent:"math/mathematical-thinking.html" },
     "math/thinking-rotation-transformation.html": { en:"Geometry & Space", zh:"几何与空间", parent:"math/mathematical-thinking.html" },
     "math/thinking-special-right-triangles.html": { en:"Geometry & Space", zh:"几何与空间", parent:"math/mathematical-thinking.html" },
+    "math/thinking-discovering-pythagorean-triples.html": { en:"Trigonometry", zh:"三角函数", parent:"math/mathematical-thinking.html" },
     "math/thinking-data-and-graphs.html": { en:"Data & Chance", zh:"数据与概率", parent:"math/mathematical-thinking.html" },
     "math/thinking-measures-of-center.html": { en:"Data & Chance", zh:"数据与概率", parent:"math/mathematical-thinking.html" },
     "math/thinking-chance-and-probability.html": { en:"Data & Chance", zh:"数据与概率", parent:"math/mathematical-thinking.html" },
