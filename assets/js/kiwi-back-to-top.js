@@ -1,6 +1,10 @@
 (function () {
   "use strict";
-  if (!document.querySelector(".foundation-level4")) return;
+  const isFoundationL4 = !!document.querySelector(".foundation-level4");
+  const isThinkingL4 = !!document.querySelector(
+    ".kiwi-learning-layout .kiwi-topic-article",
+  );
+  if (!isFoundationL4 && !isThinkingL4) return;
 
   const main = document.querySelector("main");
   if (!main) return;
@@ -16,7 +20,8 @@
   const topChromeEnd =
     main.querySelector(".kiwi-grade-strip-wrap") ||
     main.querySelector(".topic-banner, .nf-hero.topic-banner") ||
-    main.querySelector(".foundation-level4");
+    main.querySelector(".foundation-level4") ||
+    main.querySelector(".kiwi-learning-layout");
   if (topChromeEnd && topChromeEnd.parentNode) {
     topChromeEnd.parentNode.insertBefore(sentinel, topChromeEnd.nextSibling);
   } else {
@@ -36,14 +41,17 @@
 
   const article =
     document.querySelector(".foundation-level4 .mf-article.mf-chapter") ||
-    document.querySelector(".foundation-level4 .mf-article");
+    document.querySelector(".foundation-level4 .mf-article") ||
+    document.querySelector(".kiwi-topic-article");
   const gapOutside = 12;
   const minEdge = 16;
   const placeButton = () => {
     if (!article) return;
-    const openCard = document.querySelector(
-      ".foundation-level4 .mf-article details.lesson-card[open]",
-    );
+    const openCard =
+      document.querySelector(
+        ".foundation-level4 .mf-article details.lesson-card[open]",
+      ) ||
+      document.querySelector(".kiwi-topic-article details.lesson-card[open]");
     const anchor = openCard || article;
     const anchorRight = anchor.getBoundingClientRect().right;
     const width = btn.offsetWidth || 72;

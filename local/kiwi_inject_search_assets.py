@@ -11,7 +11,7 @@ VERSION = "20261114-search20"
 BASE_MARKER = "kiwi-site-base.js"
 BASE_VERSION = "20261116-customdomain"
 BACK_TO_TOP_MARKER = "kiwi-back-to-top.js"
-BACK_TO_TOP_VERSION = "20261115h"
+BACK_TO_TOP_VERSION = "20261118-thinking"
 CF_BEACON_MARKER = "static.cloudflareinsights.com/beacon.min.js"
 CLOUDFLARE_ANALYTICS = """<!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1e1bdfca980f4ec293ede3cb0483adfc"}'></script>
@@ -138,8 +138,14 @@ def inject_site_base(text: str, depth: int) -> tuple[str, bool]:
     return new, True
 
 
+def page_uses_back_to_top(text: str) -> bool:
+    if "foundation-level4" in text:
+        return True
+    return "kiwi-learning-layout" in text and "kiwi-topic-article" in text
+
+
 def inject_back_to_top(text: str, depth: int) -> tuple[str, bool]:
-    if "foundation-level4" not in text:
+    if not page_uses_back_to_top(text):
         return text, False
     tag = back_to_top_tag(depth)
     rel_src = f'{asset_prefix(depth)}assets/js/{BACK_TO_TOP_MARKER}?v={BACK_TO_TOP_VERSION}'
