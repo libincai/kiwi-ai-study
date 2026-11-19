@@ -46,7 +46,7 @@
   function loadCatalog() {
     if (catalog) return Promise.resolve(catalog);
     if (!catalogPromise) {
-      catalogPromise = fetch(DATA_URL)
+      catalogPromise = fetch(DATA_URL + "?v=20261118-rednote-discovery")
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({}))
         .then((data) => {
