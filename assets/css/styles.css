@@ -6157,3 +6157,156 @@ body.kiwi-search-open .site-header {
 .kiwi-back-to-top[hidden] {
   display: none;
 }
+
+/* AI episode video — hub strip, lesson watch CTA, card badge */
+body.ai-page .ai-hub-social {
+  margin: 8px auto 26px;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+body.ai-page .ai-hub-social .social-bar {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 0;
+  padding: 8px 20px;
+  gap: 14px;
+  border-radius: 20px;
+  justify-content: center;
+}
+body.ai-page .ai-hub-social .social-bar h2 {
+  font-size: clamp(17px, 1.45vw, 22px);
+  font-weight: 700;
+}
+body.ai-page .ai-hub-social .social-bar .bar-divider {
+  height: 32px;
+}
+body.ai-page .ai-hub-social .social-grid {
+  flex: 0 0 auto;
+  justify-content: center;
+  gap: clamp(6px, 1vw, 12px);
+}
+body.ai-page .ai-hub-social .social-grid img {
+  height: clamp(30px, 4.2vh, 42px);
+}
+@media (max-width: 700px) {
+  body.ai-page .ai-hub-social .social-bar {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 14px;
+  }
+  body.ai-page .ai-hub-social .social-bar .bar-divider {
+    display: none;
+  }
+  body.ai-page .ai-hub-social .social-grid {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}
+.topic-banner.topic-banner--has-video {
+  position: relative;
+}
+@media (min-width: 761px) {
+  .topic-banner.topic-banner--has-video .topic-banner-subtitle {
+    margin-bottom: 0 !important;
+    padding-right: clamp(72px, 9vw, 96px) !important;
+    box-sizing: border-box;
+  }
+  .kiwi-episode-watch--banner {
+    position: absolute;
+    right: clamp(16px, 2.5vw, 28px);
+    bottom: clamp(14px, 2.2vw, 22px);
+    margin: 0;
+    width: auto;
+    max-width: none;
+    z-index: 2;
+  }
+}
+@media (max-width: 760px) {
+  .topic-banner.topic-banner--has-video {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .topic-banner.topic-banner--has-video .topic-banner-subtitle {
+    margin-bottom: 0 !important;
+    padding-right: 0 !important;
+  }
+  .kiwi-episode-watch--banner {
+    position: static;
+    justify-self: center;
+    margin: 14px 0 0;
+    width: auto;
+    max-width: 100%;
+    z-index: 1;
+  }
+}
+.kiwi-episode-watch--banner {
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+.kiwi-episode-watch[hidden] {
+  display: none !important;
+}
+.kiwi-episode-watch--banner .kiwi-episode-watch-btn {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  line-height: 0;
+}
+.kiwi-episode-watch--banner .kiwi-episode-watch-btn:hover {
+  filter: none;
+  transform: translateY(-1px);
+}
+.kiwi-episode-watch--banner .kiwi-episode-watch-btn:focus-visible {
+  outline: 3px solid #76b7ed;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+.kiwi-episode-watch--banner .kiwi-episode-watch-btn img {
+  display: block;
+  height: clamp(32px, 4vw, 40px);
+  width: auto;
+  aspect-ratio: auto;
+  border-radius: 0;
+  background: transparent;
+  filter: drop-shadow(0 2px 6px rgba(24, 55, 95, 0.15));
+}
+.ai-episode-has-video .ai-episode-art {
+  position: relative;
+}
+.kiwi-episode-card-play {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(20, 40, 75, 0.82);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgba(12, 28, 55, 0.25);
+  pointer-events: none;
+}
+.kiwi-episode-watch-hint {
+  margin: 10px 0 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #1768b2;
+}

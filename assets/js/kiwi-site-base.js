@@ -120,14 +120,32 @@
         return;
       }
       if (/^[a-z0-9][\w.-]*\.html$/i.test(pathOnly)) {
+        var stem = pathOnly.replace(/\.html$/i, "");
+        if (stem === "index") {
+          var here = (location.pathname || "").toLowerCase();
+          if (
+            /\/ai\//.test(here) ||
+            /\/episode-\d{2}(?:\.html)?(?:\/|$)/.test(here) ||
+            /\/episode-special-learning(?:\.html)?(?:\/|$)/.test(here)
+          ) {
+            stem = "ai";
+          } else if (/\/math\//.test(here)) {
+            stem = "math";
+          } else if (/\/books\//.test(here)) {
+            stem = "books";
+          } else if (/\/about\//.test(here)) {
+            stem = "about";
+          } else if (/\/contact\//.test(here)) {
+            stem = "contact";
+          } else {
+            stem = "";
+          }
+        }
         a.setAttribute(
           "href",
-          kiwiRootHref("/" + pathOnly.replace(/\.html$/i, "") + query),
+          stem ? kiwiRootHref("/" + stem + query) : kiwiRootHref("/") + query,
         );
         return;
-      }
-      if (h === "index.html") {
-        a.setAttribute("href", kiwiRootHref("/math"));
       }
     });
   }

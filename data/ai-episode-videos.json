@@ -1,0 +1,38 @@
+{
+  "01": {
+    "youtube": "https://www.youtube.com/watch?v=Pa1HgESMv6Y&t=44s",
+    "rednote": "https://www.rednote.com/discovery/item/6abdd147000000000b004b66?xsec_token=ABe53XExdysFFVSHO_MewExihv0ZyMPLgleAJiZDk-9ec=&xsec_source=pc_user"
+  },
+  "02": {
+    "youtube": "https://www.youtube.com/watch?v=PdqjUCAx2ro&t=17s",
+    "rednote": "https://www.rednote.com/user/profile/633067ff000000002303ff9f/6abe5d1c0000000018011fbb?xsec_token=AB3skwG_VKokPzI9t4Gce88YBsPnqcqiSVhhmmRcHtuzo=&xsec_source=pc_user"
+  },
+  "03": {
+    "youtube": "https://www.youtube.com/watch?v=-ScMyHJdLoY",
+    "rednote": "https://www.rednote.com/user/profile/633067ff000000002303ff9f/6abe8c56000000000a022826?xsec_token=AB3skwG_VKokPzI9t4Gce88QrmwguuHuMLUeTOg2RYB-M=&xsec_source=pc_user"
+  },
+  "04": {
+    "youtube": "https://www.youtube.com/watch?v=BLLcvB7b6NQ&t=40s",
+    "rednote": "https://www.rednote.com/user/profile/633067ff000000002303ff9f/6abebf80000000000a026570?xsec_token=AB3skwG_VKokPzI9t4Gce88Zz8y76HWmNKZThP5TF2YmE=&xsec_source=pc_user"
+  },
+  "05": {
+    "youtube": "https://www.youtube.com/watch?v=DQgkW1fw3Vk&t=7s",
+    "rednote": "https://www.rednote.com/user/profile/633067ff000000002303ff9f/6abef6a30000000014038e3f?xsec_token=AB3skwG_VKokPzI9t4Gce88XsyL9M6jCh2UTgOuLfFNnI=&xsec_source=pc_user"
+  },
+  "06": {
+    "youtube": "https://www.youtube.com/watch?v=TY9r2PlM7aA",
+    "rednote": "https://www.rednote.com/user/profile/633067ff000000002303ff9f/6abf287c000000000b007a55?xsec_token=ABe_dZ70Aw1valE_25ZsSDaXycxgIDaXQVGDxl1WEvkLs=&xsec_source=pc_user"
+  },
+  "07": {
+    "youtube": "https://www.youtube.com/watch?v=vrucugoqmj8&t=18s",
+    "rednote": "https://www.rednote.com/user/profile/633067ff000000002303ff9f/6ac007d3000000000a023426?xsec_token=AB3a4dpZ444V-_BJoHdJwERa3kk-naIz7Fj5f8tHYZBQM=&xsec_source=pc_user"
+  },
+  "08": {
+    "youtube": "https://www.youtube.com/watch?v=WBxmF91qejE",
+    "rednote": "https://www.rednote.com/user/profile/633067ff000000002303ff9f/6ac790080000000014001b17?xsec_token=ABpfSgJLi_Wr8nTbIRUP17X05HOIl4vYSIOTrSQ5rMAG0=&xsec_source=pc_user"
+  },
+  "special-learning": {
+    "youtube": "https://www.youtube.com/watch?v=f1vBcxixh9o",
+    "rednote": "https://www.rednote.com/user/profile/633067ff000000002303ff9f/6ac038260000000018010d49?xsec_token=AB3a4dpZ444V-_BJoHdJwERYVTzXN6-j3LMxH8rH44Pzk=&xsec_source=pc_user"
+  }
+}
