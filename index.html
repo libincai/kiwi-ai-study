@@ -15,6 +15,63 @@
   <title>Kiwi 爱AI Study | Sherry Cai</title>
   <meta name="description" content="Making learning smarter, simpler and more meaningful — math education, AI education, books and resources from Kiwi 爱AI Study.">
   <link rel="stylesheet" href="assets/css/styles.css?v=20261110-header-wrap2">
+  <style>
+    /* Homepage picture hero: global CSS expects .hero > img; picture wrapper needs home-only overrides. */
+    body.home-page .hero .hero-picture {
+      display: block;
+      width: 100%;
+    }
+    @media (min-width: 621px) {
+      body.home-page .hero .hero-picture {
+        height: 100%;
+      }
+      body.home-page .hero .hero-picture img#hero-mobile-banner-image {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: none !important;
+        object-fit: fill !important;
+        object-position: center center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+    }
+    @media (max-width: 620px) {
+      body.home-page .hero {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+        overflow: visible !important;
+      }
+      body.home-page .hero .hero-picture {
+        position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      body.home-page .hero .hero-picture img#hero-mobile-banner-image {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        vertical-align: top;
+      }
+    }
+  </style>
+  <script>
+    (function () {
+      var lang = "en";
+      try { lang = localStorage.getItem("kiwi-site-language") || "en"; } catch (e) {}
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en-CA";
+    })();
+  </script>
 <script src="assets/js/kiwi-site-base.js?v=20261116-customdomain"></script>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1e1bdfca980f4ec293ede3cb0483adfc"}'></script>
@@ -24,12 +81,12 @@
   <header class="site-header">
     <div class="brand-lockup">
       <a class="logo-link" href="index.html" aria-label="Kiwi 爱AI Study home">
-        <img class="logo" src="assets/logo/kiwi-ai-study-logo.webp" alt="Kiwi 爱AI Study logo">
+        <img class="logo" src="assets/logo/kiwi-ai-study-logo-215w.webp" srcset="assets/logo/kiwi-ai-study-logo-215w.webp 215w, assets/logo/kiwi-ai-study-logo-430w.webp 430w, assets/logo/kiwi-ai-study-logo.webp 1200w" sizes="(max-width: 620px) 155px, 215px" width="1200" height="338" decoding="async" alt="Kiwi 爱AI Study logo">
       </a>
       <span class="divider" aria-hidden="true"></span>
       <div class="author-wrap">
         <a class="author-image-link" href="#" aria-label="Sherry Cai">
-          <img class="author-signature-image" src="assets/logo/sherry-cai-signature.webp" alt="Sherry Cai">
+          <img class="author-signature-image" src="assets/logo/sherry-cai-signature-110w.webp" srcset="assets/logo/sherry-cai-signature-110w.webp 110w, assets/logo/sherry-cai-signature-220w.webp 220w, assets/logo/sherry-cai-signature.webp 1660w" sizes="(max-width: 620px) 104px, 109px" width="1660" height="530" decoding="async" alt="Sherry Cai">
         </a>
       </div>
     </div>
@@ -53,8 +110,28 @@
   </header>
 
   <section class="hero" aria-label="Kiwi 爱AI Study">
-    <img id="hero-banner-image" src="assets/hero/banner-en.webp" alt="Making Learning Smarter, Simpler & More Meaningful">
-    <img id="hero-mobile-banner-image" class="hero-mobile-banner" src="assets/hero/mobile-banner-en.webp" alt="Making Learning Smarter, Simpler & More Meaningful">
+    <script>
+      (function () {
+        var lang = "en";
+        try { lang = localStorage.getItem("kiwi-site-language") || "en"; } catch (e) {}
+        var desk = lang === "zh" ? "banner-zh" : "banner-en";
+        var mob = lang === "zh" ? "mobile-banner-zh" : "mobile-banner-en";
+        var alt = lang === "zh"
+          ? "让学习变得更智能，更简单、更有意义"
+          : "Making Learning Smarter, Simpler & More Meaningful";
+        var html =
+          '<picture class="hero-picture" id="hero-picture">' +
+          '<source id="hero-desktop-source" media="(min-width: 621px)" type="image/webp" ' +
+          'srcset="assets/hero/' + desk + '-800w.webp 800w, assets/hero/' + desk + '.webp 1600w">' +
+          '<img id="hero-mobile-banner-image" class="hero-mobile-banner" ' +
+          'src="assets/hero/' + mob + '-800w.webp" ' +
+          'srcset="assets/hero/' + mob + '-640w.webp 640w, assets/hero/' + mob + '-800w.webp 800w, assets/hero/' + mob + '.webp 1600w" ' +
+          'sizes="100vw" width="1600" height="391" fetchpriority="high" decoding="async" alt="' +
+          alt.replace(/&/g, "&amp;").replace(/"/g, "&quot;") + '">' +
+          "</picture>";
+        document.currentScript.insertAdjacentHTML("afterend", html);
+      })();
+    </script>
   </section>
 
   <section class="features" aria-label="Learning pathways">
@@ -112,7 +189,7 @@
     </div>
     <div class="book-grid">
       <a class="book-card" href="/books-speedy?from=home">
-        <img src="assets/books/speedy-playful-math-magic.webp" alt="Speedy &amp; Playful Math Magic book cover">
+        <img src="assets/books/speedy-playful-math-magic-400w.webp" srcset="assets/books/speedy-playful-math-magic-200w.webp 200w, assets/books/speedy-playful-math-magic-400w.webp 400w, assets/books/speedy-playful-math-magic.webp 750w" sizes="(max-width: 620px) 40vw, 198px" width="750" height="750" loading="lazy" decoding="async" alt="Speedy &amp; Playful Math Magic book cover">
         <div>
           <h3>Speedy &amp; Playful Math Magic</h3>
           <p>A fun and effective guide to building math skills, problem solving, and number sense.</p>
@@ -120,7 +197,7 @@
         </div>
       </a>
       <a class="book-card" href="/books-foundations?from=home">
-        <img src="assets/books/math-quick-reference-library.webp" alt="Math Quick Reference Library book cover">
+        <img src="assets/books/math-quick-reference-library-400w.webp" srcset="assets/books/math-quick-reference-library-200w.webp 200w, assets/books/math-quick-reference-library-400w.webp 400w, assets/books/math-quick-reference-library.webp 764w" sizes="(max-width: 620px) 40vw, 198px" width="764" height="1024" loading="lazy" decoding="async" alt="Math Quick Reference Library book cover">
         <div>
           <h3>Math Quick Reference Library</h3>
           <p>A concise and visual guide to key math concepts, formulas, and problem-solving strategies.</p>
@@ -128,7 +205,7 @@
         </div>
       </a>
       <a class="book-card" href="/books-advanced?from=home">
-        <img src="assets/books/math-quick-reference-library-advanced.webp" alt="Math Quick Reference Library Advanced book cover">
+        <img src="assets/books/math-quick-reference-library-advanced-400w.webp" srcset="assets/books/math-quick-reference-library-advanced-200w.webp 200w, assets/books/math-quick-reference-library-advanced-400w.webp 400w, assets/books/math-quick-reference-library-advanced.webp 771w" sizes="(max-width: 620px) 40vw, 198px" width="771" height="1024" loading="lazy" decoding="async" alt="Math Quick Reference Library Advanced book cover">
         <div>
           <h3>Math Quick Reference Library – Advanced</h3>
           <p>Extended topics, advanced methods, and deeper problem solving for higher-level learning.</p>
@@ -143,11 +220,11 @@
       <h2 id="social-heading">Follow Our Channels</h2>
       <span class="bar-divider" aria-hidden="true"></span>
       <div class="social-grid">
-        <a href="https://www.tiktok.com/@kiwi.aistudy?_r=1&amp;_t=ZS-9BD1M7BZdiO" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="assets/social/TikTok-reference.webp" alt="TikTok"></a>
-        <a href="https://v.douyin.com/Dp0lpGBXeEw/" target="_blank" rel="noopener noreferrer" aria-label="Douyin"><img src="assets/social/Douyin-reference.webp" alt="Douyin"></a>
-        <a href="#wechat-qr" class="wechat-qr-trigger" aria-label="Show WeChat Channels QR code" aria-haspopup="dialog"><img src="assets/social/WeChat-Channels-reference.webp" alt="WeChat Channels"></a>
-        <a href="https://www.rednote.com/user/profile/633067ff000000002303ff9f?xsec_token=YBZOVNrhg60wKdB8PNjtbKWbB19C4dhUkaM6Sn55ebN5M=&amp;xsec_source=app_share&amp;xhsshare=WeixinSession&amp;shareRedId=ODk1MDk8Sk82NzUyOTgwNjg2OTpKSz9P&amp;apptime=1794062676&amp;share_id=84ef125430e645a3a9f0554b1c86fbd0&amp;share_channel=wechat&amp;track_code=1VamdkRT3nf&amp;wechatWid=8de3258ced8e159d835a9dc6c4376a2b&amp;wechatOrigin=menu" target="_blank" rel="noopener noreferrer" aria-label="Xiaohongshu"><img src="assets/social/Xiaohongshu-reference.webp" alt="Xiaohongshu"></a>
-        <a href="https://www.youtube.com/@vacationbird" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="assets/social/YouTube-reference.webp" alt="YouTube"></a>
+        <a href="https://www.tiktok.com/@kiwi.aistudy?_r=1&amp;_t=ZS-9BD1M7BZdiO" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="assets/social/TikTok-reference.webp" width="48" height="48" loading="lazy" decoding="async" alt="TikTok"></a>
+        <a href="https://v.douyin.com/Dp0lpGBXeEw/" target="_blank" rel="noopener noreferrer" aria-label="Douyin"><img src="assets/social/Douyin-reference.webp" width="48" height="48" loading="lazy" decoding="async" alt="Douyin"></a>
+        <a href="#wechat-qr" class="wechat-qr-trigger" aria-label="Show WeChat Channels QR code" aria-haspopup="dialog"><img src="assets/social/WeChat-Channels-reference.webp" width="48" height="48" loading="lazy" decoding="async" alt="WeChat Channels"></a>
+        <a href="https://www.rednote.com/user/profile/633067ff000000002303ff9f?xsec_token=YBZOVNrhg60wKdB8PNjtbKWbB19C4dhUkaM6Sn55ebN5M=&amp;xsec_source=app_share&amp;xhsshare=WeixinSession&amp;shareRedId=ODk1MDk8Sk82NzUyOTgwNjg2OTpKSz9P&amp;apptime=1794062676&amp;share_id=84ef125430e645a3a9f0554b1c86fbd0&amp;share_channel=wechat&amp;track_code=1VamdkRT3nf&amp;wechatWid=8de3258ced8e159d835a9dc6c4376a2b&amp;wechatOrigin=menu" target="_blank" rel="noopener noreferrer" aria-label="Xiaohongshu"><img src="assets/social/Xiaohongshu-reference.webp" width="48" height="48" loading="lazy" decoding="async" alt="Xiaohongshu"></a>
+        <a href="https://www.youtube.com/@vacationbird" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="assets/social/YouTube-reference.webp" width="48" height="48" loading="lazy" decoding="async" alt="YouTube"></a>
       </div>
     </div>
   </section>
@@ -157,7 +234,7 @@
       <button type="button" class="wechat-qr-close" aria-label="Close">×</button>
       <h2 id="wechat-qr-title">Follow KIWI爱AI学习 on WeChat Channels</h2>
       <p>Scan the QR code to follow the channel. 扫一扫二维码，关注我的视频号。</p>
-      <img src="assets/social/wechat-channels-qr.jpg" alt="KIWI爱AI学习 WeChat Channels QR code">
+      <img src="assets/social/wechat-channels-qr.jpg" width="280" height="280" loading="lazy" decoding="async" alt="KIWI爱AI学习 WeChat Channels QR code">
     </div>
   </div>
 
@@ -236,8 +313,24 @@
     if (el) el.textContent = value;
   };
 
-  const heroBannerImage = document.querySelector("#hero-banner-image");
+  const heroDesktopSource = document.querySelector("#hero-desktop-source");
   const heroMobileBannerImage = document.querySelector("#hero-mobile-banner-image");
+
+  function heroSrcset(language) {
+    const desk = language === "zh" ? "banner-zh" : "banner-en";
+    const mob = language === "zh" ? "mobile-banner-zh" : "mobile-banner-en";
+    return {
+      desk:
+        "assets/hero/" + desk + "-800w.webp 800w, assets/hero/" + desk + ".webp 1600w",
+      mob:
+        "assets/hero/" + mob + "-640w.webp 640w, assets/hero/" + mob + "-800w.webp 800w, assets/hero/" + mob + ".webp 1600w",
+      mobSrc: "assets/hero/" + mob + "-800w.webp",
+      alt:
+        language === "zh"
+          ? "让学习变得更智能，更简单、更有意义"
+          : "Making Learning Smarter, Simpler & More Meaningful",
+    };
+  }
 
   function setLanguage(language) {
     const t = translations[language] || translations.en;
@@ -249,21 +342,12 @@
       if (t.nav[i]) el.textContent = t.nav[i];
     });
 
-    if (heroBannerImage) {
-      heroBannerImage.src = language === "zh"
-        ? "assets/hero/banner-zh.webp"
-        : "assets/hero/banner-en.webp";
-      heroBannerImage.alt = language === "zh"
-        ? "让学习变得更智能，更简单、更有意义"
-        : "Making Learning Smarter, Simpler & More Meaningful";
-    }
+    const hero = heroSrcset(language);
+    if (heroDesktopSource) heroDesktopSource.srcset = hero.desk;
     if (heroMobileBannerImage) {
-      heroMobileBannerImage.src = language === "zh"
-        ? "assets/hero/mobile-banner-zh.webp"
-        : "assets/hero/mobile-banner-en.webp";
-      heroMobileBannerImage.alt = language === "zh"
-        ? "让学习变得更智能，更简单、更有意义"
-        : "Making Learning Smarter, Simpler & More Meaningful";
+      heroMobileBannerImage.src = hero.mobSrc;
+      heroMobileBannerImage.srcset = hero.mob;
+      heroMobileBannerImage.alt = hero.alt;
     }
 
 
@@ -373,6 +457,8 @@
 
 <link href="pagefind/pagefind-ui.css" rel="stylesheet"/>
 <script defer src="assets/js/kiwi-site-search.js?v=20261114-search20"></script>
+
+
 
 
 
