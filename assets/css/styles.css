@@ -2711,20 +2711,24 @@ body.ai-page .about-compact-banner .compact-banner-subtitle {
 }
 
 
-/* Homepage learning pathways: three equal entry cards in one row. */
-body.home-page .features {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+/* In-Class Learning: hidden (nav, home card, Math hub callout). Remove rules below to show again. */
+.site-nav a[data-nav="class"],
+body.home-page .feature-card.learning,
+body.edu-page main .edu-section:has(a.edu-button[href*="in-class-learning"]) {
+  display: none !important;
 }
-body.home-page .feature-card.learning {
-  background: #e8f5f0;
+
+/* Homepage learning pathways: two visible entry cards in one row. */
+body.home-page .features {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 body.home-page .feature-card {
   min-width: 0;
 }
 @media (max-width: 900px) and (min-width: 621px) {
   body.home-page .features {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     padding-left: 16px;
     padding-right: 16px;
