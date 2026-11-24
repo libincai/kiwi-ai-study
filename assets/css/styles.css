@@ -2718,6 +2718,11 @@ body.edu-page main .edu-section:has(a.edu-button[href*="in-class-learning"]) {
   display: none !important;
 }
 
+/* Contact: hidden in primary nav. Remove rule below to show again. */
+.site-nav a[data-nav="contact"] {
+  display: none !important;
+}
+
 /* Homepage learning pathways: two visible entry cards in one row. */
 body.home-page .features {
   grid-template-columns: repeat(2, minmax(0, 1fr));
