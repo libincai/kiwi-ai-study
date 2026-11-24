@@ -2723,6 +2723,11 @@ body.edu-page main .edu-section:has(a.edu-button[href*="in-class-learning"]) {
   display: none !important;
 }
 
+/* Business & Collaboration: hidden in site footer. Remove rule below to show again. */
+.site-footer a[href*="business-collaboration"] {
+  display: none !important;
+}
+
 /* Homepage learning pathways: two visible entry cards in one row. */
 body.home-page .features {
   grid-template-columns: repeat(2, minmax(0, 1fr));
